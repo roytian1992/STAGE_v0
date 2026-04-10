@@ -1,0 +1,74 @@
+{
+  "name": "gold_character_timelines_v1",
+  "version": "v0",
+  "format": "json",
+  "description": "Per-movie gold focal-character timelines for STAGE Task 1 story dynamics structuring.",
+  "top_level_fields": [
+    {
+      "name": "movie_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "language",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "task_name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "task_version",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "focal_character_timelines",
+      "type": "list",
+      "required": true,
+      "item_fields": [
+        "character_name",
+        "aliases",
+        "selection_reason",
+        "task3_relevance",
+        "timeline_nodes",
+        "timeline_summary"
+      ]
+    },
+    {
+      "name": "build_summary",
+      "type": "object",
+      "required": true,
+      "object_fields": [
+        "candidate_character_count",
+        "selected_focal_character_count",
+        "timeline_node_count",
+        "builder_mode"
+      ]
+    }
+  ],
+  "timeline_node_fields": [
+    "timeline_node_id",
+    "document_id",
+    "scene_id",
+    "scene_order",
+    "scene_title",
+    "scene_summary",
+    "role_in_context",
+    "salient_development",
+    "goal_state",
+    "resulting_state",
+    "unresolved_issue",
+    "related_event_ids",
+    "related_episode_ids",
+    "evidence_quotes",
+    "auxiliary"
+  ],
+  "auxiliary_fields": [
+    "relation_updates",
+    "status_updates",
+    "persona_anchor"
+  ]
+}

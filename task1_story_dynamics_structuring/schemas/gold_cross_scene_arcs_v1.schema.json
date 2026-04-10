@@ -1,0 +1,54 @@
+{
+  "name": "gold_cross_scene_arcs_v1",
+  "version": "v0",
+  "format": "json",
+  "description": "Per-movie gold cross-scene arcs for STAGE Task 1 story dynamics structuring.",
+  "top_level_fields": [
+    {
+      "name": "movie_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "language",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "task_name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "task_version",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "cross_scene_arcs",
+      "type": "list",
+      "required": true,
+      "item_fields": [
+        "arc_id",
+        "character_name",
+        "title",
+        "arc_focus",
+        "linked_timeline_node_ids",
+        "arc_summary",
+        "start_state",
+        "end_state",
+        "unresolved_issue"
+      ]
+    },
+    {
+      "name": "build_summary",
+      "type": "object",
+      "required": true,
+      "object_fields": [
+        "selected_focal_character_count",
+        "arc_count",
+        "builder_mode"
+      ]
+    }
+  ]
+}
