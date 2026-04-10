@@ -10,8 +10,8 @@ Current release format:
 Each movie directory contains only:
 
 - `script.json`
-- `gold_character_timelines_v1.json`
-- `gold_cross_scene_arcs_v1.json`
-- `question_pairs_merged.csv`
+- `task_1_character_timelines.json`
+- `task_1_cross_scene_arcs.json`
+- `task_2_question_answering.csv`
 
 This repository does not currently include builder code, evaluation code, or intermediate files.
