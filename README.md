@@ -1,12 +1,17 @@
 # STAGE v0
 
-This repository stores release-ready benchmark assets for STAGE.
+This repository stores the released STAGE data assets only.
 
-Current contents:
+Current release format:
 
-- `task1_story_dynamics_structuring/`
-  Task 1 release package for story dynamics structuring.
-- `task2_screenplay_world_question_answering/`
-  Task 2 release package for screenplay-world question answering.
+- `English/<movie_id>/`
+- `Chinese/<movie_id>/`
 
-This repository is being populated incrementally.
+Each movie directory contains only:
+
+- `script.json`
+- `gold_character_timelines_v1.json`
+- `gold_cross_scene_arcs_v1.json`
+- `question_pairs_merged.csv`
+
+This repository does not currently include builder code, evaluation code, or intermediate files.
