@@ -343,6 +343,7 @@ def shortlist_scenes_for_character(scenes: Sequence[SceneRecord], character: Dic
         return direct_hits
 
     max_scene_order = max(scene.scene_order for scene in scenes)
+    selected_ids = set()
     by_bucket: Dict[str, List[Tuple[int, int, SceneRecord]]] = defaultdict(list)
     for score, scene_order, scene in scored:
         by_bucket[temporal_bucket(scene_order, max_scene_order)].append((score, scene_order, scene))
