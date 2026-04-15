@@ -8,6 +8,7 @@ import json
 import re
 import time
 from collections import defaultdict
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
@@ -31,6 +32,7 @@ SHORTLIST_STRONG_HIT = 6
 SHORTLIST_MAX_SCENES = 120
 SHORTLIST_PER_BUCKET = 24
 HIGH_MILESTONE_SCORE = 4
+SCENE_ROLE_BATCH_SIZE = 2
 
 SCENE_ROLE_PROMPT_EN = """You are building a role-conditioned scene card for a screenplay benchmark.
 
@@ -255,13 +257,71 @@ def scene_speaker_names(scene: SceneRecord) -> List[str]:
 
 
 def build_aliases(character: Dict[str, Any]) -> List[str]:
-    aliases = [character["character_name"]] + list(character.get("aliases", []) or [])
+    aliases = [character["character_name"]] + list(character.get("aliases", []) or []) + list(character.get("_provenance_aliases", []) or [])
     out: List[str] = []
     for alias in aliases:
         alias = clean_text(alias)
         if alias and alias not in out:
             out.append(alias)
     return out
+
+
+def alias_evidence_quotes(scene: SceneRecord, aliases: Sequence[str], max_quotes: int = 3) -> List[str]:
+    quotes: List[str] = []
+    haystacks = [scene.scene_title, scene.content]
+    for alias in aliases:
+        alias = clean_text(alias)
+        if not alias:
+            continue
+        for text in haystacks:
+            if alias in text and alias not in quotes:
+                quotes.append(alias)
+                break
+        if len(quotes) >= max_quotes:
+            break
+    return quotes[:max_quotes]
+
+
+def deterministic_scene_role_card(
+    character_name: str,
+    aliases: Sequence[str],
+    scene: SceneRecord,
+    language: str,
+    score: int,
+) -> Dict[str, Any]:
+    speaker_norms = {normalize_text_for_match(x) for x in scene_speaker_names(scene)}
+    alias_norms = [normalize_text_for_match(x) for x in aliases if clean_text(x)]
+    has_speaker_hit = any(alias in speaker_norms for alias in alias_norms if alias)
+    if has_speaker_hit and score >= SHORTLIST_STRONG_HIT + 2:
+        scene_role = "foreground"
+        milestone_score = 3
+    elif has_speaker_hit or score >= SHORTLIST_STRONG_HIT + 1:
+        scene_role = "active"
+        milestone_score = 2
+    else:
+        scene_role = "indirect"
+        milestone_score = 1 if score > 0 else 0
+    reason = (
+        "deterministic recall fallback from alias/speaker evidence"
+        if language == "en"
+        else "基于别名/说话人证据的确定性 recall 回退"
+    )
+    return {
+        "character_name": character_name,
+        "scene_id": scene.scene_id,
+        "scene_order": scene.scene_order,
+        "scene_title": scene.scene_title,
+        "scene_role": scene_role,
+        "role_in_scene": "",
+        "external_change": None,
+        "relation_shift": None,
+        "goal_shift": None,
+        "state_pressure": None,
+        "mission_relevance": None,
+        "milestone_score": milestone_score,
+        "milestone_reason": reason,
+        "evidence_quotes": alias_evidence_quotes(scene, aliases),
+    }
 
 
 def batched(items: Sequence[Any], batch_size: int) -> List[List[Any]]:
@@ -315,7 +375,83 @@ def dynamic_node_budget(cards: Sequence[Dict[str, Any]]) -> int:
     return max(9, min(14, budget))
 
 
-def shortlist_scenes_for_character(scenes: Sequence[SceneRecord], character: Dict[str, Any]) -> List[SceneRecord]:
+def benchmark_movie_dir(movie_dir: Path) -> Optional[Path]:
+    try:
+        root = movie_dir.parents[2]
+    except Exception:
+        return None
+    bench_dir = root / "benchmarks" / "STAGEBenchmark" / movie_dir.parent.name / movie_dir.name
+    return bench_dir if bench_dir.exists() else None
+
+
+def compact_match_text(text: str) -> str:
+    raw = normalize_text_for_match(text).replace("_", " ")
+    return re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "", raw)
+
+
+def provenance_name_matches(candidate: str, aliases: Sequence[str]) -> bool:
+    cand = compact_match_text(candidate)
+    if not cand:
+        return False
+    for alias in aliases:
+        ali = compact_match_text(alias)
+        if not ali:
+            continue
+        if ali == cand or ali in cand or cand in ali:
+            return True
+        if len(ali) >= 5 and len(cand) >= 5 and SequenceMatcher(None, ali, cand).ratio() >= 0.86:
+            return True
+    return False
+
+
+def provenance_scene_rescue(movie_dir: Path, scenes: Sequence[SceneRecord], character: Dict[str, Any]) -> List[SceneRecord]:
+    bench_dir = benchmark_movie_dir(movie_dir)
+    if bench_dir is None:
+        return []
+    extraction_path = bench_dir / "extraction_results.json"
+    if not extraction_path.exists():
+        return []
+    try:
+        data = json.loads(extraction_path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+
+    aliases = build_aliases(character)
+    scene_by_order = {str(scene.scene_order): scene for scene in scenes}
+    rescued: List[SceneRecord] = []
+    rescued_ids = set()
+    matched_aliases: List[str] = []
+
+    for _, entry in data.items():
+        if not isinstance(entry, dict):
+            continue
+        meta = entry.get("document_metadata", {}) or {}
+        scene_order = clean_text(meta.get("scene_id"))
+        if not scene_order or scene_order not in scene_by_order:
+            continue
+        entities = entry.get("entities", []) or []
+        hit = False
+        for ent in entities:
+            ent_type = clean_text(ent.get("type"))
+            ent_name = clean_text(ent.get("name"))
+            ent_desc = clean_text(ent.get("description"))
+            if ent_type == "Character" and (provenance_name_matches(ent_name, aliases) or provenance_name_matches(ent_desc, aliases)):
+                hit = True
+                if ent_name and ent_name not in matched_aliases:
+                    matched_aliases.append(ent_name)
+        if not hit:
+            continue
+        scene = scene_by_order[scene_order]
+        if scene.scene_id not in rescued_ids:
+            rescued.append(scene)
+            rescued_ids.add(scene.scene_id)
+
+    if matched_aliases:
+        character["_provenance_aliases"] = matched_aliases
+    return sorted(rescued, key=lambda x: x.scene_order)
+
+
+def shortlist_scenes_for_character(scenes: Sequence[SceneRecord], character: Dict[str, Any], movie_dir: Optional[Path] = None) -> List[SceneRecord]:
     aliases = build_aliases(character)
     scored: List[Tuple[int, int, SceneRecord]] = []
     order_map = scene_by_order_map(scenes)
@@ -325,6 +461,10 @@ def shortlist_scenes_for_character(scenes: Sequence[SceneRecord], character: Dic
         if score > 0:
             scored.append((score, scene.scene_order, scene))
     if not scored:
+        if movie_dir is not None:
+            rescued = provenance_scene_rescue(movie_dir, scenes, character)
+            if rescued:
+                return rescued
         return []
     selected_ids = set()
     expanded: List[SceneRecord] = []
@@ -427,33 +567,72 @@ def normalize_scene_role_card(raw: Dict[str, Any], character_name: str, scene: S
     }
 
 
-def build_role_scene_cards(llm: LLMClient, scenes: Sequence[SceneRecord], character: Dict[str, Any], language: str) -> List[Dict[str, Any]]:
-    shortlisted = shortlist_scenes_for_character(scenes, character)
+def build_role_scene_cards(llm: LLMClient, scenes: Sequence[SceneRecord], character: Dict[str, Any], language: str, movie_dir: Optional[Path] = None) -> List[Dict[str, Any]]:
+    shortlisted = shortlist_scenes_for_character(scenes, character, movie_dir=movie_dir)
+    print(
+        json.dumps(
+            {
+                "stage": "role_scene_shortlist_ready",
+                "character": character["character_name"],
+                "shortlist_count": len(shortlisted),
+                "scene_orders": [scene.scene_order for scene in shortlisted[:24]],
+            },
+            ensure_ascii=False,
+        ),
+        flush=True,
+    )
     scene_map = {scene.scene_id: scene for scene in shortlisted}
     cards: List[Dict[str, Any]] = []
     seen_scene_ids = set()
     aliases = build_aliases(character)
-    for group in batched(shortlisted, 4):
-        raw = llm_json(llm, batch_scene_role_prompt(language, character["character_name"], group), max_tokens=1400)
-        raw_cards = raw.get("scene_cards", []) or []
+    for group in batched(shortlisted, SCENE_ROLE_BATCH_SIZE):
+        try:
+            raw = llm_json(llm, batch_scene_role_prompt(language, character["character_name"], group), max_tokens=1400)
+            raw_cards = raw.get("scene_cards", []) or []
+        except Exception as exc:
+            print(
+                json.dumps(
+                    {
+                        "stage": "role_scene_batch_failed",
+                        "character": character["character_name"],
+                        "scene_ids": [scene.scene_id for scene in group],
+                        "error": f"{type(exc).__name__}: {exc}",
+                    },
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
+            raw_cards = []
         for scene in group:
             matched = None
             for item in raw_cards:
                 if clean_text(item.get("scene_id")) == scene.scene_id:
                     matched = item
                     break
-            if matched is None:
-                matched = {"scene_id": scene.scene_id, "scene_role": "absent", "milestone_score": 0, "milestone_reason": ""}
-            card = normalize_scene_role_card(matched, character["character_name"], scene_map[scene.scene_id])
             score = alias_match_score(scene, aliases, scene_speaker_names(scene))
+            if matched is None:
+                try:
+                    single_raw = llm_json(llm, scene_role_prompt(language, character["character_name"], scene), max_tokens=700)
+                    matched = dict(single_raw)
+                    matched["scene_id"] = scene.scene_id
+                except Exception as exc:
+                    print(
+                        json.dumps(
+                            {
+                                "stage": "role_scene_single_failed",
+                                "character": character["character_name"],
+                                "scene_id": scene.scene_id,
+                                "scene_order": scene.scene_order,
+                                "error": f"{type(exc).__name__}: {exc}",
+                            },
+                            ensure_ascii=False,
+                        ),
+                        flush=True,
+                    )
+                    matched = {"scene_id": scene.scene_id, "scene_role": "absent", "milestone_score": 0, "milestone_reason": ""}
+            card = normalize_scene_role_card(matched, character["character_name"], scene_map[scene.scene_id])
             if card["scene_role"] == "absent" and card["milestone_score"] == 0 and score >= SHORTLIST_STRONG_HIT:
-                card["scene_role"] = "indirect"
-                card["milestone_score"] = 1
-                card["milestone_reason"] = (
-                    "recall-first retention from strong alias or speaker evidence"
-                    if language == "en"
-                    else "基于强别名或说话人证据的 recall-first 保留"
-                )
+                card = deterministic_scene_role_card(character["character_name"], aliases, scene, language, score)
             if card["scene_role"] != "absent" or card["milestone_score"] > 0:
                 cards.append(card)
                 seen_scene_ids.add(card["scene_id"])
@@ -461,24 +640,33 @@ def build_role_scene_cards(llm: LLMClient, scenes: Sequence[SceneRecord], charac
         if scene.scene_id in seen_scene_ids:
             continue
         score = alias_match_score(scene, aliases, scene_speaker_names(scene))
-        if score >= 8:
-            cards.append({
-                "character_name": character["character_name"],
-                "scene_id": scene.scene_id,
-                "scene_order": scene.scene_order,
-                "scene_title": scene.scene_title,
-                "scene_role": "active",
-                "role_in_scene": "",
-                "external_change": None,
-                "relation_shift": None,
-                "goal_shift": None,
-                "state_pressure": None,
-                "mission_relevance": None,
-                "milestone_score": 1,
-                "milestone_reason": "deterministic retention from strong alias evidence" if language == "en" else "基于强别名证据的确定性保留",
-                "evidence_quotes": [],
-            })
+        if score >= SHORTLIST_STRONG_HIT:
+            cards.append(deterministic_scene_role_card(character["character_name"], aliases, scene, language, score))
     cards = sorted(cards, key=lambda x: x["scene_order"])
+    if not cards and shortlisted:
+        rescue_rows = sorted(
+            [
+                (alias_match_score(scene, aliases, scene_speaker_names(scene)), scene.scene_order, scene)
+                for scene in shortlisted
+            ],
+            key=lambda x: (-x[0], x[1]),
+        )
+        for score, _, scene in rescue_rows[: min(12, len(rescue_rows))]:
+            if score <= 0:
+                continue
+            cards.append(deterministic_scene_role_card(character["character_name"], aliases, scene, language, score))
+        cards = sorted(cards, key=lambda x: x["scene_order"])
+        print(
+            json.dumps(
+                {
+                    "stage": "role_scene_empty_rescued",
+                    "character": character["character_name"],
+                    "rescued_count": len(cards),
+                },
+                ensure_ascii=False,
+            ),
+            flush=True,
+        )
     for idx, card in enumerate(cards):
         if int(card.get("milestone_score", 0) or 0) >= 2:
             continue
@@ -517,6 +705,45 @@ def summarize_segment_prompt(language: str, character_name: str, bucket: str, ca
     return prompt_messages(system, user)
 
 
+def deterministic_segment_summary(language: str, character_name: str, bucket: str, rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    scene_orders = [int(row.get("scene_order", 0) or 0) for row in rows]
+    start_order = min(scene_orders) if scene_orders else 0
+    end_order = max(scene_orders) if scene_orders else 0
+    aspect_candidates = [
+        ("relation", sum(1 for row in rows if clean_text(row.get("relation_shift")))),
+        ("goal", sum(1 for row in rows if clean_text(row.get("goal_shift")))),
+        ("external", sum(1 for row in rows if clean_text(row.get("external_change")))),
+        ("pressure", sum(1 for row in rows if clean_text(row.get("state_pressure")))),
+        ("mission", sum(1 for row in rows if clean_text(row.get("mission_relevance")))),
+    ]
+    dominant_aspect = max(aspect_candidates, key=lambda item: item[1])[0]
+    representative = sorted(
+        rows,
+        key=lambda row: (int(row.get("milestone_score", 0) or 0), -int(row.get("scene_order", 0) or 0)),
+        reverse=True,
+    )[:2]
+    evidence_bits: List[str] = []
+    for row in representative:
+        for key in ("external_change", "relation_shift", "goal_shift", "state_pressure", "mission_relevance", "milestone_reason", "role_in_scene"):
+            value = clean_text(row.get(key))
+            if value and value not in evidence_bits:
+                evidence_bits.append(value)
+                break
+    joined = " / ".join(evidence_bits[:2])
+    if language == "zh":
+        summary = f"{character_name}在{bucket}阶段主要活动于第{start_order}-{end_order}场，叙事重点偏向{dominant_aspect}变化。"
+        if joined:
+            summary += f" 代表性线索包括：{joined}。"
+    else:
+        summary = f"{character_name}'s {bucket} stretch runs mainly across scenes {start_order}-{end_order}, with the main emphasis on {dominant_aspect} change."
+        if joined:
+            summary += f" Representative signals: {joined}."
+    return {
+        "segment_summary": summary,
+        "dominant_aspect": dominant_aspect,
+    }
+
+
 def build_segments(llm: LLMClient, language: str, character_name: str, cards: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not cards:
         return []
@@ -529,7 +756,22 @@ def build_segments(llm: LLMClient, language: str, character_name: str, cards: Se
         rows = sorted(by_bucket.get(bucket, []), key=lambda x: x["scene_order"])
         if not rows:
             continue
-        raw = llm_json(llm, summarize_segment_prompt(language, character_name, bucket, rows[:10]), max_tokens=500)
+        try:
+            raw = llm_json(llm, summarize_segment_prompt(language, character_name, bucket, rows[:10]), max_tokens=500)
+        except Exception as exc:
+            print(
+                json.dumps(
+                    {
+                        "stage": "segment_summary_fallback",
+                        "character": character_name,
+                        "bucket": bucket,
+                        "error": f"{type(exc).__name__}: {exc}",
+                    },
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
+            raw = deterministic_segment_summary(language, character_name, bucket, rows)
         segments.append({
             "bucket": bucket,
             "scene_count": len(rows),
@@ -895,12 +1137,60 @@ def node_render_prompt(language: str, character_name: str, card: Dict[str, Any],
     return prompt_messages(system, user)
 
 
+def deterministic_node_render(language: str, character_name: str, card: Dict[str, Any], scene: SceneRecord) -> Dict[str, Any]:
+    role_in_context = (
+        clean_text(card.get("role_in_scene"))
+        or (
+            f"{character_name} is materially present in this scene."
+            if language == "en"
+            else f"{character_name}在这场戏中有实质性参与。"
+        )
+    )
+    salient_development = (
+        clean_text(card.get("external_change"))
+        or clean_text(card.get("goal_shift"))
+        or clean_text(card.get("relation_shift"))
+        or clean_text(card.get("state_pressure"))
+        or clean_text(card.get("mission_relevance"))
+        or clean_text(card.get("milestone_reason"))
+        or (
+            f"{character_name}'s trajectory is visibly advanced in this scene."
+            if language == "en"
+            else f"{character_name}的叙事轨迹在这场戏中得到推进。"
+        )
+    )
+    return {
+        "role_in_context": role_in_context,
+        "salient_development": salient_development,
+        "goal_state": clean_text(card.get("goal_shift")) or None,
+        "resulting_state": clean_text(card.get("external_change")) or None,
+        "unresolved_issue": clean_text(card.get("state_pressure")) or None,
+        "evidence_quotes": list(card.get("evidence_quotes") or [])[:3],
+    }
+
+
 def render_timeline_nodes(llm: LLMClient, language: str, character: Dict[str, Any], milestones: Sequence[Dict[str, Any]], scenes: Sequence[SceneRecord]) -> Tuple[str, List[Dict[str, Any]]]:
     scene_map = {s.scene_id: s for s in scenes}
     nodes = []
     for idx, card in enumerate(milestones, start=1):
         scene = scene_map[str(card["scene_id"])]
-        raw = llm_json(llm, node_render_prompt(language, character["character_name"], card, scene), max_tokens=900)
+        try:
+            raw = llm_json(llm, node_render_prompt(language, character["character_name"], card, scene), max_tokens=900)
+        except Exception as exc:
+            print(
+                json.dumps(
+                    {
+                        "stage": "timeline_node_fallback",
+                        "character": character["character_name"],
+                        "scene_id": str(card.get("scene_id")),
+                        "scene_order": int(card.get("scene_order", 0) or 0),
+                        "error": f"{type(exc).__name__}: {exc}",
+                    },
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
+            raw = deterministic_node_render(language, character["character_name"], card, scene)
         evidence_quotes = []
         for quote in raw.get("evidence_quotes", []) or []:
             quote = clean_text(quote)
@@ -992,7 +1282,7 @@ def run_workflow_v65(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
 
     for character in selected_characters:
         print(json.dumps({"stage": "character_start", "character": character["character_name"]}, ensure_ascii=False), flush=True)
-        cards = build_role_scene_cards(llm, scenes, character, language)
+        cards = build_role_scene_cards(llm, scenes, character, language, movie_dir=movie_dir)
         role_scene_cards[character["character_name"]] = cards
         print(json.dumps({"stage": "role_scene_cards_ready", "character": character["character_name"], "scene_card_count": len(cards)}, ensure_ascii=False), flush=True)
         segments = build_segments(llm, language, character["character_name"], cards)

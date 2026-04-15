@@ -358,7 +358,7 @@ def run_workflow_v66(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
 
     for character in selected_characters:
         print(json.dumps({"stage": "character_start", "character": character["character_name"]}, ensure_ascii=False), flush=True)
-        cards = build_role_scene_cards(llm, scenes, character, language)
+        cards = build_role_scene_cards(llm, scenes, character, language, movie_dir=movie_dir)
         role_scene_cards[character["character_name"]] = cards
         print(json.dumps({"stage": "role_scene_cards_ready", "character": character["character_name"], "scene_card_count": len(cards)}, ensure_ascii=False), flush=True)
         segments = build_segments(llm, language, character["character_name"], cards)
@@ -374,6 +374,12 @@ def run_workflow_v66(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
             max_nodes=max_nodes,
             max_pairwise_checks=14,
         )
+        if not milestones and cards:
+            milestones = sorted(
+                cards,
+                key=lambda row: (milestone_priority(row)[0], -int(row.get("scene_order", 0) or 0)),
+                reverse=True,
+            )[:max_nodes]
         if milestones:
             max_scene_order = max(int(c["scene_order"]) for c in cards)
             milestones = rebalance_for_story_coverage(milestones, cards, max_nodes, max_scene_order)
@@ -403,27 +409,41 @@ def run_workflow_v66(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
             }
         )
         if nodes:
-            arc_raw = llm_json(
-                llm,
-                arc_prompt(
-                    language,
-                    character["character_name"],
-                    [
+            try:
+                arc_raw = llm_json(
+                    llm,
+                    arc_prompt(
+                        language,
+                        character["character_name"],
+                        [
+                            {
+                                "timeline_node_id": n["timeline_node_id"],
+                                "scene_id": n["scene_id"],
+                                "scene_order": n["scene_order"],
+                                "scene_title": n["scene_title"],
+                                "salient_development": n["salient_development"],
+                                "goal_state": n.get("goal_state"),
+                                "resulting_state": n.get("resulting_state"),
+                                "unresolved_issue": n.get("unresolved_issue"),
+                            }
+                            for n in nodes
+                        ],
+                    ),
+                    max_tokens=1800,
+                )
+            except Exception as exc:
+                print(
+                    json.dumps(
                         {
-                            "timeline_node_id": n["timeline_node_id"],
-                            "scene_id": n["scene_id"],
-                            "scene_order": n["scene_order"],
-                            "scene_title": n["scene_title"],
-                            "salient_development": n["salient_development"],
-                            "goal_state": n.get("goal_state"),
-                            "resulting_state": n.get("resulting_state"),
-                            "unresolved_issue": n.get("unresolved_issue"),
-                        }
-                        for n in nodes
-                    ],
-                ),
-                max_tokens=1800,
-            )
+                            "stage": "arc_generation_failed",
+                            "character": character["character_name"],
+                            "error": f"{type(exc).__name__}: {exc}",
+                        },
+                        ensure_ascii=False,
+                    ),
+                    flush=True,
+                )
+                arc_raw = {"arcs": []}
             node_id_to_scene_id = {n["timeline_node_id"]: n["scene_id"] for n in nodes}
             for item in arc_raw.get("arcs", []) or []:
                 linked_ids = [clean_text(x) for x in (item.get("linked_timeline_node_ids") or []) if clean_text(x) in node_id_to_scene_id]
@@ -484,18 +504,28 @@ def discover_movie_dirs(benchmark_root: Path, languages: Sequence[str]) -> List[
     return dirs
 
 
-def already_done(out_dir: Path) -> bool:
-    return (
+def already_done(out_dir: Path, evaluate: bool) -> bool:
+    has_build = (
         (out_dir / "pred_task_1_character_timelines.json").exists()
         and (out_dir / "pred_task_1_cross_scene_arcs.json").exists()
-        and (out_dir / "eval_v3.json").exists()
     )
+    if not has_build:
+        return False
+    if not evaluate:
+        return True
+    return (out_dir / "eval_v3.json").exists()
 
 
-def run_one_movie(movie_dir: Path, output_root: Path, overwrite: bool) -> Dict[str, object]:
+def run_one_movie(
+    movie_dir: Path,
+    output_root: Path,
+    overwrite: bool,
+    evaluate: bool,
+    timeout_sec: int,
+) -> Dict[str, object]:
     out_dir = output_root / movie_dir.name
     out_dir.mkdir(parents=True, exist_ok=True)
-    if already_done(out_dir) and not overwrite:
+    if already_done(out_dir, evaluate=evaluate) and not overwrite:
         eval_path = out_dir / "eval_v3.json"
         eval_data = json.loads(eval_path.read_text(encoding="utf-8")) if eval_path.exists() else {}
         return {
@@ -513,22 +543,48 @@ def run_one_movie(movie_dir: Path, output_root: Path, overwrite: bool) -> Dict[s
         str(movie_dir),
         "--output-dir",
         str(out_dir),
-        "--evaluate",
     ]
+    if evaluate:
+        cmd.append("--evaluate")
     started = time.time()
-    proc = subprocess.run(cmd, capture_output=True, text=True)
+    error_log_path = out_dir / "run_error_details.json"
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout_sec)
+        returncode = proc.returncode
+        stdout_tail = "\n".join(proc.stdout.strip().splitlines()[-10:]) if proc.stdout.strip() else ""
+        stderr_tail = "\n".join(proc.stderr.strip().splitlines()[-14:]) if proc.stderr.strip() else ""
+        status = "ok" if returncode == 0 else "failed"
+    except subprocess.TimeoutExpired as exc:
+        proc = exc
+        returncode = None
+        stdout_text = exc.stdout or ""
+        stderr_text = exc.stderr or ""
+        stdout_tail = "\n".join(str(stdout_text).strip().splitlines()[-10:]) if str(stdout_text).strip() else ""
+        stderr_tail = "\n".join(str(stderr_text).strip().splitlines()[-14:]) if str(stderr_text).strip() else ""
+        build_ready = already_done(out_dir, evaluate=evaluate)
+        status = "ok_timeout" if build_ready else "timeout"
     elapsed = round(time.time() - started, 2)
     eval_path = out_dir / "eval_v3.json"
     eval_data = json.loads(eval_path.read_text(encoding="utf-8")) if eval_path.exists() else {}
+    if status in {"failed", "timeout"}:
+        error_payload = {
+            "movie_id": movie_dir.name,
+            "status": status,
+            "elapsed_sec": elapsed,
+            "returncode": returncode,
+            "stdout_tail": stdout_tail,
+            "stderr_tail": stderr_tail,
+        }
+        error_log_path.write_text(json.dumps(error_payload, ensure_ascii=False, indent=2), encoding="utf-8")
     return {
         "movie_id": movie_dir.name,
         "language": "zh" if movie_dir.parent.name == "Chinese" else "en",
-        "status": "ok" if proc.returncode == 0 else "failed",
-        "returncode": proc.returncode,
+        "status": status,
+        "returncode": returncode,
         "elapsed_sec": elapsed,
         "output_dir": str(out_dir),
-        "stdout_tail": "\n".join(proc.stdout.strip().splitlines()[-10:]) if proc.stdout.strip() else "",
-        "stderr_tail": "\n".join(proc.stderr.strip().splitlines()[-14:]) if proc.stderr.strip() else "",
+        "stdout_tail": stdout_tail,
+        "stderr_tail": stderr_tail,
         "eval": eval_data,
     }
 
@@ -551,7 +607,7 @@ def summarize_batch(results: Sequence[Dict[str, object]]) -> Dict[str, object]:
     def group_rows(lang: str) -> List[Dict[str, float]]:
         rows: List[Dict[str, float]] = []
         for item in results:
-            if item.get("status") not in {"ok", "skipped"}:
+            if item.get("status") not in {"ok", "ok_timeout", "skipped"}:
                 continue
             if item.get("language") != lang:
                 continue
@@ -595,7 +651,10 @@ def run_batch(args: argparse.Namespace) -> None:
     results: List[Dict[str, object]] = []
     print(json.dumps({"stage": "batch_start", "movie_count": len(movie_dirs), "max_workers": args.max_workers}, ensure_ascii=False), flush=True)
     with ThreadPoolExecutor(max_workers=max(1, args.max_workers)) as executor:
-        future_map = {executor.submit(run_one_movie, movie_dir, output_root, args.overwrite): movie_dir.name for movie_dir in movie_dirs}
+        future_map = {
+            executor.submit(run_one_movie, movie_dir, output_root, args.overwrite, args.evaluate, args.per_movie_timeout_sec): movie_dir.name
+            for movie_dir in movie_dirs
+        }
         pending = set(future_map.keys())
         while pending:
             done, pending = wait(pending, return_when=FIRST_COMPLETED)
@@ -609,7 +668,7 @@ def run_batch(args: argparse.Namespace) -> None:
                     "elapsed_sec": result.get("elapsed_sec"),
                 }
                 eval_data = result.get("eval")
-                if isinstance(eval_data, dict) and eval_data:
+                if args.evaluate and isinstance(eval_data, dict) and eval_data:
                     brief["overall"] = eval_data.get("overall")
                     brief["node_grounding_f1"] = eval_data.get("node_grounding_f1")
                 print(json.dumps(brief, ensure_ascii=False), flush=True)
@@ -617,8 +676,10 @@ def run_batch(args: argparse.Namespace) -> None:
     report = {
         "movie_count": len(results),
         "ok_count": sum(1 for r in results if r.get("status") == "ok"),
+        "ok_timeout_count": sum(1 for r in results if r.get("status") == "ok_timeout"),
         "skipped_count": sum(1 for r in results if r.get("status") == "skipped"),
         "failed_count": sum(1 for r in results if r.get("status") == "failed"),
+        "timeout_count": sum(1 for r in results if r.get("status") == "timeout"),
         "benchmark_root": str(benchmark_root),
         "output_root": str(output_root),
         "summary": summarize_batch(results),
@@ -644,7 +705,9 @@ def main() -> None:
     batch_parser.add_argument("--output-root", required=True)
     batch_parser.add_argument("--report-path", required=True)
     batch_parser.add_argument("--max-workers", type=int, default=4)
+    batch_parser.add_argument("--per-movie-timeout-sec", type=int, default=5400)
     batch_parser.add_argument("--overwrite", action="store_true")
+    batch_parser.add_argument("--evaluate", action="store_true")
 
     args = parser.parse_args()
     if args.command == "one":

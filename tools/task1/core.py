@@ -7,6 +7,8 @@ import argparse
 import hashlib
 import json
 import math
+import multiprocessing as mp
+import os
 import re
 import time
 from collections import Counter, defaultdict
@@ -26,9 +28,15 @@ except Exception:
 DEFAULT_LLM_MODEL = "Qwen3-235B"
 DEFAULT_LLM_BASE_URL = "http://localhost:8002/v1"
 DEFAULT_LLM_API_KEY = "token-abc123"
+DEFAULT_LLM_FALLBACK_BASE_URL = "http://localhost:8001/v1"
+DEFAULT_MIMO_MODEL = os.getenv("MIMO_MODEL", "mimo-v2-pro")
+DEFAULT_MIMO_BASE_URL = os.getenv("MIMO_BASE_URL", "https://api.xiaomimimo.com/v1")
+DEFAULT_MIMO_API_KEY = os.getenv("MIMO_API_KEY", "")
 DEFAULT_EMBED_MODEL = "bge-m3"
 DEFAULT_EMBED_BASE_URL = "http://localhost:8080/v1"
 DEFAULT_EMBED_API_KEY = "not-needed"
+DEFAULT_LLM_TIMEOUT_SEC = 45
+DEFAULT_EMBED_TIMEOUT_SEC = 180
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9_]+|[\u4e00-\u9fff]")
 EN_TOKEN_RE = re.compile(r"[a-z0-9']+")
@@ -62,10 +70,43 @@ class SceneHit:
     source: str
 
 
+def _route_chat_completion(
+    base_url: str,
+    api_key: str,
+    model_name: str,
+    messages: List[Dict[str, str]],
+    max_tokens: int,
+    temperature: float,
+    timeout_sec: int,
+    queue: Any,
+) -> None:
+    try:
+        client = OpenAI(
+            base_url=base_url,
+            api_key=api_key,
+            timeout=timeout_sec,
+            max_retries=0,
+        )
+        resp = client.chat.completions.create(
+            model=model_name,
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+        queue.put({"ok": True, "content": (resp.choices[0].message.content or "").strip()})
+    except Exception as exc:
+        queue.put({"ok": False, "error": f"{type(exc).__name__}: {exc}"})
+
+
 class OpenAICompatEmbedder:
     def __init__(self, model_name: str, base_url: str, api_key: str):
         self.model_name = model_name
-        self.client = OpenAI(base_url=base_url, api_key=api_key)
+        self.client = OpenAI(
+            base_url=base_url,
+            api_key=api_key,
+            timeout=DEFAULT_EMBED_TIMEOUT_SEC,
+            max_retries=2,
+        )
         lower = model_name.lower()
         dual = any(x in lower for x in ("bge", "gte", "m3"))
         self.doc_prefix = "passage: " if dual else ""
@@ -97,16 +138,74 @@ class OpenAICompatEmbedder:
 class LLMClient:
     def __init__(self, model_name: str, base_url: str, api_key: str):
         self.model_name = model_name
-        self.client = OpenAI(base_url=base_url, api_key=api_key)
+        self.routes: List[Tuple[str, str, str]] = []
+
+        if DEFAULT_MIMO_API_KEY:
+            self.routes.append((DEFAULT_MIMO_MODEL, DEFAULT_MIMO_BASE_URL, DEFAULT_MIMO_API_KEY))
+
+        self.routes.append((model_name, base_url, api_key))
+
+        if base_url != DEFAULT_LLM_FALLBACK_BASE_URL:
+            self.routes.append((model_name, DEFAULT_LLM_FALLBACK_BASE_URL, api_key))
 
     def run(self, messages: List[Dict[str, str]], max_tokens: int, temperature: float = 0.0) -> str:
-        resp = self.client.chat.completions.create(
-            model=self.model_name,
-            messages=messages,
-            max_tokens=max_tokens,
-            temperature=temperature,
-        )
-        return (resp.choices[0].message.content or "").strip()
+        last_error: Optional[Exception] = None
+        ctx = mp.get_context("fork")
+        for route_model, route_base_url, route_api_key in self.routes:
+            queue = ctx.Queue()
+            proc = ctx.Process(
+                target=_route_chat_completion,
+                args=(
+                    route_base_url,
+                    route_api_key,
+                    route_model,
+                    messages,
+                    max_tokens,
+                    temperature,
+                    DEFAULT_LLM_TIMEOUT_SEC,
+                    queue,
+                ),
+            )
+            proc.daemon = True
+            try:
+                proc.start()
+                proc.join(DEFAULT_LLM_TIMEOUT_SEC + 2)
+                if proc.is_alive():
+                    proc.kill()
+                    proc.join(2)
+                    raise TimeoutError(f"hard timeout after {DEFAULT_LLM_TIMEOUT_SEC}s")
+                if queue.empty():
+                    raise RuntimeError("route subprocess exited without result")
+                result = queue.get()
+                if result.get("ok"):
+                    content = str(result.get("content") or "").strip()
+                    if not content:
+                        raise RuntimeError("empty response")
+                    return content
+                raise RuntimeError(str(result.get("error") or "unknown route error"))
+            except Exception as exc:
+                last_error = exc
+                print(
+                    json.dumps(
+                        {
+                            "stage": "llm_route_failed",
+                            "model": route_model,
+                            "base_url": route_base_url,
+                            "error": f"{type(exc).__name__}: {exc}",
+                        },
+                        ensure_ascii=False,
+                    ),
+                    flush=True,
+                )
+                continue
+            finally:
+                try:
+                    if proc.is_alive():
+                        proc.kill()
+                        proc.join(2)
+                except Exception:
+                    pass
+        raise RuntimeError(f"All LLM routes failed: {last_error}")
 
 
 class HybridSceneRetriever:
@@ -419,7 +518,14 @@ def llm_json(llm: LLMClient, messages: List[Dict[str, str]], max_tokens: int, te
     last_error: Optional[Exception] = None
     raw = ""
     for _ in range(retries + 1):
-        raw = llm.run(messages, max_tokens=max_tokens, temperature=temperature)
+        try:
+            raw = llm.run(messages, max_tokens=max_tokens, temperature=temperature)
+        except Exception as exc:
+            last_error = exc
+            continue
+        if not clean_text(raw):
+            last_error = ValueError("Empty LLM response")
+            continue
         try:
             return extract_json(raw)
         except Exception as exc:
@@ -431,12 +537,15 @@ def llm_json(llm: LLMClient, messages: List[Dict[str, str]], max_tokens: int, te
                     return repaired_obj
             except Exception as repair_exc:
                 last_error = repair_exc
-        try:
-            repaired = llm.run(repair_json_prompt(raw), max_tokens=min(max_tokens, 2200), temperature=0.0)
-            return extract_json(repaired)
-        except Exception as repair_exc:
-            last_error = repair_exc
-            continue
+        if clean_text(raw):
+            try:
+                repaired = llm.run(repair_json_prompt(raw), max_tokens=min(max_tokens, 2200), temperature=0.0)
+                if clean_text(repaired):
+                    return extract_json(repaired)
+                last_error = ValueError("Empty repair response")
+            except Exception as repair_exc:
+                last_error = repair_exc
+                continue
     raise ValueError(f"Failed to parse JSON after retries: {last_error}; raw_excerpt={raw[:400]!r}")
 
 def selection_prompt(language: str, movie_id: str, candidates: Sequence[Dict[str, Any]], max_characters: int) -> List[Dict[str, str]]:
