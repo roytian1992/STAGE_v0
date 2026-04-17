@@ -543,15 +543,19 @@ def apply_role_name_override(movie_id: str, name: str) -> str:
     return clean_text(override_map.get(base, base))
 
 
-def build_target_aliases(name: str) -> List[str]:
+def build_target_aliases(name: str, movie_id: Optional[str] = None) -> List[str]:
     base = normalize_target_role_name(name)
-    aliases = [base]
+    aliases: List[str] = []
+    if movie_id:
+        override = apply_role_name_override(movie_id, base)
+        if override and override != base and override not in aliases:
+            aliases.append(override)
     if " " in base:
         first = clean_text(base.split()[0])
-        if first and first not in aliases:
+        if first and first != base and first not in aliases:
             aliases.append(first)
     compact = clean_text(name)
-    if compact and compact not in aliases:
+    if compact and compact != base and compact not in aliases:
         aliases.append(compact)
     return aliases
 
@@ -561,11 +565,13 @@ def load_target_characters(movie_dir: Path, explicit_file: Optional[str] = None)
     paths = []
     if explicit_file:
         paths.append(Path(explicit_file))
+    # Task 1 rebuild should follow the released Task 1 focal-role list first.
+    # Task 3 files may legitimately contain a smaller role set after benchmark cleanup.
     paths.extend([
+        movie_dir / 'task_1_character_timelines.json',
+        movie_dir / 'gold_character_timelines_v1.json',
         movie_dir / 'task_3_in_script_character_role_play_single_turn.json',
         movie_dir / 'task_3_in_script_character_role_play_multi_turn.json',
-        movie_dir / 'gold_character_timelines_v1.json',
-        movie_dir / 'task_1_character_timelines.json',
     ])
     seen = set()
     for path in paths:
@@ -582,7 +588,7 @@ def load_target_characters(movie_dir: Path, explicit_file: Optional[str] = None)
             elif isinstance(data.get('focal_character_timelines'), list):
                 roles = [item.get('character_name') for item in data.get('focal_character_timelines', []) if item.get('character_name')]
         for role in roles:
-            base = apply_role_name_override(movie_dir.name, str(role))
+            base = normalize_target_role_name(str(role))
             if not base:
                 continue
             key = normalize_name(base)
@@ -591,7 +597,7 @@ def load_target_characters(movie_dir: Path, explicit_file: Optional[str] = None)
             seen.add(key)
             candidates.append({
                 'character_name': base,
-                'aliases': build_target_aliases(str(role)),
+                'aliases': build_target_aliases(str(role), movie_id=movie_dir.name),
                 'selection_reason': 'provided externally via benchmark focal-role list',
             })
         if candidates:
