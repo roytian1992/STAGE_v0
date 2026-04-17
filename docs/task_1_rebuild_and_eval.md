@@ -141,9 +141,12 @@ Metric interpretation:
 - `fact_f1`
   - harmonic mean of macro recall and macro precision
 - `pred_transition_coherence`
-  - coherence of adjacent predicted node pairs, judged with node text and script scene evidence
+  - compatibility of adjacent predicted node pairs, judged with node text and script scene evidence
+  - this metric is now intentionally permissive: it does not require direct causality or a single uninterrupted subthread
+  - output should stay high as long as the later node can plausibly follow the earlier node without contradiction
 - `important_pred_transition_coherence`
   - the same transition judgment but restricted to a small heuristic subset of salient adjacent pairs per character
+  - important-pair selection now prefers local anchored pairs and avoids same-scene or long-gap pairs unless strongly justified
 - `arc_narrative_aspect_correctness`
   - whether the predicted arc captures the same long-range narrative aspect as the gold arc
 
@@ -158,7 +161,8 @@ Secondary and diagnostic metrics retained in `eval_v3.json`:
 Human validation remains part of the research process. These metrics are intended to be useful and inspectable, not perfect. In particular:
 
 - macro fact metrics can vary with fact granularity and alias handling
-- transition coherence can be harsh when adjacent predicted nodes span a coarse latent gap
-- important-pair transition coherence is useful for audit, but may be less stable than the raw transition metric
+- older transition coherence settings were too harsh on thread shifts, omitted intermediate events, and long-gap adjacent pairs
+- the current transition metric was revised on 2026-04-17 to be compatibility-based and more local in its important-pair selection
+- important-pair transition coherence remains an audit-focused metric, but it is now materially more stable and interpretable than the earlier version
 
 The current Task 1 pipeline is recall-first and aims to preserve broad story coverage for the benchmark focal roles while keeping node text grounded in the original script.

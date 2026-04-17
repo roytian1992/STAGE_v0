@@ -1169,6 +1169,90 @@ def deterministic_node_render(language: str, character_name: str, card: Dict[str
     }
 
 
+def timeline_summary_prompt(language: str, character_name: str, nodes: Sequence[Dict[str, Any]]) -> List[Dict[str, str]]:
+    rows = [
+        {
+            "scene_order": int(node.get("scene_order", 0) or 0),
+            "scene_title": clean_text(node.get("scene_title")),
+            "salient_development": clean_text(node.get("salient_development")),
+            "goal_state": clean_text(node.get("goal_state")) or None,
+            "resulting_state": clean_text(node.get("resulting_state")) or None,
+            "unresolved_issue": clean_text(node.get("unresolved_issue")) or None,
+        }
+        for node in list(nodes)[:24]
+    ]
+    if language == "zh":
+        system = "你在为角色时间线撰写高质量 summary。只输出 JSON。"
+        user = (
+            f"角色: {character_name}\n"
+            "根据给定 timeline nodes，写 2 句中文总结。\n"
+            "要求：概括角色的起点、关键转折、当前落点或持续压力；避免模板句；不要机械列场次；语言具体、克制、像叙事分析；总长度尽量控制在 60-110 字。\n"
+            "输出格式: {\"timeline_summary\":\"...\"}\n"
+            f"timeline_nodes:\n{json.dumps(rows, ensure_ascii=False, indent=2)}"
+        )
+    else:
+        system = "You write high-quality focal-character timeline summaries. Output JSON only."
+        user = (
+            f"Character: {character_name}\n"
+            "Write exactly 2 sentences from the supplied timeline nodes.\n"
+            "Requirements: capture the character's starting position, key turns, and current endpoint or ongoing pressure; avoid template phrasing; do not mechanically list scenes; write like concise narrative analysis; keep the total length roughly 45-90 words.\n"
+            "Return format: {\"timeline_summary\":\"...\"}\n"
+            f"Timeline nodes:\n{json.dumps(rows, ensure_ascii=False, indent=2)}"
+        )
+    return prompt_messages(system, user)
+
+
+def fallback_timeline_summary(language: str, character_name: str, nodes: Sequence[Dict[str, Any]]) -> str:
+    if not nodes:
+        return (
+            f"{character_name}没有形成可稳定概括的时间线。"
+            if language == "zh"
+            else f"{character_name} does not yet have a stable timeline summary."
+        )
+    first = nodes[0]
+    last = nodes[-1]
+    middle = nodes[len(nodes) // 2] if len(nodes) >= 3 else None
+    first_dev = clean_text(first.get("salient_development"))
+    last_dev = clean_text(last.get("salient_development"))
+    middle_dev = clean_text(middle.get("salient_development")) if middle else ""
+    if language == "zh":
+        parts = [f"{character_name}的时间线起于{first_dev or '较早阶段的关键处境'}。"]
+        if middle_dev:
+            parts.append(f"中段的重要转折在于{middle_dev}。")
+        parts.append(f"到后段，叙事重心落在{last_dev or '其最终状态变化'}上。")
+        return "".join(parts)
+    parts = [f"{character_name}'s timeline begins with {first_dev or 'an early defining pressure'}."]
+    if middle_dev:
+        parts.append(f"A central turn comes when {middle_dev}.")
+    fallback_last = last_dev or "the character's resulting state change"
+    parts.append(f"By the later stretch, the arc is anchored by {fallback_last}.")
+    return " ".join(parts)
+
+
+def build_timeline_summary(llm: LLMClient, language: str, character_name: str, nodes: Sequence[Dict[str, Any]]) -> str:
+    if not nodes:
+        return fallback_timeline_summary(language, character_name, nodes)
+    try:
+        raw = llm_json(llm, timeline_summary_prompt(language, character_name, nodes), max_tokens=500)
+        summary = clean_text(raw.get("timeline_summary"))
+    except Exception as exc:
+        print(
+            json.dumps(
+                {
+                    "stage": "timeline_summary_fallback",
+                    "character": character_name,
+                    "error": f"{type(exc).__name__}: {exc}",
+                },
+                ensure_ascii=False,
+            ),
+            flush=True,
+        )
+        summary = ""
+    if summary and not summary.startswith("Milestone-based timeline for ") and not summary.startswith("基于 milestone 的"):
+        return summary
+    return fallback_timeline_summary(language, character_name, nodes)
+
+
 def render_timeline_nodes(llm: LLMClient, language: str, character: Dict[str, Any], milestones: Sequence[Dict[str, Any]], scenes: Sequence[SceneRecord]) -> Tuple[str, List[Dict[str, Any]]]:
     scene_map = {s.scene_id: s for s in scenes}
     nodes = []
@@ -1220,9 +1304,7 @@ def render_timeline_nodes(llm: LLMClient, language: str, character: Dict[str, An
                 "persona_anchor": "",
             },
         })
-    summary = f"Milestone-based timeline for {character['character_name']} with {len(nodes)} grounded nodes."
-    if language == "zh":
-        summary = f"基于 milestone 的 {character['character_name']} 时间线，共 {len(nodes)} 个节点。"
+    summary = build_timeline_summary(llm, language, character["character_name"], nodes)
     return summary, nodes
 
 
