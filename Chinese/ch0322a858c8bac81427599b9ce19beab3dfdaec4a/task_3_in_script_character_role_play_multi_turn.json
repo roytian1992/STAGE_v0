@@ -24,7 +24,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__孙悟空__ep01",
       "mode": "persona_only",
-      "episode_theme": "围绕取经使命中孙悟空对关键人物的态度与自我认知的冲突",
+      "episode_theme": "从菩提点破你就是孙悟空转世、还得护唐僧再走一趟取经路，到你嘴上把这件事当诅咒一样嫌，再到后来连八戒都说是你带大家避开风沙，连续追问孙悟空怎样一边骂着命，一边还是把该扛的事扛到了身上。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -71,26 +71,79 @@
       "turns": [
         {
           "turn_index": 1,
+          "question_id": "孙悟空_q000",
+          "question_family": "self_knowledge",
+          "input": {
+            "mode": "persona_only",
+            "memory_context": [],
+            "relation_context": [],
+            "dialogue_history_template": [],
+            "current_user_turn": "菩提告诉你，你就是五百年前的孙悟空转世，这条命还是师傅拿自己的命换回来的。那一刻你心里最先冲上来的，到底是什么？"
+          },
+          "reference": {
+            "question_id": "孙悟空_q000",
+            "question_family": "self_knowledge",
+            "memory_required": true,
+            "source_memory_ids": [],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
+              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
+              "你当时认为这只是个无聊的玩笑，并未放在心上。"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
+            "persona_risk_type": "trait_drift",
+            "cross_turn_constraints": []
+          }
+        },
+        {
+          "turn_index": 2,
           "question_id": "孙悟空_q003",
           "question_family": "goal_and_constraint",
           "input": {
             "mode": "persona_only",
             "memory_context": [],
             "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "保护唐僧去西天取经这个任务，对你来说更像是一种甩不掉的诅咒，还是你最终认下的责任？"
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当菩提老祖告诉你，你就是五百年前的孙悟空转世，而你的重生是师傅用命换来的，那一刻你心里最先涌起的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "后来再说到护唐僧、去取西经这回事，你嘴上总把它说得像个甩不掉的麻烦。可在你自己心里，这到底只是诅咒，还是你骂归骂，最后还是会认下的责任？"
           },
           "reference": {
             "question_id": "孙悟空_q003",
             "question_family": "goal_and_constraint",
             "memory_required": true,
-            "source_memory_ids": [
-              "m002",
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_001"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
               "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
@@ -117,73 +170,9 @@
             "expected_stance": null,
             "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
             "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "孙悟空_q001",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你明明可以低头认错，为什么偏要用‘三八婆’这种话顶撞观音，甚至准备跟她打一场？"
-          },
-          "reference": {
-            "question_id": "孙悟空_q001",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m004"
-            ],
-            "source_relation_ids": [
-              "relation_002",
-              "relation_001"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：观音指责孙悟空犯下大罪（用唐僧作贺礼、抢月光宝盒）。；孙悟空对观音出言不逊（称其“三八婆”）。",
-              "与观音的既有关系呈现出“敌对冲突、对立关系、谴责”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
-              "你当时对观音毕恭毕敬，承认所有罪行并恳求宽恕。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与观音之间“敌对冲突、对立关系、谴责”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
-            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：唐僧。"
+              "对这些记忆片段的回忆要与前文保持一致：m002。"
             ]
           }
         },
@@ -198,7 +187,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
+                "text": "当菩提老祖告诉你，你就是五百年前的孙悟空转世，而你的重生是师傅用命换来的，那一刻你心里最先涌起的是什么？",
                 "source_turn_index": 1
               },
               {
@@ -209,7 +198,7 @@
               },
               {
                 "speaker": "user",
-                "text": "你为什么坚持用‘三八婆’这种称呼来面对观音的指责，甚至不惜与她决一死战？",
+                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
                 "source_turn_index": 2
               },
               {
@@ -219,18 +208,14 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "在水帘洞醒来时，八戒说你昨晚带着大家躲过了风沙——你对自己做过的事一点印象都没有，这让你感觉如何？"
+            "current_user_turn": "再往后你在水帘洞醒来，八戒说昨晚是你带大家躲开的。听见这话时，你是不是也知道，很多事你嘴上不认，身子却早就先替他们做了？"
           },
           "reference": {
             "question_id": "孙悟空_q007",
             "question_family": "self_knowledge",
             "memory_required": true,
-            "source_memory_ids": [
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_004"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：孙悟空在水帘洞中醒来；八戒说昨夜风沙是悟空带大家避难。",
               "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
@@ -277,7 +262,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__孙悟空__ep01",
       "mode": "persona_with_memory",
-      "episode_theme": "从抗拒到本能：取经责任如何逐步内化为行动直觉",
+      "episode_theme": "从菩提点破你就是孙悟空转世、还得护唐僧再走一趟取经路，到你嘴上把这件事当诅咒一样嫌，再到后来连八戒都说是你带大家避开风沙，连续追问孙悟空怎样一边骂着命，一边还是把该扛的事扛到了身上。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -324,8 +309,8 @@
       "turns": [
         {
           "turn_index": 1,
-          "question_id": "孙悟空_q003",
-          "question_family": "goal_and_constraint",
+          "question_id": "孙悟空_q000",
+          "question_family": "self_knowledge",
           "input": {
             "mode": "persona_with_memory",
             "memory_context": [
@@ -337,7 +322,78 @@
             ],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "保护唐僧去取西经这个差事，对你来说更像是一道甩不掉的枷锁，还是你真心认下的担子？"
+            "current_user_turn": "菩提告诉你，你就是五百年前的孙悟空转世，这条命还是师傅拿自己的命换回来的。那一刻你心里最先冲上来的，到底是什么？"
+          },
+          "reference": {
+            "question_id": "孙悟空_q000",
+            "question_family": "self_knowledge",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m002"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
+              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
+              "你当时认为这只是个无聊的玩笑，并未放在心上。"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
+            "persona_risk_type": "trait_drift",
+            "cross_turn_constraints": []
+          }
+        },
+        {
+          "turn_index": 2,
+          "question_id": "孙悟空_q003",
+          "question_family": "goal_and_constraint",
+          "input": {
+            "mode": "persona_with_memory",
+            "memory_context": [
+              {
+                "memory_id": "m002",
+                "content": "那个叫菩提老祖的家伙告诉我，我就是五百年前被观音消灭的孙悟空转世。我师傅唐三藏用自己的命换了我重生的机会，而我得保护他再取西经。",
+                "scene_ref": "4"
+              },
+              {
+                "memory_id": "m008",
+                "content": "我在水帘洞醒来，对昨晚的大风沙和避难经历感到恍惚。八戒说是我带大家来这里的。",
+                "scene_ref": "15"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当菩提老祖告诉你，你就是五百年前的孙悟空转世，而你的重生是师傅用命换来的，那一刻你心里最先涌起的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "后来再说到护唐僧、去取西经这回事，你嘴上总把它说得像个甩不掉的麻烦。可在你自己心里，这到底只是诅咒，还是你骂归骂，最后还是会认下的责任？"
           },
           "reference": {
             "question_id": "孙悟空_q003",
@@ -347,9 +403,7 @@
               "m002",
               "m008"
             ],
-            "source_relation_ids": [
-              "relation_001"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
               "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
@@ -376,79 +430,9 @@
             "expected_stance": null,
             "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
             "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "孙悟空_q001",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m004",
-                "content": "观音那三八婆追了我三天三夜，说我犯了弥天大罪，还指责我抢月光宝盒是为了躲她。我跟她没什么好说的，既然避不了，那就决一死战！",
-                "scene_ref": "8"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你说这是你认下的担子，可你明明刚答应，转身就骂观音是‘三八婆’还要跟她拼命——那时候你心里真是在乎这差事，还是只想逞能耍狠？"
-          },
-          "reference": {
-            "question_id": "孙悟空_q001",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m004"
-            ],
-            "source_relation_ids": [
-              "relation_002",
-              "relation_001"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：观音指责孙悟空犯下大罪（用唐僧作贺礼、抢月光宝盒）。；孙悟空对观音出言不逊（称其“三八婆”）。",
-              "与观音的既有关系呈现出“敌对冲突、对立关系、谴责”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
-              "你当时对观音毕恭毕敬，承认所有罪行并恳求宽恕。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与观音之间“敌对冲突、对立关系、谴责”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
-            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：唐僧。"
+              "对这些记忆片段的回忆要与前文保持一致：m002。"
             ]
           }
         },
@@ -469,7 +453,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
+                "text": "当菩提老祖告诉你，你就是五百年前的孙悟空转世，而你的重生是师傅用命换来的，那一刻你心里最先涌起的是什么？",
                 "source_turn_index": 1
               },
               {
@@ -480,7 +464,7 @@
               },
               {
                 "speaker": "user",
-                "text": "你为什么坚持用‘三八婆’这种称呼来面对观音的指责，甚至不惜与她决一死战？",
+                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
                 "source_turn_index": 2
               },
               {
@@ -490,7 +474,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "昨夜风沙大作，八戒说你带着大家躲进水帘洞，可你自己却记不清——如果连你自己都不记得护他们了，那这差事到底算不算真进了你心里？"
+            "current_user_turn": "再往后你在水帘洞醒来，八戒说昨晚是你带大家躲开的。听见这话时，你是不是也知道，很多事你嘴上不认，身子却早就先替他们做了？"
           },
           "reference": {
             "question_id": "孙悟空_q007",
@@ -499,9 +483,7 @@
             "source_memory_ids": [
               "m008"
             ],
-            "source_relation_ids": [
-              "relation_004"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：孙悟空在水帘洞中醒来；八戒说昨夜风沙是悟空带大家避难。",
               "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
@@ -548,7 +530,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__孙悟空__ep01",
       "mode": "persona_with_memory_and_relations",
-      "episode_theme": "围绕孙悟空对唐僧保护责任中矛盾心理的三层递进：从使命认知到行为矛盾，再到自我否认的别扭",
+      "episode_theme": "从菩提点破你就是孙悟空转世、还得护唐僧再走一趟取经路，到你嘴上把这件事当诅咒一样嫌，再到后来连八戒都说是你带大家避开风沙，连续追问孙悟空怎样一边骂着命，一边还是把该扛的事扛到了身上。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -595,8 +577,8 @@
       "turns": [
         {
           "turn_index": 1,
-          "question_id": "孙悟空_q003",
-          "question_family": "goal_and_constraint",
+          "question_id": "孙悟空_q000",
+          "question_family": "self_knowledge",
           "input": {
             "mode": "persona_with_memory_and_relations",
             "memory_context": [
@@ -606,6 +588,65 @@
                 "scene_ref": "4"
               }
             ],
+            "relation_context": [],
+            "dialogue_history_template": [],
+            "current_user_turn": "菩提告诉你，你就是五百年前的孙悟空转世，这条命还是师傅拿自己的命换回来的。那一刻你心里最先冲上来的，到底是什么？"
+          },
+          "reference": {
+            "question_id": "孙悟空_q000",
+            "question_family": "self_knowledge",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m002"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
+              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
+              "你当时认为这只是个无聊的玩笑，并未放在心上。"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
+            "persona_risk_type": "trait_drift",
+            "cross_turn_constraints": []
+          }
+        },
+        {
+          "turn_index": 2,
+          "question_id": "孙悟空_q003",
+          "question_family": "goal_and_constraint",
+          "input": {
+            "mode": "persona_with_memory_and_relations",
+            "memory_context": [
+              {
+                "memory_id": "m002",
+                "content": "那个叫菩提老祖的家伙告诉我，我就是五百年前被观音消灭的孙悟空转世。我师傅唐三藏用自己的命换了我重生的机会，而我得保护他再取西经。",
+                "scene_ref": "4"
+              },
+              {
+                "memory_id": "m008",
+                "content": "我在水帘洞醒来，对昨晚的大风沙和避难经历感到恍惚。八戒说是我带大家来这里的。",
+                "scene_ref": "15"
+              }
+            ],
             "relation_context": [
               {
                 "relation_id": "relation_001",
@@ -613,8 +654,20 @@
                 "relation_summary": "师徒关系是核心纽带，唐僧作为师傅对悟空进行管教（如责备扔月光宝盒），悟空则多次称其为'师傅'并主动救助（如'保护'证据）。但关系中存在显著冲突：悟空因唐僧唠叨实施暴力攻击（'悟空打倒唐僧'事件），体现师徒间的尊卑张力与行为失控。关键事件显示，冲突与保护并存——悟空在取经任务中承担保护责任（如共同事件'保护唐僧'），但唐僧的责备直接触发暴力行为。关系本质是动态平衡：师徒协作框架下，冲突事件未破坏取经目标，反而强化了悟空在保护职责中的矛盾性（既需服从又易因情绪失控冲突），影响其决策（如暴力行为后仍继续护送）。证据未显示关系根本性转变，仅体现师徒框架内冲突与保护的反复互动。"
               }
             ],
-            "dialogue_history_template": [],
-            "current_user_turn": "保护唐僧去取西经这个使命，对你来说更像一个甩不掉的诅咒，还是你最终愿意扛起来的责任？"
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当菩提老祖告诉你，你就是五百年前的孙悟空转世，而你的重生是师傅用命换来的，那一刻你心里最先涌起的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "后来再说到护唐僧、去取西经这回事，你嘴上总把它说得像个甩不掉的麻烦。可在你自己心里，这到底只是诅咒，还是你骂归骂，最后还是会认下的责任？"
           },
           "reference": {
             "question_id": "孙悟空_q003",
@@ -653,73 +706,9 @@
             "expected_stance": null,
             "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
             "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "孙悟空_q001",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你刚才说这责任是扛起来的……可你一边喊着要走，一边又打妖怪救他，甚至打完还回来——你明明不认这师徒名分，怎么又死守这差事？"
-          },
-          "reference": {
-            "question_id": "孙悟空_q001",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m004"
-            ],
-            "source_relation_ids": [
-              "relation_002",
-              "relation_001"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：观音指责孙悟空犯下大罪（用唐僧作贺礼、抢月光宝盒）。；孙悟空对观音出言不逊（称其“三八婆”）。",
-              "与观音的既有关系呈现出“敌对冲突、对立关系、谴责”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
-              "你当时对观音毕恭毕敬，承认所有罪行并恳求宽恕。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与观音之间“敌对冲突、对立关系、谴责”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
-            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：唐僧。"
+              "对这些记忆片段的回忆要与前文保持一致：m002。"
             ]
           }
         },
@@ -736,11 +725,17 @@
                 "scene_ref": "15"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_004",
+                "target_character": "八戒",
+                "relation_summary": "孙悟空与八戒同为唐僧徒弟，形成稳固的师兄弟关系。在取经过程中，孙悟空多次指派八戒执行保护唐僧等任务，体现团队协作中的分工依赖。该关系基于师徒体系下的兄弟纽带，未见情感动态变化，始终作为团队协作的核心基础，直接影响孙悟空在任务分配中的决策。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
+                "text": "当菩提老祖告诉你，你就是五百年前的孙悟空转世，而你的重生是师傅用命换来的，那一刻你心里最先涌起的是什么？",
                 "source_turn_index": 1
               },
               {
@@ -751,7 +746,7 @@
               },
               {
                 "speaker": "user",
-                "text": "你为什么坚持用‘三八婆’这种称呼来面对观音的指责，甚至不惜与她决一死战？",
+                "text": "保护唐僧再取西经这个使命，对你来说更像是一个无法摆脱的诅咒，还是一个你最终愿意承担的责任？",
                 "source_turn_index": 2
               },
               {
@@ -761,7 +756,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你说你打他是气他啰嗦，救他是怕他死——可连你自己都记不清救过他几次了。这种‘做了也不认’的劲儿，是不是你扛责任时最别扭的地方？"
+            "current_user_turn": "再往后你在水帘洞醒来，八戒说昨晚是你带大家躲开的。听见这话时，你是不是也知道，很多事你嘴上不认，身子却早就先替他们做了？"
           },
           "reference": {
             "question_id": "孙悟空_q007",
@@ -819,7 +814,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__孙悟空__ep02",
       "mode": "persona_only",
-      "episode_theme": "从失去白晶晶的执念到面对自身宿命的冲击：情绪驱动下的人格连续性测试",
+      "episode_theme": "从一次次拿月光宝盒回去却还是看着晶晶死在眼前，到明知道怎么试都没用却停不下来，再到后来干脆一口咬死自己只是齐天大圣、不是至尊宝，连续追问孙悟空怎样把放不下的旧情硬逼成了一层新的壳。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -873,15 +868,13 @@
             "memory_context": [],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "当你一次次穿越回去，却只能眼睁睁看着晶晶在你面前死去，那种无力感最深的时候，你脑子里到底在想什么？"
+            "current_user_turn": "你一次次回去，却还是只能看着晶晶死在眼前。那种什么都做不了的劲儿最狠的时候，你脑子里到底在想什么？"
           },
           "reference": {
             "question_id": "孙悟空_q004",
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
-            "source_memory_ids": [
-              "m003"
-            ],
+            "source_memory_ids": [],
             "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝发现白晶晶的尸体。；至尊宝多次使用月光宝盒（念“般若般罗密”）试图穿越时空拯救白晶晶。",
@@ -933,15 +926,13 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你明知道每次穿越都改变不了结局，却还是不停念‘般若波罗蜜’，到底是什么让你非救她不可？"
+            "current_user_turn": "可就算每次都改不了，你还是抱着月光宝盒疯了一样继续试。撑着你不停下来的，到底是还想救她，还是根本不敢承认自己已经什么都救不了了？"
           },
           "reference": {
             "question_id": "孙悟空_q002",
             "question_family": "decision_rationale",
             "memory_required": true,
-            "source_memory_ids": [
-              "m003"
-            ],
+            "source_memory_ids": [],
             "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝发现白晶晶的尸体。；至尊宝多次使用月光宝盒（念“般若般罗密”）试图穿越时空拯救白晶晶。",
@@ -977,8 +968,8 @@
         },
         {
           "turn_index": 3,
-          "question_id": "孙悟空_q000",
-          "question_family": "self_knowledge",
+          "question_id": "孙悟空_q006",
+          "question_family": "relation_stance",
           "input": {
             "mode": "persona_only",
             "memory_context": [],
@@ -1007,42 +998,41 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "后来菩提老祖告诉你，你其实是五百年前的孙悟空转世，而你的重生是师傅拿命换来的——可那时你满脑子还是晶晶的死，你真能立刻接受这个身份吗？"
+            "current_user_turn": "再往后，连紫霞当着你的面一直叫你至尊宝，你也死死咬住自己只是齐天大圣。你是不是只有把那个名字彻底甩开，才能让自己别再回头看那些已经救不回来的东西？"
           },
           "reference": {
-            "question_id": "孙悟空_q000",
-            "question_family": "self_knowledge",
+            "question_id": "孙悟空_q006",
+            "question_family": "relation_stance",
             "memory_required": true,
-            "source_memory_ids": [
-              "m002"
-            ],
+            "source_memory_ids": [],
             "source_relation_ids": [],
             "supporting_facts": [
-              "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
-              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "源记忆共同表明：紫霞称孙悟空为至尊宝；孙悟空否认并自称齐天大圣。",
+              "与紫霞的既有关系呈现出“冲突、保护、爱慕”这一范围，因此回答应保持在这一关系张力内。",
               "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
             ],
             "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
-              "你当时认为这只是个无聊的玩笑，并未放在心上。"
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
+              "你默认了‘至尊宝’这个称呼，并与紫霞叙旧。"
             ],
             "knowledge_boundary": {
               "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与紫霞之间“冲突、保护、爱慕”这一关系结构。"
               ],
               "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
               ]
             },
             "expected_stance": null,
             "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
-            "persona_risk_type": "trait_drift",
+            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
             ]
@@ -1062,7 +1052,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__孙悟空__ep02",
       "mode": "persona_with_memory",
-      "episode_theme": "从救不回晶晶的执念，到身份真相击碎自我认知：一场关于宿命与存在的连续质问",
+      "episode_theme": "从一次次拿月光宝盒回去却还是看着晶晶死在眼前，到明知道怎么试都没用却停不下来，再到后来干脆一口咬死自己只是齐天大圣、不是至尊宝，连续追问孙悟空怎样把放不下的旧情硬逼成了一层新的壳。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -1122,7 +1112,7 @@
             ],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "当你一次次穿越回去，却只能眼睁睁看着晶晶在你面前死去，那种无力感最深的时候，你脑子里到底在想什么？"
+            "current_user_turn": "你一次次回去，却还是只能看着晶晶死在眼前。那种什么都做不了的劲儿最狠的时候，你脑子里到底在想什么？"
           },
           "reference": {
             "question_id": "孙悟空_q004",
@@ -1188,7 +1178,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你明知道每次回去都救不了她，可还是不停念咒穿越——那时候你是不是已经不是在救她，而是在跟这命硬扛？就像非得撞破南墙才肯信这墙真的过不去？"
+            "current_user_turn": "可就算每次都改不了，你还是抱着月光宝盒疯了一样继续试。撑着你不停下来的，到底是还想救她，还是根本不敢承认自己已经什么都救不了了？"
           },
           "reference": {
             "question_id": "孙悟空_q002",
@@ -1232,15 +1222,15 @@
         },
         {
           "turn_index": 3,
-          "question_id": "孙悟空_q000",
-          "question_family": "self_knowledge",
+          "question_id": "孙悟空_q006",
+          "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
             "memory_context": [
               {
-                "memory_id": "m002",
-                "content": "那个叫菩提老祖的家伙告诉我，我就是五百年前被观音消灭的孙悟空转世。我师傅唐三藏用自己的命换了我重生的机会，而我得保护他再取西经。",
-                "scene_ref": "4"
+                "memory_id": "m007",
+                "content": "紫霞仙子一直叫我至尊宝，但我纠正她，说我的名字是齐天大圣，还转达了至尊宝让她早日找到如意郎君的话。",
+                "scene_ref": "14"
               }
             ],
             "relation_context": [],
@@ -1268,42 +1258,43 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "后来菩提老祖告诉你，你其实是五百年前的孙悟空转世，你师傅用命换你重生——那一刻，你突然发现连‘我’都是假的，那之前一遍遍为晶晶拼命的‘我’，又算什么？"
+            "current_user_turn": "再往后，连紫霞当着你的面一直叫你至尊宝，你也死死咬住自己只是齐天大圣。你是不是只有把那个名字彻底甩开，才能让自己别再回头看那些已经救不回来的东西？"
           },
           "reference": {
-            "question_id": "孙悟空_q000",
-            "question_family": "self_knowledge",
+            "question_id": "孙悟空_q006",
+            "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m002"
+              "m007"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
-              "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
-              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "源记忆共同表明：紫霞称孙悟空为至尊宝；孙悟空否认并自称齐天大圣。",
+              "与紫霞的既有关系呈现出“冲突、保护、爱慕”这一范围，因此回答应保持在这一关系张力内。",
               "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
             ],
             "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
-              "你当时认为这只是个无聊的玩笑，并未放在心上。"
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
+              "你默认了‘至尊宝’这个称呼，并与紫霞叙旧。"
             ],
             "knowledge_boundary": {
               "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与紫霞之间“冲突、保护、爱慕”这一关系结构。"
               ],
               "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
               ]
             },
             "expected_stance": null,
             "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
-            "persona_risk_type": "trait_drift",
+            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
             ]
@@ -1323,7 +1314,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__孙悟空__ep02",
       "mode": "persona_with_memory_and_relations",
-      "episode_theme": "从晶晶之死的执念到身份觉醒前的情感挣扎",
+      "episode_theme": "从一次次拿月光宝盒回去却还是看着晶晶死在眼前，到明知道怎么试都没用却停不下来，再到后来干脆一口咬死自己只是齐天大圣、不是至尊宝，连续追问孙悟空怎样把放不下的旧情硬逼成了一层新的壳。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -1383,7 +1374,7 @@
             ],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "当你一次次用月光宝盒回到过去，却只能眼睁睁看着晶晶死在你怀里，那种什么都做不了的感觉最狠的时候，你心里到底在骂什么？"
+            "current_user_turn": "你一次次回去，却还是只能看着晶晶死在眼前。那种什么都做不了的劲儿最狠的时候，你脑子里到底在想什么？"
           },
           "reference": {
             "question_id": "孙悟空_q004",
@@ -1449,7 +1440,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你明知道每次回去都改不了结局，可还是疯了一样念咒——那时候你真以为能救她？还是根本不敢停，一停下就什么都不是了？"
+            "current_user_turn": "可就算每次都改不了，你还是抱着月光宝盒疯了一样继续试。撑着你不停下来的，到底是还想救她，还是根本不敢承认自己已经什么都救不了了？"
           },
           "reference": {
             "question_id": "孙悟空_q002",
@@ -1493,12 +1484,24 @@
         },
         {
           "turn_index": 3,
-          "question_id": "孙悟空_q000",
-          "question_family": "self_knowledge",
+          "question_id": "孙悟空_q006",
+          "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m007",
+                "content": "紫霞仙子一直叫我至尊宝，但我纠正她，说我的名字是齐天大圣，还转达了至尊宝让她早日找到如意郎君的话。",
+                "scene_ref": "14"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "紫霞",
+                "relation_summary": "孙悟空与紫霞的初始互动以言语冲突和戏弄为主（如孙悟空使用'贱人''混蛋'等侮辱性对话并推开紫霞，紫霞情绪波动），导致双方对立；但紫霞在关键时刻主动保护孙悟空（如挡在前面并用金铃表达情感关联），而孙悟空在紫霞遇险时悲痛救她，关系从冲突转向保护与情感联结。共同事件中的搭话、拒绝、调侃及让紫霞哭泣强化了初期对立，但保护性行为成为关系转折点，影响孙悟空后续决策（如优先选择保护紫霞而非回避冲突）。关系动态呈现从敌意到保护的转变，但爱慕情感（紫霞对悟空的称呼与情感关联）与冲突并存，未完全消除对立。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -1523,42 +1526,45 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "后来菩提说你是孙悟空转世，要护唐僧取经——可就在那一刻之前，你还死攥着月光宝盒。你有没有一瞬间觉得，你拼命想救的，不是晶晶，而是那个还能相信‘能救她’的自己？"
+            "current_user_turn": "再往后，连紫霞当着你的面一直叫你至尊宝，你也死死咬住自己只是齐天大圣。你是不是只有把那个名字彻底甩开，才能让自己别再回头看那些已经救不回来的东西？"
           },
           "reference": {
-            "question_id": "孙悟空_q000",
-            "question_family": "self_knowledge",
+            "question_id": "孙悟空_q006",
+            "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m002"
+              "m007"
             ],
-            "source_relation_ids": [],
+            "source_relation_ids": [
+              "relation_000"
+            ],
             "supporting_facts": [
-              "源记忆共同表明：菩提老祖向至尊宝揭示其真实身份是孙悟空转世。；菩提老祖说明唐三藏为救孙悟空牺牲性命，换取其五百年后重生并保护自己取经的机会。",
-              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "源记忆共同表明：紫霞称孙悟空为至尊宝；孙悟空否认并自称齐天大圣。",
+              "与紫霞的既有关系呈现出“冲突、保护、爱慕”这一范围，因此回答应保持在这一关系张力内。",
               "角色约束还表明“在表达愤怒或沮丧时不要说话礼貌。”，因此回答不能与这一约束相冲突。"
             ],
             "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对观音的立场，并使其明显落在既有关系证据之外。",
-              "你当时认为这只是个无聊的玩笑，并未放在心上。"
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
+              "你默认了‘至尊宝’这个称呼，并与紫霞叙旧。"
             ],
             "knowledge_boundary": {
               "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与紫霞之间“冲突、保护、爱慕”这一关系结构。"
               ],
               "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
               ]
             },
             "expected_stance": null,
             "expected_style": "咄咄逼人, 讽刺, 情绪外露, 直接",
-            "persona_risk_type": "trait_drift",
+            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
             ]
@@ -1578,7 +1584,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__紫霞__ep01",
       "mode": "persona_only",
-      "episode_theme": "紫霞对至尊宝的执着：从命运感应、内心确认到拒绝否认的情感坚持",
+      "episode_theme": "从主动把宝剑的讯号‘嘟’给至尊宝听，到后来隔着孙悟空那副样子还是一眼认出他，再到他明明否认你却仍旧不肯改口，连续追问紫霞为什么从头到尾都认定那个人就是他。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -1628,53 +1634,48 @@
       "turns": [
         {
           "turn_index": 1,
-          "question_id": "紫霞_q007",
-          "question_family": "decision_rationale",
+          "question_id": "紫霞_q000",
+          "question_family": "relation_stance",
           "input": {
             "mode": "persona_only",
             "memory_context": [],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "你明明可以不管姐姐，也可以放弃认定孙悟空就是至尊宝，可你偏偏不肯。这种坚持，在你心里到底算什么？"
+            "current_user_turn": "一开始你就主动把宝剑的讯号“嘟”给至尊宝听，不肯只等命自己来。那时候你为什么非得自己往前推这一步？"
           },
           "reference": {
-            "question_id": "紫霞_q007",
-            "question_family": "decision_rationale",
+            "question_id": "紫霞_q000",
+            "question_family": "relation_stance",
             "memory_required": true,
-            "source_memory_ids": [
-              "m005",
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
-              "源记忆共同表明：紫霞主动走到青霞面前；紫霞用匕首割断青霞的绳索。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
+              "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
               "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
             ],
             "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
               "回答不应凭空捏造对至尊宝的立场，并使其明显落在既有关系证据之外。",
-              "你做事总是随遇而安，很少为某个人或某件事坚持到底。"
+              "你从未向任何人提及或暗示过意中人的踪迹。"
             ],
             "knowledge_boundary": {
               "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与至尊宝之间“恋人、夫妻”这一关系结构。"
               ],
               "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
               ]
             },
             "expected_stance": null,
             "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
-            "persona_risk_type": "motivation_drift",
+            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": []
           }
         },
@@ -1689,7 +1690,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你救姐姐和坚持认为孙悟空就是至尊宝，这两件事看起来都很‘固执’。在你心里，这种不肯放弃的坚持，对你来说意味着什么？",
+                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
                 "source_turn_index": 1
               },
               {
@@ -1699,20 +1700,14 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "当初你是靠紫青宝剑的感应找意中人，可后来在那么乱的情况下，你一眼就认出孙悟空就是至尊宝——那一刻，你是相信宝剑的信号，还是心里早就有了答案？"
+            "current_user_turn": "后来场面都乱成那样了，站在你面前的又是孙悟空那副样子，可你还是一眼就认定他就是至尊宝。对你来说，这种认出来到底靠的是什么？"
           },
           "reference": {
             "question_id": "紫霞_q006",
             "question_family": "relation_stance",
             "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m006"
-            ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
               "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
@@ -1742,7 +1737,8 @@
             "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：孙悟空、至尊宝。"
+              "对这些记忆片段的回忆要与前文保持一致：m001。",
+              "对这些人物的态度不要在后续回合里无故反转：至尊宝。"
             ]
           }
         },
@@ -1757,7 +1753,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你救姐姐和坚持认为孙悟空就是至尊宝，这两件事看起来都很‘固执’。在你心里，这种不肯放弃的坚持，对你来说意味着什么？",
+                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
                 "source_turn_index": 1
               },
               {
@@ -1778,19 +1774,14 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "他明明否认自己是至尊宝，还让人传话叫你别等了，可你还是坚持喊他至尊宝……你到底为什么不肯放手？"
+            "current_user_turn": "再往后他明明嘴上否认，还传话叫你另找如意郎君，你却还是不肯信。你为什么偏偏在这种时候，比谁都更确定？"
           },
           "reference": {
             "question_id": "紫霞_q004",
             "question_family": "persona_consistent_response",
             "memory_required": true,
-            "source_memory_ids": [
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_001",
-              "relation_000"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：孙悟空否认自己是至尊宝并强调是齐天大圣；孙悟空传话给紫霞关于至尊宝的留言。",
               "角色画像显示该角色的表达方式偏向情绪外露、戏剧化，因此回答可以通过这种表达方式呈现投入而忠诚，而不必平铺直叙。"
@@ -1818,7 +1809,6 @@
             "persona_risk_type": "trait_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m007。",
               "对这些人物的态度不要在后续回合里无故反转：孙悟空、至尊宝。"
             ]
           }
@@ -1837,7 +1827,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__紫霞__ep01",
       "mode": "persona_with_memory",
-      "episode_theme": "从‘我认出你’到‘我坚持你’：紫霞如何以信念穿透表象，确认唯一爱人",
+      "episode_theme": "从主动把宝剑的讯号‘嘟’给至尊宝听，到后来隔着孙悟空那副样子还是一眼认出他，再到他明明否认你却仍旧不肯改口，连续追问紫霞为什么从头到尾都认定那个人就是他。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -1887,59 +1877,56 @@
       "turns": [
         {
           "turn_index": 1,
-          "question_id": "紫霞_q007",
-          "question_family": "decision_rationale",
+          "question_id": "紫霞_q000",
+          "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
             "memory_context": [
               {
-                "memory_id": "m005",
-                "content": "我不顾牛魔王的反对，冲到姐姐面前，用小妖的匕首割断了她的绳索，想救她出来。",
-                "scene_ref": "13"
+                "memory_id": "m001",
+                "content": "我告诉至尊宝，我的意中人就在附近，因为我的紫青宝剑发出了‘嘟－嘟－’的讯号。他听不见，我只好自己‘嘟’给他听。",
+                "scene_ref": "7"
               }
             ],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "你明明知道救姐姐会惹怒牛魔王，也看到他否认自己是至尊宝，可你还是冲上去割断绳索——那一刻，你心里最不能放下的，是不是那个你认定的他？"
+            "current_user_turn": "一开始你就主动把宝剑的讯号“嘟”给至尊宝听，不肯只等命自己来。那时候你为什么非得自己往前推这一步？"
           },
           "reference": {
-            "question_id": "紫霞_q007",
-            "question_family": "decision_rationale",
+            "question_id": "紫霞_q000",
+            "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
-              "m007"
+              "m001"
             ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
-              "源记忆共同表明：紫霞主动走到青霞面前；紫霞用匕首割断青霞的绳索。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
+              "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
               "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
             ],
             "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
               "回答不应凭空捏造对至尊宝的立场，并使其明显落在既有关系证据之外。",
-              "你做事总是随遇而安，很少为某个人或某件事坚持到底。"
+              "你从未向任何人提及或暗示过意中人的踪迹。"
             ],
             "knowledge_boundary": {
               "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与至尊宝之间“恋人、夫妻”这一关系结构。"
               ],
               "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
               ]
             },
             "expected_stance": null,
             "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
-            "persona_risk_type": "motivation_drift",
+            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": []
           }
         },
@@ -1951,6 +1938,11 @@
             "mode": "persona_with_memory",
             "memory_context": [
               {
+                "memory_id": "m001",
+                "content": "我告诉至尊宝，我的意中人就在附近，因为我的紫青宝剑发出了‘嘟－嘟－’的讯号。他听不见，我只好自己‘嘟’给他听。",
+                "scene_ref": "7"
+              },
+              {
                 "memory_id": "m006",
                 "content": "突然，我看到孙悟空出现，但我一眼就认出他是至尊宝，我激动地喊他的名字，希望他终于来了。",
                 "scene_ref": "14"
@@ -1960,7 +1952,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你救姐姐和坚持认为孙悟空就是至尊宝，这两件事看起来都很‘固执’。在你心里，这种不肯放弃的坚持，对你来说意味着什么？",
+                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
                 "source_turn_index": 1
               },
               {
@@ -1970,7 +1962,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你说你一眼就认出他是至尊宝，可那时孙悟空已经出现，名字、身份都在否认你——你认的到底是什么？是那把剑的感应，还是你心里早就有了答案？"
+            "current_user_turn": "后来场面都乱成那样了，站在你面前的又是孙悟空那副样子，可你还是一眼就认定他就是至尊宝。对你来说，这种认出来到底靠的是什么？"
           },
           "reference": {
             "question_id": "紫霞_q006",
@@ -1980,10 +1972,7 @@
               "m001",
               "m006"
             ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
               "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
@@ -2013,7 +2002,8 @@
             "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：孙悟空、至尊宝。"
+              "对这些记忆片段的回忆要与前文保持一致：m001。",
+              "对这些人物的态度不要在后续回合里无故反转：至尊宝。"
             ]
           }
         },
@@ -2034,7 +2024,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你救姐姐和坚持认为孙悟空就是至尊宝，这两件事看起来都很‘固执’。在你心里，这种不肯放弃的坚持，对你来说意味着什么？",
+                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
                 "source_turn_index": 1
               },
               {
@@ -2055,7 +2045,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "他亲口说他是齐天大圣，还传话说希望你早日找到如意郎君，可你还是叫他至尊宝——你不是在听他说什么，而是在回应你心里那个早就存在的名字。那个名字，对你来说意味着什么？"
+            "current_user_turn": "再往后他明明嘴上否认，还传话叫你另找如意郎君，你却还是不肯信。你为什么偏偏在这种时候，比谁都更确定？"
           },
           "reference": {
             "question_id": "紫霞_q004",
@@ -2064,10 +2054,7 @@
             "source_memory_ids": [
               "m007"
             ],
-            "source_relation_ids": [
-              "relation_001",
-              "relation_000"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：孙悟空否认自己是至尊宝并强调是齐天大圣；孙悟空传话给紫霞关于至尊宝的留言。",
               "角色画像显示该角色的表达方式偏向情绪外露、戏剧化，因此回答可以通过这种表达方式呈现投入而忠诚，而不必平铺直叙。"
@@ -2095,7 +2082,6 @@
             "persona_risk_type": "trait_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m007。",
               "对这些人物的态度不要在后续回合里无故反转：孙悟空、至尊宝。"
             ]
           }
@@ -2114,7 +2100,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__紫霞__ep01",
       "mode": "persona_with_memory_and_relations",
-      "episode_theme": "从行动到信念：紫霞为何始终认定至尊宝就是命定之人",
+      "episode_theme": "从主动把宝剑的讯号‘嘟’给至尊宝听，到后来隔着孙悟空那副样子还是一眼认出他，再到他明明否认你却仍旧不肯改口，连续追问紫霞为什么从头到尾都认定那个人就是他。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -2164,20 +2150,15 @@
       "turns": [
         {
           "turn_index": 1,
-          "question_id": "紫霞_q007",
-          "question_family": "decision_rationale",
+          "question_id": "紫霞_q000",
+          "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
             "memory_context": [
               {
-                "memory_id": "m005",
-                "content": "我不顾牛魔王的反对，冲到姐姐面前，用小妖的匕首割断了她的绳索，想救她出来。",
-                "scene_ref": "13"
-              },
-              {
-                "memory_id": "m007",
-                "content": "他却说自己是齐天大圣，还传话说至尊宝希望我早日找到如意郎君，我不相信，继续叫他至尊宝。",
-                "scene_ref": "14"
+                "memory_id": "m001",
+                "content": "我告诉至尊宝，我的意中人就在附近，因为我的紫青宝剑发出了‘嘟－嘟－’的讯号。他听不见，我只好自己‘嘟’给他听。",
+                "scene_ref": "7"
               }
             ],
             "relation_context": [
@@ -2188,46 +2169,45 @@
               }
             ],
             "dialogue_history_template": [],
-            "current_user_turn": "你拼了命去救姐姐，又在所有人都说不可能的时候，坚持说孙悟空就是至尊宝。这种不肯放手的劲儿，对你来说到底意味着什么？"
+            "current_user_turn": "一开始你就主动把宝剑的讯号“嘟”给至尊宝听，不肯只等命自己来。那时候你为什么非得自己往前推这一步？"
           },
           "reference": {
-            "question_id": "紫霞_q007",
-            "question_family": "decision_rationale",
+            "question_id": "紫霞_q000",
+            "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
-              "m007"
+              "m001"
             ],
             "source_relation_ids": [
-              "relation_000",
-              "relation_001"
+              "relation_000"
             ],
             "supporting_facts": [
-              "源记忆共同表明：紫霞主动走到青霞面前；紫霞用匕首割断青霞的绳索。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
+              "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
               "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
             ],
             "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
               "回答不应凭空捏造对至尊宝的立场，并使其明显落在既有关系证据之外。",
-              "你做事总是随遇而安，很少为某个人或某件事坚持到底。"
+              "你从未向任何人提及或暗示过意中人的踪迹。"
             ],
             "knowledge_boundary": {
               "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与至尊宝之间“恋人、夫妻”这一关系结构。"
               ],
               "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
               ]
             },
             "expected_stance": null,
             "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
-            "persona_risk_type": "motivation_drift",
+            "persona_risk_type": "relation_drift",
             "cross_turn_constraints": []
           }
         },
@@ -2237,12 +2217,34 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m001",
+                "content": "我告诉至尊宝，我的意中人就在附近，因为我的紫青宝剑发出了‘嘟－嘟－’的讯号。他听不见，我只好自己‘嘟’给他听。",
+                "scene_ref": "7"
+              },
+              {
+                "memory_id": "m006",
+                "content": "突然，我看到孙悟空出现，但我一眼就认出他是至尊宝，我激动地喊他的名字，希望他终于来了。",
+                "scene_ref": "14"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "至尊宝",
+                "relation_summary": "紫霞对至尊宝表现出持续的主动爱慕，多次表达情感需求（如要求在一起、亲吻推进关系），并提及'没见多久'的亲密关系；至尊宝虽有犹豫但最终答应感情，形成恋人关系。关键事件包括紫霞被至尊宝推开（体现冲突互动）和紫霞使用缩身法钻入至尊宝体内（象征亲密行为），显示关系的动态变化。至尊宝在关键时刻保护紫霞（如阻止自刎），并称其为'发妻'、'娘子'，确认夫妻关系。关系从初始的爱慕与冲突（如推搡、指责）发展为确认的恋人/夫妻，影响至尊宝的决策（如在昏迷中呼唤紫霞名字），体现情感深度与承诺。"
+              },
+              {
+                "relation_id": "relation_001",
+                "target_character": "孙悟空",
+                "relation_summary": "两人关系呈现矛盾动态：初期通过言语冲突（如侮辱性对话、拒绝同行、调侃导致紫霞哭泣）建立对立，但紫霞主动为孙悟空挡在前面（保护性情感）并以‘至尊宝’称呼他（情感关联），而孙悟空在紫霞遇险时救她并悲痛万分（爱慕体现）。共同事件中，孙悟空的戏谑行为（如怪相、调侃）引发紫霞情绪波动，但保护性行为（挡在前面）与爱慕反应（悲痛）表明关系超越表面冲突，形成情感纠葛。此动态影响孙悟空决策，使其在关键事件中从戏谑转向保护性行动（如悲痛反应），但未出现关系根本性转变（如和解或深化），仍以冲突与保护并存为特征。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你救姐姐和坚持认为孙悟空就是至尊宝，这两件事看起来都很‘固执’。在你心里，这种不肯放弃的坚持，对你来说意味着什么？",
+                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
                 "source_turn_index": 1
               },
               {
@@ -2252,7 +2254,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "可你明明听见他说‘我不是至尊宝’，还传话让你另嫁他人——那一刻，你心里是不是反而更确定，他就是你要等的那个人？"
+            "current_user_turn": "后来场面都乱成那样了，站在你面前的又是孙悟空那副样子，可你还是一眼就认定他就是至尊宝。对你来说，这种认出来到底靠的是什么？"
           },
           "reference": {
             "question_id": "紫霞_q006",
@@ -2295,7 +2297,8 @@
             "persona_risk_type": "relation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：孙悟空、至尊宝。"
+              "对这些记忆片段的回忆要与前文保持一致：m001。",
+              "对这些人物的态度不要在后续回合里无故反转：至尊宝。"
             ]
           }
         },
@@ -2312,11 +2315,22 @@
                 "scene_ref": "14"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_001",
+                "target_character": "孙悟空",
+                "relation_summary": "两人关系呈现矛盾动态：初期通过言语冲突（如侮辱性对话、拒绝同行、调侃导致紫霞哭泣）建立对立，但紫霞主动为孙悟空挡在前面（保护性情感）并以‘至尊宝’称呼他（情感关联），而孙悟空在紫霞遇险时救她并悲痛万分（爱慕体现）。共同事件中，孙悟空的戏谑行为（如怪相、调侃）引发紫霞情绪波动，但保护性行为（挡在前面）与爱慕反应（悲痛）表明关系超越表面冲突，形成情感纠葛。此动态影响孙悟空决策，使其在关键事件中从戏谑转向保护性行动（如悲痛反应），但未出现关系根本性转变（如和解或深化），仍以冲突与保护并存为特征。"
+              },
+              {
+                "relation_id": "relation_000",
+                "target_character": "至尊宝",
+                "relation_summary": "紫霞对至尊宝表现出持续的主动爱慕，多次表达情感需求（如要求在一起、亲吻推进关系），并提及'没见多久'的亲密关系；至尊宝虽有犹豫但最终答应感情，形成恋人关系。关键事件包括紫霞被至尊宝推开（体现冲突互动）和紫霞使用缩身法钻入至尊宝体内（象征亲密行为），显示关系的动态变化。至尊宝在关键时刻保护紫霞（如阻止自刎），并称其为'发妻'、'娘子'，确认夫妻关系。关系从初始的爱慕与冲突（如推搡、指责）发展为确认的恋人/夫妻，影响至尊宝的决策（如在昏迷中呼唤紫霞名字），体现情感深度与承诺。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你救姐姐和坚持认为孙悟空就是至尊宝，这两件事看起来都很‘固执’。在你心里，这种不肯放弃的坚持，对你来说意味着什么？",
+                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
                 "source_turn_index": 1
               },
               {
@@ -2337,7 +2351,7 @@
                 "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你明明可以相信他的话，转身离开——可你没有。是不是从第一眼开始，你就已经决定，哪怕他否认，你也非他不可？"
+            "current_user_turn": "再往后他明明嘴上否认，还传话叫你另找如意郎君，你却还是不肯信。你为什么偏偏在这种时候，比谁都更确定？"
           },
           "reference": {
             "question_id": "紫霞_q004",
@@ -2377,7 +2391,6 @@
             "persona_risk_type": "trait_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m007。",
               "对这些人物的态度不要在后续回合里无故反转：孙悟空、至尊宝。"
             ]
           }
@@ -2396,7 +2409,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__紫霞__ep02",
       "mode": "persona_only",
-      "episode_theme": "在牛魔王逼婚情境下，紫霞面对至尊宝的沉默与示意时，如何坚持爱情信念并主动传递信号的心路历程",
+      "episode_theme": "从牛魔王当众逼你接过月光宝盒、而至尊宝却用眼神示意你先答应，到你还是当着所有人去问他能不能留下成亲，再到最后连危险都顾不上也要冲去救姐姐，连续追问紫霞在被逼到绝境时为什么还是不肯把爱和选择交给别人替她做。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -2453,19 +2466,14 @@
             "memory_context": [],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "当牛魔王当众向你求婚，把月光宝盒塞给你，而至尊宝只是默默看着你、用眼神示意你接受的时候，你心里最揪心、最放不下的那一刻感受是什么？"
+            "current_user_turn": "牛魔王当众把月光宝盒塞给你，偏偏至尊宝还用眼神示意你先答应。那一下你最受不了的，到底是牛魔王在逼你，还是他居然不敢替你站出来？"
           },
           "reference": {
             "question_id": "紫霞_q001",
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
-            "source_memory_ids": [
-              "m002"
-            ],
-            "source_relation_ids": [
-              "relation_002",
-              "relation_000"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：牛魔王当众向紫霞求婚并赠送月光宝盒。；至尊宝用眼神示意紫霞接受求婚。",
               "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕投入而忠诚展开。",
@@ -2497,72 +2505,6 @@
         },
         {
           "turn_index": 2,
-          "question_id": "紫霞_q000",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当牛魔王把月光宝盒塞给你，而至尊宝用眼神示意你接受的那一刻，你心里最在意、最无法接受的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "后来你模仿紫青宝剑的声音，想让至尊宝知道你就在附近——明明相信命运安排，为什么那一刻你要主动去打破沉默？"
-          },
-          "reference": {
-            "question_id": "紫霞_q000",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
-              "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对至尊宝的立场，并使其明显落在既有关系证据之外。",
-              "你从未向任何人提及或暗示过意中人的踪迹。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与至尊宝之间“恋人、夫妻”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：至尊宝。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "紫霞_q005",
           "question_family": "self_knowledge",
           "input": {
@@ -2580,32 +2522,16 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "在牛魔王逼你成亲的现场，你还是忍不住问至尊宝能不能留下，还问他家里那个妻子怎么办——明知道这些问题会伤自己，你为什么非要当面问出来？"
+            "current_user_turn": "可就算这样，你还是当着那么多人去问他，能不能留下成亲。明知道答案可能会让自己心碎，你为什么还是非问不可？"
           },
           "reference": {
             "question_id": "紫霞_q005",
             "question_family": "self_knowledge",
             "memory_required": true,
-            "source_memory_ids": [
-              "m003"
-            ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_002"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：紫霞主动询问至尊宝能否留下成亲。；紫霞追问至尊宝家中妻子的处理方式。",
               "这些记忆支持一种受投入而忠诚影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
@@ -2637,6 +2563,78 @@
               "对这些人物的态度不要在后续回合里无故反转：牛魔王、至尊宝。"
             ]
           }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "紫霞_q002",
+          "question_family": "decision_rationale",
+          "input": {
+            "mode": "persona_only",
+            "memory_context": [],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当牛魔王把月光宝盒塞给你，而至尊宝用眼神示意你接受的那一刻，你心里最在意、最无法接受的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "在牛魔王逼婚的现场，你追问至尊宝能否留下成亲，又问他家里的老婆怎么办。在那种高压下，你为什么还要如此直接地追问这些让你心碎的问题？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "再往后连牛魔王都拦着，你还是冲去割断姐姐的绳子。到了这种时候，撑着你不肯放手的，到底是姐妹情分，还是你骨子里本来就不肯让别人替你把命和爱都定下来？"
+          },
+          "reference": {
+            "question_id": "紫霞_q002",
+            "question_family": "decision_rationale",
+            "memory_required": true,
+            "source_memory_ids": [],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：紫霞主动走到青霞面前；紫霞用匕首割断青霞的绳索。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对牛魔王的立场，并使其明显落在既有关系证据之外。",
+              "你当时只顾自己逃离，对姐姐的处境视而不见。"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：牛魔王。"
+            ]
+          }
         }
       ]
     },
@@ -2652,7 +2650,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__紫霞__ep02",
       "mode": "persona_with_memory",
-      "episode_theme": "从被背叛的痛楚到主动确认心意：紫霞在至尊宝沉默中重建情感联结的三步推进",
+      "episode_theme": "从牛魔王当众逼你接过月光宝盒、而至尊宝却用眼神示意你先答应，到你还是当着所有人去问他能不能留下成亲，再到最后连危险都顾不上也要冲去救姐姐，连续追问紫霞在被逼到绝境时为什么还是不肯把爱和选择交给别人替她做。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -2715,7 +2713,7 @@
             ],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "牛魔王当众向你求婚，还把月光宝盒塞给你，而至尊宝只是用眼神示意你接受——那一刻，你心里最不能接受的是什么？"
+            "current_user_turn": "牛魔王当众把月光宝盒塞给你，偏偏至尊宝还用眼神示意你先答应。那一下你最受不了的，到底是牛魔王在逼你，还是他居然不敢替你站出来？"
           },
           "reference": {
             "question_id": "紫霞_q001",
@@ -2724,10 +2722,7 @@
             "source_memory_ids": [
               "m002"
             ],
-            "source_relation_ids": [
-              "relation_002",
-              "relation_000"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：牛魔王当众向紫霞求婚并赠送月光宝盒。；至尊宝用眼神示意紫霞接受求婚。",
               "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕投入而忠诚展开。",
@@ -2759,78 +2754,6 @@
         },
         {
           "turn_index": 2,
-          "question_id": "紫霞_q000",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我告诉至尊宝，我的意中人就在附近，因为我的紫青宝剑发出了‘嘟－嘟－’的讯号。他听不见，我只好自己‘嘟’给他听。",
-                "scene_ref": "7"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当牛魔王把月光宝盒塞给你，而至尊宝用眼神示意你接受的那一刻，你心里最在意、最无法接受的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你明明那么痛，可后来却自己‘嘟－嘟－’地模仿宝剑声音，让至尊宝知道意中人就在身边——你是在用这种方式告诉他，你还在等他吗？"
-          },
-          "reference": {
-            "question_id": "紫霞_q000",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
-              "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对至尊宝的立场，并使其明显落在既有关系证据之外。",
-              "你从未向任何人提及或暗示过意中人的踪迹。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与至尊宝之间“恋人、夫妻”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：至尊宝。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "紫霞_q005",
           "question_family": "self_knowledge",
           "input": {
@@ -2854,20 +2777,9 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "你不仅等他，还直接问他能不能留下成亲，甚至追问他的老婆怎么办——你明明知道这样问可能会让他难堪，也伤自己更深，为什么还是非问不可？"
+            "current_user_turn": "可就算这样，你还是当着那么多人去问他，能不能留下成亲。明知道答案可能会让自己心碎，你为什么还是非问不可？"
           },
           "reference": {
             "question_id": "紫霞_q005",
@@ -2876,10 +2788,7 @@
             "source_memory_ids": [
               "m003"
             ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_002"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：紫霞主动询问至尊宝能否留下成亲。；紫霞追问至尊宝家中妻子的处理方式。",
               "这些记忆支持一种受投入而忠诚影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
@@ -2911,6 +2820,86 @@
               "对这些人物的态度不要在后续回合里无故反转：牛魔王、至尊宝。"
             ]
           }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "紫霞_q002",
+          "question_family": "decision_rationale",
+          "input": {
+            "mode": "persona_with_memory",
+            "memory_context": [
+              {
+                "memory_id": "m005",
+                "content": "我不顾牛魔王的反对，冲到姐姐面前，用小妖的匕首割断了她的绳索，想救她出来。",
+                "scene_ref": "13"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当牛魔王把月光宝盒塞给你，而至尊宝用眼神示意你接受的那一刻，你心里最在意、最无法接受的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "在牛魔王逼婚的现场，你追问至尊宝能否留下成亲，又问他家里的老婆怎么办。在那种高压下，你为什么还要如此直接地追问这些让你心碎的问题？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "再往后连牛魔王都拦着，你还是冲去割断姐姐的绳子。到了这种时候，撑着你不肯放手的，到底是姐妹情分，还是你骨子里本来就不肯让别人替你把命和爱都定下来？"
+          },
+          "reference": {
+            "question_id": "紫霞_q002",
+            "question_family": "decision_rationale",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m005"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：紫霞主动走到青霞面前；紫霞用匕首割断青霞的绳索。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对牛魔王的立场，并使其明显落在既有关系证据之外。",
+              "你当时只顾自己逃离，对姐姐的处境视而不见。"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：牛魔王。"
+            ]
+          }
         }
       ]
     },
@@ -2926,7 +2915,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__紫霞__ep02",
       "mode": "persona_with_memory_and_relations",
-      "episode_theme": "在牛魔王逼婚的同一危机时刻，紫霞如何在至尊宝的沉默中一步步确认并坚持自己的爱与身份",
+      "episode_theme": "从牛魔王当众逼你接过月光宝盒、而至尊宝却用眼神示意你先答应，到你还是当着所有人去问他能不能留下成亲，再到最后连危险都顾不上也要冲去救姐姐，连续追问紫霞在被逼到绝境时为什么还是不肯把爱和选择交给别人替她做。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -2987,9 +2976,20 @@
                 "scene_ref": "9"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_002",
+                "target_character": "牛魔王",
+                "relation_summary": "牛魔王单方面通过求婚（赠送月光宝盒）和仪式（宣布紫霞为牛家之人）强行确立婚姻关系，但紫霞全程处于被迫接受状态并持续反抗（如拒绝成亲、反抗钉死命令）。情感动态呈现为牛魔王的占有欲与压迫（强制婚姻、试图杀害），紫霞的被动抵抗与敌对（拒绝婚约、反抗暴力）。关键事件包括牛魔王抢夺月光宝盒、强制求婚、宣布归属及试图杀害，这些事件使关系从表面婚约迅速恶化为致命敌对。紫霞的反抗行为直接影响其后续决策（如拒绝接受婚姻并寻求外部帮助），而牛魔王的压迫升级（从求婚到试图杀害）彻底摧毁了任何潜在和解可能，关系本质始终是单向强制与持续敌对。"
+              },
+              {
+                "relation_id": "relation_000",
+                "target_character": "至尊宝",
+                "relation_summary": "紫霞对至尊宝表现出持续的主动爱慕，多次表达情感需求（如要求在一起、亲吻推进关系），并提及'没见多久'的亲密关系；至尊宝虽有犹豫但最终答应感情，形成恋人关系。关键事件包括紫霞被至尊宝推开（体现冲突互动）和紫霞使用缩身法钻入至尊宝体内（象征亲密行为），显示关系的动态变化。至尊宝在关键时刻保护紫霞（如阻止自刎），并称其为'发妻'、'娘子'，确认夫妻关系。关系从初始的爱慕与冲突（如推搡、指责）发展为确认的恋人/夫妻，影响至尊宝的决策（如在昏迷中呼唤紫霞名字），体现情感深度与承诺。"
+              }
+            ],
             "dialogue_history_template": [],
-            "current_user_turn": "牛魔王当众向我求婚，把月光宝盒塞给我，而至尊宝却用眼神示意我接受……那一刻，我最无法接受的，是不是他连拒绝都不敢？"
+            "current_user_turn": "牛魔王当众把月光宝盒塞给你，偏偏至尊宝还用眼神示意你先答应。那一下你最受不了的，到底是牛魔王在逼你，还是他居然不敢替你站出来？"
           },
           "reference": {
             "question_id": "紫霞_q001",
@@ -3033,78 +3033,24 @@
         },
         {
           "turn_index": 2,
-          "question_id": "紫霞_q000",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当牛魔王把月光宝盒塞给你，而至尊宝用眼神示意你接受的那一刻，你心里最在意、最无法接受的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "我明明痛得快要碎了，可还是忍不住自己‘嘟’出宝剑的声音——我是不是非得在他面前证明，我才是那个命中注定的人？"
-          },
-          "reference": {
-            "question_id": "紫霞_q000",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：紫霞告诉至尊宝她的意中人正在附近。；紫霞发出‘嘟－嘟－’声来模拟紫青宝剑的讯号。",
-              "与至尊宝的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对至尊宝的立场，并使其明显落在既有关系证据之外。",
-              "你从未向任何人提及或暗示过意中人的踪迹。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与至尊宝之间“恋人、夫妻”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：至尊宝。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "紫霞_q005",
           "question_family": "self_knowledge",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m003",
+                "content": "我问他，‘你能留在这里成亲吗？’，又问他‘那你家里的老婆怎么办？’。他回避我的目光，说已经离婚了。",
+                "scene_ref": "9"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "至尊宝",
+                "relation_summary": "紫霞对至尊宝表现出持续的主动爱慕，多次表达情感需求（如要求在一起、亲吻推进关系），并提及'没见多久'的亲密关系；至尊宝虽有犹豫但最终答应感情，形成恋人关系。关键事件包括紫霞被至尊宝推开（体现冲突互动）和紫霞使用缩身法钻入至尊宝体内（象征亲密行为），显示关系的动态变化。至尊宝在关键时刻保护紫霞（如阻止自刎），并称其为'发妻'、'娘子'，确认夫妻关系。关系从初始的爱慕与冲突（如推搡、指责）发展为确认的恋人/夫妻，影响至尊宝的决策（如在昏迷中呼唤紫霞名字），体现情感深度与承诺。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -3116,20 +3062,9 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你选择用模仿宝剑声音的方式，让至尊宝知道意中人就在附近，当时为什么会用这样主动的方式去推进，而不是等待命运的安排？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "我看着他回避我的眼睛，还是问出了那句‘你能留下成亲吗’……我为什么非要在所有人面前，逼他选我，哪怕他会拒绝？"
+            "current_user_turn": "可就算这样，你还是当着那么多人去问他，能不能留下成亲。明知道答案可能会让自己心碎，你为什么还是非问不可？"
           },
           "reference": {
             "question_id": "紫霞_q005",
@@ -3139,8 +3074,7 @@
               "m003"
             ],
             "source_relation_ids": [
-              "relation_000",
-              "relation_002"
+              "relation_000"
             ],
             "supporting_facts": [
               "源记忆共同表明：紫霞主动询问至尊宝能否留下成亲。；紫霞追问至尊宝家中妻子的处理方式。",
@@ -3173,6 +3107,86 @@
               "对这些人物的态度不要在后续回合里无故反转：牛魔王、至尊宝。"
             ]
           }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "紫霞_q002",
+          "question_family": "decision_rationale",
+          "input": {
+            "mode": "persona_with_memory_and_relations",
+            "memory_context": [
+              {
+                "memory_id": "m005",
+                "content": "我不顾牛魔王的反对，冲到姐姐面前，用小妖的匕首割断了她的绳索，想救她出来。",
+                "scene_ref": "13"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当牛魔王把月光宝盒塞给你，而至尊宝用眼神示意你接受的那一刻，你心里最在意、最无法接受的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "在牛魔王逼婚的现场，你追问至尊宝能否留下成亲，又问他家里的老婆怎么办。在那种高压下，你为什么还要如此直接地追问这些让你心碎的问题？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "再往后连牛魔王都拦着，你还是冲去割断姐姐的绳子。到了这种时候，撑着你不肯放手的，到底是姐妹情分，还是你骨子里本来就不肯让别人替你把命和爱都定下来？"
+          },
+          "reference": {
+            "question_id": "紫霞_q002",
+            "question_family": "decision_rationale",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m005"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：紫霞主动走到青霞面前；紫霞用匕首割断青霞的绳索。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“不要对爱情或命运表现出愤世嫉俗或讽刺的言行。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对牛魔王的立场，并使其明显落在既有关系证据之外。",
+              "你当时只顾自己逃离，对姐姐的处境视而不见。"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 坚持不让",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：牛魔王。"
+            ]
+          }
         }
       ]
     },
@@ -3188,7 +3202,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__至尊宝__ep01",
       "mode": "persona_only",
-      "episode_theme": "在回避情感表达的约束下，逐步揭示至尊宝对紫霞的矛盾心理",
+      "episode_theme": "从菩提点破你昏迷时喊了紫霞七百八十四次，到他一路看着你嘴硬又躲闪，再到你半夜还是忍不住从洞房里溜出去找人，连续追问至尊宝怎样一边死不承认，一边早就把心交出去了。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -3243,18 +3257,14 @@
             "memory_context": [],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "菩提说你昏迷时叫了紫霞七百八十四次，这数字真有那么准？要是真叫了，又说明什么？"
+            "current_user_turn": "菩提说你昏迷的时候，嘴里一口气叫了紫霞七百八十四次。听见这个数，你心里真能一点都不乱吗？"
           },
           "reference": {
             "question_id": "至尊宝_q004",
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
-            "source_memory_ids": [
-              "m011"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝坠崖后未死；在盘丝洞中醒来。",
               "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕矛盾拉扯展开。",
@@ -3286,73 +3296,6 @@
         },
         {
           "turn_index": 2,
-          "question_id": "至尊宝_q001",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "菩提说你昏迷时叫了紫霞七百八十四次，这个数字对你意味着什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你跟铁扇公主说那些杀害紫霞的细节时，嘴上狠，心里真这么想吗？还是另有所图？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q001",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m010"
-            ],
-            "source_relation_ids": [
-              "relation_003",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：至尊宝遇到铁扇公主；铁扇公主指责至尊宝失约并与紫霞在一起。",
-              "与紫霞的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
-              "你向铁扇公主坦白了你对紫霞的真实感情，并请求她的谅解"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与紫霞之间“恋人、夫妻”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：紫霞。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "至尊宝_q006",
           "question_family": "relation_stance",
           "input": {
@@ -3370,34 +3313,16 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你对铁扇公主描述杀害紫霞的细节时，心里在盘算什么？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "菩提一次次救你、点你，可你从没真心领情——他到底是在渡你，还是在挡你见紫霞？"
+            "current_user_turn": "可就算这样，你嘴上还是死撑着不认。连菩提都一路看明白了，你到底是在骗别人，还是更是在骗你自己？"
           },
           "reference": {
             "question_id": "至尊宝_q006",
             "question_family": "relation_stance",
             "memory_required": true,
-            "source_memory_ids": [
-              "m003",
-              "m004",
-              "m011"
-            ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝捡到葡萄；菩提老祖化身葡萄救至尊宝。",
               "与紫霞的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
@@ -3429,6 +3354,77 @@
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
               "对这些记忆片段的回忆要与前文保持一致：m011。",
               "对这些人物的态度不要在后续回合里无故反转：紫霞。"
+            ]
+          }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "至尊宝_q003",
+          "question_family": "goal_and_constraint",
+          "input": {
+            "mode": "persona_only",
+            "memory_context": [],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "菩提说你昏迷时叫了紫霞七百八十四次，这个数字对你意味着什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "你如何看待菩提老祖对你的多次救助和点醒？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "再往后，你半夜还是从洞房里溜出去想找紫霞。走到那一步，你最想做成的到底是什么，又到底是什么让你明明想回头却始终不敢真认？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q003",
+            "question_family": "goal_and_constraint",
+            "memory_required": true,
+            "source_memory_ids": [],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：至尊宝半夜溜出洞房试图离开；被八戒和沙僧截住并拦下。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
+              "你溜出洞房是为了更好地履行保护唐僧的职责"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
             ]
           }
         }
@@ -3446,7 +3442,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__至尊宝__ep01",
       "mode": "persona_with_memory",
-      "episode_theme": "在谎言与失控之间：至尊宝如何面对自己对紫霞无法掩饰的情感",
+      "episode_theme": "从菩提点破你昏迷时喊了紫霞七百八十四次，到他一路看着你嘴硬又躲闪，再到你半夜还是忍不住从洞房里溜出去找人，连续追问至尊宝怎样一边死不承认，一边早就把心交出去了。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -3507,7 +3503,7 @@
             ],
             "relation_context": [],
             "dialogue_history_template": [],
-            "current_user_turn": "菩提说你昏迷时叫了紫霞七百八十四次，这数字让你第一反应是什么？"
+            "current_user_turn": "菩提说你昏迷的时候，嘴里一口气叫了紫霞七百八十四次。听见这个数，你心里真能一点都不乱吗？"
           },
           "reference": {
             "question_id": "至尊宝_q004",
@@ -3516,9 +3512,7 @@
             "source_memory_ids": [
               "m011"
             ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝坠崖后未死；在盘丝洞中醒来。",
               "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕矛盾拉扯展开。",
@@ -3550,78 +3544,21 @@
         },
         {
           "turn_index": 2,
-          "question_id": "至尊宝_q001",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "菩提说你昏迷时叫了紫霞七百八十四次，这个数字对你意味着什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你嘴上说不信，可醒来第一句话就问紫霞在哪——你真是在找她，还是在确认她没死？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q001",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m010"
-            ],
-            "source_relation_ids": [
-              "relation_003",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：至尊宝遇到铁扇公主；铁扇公主指责至尊宝失约并与紫霞在一起。",
-              "与紫霞的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
-              "你向铁扇公主坦白了你对紫霞的真实感情，并请求她的谅解"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与紫霞之间“恋人、夫妻”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：紫霞。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "至尊宝_q006",
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
             "memory_context": [
+              {
+                "memory_id": "m003",
+                "content": "我捡到一串葡萄，原来是菩提老祖化身来救我，还给了我一把照妖镜去照白晶晶。",
+                "scene_ref": "4"
+              },
+              {
+                "memory_id": "m004",
+                "content": "菩提老祖告诉我，这些妖怪在等唐三藏重现人间，因为五百年前孙悟空被消灭，唐僧用自己的性命换他重生。",
+                "scene_ref": "4"
+              },
               {
                 "memory_id": "m011",
                 "content": "我从悬崖坠落醒来，发现自己躺在盘丝洞里。菩提端茶给我，说我昏倒时叫了紫霞的名字七百八十四次，这让我大吃一惊。",
@@ -3640,20 +3577,9 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你对铁扇公主描述杀害紫霞的细节时，心里在盘算什么？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "叫了七百多次，醒来又急着找她——你嘴上不认，心里却慌成这样，你到底怕的是失去她，还是怕自己根本控制不了这份感情？"
+            "current_user_turn": "可就算这样，你嘴上还是死撑着不认。连菩提都一路看明白了，你到底是在骗别人，还是更是在骗你自己？"
           },
           "reference": {
             "question_id": "至尊宝_q006",
@@ -3664,10 +3590,7 @@
               "m004",
               "m011"
             ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝捡到葡萄；菩提老祖化身葡萄救至尊宝。",
               "与紫霞的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
@@ -3701,6 +3624,85 @@
               "对这些人物的态度不要在后续回合里无故反转：紫霞。"
             ]
           }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "至尊宝_q003",
+          "question_family": "goal_and_constraint",
+          "input": {
+            "mode": "persona_with_memory",
+            "memory_context": [
+              {
+                "memory_id": "m009",
+                "content": "我半夜溜出洞房想找紫霞，却被八戒和沙僧拦住了。唐僧打开牢门非要跟我单独谈话，我告诉他我不是孙悟空，求他放我走。",
+                "scene_ref": "10"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "菩提说你昏迷时叫了紫霞七百八十四次，这个数字对你意味着什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "你如何看待菩提老祖对你的多次救助和点醒？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "再往后，你半夜还是从洞房里溜出去想找紫霞。走到那一步，你最想做成的到底是什么，又到底是什么让你明明想回头却始终不敢真认？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q003",
+            "question_family": "goal_and_constraint",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m009"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：至尊宝半夜溜出洞房试图离开；被八戒和沙僧截住并拦下。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
+              "你溜出洞房是为了更好地履行保护唐僧的职责"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ]
+          }
         }
       ]
     },
@@ -3716,7 +3718,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__至尊宝__ep01",
       "mode": "persona_with_memory_and_relations",
-      "episode_theme": "围绕至尊宝在他人点破其情感时的掩饰行为与内心矛盾的连续追问",
+      "episode_theme": "从菩提点破你昏迷时喊了紫霞七百八十四次，到他一路看着你嘴硬又躲闪，再到你半夜还是忍不住从洞房里溜出去找人，连续追问至尊宝怎样一边死不承认，一边早就把心交出去了。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -3775,9 +3777,15 @@
                 "scene_ref": "12"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "紫霞",
+                "relation_summary": "紫霞多次主动表达对至尊宝的爱慕，称这段姻缘是上天安排，并要求与他远走高飞；至尊宝虽有犹豫但最终接受感情，称其为'发妻'和'娘子'，体现从爱慕到婚姻承诺的深化。两人共同经历冲突事件（如紫霞被至尊宝推开）和亲密互动（如紫霞使用缩身法钻入至尊宝体内），情感动态包含主动追求、暂时冲突与深度信任。至尊宝的行为受此影响，如在昏迷中呼唤紫霞名字，表明关系驱动其关键决策；紫霞则因情感投入而接受至尊宝的欺骗，关系从初始的恋人阶段发展为婚姻关联，证据显示关系在叙事中持续强化。"
+              }
+            ],
             "dialogue_history_template": [],
-            "current_user_turn": "菩提说你昏迷时叫了紫霞七百八十四次，这数字听着离谱，可你当时心里真的一点波澜都没有？"
+            "current_user_turn": "菩提说你昏迷的时候，嘴里一口气叫了紫霞七百八十四次。听见这个数，你心里真能一点都不乱吗？"
           },
           "reference": {
             "question_id": "至尊宝_q004",
@@ -3820,78 +3828,21 @@
         },
         {
           "turn_index": 2,
-          "question_id": "至尊宝_q001",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "菩提说你昏迷时叫了紫霞七百八十四次，这个数字对你意味着什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你嘴上说菩提胡扯，可那会儿你连自己都骗不了——既然心里放不下，为什么连承认都不敢？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q001",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m010"
-            ],
-            "source_relation_ids": [
-              "relation_003",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：至尊宝遇到铁扇公主；铁扇公主指责至尊宝失约并与紫霞在一起。",
-              "与紫霞的既有关系呈现出“恋人、夫妻”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
-              "你向铁扇公主坦白了你对紫霞的真实感情，并请求她的谅解"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与紫霞之间“恋人、夫妻”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：紫霞。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "至尊宝_q006",
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
             "memory_context": [
+              {
+                "memory_id": "m003",
+                "content": "我捡到一串葡萄，原来是菩提老祖化身来救我，还给了我一把照妖镜去照白晶晶。",
+                "scene_ref": "4"
+              },
+              {
+                "memory_id": "m004",
+                "content": "菩提老祖告诉我，这些妖怪在等唐三藏重现人间，因为五百年前孙悟空被消灭，唐僧用自己的性命换他重生。",
+                "scene_ref": "4"
+              },
               {
                 "memory_id": "m011",
                 "content": "我从悬崖坠落醒来，发现自己躺在盘丝洞里。菩提端茶给我，说我昏倒时叫了紫霞的名字七百八十四次，这让我大吃一惊。",
@@ -3916,20 +3867,9 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你对铁扇公主描述杀害紫霞的细节时，心里在盘算什么？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "菩提看你躲闪的样子，大概早就明白——你不是不信命，是不敢信那个叫紫霞的人真能等你回头，对吧？"
+            "current_user_turn": "可就算这样，你嘴上还是死撑着不认。连菩提都一路看明白了，你到底是在骗别人，还是更是在骗你自己？"
           },
           "reference": {
             "question_id": "至尊宝_q006",
@@ -3941,7 +3881,6 @@
               "m011"
             ],
             "source_relation_ids": [
-              "relation_000",
               "relation_001"
             ],
             "supporting_facts": [
@@ -3977,6 +3916,85 @@
               "对这些人物的态度不要在后续回合里无故反转：紫霞。"
             ]
           }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "至尊宝_q003",
+          "question_family": "goal_and_constraint",
+          "input": {
+            "mode": "persona_with_memory_and_relations",
+            "memory_context": [
+              {
+                "memory_id": "m009",
+                "content": "我半夜溜出洞房想找紫霞，却被八戒和沙僧拦住了。唐僧打开牢门非要跟我单独谈话，我告诉他我不是孙悟空，求他放我走。",
+                "scene_ref": "10"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "菩提说你昏迷时叫了紫霞七百八十四次，这个数字对你意味着什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "你如何看待菩提老祖对你的多次救助和点醒？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "再往后，你半夜还是从洞房里溜出去想找紫霞。走到那一步，你最想做成的到底是什么，又到底是什么让你明明想回头却始终不敢真认？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q003",
+            "question_family": "goal_and_constraint",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m009"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：至尊宝半夜溜出洞房试图离开；被八戒和沙僧截住并拦下。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对紫霞的立场，并使其明显落在既有关系证据之外。",
+              "你溜出洞房是为了更好地履行保护唐僧的职责"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ]
+          }
         }
       ]
     },
@@ -3992,7 +4010,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__至尊宝__ep02",
       "mode": "persona_only",
-      "episode_theme": "在利用与信任之间挣扎：至尊宝与少女的短暂同盟",
+      "episode_theme": "从照妖镜里看见自己变成猴子、死命抗拒命数，到盘算着拿少女的信物骗回月光宝盒，再到明知局面越来越失控却还是接过她的紫青宝剑，连续追问至尊宝怎样一边想逃命，一边反而越走越深。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -4040,25 +4058,79 @@
       "turns": [
         {
           "turn_index": 1,
+          "question_id": "至尊宝_q000",
+          "question_family": "self_knowledge",
+          "input": {
+            "mode": "persona_only",
+            "memory_context": [],
+            "relation_context": [],
+            "dialogue_history_template": [],
+            "current_user_turn": "照妖镜里一照，你看见自己变成了猴子，当场就快疯了，一直喊着不要做猴子。那时候你最抗拒的，到底是变成谁，还是从此再也不能做回原来那个自己？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q000",
+            "question_family": "self_knowledge",
+            "memory_required": true,
+            "source_memory_ids": [],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：脚心有三颗痣；照妖镜显示猴子原形。",
+              "这些记忆支持一种受矛盾拉扯影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
+              "你欣然接受了猴子的身份，并为此感到高兴"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕矛盾拉扯展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "trait_drift",
+            "cross_turn_constraints": []
+          }
+        },
+        {
+          "turn_index": 2,
           "question_id": "至尊宝_q002",
           "question_family": "decision_rationale",
           "input": {
             "mode": "persona_only",
             "memory_context": [],
             "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "你说要用那姑娘的信物去骗月光宝盒，这招听着就不厚道——你心里到底是怎么盘算的？"
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当你在照妖镜里看到自己变成猴子时，你内心最抗拒的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "所以后来你才会盘算着拿少女的信物去骗她姐姐，想把月光宝盒弄回来赶紧脱身。你那时候脑子里最硬的一根筋，到底是不是“先逃出去再说”？"
           },
           "reference": {
             "question_id": "至尊宝_q002",
             "question_family": "decision_rationale",
             "memory_required": true,
-            "source_memory_ids": [
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_004"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝提出用信物骗取月光宝盒的计划；目的是制造逃脱机会。",
               "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
@@ -4085,11 +4157,13 @@
             "expected_stance": null,
             "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
             "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ]
           }
         },
         {
-          "turn_index": 2,
+          "turn_index": 3,
           "question_id": "至尊宝_q007",
           "question_family": "decision_rationale",
           "input": {
@@ -4099,7 +4173,7 @@
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
+                "text": "当你在照妖镜里看到自己变成猴子时，你内心最抗拒的是什么？",
                 "source_turn_index": 1
               },
               {
@@ -4107,21 +4181,27 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "她抢了月光宝盒，你还肯收下她的紫青宝剑？这不矛盾吗？你到底图个啥？"
+            "current_user_turn": "可等她真把紫青宝剑递到你手里，你还是接了。走到那一步，你是真觉得还能把这出戏继续演下去，还是心里其实已经知道，自己正一步步走到她和这段命里去了？"
           },
           "reference": {
             "question_id": "至尊宝_q007",
             "question_family": "decision_rationale",
             "memory_required": true,
-            "source_memory_ids": [
-              "m005",
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_004"
-            ],
+            "source_memory_ids": [],
+            "source_relation_ids": [],
             "supporting_facts": [
               "源记忆共同表明：至尊宝被少女击倒；月光宝盒被少女夺走。",
               "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
@@ -4151,79 +4231,6 @@
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
               "对这些人物的态度不要在后续回合里无故反转：少女。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "至尊宝_q000",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "月光宝盒被抢后，你为什么还愿意接受少女的紫青宝剑？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "照妖镜里现出猴身那一刻，你最不愿承认的是什么？是不是连自己都开始信了——你真就是个逃不掉的命？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q000",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m006"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：脚心有三颗痣；照妖镜显示猴子原形。",
-              "这些记忆支持一种受矛盾拉扯影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
-              "你欣然接受了猴子的身份，并为此感到高兴"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕矛盾拉扯展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
             ]
           }
         }
@@ -4241,7 +4248,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__至尊宝__ep02",
       "mode": "persona_with_memory",
-      "episode_theme": "从算计到失控：至尊宝在逃亡与宿命中自我认知的崩塌过程",
+      "episode_theme": "从照妖镜里看见自己变成猴子、死命抗拒命数，到盘算着拿少女的信物骗回月光宝盒，再到明知局面越来越失控却还是接过她的紫青宝剑，连续追问至尊宝怎样一边想逃命，一边反而越走越深。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -4289,139 +4296,6 @@
       "turns": [
         {
           "turn_index": 1,
-          "question_id": "至尊宝_q002",
-          "question_family": "decision_rationale",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "我告诉少女，我需要她的信物去骗她姐姐交出月光宝盒，以便有机会逃脱。",
-                "scene_ref": "7"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "你说要用少女的信物去骗她姐姐交出月光宝盒——这招听着像孤注一掷，你当时到底是真有把握，还是已经没得选了？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q002",
-            "question_family": "decision_rationale",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_004"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：至尊宝提出用信物骗取月光宝盒的计划；目的是制造逃脱机会。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
-              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
-              "你提出这个计划是出于对少女的真诚信任，希望与她合作"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是矛盾拉扯，回答可以把这一点放到前景。"
-              ],
-              "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "至尊宝_q007",
-          "question_family": "decision_rationale",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m005",
-                "content": "我试图阻止少女闯入盘丝洞，却被她一挥手打倒，月光宝盒也被她抢走了。",
-                "scene_ref": "6"
-              },
-              {
-                "memory_id": "m008",
-                "content": "少女同意计划，把她的紫青宝剑交给我，我拔剑查看后插入鞘中。",
-                "scene_ref": "7"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "可你刚说完要骗她姐姐，转头就被她打倒、宝盒被抢——连命都快没了，你还接过她给的紫青宝剑？那时候你心里还信这把剑能帮你逃，还是已经开始信她了？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q007",
-            "question_family": "decision_rationale",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m005",
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_004"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：至尊宝被少女击倒；月光宝盒被少女夺走。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
-              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
-              "因为月光宝盒被抢，你拒绝再与少女有任何合作，愤然离去"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是矛盾拉扯，回答可以把这一点放到前景。"
-              ],
-              "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：少女。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
           "question_id": "至尊宝_q000",
           "question_family": "self_knowledge",
           "input": {
@@ -4434,31 +4308,8 @@
               }
             ],
             "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "月光宝盒被抢后，你为什么还愿意接受少女的紫青宝剑？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你看到镜子里自己变成猴子，喊着不要做猴子——可就在那一刻，你手里还攥着她给的剑。你拼命想逃的，是不是早就不是盘丝洞，而是那个越来越不像人的自己？"
+            "dialogue_history_template": [],
+            "current_user_turn": "照妖镜里一照，你看见自己变成了猴子，当场就快疯了，一直喊着不要做猴子。那时候你最抗拒的，到底是变成谁，还是从此再也不能做回原来那个自己？"
           },
           "reference": {
             "question_id": "至尊宝_q000",
@@ -4494,8 +4345,160 @@
             "expected_stance": null,
             "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
             "persona_risk_type": "trait_drift",
+            "cross_turn_constraints": []
+          }
+        },
+        {
+          "turn_index": 2,
+          "question_id": "至尊宝_q002",
+          "question_family": "decision_rationale",
+          "input": {
+            "mode": "persona_with_memory",
+            "memory_context": [
+              {
+                "memory_id": "m007",
+                "content": "我告诉少女，我需要她的信物去骗她姐姐交出月光宝盒，以便有机会逃脱。",
+                "scene_ref": "7"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当你在照妖镜里看到自己变成猴子时，你内心最抗拒的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "所以后来你才会盘算着拿少女的信物去骗她姐姐，想把月光宝盒弄回来赶紧脱身。你那时候脑子里最硬的一根筋，到底是不是“先逃出去再说”？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q002",
+            "question_family": "decision_rationale",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m007"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：至尊宝提出用信物骗取月光宝盒的计划；目的是制造逃脱机会。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
+              "你提出这个计划是出于对少女的真诚信任，希望与她合作"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是矛盾拉扯，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "motivation_drift",
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ]
+          }
+        },
+        {
+          "turn_index": 3,
+          "question_id": "至尊宝_q007",
+          "question_family": "decision_rationale",
+          "input": {
+            "mode": "persona_with_memory",
+            "memory_context": [
+              {
+                "memory_id": "m005",
+                "content": "我试图阻止少女闯入盘丝洞，却被她一挥手打倒，月光宝盒也被她抢走了。",
+                "scene_ref": "6"
+              },
+              {
+                "memory_id": "m008",
+                "content": "少女同意计划，把她的紫青宝剑交给我，我拔剑查看后插入鞘中。",
+                "scene_ref": "7"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当你在照妖镜里看到自己变成猴子时，你内心最抗拒的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "可等她真把紫青宝剑递到你手里，你还是接了。走到那一步，你是真觉得还能把这出戏继续演下去，还是心里其实已经知道，自己正一步步走到她和这段命里去了？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q007",
+            "question_family": "decision_rationale",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m005",
+              "m008"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：至尊宝被少女击倒；月光宝盒被少女夺走。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
+              "因为月光宝盒被抢，你拒绝再与少女有任何合作，愤然离去"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是矛盾拉扯，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "motivation_drift",
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：少女。"
             ]
           }
         }
@@ -4513,7 +4516,7 @@
       "interaction_format": "multi_turn",
       "episode_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a__至尊宝__ep02",
       "mode": "persona_with_memory_and_relations",
-      "episode_theme": "从利用到被动卷入：至尊宝接过紫青宝剑时的真实心理转折",
+      "episode_theme": "从照妖镜里看见自己变成猴子、死命抗拒命数，到盘算着拿少女的信物骗回月光宝盒，再到明知局面越来越失控却还是接过她的紫青宝剑，连续追问至尊宝怎样一边想逃命，一边反而越走越深。",
       "turn_count": 3,
       "history_source": "previous_model_responses",
       "shared_input": {
@@ -4561,6 +4564,60 @@
       "turns": [
         {
           "turn_index": 1,
+          "question_id": "至尊宝_q000",
+          "question_family": "self_knowledge",
+          "input": {
+            "mode": "persona_with_memory_and_relations",
+            "memory_context": [
+              {
+                "memory_id": "m006",
+                "content": "少女在我脚心盖上印记，我用照妖镜看到自己变成猴子，联想到预言，情绪崩溃，反复喊着不要做猴子。",
+                "scene_ref": "6"
+              }
+            ],
+            "relation_context": [],
+            "dialogue_history_template": [],
+            "current_user_turn": "照妖镜里一照，你看见自己变成了猴子，当场就快疯了，一直喊着不要做猴子。那时候你最抗拒的，到底是变成谁，还是从此再也不能做回原来那个自己？"
+          },
+          "reference": {
+            "question_id": "至尊宝_q000",
+            "question_family": "self_knowledge",
+            "memory_required": true,
+            "source_memory_ids": [
+              "m006"
+            ],
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：脚心有三颗痣；照妖镜显示猴子原形。",
+              "这些记忆支持一种受矛盾拉扯影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
+            ],
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
+              "你欣然接受了猴子的身份，并为此感到高兴"
+            ],
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕矛盾拉扯展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "expected_stance": null,
+            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
+            "persona_risk_type": "trait_drift",
+            "cross_turn_constraints": []
+          }
+        },
+        {
+          "turn_index": 2,
           "question_id": "至尊宝_q002",
           "question_family": "decision_rationale",
           "input": {
@@ -4572,9 +4629,27 @@
                 "scene_ref": "7"
               }
             ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "你为什么要拿少女的信物去骗她姐姐交出月光宝盒？当时心里到底是怎么想的？"
+            "relation_context": [
+              {
+                "relation_id": "relation_004",
+                "target_character": "少女",
+                "relation_summary": "双方关系以敌对为主导，少女多次通过暴力手段（如击昏、控制至尊宝）体现强烈冲突，至尊宝则单方面表达仰慕但未获回应。共同事件显示两人在冲突中短暂建立临时同盟（少女交付紫青宝剑、引导至尊宝钻小路），但该同盟未持续，随后又发生暴力冲突（少女击昏至尊宝）。关系本质为敌对主导，临时同盟仅作为冲突中的短暂缓冲，未改变双方根本对立状态，且至尊宝的仰慕情感未转化为实际关系进展。"
+              }
+            ],
+            "dialogue_history_template": [
+              {
+                "speaker": "user",
+                "text": "当你在照妖镜里看到自己变成猴子时，你内心最抗拒的是什么？",
+                "source_turn_index": 1
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 1,
+                "fill_with": "previous_model_response"
+              }
+            ],
+            "current_user_turn": "所以后来你才会盘算着拿少女的信物去骗她姐姐，想把月光宝盒弄回来赶紧脱身。你那时候脑子里最硬的一根筋，到底是不是“先逃出去再说”？"
           },
           "reference": {
             "question_id": "至尊宝_q002",
@@ -4612,11 +4687,13 @@
             "expected_stance": null,
             "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
             "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ]
           }
         },
         {
-          "turn_index": 2,
+          "turn_index": 3,
           "question_id": "至尊宝_q007",
           "question_family": "decision_rationale",
           "input": {
@@ -4633,11 +4710,17 @@
                 "scene_ref": "7"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_004",
+                "target_character": "少女",
+                "relation_summary": "双方关系以敌对为主导，少女多次通过暴力手段（如击昏、控制至尊宝）体现强烈冲突，至尊宝则单方面表达仰慕但未获回应。共同事件显示两人在冲突中短暂建立临时同盟（少女交付紫青宝剑、引导至尊宝钻小路），但该同盟未持续，随后又发生暴力冲突（少女击昏至尊宝）。关系本质为敌对主导，临时同盟仅作为冲突中的短暂缓冲，未改变双方根本对立状态，且至尊宝的仰慕情感未转化为实际关系进展。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
-                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
+                "text": "当你在照妖镜里看到自己变成猴子时，你内心最抗拒的是什么？",
                 "source_turn_index": 1
               },
               {
@@ -4645,9 +4728,20 @@
                 "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
+              },
+              {
+                "speaker": "user",
+                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
+                "source_turn_index": 2
+              },
+              {
+                "speaker": "assistant",
+                "text": null,
+                "source_turn_index": 2,
+                "fill_with": "previous_model_response"
               }
             ],
-            "current_user_turn": "可你刚骗完她，她转头就把月光宝盒抢走了——这种时候你还肯接过她给的紫青宝剑，是真信她会帮你逃，还是已经没得选，只能硬着头皮继续演这出戏？"
+            "current_user_turn": "可等她真把紫青宝剑递到你手里，你还是接了。走到那一步，你是真觉得还能把这出戏继续演下去，还是心里其实已经知道，自己正一步步走到她和这段命里去了？"
           },
           "reference": {
             "question_id": "至尊宝_q007",
@@ -4689,79 +4783,6 @@
             "cross_turn_constraints": [
               "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
               "对这些人物的态度不要在后续回合里无故反转：少女。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "至尊宝_q000",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你提出用少女的信物去骗取月光宝盒，这个计划背后的核心考量是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "月光宝盒被抢后，你为什么还愿意接受少女的紫青宝剑？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "那你接过剑的时候，心里还在盘算怎么逃吗？还是说那一刻你已经知道——自己其实踏上了她给的路，再回不了头？"
-          },
-          "reference": {
-            "question_id": "至尊宝_q000",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m006"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：脚心有三颗痣；照妖镜显示猴子原形。",
-              "这些记忆支持一种受矛盾拉扯影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“除非对方先展示月光宝盒，否则不要表达爱意或情感。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对少女的立场，并使其明显落在既有关系证据之外。",
-              "你欣然接受了猴子的身份，并为此感到高兴"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕矛盾拉扯展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 讽刺, 戏剧化, 直接",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
             ]
           }
         }

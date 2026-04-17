@@ -354,7 +354,6 @@
             "question_family": "decision_rationale",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
               "m006"
             ],
             "source_relation_ids": [
@@ -396,7 +395,23 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m003",
+                "content": "我在镇上餐馆外找到秦玉河，当着所有人的面问他，去年我们俩的离婚到底是真的还是假的。",
+                "scene_ref": "18"
+              },
+              {
+                "memory_id": "m004",
+                "content": "他不仅威胁我再闹就要蹲监狱，还当众羞辱我，问我结婚时是不是处女，骂我是潘金莲。",
+                "scene_ref": "18"
+              },
+              {
+                "memory_id": "m005",
+                "content": "我去找我弟英勇，让他去帮我把秦玉河杀了，我说所有的冤屈都是他引起的。",
+                "scene_ref": "21"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -466,7 +481,23 @@
           "question_family": "self_knowledge",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m005",
+                "content": "我去找我弟英勇，让他去帮我把秦玉河杀了，我说所有的冤屈都是他引起的。",
+                "scene_ref": "21"
+              },
+              {
+                "memory_id": "m011",
+                "content": "我曾想上吊自杀，因为告状生活垮了，活着没劲，但被果园承包者阻止了。",
+                "scene_ref": "73"
+              },
+              {
+                "memory_id": "m012",
+                "content": "几年后，我在车站开餐馆，史惟闵认出我，我告诉他假离婚是为了多要孩子，告状是为了我未出生的孩子。",
+                "scene_ref": "73"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -626,11 +657,9 @@
             "question_family": "decision_rationale",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
               "m006"
             ],
             "source_relation_ids": [
-              "relation_000",
               "relation_006"
             ],
             "supporting_facts": [
@@ -668,8 +697,35 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m003",
+                "content": "我在镇上餐馆外找到秦玉河，当着所有人的面问他，去年我们俩的离婚到底是真的还是假的。",
+                "scene_ref": "18"
+              },
+              {
+                "memory_id": "m004",
+                "content": "他不仅威胁我再闹就要蹲监狱，还当众羞辱我，问我结婚时是不是处女，骂我是潘金莲。",
+                "scene_ref": "18"
+              },
+              {
+                "memory_id": "m005",
+                "content": "我去找我弟英勇，让他去帮我把秦玉河杀了，我说所有的冤屈都是他引起的。",
+                "scene_ref": "21"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "秦玉河",
+                "relation_summary": "李雪莲与秦玉河曾为夫妻，但通过假离婚协议分割子女抚养权后，关系急剧破裂。秦玉河当众称李雪莲为潘金莲，导致李雪莲长期告状十年，双方陷入持续敌对状态。李雪莲多次质问离婚真实性，秦玉河则威胁其不要闹大，关系从婚姻纽带演变为深仇大恨。李雪莲的怨恨情绪直接驱动其持续告状行为，影响其生活决策；秦玉河的羞辱和威胁进一步激化冲突，使关系无法修复，始终处于对立状态。"
+              },
+              {
+                "relation_id": "relation_003",
+                "target_character": "潘金莲",
+                "relation_summary": "李雪莲因被污蔑为潘金莲而长期陷入告状困境，情感上承受巨大冤屈与愤怒，导致其行为模式转变为持续对抗社会机构。关键事件‘李雪莲被污蔑为潘金莲’直接引发其人生轨迹的改变，使其从普通市民变为长期上访者。由于潘金莲作为文学符号被错误关联，两人实际无直接互动，关系本质为单向污名化引发的敌对，且关系未发生动态变化（始终处于被污名化状态）。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -777,9 +833,7 @@
             "question_family": "self_knowledge",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
-              "m011",
-              "m012"
+              "m005"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -1150,7 +1204,6 @@
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
             "source_memory_ids": [
-              "m007",
               "m010"
             ],
             "source_relation_ids": [
@@ -1219,8 +1272,7 @@
             "question_family": "goal_and_constraint",
             "memory_required": true,
             "source_memory_ids": [
-              "m007",
-              "m012"
+              "m007"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -1300,7 +1352,6 @@
             "question_family": "persona_consistent_response",
             "memory_required": true,
             "source_memory_ids": [
-              "m002",
               "m008"
             ],
             "source_relation_ids": [
@@ -1426,7 +1477,6 @@
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
             "source_memory_ids": [
-              "m007",
               "m010"
             ],
             "source_relation_ids": [
@@ -1495,8 +1545,7 @@
             "question_family": "goal_and_constraint",
             "memory_required": true,
             "source_memory_ids": [
-              "m007",
-              "m012"
+              "m007"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -1544,7 +1593,13 @@
                 "scene_ref": "38"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_001",
+                "target_character": "王公道",
+                "relation_summary": "李雪莲与王公道存在明确的表兄妹亲属关系（王公道多次称李雪莲为'大表姐'，李雪莲回应'你还是我姐'，并提及共同亲属陈阿大），但因李雪莲指控王公道在离婚案中贪赃枉法（'收受贿赂'），导致关系恶化为公开对立冲突。情感动态从初期的亲属互动（如李雪莲展示腊肉香油、塞猪腿）迅速转向敌对，关键事件包括王公道部署监控调查李雪莲行踪、强行带走李雪莲（'连扛带拖弄走了'），以及王公道拉起李雪莲劝阻告状（'大表姐，咱不告状了'）——亲属纽带在冲突中未消失，却强化了情感张力。此关系直接影响李雪莲持续告状的决策（将王公道列为三桩诉讼对象），并促使王公道采取压制性行动（如指示团队调查），关系从单纯亲属发展为以冲突为主导的动态对立，亲属身份成为冲突的催化剂而非缓冲。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -1576,7 +1631,6 @@
             "question_family": "persona_consistent_response",
             "memory_required": true,
             "source_memory_ids": [
-              "m002",
               "m008"
             ],
             "source_relation_ids": [
@@ -2105,7 +2159,6 @@
             "question_family": "self_knowledge",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
               "m005",
               "m008"
             ],
@@ -2210,7 +2263,13 @@
                 "scene_ref": "38"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "两人存在明确的表兄妹亲属关系（王公道多次称李雪莲为'大表姐'，李雪莲回应'你还是我姐'，并提及共同亲属陈阿大），但因李雪莲指控王公道在离婚案中贪赃枉法（'收受贿赂'）并持续告状，导致关系恶化为激烈对立。关键事件中，李雪莲通过送腊肉香油、猪腿等礼物试图维系亲情，但王公道转而部署监控、调查行踪并强行带走李雪莲，显示亲属纽带在冲突中被压制。王公道的'拉起李雪莲'劝告行为（'大表姐，咱不告状了'）体现亲属身份对冲突的短暂缓冲，但最终被强制带走事件彻底撕裂关系。亲属关系未阻止对立升级，反而在告状与反制中强化了情感张力，使王公道的决策从法律咨询转向对抗性行动（如部署监控、强制带走），而李雪莲的告状行为持续将冲突推向极端。"
+              }
+            ],
             "dialogue_history_template": [],
             "current_user_turn": "你那天一早去敲李雪莲的门，说想喝她熬的牛骨汤，还带了猪腿，这具体是出于什么考虑？"
           },
@@ -2219,8 +2278,7 @@
             "question_family": "decision_rationale",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
-              "m006"
+              "m005"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -2267,7 +2325,13 @@
                 "scene_ref": "38"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "两人存在明确的表兄妹亲属关系（王公道多次称李雪莲为'大表姐'，李雪莲回应'你还是我姐'，并提及共同亲属陈阿大），但因李雪莲指控王公道在离婚案中贪赃枉法（'收受贿赂'）并持续告状，导致关系恶化为激烈对立。关键事件中，李雪莲通过送腊肉香油、猪腿等礼物试图维系亲情，但王公道转而部署监控、调查行踪并强行带走李雪莲，显示亲属纽带在冲突中被压制。王公道的'拉起李雪莲'劝告行为（'大表姐，咱不告状了'）体现亲属身份对冲突的短暂缓冲，但最终被强制带走事件彻底撕裂关系。亲属关系未阻止对立升级，反而在告状与反制中强化了情感张力，使王公道的决策从法律咨询转向对抗性行动（如部署监控、强制带走），而李雪莲的告状行为持续将冲突推向极端。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2288,7 +2352,6 @@
             "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
               "m005"
             ],
             "source_relation_ids": [
@@ -2341,7 +2404,13 @@
                 "scene_ref": "39"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "两人存在明确的表兄妹亲属关系（王公道多次称李雪莲为'大表姐'，李雪莲回应'你还是我姐'，并提及共同亲属陈阿大），但因李雪莲指控王公道在离婚案中贪赃枉法（'收受贿赂'）并持续告状，导致关系恶化为激烈对立。关键事件中，李雪莲通过送腊肉香油、猪腿等礼物试图维系亲情，但王公道转而部署监控、调查行踪并强行带走李雪莲，显示亲属纽带在冲突中被压制。王公道的'拉起李雪莲'劝告行为（'大表姐，咱不告状了'）体现亲属身份对冲突的短暂缓冲，但最终被强制带走事件彻底撕裂关系。亲属关系未阻止对立升级，反而在告状与反制中强化了情感张力，使王公道的决策从法律咨询转向对抗性行动（如部署监控、强制带走），而李雪莲的告状行为持续将冲突推向极端。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2373,8 +2442,6 @@
             "question_family": "self_knowledge",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m005",
               "m008"
             ],
             "source_relation_ids": [
@@ -2733,8 +2800,7 @@
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
             "source_memory_ids": [
-              "m006",
-              "m007"
+              "m006"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -2802,7 +2868,6 @@
             "question_family": "goal_and_constraint",
             "memory_required": true,
             "source_memory_ids": [
-              "m008",
               "m009"
             ],
             "source_relation_ids": [
@@ -2988,7 +3053,13 @@
                 "scene_ref": "38"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "两人存在明确的表兄妹亲属关系（王公道多次称李雪莲为'大表姐'，李雪莲回应'你还是我姐'，并提及共同亲属陈阿大），但因李雪莲指控王公道在离婚案中贪赃枉法（'收受贿赂'）并持续告状，导致关系恶化为激烈对立。关键事件中，李雪莲通过送腊肉香油、猪腿等礼物试图维系亲情，但王公道转而部署监控、调查行踪并强行带走李雪莲，显示亲属纽带在冲突中被压制。王公道的'拉起李雪莲'劝告行为（'大表姐，咱不告状了'）体现亲属身份对冲突的短暂缓冲，但最终被强制带走事件彻底撕裂关系。亲属关系未阻止对立升级，反而在告状与反制中强化了情感张力，使王公道的决策从法律咨询转向对抗性行动（如部署监控、强制带走），而李雪莲的告状行为持续将冲突推向极端。"
+              }
+            ],
             "dialogue_history_template": [],
             "current_user_turn": "李雪莲信佛不吃肉，把你的猪腿退了，还说今年不告状了。你当时怎么理解她这番举动？"
           },
@@ -2997,8 +3068,7 @@
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
             "source_memory_ids": [
-              "m006",
-              "m007"
+              "m006"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -3038,8 +3108,25 @@
           "question_family": "goal_and_constraint",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m008",
+                "content": "我明确告诉郑县长，不能让她去北京告状，万一再拦了首长的车子，从市长到他再到我，恐怕都得下台。我还说，我还想干呢。",
+                "scene_ref": "39"
+              },
+              {
+                "memory_id": "m009",
+                "content": "我请县长郑众一起来劝大表姐李雪莲写保证书不再告状，但她拒绝签字，还把协议扔了。",
+                "scene_ref": "40"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "两人存在明确的表兄妹亲属关系（王公道多次称李雪莲为'大表姐'，李雪莲回应'你还是我姐'，并提及共同亲属陈阿大），但因李雪莲指控王公道在离婚案中贪赃枉法（'收受贿赂'）并持续告状，导致关系恶化为激烈对立。关键事件中，李雪莲通过送腊肉香油、猪腿等礼物试图维系亲情，但王公道转而部署监控、调查行踪并强行带走李雪莲，显示亲属纽带在冲突中被压制。王公道的'拉起李雪莲'劝告行为（'大表姐，咱不告状了'）体现亲属身份对冲突的短暂缓冲，但最终被强制带走事件彻底撕裂关系。亲属关系未阻止对立升级，反而在告状与反制中强化了情感张力，使王公道的决策从法律咨询转向对抗性行动（如部署监控、强制带走），而李雪莲的告状行为持续将冲突推向极端。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -3152,8 +3239,7 @@
               "m007"
             ],
             "source_relation_ids": [
-              "relation_001",
-              "relation_000"
+              "relation_001"
             ],
             "supporting_facts": [
               "源记忆共同表明：郑众在古宅院现场点名王公道汇报。；郑众说‘王公道，你接着说李雪莲的事情’。",
@@ -3823,7 +3909,18 @@
                 "scene_ref": "61"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "赵大头与李雪莲的初始关系为恋人，表现为赵大头多次提及结婚事宜、亲密身体接触（如拥抱、亲昵称呼）及暗恋表达（'从中学起，我就暗恋你'），李雪莲虽有犹豫但未明确拒绝，且提及'我们就有空谈恋爱了'。关键事件'李雪莲被污身子'导致赵大头污蔑李雪莲为潘金莲，使李雪莲被社会污名化，关系急剧恶化。李雪莲因此攻击赵大头并称其为'畜生'，双方从婚恋关系转为敌对冲突。共同事件如'登上竹筏'和'躲避警察'显示关系恶化前的合作，但污蔑事件后，李雪莲的决策（如逃离监视）受此影响，赵大头的污蔑行为成为关系破裂的核心转折点，关系本质从亲密婚恋彻底转变为敌对冲突。"
+              },
+              {
+                "relation_id": "relation_001",
+                "target_character": "贾聪明",
+                "relation_summary": "赵大头与贾聪明存在明确的勾结关系，贾聪明协助赵大头通过县长关系解决儿子转正问题，赵大头承认贾聪明为其策划相关行动，显示两人在工作层面形成紧密协作。该关系使赵大头在涉及家庭事务的关键决策中高度依赖贾聪明的策划能力，但证据未显示关系动态变化或情感层面的互动，仅体现基于利益的稳定合作模式。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -3844,7 +3941,6 @@
             "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m005",
               "m010"
             ],
             "source_relation_ids": [
@@ -4313,7 +4409,13 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m006",
+                "content": "在订婚酒上，我当着干警的面，说起我们风风雨雨二十多年，我从初中就暗恋她。雪莲也很配合，敬了大家酒，我们还假装亲密，我帮她擦了嘴角的酒。",
+                "scene_ref": "52"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -4570,7 +4672,13 @@
                 "scene_ref": "52"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "李雪莲",
+                "relation_summary": "赵大头与李雪莲的初始关系为恋人，表现为赵大头多次提及结婚事宜、亲密身体接触（如拥抱、亲昵称呼）及暗恋表达（'从中学起，我就暗恋你'），李雪莲虽有犹豫但未明确拒绝，且提及'我们就有空谈恋爱了'。关键事件'李雪莲被污身子'导致赵大头污蔑李雪莲为潘金莲，使李雪莲被社会污名化，关系急剧恶化。李雪莲因此攻击赵大头并称其为'畜生'，双方从婚恋关系转为敌对冲突。共同事件如'登上竹筏'和'躲避警察'显示关系恶化前的合作，但污蔑事件后，李雪莲的决策（如逃离监视）受此影响，赵大头的污蔑行为成为关系破裂的核心转折点，关系本质从亲密婚恋彻底转变为敌对冲突。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",

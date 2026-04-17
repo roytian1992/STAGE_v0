@@ -603,8 +603,7 @@
             "question_family": "decision_rationale",
             "memory_required": true,
             "source_memory_ids": [
-              "m011",
-              "m010"
+              "m011"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -642,8 +641,30 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m005",
+                "content": "我在楼梯上看到两个女孩，试着用手语打招呼，但她们害怕地拉着离开了。",
+                "scene_ref": "17"
+              },
+              {
+                "memory_id": "m011",
+                "content": "金教授道歉并说明尴尬立场，黄律师拿出钱箱，提议资助妍斗上大学和留学，并为我安排首尔教职，以换取我帮忙协商。",
+                "scene_ref": "64"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_001",
+                "target_character": "金妍斗",
+                "relation_summary": "姜仁浩与金妍斗通过手语建立深度协作关系，姜仁浩担任金妍斗的翻译者并提供持续情感支持（如庭审中握手安慰、沙滩互动时轻抚后背）。共同事件显示姜仁浩在课堂场景中打断金妍斗的绘画行为，强化了两人在沟通场景中的互动模式。这种关系使姜仁浩在关键决策中优先保障金妍斗的沟通需求（如主动提供手语翻译服务），影响其在庭审等场景的行动选择。关系保持稳定，未见动态变化，始终以协作与支持为核心。"
+              },
+              {
+                "relation_id": "relation_006",
+                "target_character": "成宥利",
+                "relation_summary": "姜仁浩与成宥利的关系基于多次互动形成稳定的情感纽带。情感动态表现为姜仁浩主动实施保护行为（如拽她进屋、用手语道歉、背她散步），成宥利通过接受保护（抢洋娃娃、拉衣袖）建立信任。关键事件包括手语问候、伤口安慰及散步互动，这些行为强化了姜仁浩的保护欲与成宥利的依赖感。关系影响姜仁浩的决策逻辑，使其在风险场景中优先选择保护成宥利（如主动介入危险环境）。证据未显示关系动态变化，双方互动保持稳定，未出现冲突或角色立场转变。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -749,7 +770,6 @@
             "question_family": "persona_consistent_response",
             "memory_required": true,
             "source_memory_ids": [
-              "m010",
               "m011"
             ],
             "source_relation_ids": [],
@@ -1136,7 +1156,18 @@
           "question_family": "goal_and_constraint",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m001",
+                "content": "我询问修理员是否有公车可以到慈爱学堂，但他说没有直达车，我因为着急决定先不修车了。",
+                "scene_ref": "13"
+              },
+              {
+                "memory_id": "m003",
+                "content": "我坐在她的车里，感到很冷，不断搓手取暖，并询问还要多久才能到达。",
+                "scene_ref": "14"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -1199,7 +1230,18 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m002",
+                "content": "我的车被一个女人的车撞了，她指责我酒驾，但后来她道歉了。",
+                "scene_ref": "13"
+              },
+              {
+                "memory_id": "m004",
+                "content": "我告诉她我去慈爱学堂教孩子，她问我会不会手语，我就用手语回应了她。",
+                "scene_ref": "14"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -1463,7 +1505,13 @@
                 "scene_ref": "14"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "徐友真",
+                "relation_summary": "徐友真与姜仁浩存在明确的夫妻关系（证据：徐友真使用'老公'称谓），但因金妍斗受伤事件产生责备矛盾（证据：徐友真责怪姜仁浩未尽保护责任）。同时，徐友真承诺通过法律手段帮助姜仁浩复职（证据：社交关系中的支持与帮助），并共同参与带孩子们进入法院、进入病房等事件（共同事件证据）。关系中矛盾与同盟并存：徐友真在责备后仍主动提供支持，影响姜仁浩在复职事件中的决策，两人在关键事件中保持协作，未见关系性质的根本转变。互相调侃的互动（如不耐寒调侃）属于同盟关系的补充表现，但未改变核心矛盾与合作动态。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -1495,7 +1543,6 @@
             "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m002",
               "m004"
             ],
             "source_relation_ids": [
@@ -1836,7 +1883,13 @@
           "question_family": "emotionally_grounded_recall",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m011",
+                "content": "我记得和妍斗、宥利一起装饰屋子，看着她们大笑互动，我内心充满欣慰，感受到她们的成长和康复。",
+                "scene_ref": "91"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [],
             "current_user_turn": "你第一次在车祸现场见到姜仁浩时，他满身酒气，你还敲了他的车窗。那一刻你对他是什么看法？"
@@ -1912,8 +1965,6 @@
             "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m002",
               "m010"
             ],
             "source_relation_ids": [
@@ -2158,7 +2209,13 @@
                 "scene_ref": "13"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "姜仁浩",
+                "relation_summary": "徐友真与姜仁浩的关系以婚姻为基础（徐友真提及'老公'，暗示婚姻关系），但因金妍斗受伤事件产生责备与不满（徐友真责怪姜仁浩未尽保护责任），形成冲突。同时，徐友真承诺帮助姜仁浩追究责任并复职，两人共同参与带领孩子们进场（法院事件）和进入病房等行动，建立支持性同盟。情感动态显示关系在责备与支持间波动：冲突事件（如金妍斗受伤）导致短期责怪，但徐友真仍主动提供支持（如复职承诺），影响了其关键决策（如选择与姜仁浩并肩合作参与共同事件）。关系本质未根本改变，但动态强化了同盟属性，使徐友真在风险场景中优先选择协作而非疏离。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2180,8 +2237,7 @@
             "memory_required": true,
             "source_memory_ids": [
               "m001",
-              "m002",
-              "m010"
+              "m002"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -2231,7 +2287,13 @@
                 "scene_ref": "14"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "姜仁浩",
+                "relation_summary": "徐友真与姜仁浩的关系以婚姻为基础（徐友真提及'老公'，暗示婚姻关系），但因金妍斗受伤事件产生责备与不满（徐友真责怪姜仁浩未尽保护责任），形成冲突。同时，徐友真承诺帮助姜仁浩追究责任并复职，两人共同参与带领孩子们进场（法院事件）和进入病房等行动，建立支持性同盟。情感动态显示关系在责备与支持间波动：冲突事件（如金妍斗受伤）导致短期责怪，但徐友真仍主动提供支持（如复职承诺），影响了其关键决策（如选择与姜仁浩并肩合作参与共同事件）。关系本质未根本改变，但动态强化了同盟属性，使徐友真在风险场景中优先选择协作而非疏离。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2926,7 +2988,13 @@
           "question_family": "decision_rationale",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m008",
+                "content": "我向永勋前辈打听对方律师黄宇识的来历，得知他是首尔大学法律系首席毕业生，曾是部级法官，这让我明白了‘前官礼遇’可能对案件的影响。",
+                "scene_ref": "54"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -3381,8 +3449,7 @@
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
             "source_memory_ids": [
-              "m004",
-              "m003"
+              "m004"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -3455,10 +3522,8 @@
             "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
               "m003",
-              "m005",
-              "m006"
+              "m005"
             ],
             "source_relation_ids": [
               "relation_000",
@@ -3543,10 +3608,7 @@
             "question_family": "self_knowledge",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m003",
-              "m005",
-              "m006"
+              "m001"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -3659,8 +3721,7 @@
             "question_family": "emotionally_grounded_recall",
             "memory_required": true,
             "source_memory_ids": [
-              "m004",
-              "m003"
+              "m004"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -3707,7 +3768,18 @@
                 "scene_ref": "43"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "校长",
+                "relation_summary": "金妍斗与校长之间存在明确的敌对关系，校长作为性侵施害者，金妍斗作为受害者，双方情感动态表现为金妍斗对校长的强烈恐惧、愤怒和对立，校长则表现出控制与侵犯行为（如追捕并抓住金妍斗肩膀）。关键事件包括校长在doc_38_chunk_1中试图性侵犯金妍斗（被外部干扰中断）、金妍斗在doc_67_chunk_0中通过手语翻译指控校长性侵犯并指认其为施害者。这种关系直接影响了金妍斗的行为决策，如在法庭上主动指认校长，导致法律程序启动；同时，校长的施害行为强化了金妍斗的敌对立场。关系持续敌对，无证据显示任何变化（如和解或缓和），始终围绕性侵犯事件维持对立状态。"
+              },
+              {
+                "relation_id": "relation_002",
+                "target_character": "徐友真",
+                "relation_summary": "徐友真对金妍斗展现出持续的关心与保护行为，通过责怪他人未保护、抚摸额头及主动拥抱安慰等动作体现情感支持。两人共同参与装饰屋子的事件强化了朋友关系，而徐友真在金妍斗哭泣时阻止姜仁浩离开并拥抱她的关键事件，凸显了其保护性互动。这种关系使徐友真在危机场景中优先选择保护金妍斗（如阻止姜仁浩离开），直接影响其行为决策，关系稳定且紧密，未见明显动态变化。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -3728,10 +3800,7 @@
             "question_family": "relation_stance",
             "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m003",
-              "m005",
-              "m006"
+              "m005"
             ],
             "source_relation_ids": [
               "relation_000",
@@ -3822,9 +3891,7 @@
             "memory_required": true,
             "source_memory_ids": [
               "m001",
-              "m003",
-              "m005",
-              "m006"
+              "m005"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -4214,7 +4281,13 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory",
-            "memory_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m001",
+                "content": "我害怕地躲在病房的柜子里哭，徐老师打开柜门发现了我，她走过来抱住了我。",
+                "scene_ref": "38"
+              }
+            ],
             "relation_context": [],
             "dialogue_history_template": [
               {
@@ -4475,8 +4548,25 @@
           "question_family": "relation_stance",
           "input": {
             "mode": "persona_with_memory_and_relations",
-            "memory_context": [],
-            "relation_context": [],
+            "memory_context": [
+              {
+                "memory_id": "m001",
+                "content": "我害怕地躲在病房的柜子里哭，徐老师打开柜门发现了我，她走过来抱住了我。",
+                "scene_ref": "38"
+              }
+            ],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "校长",
+                "relation_summary": "金妍斗与校长之间存在明确的敌对关系，校长作为性侵施害者，金妍斗作为受害者，双方情感动态表现为金妍斗对校长的强烈恐惧、愤怒和对立，校长则表现出控制与侵犯行为（如追捕并抓住金妍斗肩膀）。关键事件包括校长在doc_38_chunk_1中试图性侵犯金妍斗（被外部干扰中断）、金妍斗在doc_67_chunk_0中通过手语翻译指控校长性侵犯并指认其为施害者。这种关系直接影响了金妍斗的行为决策，如在法庭上主动指认校长，导致法律程序启动；同时，校长的施害行为强化了金妍斗的敌对立场。关系持续敌对，无证据显示任何变化（如和解或缓和），始终围绕性侵犯事件维持对立状态。"
+              },
+              {
+                "relation_id": "relation_002",
+                "target_character": "徐友真",
+                "relation_summary": "徐友真对金妍斗展现出持续的关心与保护行为，通过责怪他人未保护、抚摸额头及主动拥抱安慰等动作体现情感支持。两人共同参与装饰屋子的事件强化了朋友关系，而徐友真在金妍斗哭泣时阻止姜仁浩离开并拥抱她的关键事件，凸显了其保护性互动。这种关系使徐友真在危机场景中优先选择保护金妍斗（如阻止姜仁浩离开），直接影响其行为决策，关系稳定且紧密，未见明显动态变化。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -4549,7 +4639,13 @@
                 "scene_ref": "43"
               }
             ],
-            "relation_context": [],
+            "relation_context": [
+              {
+                "relation_id": "relation_000",
+                "target_character": "校长",
+                "relation_summary": "金妍斗与校长之间存在明确的敌对关系，校长作为性侵施害者，金妍斗作为受害者，双方情感动态表现为金妍斗对校长的强烈恐惧、愤怒和对立，校长则表现出控制与侵犯行为（如追捕并抓住金妍斗肩膀）。关键事件包括校长在doc_38_chunk_1中试图性侵犯金妍斗（被外部干扰中断）、金妍斗在doc_67_chunk_0中通过手语翻译指控校长性侵犯并指认其为施害者。这种关系直接影响了金妍斗的行为决策，如在法庭上主动指认校长，导致法律程序启动；同时，校长的施害行为强化了金妍斗的敌对立场。关系持续敌对，无证据显示任何变化（如和解或缓和），始终围绕性侵犯事件维持对立状态。"
+              }
+            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
