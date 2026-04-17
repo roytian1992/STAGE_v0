@@ -54,6 +54,48 @@ Optional filters:
 - `--movie-ids id1,id2,...`
 - `--overwrite`
 
+## Release Schema
+
+The released benchmark gold files are intentionally simplified.
+
+`task_1_character_timelines.json` keeps only:
+
+- `movie_id`
+- `language`
+- `focal_character_timelines`
+  - `character_name`
+  - `aliases`
+  - `timeline_summary`
+  - `timeline_nodes`
+    - `timeline_node_id`
+    - `scene_id`
+    - `scene_order`
+    - `scene_title`
+    - `importance`
+    - `role_in_context`
+    - `salient_development`
+    - `goal_state`
+    - `resulting_state`
+    - `unresolved_issue`
+    - `evidence_quotes`
+
+`task_1_cross_scene_arcs.json` keeps only:
+
+- `movie_id`
+- `language`
+- `cross_scene_arcs`
+  - `arc_id`
+  - `character_name`
+  - `title`
+  - `arc_focus`
+  - `linked_timeline_node_ids`
+  - `arc_summary`
+  - `start_state`
+  - `end_state`
+  - `unresolved_issue`
+
+Build provenance and audit-only fields are intentionally omitted from the released gold set.
+
 ## Evaluation Metrics
 
 `eval_v3.json` reports:
