@@ -58,16 +58,65 @@ Optional filters:
 
 `eval_v3.json` reports:
 
+- `gold_fact_recall`
+- `pred_fact_precision`
+- `fact_f1`
+- `pred_transition_coherence`
+- `important_pred_transition_coherence`
+- `arc_narrative_aspect_correctness`
+- `development_correctness`
+- `state_transition_correctness`
+- `arc_progression_correctness`
 - `legacy_scene_grounding_precision`
 - `legacy_scene_grounding_recall`
 - `legacy_scene_grounding_f1`
 - `node_grounding_precision`
 - `node_grounding_recall`
 - `node_grounding_f1`
+- `overall`
+
+Recommended primary Task 1 metrics:
+
+- `gold_fact_recall`
+- `pred_fact_precision`
+- `fact_f1`
+- `pred_transition_coherence`
+- `arc_narrative_aspect_correctness`
+
+Why the metric stack changed:
+
+- strict `node_grounding_*` depends on 1-to-1 node alignment and under-credits merge/split differences
+- macro fact coverage better reflects whether the predicted timeline covers the main narrative information
+- predicted transition coherence evaluates the quality of the predicted trajectory itself rather than only matched gold/pred pairs
+- arc narrative aspect correctness checks whether the long-range character storyline dimension is captured
+
+Metric interpretation:
+
+- `gold_fact_recall`
+  - how much of the gold character trajectory is covered by the predicted timeline at the macro fact level
+- `pred_fact_precision`
+  - how much of the predicted macro content is supported by the gold timeline
+- `fact_f1`
+  - harmonic mean of macro recall and macro precision
+- `pred_transition_coherence`
+  - coherence of adjacent predicted node pairs, judged with node text and script scene evidence
+- `important_pred_transition_coherence`
+  - the same transition judgment but restricted to a small heuristic subset of salient adjacent pairs per character
+- `arc_narrative_aspect_correctness`
+  - whether the predicted arc captures the same long-range narrative aspect as the gold arc
+
+Secondary and diagnostic metrics retained in `eval_v3.json`:
+
 - `development_correctness`
 - `state_transition_correctness`
-- `arc_narrative_aspect_correctness`
 - `arc_progression_correctness`
-- `overall`
+- `legacy_scene_grounding_*`
+- `node_grounding_*`
+
+Human validation remains part of the research process. These metrics are intended to be useful and inspectable, not perfect. In particular:
+
+- macro fact metrics can vary with fact granularity and alias handling
+- transition coherence can be harsh when adjacent predicted nodes span a coarse latent gap
+- important-pair transition coherence is useful for audit, but may be less stable than the raw transition metric
 
 The current Task 1 pipeline is recall-first and aims to preserve broad story coverage for the benchmark focal roles while keeping node text grounded in the original script.

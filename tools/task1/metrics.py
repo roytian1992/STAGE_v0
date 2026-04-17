@@ -209,6 +209,92 @@ NODE_GROUND_PROMPT_ZH = """你在根据某个精确 beat 文本校正一个最�
 
 DEV_JUDGE_PROMPT_EN = "You are judging whether two simplified Task 1 nodes for the same character and same screenplay scene are development-compatible. Be fairly permissive: if they capture the same broad externally verifiable change family, output TRUE. Allow paraphrase, abstraction mismatch, and partial detail mismatch. Output TRUE or FALSE only."
 STATE_JUDGE_PROMPT_EN = "You are judging whether two simplified Task 1 nodes for the same character and same screenplay scene imply a compatible state transition. Be permissive: missing details are acceptable unless the predicted state is clearly contradictory. Output TRUE or FALSE only."
+PRED_TRANSITION_COHERENCE_PROMPT_EN = "You are judging whether two consecutive predicted Task 1 nodes for the same character form a coherent narrative transition. Use the node text and the supplied screenplay scene evidence. Be reasonably permissive about skipped intermediate events, but output FALSE if the later node contradicts the earlier node, ignores an implausible leap in the character trajectory, or is not well supported by the supplied scene evidence. Output TRUE or FALSE only."
+PRED_TRANSITION_COHERENCE_PROMPT_ZH = "你在评估同一角色两个相邻预测节点之间是否构成连贯的叙事转移。请结合节点内容和给定的剧本场景证据判断。对中间省略的发展可以适度宽松，但如果后一个节点与前一个节点明显矛盾、人物轨迹跳跃过大且不合理、或与给定场景证据不相符，则输出 FALSE。只输出 TRUE 或 FALSE。"
+FACT_TYPES = {"decision", "status", "relationship", "goal", "outcome", "pressure", "other"}
+FACT_PHASES = {"early", "middle", "late", "multi"}
+
+TIMELINE_FACT_PROMPT_EN = """You are decomposing one Task 1 character timeline into atomic narrative facts.
+
+Extract a compact set of benchmark-style facts from the full timeline, not one fact per node by default.
+Merge redundant nodes when they express the same durable development.
+Prefer facts that matter for macro narrative coverage.
+
+Return JSON only:
+{
+  "facts": [
+    {
+      "fact_id": "F1",
+      "fact_type": "decision|status|relationship|goal|outcome|pressure|other",
+      "phase": "early|middle|late|multi",
+      "fact_text": "one concrete durable narrative fact",
+      "scene_refs": ["scene_id", "..."]
+    }
+  ]
+}
+"""
+
+TIMELINE_FACT_PROMPT_ZH = """你在把一个 Task 1 角色时间线拆成原子级叙事实事。
+
+目标是提炼出一组适合做宏观覆盖评测的 benchmark 风格事实，而不是机械地一节点对应一事实。
+如果多个节点其实在表达同一条持续发展，可以合并。
+优先保留真正重要、能够代表角色主线变化的事实。
+
+只输出 JSON：
+{
+  "facts": [
+    {
+      "fact_id": "F1",
+      "fact_type": "decision|status|relationship|goal|outcome|pressure|other",
+      "phase": "early|middle|late|multi",
+      "fact_text": "一句具体、可核对的持续性叙事实事",
+      "scene_refs": ["scene_id", "..."]
+    }
+  ]
+}
+"""
+
+FACT_SUPPORT_PROMPT_EN = """You are judging macro narrative fact coverage for Task 1.
+
+You will receive:
+- a list of atomic facts for one character
+- the full reference timeline for the same character
+
+Judge each fact against the full reference timeline, not against a single node.
+Be fairly permissive:
+- one reference node may cover multiple facts
+- multiple reference nodes may jointly support one fact
+- paraphrase and granularity mismatch are acceptable
+
+Mark a fact as unsupported only when the reference timeline clearly does not cover that durable development.
+
+Return JSON only:
+{
+  "supported_fact_ids": ["F1", "F3"],
+  "unsupported_fact_ids": ["F2"]
+}
+"""
+
+FACT_SUPPORT_PROMPT_ZH = """你在评估 Task 1 的宏观叙事实事覆盖情况。
+
+你会收到：
+- 某个角色的一组原子事实
+- 同一角色的完整参考时间线
+
+判断时要基于整条参考时间线，而不是强行逐节点一一对齐。
+要相对宽松：
+- 一个参考节点可以同时覆盖多个事实
+- 多个参考节点也可以共同支持一个事实
+- 改写、概括层级不同都可以接受
+
+只有在参考时间线明显没有覆盖该持续性发展时，才判为 unsupported。
+
+只输出 JSON：
+{
+  "supported_fact_ids": ["F1", "F3"],
+  "unsupported_fact_ids": ["F2"]
+}
+"""
 
 
 def prompt_messages(system: str, user: str) -> List[Dict[str, str]]:
@@ -909,6 +995,379 @@ def state_judge_prompt(character_name: str, gold_node: Dict[str, Any], pred_node
     return prompt_messages(STATE_JUDGE_PROMPT_EN, user)
 
 
+def _scene_excerpt(scene: Optional[SceneRecord], max_chars: int = 900) -> str:
+    if scene is None:
+        return ""
+    return clean_text(scene.content)[:max_chars]
+
+
+def pred_transition_coherence_prompt(
+    language: str,
+    character_name: str,
+    prev_node: Dict[str, Any],
+    next_node: Dict[str, Any],
+    prev_scene: Optional[SceneRecord],
+    next_scene: Optional[SceneRecord],
+) -> List[Dict[str, str]]:
+    system = PRED_TRANSITION_COHERENCE_PROMPT_ZH if language == "zh" else PRED_TRANSITION_COHERENCE_PROMPT_EN
+    prev_scene_payload = {
+        "scene_id": clean_text(prev_node.get("scene_id")),
+        "scene_order": prev_node.get("scene_order"),
+        "scene_title": clean_text(prev_node.get("scene_title")) or clean_text(prev_scene.scene_title if prev_scene else ""),
+        "scene_excerpt": _scene_excerpt(prev_scene),
+    }
+    next_scene_payload = {
+        "scene_id": clean_text(next_node.get("scene_id")),
+        "scene_order": next_node.get("scene_order"),
+        "scene_title": clean_text(next_node.get("scene_title")) or clean_text(next_scene.scene_title if next_scene else ""),
+        "scene_excerpt": _scene_excerpt(next_scene),
+    }
+    user = (
+        f"Character: {character_name}\n"
+        "Judge whether the later predicted node is a coherent next step after the earlier predicted node for the same character.\n"
+        "Small skipped steps are acceptable, but the overall trajectory should remain plausible and script-grounded.\n\n"
+        f"Earlier predicted node:\n{json.dumps(prev_node, ensure_ascii=False, indent=2)}\n\n"
+        f"Later predicted node:\n{json.dumps(next_node, ensure_ascii=False, indent=2)}\n\n"
+        f"Earlier scene evidence:\n{json.dumps(prev_scene_payload, ensure_ascii=False, indent=2)}\n\n"
+        f"Later scene evidence:\n{json.dumps(next_scene_payload, ensure_ascii=False, indent=2)}"
+    )
+    return prompt_messages(system, user)
+
+
+def _phase_bucket(scene_order: int, max_scene_order: int) -> str:
+    if max_scene_order <= 0:
+        return "middle"
+    ratio = scene_order / max_scene_order
+    if ratio <= 0.34:
+        return "early"
+    if ratio <= 0.67:
+        return "middle"
+    return "late"
+
+
+def _node_transition_salience(node: Dict[str, Any]) -> int:
+    score = 0
+    if clean_text(node.get("importance")).lower() == "core":
+        score += 2
+    if clean_text(node.get("goal_state")):
+        score += 1
+    if clean_text(node.get("resulting_state")):
+        score += 1
+    if clean_text(node.get("unresolved_issue")):
+        score += 1
+    if len(clean_text(node.get("salient_development"))) >= 80:
+        score += 1
+    if len(node.get("evidence_quotes", []) or []) >= 2:
+        score += 1
+    return score
+
+
+def _is_sparse_transition_node(node: Dict[str, Any]) -> bool:
+    return (
+        clean_text(node.get("importance")).lower() != "core"
+        and not clean_text(node.get("goal_state"))
+        and not clean_text(node.get("resulting_state"))
+        and not clean_text(node.get("unresolved_issue"))
+        and len(clean_text(node.get("salient_development"))) < 70
+    )
+
+
+def _pair_phase_label(prev_bucket: str, next_bucket: str) -> str:
+    return prev_bucket if prev_bucket == next_bucket else f"{prev_bucket}->{next_bucket}"
+
+
+def build_transition_pair_records(pred_item: Dict[str, Any], gold_name: str, scene_by_id: Dict[str, SceneRecord]) -> List[Dict[str, Any]]:
+    pred_name = pred_item["character_name"]
+    pred_nodes = sorted(
+        pred_item.get("timeline_nodes", []) or [],
+        key=lambda x: (int(x.get("scene_order", 0) or 0), int(x.get("beat_index", 0) or 0)),
+    )
+    if len(pred_nodes) < 2:
+        return []
+    max_scene_order = max(int(x.get("scene_order", 0) or 0) for x in pred_nodes)
+    rows: List[Dict[str, Any]] = []
+    for idx in range(len(pred_nodes) - 1):
+        prev_node = pred_nodes[idx]
+        next_node = pred_nodes[idx + 1]
+        prev_order = int(prev_node.get("scene_order", 0) or 0)
+        next_order = int(next_node.get("scene_order", 0) or 0)
+        prev_bucket = _phase_bucket(prev_order, max_scene_order)
+        next_bucket = _phase_bucket(next_order, max_scene_order)
+        prev_salience = _node_transition_salience(prev_node)
+        next_salience = _node_transition_salience(next_node)
+        score = 0
+        if clean_text(prev_node.get("importance")).lower() == "core" or clean_text(next_node.get("importance")).lower() == "core":
+            score += 2
+        if clean_text(prev_node.get("importance")).lower() == "core" and clean_text(next_node.get("importance")).lower() == "core":
+            score += 1
+        score += max(prev_salience, next_salience)
+        if clean_text(prev_node.get("resulting_state")):
+            score += 1
+        if clean_text(next_node.get("goal_state")):
+            score += 1
+        if clean_text(next_node.get("resulting_state")):
+            score += 1
+        if clean_text(next_node.get("unresolved_issue")):
+            score += 1
+        scene_gap = max(0, next_order - prev_order)
+        if prev_bucket != next_bucket:
+            score += 1
+        if 2 <= scene_gap <= 12:
+            score += 1
+        if clean_text(prev_node.get("importance")).lower() != "core" and clean_text(next_node.get("importance")).lower() != "core":
+            score -= 1
+        if scene_gap > 12:
+            score -= 1
+        if scene_gap <= 1 and prev_bucket == next_bucket:
+            score -= 1
+        if _is_sparse_transition_node(prev_node) and _is_sparse_transition_node(next_node):
+            score -= 1
+        rows.append(
+            {
+                "gold_character_name": gold_name,
+                "pred_character_name": pred_name,
+                "prev_node": prev_node,
+                "next_node": next_node,
+                "prev_scene": scene_by_id.get(str(prev_node.get("scene_id"))),
+                "next_scene": scene_by_id.get(str(next_node.get("scene_id"))),
+                "prev_scene_id": clean_text(prev_node.get("scene_id")),
+                "next_scene_id": clean_text(next_node.get("scene_id")),
+                "prev_scene_title": clean_text(prev_node.get("scene_title")),
+                "next_scene_title": clean_text(next_node.get("scene_title")),
+                "prev_bucket": prev_bucket,
+                "next_bucket": next_bucket,
+                "phase_label": _pair_phase_label(prev_bucket, next_bucket),
+                "scene_gap": scene_gap,
+                "pair_score": score,
+                "selected_as_important": False,
+            }
+        )
+    return rows
+
+
+def select_important_transition_pairs(rows: Sequence[Dict[str, Any]], max_pairs: int = 4) -> List[int]:
+    if not rows:
+        return []
+    indexed = list(enumerate(rows))
+    selected: List[int] = []
+    used = set()
+
+    def has_transition_anchor(row: Dict[str, Any]) -> bool:
+        prev_node = row["prev_node"]
+        next_node = row["next_node"]
+        return any(
+            clean_text(value)
+            for value in (
+                prev_node.get("resulting_state"),
+                next_node.get("goal_state"),
+                next_node.get("resulting_state"),
+                next_node.get("unresolved_issue"),
+            )
+        )
+
+    eligible = []
+    fallback = []
+    for i, row in indexed:
+        scene_gap = int(row.get("scene_gap", 0) or 0)
+        phase_label = clean_text(row.get("phase_label"))
+        anchored = has_transition_anchor(row)
+        if scene_gap > 14:
+            continue
+        if phase_label == "early->late" and scene_gap > 8:
+            continue
+        if anchored:
+            eligible.append((i, row))
+        else:
+            fallback.append((i, row))
+
+    candidate_pool = eligible or fallback or indexed
+
+    def scene_gap(row: Dict[str, Any]) -> int:
+        return int(row.get("scene_gap", 0) or 0)
+
+    def best_index(candidates: Sequence[Tuple[int, Dict[str, Any]]]) -> Optional[int]:
+        best_i = None
+        best_key = None
+        for i, row in candidates:
+            if i in used:
+                continue
+            scene_gap = int(row.get("scene_gap", 0) or 0)
+            phase_change = 1 if row.get("prev_bucket") != row.get("next_bucket") else 0
+            anchored = 1 if has_transition_anchor(row) else 0
+            key = (
+                anchored,
+                int(row.get("pair_score", 0) or 0),
+                1 if phase_change and scene_gap <= 8 else 0,
+                1 if clean_text(row["prev_node"].get("importance")).lower() == "core" else 0,
+                1 if clean_text(row["next_node"].get("importance")).lower() == "core" else 0,
+                -scene_gap,
+            )
+            if best_i is None or key > best_key:
+                best_i = i
+                best_key = key
+        return best_i
+
+    cross_candidates = [
+        (i, row)
+        for i, row in candidate_pool
+        if row.get("prev_bucket") != row.get("next_bucket") and scene_gap(row) <= 8
+    ]
+    idx = best_index(cross_candidates)
+    if idx is not None:
+        selected.append(idx)
+        used.add(idx)
+
+    nontrivial_candidates = [(i, row) for i, row in candidate_pool if scene_gap(row) >= 2]
+    idx = best_index(nontrivial_candidates)
+    if idx is not None:
+        selected.append(idx)
+        used.add(idx)
+
+    for target_label in ("early->middle", "middle->late"):
+        idx = best_index([(i, row) for i, row in candidate_pool if row.get("phase_label") == target_label])
+        if idx is not None:
+            selected.append(idx)
+            used.add(idx)
+
+    for bucket in ("early", "middle", "late"):
+        if len(selected) >= max_pairs:
+            break
+        idx = best_index(
+            [
+                (i, row)
+                for i, row in candidate_pool
+                if row.get("phase_label") == bucket or row.get("prev_bucket") == bucket
+            ]
+        )
+        if idx is not None:
+            selected.append(idx)
+            used.add(idx)
+
+    while len(selected) < min(max_pairs, len(rows)):
+        idx = best_index(candidate_pool)
+        if idx is None:
+            break
+        selected.append(idx)
+        used.add(idx)
+
+    selected = sorted(dict.fromkeys(selected))
+    return selected[:max_pairs]
+
+
+def _timeline_text_for_fact_eval(character_item: Dict[str, Any], display_name: Optional[str] = None) -> str:
+    lines = [
+        f"Character: {clean_text(display_name or character_item.get('character_name'))}",
+        f"Timeline summary: {clean_text(character_item.get('timeline_summary'))}",
+    ]
+    for idx, node in enumerate(character_item.get("timeline_nodes", []) or [], start=1):
+        node_parts = [
+            f"[{idx}] scene_id={clean_text(node.get('scene_id'))}",
+            f"scene_order={clean_text(node.get('scene_order'))}",
+            f"scene_title={clean_text(node.get('scene_title'))}",
+            f"role={clean_text(node.get('role_in_context'))}",
+            f"development={clean_text(node.get('salient_development'))}",
+        ]
+        if clean_text(node.get("goal_state")):
+            node_parts.append(f"goal={clean_text(node.get('goal_state'))}")
+        if clean_text(node.get("resulting_state")):
+            node_parts.append(f"result={clean_text(node.get('resulting_state'))}")
+        if clean_text(node.get("unresolved_issue")):
+            node_parts.append(f"pressure={clean_text(node.get('unresolved_issue'))}")
+        lines.append(" | ".join(node_parts))
+    return "\n".join(lines)
+
+
+def timeline_fact_prompt(language: str, character_name: str, timeline_item: Dict[str, Any], max_facts: int = 8) -> List[Dict[str, str]]:
+    system = TIMELINE_FACT_PROMPT_ZH if language == "zh" else TIMELINE_FACT_PROMPT_EN
+    user = (
+        f"Character: {character_name}\n"
+        f"Extract at most {max_facts} atomic narrative facts from this timeline.\n"
+        "Facts should capture durable decisions, status/role changes, relationship shifts, goal shifts, outcomes, or unresolved pressure.\n"
+        "Avoid trivial scene-local details.\n"
+        "If the timeline uses an alias or alternate surface form for the same matched character, normalize it mentally to the character name above.\n"
+        f"Timeline:\n{_timeline_text_for_fact_eval(timeline_item, display_name=character_name)}"
+    )
+    return prompt_messages(system, user)
+
+
+def _normalize_fact(item: Dict[str, Any], idx: int) -> Optional[Dict[str, Any]]:
+    fact_text = clean_text(item.get("fact_text") or item.get("text"))
+    if not fact_text:
+        return None
+    fact_type = clean_text(item.get("fact_type")).lower() or "other"
+    if fact_type not in FACT_TYPES:
+        fact_type = "other"
+    phase = clean_text(item.get("phase")).lower() or "multi"
+    if phase not in FACT_PHASES:
+        phase = "multi"
+    scene_refs: List[str] = []
+    for value in item.get("scene_refs", []) or item.get("scene_ids", []) or []:
+        ref = clean_text(value)
+        if ref and ref not in scene_refs:
+            scene_refs.append(ref)
+    return {
+        "fact_id": clean_text(item.get("fact_id")) or f"F{idx}",
+        "fact_type": fact_type,
+        "phase": phase,
+        "fact_text": fact_text,
+        "scene_refs": scene_refs[:6],
+    }
+
+
+def extract_timeline_facts(llm: LLMClient, language: str, character_item: Dict[str, Any], max_facts: int = 8) -> List[Dict[str, Any]]:
+    raw = llm_json(llm, timeline_fact_prompt(language, character_item.get("character_name", ""), character_item, max_facts=max_facts), max_tokens=2200)
+    facts: List[Dict[str, Any]] = []
+    seen = set()
+    for idx, item in enumerate(raw.get("facts", []) or [], start=1):
+        if not isinstance(item, dict):
+            continue
+        normalized = _normalize_fact(item, idx)
+        if not normalized:
+            continue
+        key = normalize_name(normalized["fact_text"])
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        facts.append(normalized)
+        if len(facts) >= max_facts:
+            break
+    return facts
+
+
+def fact_support_prompt(language: str, character_name: str, facts: Sequence[Dict[str, Any]], reference_timeline: Dict[str, Any]) -> List[Dict[str, str]]:
+    system = FACT_SUPPORT_PROMPT_ZH if language == "zh" else FACT_SUPPORT_PROMPT_EN
+    user = (
+        f"Character: {character_name}\n"
+        "The facts and the reference timeline refer to the same matched character. If the timeline uses an alias or alternate surface name, treat it as the same person.\n"
+        f"Atomic facts:\n{json.dumps(list(facts), ensure_ascii=False, indent=2)}\n\n"
+        f"Reference timeline:\n{_timeline_text_for_fact_eval(reference_timeline, display_name=character_name)}"
+    )
+    return prompt_messages(system, user)
+
+
+def judge_supported_fact_ids(
+    llm: LLMClient,
+    language: str,
+    character_name: str,
+    facts: Sequence[Dict[str, Any]],
+    reference_timeline: Dict[str, Any],
+) -> List[str]:
+    if not facts:
+        return []
+    raw = llm_json(
+        llm,
+        fact_support_prompt(language, character_name, facts, reference_timeline),
+        max_tokens=1800,
+    )
+    valid_ids = {clean_text(item.get("fact_id")) for item in facts if clean_text(item.get("fact_id"))}
+    supported: List[str] = []
+    for fact_id in raw.get("supported_fact_ids", []) or []:
+        fact_id = clean_text(fact_id)
+        if fact_id and fact_id in valid_ids and fact_id not in supported:
+            supported.append(fact_id)
+    return supported
+
+
 def _arc_text_for_match(arc: Dict[str, Any]) -> str:
     parts = [
         clean_text(arc.get("title")),
@@ -991,6 +1450,8 @@ def evaluate_v5(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
         raise FileNotFoundError(f"Missing any of expected files under {movie_dir}: {candidates}")
 
     language = detect_language(movie_dir)
+    scenes = load_scenes(movie_dir / "script.json", language)
+    scene_by_id = {str(scene.scene_id): scene for scene in scenes}
 
     llm = LLMClient(DEFAULT_LLM_MODEL, DEFAULT_LLM_BASE_URL, DEFAULT_LLM_API_KEY)
     embedder = OpenAICompatEmbedder(DEFAULT_EMBED_MODEL, DEFAULT_EMBED_BASE_URL, DEFAULT_EMBED_API_KEY)
@@ -1056,6 +1517,96 @@ def evaluate_v5(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
         dev_votes.append(run_bool_judge(llm, dev_judge_prompt(character_name, gold_node, pred_node)))
         state_votes.append(run_bool_judge(llm, state_judge_prompt(character_name, gold_node, pred_node)))
 
+    pred_transition_votes = []
+    important_pred_transition_votes = []
+    pred_transition_details: List[Dict[str, Any]] = []
+    for pred_item in pred_chars:
+        pred_name = pred_item["character_name"]
+        gold_name = matched_pred_to_gold.get(pred_name, pred_name)
+        pair_rows = build_transition_pair_records(pred_item, gold_name, scene_by_id)
+        important_indexes = set(select_important_transition_pairs(pair_rows, max_pairs=4))
+        for idx, row in enumerate(pair_rows):
+            row["selected_as_important"] = idx in important_indexes
+            ok = run_bool_judge(
+                llm,
+                pred_transition_coherence_prompt(
+                    language,
+                    gold_name,
+                    row["prev_node"],
+                    row["next_node"],
+                    row["prev_scene"],
+                    row["next_scene"],
+                ),
+            )
+            pred_transition_votes.append(ok)
+            if row["selected_as_important"]:
+                important_pred_transition_votes.append(ok)
+            pred_transition_details.append(
+                {
+                    "gold_character_name": row["gold_character_name"],
+                    "pred_character_name": row["pred_character_name"],
+                    "prev_scene_id": row["prev_scene_id"],
+                    "next_scene_id": row["next_scene_id"],
+                    "prev_scene_title": row["prev_scene_title"],
+                    "next_scene_title": row["next_scene_title"],
+                    "prev_bucket": row["prev_bucket"],
+                    "next_bucket": row["next_bucket"],
+                    "phase_label": row["phase_label"],
+                    "scene_gap": row["scene_gap"],
+                    "pair_score": row["pair_score"],
+                    "selected_as_important": row["selected_as_important"],
+                    "coherent": ok,
+                }
+            )
+
+    gold_fact_total = 0
+    pred_fact_total = 0
+    supported_gold_fact_total = 0
+    supported_pred_fact_total = 0
+    fact_details: List[Dict[str, Any]] = []
+    for pred_name, gold_name in matched_pred_to_gold.items():
+        pred_item = next(x for x in pred_chars if x["character_name"] == pred_name)
+        gold_item = gold_by_name[gold_name]
+        gold_facts: List[Dict[str, Any]] = []
+        pred_facts: List[Dict[str, Any]] = []
+        fact_error: Optional[str] = None
+        try:
+            gold_facts = extract_timeline_facts(llm, language, gold_item)
+            pred_facts = extract_timeline_facts(llm, language, pred_item)
+        except Exception as exc:
+            fact_error = f"fact_extract_failed: {type(exc).__name__}: {exc}"
+        supported_gold_ids: List[str] = []
+        supported_pred_ids: List[str] = []
+        if fact_error is None:
+            try:
+                supported_gold_ids = judge_supported_fact_ids(llm, language, gold_name, gold_facts, pred_item)
+                supported_pred_ids = judge_supported_fact_ids(llm, language, gold_name, pred_facts, gold_item)
+            except Exception as exc:
+                fact_error = f"fact_judge_failed: {type(exc).__name__}: {exc}"
+                supported_gold_ids = []
+                supported_pred_ids = []
+        gold_fact_total += len(gold_facts)
+        pred_fact_total += len(pred_facts)
+        supported_gold_fact_total += len(supported_gold_ids)
+        supported_pred_fact_total += len(supported_pred_ids)
+        fact_details.append(
+            {
+                "gold_character_name": gold_name,
+                "pred_character_name": pred_name,
+                "gold_fact_count": len(gold_facts),
+                "pred_fact_count": len(pred_facts),
+                "supported_gold_fact_ids": supported_gold_ids,
+                "supported_pred_fact_ids": supported_pred_ids,
+                "gold_facts": gold_facts,
+                "pred_facts": pred_facts,
+                "error": fact_error,
+            }
+        )
+
+    gold_fact_recall = supported_gold_fact_total / max(1, gold_fact_total)
+    pred_fact_precision = supported_pred_fact_total / max(1, pred_fact_total)
+    fact_f1 = 0.0 if gold_fact_recall + pred_fact_precision == 0 else 2 * gold_fact_recall * pred_fact_precision / (gold_fact_recall + pred_fact_precision)
+
     pred_arc_items = pred_arcs.get("cross_scene_arcs", []) or []
     gold_arc_items = gold_arcs.get("cross_scene_arcs", []) or []
     pred_char_to_nodes = {item["character_name"]: {n["timeline_node_id"]: n for n in item.get("timeline_nodes", []) or []} for item in pred_chars}
@@ -1099,13 +1650,39 @@ def evaluate_v5(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
         "node_grounding_precision": round(node_precision, 4),
         "node_grounding_recall": round(node_recall, 4),
         "node_grounding_f1": round(node_f1, 4),
+        "gold_fact_recall": round(gold_fact_recall, 4),
+        "pred_fact_precision": round(pred_fact_precision, 4),
+        "fact_f1": round(fact_f1, 4),
         "development_correctness": round(sum(dev_votes) / max(1, len(dev_votes)), 4),
         "state_transition_correctness": round(sum(state_votes) / max(1, len(state_votes)), 4),
+        "pred_transition_coherence": round(sum(pred_transition_votes) / max(1, len(pred_transition_votes)), 4),
+        "important_pred_transition_coherence": round(sum(important_pred_transition_votes) / max(1, len(important_pred_transition_votes)), 4),
         "arc_narrative_aspect_correctness": round(sum(arc_aspect_votes) / max(1, len(arc_aspect_votes)), 4),
         "arc_progression_correctness": round(sum(arc_progression_votes) / max(1, len(arc_progression_votes)), 4),
     }
     summary["overall"] = round((summary["legacy_scene_grounding_f1"] + summary["node_grounding_f1"] + summary["development_correctness"] + summary["state_transition_correctness"] + summary["arc_narrative_aspect_correctness"] + summary["arc_progression_correctness"]) / 6.0, 4)
     (output_dir / "eval_v3.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (output_dir / "fact_coverage_details.json").write_text(
+        json.dumps(
+            {
+                "movie_id": movie_dir.name,
+                "language": language,
+                "gold_fact_count": gold_fact_total,
+                "pred_fact_count": pred_fact_total,
+                "supported_gold_fact_count": supported_gold_fact_total,
+                "supported_pred_fact_count": supported_pred_fact_total,
+                "pred_transition_pair_count": len(pred_transition_votes),
+                "supported_pred_transition_pair_count": sum(1 for x in pred_transition_votes if x),
+                "important_pred_transition_pair_count": len(important_pred_transition_votes),
+                "supported_important_pred_transition_pair_count": sum(1 for x in important_pred_transition_votes if x),
+                "characters": fact_details,
+                "pred_transition_pairs": pred_transition_details,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
     return summary
 
 
