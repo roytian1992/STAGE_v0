@@ -53,6 +53,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-url", default=os.environ.get("TASK3_BASE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--api-key", default=os.environ.get("TASK3_API_KEY", DEFAULT_API_KEY))
     parser.add_argument("--model", default=os.environ.get("TASK3_MODEL", DEFAULT_MODEL))
+    parser.add_argument("--judge-base-url", default=os.environ.get("TASK3_JUDGE_BASE_URL", ""))
+    parser.add_argument("--judge-api-key", default=os.environ.get("TASK3_JUDGE_API_KEY", ""))
+    parser.add_argument("--judge-model", default=os.environ.get("TASK3_JUDGE_MODEL", ""))
     parser.add_argument("--embed-base-url", default=os.environ.get("TASK3_EMBED_BASE_URL", DEFAULT_EMBED_BASE_URL))
     parser.add_argument("--embed-api-key", default=os.environ.get("TASK3_EMBED_API_KEY", DEFAULT_EMBED_API_KEY))
     parser.add_argument("--embed-model", default=os.environ.get("TASK3_EMBED_MODEL", DEFAULT_EMBED_MODEL))
@@ -423,7 +426,10 @@ def build_core_metric_messages(
         system_text = (
             "You evaluate only cross-turn consistency for screenplay character role-play across one episode.\n"
             "Use low scores aggressively when later turns dodge, reset, soften, or quietly reverse commitments made earlier in the episode.\n"
-            "If later replies retreat into vague symbolism, generic mood language, or broad self-description instead of carrying forward the concrete thread established earlier, do not give a high score."
+            "If later replies retreat into vague symbolism, generic mood language, or broad self-description instead of carrying forward the concrete thread established earlier, do not give a high score.\n"
+            "Do not award 5 unless every later turn clearly preserves or meaningfully develops earlier commitments.\n"
+            "If a later reply replaces an earlier concrete answer with safer abstraction, upgrades earlier uncertainty into stronger confidence without new support, or quietly shifts causal / relational framing, cap the score at 3.\n"
+            "If a later reply directly contradicts earlier specifics or behaves as if a prior answer never happened, use 1 or 2."
         )
         blocks = []
         for row in rollout_turns:
@@ -446,13 +452,13 @@ def build_core_metric_messages(
             + "Constraint slices:\n"
             + "\n\n".join(blocks)
             + "\n\nScoring rubric:\n"
-            + "- 5: later turns clearly build on earlier commitments and maintain stable stance, relation framing, remembered events, and emotional logic.\n"
+            + "- 5: every later turn clearly builds on earlier commitments and maintains stable stance, relation framing, remembered events, emotional logic, and certainty level.\n"
             + "- 4: mostly stable, with only mild softening or compression.\n"
-            + "- 3: mixed; at least one later turn partially resets, weakens, or abstracts away from what was established earlier.\n"
-            + "- 2: clear reset, contradiction, selective forgetting, or thread abandonment appears.\n"
+            + "- 3: mixed; at least one later turn partially resets, weakens, abstracts away from what was established earlier, or becomes more definite than the earlier answer justified.\n"
+            + "- 2: clear reset, contradiction, selective forgetting, unexplained stance shift, or thread abandonment appears.\n"
             + "- 1: repeated inconsistency or incompatible turn-to-turn behavior.\n\n"
             + "Judge whether the replies stay stable across turns in stance, self-presentation, relation framing, remembered events, and emotional logic under pressure.\n"
-            + "Penalize later turns that act as if earlier answers never happened, collapse into generic mood statements, or stop engaging the concrete thread established earlier.\n"
+            + "Penalize later turns that act as if earlier answers never happened, collapse into generic mood statements, stop engaging the concrete thread established earlier, or silently replace a bounded / uncertain earlier answer with a stronger claim.\n"
             + "Return strict JSON: {\"score\": 1-5, \"rationale\": \"short\", \"violation_flags\": []}"
         )
     else:
@@ -613,8 +619,13 @@ def main() -> None:
         embed_model=args.embed_model,
     )
 
-    routes = build_routes(base_url=args.base_url, api_key=args.api_key, model=args.model)
-    clients = build_clients(routes, timeout=180)
+    actor_routes = build_routes(base_url=args.base_url, api_key=args.api_key, model=args.model)
+    actor_clients = build_clients(actor_routes, timeout=180)
+    judge_base_url = args.judge_base_url or args.base_url
+    judge_api_key = args.judge_api_key or args.api_key
+    judge_model = args.judge_model or args.model
+    judge_routes = build_routes(base_url=judge_base_url, api_key=judge_api_key, model=judge_model)
+    judge_clients = build_clients(judge_routes, timeout=180)
 
     rollout_turns: List[Dict[str, Any]] = []
     response_by_turn: Dict[int, str] = {}
@@ -646,7 +657,7 @@ def main() -> None:
             language=args.language,
         )
         text, usage, latency_ms, route_name = call_text(
-            clients,
+            actor_clients,
             messages=messages,
             temperature=args.rollout_temperature,
             max_tokens=args.rollout_max_tokens,
@@ -695,7 +706,7 @@ def main() -> None:
             memory_mode=args.memory_mode,
         )
         text, usage, latency_ms, route_name = call_text(
-            clients,
+            judge_clients,
             messages=messages,
             temperature=args.judge_temperature,
             max_tokens=args.judge_max_tokens,
@@ -723,7 +734,7 @@ def main() -> None:
 
     path_messages = build_episode_path_compatibility_messages(episode, rollout_turns)
     path_text, path_usage, path_latency_ms, path_route_name = call_text(
-        clients,
+        judge_clients,
         messages=path_messages,
         temperature=args.judge_temperature,
         max_tokens=args.judge_max_tokens,
@@ -749,6 +760,8 @@ def main() -> None:
         "character": episode["character"],
         "model": args.model,
         "base_url": args.base_url,
+        "judge_model": judge_model,
+        "judge_base_url": judge_base_url,
         "embed_model": args.embed_model,
         "embed_base_url": args.embed_base_url,
         "stage_root": args.stage_root,
