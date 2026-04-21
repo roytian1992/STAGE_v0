@@ -34,6 +34,46 @@ SHORTLIST_PER_BUCKET = 24
 HIGH_MILESTONE_SCORE = 4
 SCENE_ROLE_BATCH_SIZE = 2
 
+
+def normalize_scene_cards_payload(raw: Any) -> List[Dict[str, Any]]:
+    if isinstance(raw, dict):
+        items = raw.get("scene_cards", []) or []
+    elif isinstance(raw, list):
+        items = raw
+    else:
+        items = []
+    return [dict(item) for item in items if isinstance(item, dict)]
+
+
+def normalize_node_payload(raw: Any) -> Dict[str, Any]:
+    if isinstance(raw, dict):
+        return dict(raw)
+    if isinstance(raw, list):
+        for item in raw:
+            if isinstance(item, dict):
+                return dict(item)
+    return {}
+
+
+def normalize_arc_payload(raw: Any) -> List[Dict[str, Any]]:
+    if isinstance(raw, dict):
+        items = raw.get("arcs", []) or []
+    elif isinstance(raw, list):
+        items = raw
+    else:
+        items = []
+    return [dict(item) for item in items if isinstance(item, dict)]
+
+
+def normalize_segment_payload(raw: Any) -> Dict[str, Any]:
+    if isinstance(raw, dict):
+        return dict(raw)
+    if isinstance(raw, list):
+        for item in raw:
+            if isinstance(item, dict):
+                return dict(item)
+    return {}
+
 SCENE_ROLE_PROMPT_EN = """You are building a role-conditioned scene card for a screenplay benchmark.
 
 You will receive one scene and one focal character.
@@ -588,7 +628,7 @@ def build_role_scene_cards(llm: LLMClient, scenes: Sequence[SceneRecord], charac
     for group in batched(shortlisted, SCENE_ROLE_BATCH_SIZE):
         try:
             raw = llm_json(llm, batch_scene_role_prompt(language, character["character_name"], group), max_tokens=1400)
-            raw_cards = raw.get("scene_cards", []) or []
+            raw_cards = normalize_scene_cards_payload(raw)
         except Exception as exc:
             print(
                 json.dumps(
@@ -613,7 +653,7 @@ def build_role_scene_cards(llm: LLMClient, scenes: Sequence[SceneRecord], charac
             if matched is None:
                 try:
                     single_raw = llm_json(llm, scene_role_prompt(language, character["character_name"], scene), max_tokens=700)
-                    matched = dict(single_raw)
+                    matched = normalize_node_payload(single_raw)
                     matched["scene_id"] = scene.scene_id
                 except Exception as exc:
                     print(
@@ -758,6 +798,9 @@ def build_segments(llm: LLMClient, language: str, character_name: str, cards: Se
             continue
         try:
             raw = llm_json(llm, summarize_segment_prompt(language, character_name, bucket, rows[:10]), max_tokens=500)
+            raw = normalize_segment_payload(raw)
+            if not raw:
+                raise ValueError("empty_or_unusable_segment_payload")
         except Exception as exc:
             print(
                 json.dumps(
@@ -1260,6 +1303,7 @@ def render_timeline_nodes(llm: LLMClient, language: str, character: Dict[str, An
         scene = scene_map[str(card["scene_id"])]
         try:
             raw = llm_json(llm, node_render_prompt(language, character["character_name"], card, scene), max_tokens=900)
+            raw = normalize_node_payload(raw)
         except Exception as exc:
             print(
                 json.dumps(
@@ -1395,7 +1439,7 @@ def run_workflow_v65(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
                 "unresolved_issue": n.get("unresolved_issue"),
             } for n in nodes]), max_tokens=1800)
             node_id_to_scene_id = {n["timeline_node_id"]: n["scene_id"] for n in nodes}
-            for item in arc_raw.get("arcs", []) or []:
+            for item in normalize_arc_payload(arc_raw):
                 linked_ids = [clean_text(x) for x in (item.get("linked_timeline_node_ids") or []) if clean_text(x) in node_id_to_scene_id]
                 linked_ids = list(dict.fromkeys(linked_ids))
                 if len(linked_ids) < 2:

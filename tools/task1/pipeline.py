@@ -25,6 +25,7 @@ from recall import (
     flush_partial_outputs,
     llm_json,
     milestone_priority,
+    normalize_arc_payload,
     novelty_tuple,
     pairwise_better_than,
     pairwise_milestone_judge_prompt,
@@ -445,7 +446,7 @@ def run_workflow_v66(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
                 )
                 arc_raw = {"arcs": []}
             node_id_to_scene_id = {n["timeline_node_id"]: n["scene_id"] for n in nodes}
-            for item in arc_raw.get("arcs", []) or []:
+            for item in normalize_arc_payload(arc_raw):
                 linked_ids = [clean_text(x) for x in (item.get("linked_timeline_node_ids") or []) if clean_text(x) in node_id_to_scene_id]
                 linked_ids = list(dict.fromkeys(linked_ids))
                 if len(linked_ids) < 2:

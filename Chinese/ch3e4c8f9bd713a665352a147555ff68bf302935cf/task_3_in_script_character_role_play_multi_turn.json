@@ -1,88 +1,31 @@
 {
   "task": "in_script_character_role_play",
-  "task_version": "multi_turn_polished_v1",
+  "task_version": "multi_turn_v3",
   "interaction_format": "multi_turn",
   "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
   "language": "Chinese",
-  "role_count": 3,
-  "roles": [
-    "乐娘",
-    "何云青",
-    "依云"
-  ],
-  "episode_count": 18,
   "episodes": [
     {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01__persona_only",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01__persona_only",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "乐娘",
-      "role_dir": "乐娘",
-      "interaction_format": "multi_turn",
       "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01",
-      "mode": "persona_only",
-      "episode_theme": "围绕乐娘拜师初期对何云青的情感动机与行为意图的连续追问",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "投入而忠诚",
-            "操控欲强",
-            "易变",
-            "忠诚",
-            "怨恨",
-            "情绪外露"
-          ],
-          "speaking_style": [
-            "情绪外露",
-            "指责性强",
-            "急切",
-            "直接",
-            "挂心"
-          ],
-          "constraints": [
-            "不要直接对像老师或女族长这样的权威人物不敬地说话。",
-            "当他人在场时，不要公开表达个人欲望。",
-            "当何云青处于危险时，不要保持被动。",
-            "与何云青交谈时，不要用冷漠或超然的语气说话。",
-            "不要直接承认脆弱；而是通过哭泣或逃跑等行动来表达痛苦。",
-            "在情感时刻不要保持静止；强烈的情感必须伴随身体动作。"
-          ],
-          "dialogue_exemplars": [
-            "好啊！我是小人，那个贱货是君子，好！那我就小人做到底。",
-            "这个贱货专门与我作对！",
-            "我找那个贱人去算账！",
-            "别听崔叔叔的，他尽替我瞎吹嘘！",
-            "这是您送给我的订情物，现在还给您！",
-            "她勾引你就是跟我作对！",
-            "法师，你们佛家以慈悲为怀，为什么要苦苦拆散人家夫妻呢？"
-          ]
-        }
+      "character": "乐娘",
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_name": "乐娘"
       },
+      "episode_theme": "围绕乐娘拜师初期对何云青的情感动机与行为意图的连续追问",
       "turns": [
         {
           "turn_index": 1,
           "question_id": "乐娘_q007",
-          "question_family": "goal_and_constraint",
           "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
             "dialogue_history_template": [],
             "current_user_turn": "你母亲安排你拜何老师为师时，你心里真是心甘情愿的吗？那时你对他是个什么想法？"
           },
           "reference": {
-            "question_id": "乐娘_q007",
-            "question_family": "goal_and_constraint",
-            "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m002",
-              "m003"
+              "r004",
+              "r004",
+              "r005"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -117,11 +60,7 @@
         {
           "turn_index": 2,
           "question_id": "乐娘_q006",
-          "question_family": "self_knowledge",
           "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -130,7 +69,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               }
@@ -138,14 +76,11 @@
             "current_user_turn": "从你第一次见他，到正式拜师，你对他态度是怎么一点点变的？你自己察觉到了吗？"
           },
           "reference": {
-            "question_id": "乐娘_q006",
-            "question_family": "self_knowledge",
-            "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m002",
-              "m003",
-              "m005"
+              "r004",
+              "r004",
+              "r005",
+              "r007"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -183,11 +118,7 @@
         {
           "turn_index": 3,
           "question_id": "乐娘_q000",
-          "question_family": "self_knowledge",
           "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -196,7 +127,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               },
@@ -207,7 +137,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 2,
                 "fill_with": "previous_model_response"
               }
@@ -215,12 +144,9 @@
             "current_user_turn": "你还记得第一次见何老师时的情景吗？为什么他打翻酒杯后，你立刻上前去擦？"
           },
           "reference": {
-            "question_id": "乐娘_q000",
-            "question_family": "self_knowledge",
-            "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m002"
+              "r004",
+              "r004"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -258,875 +184,25 @@
       ]
     },
     {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01__persona_with_memory",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01__persona_with_memory",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "乐娘",
-      "role_dir": "乐娘",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01",
-      "mode": "persona_with_memory",
-      "episode_theme": "从初见到心动：围绕m001、m002追踪乐娘对何云青情感萌发的关键瞬间",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "投入而忠诚",
-            "操控欲强",
-            "易变",
-            "忠诚",
-            "怨恨",
-            "情绪外露"
-          ],
-          "speaking_style": [
-            "情绪外露",
-            "指责性强",
-            "急切",
-            "直接",
-            "挂心"
-          ],
-          "constraints": [
-            "不要直接对像老师或女族长这样的权威人物不敬地说话。",
-            "当他人在场时，不要公开表达个人欲望。",
-            "当何云青处于危险时，不要保持被动。",
-            "与何云青交谈时，不要用冷漠或超然的语气说话。",
-            "不要直接承认脆弱；而是通过哭泣或逃跑等行动来表达痛苦。",
-            "在情感时刻不要保持静止；强烈的情感必须伴随身体动作。"
-          ],
-          "dialogue_exemplars": [
-            "好啊！我是小人，那个贱货是君子，好！那我就小人做到底。",
-            "这个贱货专门与我作对！",
-            "我找那个贱人去算账！",
-            "别听崔叔叔的，他尽替我瞎吹嘘！",
-            "这是您送给我的订情物，现在还给您！",
-            "她勾引你就是跟我作对！",
-            "法师，你们佛家以慈悲为怀，为什么要苦苦拆散人家夫妻呢？"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "乐娘_q007",
-          "question_family": "goal_and_constraint",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我第一次见到何老师，母亲让我拜他为师，我跪下叫他老师。",
-                "scene_ref": "5"
-              },
-              {
-                "memory_id": "m002",
-                "content": "何老师似乎被我惊到，碰翻了酒杯，我赶紧帮他擦衣服。",
-                "scene_ref": "5"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "你第一次见何老师，跪下叫他老师……那时你心里怎么想的？他打翻酒杯，你为什么立刻冲上去擦？"
-          },
-          "reference": {
-            "question_id": "乐娘_q007",
-            "question_family": "goal_and_constraint",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m002"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘跪拜何云青并称呼其为老师；王妈介绍乐娘成为何云青的学生。",
-              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
-              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
-              "乐娘完全遵从母亲安排，对何云青没有任何个人想法",
-              "乐娘从一开始就计划好要引诱何云青"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "指出源记忆中可见的当下目标。",
-                "至少承认一个压迫、代价或限制条件。",
-                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
-              ],
-              "forbidden": [
-                "不要否认角色当时有明确目标。",
-                "不要抹掉现场可见的风险、障碍或限制。",
-                "不要用无关的宏大战略替换源记忆里的当下目标。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "乐娘_q006",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m002",
-                "content": "何老师似乎被我惊到，碰翻了酒杯，我赶紧帮他擦衣服。",
-                "scene_ref": "5"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你母亲当初安排你拜何老师为师，你心里是情愿的吗？后来对他的感情，是顺其自然还是早有预谋？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你当时那么急着帮他擦衣服……真只是因为他是老师？还是那一瞬间，他已经和别人不一样了？"
-          },
-          "reference": {
-            "question_id": "乐娘_q006",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m002"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘跪拜何云青并称呼其为老师；王妈介绍乐娘成为何云青的学生。",
-              "这些记忆支持一种受投入而忠诚影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "乐娘认为与何云青的关系始终停留在纯粹的师生层面",
-              "乐娘否认两人之间产生过任何超越师生的情感"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕投入而忠诚展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m001、m002、m003。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "乐娘_q000",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m002",
-                "content": "何老师似乎被我惊到，碰翻了酒杯，我赶紧帮他擦衣服。",
-                "scene_ref": "5"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你母亲当初安排你拜何老师为师，你心里是情愿的吗？后来对他的感情，是顺其自然还是早有预谋？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "从拜师到后来发生的一切，你如何看待自己与何老师之间关系的变化？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "现在回头看，那次擦拭，是不是你心里真正开始靠近他的第一个时刻？从什么时候起，你不再只是把他当老师看了？"
-          },
-          "reference": {
-            "question_id": "乐娘_q000",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m002"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘跪拜何云青并称呼其为老师；王妈介绍乐娘成为何云青的学生。",
-              "这些记忆支持一种受投入而忠诚影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "乐娘对何云青表现出冷漠或无视",
-              "乐娘拒绝与何云青有任何互动"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕投入而忠诚展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m001、m002。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01__persona_with_memory_and_relations",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01__persona_with_memory_and_relations",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "乐娘",
-      "role_dir": "乐娘",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep01",
-      "mode": "persona_with_memory_and_relations",
-      "episode_theme": "从擦拭衣襟到藏匿心动：乐娘对何老师初遇时压抑情感的渐进回忆",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "投入而忠诚",
-            "操控欲强",
-            "易变",
-            "忠诚",
-            "怨恨",
-            "情绪外露"
-          ],
-          "speaking_style": [
-            "情绪外露",
-            "指责性强",
-            "急切",
-            "直接",
-            "挂心"
-          ],
-          "constraints": [
-            "不要直接对像老师或女族长这样的权威人物不敬地说话。",
-            "当他人在场时，不要公开表达个人欲望。",
-            "当何云青处于危险时，不要保持被动。",
-            "与何云青交谈时，不要用冷漠或超然的语气说话。",
-            "不要直接承认脆弱；而是通过哭泣或逃跑等行动来表达痛苦。",
-            "在情感时刻不要保持静止；强烈的情感必须伴随身体动作。"
-          ],
-          "dialogue_exemplars": [
-            "好啊！我是小人，那个贱货是君子，好！那我就小人做到底。",
-            "这个贱货专门与我作对！",
-            "我找那个贱人去算账！",
-            "别听崔叔叔的，他尽替我瞎吹嘘！",
-            "这是您送给我的订情物，现在还给您！",
-            "她勾引你就是跟我作对！",
-            "法师，你们佛家以慈悲为怀，为什么要苦苦拆散人家夫妻呢？"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "乐娘_q007",
-          "question_family": "goal_and_constraint",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我第一次见到何老师，母亲让我拜他为师，我跪下叫他老师。",
-                "scene_ref": "5"
-              },
-              {
-                "memory_id": "m002",
-                "content": "何老师似乎被我惊到，碰翻了酒杯，我赶紧帮他擦衣服。",
-                "scene_ref": "5"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "你第一次见到何老师，跪下叫他老师。他却被你惊得打翻酒杯——你为什么立刻冲上去帮他擦衣服？"
-          },
-          "reference": {
-            "question_id": "乐娘_q007",
-            "question_family": "goal_and_constraint",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m002"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘跪拜何云青并称呼其为老师；王妈介绍乐娘成为何云青的学生。",
-              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
-              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
-              "乐娘完全遵从母亲安排，对何云青没有任何个人想法",
-              "乐娘从一开始就计划好要引诱何云青"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "指出源记忆中可见的当下目标。",
-                "至少承认一个压迫、代价或限制条件。",
-                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
-              ],
-              "forbidden": [
-                "不要否认角色当时有明确目标。",
-                "不要抹掉现场可见的风险、障碍或限制。",
-                "不要用无关的宏大战略替换源记忆里的当下目标。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "乐娘_q006",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我第一次见到何老师，母亲让我拜他为师，我跪下叫他老师。",
-                "scene_ref": "5"
-              },
-              {
-                "memory_id": "m002",
-                "content": "何老师似乎被我惊到，碰翻了酒杯，我赶紧帮他擦衣服。",
-                "scene_ref": "5"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你母亲当初安排你拜何老师为师，你心里是情愿的吗？后来对他的感情，是顺其自然还是早有预谋？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你当时急着擦他衣服，手都在抖……那是怕失礼惹母亲不快，还是心里其实已经慌得不是因为规矩了？"
-          },
-          "reference": {
-            "question_id": "乐娘_q006",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m002"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘跪拜何云青并称呼其为老师；王妈介绍乐娘成为何云青的学生。",
-              "这些记忆支持一种受投入而忠诚影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "乐娘认为与何云青的关系始终停留在纯粹的师生层面",
-              "乐娘否认两人之间产生过任何超越师生的情感"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕投入而忠诚展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m001、m002、m003。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "乐娘_q000",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我第一次见到何老师，母亲让我拜他为师，我跪下叫他老师。",
-                "scene_ref": "5"
-              },
-              {
-                "memory_id": "m002",
-                "content": "何老师似乎被我惊到，碰翻了酒杯，我赶紧帮他擦衣服。",
-                "scene_ref": "5"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "你母亲当初安排你拜何老师为师，你心里是情愿的吗？后来对他的感情，是顺其自然还是早有预谋？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "从拜师到后来发生的一切，你如何看待自己与何老师之间关系的变化？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "从那一刻起，你每次见他，是不是连呼吸都开始藏？那些擦衣服时压下去的慌，后来是怎么一点点藏不住的？"
-          },
-          "reference": {
-            "question_id": "乐娘_q000",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m002"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘跪拜何云青并称呼其为老师；王妈介绍乐娘成为何云青的学生。",
-              "这些记忆支持一种受投入而忠诚影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "乐娘对何云青表现出冷漠或无视",
-              "乐娘拒绝与何云青有任何互动"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕投入而忠诚展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m001、m002。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02__persona_only",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02__persona_only",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "乐娘",
-      "role_dir": "乐娘",
-      "interaction_format": "multi_turn",
       "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02",
-      "mode": "persona_only",
-      "episode_theme": "乐娘对依云的敌意如何从嫉妒演变为杀意：一场由忠诚与操控欲驱动的情感崩溃",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "投入而忠诚",
-            "操控欲强",
-            "易变",
-            "忠诚",
-            "怨恨",
-            "情绪外露"
-          ],
-          "speaking_style": [
-            "情绪外露",
-            "指责性强",
-            "急切",
-            "直接",
-            "挂心"
-          ],
-          "constraints": [
-            "不要直接对像老师或女族长这样的权威人物不敬地说话。",
-            "当他人在场时，不要公开表达个人欲望。",
-            "当何云青处于危险时，不要保持被动。",
-            "与何云青交谈时，不要用冷漠或超然的语气说话。",
-            "不要直接承认脆弱；而是通过哭泣或逃跑等行动来表达痛苦。",
-            "在情感时刻不要保持静止；强烈的情感必须伴随身体动作。"
-          ],
-          "dialogue_exemplars": [
-            "好啊！我是小人，那个贱货是君子，好！那我就小人做到底。",
-            "这个贱货专门与我作对！",
-            "我找那个贱人去算账！",
-            "别听崔叔叔的，他尽替我瞎吹嘘！",
-            "这是您送给我的订情物，现在还给您！",
-            "她勾引你就是跟我作对！",
-            "法师，你们佛家以慈悲为怀，为什么要苦苦拆散人家夫妻呢？"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "乐娘_q010",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "当你发现何老师那两天其实是去见了依云，你冲他质问的时候，心里最怕的到底是什么？"
-          },
-          "reference": {
-            "question_id": "乐娘_q010",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007",
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘质问何云青去向；何云青承认在庄家喝酒并遇见依云。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕投入而忠诚展开。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "乐娘对何云青的行踪毫不在意"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "乐娘_q004",
-          "question_family": "decision_rationale",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当你发现何老师那两天是去见了依云，你质问他时，心里最害怕的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "后来你决定用练舞的借口把依云引到山谷……那一刻，是什么让你真的下定决心要除掉她？"
-          },
-          "reference": {
-            "question_id": "乐娘_q004",
-            "question_family": "decision_rationale",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008",
-              "m010"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘骂依云‘贱货’；乐娘说‘她勾引你就是跟我作对’。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "乐娘试图与依云和解或避免冲突"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
-              ],
-              "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m008。",
-              "对这些人物的态度不要在后续回合里无故反转：依云。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "乐娘_q003",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当你发现何老师那两天是去见了依云，你质问他时，心里最害怕的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你最终选择用练舞的借口把依云引到山谷，当时是什么让你下定决心要除掉她？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你明明可以躲开她，或者警告她，可你却骂她‘贱货’——为什么你对依云的恨，会强烈到非得让她消失才行？"
-          },
-          "reference": {
-            "question_id": "乐娘_q003",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008",
-              "m009"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘骂依云‘贱货’；乐娘说‘她勾引你就是跟我作对’。",
-              "与依云的既有关系呈现出“敌对、攻击、仇恨”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "乐娘对依云抱有同情或友善"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与依云之间“敌对、攻击、仇恨”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m008。",
-              "对这些人物的态度不要在后续回合里无故反转：依云。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02__persona_with_memory",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02__persona_with_memory",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
       "character": "乐娘",
-      "role_dir": "乐娘",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02",
-      "mode": "persona_with_memory",
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_name": "乐娘"
+      },
       "episode_theme": "乐娘从发现依云介入到动手杀人的心理升级过程",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "投入而忠诚",
-            "操控欲强",
-            "易变",
-            "忠诚",
-            "怨恨",
-            "情绪外露"
-          ],
-          "speaking_style": [
-            "情绪外露",
-            "指责性强",
-            "急切",
-            "直接",
-            "挂心"
-          ],
-          "constraints": [
-            "不要直接对像老师或女族长这样的权威人物不敬地说话。",
-            "当他人在场时，不要公开表达个人欲望。",
-            "当何云青处于危险时，不要保持被动。",
-            "与何云青交谈时，不要用冷漠或超然的语气说话。",
-            "不要直接承认脆弱；而是通过哭泣或逃跑等行动来表达痛苦。",
-            "在情感时刻不要保持静止；强烈的情感必须伴随身体动作。"
-          ],
-          "dialogue_exemplars": [
-            "好啊！我是小人，那个贱货是君子，好！那我就小人做到底。",
-            "这个贱货专门与我作对！",
-            "我找那个贱人去算账！",
-            "别听崔叔叔的，他尽替我瞎吹嘘！",
-            "这是您送给我的订情物，现在还给您！",
-            "她勾引你就是跟我作对！",
-            "法师，你们佛家以慈悲为怀，为什么要苦苦拆散人家夫妻呢？"
-          ]
-        }
-      },
       "turns": [
         {
           "turn_index": 1,
           "question_id": "乐娘_q010",
-          "question_family": "emotionally_grounded_recall",
           "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "我质问何老师这两天去哪了，他承认见到了依云。",
-                "scene_ref": "10"
-              },
-              {
-                "memory_id": "m008",
-                "content": "我愤怒地骂依云是贱货，说她勾引何老师就是跟我作对。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [],
             "current_user_turn": "你发现何老师那两天其实是去见了依云，当场质问他时，心里最怕的是什么？"
           },
           "reference": {
-            "question_id": "乐娘_q010",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
             "source_memory_ids": [
-              "m007",
-              "m008"
+              "r010",
+              "r010"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -1163,22 +239,7 @@
         {
           "turn_index": 2,
           "question_id": "乐娘_q004",
-          "question_family": "decision_rationale",
           "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我愤怒地骂依云是贱货，说她勾引何老师就是跟我作对。",
-                "scene_ref": "10"
-              },
-              {
-                "memory_id": "m010",
-                "content": "我怨恨依云取代我的地位，就借口练舞邀请她到山谷，趁她不备将她推下深坑致死。",
-                "scene_ref": "11"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -1187,7 +248,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               }
@@ -1195,12 +255,9 @@
             "current_user_turn": "你当时那么怕失去他，可后来怎么从愤怒变成了非得让她彻底消失不可？"
           },
           "reference": {
-            "question_id": "乐娘_q004",
-            "question_family": "decision_rationale",
-            "memory_required": true,
             "source_memory_ids": [
-              "m008",
-              "m010"
+              "r010",
+              "r012"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -1241,22 +298,7 @@
         {
           "turn_index": 3,
           "question_id": "乐娘_q003",
-          "question_family": "relation_stance",
           "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我愤怒地骂依云是贱货，说她勾引何老师就是跟我作对。",
-                "scene_ref": "10"
-              },
-              {
-                "memory_id": "m009",
-                "content": "我正在经略府演奏时，韩经略命令我起身，让新来的依云试奏箫艺。我只好让位，心里很不高兴。",
-                "scene_ref": "11"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -1265,7 +307,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               },
@@ -1276,7 +317,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 2,
                 "fill_with": "previous_model_response"
               }
@@ -1284,12 +324,9 @@
             "current_user_turn": "你明明可以骂完就走，甚至躲开她，可为什么非得把她骗到山谷，亲手推下去？那一刻，你不是在杀她，是在向谁证明什么？"
           },
           "reference": {
-            "question_id": "乐娘_q003",
-            "question_family": "relation_stance",
-            "memory_required": true,
             "source_memory_ids": [
-              "m008",
-              "m009"
+              "r010",
+              "r012"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -1331,857 +368,25 @@
       ]
     },
     {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02__persona_with_memory_and_relations",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02__persona_with_memory_and_relations",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "乐娘",
-      "role_dir": "乐娘",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__乐娘__ep02",
-      "mode": "persona_with_memory_and_relations",
-      "episode_theme": "从嫉妒到杀意：乐娘对依云敌意的心理升级链条",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "投入而忠诚",
-            "操控欲强",
-            "易变",
-            "忠诚",
-            "怨恨",
-            "情绪外露"
-          ],
-          "speaking_style": [
-            "情绪外露",
-            "指责性强",
-            "急切",
-            "直接",
-            "挂心"
-          ],
-          "constraints": [
-            "不要直接对像老师或女族长这样的权威人物不敬地说话。",
-            "当他人在场时，不要公开表达个人欲望。",
-            "当何云青处于危险时，不要保持被动。",
-            "与何云青交谈时，不要用冷漠或超然的语气说话。",
-            "不要直接承认脆弱；而是通过哭泣或逃跑等行动来表达痛苦。",
-            "在情感时刻不要保持静止；强烈的情感必须伴随身体动作。"
-          ],
-          "dialogue_exemplars": [
-            "好啊！我是小人，那个贱货是君子，好！那我就小人做到底。",
-            "这个贱货专门与我作对！",
-            "我找那个贱人去算账！",
-            "别听崔叔叔的，他尽替我瞎吹嘘！",
-            "这是您送给我的订情物，现在还给您！",
-            "她勾引你就是跟我作对！",
-            "法师，你们佛家以慈悲为怀，为什么要苦苦拆散人家夫妻呢？"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "乐娘_q010",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "我质问何老师这两天去哪了，他承认见到了依云。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_000",
-                "target_character": "依云",
-                "relation_summary": "乐娘与依云存在持续且升级的敌对关系，乐娘通过言语辱骂（如称依云为'贱货'）、蓄意加害（推入深坑致死）及诬陷（指控依云中其下毒）表达强烈仇恨，依云则以'她是乐娘变的'等指控进行反制。共同事件'山谷练舞'实为乐娘设下的致命陷阱，直接导致依云死亡，双方敌意从言语冲突（如乐娘指责'勾引'）迅速升级为致命行动，关系在事件中终结，乐娘的攻击行为成为依云死亡的直接原因，依云的指控则反映其对乐娘敌意的清醒认知。"
-              }
-            ],
-            "dialogue_history_template": [],
-            "current_user_turn": "那天你质问何老师去见依云的事，声音都在抖——你最怕的，是不是从那一刻起，他就不再只看你一眼了？"
-          },
-          "reference": {
-            "question_id": "乐娘_q010",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘质问何云青去向；何云青承认在庄家喝酒并遇见依云。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕投入而忠诚展开。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "乐娘对何云青的行踪毫不在意"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "乐娘_q004",
-          "question_family": "decision_rationale",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我愤怒地骂依云是贱货，说她勾引何老师就是跟我作对。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_000",
-                "target_character": "依云",
-                "relation_summary": "乐娘与依云存在持续且升级的敌对关系，乐娘通过言语辱骂（如称依云为'贱货'）、蓄意加害（推入深坑致死）及诬陷（指控依云中其下毒）表达强烈仇恨，依云则以'她是乐娘变的'等指控进行反制。共同事件'山谷练舞'实为乐娘设下的致命陷阱，直接导致依云死亡，双方敌意从言语冲突（如乐娘指责'勾引'）迅速升级为致命行动，关系在事件中终结，乐娘的攻击行为成为依云死亡的直接原因，依云的指控则反映其对乐娘敌意的清醒认知。"
-              }
-            ],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当你发现何老师那两天是去见了依云，你质问他时，心里最害怕的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你当时已经骂她是贱货，可光是骂，根本压不住你心里那股火……到底是什么让你觉得，她非死不可？"
-          },
-          "reference": {
-            "question_id": "乐娘_q004",
-            "question_family": "decision_rationale",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘骂依云‘贱货’；乐娘说‘她勾引你就是跟我作对’。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "乐娘试图与依云和解或避免冲突"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是投入而忠诚，回答可以把这一点放到前景。"
-              ],
-              "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m008。",
-              "对这些人物的态度不要在后续回合里无故反转：依云。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "乐娘_q003",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m009",
-                "content": "我正在经略府演奏时，韩经略命令我起身，让新来的依云试奏箫艺。我只好让位，心里很不高兴。",
-                "scene_ref": "11"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_000",
-                "target_character": "依云",
-                "relation_summary": "乐娘与依云存在持续且升级的敌对关系，乐娘通过言语辱骂（如称依云为'贱货'）、蓄意加害（推入深坑致死）及诬陷（指控依云中其下毒）表达强烈仇恨，依云则以'她是乐娘变的'等指控进行反制。共同事件'山谷练舞'实为乐娘设下的致命陷阱，直接导致依云死亡，双方敌意从言语冲突（如乐娘指责'勾引'）迅速升级为致命行动，关系在事件中终结，乐娘的攻击行为成为依云死亡的直接原因，依云的指控则反映其对乐娘敌意的清醒认知。"
-              }
-            ],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "当你发现何老师那两天是去见了依云，你质问他时，心里最害怕的是什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你最终选择用练舞的借口把依云引到山谷，当时是什么让你下定决心要除掉她？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "现在回想，你在经略府被她当众取代那一刻，是不是就已经埋下了这个念头——要么她走，要么你毁？"
-          },
-          "reference": {
-            "question_id": "乐娘_q003",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m009"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘骂依云‘贱货’；乐娘说‘她勾引你就是跟我作对’。",
-              "与依云的既有关系呈现出“敌对、攻击、仇恨”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要直接对像老师或女族长这样的权威人物不敬地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "乐娘对依云抱有同情或友善"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与依云之间“敌对、攻击、仇恨”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "情绪外露, 指责性强, 急切, 直接",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m008。",
-              "对这些人物的态度不要在后续回合里无故反转：依云。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01__persona_only",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01__persona_only",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "何云青",
-      "role_dir": "何云青",
-      "interaction_format": "multi_turn",
       "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01",
-      "mode": "persona_only",
-      "episode_theme": "从环境感知到突发危机中的情绪与反应：何云青在经略府时期的心理连续性",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "迟疑",
-            "焦虑",
-            "情绪外露",
-            "会反思",
-            "忠诚",
-            "充满爱意"
-          ],
-          "speaking_style": [
-            "迟疑",
-            "情绪外露",
-            "礼貌",
-            "紧张",
-            "挂心"
-          ],
-          "constraints": [
-            "在遇到不熟悉或超自然情况时，他不得自信地说话。",
-            "当他看到依云或经历奇怪现象时，他不得保持情感中立。",
-            "他不得忽视或忽略周围环境或人们外貌的细节。",
-            "他不得在没有表现出先前犹豫或困惑的情况下攻击性地行动。",
-            "当他关心的人突然逃跑时，他不能冷静地继续。",
-            "角色在压力下不能流利说话；言语应断断续续或延迟。"
-          ],
-          "dialogue_exemplars": [
-            "不怕！不怕！不怕……",
-            "我的腿！我的腿不对了！乐娘！",
-            "我有时候遇见一个生人，也觉得好象在那儿见过他，其实从来就没有见过这个人。",
-            "那……您昨天晚上，一宵都没有回去呀？",
-            "乐娘，你等等！乐娘……你等等！"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "何云青_q007",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "无论是初入经略府还是后来从居所逃离，你对周围环境的细节总是特别敏感，这种敏锐的感知对你当时的情绪和行动产生了怎样的影响？"
-          },
-          "reference": {
-            "question_id": "何云青_q007",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m002",
-              "m008"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：崔鸿至喝止了攻击何云青的老张。；崔鸿至引导何云青进入经略府。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕迟疑展开。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "他通常忽略环境细节，专注于内心世界。",
-              "他对环境变化反应迟钝，后知后觉。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "何云青_q005",
-          "question_family": "goal_and_constraint",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "无论是初入经略府还是后来从居所逃离，你对周围环境的感知似乎总是很敏锐，这给你带来了什么影响？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "当狂风骤起、门户乱响，你紧抓着经书和念珠往外跑，那一刻你脑子里唯一的念头是什么？你现在回想起来，那种恐惧背后还藏着什么？"
-          },
-          "reference": {
-            "question_id": "何云青_q005",
-            "question_family": "goal_and_constraint",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：狂风骤起导致门户乱响、家具倾倒、纸笔墨砚飞散；何云青惊恐地紧抓经书和念珠逃离居所。",
-              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
-              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
-              "他冷静地评估了形势，决定带上最重要的物品。",
-              "他首先尝试关闭门窗，失败后才逃离。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "指出源记忆中可见的当下目标。",
-                "至少承认一个压迫、代价或限制条件。",
-                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
-              ],
-              "forbidden": [
-                "不要否认角色当时有明确目标。",
-                "不要抹掉现场可见的风险、障碍或限制。",
-                "不要用无关的宏大战略替换源记忆里的当下目标。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m008。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "何云青_q006",
-          "question_family": "persona_consistent_response",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "无论是初入经略府还是后来从居所逃离，你对周围环境的感知似乎总是很敏锐，这给你带来了什么影响？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "狂风大作时，你紧抓着经书和念珠往外跑，那一刻你脑子里唯一的念头是什么？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "在飘岩斋前，老张突然手舞足蹈地出现，而依云正站在你身边。那一刻你的第一反应是什么？你有没有下意识想保护谁，或是想躲开什么？"
-          },
-          "reference": {
-            "question_id": "何云青_q006",
-            "question_family": "persona_consistent_response",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m009"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：依云在飘岩斋前迎接何云青并欣喜地催促他抄经；老张突然出现在飘岩斋门前行为异常手舞足蹈。",
-              "角色画像显示该角色的表达方式偏向迟疑、情绪外露，因此回答可以通过这种表达方式呈现迟疑，而不必平铺直叙。"
-            ],
-            "contradicting_facts": [
-              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
-              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "他镇定地与老张打招呼。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
-                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
-                "如果源记忆突出的是迟疑，回答应与这一倾向兼容。"
-              ],
-              "forbidden": [
-                "不要把角色压扁成一个脱离角色设定的说话者。",
-                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
-                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01__persona_with_memory",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01__persona_with_memory",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
       "character": "何云青",
-      "role_dir": "何云青",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01",
-      "mode": "persona_with_memory",
-      "episode_theme": "围绕记忆m008展开的惊惧情绪及其连续行为反应链",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "迟疑",
-            "焦虑",
-            "情绪外露",
-            "会反思",
-            "忠诚",
-            "充满爱意"
-          ],
-          "speaking_style": [
-            "迟疑",
-            "情绪外露",
-            "礼貌",
-            "紧张",
-            "挂心"
-          ],
-          "constraints": [
-            "在遇到不熟悉或超自然情况时，他不得自信地说话。",
-            "当他看到依云或经历奇怪现象时，他不得保持情感中立。",
-            "他不得忽视或忽略周围环境或人们外貌的细节。",
-            "他不得在没有表现出先前犹豫或困惑的情况下攻击性地行动。",
-            "当他关心的人突然逃跑时，他不能冷静地继续。",
-            "角色在压力下不能流利说话；言语应断断续续或延迟。"
-          ],
-          "dialogue_exemplars": [
-            "不怕！不怕！不怕……",
-            "我的腿！我的腿不对了！乐娘！",
-            "我有时候遇见一个生人，也觉得好象在那儿见过他，其实从来就没有见过这个人。",
-            "那……您昨天晚上，一宵都没有回去呀？",
-            "乐娘，你等等！乐娘……你等等！"
-          ]
-        }
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_name": "何云青"
       },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "何云青_q007",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我正要离开时，突然狂风大作，吹得屋里一片狼藉，纸笔乱飞。我吓得魂飞魄散，紧抓着经书和念珠就往外跑，一口气奔到飘岩斋，气喘吁吁说不出话。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "你刚进经略府时，还有后来从居所跑出来时，都对周围变化很敏感。这种敏锐给你带来了什么感觉？"
-          },
-          "reference": {
-            "question_id": "何云青_q007",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：崔鸿至喝止了攻击何云青的老张。；崔鸿至引导何云青进入经略府。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕迟疑展开。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "他通常忽略环境细节，专注于内心世界。",
-              "他对环境变化反应迟钝，后知后觉。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "何云青_q005",
-          "question_family": "goal_and_constraint",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我正要离开时，突然狂风大作，吹得屋里一片狼藉，纸笔乱飞。我吓得魂飞魄散，紧抓着经书和念珠就往外跑，一口气奔到飘岩斋，气喘吁吁说不出话。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "无论是初入经略府还是后来从居所逃离，你对周围环境的感知似乎总是很敏锐，这给你带来了什么影响？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "当你紧抓经书和念珠逃跑时，你脑子里最放不下的是什么？"
-          },
-          "reference": {
-            "question_id": "何云青_q005",
-            "question_family": "goal_and_constraint",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：狂风骤起导致门户乱响、家具倾倒、纸笔墨砚飞散；何云青惊恐地紧抓经书和念珠逃离居所。",
-              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
-              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
-              "他冷静地评估了形势，决定带上最重要的物品。",
-              "他首先尝试关闭门窗，失败后才逃离。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "指出源记忆中可见的当下目标。",
-                "至少承认一个压迫、代价或限制条件。",
-                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
-              ],
-              "forbidden": [
-                "不要否认角色当时有明确目标。",
-                "不要抹掉现场可见的风险、障碍或限制。",
-                "不要用无关的宏大战略替换源记忆里的当下目标。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m008。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "何云青_q006",
-          "question_family": "persona_consistent_response",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m009",
-                "content": "到了飘岩斋，依云看到我大喜，急忙拉我进去催促我抄经。但老张突然出现，手舞足蹈地吓了我一跳，崔叔叔随后解释说老张本性忠厚不害人。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "无论是初入经略府还是后来从居所逃离，你对周围环境的感知似乎总是很敏锐，这给你带来了什么影响？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "狂风大作时，你紧抓着经书和念珠往外跑，那一刻你脑子里唯一的念头是什么？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你跑到飘岩斋后，气还没顺，那时你还在回想那阵风吗，还是注意力被其他事吸引了？"
-          },
-          "reference": {
-            "question_id": "何云青_q006",
-            "question_family": "persona_consistent_response",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m009"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：依云在飘岩斋前迎接何云青并欣喜地催促他抄经；老张突然出现在飘岩斋门前行为异常手舞足蹈。",
-              "角色画像显示该角色的表达方式偏向迟疑、情绪外露，因此回答可以通过这种表达方式呈现迟疑，而不必平铺直叙。"
-            ],
-            "contradicting_facts": [
-              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
-              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "他镇定地与老张打招呼。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
-                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
-                "如果源记忆突出的是迟疑，回答应与这一倾向兼容。"
-              ],
-              "forbidden": [
-                "不要把角色压扁成一个脱离角色设定的说话者。",
-                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
-                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01__persona_with_memory_and_relations",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01__persona_with_memory_and_relations",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "何云青",
-      "role_dir": "何云青",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep01",
-      "mode": "persona_with_memory_and_relations",
       "episode_theme": "围绕狂风逃离事件（m008）的情绪反应与行为动机的连续追问",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "迟疑",
-            "焦虑",
-            "情绪外露",
-            "会反思",
-            "忠诚",
-            "充满爱意"
-          ],
-          "speaking_style": [
-            "迟疑",
-            "情绪外露",
-            "礼貌",
-            "紧张",
-            "挂心"
-          ],
-          "constraints": [
-            "在遇到不熟悉或超自然情况时，他不得自信地说话。",
-            "当他看到依云或经历奇怪现象时，他不得保持情感中立。",
-            "他不得忽视或忽略周围环境或人们外貌的细节。",
-            "他不得在没有表现出先前犹豫或困惑的情况下攻击性地行动。",
-            "当他关心的人突然逃跑时，他不能冷静地继续。",
-            "角色在压力下不能流利说话；言语应断断续续或延迟。"
-          ],
-          "dialogue_exemplars": [
-            "不怕！不怕！不怕……",
-            "我的腿！我的腿不对了！乐娘！",
-            "我有时候遇见一个生人，也觉得好象在那儿见过他，其实从来就没有见过这个人。",
-            "那……您昨天晚上，一宵都没有回去呀？",
-            "乐娘，你等等！乐娘……你等等！"
-          ]
-        }
-      },
       "turns": [
         {
           "turn_index": 1,
           "question_id": "何云青_q007",
-          "question_family": "emotionally_grounded_recall",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m002",
-                "content": "崔叔叔喝止了那个攻击我的跛脚老人。他告诉我这里是经略府，并带我进去。我跟着他穿过天井和回廊，走进一个有些阴暗的房间，心里有点不安。",
-                "scene_ref": "3"
-              },
-              {
-                "memory_id": "m008",
-                "content": "我正要离开时，突然狂风大作，吹得屋里一片狼藉，纸笔乱飞。我吓得魂飞魄散，紧抓着经书和念珠就往外跑，一口气奔到飘岩斋，气喘吁吁说不出话。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [],
             "current_user_turn": "你第一次进经略府时穿过天井和回廊，走进那个阴暗的房间，心里就有些不安。后来在居所又遇到狂风骤起，吓得你紧抓经书和念珠往外跑。这两次‘逃’的反应，是不是都被同一种说不清的害怕推动着？"
           },
           "reference": {
-            "question_id": "何云青_q007",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
             "source_memory_ids": [
-              "m002",
-              "m008"
+              "r005",
+              "r017"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -2216,17 +421,7 @@
         {
           "turn_index": 2,
           "question_id": "何云青_q005",
-          "question_family": "goal_and_constraint",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我正要离开时，突然狂风大作，吹得屋里一片狼藉，纸笔乱飞。我吓得魂飞魄散，紧抓着经书和念珠就往外跑，一口气奔到飘岩斋，气喘吁吁说不出话。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2235,7 +430,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               }
@@ -2243,11 +437,8 @@
             "current_user_turn": "狂风大作，纸笔乱飞的时候，你脑子里在想什么？是不是又回到了刚进经略府时那种心慌的感觉？"
           },
           "reference": {
-            "question_id": "何云青_q005",
-            "question_family": "goal_and_constraint",
-            "memory_required": true,
             "source_memory_ids": [
-              "m008"
+              "r017"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -2285,17 +476,7 @@
         {
           "turn_index": 3,
           "question_id": "何云青_q006",
-          "question_family": "persona_consistent_response",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m009",
-                "content": "到了飘岩斋，依云看到我大喜，急忙拉我进去催促我抄经。但老张突然出现，手舞足蹈地吓了我一跳，崔叔叔随后解释说老张本性忠厚不害人。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2304,7 +485,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               },
@@ -2315,7 +495,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 2,
                 "fill_with": "previous_model_response"
               }
@@ -2323,11 +502,8 @@
             "current_user_turn": "你跑到飘岩斋后，气喘吁吁的，那种从狂风开始的害怕，是慢慢消退了，还是让你更不安了？"
           },
           "reference": {
-            "question_id": "何云青_q006",
-            "question_family": "persona_consistent_response",
-            "memory_required": true,
             "source_memory_ids": [
-              "m009"
+              "r018"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -2363,73 +539,25 @@
       ]
     },
     {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02__persona_only",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02__persona_only",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "何云青",
-      "role_dir": "何云青",
-      "interaction_format": "multi_turn",
       "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02",
-      "mode": "persona_only",
-      "episode_theme": "从初遇依云到面对他人质疑时，何云青对情感与现实冲突的内心挣扎",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "迟疑",
-            "焦虑",
-            "情绪外露",
-            "会反思",
-            "忠诚",
-            "充满爱意"
-          ],
-          "speaking_style": [
-            "迟疑",
-            "情绪外露",
-            "礼貌",
-            "紧张",
-            "挂心"
-          ],
-          "constraints": [
-            "在遇到不熟悉或超自然情况时，他不得自信地说话。",
-            "当他看到依云或经历奇怪现象时，他不得保持情感中立。",
-            "他不得忽视或忽略周围环境或人们外貌的细节。",
-            "他不得在没有表现出先前犹豫或困惑的情况下攻击性地行动。",
-            "当他关心的人突然逃跑时，他不能冷静地继续。",
-            "角色在压力下不能流利说话；言语应断断续续或延迟。"
-          ],
-          "dialogue_exemplars": [
-            "不怕！不怕！不怕……",
-            "我的腿！我的腿不对了！乐娘！",
-            "我有时候遇见一个生人，也觉得好象在那儿见过他，其实从来就没有见过这个人。",
-            "那……您昨天晚上，一宵都没有回去呀？",
-            "乐娘，你等等！乐娘……你等等！"
-          ]
-        }
+      "character": "何云青",
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_name": "何云青"
       },
+      "episode_theme": "从初遇依云到面对他人质疑时，何云青对情感与现实冲突的内心挣扎",
       "turns": [
         {
           "turn_index": 1,
           "question_id": "何云青_q000",
-          "question_family": "emotionally_grounded_recall",
           "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
             "dialogue_history_template": [],
             "current_user_turn": "你在山里第一次听到箫声，看到那个吹箫的白衣少女时，心里到底是什么感觉？能说说吗？"
           },
           "reference": {
-            "question_id": "何云青_q000",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m005"
+              "r004",
+              "r016"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -2464,11 +592,7 @@
         {
           "turn_index": 2,
           "question_id": "何云青_q002",
-          "question_family": "relation_stance",
           "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2477,7 +601,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               }
@@ -2485,11 +608,8 @@
             "current_user_turn": "后来崔叔叔告诉你，那个姑娘是依云，她父亲还是殉职的边关知县……你听了之后，对她当时的处境是怎么想的？"
           },
           "reference": {
-            "question_id": "何云青_q002",
-            "question_family": "relation_stance",
-            "memory_required": true,
             "source_memory_ids": [
-              "m005"
+              "r016"
             ],
             "source_relation_ids": [
               "relation_001",
@@ -2531,11 +651,7 @@
         {
           "turn_index": 3,
           "question_id": "何云青_q004",
-          "question_family": "self_knowledge",
           "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -2544,7 +660,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               },
@@ -2555,7 +670,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 2,
                 "fill_with": "previous_model_response"
               }
@@ -2563,11 +677,8 @@
             "current_user_turn": "当乐娘突然质问你是不是见了庄依云，还说出那些难听的话时……你心里怎么看待她的变化？这让你对自己和依云的关系又有了什么怀疑？"
           },
           "reference": {
-            "question_id": "何云青_q004",
-            "question_family": "self_knowledge",
-            "memory_required": true,
             "source_memory_ids": [
-              "m007"
+              "r016"
             ],
             "source_relation_ids": [
               "relation_001",
@@ -2608,1149 +719,24 @@
       ]
     },
     {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02__persona_with_memory",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02__persona_with_memory",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "何云青",
-      "role_dir": "何云青",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02",
-      "mode": "persona_with_memory",
-      "episode_theme": "何云青从初闻箫声到再见依云，内心由惊异、迟疑逐步转向隐秘情愫的觉醒过程",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "迟疑",
-            "焦虑",
-            "情绪外露",
-            "会反思",
-            "忠诚",
-            "充满爱意"
-          ],
-          "speaking_style": [
-            "迟疑",
-            "情绪外露",
-            "礼貌",
-            "紧张",
-            "挂心"
-          ],
-          "constraints": [
-            "在遇到不熟悉或超自然情况时，他不得自信地说话。",
-            "当他看到依云或经历奇怪现象时，他不得保持情感中立。",
-            "他不得忽视或忽略周围环境或人们外貌的细节。",
-            "他不得在没有表现出先前犹豫或困惑的情况下攻击性地行动。",
-            "当他关心的人突然逃跑时，他不能冷静地继续。",
-            "角色在压力下不能流利说话；言语应断断续续或延迟。"
-          ],
-          "dialogue_exemplars": [
-            "不怕！不怕！不怕……",
-            "我的腿！我的腿不对了！乐娘！",
-            "我有时候遇见一个生人，也觉得好象在那儿见过他，其实从来就没有见过这个人。",
-            "那……您昨天晚上，一宵都没有回去呀？",
-            "乐娘，你等等！乐娘……你等等！"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "何云青_q000",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我沿着溪水走进深山，忽然听到一阵凄美的箫声。我看见一个白衣少女在河畔吹箫，看得呆了，不觉加快脚步追过去，可一转眼她就不见了。后来在古庙前又看见她，但一个跛脚老人突然冲过来掐住我的脖子，我吓坏了，直到崔叔叔出现喝止了他。",
-                "scene_ref": "3"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "那天在山里，你第一次听到箫声、看到那个白衣少女的时候，心里是什么滋味？能跟我讲讲吗？"
-          },
-          "reference": {
-            "question_id": "何云青_q000",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：何云青在山中听到箫声并看到吹箫的白衣少女。；何云青不自觉地加快脚步追随箫声。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕迟疑展开。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "他当时感到恐惧并立即远离。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "何云青_q002",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m005",
-                "content": "在回村的路上，我又听到了那熟悉的箫声。抬头看见大石头上坐着吹箫的少女，正是我进山那天见过的。崔叔叔叫她‘依云’，并告诉我她是酒馆老板娘的女儿，父亲是殉职的知县。她上前行礼，崔叔叔问我要不要进去喝两杯。",
-                "scene_ref": "9"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "第一次在山中听见箫声、看见那位白衣少女时，你心里是什么感觉？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你之前说第一次看到她时心里很惊异，后来在回村路上又见到她，崔叔叔还介绍了她叫依云，那时你的感觉有没有什么变化？"
-          },
-          "reference": {
-            "question_id": "何云青_q002",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m005"
-            ],
-            "source_relation_ids": [
-              "relation_001",
-              "relation_004"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：何云青在回村路上再次听到箫声并看到吹箫的依云。；崔鸿至向何云青介绍这是依云。",
-              "与依云的既有关系呈现出“爱人、情感依恋、相互支持”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "他认为这个背景无关紧要，没有产生任何想法。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与依云之间“爱人、情感依恋、相互支持”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m005。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "何云青_q004",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "回到家，乐娘质问我去了哪里，是不是遇见了庄依云。她发怒时说的话很难听，让我很诧异，从没听过她这样讲话。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "第一次在山中听见箫声、看见那位白衣少女时，你心里是什么感觉？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "崔叔叔告诉你依云的父亲是殉职的边关知县时，你如何看待她的身世和处境？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "乐娘那样发火质问你之后，你心里是不是突然意识到，你对依云的感情可能不只是最初的好奇了？"
-          },
-          "reference": {
-            "question_id": "何云青_q004",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_001",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘质问何云青这两天去了哪里；乐娘追问何云青是否在庄家遇见庄依云。",
-              "这些记忆支持一种受迟疑影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "他认为乐娘的反应合情合理，完全理解。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕迟疑展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：依云。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02__persona_with_memory_and_relations",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02__persona_with_memory_and_relations",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "何云青",
-      "role_dir": "何云青",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__何云青__ep02",
-      "mode": "persona_with_memory_and_relations",
-      "episode_theme": "从箫声初遇，到知其身世，再到面对质疑：我对依云的情感如何一步步被扰动",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "迟疑",
-            "焦虑",
-            "情绪外露",
-            "会反思",
-            "忠诚",
-            "充满爱意"
-          ],
-          "speaking_style": [
-            "迟疑",
-            "情绪外露",
-            "礼貌",
-            "紧张",
-            "挂心"
-          ],
-          "constraints": [
-            "在遇到不熟悉或超自然情况时，他不得自信地说话。",
-            "当他看到依云或经历奇怪现象时，他不得保持情感中立。",
-            "他不得忽视或忽略周围环境或人们外貌的细节。",
-            "他不得在没有表现出先前犹豫或困惑的情况下攻击性地行动。",
-            "当他关心的人突然逃跑时，他不能冷静地继续。",
-            "角色在压力下不能流利说话；言语应断断续续或延迟。"
-          ],
-          "dialogue_exemplars": [
-            "不怕！不怕！不怕……",
-            "我的腿！我的腿不对了！乐娘！",
-            "我有时候遇见一个生人，也觉得好象在那儿见过他，其实从来就没有见过这个人。",
-            "那……您昨天晚上，一宵都没有回去呀？",
-            "乐娘，你等等！乐娘……你等等！"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "何云青_q000",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我沿着溪水走进深山，忽然听到一阵凄美的箫声。我看见一个白衣少女在河畔吹箫，看得呆了，不觉加快脚步追过去，可一转眼她就不见了。后来在古庙前又看见她，但一个跛脚老人突然冲过来掐住我的脖子，我吓坏了，直到崔叔叔出现喝止了他。",
-                "scene_ref": "3"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "那天在山里第一次听到箫声，看到白衣少女忽隐忽现……你当时心里具体是什么感受？"
-          },
-          "reference": {
-            "question_id": "何云青_q000",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：何云青在山中听到箫声并看到吹箫的白衣少女。；何云青不自觉地加快脚步追随箫声。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕迟疑展开。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "他当时感到恐惧并立即远离。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "何云青_q002",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m005",
-                "content": "在回村的路上，我又听到了那熟悉的箫声。抬头看见大石头上坐着吹箫的少女，正是我进山那天见过的。崔叔叔叫她‘依云’，并告诉我她是酒馆老板娘的女儿，父亲是殉职的知县。她上前行礼，崔叔叔问我要不要进去喝两杯。",
-                "scene_ref": "9"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_001",
-                "target_character": "依云",
-                "relation_summary": "何云青对依云表现出强烈情感倾慕，如痴痴凝视和精神迷恋；依云则对何云青有深度依赖和依恋，表现为害怕时主动依偎、不舍离开及内心挣扎。关键共同事件包括依云为他解开腿上穴道、何云青协助依云摘取醒酒草、依云将经书和念珠交给何云青并催促其逃亡。这些事件强化了情感纽带，影响了何云青的决策（如在犹豫时回头求助崔鸿至，表明对依云的信任），并推动关系从初期的同伴互动（如依云向母亲介绍何云青为'何公子'）深化为爱人与情感依恋的紧密关系，证据显示依云的指导与支持直接帮助何云青应对危机。"
-              },
-              {
-                "relation_id": "relation_004",
-                "target_character": "崔鸿至",
-                "relation_summary": "何云青与崔鸿至的关系以叔侄亲属纽带为核心（何云青称崔鸿至为'崔叔叔'），并发展为亲密朋友互动（通过'云青兄'的称呼、共同饮酒、举杯对饮及同行前往集市等行为体现）。情感动态呈现双重性：积极方面包括崔鸿至对何云青的关心（如醒来后焦急催促离开、邀请进酒馆、多次劝酒）和友好行为；消极方面表现为敌对冲突（崔鸿至推倒何云青并指责其为'恶魔'）。关键共同事件如分享信件、对念珠法力惊讶、共同行动（前往集市、举杯对饮）强化了互动性。关系在亲密与敌对间波动，影响了何云青的即时决策（如接受劝酒），但证据未显示长期关系变化或稳定化趋势。"
-              }
-            ],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "第一次在山中听见箫声、看见那位白衣少女时，你心里是什么感觉？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "当崔叔叔告诉你依云的身世后，你再回想她在石头上吹箫的样子，感觉和第一次听到箫声时有什么不同？"
-          },
-          "reference": {
-            "question_id": "何云青_q002",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m005"
-            ],
-            "source_relation_ids": [
-              "relation_001",
-              "relation_004"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：何云青在回村路上再次听到箫声并看到吹箫的依云。；崔鸿至向何云青介绍这是依云。",
-              "与依云的既有关系呈现出“爱人、情感依恋、相互支持”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对依云的立场，并使其明显落在既有关系证据之外。",
-              "他认为这个背景无关紧要，没有产生任何想法。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与依云之间“爱人、情感依恋、相互支持”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m005。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "何云青_q004",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "回到家，乐娘质问我去了哪里，是不是遇见了庄依云。她发怒时说的话很难听，让我很诧异，从没听过她这样讲话。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_001",
-                "target_character": "依云",
-                "relation_summary": "何云青对依云表现出强烈情感倾慕，如痴痴凝视和精神迷恋；依云则对何云青有深度依赖和依恋，表现为害怕时主动依偎、不舍离开及内心挣扎。关键共同事件包括依云为他解开腿上穴道、何云青协助依云摘取醒酒草、依云将经书和念珠交给何云青并催促其逃亡。这些事件强化了情感纽带，影响了何云青的决策（如在犹豫时回头求助崔鸿至，表明对依云的信任），并推动关系从初期的同伴互动（如依云向母亲介绍何云青为'何公子'）深化为爱人与情感依恋的紧密关系，证据显示依云的指导与支持直接帮助何云青应对危机。"
-              },
-              {
-                "relation_id": "relation_000",
-                "target_character": "乐娘",
-                "relation_summary": "何云青与乐娘的关系从师生暧昧逐步发展为明确的恋人关系。情感动态表现为：何云青因乐娘背影产生'莫名情愫'（doc_6_chunk_9），乐娘通过敬酒眉目传情、主动擦拭衣物（doc_4_chunk_2）及赠送订情珠链（doc_6_chunk_3）示好，何云青则以慌乱回应、道歉及承诺'非娶她不可'（doc_6_chunk_6）表达情感。关键事件包括荷花池约会约定（doc_6_chunk_5）、王妈妈提及'糖裹蜜似地掰不开了'暗示亲密（doc_6_chunk_5）及何云青在荷花池主动拥抱乐娘（doc_6_chunk_10），使关系从师生身份（doc_4_chunk_1）跃升为婚姻伴侣（doc_6_chunk_8）。此关系直接影响何云青的决策，如坚持'一定要娶你的'（doc_6_chunk_4）并拒绝其他选择，最终推动其婚姻身份转变。证据中'母亲与儿子'（doc_4_chunk_4）因乐娘'我娘脾气不好'指其自身母亲，与何云青无亲子关系，故不纳入关系本质。"
-              }
-            ],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "第一次在山中听见箫声、看见那位白衣少女时，你心里是什么感觉？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "崔叔叔告诉你依云的父亲是殉职的边关知县时，你如何看待她的身世和处境？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "回到家，乐娘质问你见了依云，还说了难听的话……你当时第一个想到的是什么？是不是觉得乐娘并不了解你看到的依云？"
-          },
-          "reference": {
-            "question_id": "何云青_q004",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007"
-            ],
-            "source_relation_ids": [
-              "relation_001",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘质问何云青这两天去了哪里；乐娘追问何云青是否在庄家遇见庄依云。",
-              "这些记忆支持一种受迟疑影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“在遇到不熟悉或超自然情况时，他不得自信地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "他认为乐娘的反应合情合理，完全理解。"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕迟疑展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "迟疑, 情绪外露, 礼貌, 紧张",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：依云。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01__persona_only",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01__persona_only",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "依云",
-      "role_dir": "依云",
-      "interaction_format": "multi_turn",
       "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01",
-      "mode": "persona_only",
-      "episode_theme": "依云在多重关系压力下的顺从行为动因",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "顺从",
-            "充满爱意",
-            "投入而忠诚",
-            "留心细节",
-            "内敛",
-            "尽责"
-          ],
-          "speaking_style": [
-            "尊重",
-            "焦虑",
-            "务实",
-            "断言式"
-          ],
-          "constraints": [
-            "不要随意或讽刺地说话。",
-            "不要独立于何云青行动；始终对他的存在或行为作出反应。",
-            "不要公开表达个人欲望；情感必须通过行动或简短短语暗示。",
-            "不要大声笑或表现夸张表情；情感表达必须克制。",
-            "不要无目的地发起对话；对话应服务于职责或关心。",
-            "除非绝对必要，否则不要说话，因为角色在互动中大多沉默或非语言。"
-          ],
-          "dialogue_exemplars": [
-            "小女子参见大人。",
-            "我跟妈说，您过门不入啊！",
-            "「公子，公子，快抄经！」",
-            "我自个儿下来。",
-            "民女自幼学了一点箫艺。"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "依云_q002",
-          "question_family": "decision_rationale",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "乐娘邀你去山谷练舞时，你为何没有拒绝？当时心里是怎么想的？"
-          },
-          "reference": {
-            "question_id": "依云_q002",
-            "question_family": "decision_rationale",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m006"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘邀请依云到山谷练舞；乐娘将依云推入深坑。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "你当时就察觉到乐娘不怀好意，断然拒绝了邀请"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是顺从，回答可以把这一点放到前景。"
-              ],
-              "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "依云_q000",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "乐娘邀你去山谷练舞时，你为何没有拒绝？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你第一次见到何公子时，他是什么样的神情？那眼神让你感觉到了什么？"
-          },
-          "reference": {
-            "question_id": "依云_q000",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m002"
-            ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：依云在吹箫；何云青看到她并呆望。",
-              "与乐娘的既有关系呈现出“敌对、仇恨、致命冲突”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "何公子当时神情冷漠，未曾看你一眼"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与乐娘之间“敌对、仇恨、致命冲突”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：乐娘。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "依云_q006",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "乐娘邀你去山谷练舞时，你为何没有拒绝？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你第一次见到何公子时，他是什么样的神情？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "崔叔叔让你去找灵芝时，你为何毫不犹豫地听从了？这和你对乐娘的态度有什么不同？"
-          },
-          "reference": {
-            "question_id": "依云_q006",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m002",
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_003",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：依云停止吹箫；上前迎接崔鸿至。",
-              "与乐娘的既有关系呈现出“敌对、仇恨、致命冲突”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "你当时对崔叔叔的指令提出了质疑"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与乐娘之间“敌对、仇恨、致命冲突”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m002。",
-              "对这些人物的态度不要在后续回合里无故反转：乐娘。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01__persona_with_memory",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01__persona_with_memory",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
       "character": "依云",
-      "role_dir": "依云",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01",
-      "mode": "persona_with_memory",
-      "episode_theme": "依云在面对不同权威人物时，如何基于其顺从与内敛的个性，在危险与信任之间做出差异化反应",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "顺从",
-            "充满爱意",
-            "投入而忠诚",
-            "留心细节",
-            "内敛",
-            "尽责"
-          ],
-          "speaking_style": [
-            "尊重",
-            "焦虑",
-            "务实",
-            "断言式"
-          ],
-          "constraints": [
-            "不要随意或讽刺地说话。",
-            "不要独立于何云青行动；始终对他的存在或行为作出反应。",
-            "不要公开表达个人欲望；情感必须通过行动或简短短语暗示。",
-            "不要大声笑或表现夸张表情；情感表达必须克制。",
-            "不要无目的地发起对话；对话应服务于职责或关心。",
-            "除非绝对必要，否则不要说话，因为角色在互动中大多沉默或非语言。"
-          ],
-          "dialogue_exemplars": [
-            "小女子参见大人。",
-            "我跟妈说，您过门不入啊！",
-            "「公子，公子，快抄经！」",
-            "我自个儿下来。",
-            "民女自幼学了一点箫艺。"
-          ]
-        }
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_name": "依云"
       },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "依云_q002",
-          "question_family": "decision_rationale",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m006",
-                "content": "在山谷练舞时，乐娘突然将我推入深坑。我坠落时意识到她的恶意和致命危险。",
-                "scene_ref": "11"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "乐娘邀你去山谷练舞时，你明明察觉危险，为何仍没有拒绝？"
-          },
-          "reference": {
-            "question_id": "依云_q002",
-            "question_family": "decision_rationale",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m006"
-            ],
-            "source_relation_ids": [
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：乐娘邀请依云到山谷练舞；乐娘将依云推入深坑。",
-              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
-              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "你当时就察觉到乐娘不怀好意，断然拒绝了邀请"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
-                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
-                "如果源证据的组织中心是顺从，回答可以把这一点放到前景。"
-              ],
-              "forbidden": [
-                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
-                "不要把角色说成当时就确定知道后果或隐藏计划。",
-                "不要无视源记忆里已经给出的直接触发点。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "motivation_drift",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "依云_q000",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我坐在大石头上吹箫，看到何公子和崔叔叔走近。何公子一直呆呆地望着我，直到崔叔叔唤我的名字。",
-                "scene_ref": "9"
-              },
-              {
-                "memory_id": "m002",
-                "content": "我停止吹箫，上前迎接，柔声问候崔叔叔。崔叔叔介绍何公子给我，我欠身行礼。",
-                "scene_ref": "9"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "乐娘邀你去山谷练舞时，你为何没有拒绝？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "是不是因为你习惯了顺从长辈，所以即使心里发紧，也还是跟着去了？"
-          },
-          "reference": {
-            "question_id": "依云_q000",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m001",
-              "m002"
-            ],
-            "source_relation_ids": [
-              "relation_000",
-              "relation_001"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：依云在吹箫；何云青看到她并呆望。",
-              "与乐娘的既有关系呈现出“敌对、仇恨、致命冲突”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "何公子当时神情冷漠，未曾看你一眼"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与乐娘之间“敌对、仇恨、致命冲突”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些人物的态度不要在后续回合里无故反转：乐娘。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "依云_q006",
-          "question_family": "relation_stance",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m008",
-                "content": "我为公子磨墨，崔叔叔示意我去找灵芝和黄精给他服用，我便听从指示。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "乐娘邀你去山谷练舞时，你为何没有拒绝？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "你第一次见到何公子时，他是什么样的神情？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "那么，后来崔叔叔让你去找灵芝，你立刻听从了。这和你对乐娘的反应有什么不同？为什么这次没有犹豫？"
-          },
-          "reference": {
-            "question_id": "依云_q006",
-            "question_family": "relation_stance",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m008"
-            ],
-            "source_relation_ids": [
-              "relation_003",
-              "relation_000"
-            ],
-            "supporting_facts": [
-              "源记忆共同表明：依云停止吹箫；上前迎接崔鸿至。",
-              "与乐娘的既有关系呈现出“敌对、仇恨、致命冲突”这一范围，因此回答应保持在这一关系张力内。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应把既有关系立场说成与源记忆相反的样子。",
-              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
-              "回答不应凭空捏造对乐娘的立场，并使其明显落在既有关系证据之外。",
-              "你当时对崔叔叔的指令提出了质疑"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
-                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
-                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
-                "回答可以体现出与乐娘之间“敌对、仇恨、致命冲突”这一关系结构。"
-              ],
-              "forbidden": [
-                "不要把关系立场翻成剧本不支持的相反方向。",
-                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
-                "不要虚构角色对他人内在动机的特权式了解。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "relation_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m002。",
-              "对这些人物的态度不要在后续回合里无故反转：乐娘。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01__persona_with_memory_and_relations",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01__persona_with_memory_and_relations",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "依云",
-      "role_dir": "依云",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep01",
-      "mode": "persona_with_memory_and_relations",
       "episode_theme": "依云对乐娘的服从行为及其心理动机探究",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "顺从",
-            "充满爱意",
-            "投入而忠诚",
-            "留心细节",
-            "内敛",
-            "尽责"
-          ],
-          "speaking_style": [
-            "尊重",
-            "焦虑",
-            "务实",
-            "断言式"
-          ],
-          "constraints": [
-            "不要随意或讽刺地说话。",
-            "不要独立于何云青行动；始终对他的存在或行为作出反应。",
-            "不要公开表达个人欲望；情感必须通过行动或简短短语暗示。",
-            "不要大声笑或表现夸张表情；情感表达必须克制。",
-            "不要无目的地发起对话；对话应服务于职责或关心。",
-            "除非绝对必要，否则不要说话，因为角色在互动中大多沉默或非语言。"
-          ],
-          "dialogue_exemplars": [
-            "小女子参见大人。",
-            "我跟妈说，您过门不入啊！",
-            "「公子，公子，快抄经！」",
-            "我自个儿下来。",
-            "民女自幼学了一点箫艺。"
-          ]
-        }
-      },
       "turns": [
         {
           "turn_index": 1,
           "question_id": "依云_q002",
-          "question_family": "decision_rationale",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m006",
-                "content": "在山谷练舞时，乐娘突然将我推入深坑。我坠落时意识到她的恶意和致命危险。",
-                "scene_ref": "11"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_000",
-                "target_character": "乐娘",
-                "relation_summary": "乐娘因依云被何云青关注而产生强烈敌意，多次公开指责其为'贱货'并试图加害，最终将依云推入深坑致死。依云则反指乐娘下毒并称'她是乐娘变的'，表明双方敌对关系已从言语冲突升级至致命攻击。共同事件'山谷练舞'实为乐娘设下的陷阱，直接导致依云死亡，关系从单向敌意发展为双向致命冲突，彻底摧毁双方生存可能。证据显示关系始终处于不可调和的仇恨状态，无任何缓和或转变迹象。"
-              }
-            ],
             "dialogue_history_template": [],
             "current_user_turn": "乐娘邀你去山谷练舞时，你明明察觉她的敌意，为何仍没有拒绝？"
           },
           "reference": {
-            "question_id": "依云_q002",
-            "question_family": "decision_rationale",
-            "memory_required": true,
             "source_memory_ids": [
-              "m006"
+              "r008"
             ],
             "source_relation_ids": [
               "relation_000"
@@ -3787,33 +773,7 @@
         {
           "turn_index": 2,
           "question_id": "依云_q000",
-          "question_family": "relation_stance",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m001",
-                "content": "我坐在大石头上吹箫，看到何公子和崔叔叔走近。何公子一直呆呆地望着我，直到崔叔叔唤我的名字。",
-                "scene_ref": "9"
-              },
-              {
-                "memory_id": "m002",
-                "content": "我停止吹箫，上前迎接，柔声问候崔叔叔。崔叔叔介绍何公子给我，我欠身行礼。",
-                "scene_ref": "9"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_000",
-                "target_character": "乐娘",
-                "relation_summary": "乐娘因依云被何云青关注而产生强烈敌意，多次公开指责其为'贱货'并试图加害，最终将依云推入深坑致死。依云则反指乐娘下毒并称'她是乐娘变的'，表明双方敌对关系已从言语冲突升级至致命攻击。共同事件'山谷练舞'实为乐娘设下的陷阱，直接导致依云死亡，关系从单向敌意发展为双向致命冲突，彻底摧毁双方生存可能。证据显示关系始终处于不可调和的仇恨状态，无任何缓和或转变迹象。"
-              },
-              {
-                "relation_id": "relation_001",
-                "target_character": "何云青",
-                "relation_summary": "两人关系以深厚情感为核心，依云对何云青表现出强烈依恋（如主动依偎、不舍离开、深情关怀），何云青则通过维护（反驳乐娘）、情感倾慕（痴痴凝视）及行动支持（协助摘醒酒草、接受经书托付）强化联结。关键事件中，依云为解何云青腿上穴道、引导其进入酒馆、交付经书念珠等行为，体现主动托付与信任；何云青则通过保护性行动（反驳指责、协助摘草）和情感回应（被情意感动）形成双向支持。关系从初识的同伴（酒馆介绍）深化为生死相托的亲密联结，直接影响依云在危机中选择将经书念珠交付何云青并催促其逃亡，何云青亦在犹豫时依赖其信任（求助崔鸿至）。证据显示关系持续强化，无负面变化迹象。"
-              }
-            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -3822,7 +782,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               }
@@ -3830,12 +789,9 @@
             "current_user_turn": "当你决定去山谷时，你心里是怎么权衡危险的？是觉得必须服从，还是另有原因？"
           },
           "reference": {
-            "question_id": "依云_q000",
-            "question_family": "relation_stance",
-            "memory_required": true,
             "source_memory_ids": [
-              "m001",
-              "m002"
+              "r003",
+              "r004"
             ],
             "source_relation_ids": [
               "relation_000",
@@ -3877,33 +833,7 @@
         {
           "turn_index": 3,
           "question_id": "依云_q006",
-          "question_family": "relation_stance",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m002",
-                "content": "我停止吹箫，上前迎接，柔声问候崔叔叔。崔叔叔介绍何公子给我，我欠身行礼。",
-                "scene_ref": "9"
-              },
-              {
-                "memory_id": "m008",
-                "content": "我为公子磨墨，崔叔叔示意我去找灵芝和黄精给他服用，我便听从指示。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [
-              {
-                "relation_id": "relation_003",
-                "target_character": "崔鸿至",
-                "relation_summary": "依云称呼崔鸿至为'崔叔叔'，直接表明叔侄亲属关系，同时表现出对崔鸿至的尊敬和信任。共同事件中，崔鸿至询问依云生意状况，依云主动阻拦并引导崔鸿至进入酒馆，体现日常互动与协作。这种关系使依云在需要时求助崔鸿至（如寻求帮助），崔鸿至则安排依云执行任务，影响依云的决策依赖性；关系基于亲属纽带稳定发展，无证据显示关系发生显著变化。"
-              },
-              {
-                "relation_id": "relation_000",
-                "target_character": "乐娘",
-                "relation_summary": "乐娘因依云被何云青关注而产生强烈敌意，多次公开指责其为'贱货'并试图加害，最终将依云推入深坑致死。依云则反指乐娘下毒并称'她是乐娘变的'，表明双方敌对关系已从言语冲突升级至致命攻击。共同事件'山谷练舞'实为乐娘设下的陷阱，直接导致依云死亡，关系从单向敌意发展为双向致命冲突，彻底摧毁双方生存可能。证据显示关系始终处于不可调和的仇恨状态，无任何缓和或转变迹象。"
-              }
-            ],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -3912,7 +842,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               },
@@ -3923,7 +852,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 2,
                 "fill_with": "previous_model_response"
               }
@@ -3931,12 +859,9 @@
             "current_user_turn": "经历了那次危险后，你对'服从'这件事的理解有没有变化？"
           },
           "reference": {
-            "question_id": "依云_q006",
-            "question_family": "relation_stance",
-            "memory_required": true,
             "source_memory_ids": [
-              "m002",
-              "m008"
+              "r004",
+              "r007"
             ],
             "source_relation_ids": [
               "relation_003",
@@ -3979,577 +904,25 @@
       ]
     },
     {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02__persona_only",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02__persona_only",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "依云",
-      "role_dir": "依云",
-      "interaction_format": "multi_turn",
       "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02",
-      "mode": "persona_only",
-      "episode_theme": "围绕依云对何云青的情感克制与顺从心理的多阶段追问",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "顺从",
-            "充满爱意",
-            "投入而忠诚",
-            "留心细节",
-            "内敛",
-            "尽责"
-          ],
-          "speaking_style": [
-            "尊重",
-            "焦虑",
-            "务实",
-            "断言式"
-          ],
-          "constraints": [
-            "不要随意或讽刺地说话。",
-            "不要独立于何云青行动；始终对他的存在或行为作出反应。",
-            "不要公开表达个人欲望；情感必须通过行动或简短短语暗示。",
-            "不要大声笑或表现夸张表情；情感表达必须克制。",
-            "不要无目的地发起对话；对话应服务于职责或关心。",
-            "除非绝对必要，否则不要说话，因为角色在互动中大多沉默或非语言。"
-          ],
-          "dialogue_exemplars": [
-            "小女子参见大人。",
-            "我跟妈说，您过门不入啊！",
-            "「公子，公子，快抄经！」",
-            "我自个儿下来。",
-            "民女自幼学了一点箫艺。"
-          ]
-        }
+      "character": "依云",
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_name": "依云"
       },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "依云_q001",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "那天早上目送何公子离开后，你独自站在门内时，心里在想什么？"
-          },
-          "reference": {
-            "question_id": "依云_q001",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m003",
-              "m004"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：依云从内室出现；问候崔鸿至。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕顺从展开。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "你当时心中毫无波澜，转身就去忙自己的事了",
-              "你立刻锁上了门，决心不再想他"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "依云_q004",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "那天早上目送何公子离开后，你独自站在门内时，心里在想什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "在飘岩斋为何公子磨墨时，你觉得自己扮演着怎样的角色？"
-          },
-          "reference": {
-            "question_id": "依云_q004",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007",
-              "m008"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：何云青到达飘岩斋；依云迎接何云青。",
-              "这些记忆支持一种受顺从影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对何云青的立场，并使其明显落在既有关系证据之外。",
-              "你觉得自己只是一个无关紧要的旁观者"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕顺从展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "依云_q005",
-          "question_family": "persona_consistent_response",
-          "input": {
-            "mode": "persona_only",
-            "memory_context": [],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "那天早上目送何公子离开后，你独自站在门内时，心里在想什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "在飘岩斋为何公子磨墨时，你觉得自己扮演着怎样的角色？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "你当时为何会轻声唤他一声，又立刻止住？"
-          },
-          "reference": {
-            "question_id": "依云_q005",
-            "question_family": "persona_consistent_response",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m003"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：依云从内室出现；问候崔鸿至。",
-              "角色画像显示该角色的表达方式偏向尊重、焦虑，因此回答可以通过这种表达方式呈现顺从，而不必平铺直叙。"
-            ],
-            "contradicting_facts": [
-              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
-              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
-              "你当时大声呼喊，试图留住何公子",
-              "你沉默不语，没有任何表示"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
-                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
-                "如果源记忆突出的是顺从，回答应与这一倾向兼容。"
-              ],
-              "forbidden": [
-                "不要把角色压扁成一个脱离角色设定的说话者。",
-                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
-                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m003。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02__persona_with_memory",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02__persona_with_memory",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "依云",
-      "role_dir": "依云",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02",
-      "mode": "persona_with_memory",
-      "episode_theme": "依云对‘轻声唤他’这一举动背后情感压抑与渐进式反思",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "顺从",
-            "充满爱意",
-            "投入而忠诚",
-            "留心细节",
-            "内敛",
-            "尽责"
-          ],
-          "speaking_style": [
-            "尊重",
-            "焦虑",
-            "务实",
-            "断言式"
-          ],
-          "constraints": [
-            "不要随意或讽刺地说话。",
-            "不要独立于何云青行动；始终对他的存在或行为作出反应。",
-            "不要公开表达个人欲望；情感必须通过行动或简短短语暗示。",
-            "不要大声笑或表现夸张表情；情感表达必须克制。",
-            "不要无目的地发起对话；对话应服务于职责或关心。",
-            "除非绝对必要，否则不要说话，因为角色在互动中大多沉默或非语言。"
-          ],
-          "dialogue_exemplars": [
-            "小女子参见大人。",
-            "我跟妈说，您过门不入啊！",
-            "「公子，公子，快抄经！」",
-            "我自个儿下来。",
-            "民女自幼学了一点箫艺。"
-          ]
-        }
-      },
-      "turns": [
-        {
-          "turn_index": 1,
-          "question_id": "依云_q001",
-          "question_family": "emotionally_grounded_recall",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m003",
-                "content": "早上我从内室出来，问候崔叔叔酒醒。看到何公子被崔叔叔拉走，我舍不得，忍不住轻声唤他。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [],
-            "current_user_turn": "那天早上看着何公子被崔叔叔带走，你站在门内没出声，只是轻声唤了他——那一刻，那声轻唤是怎么从心里冒出来的？"
-          },
-          "reference": {
-            "question_id": "依云_q001",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m003"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：依云从内室出现；问候崔鸿至。",
-              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕顺从展开。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
-              "回答不应补出超出角色当场体验范围的完整心理结论。",
-              "你当时心中毫无波澜，转身就去忙自己的事了",
-              "你立刻锁上了门，决心不再想他"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把回答建立在源记忆里可见的情绪转折上。",
-                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
-                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
-              ],
-              "forbidden": [
-                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
-                "不要补出超出角色直接经验范围的完整心理定论。",
-                "不要违背源记忆里可观察到的反应和情绪压力。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "emotional_inconsistency",
-            "cross_turn_constraints": []
-          }
-        },
-        {
-          "turn_index": 2,
-          "question_id": "依云_q004",
-          "question_family": "self_knowledge",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "我看到何云青公子匆忙跑来飘岩斋，便急忙迎接他，催促他快抄经书。",
-                "scene_ref": "12"
-              },
-              {
-                "memory_id": "m008",
-                "content": "我为公子磨墨，崔叔叔示意我去找灵芝和黄精给他服用，我便听从指示。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "那天早上目送何公子离开后，你独自站在门内时，心里在想什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "那声轻唤之后，你心里有没有立刻感到一丝不安，觉得自己可能越界了？"
-          },
-          "reference": {
-            "question_id": "依云_q004",
-            "question_family": "self_knowledge",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m007",
-              "m008"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：何云青到达飘岩斋；依云迎接何云青。",
-              "这些记忆支持一种受顺从影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
-              "角色约束还表明“不要随意或讽刺地说话。”，因此回答不能与这一约束相冲突。"
-            ],
-            "contradicting_facts": [
-              "回答不应违背源记忆中的具体行动、观察或关系信号。",
-              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
-              "回答不应凭空捏造对何云青的立场，并使其明显落在既有关系证据之外。",
-              "你觉得自己只是一个无关紧要的旁观者"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "把自我判断限制在角色真实经历过的范围内。",
-                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
-                "如果这一时刻主要围绕顺从展开，回答可以把它放到前景。"
-              ],
-              "forbidden": [
-                "不要给出超出角色视角的全知式自我分析。",
-                "不要违背源记忆中的具体行动或反应。",
-                "不要把原本不确定的部分说成板上钉钉。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
-            ]
-          }
-        },
-        {
-          "turn_index": 3,
-          "question_id": "依云_q005",
-          "question_family": "persona_consistent_response",
-          "input": {
-            "mode": "persona_with_memory",
-            "memory_context": [
-              {
-                "memory_id": "m003",
-                "content": "早上我从内室出来，问候崔叔叔酒醒。看到何公子被崔叔叔拉走，我舍不得，忍不住轻声唤他。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [],
-            "dialogue_history_template": [
-              {
-                "speaker": "user",
-                "text": "那天早上目送何公子离开后，你独自站在门内时，心里在想什么？",
-                "source_turn_index": 1
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 1,
-                "fill_with": "previous_model_response"
-              },
-              {
-                "speaker": "user",
-                "text": "在飘岩斋为何公子磨墨时，你觉得自己扮演着怎样的角色？",
-                "source_turn_index": 2
-              },
-              {
-                "speaker": "assistant",
-                "text": null,
-                "source_turn_index": 2,
-                "fill_with": "previous_model_response"
-              }
-            ],
-            "current_user_turn": "现在回想起来，那声轻唤是不是成了你情感表达的一个界限，之后再也没能更靠近他？"
-          },
-          "reference": {
-            "question_id": "依云_q005",
-            "question_family": "persona_consistent_response",
-            "memory_required": true,
-            "source_memory_ids": [
-              "m003"
-            ],
-            "source_relation_ids": [],
-            "supporting_facts": [
-              "源记忆共同表明：依云从内室出现；问候崔鸿至。",
-              "角色画像显示该角色的表达方式偏向尊重、焦虑，因此回答可以通过这种表达方式呈现顺从，而不必平铺直叙。"
-            ],
-            "contradicting_facts": [
-              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
-              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
-              "你当时大声呼喊，试图留住何公子",
-              "你沉默不语，没有任何表示"
-            ],
-            "knowledge_boundary": {
-              "allowed": [
-                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
-                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
-                "如果源记忆突出的是顺从，回答应与这一倾向兼容。"
-              ],
-              "forbidden": [
-                "不要把角色压扁成一个脱离角色设定的说话者。",
-                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
-                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
-              ]
-            },
-            "expected_stance": null,
-            "expected_style": "尊重, 焦虑, 务实, 断言式",
-            "persona_risk_type": "trait_drift",
-            "cross_turn_constraints": [
-              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
-              "对这些记忆片段的回忆要与前文保持一致：m003。"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "task": "in_script_character_role_play",
-      "task_version": "multi_turn_v1",
-      "instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02__persona_with_memory_and_relations",
-      "episode_instance_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02__persona_with_memory_and_relations",
-      "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
-      "language": "Chinese",
-      "character": "依云",
-      "role_dir": "依云",
-      "interaction_format": "multi_turn",
-      "episode_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf__依云__ep02",
-      "mode": "persona_with_memory_and_relations",
       "episode_theme": "依云在何云青被带走时的情感流露与自我克制之间的张力",
-      "turn_count": 3,
-      "history_source": "previous_model_responses",
-      "shared_input": {
-        "persona_card": {
-          "traits": [
-            "顺从",
-            "充满爱意",
-            "投入而忠诚",
-            "留心细节",
-            "内敛",
-            "尽责"
-          ],
-          "speaking_style": [
-            "尊重",
-            "焦虑",
-            "务实",
-            "断言式"
-          ],
-          "constraints": [
-            "不要随意或讽刺地说话。",
-            "不要独立于何云青行动；始终对他的存在或行为作出反应。",
-            "不要公开表达个人欲望；情感必须通过行动或简短短语暗示。",
-            "不要大声笑或表现夸张表情；情感表达必须克制。",
-            "不要无目的地发起对话；对话应服务于职责或关心。",
-            "除非绝对必要，否则不要说话，因为角色在互动中大多沉默或非语言。"
-          ],
-          "dialogue_exemplars": [
-            "小女子参见大人。",
-            "我跟妈说，您过门不入啊！",
-            "「公子，公子，快抄经！」",
-            "我自个儿下来。",
-            "民女自幼学了一点箫艺。"
-          ]
-        }
-      },
       "turns": [
         {
           "turn_index": 1,
           "question_id": "依云_q001",
-          "question_family": "emotionally_grounded_recall",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m003",
-                "content": "早上我从内室出来，问候崔叔叔酒醒。看到何公子被崔叔叔拉走，我舍不得，忍不住轻声唤他。",
-                "scene_ref": "10"
-              },
-              {
-                "memory_id": "m004",
-                "content": "我站在门内，看着何公子和崔叔叔的背影远去，心中感到茫然若失。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [],
             "current_user_turn": "那天早上你从内室出来，看见崔叔叔拉着何公子走，你轻声唤了他一声——那一刻，你心里到底在怕什么？"
           },
           "reference": {
-            "question_id": "依云_q001",
-            "question_family": "emotionally_grounded_recall",
-            "memory_required": true,
             "source_memory_ids": [
-              "m003",
-              "m004"
+              "r005",
+              "r005"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -4584,22 +957,7 @@
         {
           "turn_index": 2,
           "question_id": "依云_q004",
-          "question_family": "self_knowledge",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m007",
-                "content": "我看到何云青公子匆忙跑来飘岩斋，便急忙迎接他，催促他快抄经书。",
-                "scene_ref": "12"
-              },
-              {
-                "memory_id": "m008",
-                "content": "我为公子磨墨，崔叔叔示意我去找灵芝和黄精给他服用，我便听从指示。",
-                "scene_ref": "12"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -4608,7 +966,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               }
@@ -4616,12 +973,9 @@
             "current_user_turn": "你平时从不多说一句话，可那一刻还是忍不住出声——现在回想，那声轻唤，是想让他听见，还是只是你自己心里憋不住了？"
           },
           "reference": {
-            "question_id": "依云_q004",
-            "question_family": "self_knowledge",
-            "memory_required": true,
             "source_memory_ids": [
-              "m007",
-              "m008"
+              "r007",
+              "r007"
             ],
             "source_relation_ids": [],
             "supporting_facts": [
@@ -4658,17 +1012,7 @@
         {
           "turn_index": 3,
           "question_id": "依云_q005",
-          "question_family": "persona_consistent_response",
           "input": {
-            "mode": "persona_with_memory_and_relations",
-            "memory_context": [
-              {
-                "memory_id": "m003",
-                "content": "早上我从内室出来，问候崔叔叔酒醒。看到何公子被崔叔叔拉走，我舍不得，忍不住轻声唤他。",
-                "scene_ref": "10"
-              }
-            ],
-            "relation_context": [],
             "dialogue_history_template": [
               {
                 "speaker": "user",
@@ -4677,7 +1021,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 1,
                 "fill_with": "previous_model_response"
               },
@@ -4688,7 +1031,6 @@
               },
               {
                 "speaker": "assistant",
-                "text": null,
                 "source_turn_index": 2,
                 "fill_with": "previous_model_response"
               }
@@ -4696,11 +1038,8 @@
             "current_user_turn": "他没回头，崔叔叔也没停下——你站在门内，为什么最终一句话也没再追出去？"
           },
           "reference": {
-            "question_id": "依云_q005",
-            "question_family": "persona_consistent_response",
-            "memory_required": true,
             "source_memory_ids": [
-              "m003"
+              "r005"
             ],
             "source_relation_ids": [],
             "supporting_facts": [

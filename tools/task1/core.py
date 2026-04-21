@@ -19,24 +19,30 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 import numpy as np
 from openai import OpenAI
 from rank_bm25 import BM25Okapi
+from runtime_config import load_runtime_profile
 
 try:
     import json_repair  # type: ignore
 except Exception:
     json_repair = None
 
-DEFAULT_LLM_MODEL = "Qwen3-235B"
-DEFAULT_LLM_BASE_URL = "http://localhost:8002/v1"
-DEFAULT_LLM_API_KEY = "token-abc123"
-DEFAULT_LLM_FALLBACK_BASE_URL = "http://localhost:8001/v1"
-DEFAULT_MIMO_MODEL = os.getenv("MIMO_MODEL", "mimo-v2-pro")
-DEFAULT_MIMO_BASE_URL = os.getenv("MIMO_BASE_URL", "https://api.xiaomimimo.com/v1")
-DEFAULT_MIMO_API_KEY = os.getenv("MIMO_API_KEY", "")
-DEFAULT_EMBED_MODEL = "bge-m3"
-DEFAULT_EMBED_BASE_URL = "http://localhost:8080/v1"
-DEFAULT_EMBED_API_KEY = "not-needed"
-DEFAULT_LLM_TIMEOUT_SEC = 45
-DEFAULT_EMBED_TIMEOUT_SEC = 180
+_RUNTIME = load_runtime_profile()
+DEFAULT_LLM_MODEL = _RUNTIME["llm"]["model"]
+DEFAULT_LLM_BASE_URL = _RUNTIME["llm"]["base_url"]
+DEFAULT_LLM_API_KEY = _RUNTIME["llm"]["api_key"]
+DEFAULT_LLM_FALLBACK_MODEL = _RUNTIME["llm"].get("fallback", {}).get("model", "")
+DEFAULT_LLM_FALLBACK_BASE_URL = _RUNTIME["llm"].get("fallback", {}).get("base_url", "")
+DEFAULT_LLM_FALLBACK_API_KEY = _RUNTIME["llm"].get("fallback", {}).get("api_key", "")
+DEFAULT_MIMO_MODEL = _RUNTIME["mimo"]["model"]
+DEFAULT_MIMO_BASE_URL = _RUNTIME["mimo"]["base_url"]
+DEFAULT_MIMO_API_KEY = _RUNTIME["mimo"]["api_key"]
+DEFAULT_EMBED_MODEL = _RUNTIME["embed"]["model"]
+DEFAULT_EMBED_BASE_URL = _RUNTIME["embed"]["base_url"]
+DEFAULT_EMBED_API_KEY = _RUNTIME["embed"]["api_key"]
+DEFAULT_LLM_TIMEOUT_SEC = _RUNTIME["llm"]["timeout_sec"]
+DEFAULT_LLM_TRANSPORT_RETRIES = int(_RUNTIME["llm"].get("transport_retries", 0) or 0)
+DEFAULT_LLM_RETRY_DELAY_SEC = float(_RUNTIME["llm"].get("retry_delay_sec", 0.0) or 0.0)
+DEFAULT_EMBED_TIMEOUT_SEC = _RUNTIME["embed"]["timeout_sec"]
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9_]+|[\u4e00-\u9fff]")
 EN_TOKEN_RE = re.compile(r"[a-z0-9']+")
@@ -78,24 +84,34 @@ def _route_chat_completion(
     max_tokens: int,
     temperature: float,
     timeout_sec: int,
+    transport_retries: int,
+    retry_delay_sec: float,
     queue: Any,
 ) -> None:
-    try:
-        client = OpenAI(
-            base_url=base_url,
-            api_key=api_key,
-            timeout=timeout_sec,
-            max_retries=0,
-        )
-        resp = client.chat.completions.create(
-            model=model_name,
-            messages=messages,
-            max_tokens=max_tokens,
-            temperature=temperature,
-        )
-        queue.put({"ok": True, "content": (resp.choices[0].message.content or "").strip()})
-    except Exception as exc:
-        queue.put({"ok": False, "error": f"{type(exc).__name__}: {exc}"})
+    last_error: Optional[str] = None
+    for attempt in range(max(0, transport_retries) + 1):
+        try:
+            client = OpenAI(
+                base_url=base_url,
+                api_key=api_key,
+                timeout=timeout_sec,
+                max_retries=0,
+            )
+            resp = client.chat.completions.create(
+                model=model_name,
+                messages=messages,
+                max_tokens=max_tokens,
+                temperature=temperature,
+            )
+            queue.put({"ok": True, "content": (resp.choices[0].message.content or "").strip()})
+            return
+        except Exception as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+            if attempt >= max(0, transport_retries):
+                break
+            if retry_delay_sec > 0:
+                time.sleep(retry_delay_sec)
+    queue.put({"ok": False, "error": last_error or "unknown route error"})
 
 
 class OpenAICompatEmbedder:
@@ -145,8 +161,11 @@ class LLMClient:
 
         self.routes.append((model_name, base_url, api_key))
 
-        if base_url != DEFAULT_LLM_FALLBACK_BASE_URL:
-            self.routes.append((model_name, DEFAULT_LLM_FALLBACK_BASE_URL, api_key))
+        fallback_model = DEFAULT_LLM_FALLBACK_MODEL or model_name
+        fallback_base_url = DEFAULT_LLM_FALLBACK_BASE_URL
+        fallback_api_key = DEFAULT_LLM_FALLBACK_API_KEY or api_key
+        if fallback_base_url and (fallback_model, fallback_base_url, fallback_api_key) != (model_name, base_url, api_key):
+            self.routes.append((fallback_model, fallback_base_url, fallback_api_key))
 
     def run(self, messages: List[Dict[str, str]], max_tokens: int, temperature: float = 0.0) -> str:
         last_error: Optional[Exception] = None
@@ -163,6 +182,8 @@ class LLMClient:
                     max_tokens,
                     temperature,
                     DEFAULT_LLM_TIMEOUT_SEC,
+                    DEFAULT_LLM_TRANSPORT_RETRIES,
+                    DEFAULT_LLM_RETRY_DELAY_SEC,
                     queue,
                 ),
             )
