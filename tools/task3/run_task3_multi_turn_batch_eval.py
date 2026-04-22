@@ -39,6 +39,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--api-key", default=DEFAULT_API_KEY)
     parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument("--judge-base-url", default="")
+    parser.add_argument("--judge-api-key", default="")
+    parser.add_argument("--judge-model", default="")
     parser.add_argument("--fallback-base-url", default="")
     parser.add_argument("--fallback-api-key", default="")
     parser.add_argument("--fallback-model", default="")
@@ -56,6 +59,10 @@ def now_ts() -> str:
 
 def normalize_ws(text: Any) -> str:
     return " ".join(str(text or "").split()).strip()
+
+
+def normalize_character_name(text: Any) -> str:
+    return " ".join(str(text or "").replace("_", " ").split()).strip().lower()
 
 
 def safe_name(text: str) -> str:
@@ -118,8 +125,9 @@ def filter_roles(
 def gather_episode_ids(stage_root: Path, *, language: str, movie_id: str, character: str) -> List[str]:
     payload = load_json(stage_root / language / movie_id / "task_3_in_script_character_role_play_multi_turn.json")
     episode_ids: List[str] = []
+    target_name = normalize_character_name(character)
     for episode in payload.get("episodes", []) or []:
-        if normalize_ws(episode.get("character")) != character:
+        if normalize_character_name(episode.get("character")) != target_name:
             continue
         episode_id = normalize_ws(episode.get("episode_id"))
         instance_id = normalize_ws(episode.get("instance_id"))
@@ -184,6 +192,9 @@ def run_job(
     base_url: str,
     api_key: str,
     model: str,
+    judge_base_url: str,
+    judge_api_key: str,
+    judge_model: str,
     fallback_base_url: str,
     fallback_api_key: str,
     fallback_model: str,
@@ -232,6 +243,12 @@ def run_job(
         api_key,
         "--model",
         model,
+        "--judge-base-url",
+        judge_base_url or base_url,
+        "--judge-api-key",
+        judge_api_key or api_key,
+        "--judge-model",
+        judge_model or model,
         "--top-k",
         str(top_k),
         "--memory-mode",
@@ -388,6 +405,7 @@ def summarize_rows(rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
 def write_status(
     output_root: Path,
     *,
+    args: argparse.Namespace,
     started_at: str,
     total_roles: int,
     roles_with_episodes: int,
@@ -404,6 +422,15 @@ def write_status(
         "total_jobs": total_jobs,
         "completed_jobs": len(rows),
         "pending_jobs": max(total_jobs - len(rows), 0),
+        "base_url": args.base_url,
+        "model": args.model,
+        "judge_base_url": args.judge_base_url or args.base_url,
+        "judge_model": args.judge_model or args.model,
+        "fallback_base_url": args.fallback_base_url,
+        "fallback_model": args.fallback_model,
+        "workers": args.workers,
+        "top_k": args.top_k,
+        "modes": args.modes,
         "status_counts": summary["status_counts"],
         "aggregates_by_mode": summary["aggregates_by_mode"],
         "role_summaries": summary["role_summaries"],
@@ -461,6 +488,7 @@ def main() -> None:
     roles_with_episodes = len({(job["language"], job["movie_id"], job["character"]) for job in jobs})
     write_status(
         args.output_root,
+        args=args,
         started_at=started_at,
         total_roles=len(roles),
         roles_with_episodes=roles_with_episodes,
@@ -484,6 +512,9 @@ def main() -> None:
                 base_url=args.base_url,
                 api_key=args.api_key,
                 model=args.model,
+                judge_base_url=args.judge_base_url,
+                judge_api_key=args.judge_api_key,
+                judge_model=args.judge_model,
                 fallback_base_url=args.fallback_base_url,
                 fallback_api_key=args.fallback_api_key,
                 fallback_model=args.fallback_model,
@@ -517,6 +548,7 @@ def main() -> None:
             )
             write_status(
                 args.output_root,
+                args=args,
                 started_at=started_at,
                 total_roles=len(roles),
                 roles_with_episodes=roles_with_episodes,

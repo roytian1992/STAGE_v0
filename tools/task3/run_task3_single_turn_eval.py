@@ -52,6 +52,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-url", default=os.environ.get("TASK3_BASE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--api-key", default=os.environ.get("TASK3_API_KEY", DEFAULT_API_KEY))
     parser.add_argument("--model", default=os.environ.get("TASK3_MODEL", DEFAULT_MODEL))
+    parser.add_argument("--judge-base-url", default=os.environ.get("TASK3_JUDGE_BASE_URL", ""))
+    parser.add_argument("--judge-api-key", default=os.environ.get("TASK3_JUDGE_API_KEY", ""))
+    parser.add_argument("--judge-model", default=os.environ.get("TASK3_JUDGE_MODEL", ""))
     parser.add_argument("--embed-base-url", default=os.environ.get("TASK3_EMBED_BASE_URL", DEFAULT_EMBED_BASE_URL))
     parser.add_argument("--embed-api-key", default=os.environ.get("TASK3_EMBED_API_KEY", DEFAULT_EMBED_API_KEY))
     parser.add_argument("--embed-model", default=os.environ.get("TASK3_EMBED_MODEL", DEFAULT_EMBED_MODEL))
@@ -363,8 +366,13 @@ def main() -> None:
         source_memory_ids=instance["reference"].get("source_memory_ids", []),
     )
 
-    routes = build_routes(base_url=args.base_url, api_key=args.api_key, model=args.model)
-    clients = build_clients(routes, timeout=180)
+    actor_routes = build_routes(base_url=args.base_url, api_key=args.api_key, model=args.model)
+    actor_clients = build_clients(actor_routes, timeout=180)
+    judge_base_url = args.judge_base_url or args.base_url
+    judge_api_key = args.judge_api_key or args.api_key
+    judge_model = args.judge_model or args.model
+    judge_routes = build_routes(base_url=judge_base_url, api_key=judge_api_key, model=judge_model)
+    judge_clients = build_clients(judge_routes, timeout=180)
 
     actor_messages = build_actor_messages(
         instance=instance,
@@ -374,7 +382,7 @@ def main() -> None:
         language=args.language,
     )
     response_text, rollout_usage, rollout_latency_ms, rollout_route_name = call_text(
-        clients,
+        actor_clients,
         messages=actor_messages,
         temperature=args.rollout_temperature,
         max_tokens=args.rollout_max_tokens,
@@ -407,7 +415,7 @@ def main() -> None:
             memory_mode=args.memory_mode,
         )
         text, usage, latency_ms, route_name = call_text(
-            clients,
+            judge_clients,
             messages=messages,
             temperature=args.judge_temperature,
             max_tokens=args.judge_max_tokens,
@@ -444,6 +452,8 @@ def main() -> None:
         "question_id": instance["reference"]["question_id"],
         "model": args.model,
         "base_url": args.base_url,
+        "judge_model": judge_model,
+        "judge_base_url": judge_base_url,
         "embed_model": args.embed_model,
         "embed_base_url": args.embed_base_url,
         "stage_root": args.stage_root,

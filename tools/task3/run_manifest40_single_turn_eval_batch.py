@@ -34,6 +34,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--api-key", default=DEFAULT_API_KEY)
     parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument("--judge-base-url", default="")
+    parser.add_argument("--judge-api-key", default="")
+    parser.add_argument("--judge-model", default="")
     parser.add_argument("--fallback-base-url", default=DEFAULT_FALLBACK_BASE_URL)
     parser.add_argument("--fallback-api-key", default=DEFAULT_FALLBACK_API_KEY)
     parser.add_argument("--fallback-model", default=DEFAULT_FALLBACK_MODEL)
@@ -62,6 +65,10 @@ def dump_json(path: Path, obj: Any) -> None:
 
 def now_ts() -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S")
+
+
+def normalize_character_name(text: Any) -> str:
+    return " ".join(str(text or "").replace("_", " ").split()).strip().lower()
 
 
 def safe_name(text: str) -> str:
@@ -93,10 +100,12 @@ def collect_tasks(stage_root: Path, roles: List[Dict[str, Any]], modes: List[str
 
         single_turn_path = stage_root / language / movie_id / "task_3_in_script_character_role_play_single_turn.json"
         data = load_json(single_turn_path)
+        target_name = normalize_character_name(character)
         instance_ids = [
             str(row["instance_id"])
             for row in data.get("instances", [])
-            if isinstance(row, dict) and str(row.get("character") or "") == character
+            if isinstance(row, dict)
+            and normalize_character_name(row.get("character")) == target_name
         ]
         if instance_ids:
             roles_with_instances += 1
@@ -219,6 +228,12 @@ def run_one(
         args.api_key,
         "--model",
         args.model,
+        "--judge-base-url",
+        args.judge_base_url or args.base_url,
+        "--judge-api-key",
+        args.judge_api_key or args.api_key,
+        "--judge-model",
+        args.judge_model or args.model,
     ]
     env = os.environ.copy()
     if args.fallback_base_url:
@@ -295,6 +310,8 @@ def build_status_payload(
         "output_root": str(args.output_root),
         "base_url": args.base_url,
         "model": args.model,
+        "judge_base_url": args.judge_base_url or args.base_url,
+        "judge_model": args.judge_model or args.model,
         "fallback_base_url": args.fallback_base_url,
         "fallback_model": args.fallback_model,
         "workers": args.workers,
