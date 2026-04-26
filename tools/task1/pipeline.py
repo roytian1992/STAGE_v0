@@ -608,6 +608,7 @@ def summarize_batch(results: Sequence[Dict[str, object]]) -> Dict[str, object]:
         "arc_narrative_aspect_correctness",
         "arc_progression_correctness",
         "overall",
+        "legacy_overall",
     ]
 
     def group_rows(lang: str) -> List[Dict[str, float]]:

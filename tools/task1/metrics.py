@@ -254,6 +254,9 @@ TIMELINE_FACT_PROMPT_ZH = """你在把一个 Task 1 角色时间线拆成原子�
 }
 """
 
+FACT_SUPPORT_PROTOCOL = "moderate_fact_support_v2"
+
+
 FACT_SUPPORT_PROMPT_EN = """You are judging macro narrative fact coverage for Task 1.
 
 You will receive:
@@ -261,12 +264,15 @@ You will receive:
 - the full reference timeline for the same character
 
 Judge each fact against the full reference timeline, not against a single node.
-Be fairly permissive:
-- one reference node may cover multiple facts
-- multiple reference nodes may jointly support one fact
-- paraphrase and granularity mismatch are acceptable
+Use a moderately strict standard:
+- the same character should undergo a reasonably matching core decision, status/role change, relationship shift, goal shift, outcome, or pressure
+- wording and granularity may differ, but the main actor, action or state change, outcome, and narrative phase should be reasonably compatible
+- if the fact includes both a key action and a resulting state or consequence, the reference timeline should support both main parts
+- if the fact is tied to scene_refs or a phase, the reference support should be temporally compatible; small boundary differences are acceptable
+- one reference node may cover multiple facts, and multiple reference nodes may jointly support one fact
+- if only a minor detail is missing but the durable development is still reasonably matched, mark it supported
 
-Mark a fact as unsupported only when the reference timeline clearly does not cover that durable development.
+Do not mark a fact as supported when support is only thematic, mostly partial, contradicted, based on outside knowledge, based on a merely adjacent event, or requires speculative inference.
 
 Return JSON only:
 {
@@ -282,12 +288,15 @@ FACT_SUPPORT_PROMPT_ZH = """你在评估 Task 1 的宏观叙事实事覆盖情�
 - 同一角色的完整参考时间线
 
 判断时要基于整条参考时间线，而不是强行逐节点一一对齐。
-要相对宽松：
-- 一个参考节点可以同时覆盖多个事实
-- 多个参考节点也可以共同支持一个事实
-- 改写、概括层级不同都可以接受
+采用中等严格标准：
+- 必须是同一角色发生了较为匹配的核心决定、身份/状态变化、关系变化、目标变化、结果或压力
+- 表述和粒度可以不同，但主要行动者、行动或状态变化、结果以及叙事阶段应当较为相容
+- 如果 fact 同时包含关键行动和结果/后果，参考时间线应当支持这两个主要部分
+- 如果 fact 带有 scene_refs 或阶段信息，参考时间线中的支持应当在时间上相容；轻微边界差异可以接受
+- 一个参考节点可以同时覆盖多个事实，多个参考节点也可以共同支持一个事实
+- 如果只缺少次要细节，但持续性发展本身仍然较为匹配，判 supported
 
-只有在参考时间线明显没有覆盖该持续性发展时，才判为 unsupported。
+如果只是主题相似、主要内容只得到部分支持、与参考矛盾、依赖外部常识、只是相邻事件或需要猜测性推断，判 unsupported。
 
 只输出 JSON：
 {
@@ -1695,7 +1704,9 @@ def evaluate_v5(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
 
     summary = {
         "movie_id": movie_dir.name,
+        "task1_metric_protocol": "primary_v2_fact_transition_arc",
         "arc_eval_protocol": "narrative_aspect_v1",
+        "fact_support_protocol": FACT_SUPPORT_PROTOCOL,
         "legacy_scene_grounding_precision": round(scene_precision, 4),
         "legacy_scene_grounding_recall": round(scene_recall, 4),
         "legacy_scene_grounding_f1": round(scene_f1, 4),
@@ -1712,13 +1723,22 @@ def evaluate_v5(movie_dir: Path, output_dir: Path) -> Dict[str, Any]:
         "arc_narrative_aspect_correctness": round(sum(arc_aspect_votes) / max(1, len(arc_aspect_votes)), 4),
         "arc_progression_correctness": round(sum(arc_progression_votes) / max(1, len(arc_progression_votes)), 4),
     }
-    summary["overall"] = round((summary["legacy_scene_grounding_f1"] + summary["node_grounding_f1"] + summary["development_correctness"] + summary["state_transition_correctness"] + summary["arc_narrative_aspect_correctness"] + summary["arc_progression_correctness"]) / 6.0, 4)
+    summary["primary_metric_keys"] = [
+        "gold_fact_recall",
+        "pred_fact_precision",
+        "pred_transition_coherence",
+        "arc_narrative_aspect_correctness",
+        "arc_progression_correctness",
+    ]
+    summary["overall"] = round(sum(summary[key] for key in summary["primary_metric_keys"]) / len(summary["primary_metric_keys"]), 4)
+    summary["legacy_overall"] = round((summary["legacy_scene_grounding_f1"] + summary["node_grounding_f1"] + summary["development_correctness"] + summary["state_transition_correctness"] + summary["arc_narrative_aspect_correctness"] + summary["arc_progression_correctness"]) / 6.0, 4)
     (output_dir / "eval_v3.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     (output_dir / "fact_coverage_details.json").write_text(
         json.dumps(
             {
                 "movie_id": movie_dir.name,
                 "language": language,
+                "fact_support_protocol": FACT_SUPPORT_PROTOCOL,
                 "gold_fact_count": gold_fact_total,
                 "pred_fact_count": pred_fact_total,
                 "supported_gold_fact_count": supported_gold_fact_total,
