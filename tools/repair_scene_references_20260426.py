@@ -20,7 +20,10 @@ REPEATED_PREFIX_RE = re.compile(r"(?:-?\d+\s*[、.．]\s*){2,}")
 SCENE_LABEL_RE = re.compile(
     r"^\s*(?:第?\s*\d+\s*场|\d+\s*场|场\s*\d+)\s*[，,、:：\-.\s/]*"
 )
+LEADING_SCENE_LABEL_RE = re.compile(r"^\s*(序场[A-Za-z]?|第?\s*-?\d+\s*场[A-Za-z]?)")
+WHOLE_SCENE_LABEL_RE = re.compile(r"^\s*(序场[A-Za-z]?|第?\s*-?\d+\s*场[A-Za-z]?)\s*$")
 BRACKET_RE = re.compile(r"\[([^\[\]]+)\]")
+PIPE_LIST_SPLIT_RE = re.compile(r"\s*\|\s*(?=(?:-?\d+\s*[、.．]|全片\b))")
 
 
 @dataclass
@@ -29,6 +32,7 @@ class SceneInfo:
     raw_title: str
     canonical_title: str
     body_variants: list[str]
+    label_variants: list[str]
 
 
 def read_json(path: Path) -> Any:
@@ -137,14 +141,36 @@ def split_prefix_chain(text: str) -> tuple[list[int], str]:
 
 def text_to_flex_regex(text: str) -> str:
     parts = []
-    for chunk in re.split(r"(\s+)", text):
-        if not chunk:
-            continue
-        if chunk.isspace():
+    for ch in text:
+        if ch.isspace():
             parts.append(r"\s*")
+        elif ch in "|/,:：;；，、()（）[]【】":
+            parts.append(rf"\s*{re.escape(ch)}\s*")
         else:
-            parts.append(re.escape(chunk))
+            parts.append(re.escape(ch))
     return "".join(parts)
+
+
+def split_scene_reference_list(value: str, sep: str) -> list[str]:
+    value = (value or "").strip()
+    if not value:
+        return []
+    if sep == ";":
+        return [part.strip() for part in value.split(sep)]
+    if sep == "|":
+        if " | " in value:
+            return [part.strip() for part in value.split(" | ")]
+        if PIPE_LIST_SPLIT_RE.search(value):
+            return [part.strip() for part in PIPE_LIST_SPLIT_RE.split(value)]
+        return [value]
+    return [part.strip() for part in value.split(sep)]
+
+
+def extract_leading_scene_label(text: str) -> str | None:
+    match = LEADING_SCENE_LABEL_RE.match((text or "").strip())
+    if not match:
+        return None
+    return match.group(1).strip()
 
 
 class ArticleRepairer:
@@ -181,11 +207,26 @@ class ArticleRepairer:
                     strip_scene_label(strip_scene_label(strip_first_prefix(canonical))),
                 ]
             )
+            label_variants = unique_keep_order(
+                [
+                    label
+                    for label in [
+                        extract_leading_scene_label(strip_first_prefix(raw_title)),
+                        extract_leading_scene_label(strip_first_prefix(canonical)),
+                        extract_leading_scene_label(raw_title),
+                        extract_leading_scene_label(canonical),
+                        f"第{scene_id}场",
+                        f"{scene_id}场",
+                    ]
+                    if label
+                ]
+            )
             self.scene_infos[scene_id] = SceneInfo(
                 scene_id=scene_id,
                 raw_title=raw_title,
                 canonical_title=canonical,
                 body_variants=body_variants,
+                label_variants=label_variants,
             )
             self.title_by_id[scene_id] = canonical
 
@@ -210,6 +251,9 @@ class ArticleRepairer:
         exact = self.full_norm_to_ids.get(normalize(segment), [])
         if len(exact) == 1:
             return exact[0]
+        bare_label = self.resolve_bare_scene_label(segment)
+        if isinstance(bare_label, int):
+            return bare_label
         prefixes, rest = split_prefix_chain(segment)
         search_keys = unique_keep_order(
             [
@@ -238,11 +282,26 @@ class ArticleRepairer:
             return candidates[0]
         return candidates or None
 
+    def resolve_bare_scene_label(self, segment: str) -> int | list[int] | None:
+        match = WHOLE_SCENE_LABEL_RE.match((segment or "").strip())
+        if not match:
+            return None
+        label = normalize(match.group(1))
+        candidates = [
+            scene_id
+            for scene_id, info in self.scene_infos.items()
+            if any(normalize(variant) == label for variant in info.label_variants)
+        ]
+        candidates = sorted(set(candidates))
+        if len(candidates) == 1:
+            return candidates[0]
+        return candidates or None
+
     def resolve_scene_list(self, value: str, sep: str) -> tuple[str, int]:
         value = (value or "").strip()
         if not value or value == "全片":
             return value, 0
-        parts = [part.strip() for part in value.split(sep)]
+        parts = split_scene_reference_list(value, sep)
         if not parts:
             return value, 0
         ambiguous_keys = Counter(normalize(strip_scene_label(strip_first_prefix(part))) for part in parts)
@@ -280,6 +339,11 @@ class ArticleRepairer:
             info = self.scene_infos.get(scene_id)
             if not info:
                 continue
+            for variant in unique_keep_order([info.raw_title, info.canonical_title]):
+                if normalize(variant) == normalize(info.canonical_title):
+                    continue
+                pattern = re.compile(text_to_flex_regex(variant))
+                result = pattern.sub(lambda _match, repl=info.canonical_title: repl, result)
             for variant in info.body_variants:
                 if not variant:
                     continue
@@ -287,6 +351,14 @@ class ArticleRepairer:
                     rf"(?:-?\d+\s*[、.．]\s*)+{text_to_flex_regex(variant)}"
                 )
                 result = pattern.sub(lambda _match, repl=info.canonical_title: repl, result)
+            for label in info.label_variants:
+                pattern = re.compile(
+                    rf"(?<![0-9A-Za-z第、，,.．;；]){text_to_flex_regex(label)}"
+                    rf"(?=(?:中|里|场景|,|，|。|\]|）|\)|\s|$))"
+                )
+                result = pattern.sub(
+                    lambda _match, repl=f"[{info.canonical_title}]": repl, result
+                )
         return result
 
     def repair_task1_or_task3(self, path: Path) -> dict[str, int]:
@@ -344,7 +416,7 @@ class ArticleRepairer:
 
             candidate_scene_ids: list[int] = []
             if row.get("related_scenes"):
-                for part in row["related_scenes"].split(";"):
+                for part in split_scene_reference_list(row["related_scenes"], ";"):
                     resolved = self.resolve_segment(part)
                     if isinstance(resolved, int):
                         candidate_scene_ids.append(resolved)
@@ -361,7 +433,7 @@ class ArticleRepairer:
                 if answer_after != answer_before:
                     row["answer"] = answer_after
                     answer_updates += 1
-                for part in row.get("answer", "").split("|"):
+                for part in split_scene_reference_list(row.get("answer", ""), "|"):
                     resolved = self.resolve_segment(part)
                     if isinstance(resolved, int):
                         candidate_scene_ids.append(resolved)
