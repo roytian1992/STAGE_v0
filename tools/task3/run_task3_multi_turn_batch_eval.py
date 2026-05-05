@@ -46,6 +46,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--fallback-api-key", default="")
     parser.add_argument("--fallback-model", default="")
     parser.add_argument("--top-k", type=int, default=4)
+    parser.add_argument("--rollout-max-tokens", type=int, default=220)
     parser.add_argument("--sample-max-attempts", type=int, default=3)
     parser.add_argument("--retry-delay-sec", type=float, default=2.0)
     parser.add_argument("--python-bin", default=DEFAULT_PYTHON_BIN)
@@ -199,6 +200,7 @@ def run_job(
     fallback_api_key: str,
     fallback_model: str,
     top_k: int,
+    rollout_max_tokens: int,
     sample_max_attempts: int,
     retry_delay_sec: float,
     skip_finished: bool,
@@ -251,6 +253,8 @@ def run_job(
         judge_model or model,
         "--top-k",
         str(top_k),
+        "--rollout-max-tokens",
+        str(rollout_max_tokens),
         "--memory-mode",
         mode,
         "--episode-instance-id",
@@ -430,6 +434,7 @@ def write_status(
         "fallback_model": args.fallback_model,
         "workers": args.workers,
         "top_k": args.top_k,
+        "rollout_max_tokens": args.rollout_max_tokens,
         "modes": args.modes,
         "status_counts": summary["status_counts"],
         "aggregates_by_mode": summary["aggregates_by_mode"],
@@ -519,6 +524,7 @@ def main() -> None:
                 fallback_api_key=args.fallback_api_key,
                 fallback_model=args.fallback_model,
                 top_k=args.top_k,
+                rollout_max_tokens=args.rollout_max_tokens,
                 sample_max_attempts=args.sample_max_attempts,
                 retry_delay_sec=args.retry_delay_sec,
                 skip_finished=args.skip_finished,

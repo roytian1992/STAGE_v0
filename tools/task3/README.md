@@ -9,7 +9,6 @@ Single-turn evaluation:
 
 - `run_manifest40_single_turn_eval_batch.py`
 - `run_task3_single_turn_eval.py`
-- `run_task3_role_eval_matrix.py`
 
 Multi-turn evaluation:
 
@@ -25,3 +24,5 @@ Runtime helpers used by the evaluators:
 
 Asset construction, rebuilding, migration, repair, and other data-generation
 scripts are intentionally excluded from this push-oriented copy of `STAGE_v0`.
+One-off experiment maintenance scripts, rejudging scripts, local caches, and
+legacy archives are also intentionally excluded.

@@ -389,6 +389,10 @@ def main() -> None:
         max_retries=args.max_retries,
     )
     response_text = normalize_ws(response_text)
+    if not response_text:
+        raise RuntimeError(
+            f"Empty rollout response from {args.model}; increase --rollout-max-tokens or retry."
+        )
     print(
         json.dumps(
             {

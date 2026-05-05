@@ -41,6 +41,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--fallback-api-key", default=DEFAULT_FALLBACK_API_KEY)
     parser.add_argument("--fallback-model", default=DEFAULT_FALLBACK_MODEL)
     parser.add_argument("--top-k", type=int, default=4)
+    parser.add_argument("--rollout-max-tokens", type=int, default=220)
     parser.add_argument("--modes", nargs="+", default=SUPPORTED_MODES)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--sample-max-attempts", type=int, default=3)
@@ -222,6 +223,8 @@ def run_one(
         str(task["mode"]),
         "--top-k",
         str(args.top_k),
+        "--rollout-max-tokens",
+        str(args.rollout_max_tokens),
         "--base-url",
         args.base_url,
         "--api-key",
@@ -316,6 +319,7 @@ def build_status_payload(
         "fallback_model": args.fallback_model,
         "workers": args.workers,
         "top_k": args.top_k,
+        "rollout_max_tokens": args.rollout_max_tokens,
         "modes": args.modes,
         "sample_max_attempts": args.sample_max_attempts,
         "retry_delay_sec": args.retry_delay_sec,

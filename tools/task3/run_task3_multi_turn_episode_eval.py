@@ -664,6 +664,11 @@ def main() -> None:
             max_retries=args.max_retries,
         )
         response_text = normalize_ws(text)
+        if not response_text:
+            raise RuntimeError(
+                f"Empty rollout response from {args.model} at turn {turn_index}; "
+                "increase --rollout-max-tokens or retry."
+            )
         response_by_turn[turn_index] = response_text
         for key in rollout_usage_totals:
             if isinstance(usage.get(key), int):
