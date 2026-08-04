@@ -1,0 +1,14 @@
+id: task1_large_state_lineage_recovery
+category: evaluation
+name: Task 1 large state lineage recovery
+description: Identify only repeated state claims so large lineage outputs remain bounded.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: reviewed_state_claims, required: true}
+static_variables: []
+template: |-
+  Identify repeated stable states for "{focal_character}" before any model prediction is viewed.
+  <reviewed_state_claims>{reviewed_state_claims}</reviewed_state_claims>
+
+  Return only groups of two or more references that describe the same state, target, polarity, and meaning at different checkpoints. Do not group a reversal, changed target, merely related event, or generic theme. Each reference may appear at most once. Omit every singleton; the program will preserve omitted references as separate lineages. Return only compact JSON:
+  {{"equivalent_groups":[["R1","R7"]]}}

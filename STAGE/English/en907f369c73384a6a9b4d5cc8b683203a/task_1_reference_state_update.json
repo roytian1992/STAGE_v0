@@ -1,0 +1,753 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 7,
+    "current_state_reference_claims": 31,
+    "development_reference_claims": 9,
+    "trajectories": 1
+  },
+  "language": "en",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "en907f369c73384a6a9b4d5cc8b683203a",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 78,
+    "sha256": "6a466a58711fb6055cc79d48e2485b87bcb61450afba8afbf796982db42e492c"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Barbara",
+        "Barb",
+        "Barbara Fordham",
+        "Jean's mother",
+        "Jean's mom"
+      ],
+      "character": "Barbara",
+      "character_id": "entity-3d3a2ef42bf85e89bf7b",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-b148d6c0793824d18502",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara is emotionally overwhelmed and breaks down during the call with Aunt Ivy.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-7750147e5a3806f944e1"
+              },
+              {
+                "claim": "Barbara expresses hostility toward her husband, Bill, signaling marital tension.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-483939b8289b862ede53"
+              },
+              {
+                "claim": "Barbara maintains a relationship with Aunt Ivy that allows for immediate emotional concern and communication during crisis.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-890e556ce0b848c2a559"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-50ea571d5a7be91ffd49",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 5,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-f21242510eb5a5a8a2c9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara maintains emotional distance from Bill and has a conflictual relationship with him regarding parenting choices.",
+                "evidence_scene_orders": [
+                  10,
+                  12
+                ],
+                "state_id": "task1-state-d524cbb0da53482b5ad9"
+              },
+              {
+                "claim": "Barbara associates Violet with the decision not to use air conditioning due to past incidents.",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-886ec561afab417a748e"
+              },
+              {
+                "claim": "Barbara assumes a caretaking role in response to Violet's fear and is present and engaged in family interaction.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "task1-state-6c435d046b4d6de7b187"
+              },
+              {
+                "claim": "Barbara seeks emotional reconciliation with Violet after conflict.",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "task1-state-267dd3c2deba3c53c8f1"
+              },
+              {
+                "claim": "Barbara shows initial defensiveness that shifts toward remorse after learning of Violet's suffering.",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "task1-state-2bf6c4059427479093ba"
+              },
+              {
+                "claim": "Barbara acknowledges fault in her timing of return, expressing guilt for not being present during Violet's cancer diagnosis.",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "task1-state-230276fe791a64525475"
+              },
+              {
+                "claim": "Barbara positions herself as a caretaker and emotional stabilizer in the family.",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "task1-state-2c46b1bf7bf3ae692375"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barbara's confrontational stance toward Violet evolves into a remorseful and reconciliatory posture upon learning of her mother's suffering.",
+                "development_id": "task1-development-e9fedfe230a3b122d002",
+                "evidence_scene_orders": [
+                  12,
+                  16
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-ccc7e9a505a5fedc2709",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barbara is emotionally overwhelmed and breaks down during the call with Aunt Ivy.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "Barbara expresses hostility toward her husband, Bill, signaling marital tension.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "Barbara maintains a relationship with Aunt Ivy that allows for immediate emotional concern and communication during crisis.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b148d6c0793824d18502",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 16,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 5
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-0a3ea93671c85425c7a1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara perceives Bill as narcissistic, emotionally dismissive, and failing in his parental and marital roles, leading to open hostility, resentment over infidelity, emotional pain from separation, and acknowledgment of the marriage's end, with expectations of no reconciliation.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "task1-state-802fe1c849e9fdf7be53"
+              },
+              {
+                "claim": "Barbara identifies herself as the central subject in emotional pain who needs help.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "task1-state-26e74f7988e8d8ca9656"
+              },
+              {
+                "claim": "Barbara perceives Bill as envious and intrusive regarding her father's work.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "task1-state-1e41722a986d9533355e"
+              },
+              {
+                "claim": "Barbara maintains a conflictual relationship with Bill rooted in parenting disagreements and emotional estrangement.",
+                "evidence_scene_orders": [
+                  10,
+                  12
+                ],
+                "state_id": "task1-state-9b70512208840583151e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barbara shifts from positioning herself as the family's emotional stabilizer to asserting her own need for care and recognition of pain.",
+                "development_id": "task1-development-98b7e03f200ec17a55bd",
+                "evidence_scene_orders": [
+                  16,
+                  19
+                ]
+              },
+              {
+                "claim": "Barbara's perception of Bill evolves from critical distance to full emotional rupture, incorporating personal betrayal, marital failure, and professional jealousy.",
+                "development_id": "task1-development-4bde20a470deaef9e1a2",
+                "evidence_scene_orders": [
+                  10,
+                  12,
+                  19
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-3d8988daca3e9b38be81",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barbara maintains emotional distance from Bill and has a conflictual relationship with him regarding parenting choices.",
+                "evidence_scene_orders": [
+                  10,
+                  12
+                ]
+              },
+              {
+                "claim": "Barbara associates Violet with the decision not to use air conditioning due to past incidents.",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "Barbara assumes a caretaking role in response to Violet's fear and is present and engaged in family interaction.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Barbara seeks emotional reconciliation with Violet after conflict.",
+                "evidence_scene_orders": [
+                  16
+                ]
+              },
+              {
+                "claim": "Barbara shows initial defensiveness that shifts toward remorse after learning of Violet's suffering.",
+                "evidence_scene_orders": [
+                  16
+                ]
+              },
+              {
+                "claim": "Barbara acknowledges fault in her timing of return, expressing guilt for not being present during Violet's cancer diagnosis.",
+                "evidence_scene_orders": [
+                  16
+                ]
+              },
+              {
+                "claim": "Barbara positions herself as a caretaker and emotional stabilizer in the family.",
+                "evidence_scene_orders": [
+                  16
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f21242510eb5a5a8a2c9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 19,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 16
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-4f95c75ff5d841b93d9c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara positions herself as the more attentive and responsible parent in contrast to Bill.",
+                "evidence_scene_orders": [
+                  48
+                ],
+                "state_id": "task1-state-263dca709cb58b3b34b8"
+              },
+              {
+                "claim": "Barbara views Bill as failing in his parental role and challenges his deflection during their confrontation.",
+                "evidence_scene_orders": [
+                  48
+                ],
+                "state_id": "task1-state-ed43be5aae958b74df3e"
+              },
+              {
+                "claim": "Barbara identifies herself as present in a quiet, grounded manner amidst Violet's disoriented state.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "task1-state-174eddfdf732b4471387"
+              },
+              {
+                "claim": "Barbara is in a state of disheveled urgency, reacting to an emergency.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "task1-state-5140715184afe96a502b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barbara shifts from identifying as the central subject of emotional pain to asserting a responsible caretaking identity in contrast to Bill.",
+                "development_id": "task1-development-d5c32e657d5062a21866",
+                "evidence_scene_orders": [
+                  19,
+                  48
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-bc10b919073b66d79050",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barbara perceives Bill as narcissistic, emotionally dismissive, and failing in his parental and marital roles, leading to open hostility, resentment over infidelity, emotional pain from separation, and acknowledgment of the marriage's end, with expectations of no reconciliation.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barbara identifies herself as the central subject in emotional pain who needs help.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barbara perceives Bill as envious and intrusive regarding her father's work.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barbara maintains a conflictual relationship with Bill rooted in parenting disagreements and emotional estrangement.",
+                "evidence_scene_orders": [
+                  10,
+                  12
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-0a3ea93671c85425c7a1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 48,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 19
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-33fc65dc47ebc1ec9625",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara identifies as grieving and emotionally overwhelmed following her father's death.",
+                "evidence_scene_orders": [
+                  54
+                ],
+                "state_id": "task1-state-7ab1df23c6eb2c3bef2d"
+              },
+              {
+                "claim": "Barbara experiences strained and confrontational dynamics with Bill regarding co-parenting and the breakdown of their marriage.",
+                "evidence_scene_orders": [
+                  48,
+                  49,
+                  50
+                ],
+                "state_id": "task1-state-a5b4792530ef3ce719d6"
+              },
+              {
+                "claim": "Barbara resists Violet's emotional dominance and control, particularly around family narratives and inheritance.",
+                "evidence_scene_orders": [
+                  54
+                ],
+                "state_id": "task1-state-4b39002927048aa76781"
+              },
+              {
+                "claim": "Barbara asserts herself as morally justified and resilient, framing her struggles as part of a larger history of enduring familial pain.",
+                "evidence_scene_orders": [
+                  50,
+                  54
+                ],
+                "state_id": "task1-state-5f4adecd7cdd0d056f95"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barbara's role shifts from seeking reconciliation with Violet to resisting her authority, marking a breakdown in intergenerational alignment.",
+                "development_id": "task1-development-f2c53abbd8341050a438",
+                "evidence_scene_orders": [
+                  16,
+                  54
+                ]
+              },
+              {
+                "claim": "Barbara's self-conception evolves from responsible parent to a figure overwhelmed by grief and familial collapse, integrating personal loss with identity.",
+                "development_id": "task1-development-08b012036c155177a3c2",
+                "evidence_scene_orders": [
+                  48,
+                  54
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b6762b3a8233883b9b7e",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barbara positions herself as the more attentive and responsible parent in contrast to Bill.",
+                "evidence_scene_orders": [
+                  48
+                ]
+              },
+              {
+                "claim": "Barbara views Bill as failing in his parental role and challenges his deflection during their confrontation.",
+                "evidence_scene_orders": [
+                  48
+                ]
+              },
+              {
+                "claim": "Barbara identifies herself as present in a quiet, grounded manner amidst Violet's disoriented state.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Barbara is in a state of disheveled urgency, reacting to an emergency.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-4f95c75ff5d841b93d9c",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 54,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 48
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-39919a2b39b25a7c25c8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara identifies herself as the one in charge of the household.",
+                "evidence_scene_orders": [
+                  55
+                ],
+                "state_id": "task1-state-b334c7e33c771df79bc5"
+              },
+              {
+                "claim": "Barbara asserts dominance over Violet.",
+                "evidence_scene_orders": [
+                  55
+                ],
+                "state_id": "task1-state-eb892a2184fe2644fea9"
+              },
+              {
+                "claim": "Barbara views Bill as failing in his parental and marital roles, leading to open hostility and acknowledgment of the marriage's end.",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "task1-state-9fb237ce38a6cb59ed0b"
+              },
+              {
+                "claim": "Barbara identifies as grieving and emotionally overwhelmed following her father's death.",
+                "evidence_scene_orders": [
+                  54
+                ],
+                "state_id": "task1-state-7ab1df23c6eb2c3bef2d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barbara transitions from emotional collapse to assuming authoritative control of the household after her father's death.",
+                "development_id": "task1-development-f3512b293848d7186ec6",
+                "evidence_scene_orders": [
+                  54,
+                  55
+                ]
+              },
+              {
+                "claim": "Barbara shifts from strained resistance to active dominance in her relationship with Violet.",
+                "development_id": "task1-development-029ff2b3c6527b854874",
+                "evidence_scene_orders": [
+                  54,
+                  55
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b6a6e07eae76f6ab32b3",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barbara identifies as grieving and emotionally overwhelmed following her father's death.",
+                "evidence_scene_orders": [
+                  54
+                ]
+              },
+              {
+                "claim": "Barbara experiences strained and confrontational dynamics with Bill regarding co-parenting and the breakdown of their marriage.",
+                "evidence_scene_orders": [
+                  48,
+                  49,
+                  50
+                ]
+              },
+              {
+                "claim": "Barbara resists Violet's emotional dominance and control, particularly around family narratives and inheritance.",
+                "evidence_scene_orders": [
+                  54
+                ]
+              },
+              {
+                "claim": "Barbara asserts herself as morally justified and resilient, framing her struggles as part of a larger history of enduring familial pain.",
+                "evidence_scene_orders": [
+                  50,
+                  54
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-33fc65dc47ebc1ec9625",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 55,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 54
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-39b076d1290d6d4a0d09",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barbara asserts her identity as a protective and defiant mother resisting medical authority.",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "task1-state-b291c667e833571732b2"
+              },
+              {
+                "claim": "Barbara identifies herself as the one in charge of the household.",
+                "evidence_scene_orders": [
+                  55
+                ],
+                "state_id": "task1-state-b334c7e33c771df79bc5"
+              },
+              {
+                "claim": "Barbara perceives Bill as narcissistic, emotionally dismissive, and failing in his parental and marital roles, leading to open hostility and acknowledgment of the marriage's end.",
+                "evidence_scene_orders": [
+                  19,
+                  21,
+                  49,
+                  50
+                ],
+                "state_id": "task1-state-802fe1c849e9fdf7be53"
+              },
+              {
+                "claim": "Barbara is grieving and emotionally overwhelmed following her father's death, expressing guilt for her absence during his final illness.",
+                "evidence_scene_orders": [
+                  54
+                ],
+                "state_id": "task1-state-7ab1df23c6eb2c3bef2d"
+              },
+              {
+                "claim": "Barbara resists Violet's authority and rejects familial reconciliation, asserting dominance in their conflict.",
+                "evidence_scene_orders": [
+                  54,
+                  55
+                ],
+                "state_id": "task1-state-4b39002927048aa76781"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barbara transitions from asserting household authority to enacting protective defiance against external authority, reframing her role in response to crisis.",
+                "development_id": "task1-development-e1831e3ed35c01367b0b",
+                "evidence_scene_orders": [
+                  55,
+                  61
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-f48222e17a6f3285afc9",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barbara identifies herself as the one in charge of the household.",
+                "evidence_scene_orders": [
+                  55
+                ]
+              },
+              {
+                "claim": "Barbara asserts dominance over Violet.",
+                "evidence_scene_orders": [
+                  55
+                ]
+              },
+              {
+                "claim": "Barbara views Bill as failing in his parental and marital roles, leading to open hostility and acknowledgment of the marriage's end.",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "Barbara identifies as grieving and emotionally overwhelmed following her father's death.",
+                "evidence_scene_orders": [
+                  54
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-39919a2b39b25a7c25c8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 61,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 55
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en907f369c73384a6a9b4d5cc8b683203a::entity-3d3a2ef42bf85e89bf7b"
+    }
+  ]
+}

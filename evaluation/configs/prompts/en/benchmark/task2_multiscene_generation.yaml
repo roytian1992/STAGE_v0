@@ -1,0 +1,45 @@
+id: task2_multiscene_generation
+category: benchmark_construction
+name: Task 2 multi-scene candidate generation
+description: Generate evidence-grounded cross-scene evolution QA candidates.
+task_variables:
+  - name: title
+    required: true
+  - name: candidate_material
+    required: true
+static_variables: []
+template: |-
+  Construct candidate Task 2 questions for "{title}" from the supplied narrative assets.
+  This is benchmark construction, not question answering.
+
+  Candidate requirements:
+  - Every candidate must require evidence from at least two distinct scene orders.
+  - Track one evolving state, goal, relationship, belief/knowledge boundary, identity/status,
+    constraint, delayed consequence, persistence, or retrospective reinterpretation.
+  - A question answerable from one scene alone is invalid.
+  - Keep the answer concise, specific, and uniquely supported by the cited evidence.
+  - Do not expose internal IDs in the question or answer; IDs are only provenance fields.
+  - Do not invent evidence or use facts outside the supplied material.
+  - Prefer a diverse set of question families and do not generate near-duplicates.
+
+  Return only JSON:
+  {{
+    "candidates": [
+      {{
+        "question": "...",
+        "answer": "...",
+        "question_family": "state_trajectory|transition_trigger|epistemic_evolution|goal_relationship_development|delayed_consequence|persistence_invariant|retrospective_reinterpretation",
+        "evidence_scene_orders": [1, 2],
+        "evidence_roles": ["before", "trigger", "after", "consequence", "invariant"],
+        "evidence_claims": [
+          {{"scene_order": 1, "claim": "..."}},
+          {{"scene_order": 2, "claim": "..."}}
+        ],
+        "source_episode_ids": ["local episode IDs"],
+        "source_development_ids": ["local development IDs"]
+      }}
+    ]
+  }}
+
+  Material:
+  {candidate_material}

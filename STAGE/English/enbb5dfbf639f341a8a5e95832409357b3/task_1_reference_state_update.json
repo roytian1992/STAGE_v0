@@ -1,0 +1,2653 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 21,
+    "current_state_reference_claims": 144,
+    "development_reference_claims": 20,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "enbb5dfbf639f341a8a5e95832409357b3",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 173,
+    "sha256": "30badd4f5b52d4b2f109ace33058c9efb65ce7025196aa92e5f867166af31a96"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Andy Kaufman",
+        "Andy",
+        "Foreign Man",
+        "Regular Voice Andy",
+        "little Andy",
+        "Kid Genius",
+        "Tony",
+        "Hollywood Andy Kaufman",
+        "Kaufman",
+        "Andrew"
+      ],
+      "character": "Andy Kaufman",
+      "character_id": "entity-4c257923ca7b08a1d786",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-b1e6a987938ebb8f1507",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Andy drops his foreign accent and speaks in his regular voice, signaling a shift to authenticity.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-0d889a997681292d4f08"
+              },
+              {
+                "claim": "Andy presents himself in character as 'Foreign Man' expressing disappointment in his life story.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-3019e363d710cbdf1c69"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-21debbb0dd01d31ae9f7",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 1,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-435e24dc5750375ffb17",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-de4f8f6cb55aeb9e8bb8"
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-10d528c4c11eea5f477e"
+              },
+              {
+                "claim": "Andy accepts a constraint on his performance identity by agreeing to perform only for real audiences.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "character-state-72988c942f56e93d587e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Andy Kaufman's status identity develops from \"Andy is recognized as the performer by the audience and manager\" to \"Andy experiences a collapse of professional identity and self-worth.\" (visible from scene 9).",
+                "development_id": "character-development-36c523354f2add9ccd0b",
+                "evidence_scene_orders": [
+                  8,
+                  9
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-31163ad0fa00a7e9dc24",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Andy drops his foreign accent and speaks in his regular voice, signaling a shift to authenticity.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Andy presents himself in character as 'Foreign Man' expressing disappointment in his life story.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b1e6a987938ebb8f1507",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 9,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 1
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-546fdcd5b87be9d36cf3",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-fbeb7563d6412356f62a"
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5ba1bfaec668c557c1e1"
+              },
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-de4f8f6cb55aeb9e8bb8"
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-10d528c4c11eea5f477e"
+              },
+              {
+                "claim": "Andy presents a controlled, deliberate public persona after a private emotional display.",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "character-state-323d4525a3daff16286c"
+              },
+              {
+                "claim": "Andy is perceived by George as an enigmatic and skillful performer due to his Foreign Man character and Elvis impersonation.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-f249d9e68415d48d964c"
+              },
+              {
+                "claim": "Andy temporarily assumes the identity of Elvis Presley, projecting confidence, charisma, and sexual appeal.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-359df872849affeb30ec"
+              },
+              {
+                "claim": "Andy accepts a constraint on his performance identity by agreeing to perform only for real audiences.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "character-state-72988c942f56e93d587e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Andy Kaufman's status identity develops from \"Andy presents a controlled, deliberate public persona after a private emotional display.\" to \"Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.\" (visible from scene 13).",
+                "development_id": "character-development-9f60387dfd60ded5a00e",
+                "evidence_scene_orders": [
+                  10,
+                  13
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-716110a8f225d4ddace8",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Andy accepts a constraint on his performance identity by agreeing to perform only for real audiences.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-435e24dc5750375ffb17",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 13,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 9
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-7c41e3917c118963c6f4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-fbeb7563d6412356f62a"
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5ba1bfaec668c557c1e1"
+              },
+              {
+                "claim": "Andy is recognized as a professionally viable performer by an industry representative.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-4a3027ed666e80e36afd"
+              },
+              {
+                "claim": "Andy's relationship with George shifts from performer-audience to potential client-agent due to the offer of representation.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-87fc7d613c71d2742f1f"
+              },
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-de4f8f6cb55aeb9e8bb8"
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-10d528c4c11eea5f477e"
+              },
+              {
+                "claim": "Andy presents a controlled, deliberate public persona after a private emotional display.",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "character-state-323d4525a3daff16286c"
+              },
+              {
+                "claim": "Andy is perceived by George as an enigmatic and skillful performer due to his Foreign Man character and Elvis impersonation.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-f249d9e68415d48d964c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Andy Kaufman's relationship develops from \"George views Andy as a compelling performer worthy of inquiry and admiration.\" to \"Andy's relationship with George shifts from performer-audience to potential client-agent due to the offer of representation.\" (visible from scene 14).",
+                "development_id": "character-development-d637e3759c4c5389b9af",
+                "evidence_scene_orders": [
+                  13,
+                  14
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-1f3d34f077c3cf1dd288",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Andy presents a controlled, deliberate public persona after a private emotional display.",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "Andy is perceived by George as an enigmatic and skillful performer due to his Foreign Man character and Elvis impersonation.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Andy temporarily assumes the identity of Elvis Presley, projecting confidence, charisma, and sexual appeal.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Andy accepts a constraint on his performance identity by agreeing to perform only for real audiences.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-546fdcd5b87be9d36cf3",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 14,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 13
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-42aebfa50ce5e4263a6b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "perceives himself as a uniquely authentic performer whose eccentricity is central to his art",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-4aa3bcd62dad18c88d7c"
+              },
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-fbeb7563d6412356f62a"
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5ba1bfaec668c557c1e1"
+              },
+              {
+                "claim": "establishes a professional partnership with George",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5385c2632649999bc1d0"
+              },
+              {
+                "claim": "Andy is recognized as a professionally viable performer by an industry representative.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-4a3027ed666e80e36afd"
+              },
+              {
+                "claim": "Andy's relationship with George shifts from performer-audience to potential client-agent due to the offer of representation.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-87fc7d613c71d2742f1f"
+              },
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-de4f8f6cb55aeb9e8bb8"
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-10d528c4c11eea5f477e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Andy Kaufman's status identity develops from \"Andy is recognized as a professionally viable performer by an industry representative.\" to \"perceives himself as a uniquely authentic performer whose eccentricity is central to his art\" (visible from scene 15).",
+                "development_id": "character-development-17a4de48530709bdf69a",
+                "evidence_scene_orders": [
+                  14,
+                  15
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-48b3e12fac93459aa977",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Andy is recognized as a professionally viable performer by an industry representative.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Andy's relationship with George shifts from performer-audience to potential client-agent due to the offer of representation.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Andy presents a controlled, deliberate public persona after a private emotional display.",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "Andy is perceived by George as an enigmatic and skillful performer due to his Foreign Man character and Elvis impersonation.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7c41e3917c118963c6f4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 15,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 14
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-b12541f8f5a3c287bf6c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Andy seeks and receives validation from the Yogi, indicating a mentor-mentee relationship",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-55afa00ffb5e53c8f031"
+              },
+              {
+                "claim": "perceives himself as a uniquely authentic performer whose eccentricity is central to his art",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-4aa3bcd62dad18c88d7c"
+              },
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-fbeb7563d6412356f62a"
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5ba1bfaec668c557c1e1"
+              },
+              {
+                "claim": "Andy shows increased respect for George's experience and passion after the confrontation.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-05d49c0fc2ca029311c9"
+              },
+              {
+                "claim": "Andy perceives limited future opportunities if he rejects the sitcom, influenced by George's warning.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-48c30305559914ee1175"
+              },
+              {
+                "claim": "Andy shifts from resisting mainstream success to accepting a primetime sitcom role, signaling a compromise in his artistic identity.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-73cca0fa4267931d7206"
+              },
+              {
+                "claim": "Andy identifies as disciplined and transformed through spiritual practice",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-0510537c6dca88f6db2e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Andy Kaufman's relationship develops from \"establishes a professional partnership with George\" to \"Andy shows increased respect for George's experience and passion after the confrontation.\" (visible from scene 24).",
+                "development_id": "character-development-01c4bd16bdd8a8d6d272",
+                "evidence_scene_orders": [
+                  15,
+                  24
+                ]
+              },
+              {
+                "claim": "Andy Kaufman's status identity develops from \"Andy identifies as disciplined and transformed through spiritual practice\" to \"Andy shifts from resisting mainstream success to accepting a primetime sitcom role, signaling a compromise in his artistic identity.\" (visible from scene 24).",
+                "development_id": "character-development-acd6bba3cf9c44537314",
+                "evidence_scene_orders": [
+                  18,
+                  24
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-2c0bb777bc0d38f6db92",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "perceives himself as a uniquely authentic performer whose eccentricity is central to his art",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "establishes a professional partnership with George",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Andy is recognized as a professionally viable performer by an industry representative.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Andy's relationship with George shifts from performer-audience to potential client-agent due to the offer of representation.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Andy experiences a collapse of professional identity and self-worth.",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Andy is recognized as the performer by the audience and manager",
+                "evidence_scene_orders": [
+                  8
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-42aebfa50ce5e4263a6b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 24,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 15
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-87bfd5038fdb279eaf7d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Andy seeks and receives validation from the Yogi, indicating a mentor-mentee relationship",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-55afa00ffb5e53c8f031"
+              },
+              {
+                "claim": "perceives himself as a uniquely authentic performer whose eccentricity is central to his art",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-4aa3bcd62dad18c88d7c"
+              },
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-fbeb7563d6412356f62a"
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5ba1bfaec668c557c1e1"
+              },
+              {
+                "claim": "Andy reveals he was performing as a disguised impersonator, affirming his identity as a performer who blurs reality and fiction.",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-24064983e951661456d8"
+              },
+              {
+                "claim": "Andy shows increased respect for George's experience and passion after the confrontation.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-05d49c0fc2ca029311c9"
+              },
+              {
+                "claim": "Andy perceives limited future opportunities if he rejects the sitcom, influenced by George's warning.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-48c30305559914ee1175"
+              },
+              {
+                "claim": "Andy shifts from resisting mainstream success to accepting a primetime sitcom role, signaling a compromise in his artistic identity.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-73cca0fa4267931d7206"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Andy Kaufman's status identity develops from \"Andy shifts from resisting mainstream success to accepting a primetime sitcom role, signaling a compromise in his artistic identity.\" to \"Andy reveals he was performing as a disguised impersonator, affirming his identity as a performer who blurs reality and fiction.\" (visible from scene 28).",
+                "development_id": "character-development-4796967406a7d5d91f30",
+                "evidence_scene_orders": [
+                  24,
+                  28
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-9bf120ad70cfda2d790a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Andy seeks and receives validation from the Yogi, indicating a mentor-mentee relationship",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "perceives himself as a uniquely authentic performer whose eccentricity is central to his art",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Andy is performing in character as Foreign Man, a persona marked by awkwardness, broken English, and comedic ineptitude.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George views Andy as a compelling performer worthy of inquiry and admiration.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Andy shows increased respect for George's experience and passion after the confrontation.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "Andy perceives limited future opportunities if he rejects the sitcom, influenced by George's warning.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "Andy shifts from resisting mainstream success to accepting a primetime sitcom role, signaling a compromise in his artistic identity.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "Andy identifies as disciplined and transformed through spiritual practice",
+                "evidence_scene_orders": [
+                  18
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b12541f8f5a3c287bf6c",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 28,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 24
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "enbb5dfbf639f341a8a5e95832409357b3::entity-4c257923ca7b08a1d786"
+    },
+    {
+      "aliases": [
+        "Tony Clifton",
+        "Tony",
+        "Clifton"
+      ],
+      "character": "Tony Clifton",
+      "character_id": "entity-915488e975a1b9d7bf4e",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-424c05ea48bde6016211",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6137cdfa431f587ec31f"
+              },
+              {
+                "claim": "Tony Clifton presents himself as a powerful and intimidating figure associated with Andy Kaufman.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6d1ec14bc26601d2b8b1"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-73afe1af2d280283fa05",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 17,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-c04d4ff512a20d88cec9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-a021f484f165fdbf3edd"
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-7a329857dba48b6b0113"
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6137cdfa431f587ec31f"
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-d43a232e917b1ee0779b"
+              },
+              {
+                "claim": "Tony Clifton's inclusion is attributed to Andy Kaufman's directive",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-a53c837d8a450b536545"
+              },
+              {
+                "claim": "Tony assumes a position of authority by commanding George to comply with his orders.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-53bf30beab1a4ab42d40"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Tony Clifton's relationship develops from \"Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.\" to \"Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.\" (visible from scene 27).",
+                "development_id": "character-development-494cec1a7fcc00b841ce",
+                "evidence_scene_orders": [
+                  17,
+                  27
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-cefc52433bbc33fe9ba5",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton presents himself as a powerful and intimidating figure associated with Andy Kaufman.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-424c05ea48bde6016211",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 27,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 17
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-472f33412f3250ea1842",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-a021f484f165fdbf3edd"
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-d29d0a0290ec5ce346c4"
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-7a329857dba48b6b0113"
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6137cdfa431f587ec31f"
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-d43a232e917b1ee0779b"
+              },
+              {
+                "claim": "Tony Clifton's inclusion is attributed to Andy Kaufman's directive",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-a53c837d8a450b536545"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Tony Clifton's status identity develops from \"Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.\" to \"Tony Clifton is no longer present on stage after suddenly vanishing.\" (visible from scene 61).",
+                "development_id": "character-development-805909c971c01d4a9453",
+                "evidence_scene_orders": [
+                  27,
+                  61
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e93412a63285a990768c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton's inclusion is attributed to Andy Kaufman's directive",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Tony assumes a position of authority by commanding George to comply with his orders.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-c04d4ff512a20d88cec9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 61,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 27
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-a15ea25bafcafc8b94bf",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-a021f484f165fdbf3edd"
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-cb4c39db8ffee3f747a8"
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-d29d0a0290ec5ce346c4"
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-7a329857dba48b6b0113"
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6137cdfa431f587ec31f"
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-d43a232e917b1ee0779b"
+              },
+              {
+                "claim": "Tony Clifton's inclusion is attributed to Andy Kaufman's directive",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-a53c837d8a450b536545"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Tony Clifton's status identity develops into \"Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.\" (visible from scene 64; no comparable prior state is recorded).",
+                "development_id": "character-development-8a35a5e63c961fa16f8c",
+                "evidence_scene_orders": [
+                  64
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-310c821cb5fc0b0678de",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ]
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton's inclusion is attributed to Andy Kaufman's directive",
+                "evidence_scene_orders": [
+                  25
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-472f33412f3250ea1842",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 64,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 61
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-db184781312ac6478673",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-a021f484f165fdbf3edd"
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-cb4c39db8ffee3f747a8"
+              },
+              {
+                "claim": "forcibly removed from the Paramount lot by security",
+                "evidence_scene_orders": [
+                  65
+                ],
+                "state_id": "character-state-27f82dabb7ede46e2554"
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-d29d0a0290ec5ce346c4"
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-7a329857dba48b6b0113"
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6137cdfa431f587ec31f"
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-d43a232e917b1ee0779b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Tony Clifton's status identity develops into \"forcibly removed from the Paramount lot by security\" (visible from scene 65; no comparable prior state is recorded).",
+                "development_id": "character-development-49f7182ab566902598e5",
+                "evidence_scene_orders": [
+                  65
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-172af288467138c72887",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ]
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton's inclusion is attributed to Andy Kaufman's directive",
+                "evidence_scene_orders": [
+                  25
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-a15ea25bafcafc8b94bf",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 65,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 64
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-0f325554e3bd0d9bb7b9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-a021f484f165fdbf3edd"
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-cb4c39db8ffee3f747a8"
+              },
+              {
+                "claim": "perceived as a real and publicly recognized figure by the group due to media coverage",
+                "evidence_scene_orders": [
+                  68
+                ],
+                "state_id": "character-state-83553761db6176903806"
+              },
+              {
+                "claim": "forcibly removed from the Paramount lot by security",
+                "evidence_scene_orders": [
+                  65
+                ],
+                "state_id": "character-state-27f82dabb7ede46e2554"
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-d29d0a0290ec5ce346c4"
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-7a329857dba48b6b0113"
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-6137cdfa431f587ec31f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Tony Clifton's status identity develops into \"perceived as a real and publicly recognized figure by the group due to media coverage\" (visible from scene 68; no comparable prior state is recorded).",
+                "development_id": "character-development-01603e8d2a5281c3615e",
+                "evidence_scene_orders": [
+                  68
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-340bf5419cb90cd5cc40",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "forcibly removed from the Paramount lot by security",
+                "evidence_scene_orders": [
+                  65
+                ]
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ]
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton presents himself as a confident and flamboyant entertainer",
+                "evidence_scene_orders": [
+                  27
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-db184781312ac6478673",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 68,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 65
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-5312a5973d75b34dc777",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-a021f484f165fdbf3edd"
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64,
+                  70
+                ],
+                "state_id": "character-state-cb4c39db8ffee3f747a8"
+              },
+              {
+                "claim": "perceived as a real and publicly recognized figure by the group due to media coverage",
+                "evidence_scene_orders": [
+                  68
+                ],
+                "state_id": "character-state-83553761db6176903806"
+              },
+              {
+                "claim": "forcibly removed from the Paramount lot by security",
+                "evidence_scene_orders": [
+                  65
+                ],
+                "state_id": "character-state-27f82dabb7ede46e2554"
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-da2b9e0d381c8cf0b25c"
+              },
+              {
+                "claim": "Tony Clifton is publicly associated with Andy Kaufman in a joint performance.",
+                "evidence_scene_orders": [
+                  71
+                ],
+                "state_id": "character-state-c33cb6961dc8e2a89c4d"
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-d29d0a0290ec5ce346c4"
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-7a329857dba48b6b0113"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Tony Clifton's relationship develops from \"Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.\" to \"Tony Clifton is publicly associated with Andy Kaufman in a joint performance.\" (visible from scene 71).",
+                "development_id": "character-development-be7f75784d5641919839",
+                "evidence_scene_orders": [
+                  17,
+                  25,
+                  71
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-41d4f9026225f003d315",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Tony performs as an authoritarian entertainer who enforces comedic conformity and punishes perceived transgressions and demands absolute control over the performance environment, assuming the role of a commanding maestro demanding ritualistic silence before artistic initiation.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton asserts his identity as distinct from Andy Kaufman and claims professional legitimacy, presented as a distinct identity separate from Andy Kaufman, asserts himself as a distinct and dominant identity separate from Andy, and defends his legitimacy as a performer.",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "perceived as a real and publicly recognized figure by the group due to media coverage",
+                "evidence_scene_orders": [
+                  68
+                ]
+              },
+              {
+                "claim": "forcibly removed from the Paramount lot by security",
+                "evidence_scene_orders": [
+                  65
+                ]
+              },
+              {
+                "claim": "Tony Clifton establishes an antagonistic relationship with George Shapiro through direct threats.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Tony Clifton is no longer present on stage after suddenly vanishing.",
+                "evidence_scene_orders": [
+                  61
+                ]
+              },
+              {
+                "claim": "Tony's relationship with George shifts from indirect association to direct confrontation and authority assertion.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Tony Clifton holds a hostile view of Andy Kaufman, calling him a 'lying bastard'.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-0f325554e3bd0d9bb7b9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 71,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 68
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "enbb5dfbf639f341a8a5e95832409357b3::entity-915488e975a1b9d7bf4e"
+    },
+    {
+      "aliases": [
+        "George Shapiro",
+        "George",
+        "Mr. Shapiro"
+      ],
+      "character": "George Shapiro",
+      "character_id": "entity-b4442d4080cf059f71cc",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-bc3e5b8cc5bcfa0c9061",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George Shapiro is recognized as a person of status or familiarity at The Improv comedy club.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4579104774fe761ccecb"
+              },
+              {
+                "claim": "George Shapiro is a Hollywood talent manager.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-3fc635f5322ee9be197c"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-e692ec3b8edee2898803",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 11,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-bc46f4d5d0a83fe2b72d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8007720e4ce3c7b28269"
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-57f5d1cbed47705a99e0"
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-3cc41587ca385a3c85e4"
+              },
+              {
+                "claim": "George positions himself as a potential professional contact to Andy",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-909c516cf6ab0823547e"
+              },
+              {
+                "claim": "George perceives himself as recognized and respected by a skilled performer",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-de2c0a1e7a058f3c877a"
+              },
+              {
+                "claim": "George is publicly acknowledged as a known figure within the social group at the bar.",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "character-state-7936e189b3912178ac77"
+              },
+              {
+                "claim": "George Shapiro is recognized as a person of status or familiarity at The Improv comedy club.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4579104774fe761ccecb"
+              },
+              {
+                "claim": "George Shapiro is a Hollywood talent manager.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-3fc635f5322ee9be197c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "George Shapiro's relationship develops from \"George's perception of Andy shifts from curiosity to professional admiration based on his performance.\" to \"George recognizes Andy with amused respect after realizing the performance was intentional\" (visible from scene 14).",
+                "development_id": "character-development-15a54790027d90f4b6f2",
+                "evidence_scene_orders": [
+                  13,
+                  14
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-cd523ebaeaed5c6a3eac",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "George Shapiro is recognized as a person of status or familiarity at The Improv comedy club.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "George Shapiro is a Hollywood talent manager.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-bc3e5b8cc5bcfa0c9061",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 14,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 11
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-636ff3a5c45c996ef446",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8007720e4ce3c7b28269"
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-57f5d1cbed47705a99e0"
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-3cc41587ca385a3c85e4"
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5ea59b2d3b003d179807"
+              },
+              {
+                "claim": "George shifts from discomfort to respect in his interaction with Andy.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-c6cc3b85d06830163f44"
+              },
+              {
+                "claim": "George establishes a professional partnership with Andy",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-eed47f29ed5c8dcceaa0"
+              },
+              {
+                "claim": "George positions himself as a potential professional contact to Andy",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-909c516cf6ab0823547e"
+              },
+              {
+                "claim": "George is publicly acknowledged as a known figure within the social group at the bar.",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "character-state-7936e189b3912178ac77"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "George Shapiro's relationship develops from \"George recognizes Andy with amused respect after realizing the performance was intentional\" to \"George begins to evaluate Andy as a potentially brilliant performer outside traditional categories; George shifts from discomfort to respect in his interaction with Andy.; George establishes a professional partnership with Andy\" (visible from scene 15).",
+                "development_id": "character-development-f0c53b8403faa2e220e7",
+                "evidence_scene_orders": [
+                  14,
+                  15
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6eff9fb6bfc376976791",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George positions himself as a potential professional contact to Andy",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George perceives himself as recognized and respected by a skilled performer",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George is publicly acknowledged as a known figure within the social group at the bar.",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "George Shapiro is recognized as a person of status or familiarity at The Improv comedy club.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "George Shapiro is a Hollywood talent manager.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-bc46f4d5d0a83fe2b72d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 15,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 14
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-02b586af8c5f36314df7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-db5d475ba7edfcde3ec6"
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8007720e4ce3c7b28269"
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-57f5d1cbed47705a99e0"
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-3cc41587ca385a3c85e4"
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5ea59b2d3b003d179807"
+              },
+              {
+                "claim": "George shifts from discomfort to respect in his interaction with Andy.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-c6cc3b85d06830163f44"
+              },
+              {
+                "claim": "George establishes a professional partnership with Andy",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-eed47f29ed5c8dcceaa0"
+              },
+              {
+                "claim": "George asserts his professional authority based on twenty years of industry experience",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-91b0bf288e077cc50c9b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "George Shapiro's status identity develops from \"George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.\" to \"George asserts his professional authority based on twenty years of industry experience\" (visible from scene 24).",
+                "development_id": "character-development-43b46f0f243a71e8d1c1",
+                "evidence_scene_orders": [
+                  13,
+                  24
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-7c96f7a36fc36976153a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George shifts from discomfort to respect in his interaction with Andy.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George establishes a professional partnership with Andy",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George positions himself as a potential professional contact to Andy",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George is publicly acknowledged as a known figure within the social group at the bar.",
+                "evidence_scene_orders": [
+                  12
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-636ff3a5c45c996ef446",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 24,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 15
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-8663ebec0060effc4e40",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-db5d475ba7edfcde3ec6"
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8007720e4ce3c7b28269"
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-57f5d1cbed47705a99e0"
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-3cc41587ca385a3c85e4"
+              },
+              {
+                "claim": "George Shapiro perceives himself as powerless to intervene in Tony's abusive conduct",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-8686ca80da4b256a970a"
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5ea59b2d3b003d179807"
+              },
+              {
+                "claim": "George shifts from discomfort to respect in his interaction with Andy.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-c6cc3b85d06830163f44"
+              },
+              {
+                "claim": "George establishes a professional partnership with Andy",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-eed47f29ed5c8dcceaa0"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "George Shapiro's status identity develops from \"George perceives himself as a serious agent offering a legitimate, high-value opportunity.\" to \"George Shapiro perceives himself as powerless to intervene in Tony's abusive conduct\" (visible from scene 27).",
+                "development_id": "character-development-384108a2557184ec5f66",
+                "evidence_scene_orders": [
+                  24,
+                  27
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-356757f79ea94dff6ba4",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George shifts from discomfort to respect in his interaction with Andy.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George establishes a professional partnership with Andy",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George asserts his professional authority based on twenty years of industry experience",
+                "evidence_scene_orders": [
+                  24
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-02b586af8c5f36314df7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 27,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 24
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-d96770fcdbfe189a36ae",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-db5d475ba7edfcde3ec6"
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8007720e4ce3c7b28269"
+              },
+              {
+                "claim": "George perceives Andy as a source of deception and emotional distress",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-2c2abdee643cf8fb4228"
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-57f5d1cbed47705a99e0"
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-3cc41587ca385a3c85e4"
+              },
+              {
+                "claim": "George shifts from confusion and distress to amusement upon realizing the deception was part of a show",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-9f69bd866b90957eb7c3"
+              },
+              {
+                "claim": "George Shapiro perceives himself as powerless to intervene in Tony's abusive conduct",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-8686ca80da4b256a970a"
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5ea59b2d3b003d179807"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "George Shapiro's relationship develops from \"George is acting as Andy Kaufman's representative in contractual negotiations.\" to \"George perceives Andy as a source of deception and emotional distress\" (visible from scene 28).",
+                "development_id": "character-development-b636536e2fdd252f67dd",
+                "evidence_scene_orders": [
+                  25,
+                  28
+                ]
+              },
+              {
+                "claim": "George Shapiro's status identity develops from \"George Shapiro perceives himself as powerless to intervene in Tony's abusive conduct\" to \"George shifts from confusion and distress to amusement upon realizing the deception was part of a show\" (visible from scene 28).",
+                "development_id": "character-development-c12474bcf4bec9d8e304",
+                "evidence_scene_orders": [
+                  27,
+                  28
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6a20fd989ce3cb02bc0d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George Shapiro perceives himself as powerless to intervene in Tony's abusive conduct",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George shifts from discomfort to respect in his interaction with Andy.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "George establishes a professional partnership with Andy",
+                "evidence_scene_orders": [
+                  15
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-8663ebec0060effc4e40",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 28,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 27
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-102294861bbfc961ea00",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "George positions himself as an experienced industry professional guiding a younger performer on audience management.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-46cb6287dcb62ab10c79"
+              },
+              {
+                "claim": "George asserts his authority as a manager by reprimanding his team after a professional failure.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-d941a998c39f3961d32d"
+              },
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-db5d475ba7edfcde3ec6"
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8007720e4ce3c7b28269"
+              },
+              {
+                "claim": "George perceives Andy as a source of deception and emotional distress",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-2c2abdee643cf8fb4228"
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-57f5d1cbed47705a99e0"
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-3cc41587ca385a3c85e4"
+              },
+              {
+                "claim": "George shifts from confusion and distress to amusement upon realizing the deception was part of a show",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-9f69bd866b90957eb7c3"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "George Shapiro's status identity develops from \"George shifts from confusion and distress to amusement upon realizing the deception was part of a show\" to \"George positions himself as an experienced industry professional guiding a younger performer on audience management.; George asserts his authority as a manager by reprimanding his team after a professional failure.\" (visible from scene 52).",
+                "development_id": "character-development-614bb45eda1480ea4d1a",
+                "evidence_scene_orders": [
+                  28,
+                  52
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-2152ef0f64d5cd07a485",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "George perceives himself as a serious agent offering a legitimate, high-value opportunity.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "George transitions from passive observer to active admirer and inquirer, reflecting heightened engagement.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George perceives Andy as a source of deception and emotional distress",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "George recognizes Andy with amused respect after realizing the performance was intentional",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "George's perception of Andy shifts from curiosity to professional admiration based on his performance.",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "George shifts from confusion and distress to amusement upon realizing the deception was part of a show",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "George Shapiro perceives himself as powerless to intervene in Tony's abusive conduct",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "George begins to evaluate Andy as a potentially brilliant performer outside traditional categories",
+                "evidence_scene_orders": [
+                  15
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-d96770fcdbfe189a36ae",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 52,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 28
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "enbb5dfbf639f341a8a5e95832409357b3::entity-b4442d4080cf059f71cc"
+    }
+  ]
+}

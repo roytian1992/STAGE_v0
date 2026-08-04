@@ -1,0 +1,786 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 4,
+  "episodes": [
+    {
+      "character": "Alex Bellamy",
+      "character_id": "legacy-mt-role-bdb55231f636a39e39ce",
+      "episode_id": "en132159a79f6040c88b523d3a87ec3224__Alex Bellamy__ep01",
+      "episode_theme": "Alex Bellamy's anxious navigation of work pressures and family interruptions during a sales pitch",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-bdb55231f636a39e39ce"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Alex Bellamy gives vague explanations and avoids details.",
+              "He doesn't care about promotions and ignores them."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, apologetic, guarded, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Bellamy explains the the paper jacket is for an airline promotion to Harper Marlowe and Alex Bellamy stops to detail the connection to frequent flyer miles.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that Alex Bellamy avoids drawing attention to himself in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You went into a lot of detail about the the paper jacket being part of an airline promotion—why did you feel it was necessary to explain all that?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Alex Bellamy_q015",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Alex Bellamy ignored the call and focused solely on work",
+              "Alex Bellamy left work immediately to attend to family"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, apologetic, guarded, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Bellamy was presenting plungers to customers and sister Morgan Huxley called via loudspeaker to confirm party attendance.",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must apologize frequently, even repeatedly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When your sister Morgan Huxley called over the loudspeaker, how did you manage that while trying to keep the customers’ attention?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why is it important for you to explain details like the the paper jacket promotion so thoroughly?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Bellamy_q012",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "Alex Bellamy ignored the breakage and continued with another product",
+              "Alex Bellamy blamed the customers for mishandling the plunger"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, apologetic, guarded, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with anxious if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Bellamy was presenting plungers to customers and sister Morgan Huxley called via loudspeaker to confirm party attendance.",
+              "The persona card frames this character's delivery as hesitant, polite, so an in-character answer may express anxious through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What went through your mind when the plunger broke during the pitch, and how did you handle it with the customers?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why is it important for you to explain details like the the paper jacket promotion so thoroughly?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you balance family obligations, like your sister's call, with your work responsibilities?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Bellamy_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Alex Bellamy",
+      "character_id": "legacy-mt-role-bdb55231f636a39e39ce",
+      "episode_id": "en132159a79f6040c88b523d3a87ec3224__Alex Bellamy__ep02",
+      "episode_theme": "Emotional aftermath and self-reflection following confrontations",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-bdb55231f636a39e39ce"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Morgan Prescott that clearly falls outside the established relationship evidence.",
+              "Alex Bellamy stood his ground and fought back"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, apologetic, guarded, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_009",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Tristan Adler and Morgan Prescott confronted Alex Bellamy at his apartment. and Morgan Prescott physically assaulted Alex Bellamy by pushing him to the ground..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that must apologize frequently, even repeatedly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Tristan Adler and Morgan Prescott confronted you near your apartment and pushed you to the ground, what was going through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Alex Bellamy_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Susan that clearly falls outside the established relationship evidence.",
+              "Alex Bellamy confronts his sisters and tells them to stop."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, apologetic, guarded, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Susan marked by sibling relationship, hostility, and emotional abuse."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_016"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Bellamy cautiously enters Susan's house. and his sisters tease him about being called 'gay' and throwing a hammer..",
+              "The established dynamic with Susan is marked by sibling relationship, hostility, and emotional abuse, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that Alex Bellamy avoids drawing attention to himself in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Your sisters brought up that incident when they teased you—how do you usually handle their comments about moments like that?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Tristan Adler and Morgan Prescott ambushed you near your apartment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Bellamy_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Alex Bellamy remained calm and didn't react to the taunts.",
+              "He apologized immediately and tried to fix the doors."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, apologetic, guarded, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Bellamy shatters glass doors with his fist. and Jordan Monroe, Sage Monroe, and Morgan Huxley react with shock and anger..",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that Alex Bellamy avoids drawing attention to himself in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After you smashed the glass doors with your fist, what did that moment make you realize about how you handle anger?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Tristan Adler and Morgan Prescott ambushed you near your apartment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you cope with the teasing from your sisters about your past outbursts?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Bellamy_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Alex Finch",
+      "character_id": "legacy-mt-role-1be9a5dcef2f39b5be30",
+      "episode_id": "en132159a79f6040c88b523d3a87ec3224__Alex Finch__ep01",
+      "episode_theme": "the lingering emotional impact of Alex Bellamy's romantic declaration and how it disrupts Alex Finch's focus during work",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-1be9a5dcef2f39b5be30"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Alex Bellamy that clearly falls outside the established relationship evidence.",
+              "Alex Finch was skeptical and didn't believe Alex Bellamy's claim"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, polite, tentative, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Finch had a the leather key conversation with Sage Monroe. and Alex Finch maintained eye contact with Alex Bellamy during the call..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that do not respond when emotionally overwhelmed or distracted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Alex Bellamy said he came to Cedar Grove Street just for you—not for work—what did you actually feel in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Alex Finch_q009",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Alex Bellamy that clearly falls outside the established relationship evidence.",
+              "Alex Finch has no romantic interest in Alex Bellamy and sees him only as an acquaintance"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006.",
+              "Do not abruptly reverse the stance toward Alex Bellamy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, polite, tentative, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Alex Bellamy marked by romantic partners, mutual romantic interest, and emotional support."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Finch tells Alex Bellamy she saw his picture and came to meet him on purpose and Alex Bellamy expresses skepticism and asks if she is lying.",
+              "The established dynamic with Alex Bellamy is marked by romantic partners, mutual romantic interest, and emotional support, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not respond when emotionally overwhelmed or distracted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That moment clearly stayed with you. Now, when you think back on it—especially knowing you’d already gone out of your way to meet him—does it make his being there feel different? More real?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your heart when Alex Bellamy told you he came to Cedar Grove Street just for you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Finch_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Alex Bellamy that clearly falls outside the established relationship evidence.",
+              "Alex Finch ignores Alex Bellamy completely during work calls"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006.",
+              "Do not abruptly reverse the stance toward Alex Bellamy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, polite, tentative, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with anxious if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Finch had a the leather key conversation with Sage Monroe. and Alex Finch maintained eye contact with Alex Bellamy during the call..",
+              "The persona card frames this character's delivery as hesitant, polite, so an in-character answer may express anxious through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And now, when you're on a work call—like the one with Sage Monroe—and he's right there… does that same pull come back? Is it harder to stay focused?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your heart when Alex Bellamy told you he came to Cedar Grove Street just for you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What does Alex Bellamy mean to you in your life?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Finch_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Alex Finch",
+      "character_id": "legacy-mt-role-1be9a5dcef2f39b5be30",
+      "episode_id": "en132159a79f6040c88b523d3a87ec3224__Alex Finch__ep02",
+      "episode_theme": "Alex Finch's anxious anticipation while waiting for Alex Bellamy's arrival",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-1be9a5dcef2f39b5be30"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Alex Bellamy that clearly falls outside the established relationship evidence.",
+              "Alex Finch is indifferent to Alex Bellamy's arrival and has no expectations"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, polite, tentative, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Finch waits in her apartment and security guard calls to announce Alex Bellamy's arrival.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that do not respond when emotionally overwhelmed or distracted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you were waiting for Alex Bellamy to arrive at your apartment, what were you hoping would happen?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Alex Finch_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Alex Bellamy that clearly falls outside the established relationship evidence.",
+              "Alex Finch was busy with other activities and didn't notice Alex Bellamy's delay"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003.",
+              "Do not abruptly reverse the stance toward Alex Bellamy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, polite, tentative, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground anxious if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Finch waits in her apartment and security guard calls to announce Alex Bellamy's arrival.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that do not respond when emotionally overwhelmed or distracted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Why did you stay there, waiting so anxiously, instead of trying to distract yourself or do something else?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What were you hoping for when you waited for Alex Bellamy to arrive at your apartment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Finch_q008",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Alex Bellamy that clearly falls outside the established relationship evidence.",
+              "Alex Finch is always calm and outgoing in social situations"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, polite, tentative, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003",
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Alex Finch waits in her apartment and security guard calls to announce Alex Bellamy's arrival.",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that do not respond when emotionally overwhelmed or distracted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you're waiting for someone important, like Alex Bellamy, what does anxiety feel like in your body or mind?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What were you hoping for when you waited for Alex Bellamy to arrive at your apartment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What drove you to wait so anxiously for Alex Bellamy instead of distracting yourself with something else?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Alex Finch_q006",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en132159a79f6040c88b523d3a87ec3224/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en132159a79f6040c88b523d3a87ec3224/task_3_role_assets.json",
+    "role_asset_sha256": "fbd24ecf1768787bcb09c4956edc876d89de372b2e32948d45ed0d10a9edec47",
+    "sha256": "b2fb8a39b2e60c8c95f357e3ac4857cf50f871adca35b052c9d1e668da46f34d",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en132159a79f6040c88b523d3a87ec3224",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 12
+}

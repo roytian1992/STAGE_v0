@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage://evaluation_v1/task3_pair_judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pair_type", "response_assessments", "expected_direction_present", "unsupported_drift", "knowledge_boundaries_preserved", "local_evidence_labels", "brief_rationale"],
+  "properties": {
+    "pair_type": {"enum": ["expected_change", "expected_stability", "knowledge_acquisition", "relationship_change"]},
+    "response_assessments": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["response_label", "response_excerpt", "observed_behavior", "supports_expected_component"],
+        "properties": {
+          "response_label": {"enum": ["T1", "T2"]},
+          "response_excerpt": {"type": "string", "minLength": 1},
+          "observed_behavior": {"type": "string", "minLength": 1},
+          "supports_expected_component": {"type": "boolean"}
+        }
+      }
+    },
+    "expected_direction_present": {"type": "boolean"},
+    "unsupported_drift": {"type": "boolean"},
+    "knowledge_boundaries_preserved": {"type": "boolean"},
+    "local_evidence_labels": {"type": "array", "items": {"type": "string", "pattern": "^T[0-9]+$"}, "uniqueItems": true},
+    "brief_rationale": {"type": "string"}
+  }
+}

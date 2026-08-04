@@ -1,0 +1,27 @@
+id: task2_answer_judge
+category: evaluation
+name: Task 2 answer judge
+description: Independently judge answer correctness and citation support.
+task_variables:
+  - {name: question, required: true}
+  - {name: reference_answer, required: true}
+  - {name: reference_evidence_or_reason, required: true}
+  - {name: candidate_answer, required: true}
+  - {name: cited_passage_labels, required: true}
+  - {name: retrieved_passages, required: true}
+static_variables: []
+template: |-
+  Independently evaluate one screenplay QA answer. The candidate's model and dataset condition are intentionally hidden.
+  <question>{question}</question>
+  <reference_answer>{reference_answer}</reference_answer>
+  <reference_evidence_or_reason>{reference_evidence_or_reason}</reference_evidence_or_reason>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+  <cited_passage_labels>{cited_passage_labels}</cited_passage_labels>
+  <retrieved_passages>{retrieved_passages}</retrieved_passages>
+
+  Set answer_correct=true only when the candidate conveys the reference answer's required facts without a material contradiction. Accept equivalent wording and concise answers; reject a missing required fact, wrong entity/event/relation, unsupported guess, or an insufficiency response when the supplied reference establishes the answer.
+
+  Judge citation_quality separately using only passages named in cited_passage_labels: fully_supported means the citations support every material factual part of the candidate; partially_supported means they support some but not all; unsupported means they do not support the material answer; no_citation means the list is empty. Correctness is measured against the reference, not against retrieval success. Return a short audit rationale without hidden reasoning.
+
+  Return only JSON with exactly these fields:
+  {{"answer_correct":true,"citation_quality":"fully_supported","brief_rationale":"..."}}

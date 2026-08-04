@@ -1,0 +1,18 @@
+id: task1_development_cluster_judge
+category: evaluation
+name: Task 1 development cluster judge
+description: Cluster repeated predicted developments across one character trajectory without gold.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: ordered_developments, required: true}
+  - {name: allowed_development_refs, required: true}
+static_variables: []
+template: |-
+  Cluster the ordered predicted developments for "{focal_character}" without using gold answers.
+  <ordered_developments>{ordered_developments}</ordered_developments>
+  <allowed_development_refs>{allowed_development_refs}</allowed_development_refs>
+
+  Partition every allowed reference into exactly one PD1, PD2, ... semantic cluster. Wording variants of the same target, before-state, after-state, and change direction belong together. Different targets, directions, or materially different changes remain separate. Do not assign gold IDs and do not score correctness.
+
+  Return only JSON:
+  {{"development_clusters":[{{"cluster_id":"PD1","members":["instance-id|P3"],"brief_rationale":"same predicted change"}}]}}

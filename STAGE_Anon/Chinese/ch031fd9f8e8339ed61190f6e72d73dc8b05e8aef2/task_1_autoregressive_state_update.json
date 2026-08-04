@@ -1,0 +1,208 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 5,
+    "trajectories": 1
+  },
+  "language": "Chinese",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate",
+    "current_state_reference_coverage_accumulation_gap",
+    "development_reference_coverage_accumulation_gap"
+  ],
+  "movie_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_autoregressive_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 186,
+    "sha256": "f0848a3223eae5848dfa33170e19b91c58b89d2917e9ff922b6408d3ed2f3617"
+  },
+  "setting": "autoregressive_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "杨杰"
+      ],
+      "character": "杨杰",
+      "character_id": "entity-5bc45319081483be344d",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-0b86b88c9d35ba09476f",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-0b86b88c9d35ba09476f"
+          },
+          "instance_id": "task1-instance-ea803730f45f7dc2f5b1",
+          "model_input": {
+            "previous_state_source": "empty"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 44,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-c928c8467e3b660e1ff8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-c928c8467e3b660e1ff8"
+          },
+          "instance_id": "task1-instance-10ccfd8b8f0baab72743",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-0b86b88c9d35ba09476f",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 89,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 44
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-b8d3de6a016677960a64",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-b8d3de6a016677960a64"
+          },
+          "instance_id": "task1-instance-105a489293416d4b55ec",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-c928c8467e3b660e1ff8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 129,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 89
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-02522f1c3eeb6f53bfeb",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-02522f1c3eeb6f53bfeb"
+          },
+          "instance_id": "task1-instance-4b2592b2842413cd2dd7",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-b8d3de6a016677960a64",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 131,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 129
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-7b81091d2f0e0ad44a07",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-7b81091d2f0e0ad44a07"
+          },
+          "instance_id": "task1-instance-cef72c4374370b769a88",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-02522f1c3eeb6f53bfeb",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 179,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 131
+          },
+          "sequence_index": 5
+        }
+      ],
+      "initial_state": [],
+      "trajectory_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2::entity-5bc45319081483be344d"
+    }
+  ]
+}

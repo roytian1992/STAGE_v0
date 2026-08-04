@@ -1,0 +1,29 @@
+id: task1_prediction_zh
+category: evaluation
+name: Task 1 rolling prediction zh
+description: 更新紧凑的角色状态、阶段发展和未决线索记忆。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_checkpoint_scene_order, required: true}
+  - {name: block_end_scene_order, required: true}
+  - {name: checkpoint_at_block_end, required: true}
+  - {name: prior_scored_memory, required: true}
+  - {name: private_unscored_memory, required: true}
+  - {name: screenplay_block, required: true}
+static_variables: []
+template: |-
+  按时间顺序追踪“{focal_character}”（别名：{aliases}）。上一正式 checkpoint 场次：{previous_checkpoint_scene_order}；当前 block 结束场次：{block_end_scene_order}；block 末尾是否为正式 checkpoint：{checkpoint_at_block_end}。
+  <prior_scored_memory>{prior_scored_memory}</prior_scored_memory>
+  <private_unscored_memory>{private_unscored_memory}</private_unscored_memory>
+  <screenplay_block>{screenplay_block}</screenplay_block>
+
+  只能根据模型自己的先前记忆和当前剧本 block 重写完整记忆。三类内容必须互斥，每条只表达一个可独立判断的事实：
+  - current_state：block 结束时仍成立、对角色轨迹重要的状态，最多 8 条。仍成立的旧状态尽量原文保留；已解除、被取代、仅是瞬时动作或短暂情绪的必须删除。
+  - developments_since_previous_checkpoint：自上一正式 checkpoint 后已经生效的重要“之前 -> 现在”变化，最多 4 条。静态事实、普通动作、未来可能性和开放问题不得放入这里。
+  - unresolved_threads：已有证据但结果尚未确定、后续可能改变角色状态的未决线索，最多 6 条。它只作为下一轮私有记忆，不参与 checkpoint 计分；线索解决后必须删除或转入前两类。
+
+  优先保留少量、显著、互不重复且有直接证据的条目；不要罗列剧情摘要、同义关系描述或为了凑满上限而补充。每条只能引用已经读过的场次。非正式 checkpoint 的 rolling call 也返回完整三字段记忆。
+
+  只返回以下精确 JSON：
+  {{"current_state":[{{"claim":"...","evidence_scene_orders":[1]}}],"developments_since_previous_checkpoint":[{{"claim":"...","evidence_scene_orders":[1]}}],"unresolved_threads":[{{"claim":"...","evidence_scene_orders":[1]}}]}}

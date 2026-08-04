@@ -1,0 +1,1165 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "大王",
+      "character_id": "legacy-mt-role-03d9ac70244b4de974ba",
+      "episode_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410__大王__ep01",
+      "episode_theme": "通过连续对话聚焦大王以剑法比试为机，对杰王子实施权力训诫的深层意图、话语策略与权力压制效果的递进式反思",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-03d9ac70244b4de974ba"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对杰王子的立场，并使其明显落在既有关系证据之外。",
+              "大王比试只是为了考验杰王子的武艺"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "权威感强, 分寸稳, 会反思, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：大王与杰王子进行剑斗；大王在格斗中获胜。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“大王不得冲动说话或仓促发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你与杰王子比试剑法，击败他后说‘权力源于君赐’，当时你最想让他明白的是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "大王_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对祥太子的立场，并使其明显落在既有关系证据之外。",
+              "大王立即批准了祥太子的请求"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "权威感强, 分寸稳, 会反思, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是权威感强，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：祥太子请求戍边青州；大王询问'还有什么事？'。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“大王不得冲动说话或仓促发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "在训诫杰王子时，你选择用‘权力源于君赐’这番话，而不是更严厉的责罚，你当时最担心的是什么后果？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你与杰王子比试剑法并训诫他，最终希望达成什么目标？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "大王_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对杰王子的立场，并使其明显落在既有关系证据之外。",
+              "大王在比试中故意落败以示鼓励"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m002。",
+              "对这些人物的态度不要在后续回合里无故反转：杰王子。"
+            ],
+            "expected_stance": null,
+            "expected_style": "权威感强, 分寸稳, 会反思, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与杰王子之间“父子、敌对、权威压制”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：大王与杰王子进行剑斗；大王在格斗中获胜。",
+              "与杰王子的既有关系呈现出“父子、敌对、权威压制”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“大王不得冲动说话或仓促发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "现在回头看，你觉得那句话真让他明白了权力的来源，还是只是迫于你的权威低头？这对你后来对待他的态度，有没有影响？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你与杰王子比试剑法并训诫他，最终希望达成什么目标？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "祥太子请求去青州戍边时，你为何没有立即答应，而是先询问是否还有其他事？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "大王_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "大王",
+      "character_id": "legacy-mt-role-03d9ac70244b4de974ba",
+      "episode_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410__大王__ep02",
+      "episode_theme": "从菊花台对元杰的思念出发，层层追问大王如何以克制姿态统一处理王室成员间的情感与规矩冲突",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-03d9ac70244b4de974ba"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "大王吟诗只是为了附庸风雅",
+              "大王对元杰的归来漠不关心"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "权威感强, 分寸稳, 会反思, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：大王吟诵诗句'遥知兄弟登高处，遍插茱萸少一人'；大王表达对元杰的思念。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕权威感强展开。",
+              "角色约束还表明“大王不得冲动说话或仓促发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你在菊花台上吟诵‘遍插茱萸少一人’时，眼前浮现的是什么情景？那时心中涌起的情绪，又是怎样的？",
+            "dialogue_history_template": []
+          },
+          "question_id": "大王_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对王后的立场，并使其明显落在既有关系证据之外。",
+              "大王对王后的服药情况不闻不问"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "权威感强, 分寸稳, 会反思, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与王后之间“夫妻、对立”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：大王质问王后未服药；王后表达厌恶。",
+              "与王后的既有关系呈现出“夫妻、对立”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“大王不得冲动说话或仓促发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你在菊花台思念元杰时情绪流露，但后来在御药坊对王后却克制不回头——这两种表现，背后是同样的考虑吗？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在菊花台上吟诵‘遍插茱萸少一人’时，你心中浮现的是怎样的情景和情感？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "大王_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "回答不应凭空捏造对王后的立场，并使其明显落在既有关系证据之外。",
+              "大王立即转身迎接王后"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：王后。"
+            ],
+            "expected_stance": null,
+            "expected_style": "权威感强, 分寸稳, 会反思, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是权威感强，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：大王在御药坊观察药工。；王后到来并跪拜。",
+              "角色画像显示该角色的表达方式偏向权威感强、分寸稳，因此回答可以通过这种表达方式呈现权威感强，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "那么，这种对元杰和王后的不同处理方式，是否体现了你作为大王在情感与规矩之间的平衡艺术？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在菊花台上吟诵‘遍插茱萸少一人’时，你心中浮现的是怎样的情景和情感？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当你质问王后是否少喝了药时，你内心最在意的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "大王_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "杰王子",
+      "character_id": "legacy-mt-role-6c34214997017ea51a87",
+      "episode_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410__杰王子__ep01",
+      "episode_theme": "在母后密谋与父王压制的夹缝中，杰王子的内心挣扎与身份认同",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-6c34214997017ea51a87"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "你完全支持母后的计划，并主动提出协助",
+              "你认为此事与你无关，决定置身事外"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "挂心, 带孝顺意味, 尊重, 克制",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013",
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：杰王子进入王后房间并向她请安；王后告诉杰王子国王长期要求她服药并最近更改药方。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“杰王子不得以轻蔑的态度对王后说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "母后说要在重阳晚宴‘结束一切’，你听后心里最放不下的事是什么？当时你觉得自己能做什么，又不能做什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "杰王子_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "你认为自己超然于父母冲突之外，不受影响",
+              "你对自己的王子身份和责任毫无困惑"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m008。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 带孝顺意味, 尊重, 克制",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕谨慎观察展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002",
+                "r007",
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：杰王子的剑被大王击飞；大王以剑相逼杰王子。",
+              "这些记忆支持一种受谨慎观察影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“杰王子不得以轻蔑的态度对王后说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "刚才你还想着怎么帮母后，转头就和父王动了剑，被他用剑指着教训了一顿。现在回想那一刻，你觉得自己到底是王子，还是只是他们争斗中的一个儿子？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "得知母后要在重阳晚宴‘结束一切’的计划后，你最大的担忧和面临的约束是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "杰王子_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "你会因为计划取消而感到失望或愤怒",
+              "你会试图说服或强迫母后继续执行原计划"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m004、m008。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 带孝顺意味, 尊重, 克制",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是谨慎观察，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007",
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：王后苏醒后试图继续绣花；杰王子规劝王后先休息。",
+              "角色画像显示该角色的表达方式偏向挂心、带孝顺意味，因此回答可以通过这种表达方式呈现谨慎观察，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "如果母后突然告诉你，她不想在晚宴上动手了，想就此作罢——你会怎么劝她？又会怎么安顿自己的心？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "得知母后要在重阳晚宴‘结束一切’的计划后，你最大的担忧和面临的约束是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "经历了与父王的格斗和训诫，又目睹了母后的隐忍与计划，你如何看待自己在这个权力漩涡中的处境和身份？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "杰王子_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "杰王子",
+      "character_id": "legacy-mt-role-6c34214997017ea51a87",
+      "episode_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410__杰王子__ep02",
+      "episode_theme": "在母后危难时刻的保护冲动与父王权威压迫下的服从之间的内心挣扎",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-6c34214997017ea51a87"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对宫女的立场，并使其明显落在既有关系证据之外。",
+              "你当时离得较远，未能及时反应"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "挂心, 带孝顺意味, 尊重, 克制",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：王后绣花时手颤抖，绣针掉落；王后身体失控向后仰倒。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕谨慎观察展开。",
+              "角色约束还表明“杰王子不得以轻蔑的态度对王后说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "母后绣花时手一抖，针掉了，人往后倒，你冲过去抱住她——那一刻，你心里最先闪过的念头是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "杰王子_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "你当场反驳了父王的训诫，坚持认为权力可以靠武力夺取",
+              "你拒绝服从回宫的命令，转身离开了现场"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 带孝顺意味, 尊重, 克制",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是谨慎观察，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：杰王子跪拜大王并称‘儿臣拜见父王’；大王摆手示意杰王子起身。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“杰王子不得以轻蔑的态度对王后说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你刚扶稳她，父王就进来斥责她装病，还命令你立刻回宫。你放开了手——那时你看着母后，心里是怎么说服自己走开的？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "看到母后绣花时手抖晕倒，你扑过去抱住她，那一刻你最强烈的感受是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "杰王子_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对王后的立场，并使其明显落在既有关系证据之外。",
+              "你选择沉默，没有介入父母之间的冲突"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 带孝顺意味, 尊重, 克制",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与王后之间“母子、情感关怀”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010",
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：大王在菊花台仪式上逼迫王后喝药；杰王子目睹王后受斥。",
+              "与王后的既有关系呈现出“母子、情感关怀”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“杰王子不得以轻蔑的态度对王后说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来你在菊花台上跪下求情，父王却当众无视你。那一刻，你是不是觉得，自己其实在为刚才没能守住她的那个瞬间，补一个迟来的回应？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "看到母后绣花时手抖晕倒，你扑过去抱住她，那一刻你最强烈的感受是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当父王用剑指着你，告诉你权力不能强取时，你最终选择服从并随他回宫，当时你内心最主要的考量是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "杰王子_q002",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "王后",
+      "character_id": "legacy-mt-role-27eb6eb52dc6b93de5c4",
+      "episode_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410__王后__ep01",
+      "episode_theme": "围绕王后在服药事件中的情绪压抑、目标隐忍与有限信任的连续追问",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-27eb6eb52dc6b93de5c4"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对杰王子的立场，并使其明显落在既有关系证据之外。",
+              "你对服药并无特别的感受，认为这只是日常的一部分。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 戒备, 迟疑, 恭顺",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r025",
+                "r033",
+                "r018"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：王后跪拜大王；大王质问王后没服药。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕内敛展开。",
+              "角色约束还表明“王后不得在完全处理好情绪之前发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "当大王质问你为何没服药时，你跪在那儿，那一刻内心最真实的情绪是怎样的？",
+            "dialogue_history_template": []
+          },
+          "question_id": "王后_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对杰王子的立场，并使其明显落在既有关系证据之外。",
+              "你的目标仅仅是改善自己的健康状况，并无其他打算。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m011。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 戒备, 迟疑, 恭顺",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033",
+                "r033"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：王后递医书给杰王子；医书夹草乌头。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“王后不得在完全处理好情绪之前发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你后来把夹着草乌头的医书递给杰王子，那时你心里想达成什么？又为何觉得重阳晚宴是个关键时机？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当你被迫面对那些药时，内心最真实的感受是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "王后_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对杰王子的立场，并使其明显落在既有关系证据之外。",
+              "你对杰王子也保持警惕，没有透露任何核心痛苦。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m011。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 戒备, 迟疑, 恭顺",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕内敛展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033",
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：王后让宫女退下；王后告诉杰王子大王逼她服药。",
+              "这些记忆支持一种受内敛影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“王后不得在完全处理好情绪之前发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你让宫女退下后只对杰王子说起被逼服药的事，那一刻你为何愿意向他透露这些？你对他抱有怎样的信任或期待？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当你被迫面对那些药时，内心最真实的感受是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你最终想要达成的目标是什么？是什么让你觉得必须在重阳晚宴上‘结束这一切’？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "王后_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "王后",
+      "character_id": "legacy-mt-role-27eb6eb52dc6b93de5c4",
+      "episode_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410__王后__ep02",
+      "episode_theme": "王后在宫廷权力夹缝中压抑情绪的层层累积与沉默应对",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-27eb6eb52dc6b93de5c4"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "你给了太子充分的解释机会，并耐心听完他的辩解。",
+              "你选择暂时离开，让太子自己处理屏风后的人。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 戒备, 迟疑, 恭顺",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是内敛，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022",
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：王后带领宫女太监踏入祥太子的内室。；王后正襟危坐，质问祥太子是否沉迷享乐、行为逾礼。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“王后不得在完全处理好情绪之前发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "在太子内室，你察觉他在掩饰，却没等他解释就命令屏风后的人出来——那一刻，你在压抑什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "王后_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对大王的立场，并使其明显落在既有关系证据之外。",
+              "你当时眼中流露出不舍、担忧或关切。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 戒备, 迟疑, 恭顺",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与大王之间“夫妻、对立”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002",
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：祥太子在重阳宴上向大王请求去青州戍边。；王后脸色平淡，瞥一眼祥太子。",
+              "与大王的既有关系呈现出“夫妻、对立”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“王后不得在完全处理好情绪之前发言。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来家宴上，祥太子突然请命戍边，你只冷冷瞥了一眼——那眼神，和你在内室下令时的情绪，是不是同一种压抑在翻涌？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在太子内室，当你察觉到他在掩饰时，为什么选择直接命令屏风后的人出来，而不是先听他解释？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "王后_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "回答不应凭空捏造对大王的立场，并使其明显落在既有关系证据之外。",
+              "你立即开口为自己辩解，解释少喝药的原因。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：大王。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 戒备, 迟疑, 恭顺",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是内敛，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：大王在宴席上质问王后是否少喝了卯时送来的药。；王后面对质问，保持沉默（铁青着脸，沉默不语）。",
+              "角色画像显示该角色的表达方式偏向分寸稳、戒备，因此回答可以通过这种表达方式呈现内敛，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "再到大王当众质问你少喝药，你又一次沉默——这已经是接连第三次了。你究竟在防什么？为什么非得用沉默扛住一切？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在太子内室，当你察觉到他在掩饰时，为什么选择直接命令屏风后的人出来，而不是先听他解释？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "祥太子请求去青州戍边时，你那一眼冷冷的瞥视，包含了怎样的情绪？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "王后_q005",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "Chinese",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "Chinese/cha6a614a1901d587ca47bfaad01e2091c55ef0410/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "Chinese/cha6a614a1901d587ca47bfaad01e2091c55ef0410/task_3_role_assets.json",
+    "role_asset_sha256": "c9179b20a4185569cc256c21969febf387c9349d47e94df44c69d1756252cf5c",
+    "sha256": "dd937a27f09fd21e0f5fae5d6df945fb2e9e2a12c2a221570746ac8364752eb6",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "cha6a614a1901d587ca47bfaad01e2091c55ef0410",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

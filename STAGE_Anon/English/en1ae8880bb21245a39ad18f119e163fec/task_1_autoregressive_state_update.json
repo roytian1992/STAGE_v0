@@ -1,0 +1,180 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 4,
+    "trajectories": 1
+  },
+  "language": "en",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate",
+    "current_state_reference_coverage_accumulation_gap",
+    "development_reference_coverage_accumulation_gap"
+  ],
+  "movie_id": "en1ae8880bb21245a39ad18f119e163fec",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_autoregressive_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 76,
+    "sha256": "144c2c3803dc5232f0d50bac49dc55dffc76b5181eaa56b7fe88ad40f2e7f0e0"
+  },
+  "setting": "autoregressive_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Leon"
+      ],
+      "character": "Leon",
+      "character_id": "entity-aeea827a3f9e729fb8c3",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-a653d76c1ed4fb5115e1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-a653d76c1ed4fb5115e1"
+          },
+          "instance_id": "task1-instance-f5dbcb532666028d9188",
+          "model_input": {
+            "previous_state_source": "empty"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 3,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-db542787fa181b17a862",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-db542787fa181b17a862"
+          },
+          "instance_id": "task1-instance-e0cf570aa98ff64e1274",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-a653d76c1ed4fb5115e1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 7,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 3
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-17f52d9196dff0be39d4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-17f52d9196dff0be39d4"
+          },
+          "instance_id": "task1-instance-bff094ec092c59955231",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-db542787fa181b17a862",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 54,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 7
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-d01494ae9716c63b5a21",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-d01494ae9716c63b5a21"
+          },
+          "instance_id": "task1-instance-9b58540d7479702dd009",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-17f52d9196dff0be39d4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 72,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 54
+          },
+          "sequence_index": 4
+        }
+      ],
+      "initial_state": [],
+      "trajectory_id": "en1ae8880bb21245a39ad18f119e163fec::entity-aeea827a3f9e729fb8c3"
+    }
+  ]
+}

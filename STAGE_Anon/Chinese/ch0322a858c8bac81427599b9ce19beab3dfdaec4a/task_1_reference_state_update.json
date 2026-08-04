@@ -1,0 +1,332 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 3,
+    "current_state_reference_claims": 12,
+    "development_reference_claims": 5,
+    "trajectories": 1
+  },
+  "language": "zh",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 15,
+    "sha256": "3247ea045665b476c981b35488683cec90a0dfb9692c91752a49854fb4f76a38"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "林远",
+        "帮主",
+        "林远",
+        "顾行",
+        "顾行",
+        "顾行",
+        "顾行"
+      ],
+      "character": "林远",
+      "character_id": "entity-811a43f62a59dc8b01cf",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-4945e7194ce9b5fb0a07",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "林远以山贼帮主身份自居，强调领导地位不容挑战，维持权威形象",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "task1-state-b90b0cd4f3874da73c9b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "林远在柳青面前瞬间屈服求饶，暴露其权威外强中干的本质",
+                "development_id": "task1-development-115d8d5ad5ea163e31d7",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-526499bbaeba60483b29",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-7c9ea9cd638e6cfbd4ed",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "林远意识到沈月曾在其心中留下一滴眼泪，感受到她的伤心",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "task1-state-92bd203127fecf18baf2"
+              },
+              {
+                "claim": "以顾行身份出现，身穿金甲圣衣，手持金箍棒，正式确立其神圣身份",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-b85d62e9a5ce9979ba18"
+              },
+              {
+                "claim": "顾行从克制压抑的状态转变为因悲痛而失控复仇",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-cf5e50bd460b78ac3b3e"
+              },
+              {
+                "claim": "顾行宣称已皈依佛门，将取经作为唯一使命，拒绝情欲",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-27755ab618cfb9a4592c"
+              },
+              {
+                "claim": "在沈月面前否认自己是林远，坚称自己是顾行顾行",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-ec6b73529564c6ba11ef"
+              },
+              {
+                "claim": "顾行主动跪拜玄明，恢复师徒关系，表达悔过与皈依，并将保护玄明视为首要责任，在危机中优先选择救玄明，表现出尊师重道的态度，师徒关系持续稳定",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-18cbcdf6206da7f6c5e9"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "顾行恢复与玄明的师徒关系，从暴力对抗转变为跪拜认错并主动承担保护责任",
+                "development_id": "task1-development-08ec64c3afc004238981",
+                "evidence_scene_orders": [
+                  10,
+                  14
+                ]
+              },
+              {
+                "claim": "顾行正式确立顾行身份，完成从凡人向神圣存在的身份转变",
+                "development_id": "task1-development-f5a0ebbe2d44cc401840",
+                "evidence_scene_orders": [
+                  13,
+                  14
+                ]
+              },
+              {
+                "claim": "顾行公开宣称皈依佛门，确立护送玄明取经为唯一使命，明确拒绝情欲",
+                "development_id": "task1-development-0a76b8669732ad667281",
+                "evidence_scene_orders": [
+                  14
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-f75dd9f190b08145c4a0",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "林远以山贼帮主身份自居，强调领导地位不容挑战，维持权威形象",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-4945e7194ce9b5fb0a07",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 14,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-0f821b6cb4318a7745ce",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "顾行以顾行身份自居，身穿金甲圣衣，手持金箍棒，正式确立其神圣身份",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-b85d62e9a5ce9979ba18"
+              },
+              {
+                "claim": "顾行宣称已皈依佛门，将护送玄明取经作为唯一使命，拒绝情欲",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "task1-state-27755ab618cfb9a4592c"
+              },
+              {
+                "claim": "顾行主动恢复与玄明的师徒关系，视保护玄明为首要责任，在危机中优先救玄明，师徒关系稳定",
+                "evidence_scene_orders": [
+                  14,
+                  15
+                ],
+                "state_id": "task1-state-18cbcdf6206da7f6c5e9"
+              },
+              {
+                "claim": "顾行虽以顾行身份行动，但被世人误解、贬低为廉价扮演者或怪人",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "task1-state-66857a53c5320b52bf8e"
+              },
+              {
+                "claim": "顾行在完成善举后由低头缓行转为昂首挺胸、金箍棒扛肩，象征其精神解脱与自我接纳",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "task1-state-6b3de0d79f3e05af6674"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "顾行由否认林远身份的抗拒状态，发展为通过行动完成自我救赎与身份整合",
+                "development_id": "task1-development-c4d49bb7974c823a0c6c",
+                "evidence_scene_orders": [
+                  15
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-ec068906c4a113fc7aa3",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "林远意识到沈月曾在其心中留下一滴眼泪，感受到她的伤心",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "以顾行身份出现，身穿金甲圣衣，手持金箍棒，正式确立其神圣身份",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "顾行从克制压抑的状态转变为因悲痛而失控复仇",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "顾行宣称已皈依佛门，将取经作为唯一使命，拒绝情欲",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "在沈月面前否认自己是林远，坚称自己是顾行顾行",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "顾行主动跪拜玄明，恢复师徒关系，表达悔过与皈依，并将保护玄明视为首要责任，在危机中优先选择救玄明，表现出尊师重道的态度，师徒关系持续稳定",
+                "evidence_scene_orders": [
+                  14
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7c9ea9cd638e6cfbd4ed",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 15,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 14
+          },
+          "sequence_index": 3
+        }
+      ],
+      "trajectory_id": "ch0322a858c8bac81427599b9ce19beab3dfdaec4a::entity-811a43f62a59dc8b01cf"
+    }
+  ]
+}

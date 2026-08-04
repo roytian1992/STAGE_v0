@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage://evaluation/task1_lineage_decisions",
+  "title": "Task 1 reviewed lineage decisions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "movie_id", "reviewer_id", "completed_at", "characters"],
+  "properties": {
+    "schema_version": {"const": "stage_task1_lineage_decisions_v1"},
+    "movie_id": {"type": "string", "minLength": 1},
+    "reviewer_id": {"type": "string", "minLength": 1},
+    "completed_at": {"type": "string", "minLength": 1},
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["character_id", "character", "states", "developments"],
+        "properties": {
+          "character_id": {"type": "string", "minLength": 1},
+          "character": {"type": "string", "minLength": 1},
+          "states": {"type": "array"},
+          "developments": {"type": "array"}
+        }
+      }
+    }
+  }
+}

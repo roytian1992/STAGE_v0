@@ -1,0 +1,38 @@
+id: task3_rubric_construction
+category: benchmark_construction
+name: Task 3 rubric construction
+description: Build a compact response-judge rubric for one checkpoint role-playing prompt.
+task_variables:
+  - name: character
+    required: true
+  - name: current_user_turn
+    required: true
+  - name: actor_context_pack
+    required: true
+  - name: rubric_candidates
+    required: true
+  - name: future_candidates
+    required: true
+static_variables: []
+template: |-
+  为角色“{character}”在当前 checkpoint 的 single-turn 回复构建 evaluator rubric。
+  <current_user_turn>{current_user_turn}</current_user_turn>
+  <actor_context_pack>{actor_context_pack}</actor_context_pack>
+  <rubric_candidates>{rubric_candidates}</rubric_candidates>
+  <future_candidates>{future_candidates}</future_candidates>
+
+  rubric 应描述可接受的当前立场、相关记忆、明确矛盾、知识边界和风格要求，而不是写唯一参考回复。
+  不要把 expected stance 或 gold summary 当成 actor 已经看到的文本。future negatives 只能从给定
+  F 标签中选择与本题实际相关的关键未来信息。删去无关、重复或证据不足的候选。
+  如果 future_candidates 为空，salient_future_negatives 必须返回空列表。
+
+  只返回 JSON：
+  {{
+    "expected_stances": ["..."],
+    "acceptable_variations": ["..."],
+    "required_or_relevant_memories": ["..."],
+    "contradictions": ["..."],
+    "unknown_at_checkpoint": ["..."],
+    "salient_future_negatives": [{{"claim": "...", "source_future_local_ids": ["F1"]}}],
+    "style_requirements": ["..."]
+  }}

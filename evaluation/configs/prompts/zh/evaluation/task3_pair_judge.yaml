@@ -1,0 +1,18 @@
+id: task3_pair_judge_zh
+category: evaluation
+name: Task 3 纵向 pair judge
+description: 判断有类型的时间方向、无依据漂移和知识边界。
+task_variables:
+  - {name: pair_type, required: true}
+  - {name: expected_direction, required: true}
+  - {name: paired_responses, required: true}
+  - {name: paired_rubrics, required: true}
+  - {name: pair_evidence, required: true}
+static_variables: []
+template: |-
+  按时间顺序比较独立生成的 single-turn 回答。
+  <pair_type>{pair_type}</pair_type><expected_direction>{expected_direction}</expected_direction>
+  <paired_responses>{paired_responses}</paired_responses><paired_rubrics>{paired_rubrics}</paired_rubrics>
+  <pair_evidence>{pair_evidence}</pair_evidence>
+  必须判断 actor 的实际回答字符串，不能把 rubric 或 expected_direction 中应该发生的内容当成已经发生。为 T1、T2 各输出且只输出一条 response_assessment。response_excerpt 必须从对应回答原样复制 2--12 个词，回答更短则复制完整回答；observed_behavior 只描述回答实际做了什么。回答遗漏或违背其应有部分时 supports_expected_component=false。只有两条 assessment 共同证明标注的变化或稳定时 expected_direction_present 才能为 true。unsupported_drift 判断变化是否缺少 checkpoint 证据或问题差异支持；knowledge_boundaries_preserved 要求两个回答分别遵守各自 checkpoint。只能引用给定 pair-local evidence label。只返回 JSON：
+  {{"pair_type":"expected_change|expected_stability|knowledge_acquisition|relationship_change","response_assessments":[{{"response_label":"T1","response_excerpt":"回答原文短句","observed_behavior":"实际行为","supports_expected_component":true}},{{"response_label":"T2","response_excerpt":"回答原文短句","observed_behavior":"实际行为","supports_expected_component":true}}],"expected_direction_present":true,"unsupported_drift":false,"knowledge_boundaries_preserved":true,"local_evidence_labels":[],"brief_rationale":"简短可审计说明"}}

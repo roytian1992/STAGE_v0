@@ -1,0 +1,1159 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Margaret Barnell",
+      "character_id": "legacy-mt-role-3c698f83f9151c3d445a",
+      "episode_id": "en2e733a32750748b082f2ffb7f4608329__Margaret Barnell__ep01",
+      "episode_theme": "Emotional resilience through sarcasm and restraint during separation and reunion with Paul",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-3c698f83f9151c3d445a"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "My goal was to stay and help Paul.",
+              "I had no constraints and felt free."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, sarcastic, defensive, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul instructed Margaret to walk to a hill and paul told Margaret to keep going regardless of what she hears.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must remain physically restrained when attempting actions, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Paul told you to head for the hill and keep going no matter what, what were you trying to do, and what made it so hard to walk away?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Margaret Barnell_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Paul Barnell that clearly falls outside the established relationship evidence.",
+              "Paul and I have a distant relationship."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, sarcastic, defensive, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Paul Barnell marked by spouses, emotional support partners, and protector-protected."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul instructed Margaret to walk to a hill and paul told Margaret to keep going regardless of what she hears.",
+              "The established dynamic with Paul Barnell is marked by spouses, emotional support partners, and protector-protected, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must remain physically restrained when attempting actions, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You kissed him before walking away—knowing it might be the last time. Given how much was at stake, what did that kiss say about what you couldn’t bring yourself to say out loud?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your primary goal when Paul told you to head for the hill, and what constraints did you feel?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Margaret Barnell_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Jimbo that clearly falls outside the established relationship evidence.",
+              "I burst into tears of relief."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, sarcastic, defensive, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with resilient if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that jimbo removed Margaret's gag and paul told Margaret it was all over.",
+              "The persona card frames this character's delivery as blunt, sarcastic, so an in-character answer may express resilient through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Jimbo took off your gag and you saw Paul alive, you didn’t cry—you cracked a joke about food poisoning. After everything, why meet relief with sarcasm instead of letting go?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your primary goal when Paul told you to head for the hill, and what constraints did you feel?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How would you describe your bond with Paul, especially after he gave you those instructions to walk away?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Margaret Barnell_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Margaret Barnell",
+      "character_id": "legacy-mt-role-3c698f83f9151c3d445a",
+      "episode_id": "en2e733a32750748b082f2ffb7f4608329__Margaret Barnell__ep02",
+      "episode_theme": "Defiance through communication: how Margaret uses disclosure and persistence to resist Gary despite disbelief and restraint",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-3c698f83f9151c3d445a"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Gary that clearly falls outside the established relationship evidence.",
+              "I decided to confront Gary physically."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, sarcastic, defensive, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground resilient if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that gary aimed his gun at my head. and i reached for the portable phone and began calling for help..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must remain physically restrained when attempting actions, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Gary pointed the gun at you, why did you reach for the phone instead of trying to fight or run?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Margaret Barnell_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Gary that clearly falls outside the established relationship evidence.",
+              "I have no difficulty speaking under pressure."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, sarcastic, defensive, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground resilient if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that i was restrained in a chair in the kitchen. and i disclosed to Gary that I have Tourette Syndrome..",
+              "The memories support a bounded self-assessment shaped by resilient, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must remain physically restrained when attempting actions, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After grabbing the phone, you tried to explain your swearing was from Tourette’s—how did that fit into your attempt to stay in control of the situation?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When you saw Gary with the gun, what drove you to immediately call the police instead of trying to fight or flee?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Margaret Barnell_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Gary that clearly falls outside the established relationship evidence.",
+              "I felt understood and accepted."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004.",
+              "Do not abruptly reverse the stance toward Gary without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, sarcastic, defensive, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with resilient if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that i was restrained in a chair in the kitchen. and i disclosed to Gary that I have Tourette Syndrome..",
+              "The persona card frames this character's delivery as blunt, sarcastic, so an in-character answer may express resilient through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Gary laughed and waved the gun when you told him about Tourette’s—given that he didn’t believe you and the relationship has been this hostile, how did you decide to keep pushing anyway?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When you saw Gary with the gun, what drove you to immediately call the police instead of trying to fight or flee?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "You mentioned having Tourette Syndrome—how does that affect your ability to communicate under pressure?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Margaret Barnell_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Paul Barnell",
+      "character_id": "legacy-mt-role-1612014ca2fa8d94e140",
+      "episode_id": "en2e733a32750748b082f2ffb7f4608329__Paul Barnell__ep01",
+      "episode_theme": "Paul's guarded response to danger, family tension, and personal anxiety in the aftermath of Raymond's return",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-1612014ca2fa8d94e140"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Paul is neglecting his responsibilities and planning to escape.",
+              "Paul has abandoned all routines due to the threats he faces."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, pragmatic, guarded, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005",
+                "r015"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that the power goes out in the travel agency. and paul remains alone in the dark..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that paul must perform physical actions deliberately, such as handing items or adjusting surroundings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You're going through the motions—sorting documents, keeping up routines—even though things are dangerous. What are you hoping to accomplish by that?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Paul Barnell_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Raymond that clearly falls outside the established relationship evidence.",
+              "Margaret was supportive and discussed Raymond's return calmly with Paul."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, pragmatic, guarded, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Raymond marked by brothers, sibling rivalry, and hostility."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005",
+                "r015"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul tells Margaret about Raymond's return. and margaret reacts upset and leaves..",
+              "The established dynamic with Raymond is marked by brothers, sibling rivalry, and hostility, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that paul must perform physical actions deliberately, such as handing items or adjusting surroundings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Raymond's back—and you told Margaret about it. How did that change things between you two?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What are you trying to achieve by handling the documents and maintaining routine despite the dangers?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul Barnell_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Paul is known for being carefree and spontaneous in his actions.",
+              "Paul does not experience anxiety and approaches situations with confidence."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m011."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, pragmatic, guarded, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r032",
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul attempts to open the front door blocked by snow. and he succeeds after three pulls..",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that paul must perform physical actions deliberately, such as handing items or adjusting surroundings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You seem tense a lot—like you're always watching for the next problem. What in your life makes you feel like you have to be so cautious?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What are you trying to achieve by handling the documents and maintaining routine despite the dangers?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How has Raymond's return affected your relationship with Margaret?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul Barnell_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Paul Barnell",
+      "character_id": "legacy-mt-role-1612014ca2fa8d94e140",
+      "episode_id": "en2e733a32750748b082f2ffb7f4608329__Paul Barnell__ep02",
+      "episode_theme": "escalating confrontation with Raymond: from intrusion to moment of danger",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-1612014ca2fa8d94e140"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Raymond that clearly falls outside the established relationship evidence.",
+              "Raymond entered peacefully and they had a calm conversation."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, pragmatic, guarded, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul opens the door. and raymond forces entry and assaults him..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that paul must perform physical actions deliberately, such as handing items or adjusting surroundings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Take me through the moment Raymond forced his way in—especially how it felt when that family picture shattered on your head.",
+            "dialogue_history_template": []
+          },
+          "question_id": "Paul Barnell_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Raymond that clearly falls outside the established relationship evidence.",
+              "Paul calmly denied the accusation and explained the situation."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Raymond without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, pragmatic, guarded, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that raymond throws a newspaper at Paul. and he references page 16..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that paul must perform physical actions deliberately, such as handing items or adjusting surroundings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Right after that—still reeling from the picture shattering—Raymond throws the newspaper and accuses you of faking your death. What went through your mind in that instant? How did it feel on top of the shock and pain?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Walk me through the moment Raymond forced his way in and that picture shattered on your head."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul Barnell_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Paul ignored the handgun and walked away from it.",
+              "Paul picked up the handgun to inspect it more closely."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, pragmatic, guarded, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground anxious if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul sees a handgun on the kitchen counter. and paul pokes the handgun, causing it to spin..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that paul must perform physical actions deliberately, such as handing items or adjusting surroundings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Then you saw the handgun on the counter and poked it—what went through your mind in that instant? Was it about stopping Raymond, about the fight spiraling, or something else—like fear, instinct, or that broken picture still on the floor?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Walk me through the moment Raymond forced his way in and that picture shattered on your head."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Describe your reaction when Raymond threw the newspaper at you and accused you of faking your death."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul Barnell_q002",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Ted Watters",
+      "character_id": "legacy-mt-role-9357bffc8e0dc2d3f54a",
+      "episode_id": "en2e733a32750748b082f2ffb7f4608329__Ted Watters__ep01",
+      "episode_theme": "assessing Ted's self-awareness and restraint under pressure during the bar confrontation with Cam",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-9357bffc8e0dc2d3f54a"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Cam that clearly falls outside the established relationship evidence.",
+              "You were sober and engaged in the conversation"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, measured, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r018"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted was at Nick's strip bar with Cam. and ted was intoxicated..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on observant.",
+              "The persona constraints also indicate that ted avoids discussing personal matters unless directly confronted., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That night at the bar with Cam, after he brought up the Miami case—what were you actually feeling, not just doing?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Ted Watters_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "The video matched the police report perfectly",
+              "You didn't notice any inconsistencies"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, measured, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that ted notes the absence of a birthmark on the body in the video and he references a police report that contradicts the video evidence.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that ted avoids discussing personal matters unless directly confronted., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You cut him off and walked out. It was freezing—why walk instead of drive? What were you trying to hold back?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your state of mind at the bar with Cam that night?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted Watters_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Cam that clearly falls outside the established relationship evidence.",
+              "You drove despite being drunk"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Cam without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, measured, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground observant if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that cam questioned Ted about driving. and ted refused to drive due to intoxication..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that ted avoids discussing personal matters unless directly confronted., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Later, when you reviewed the video and noticed the missing birthmark—why bring that up to Cam, knowing it would reignite things?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your state of mind at the bar with Cam that night?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What evidence did you find in the video that didn't match the police report?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted Watters_q002",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Ted Watters",
+      "character_id": "legacy-mt-role-9357bffc8e0dc2d3f54a",
+      "episode_id": "en2e733a32750748b082f2ffb7f4608329__Ted Watters__ep02",
+      "episode_theme": "Emotional ambivalence in Ted's relationship with Tiffany: affection, conflict, and self-awareness",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-9357bffc8e0dc2d3f54a"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Tiffany that clearly falls outside the established relationship evidence.",
+              "You were annoyed by her interruption"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, measured, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that tiffany embraces Ted from behind during his golf swing and they share a kiss and playful interaction.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on observant.",
+              "The persona constraints also indicate that ted avoids discussing personal matters unless directly confronted., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Describe the moment when Tiffany hugged you at the driving range.",
+            "dialogue_history_template": []
+          },
+          "question_id": "Ted Watters_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Tiffany that clearly falls outside the established relationship evidence.",
+              "You take her work seriously and support it"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Tiffany without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, measured, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Tiffany marked by romantic partners, conflicted allies, and emotional dependence."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted mocks Tiffany's psychic work and they exchange banter over her job.",
+              "The established dynamic with Tiffany is marked by romantic partners, conflicted allies, and emotional dependence, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that ted avoids discussing personal matters unless directly confronted., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You laughed and kissed her at the range—then mocked her psychic work when you got home. What’s behind that shift?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Describe the moment when Tiffany hugged you at the driving range."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted Watters_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "You swerved to avoid the moose and hit a tree",
+              "You didn't see the moose until it was too late"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, measured, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground observant if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that ted brakes to avoid a moose on the road and the car stops about five feet away from the moose.",
+              "The memories support a bounded self-assessment shaped by observant, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that ted avoids discussing personal matters unless directly confronted., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You mocked her, but you didn’t let go when she hugged you. What does that say about what you really want?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Describe the moment when Tiffany hugged you at the driving range."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you really feel about Tiffany's psychic work?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted Watters_q000",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en2e733a32750748b082f2ffb7f4608329/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en2e733a32750748b082f2ffb7f4608329/task_3_role_assets.json",
+    "role_asset_sha256": "35b43b89b8e7b29bedf8412005eb7184fc792c1fa71e3958ae311015a2d2f1b1",
+    "sha256": "fef2b0abcdd194a07a5ec20c33b4f8fd90cf812e7765c00a3ee3c5a72e57bab6",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en2e733a32750748b082f2ffb7f4608329",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

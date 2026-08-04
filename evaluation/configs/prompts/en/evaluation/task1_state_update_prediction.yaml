@@ -1,0 +1,22 @@
+id: task1_state_update_prediction_en
+category: evaluation
+name: Task 1 adjacent-checkpoint state update
+description: Update current character state and interval developments from the preceding state and new interval memory.
+task_variables:
+  - {name: character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: previous_state, required: true}
+  - {name: entity_memory, required: true}
+static_variables: []
+template: |-
+  Track how "{character}" changes as the story advances. Character aliases: {aliases}.
+  The preceding checkpoint is at scene {previous_scene_order}; the current checkpoint is at scene {current_scene_order}.
+  <previous_state>{previous_state}</previous_state>
+  <entity_centric_memory>{entity_memory}</entity_centric_memory>
+
+  previous_state contains only natural-language claims from the preceding checkpoint, without IDs, scene orders, or provenance. entity_centric_memory contains character-relevant facts extracted from the screenplay interval between the two checkpoints. Preserve important prior states that remain valid, remove states that have expired, and add states established in the new interval.
+
+  current_state contains at most 8 important goals, beliefs, relationships, identities, circumstances, or emotional stances still valid at the current checkpoint. developments_since_previous_checkpoint contains at most 4 important changes that became effective in this interval. Static facts, ordinary actions, unresolved possibilities, and future events are not developments. Use natural-language claims and cite only evidence_scene_orders present in entity_centric_memory. A carried current state may use an empty evidence_scene_orders list when the interval supplies no new evidence; the runner preserves earlier provenance outside the model. Every development must cite at least one scene greater than {previous_scene_order} and no greater than {current_scene_order}. Do not output internal IDs, analysis, or extra fields. Return JSON only:
+  {{"current_state":[{{"claim":"current state","evidence_scene_orders":[1]}}],"developments_since_previous_checkpoint":[{{"claim":"effective change","evidence_scene_orders":[2]}}]}}

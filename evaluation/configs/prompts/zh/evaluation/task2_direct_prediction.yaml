@@ -1,0 +1,15 @@
+id: task2_direct_prediction_zh
+category: evaluation
+name: Task 2 直接问答
+description: 不提供剧本、记忆、检索或其他上下文，直接回答一个剧本问题。
+task_variables:
+  - {name: question, required: true}
+static_variables: []
+template: |-
+  仅根据问题本身，直接回答这个剧本问题。
+  <question>{question}</question>
+
+  当前不提供剧本、检索片段、记忆、场景文本、参考答案或其他上下文。请给出最简洁的最佳答案，不要声称看过未提供的材料，不要输出分析或隐藏推理。
+
+  只返回包含以下唯一字段的 JSON：
+  {{"answer":"..."}}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage://evaluation_v1/task3_response_judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scores", "future_leakage", "unknown_fact_hallucination", "stance_compatible", "evidence_local_ids", "brief_rationale"],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "future_leakage": {"const": false},
+          "unknown_fact_hallucination": {"const": false}
+        },
+        "required": ["future_leakage", "unknown_fact_hallucination"]
+      },
+      "then": {
+        "properties": {
+          "scores": {
+            "properties": {
+              "boundary_compliance": {"minimum": 3}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "anyOf": [
+          {"properties": {"future_leakage": {"const": true}}, "required": ["future_leakage"]},
+          {"properties": {"unknown_fact_hallucination": {"const": true}}, "required": ["unknown_fact_hallucination"]}
+        ]
+      },
+      "then": {
+        "properties": {
+          "scores": {
+            "properties": {
+              "boundary_compliance": {"maximum": 3}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_fidelity", "memory_faithfulness", "boundary_compliance", "response_naturalness"],
+      "properties": {
+        "character_fidelity": {"type": "integer", "minimum": 1, "maximum": 5},
+        "memory_faithfulness": {"type": "integer", "minimum": 1, "maximum": 5},
+        "boundary_compliance": {"type": "integer", "minimum": 1, "maximum": 5},
+        "response_naturalness": {"type": "integer", "minimum": 1, "maximum": 5}
+      }
+    },
+    "future_leakage": {"type": "boolean"},
+    "unknown_fact_hallucination": {"type": "boolean"},
+    "stance_compatible": {"type": "boolean"},
+    "evidence_local_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "brief_rationale": {"type": "string"}
+  }
+}

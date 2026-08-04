@@ -1,0 +1,664 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 20,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate",
+    "current_state_reference_coverage_accumulation_gap",
+    "development_reference_coverage_accumulation_gap"
+  ],
+  "movie_id": "en8dc9b5e23f324c86a3593ba801f672ac",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_autoregressive_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 47,
+    "sha256": "680e507a61cb36d7a851da570bbbe6386dfa07d60b4e176578856d90afd67e67"
+  },
+  "setting": "autoregressive_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Bennett Vale",
+        "Bennett Vale",
+        "Bennett Vale",
+        "Bennett Vale",
+        "Bennett Vale"
+      ],
+      "character": "Bennett Vale",
+      "character_id": "entity-3e5a07344df5b4276d41",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-cac3209680ddf946fe21",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-cac3209680ddf946fe21"
+          },
+          "instance_id": "task1-instance-0abc5c58261de66c2044",
+          "model_input": {
+            "previous_state_source": "empty"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-6665e135c8c309e9dbee",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-6665e135c8c309e9dbee"
+          },
+          "instance_id": "task1-instance-507d53f3bd46d4ef084c",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-cac3209680ddf946fe21",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 20,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-72998adaa40da66f6a81",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-72998adaa40da66f6a81"
+          },
+          "instance_id": "task1-instance-5607a9cc222021d4f617",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-6665e135c8c309e9dbee",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 22,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 20
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-ffb3e6b6180bdef4bbc4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-ffb3e6b6180bdef4bbc4"
+          },
+          "instance_id": "task1-instance-95d98440bade68c053dc",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-72998adaa40da66f6a81",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 24,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 22
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-19a0ebf249c90fd865fb",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-19a0ebf249c90fd865fb"
+          },
+          "instance_id": "task1-instance-961ed09de285a332a96f",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-ffb3e6b6180bdef4bbc4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 25,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 24
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-f27ac6b573726208c9b2",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-f27ac6b573726208c9b2"
+          },
+          "instance_id": "task1-instance-f428bb17f204c48f13bd",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-19a0ebf249c90fd865fb",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 29,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 25
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-4f3c39329f776ece3c00",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-4f3c39329f776ece3c00"
+          },
+          "instance_id": "task1-instance-a7bdeb659e8af9e6b259",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-f27ac6b573726208c9b2",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 30,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 29
+          },
+          "sequence_index": 7
+        }
+      ],
+      "initial_state": [],
+      "trajectory_id": "en8dc9b5e23f324c86a3593ba801f672ac::entity-3e5a07344df5b4276d41"
+    },
+    {
+      "aliases": [
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane",
+        "Sidney Sloane"
+      ],
+      "character": "Sidney Sloane",
+      "character_id": "entity-d3de1ce1779416e9946e",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-fb0f7994f1263035437e",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-fb0f7994f1263035437e"
+          },
+          "instance_id": "task1-instance-1cbeda5e6765871d1c76",
+          "model_input": {
+            "previous_state_source": "empty"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 1,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-b5eeee9959eac2e388ef",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-b5eeee9959eac2e388ef"
+          },
+          "instance_id": "task1-instance-073c4b93096910b98c9a",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-fb0f7994f1263035437e",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 3,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 1
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-a6e5d28b35a0187e1bf4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-a6e5d28b35a0187e1bf4"
+          },
+          "instance_id": "task1-instance-710dcf792040db384a61",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-b5eeee9959eac2e388ef",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 18,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 3
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-2eb17779f7d135514cd8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-2eb17779f7d135514cd8"
+          },
+          "instance_id": "task1-instance-d4eeecf0d0f1ebf65ac1",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-a6e5d28b35a0187e1bf4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 20,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 18
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-3b8cf51013d9c6d859cf",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-3b8cf51013d9c6d859cf"
+          },
+          "instance_id": "task1-instance-c52dced2e39a1011e18d",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-2eb17779f7d135514cd8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 21,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 20
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-852a04081d5b192ee86f",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-852a04081d5b192ee86f"
+          },
+          "instance_id": "task1-instance-63c3a46dd3e12fa664d9",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-3b8cf51013d9c6d859cf",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 30,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 21
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-a133d955156ae250f6a9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-a133d955156ae250f6a9"
+          },
+          "instance_id": "task1-instance-8c93b568d0527cabdf2a",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-852a04081d5b192ee86f",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 38,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 30
+          },
+          "sequence_index": 7
+        }
+      ],
+      "initial_state": [],
+      "trajectory_id": "en8dc9b5e23f324c86a3593ba801f672ac::entity-d3de1ce1779416e9946e"
+    },
+    {
+      "aliases": [
+        "Graham Sterling",
+        "Graham Sterling",
+        "Graham Sterling"
+      ],
+      "character": "Graham Sterling",
+      "character_id": "entity-e1f63afd71aab0fb6f8a",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-8847be50da2d183f7a8d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-8847be50da2d183f7a8d"
+          },
+          "instance_id": "task1-instance-41088711efd4f29b017e",
+          "model_input": {
+            "previous_state_source": "empty"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 1,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-4e1b1de4ffcae9b26705",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-4e1b1de4ffcae9b26705"
+          },
+          "instance_id": "task1-instance-c4ffac9174478721ed12",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-8847be50da2d183f7a8d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 1
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-74261b8d10a3a22f9989",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-74261b8d10a3a22f9989"
+          },
+          "instance_id": "task1-instance-a75ad9c675d37a626d2a",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-4e1b1de4ffcae9b26705",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 3,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-4cf9add2d3bfe192845c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-4cf9add2d3bfe192845c"
+          },
+          "instance_id": "task1-instance-924fee73d103e1065253",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-74261b8d10a3a22f9989",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 4,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 3
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-46cbdb36c539c8ff7c50",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-46cbdb36c539c8ff7c50"
+          },
+          "instance_id": "task1-instance-4507e82af8340d5b7508",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-4cf9add2d3bfe192845c",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 14,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 4
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-daf0c8c26684f17f84ef",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target_ref": {
+            "asset_file": "task_1_reference_state_update.json",
+            "checkpoint_id": "checkpoint-daf0c8c26684f17f84ef"
+          },
+          "instance_id": "task1-instance-6bd8a777c681360c9eb2",
+          "model_input": {
+            "previous_state_source": "autoregressive_prediction"
+          },
+          "previous_checkpoint_id": "checkpoint-46cbdb36c539c8ff7c50",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 41,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 14
+          },
+          "sequence_index": 6
+        }
+      ],
+      "initial_state": [],
+      "trajectory_id": "en8dc9b5e23f324c86a3593ba801f672ac::entity-e1f63afd71aab0fb6f8a"
+    }
+  ]
+}

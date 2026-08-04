@@ -1,0 +1,2464 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 20,
+    "current_state_reference_claims": 131,
+    "development_reference_claims": 20,
+    "trajectories": 3
+  },
+  "language": "Chinese",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "chc287cf500dba3fdc512a55d138da55aa1b4d72c5",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 67,
+    "sha256": "f2a4659e43438f85eca847f627b959d37187d51ee53a0614ebf4e02ad273d740"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "于小慧"
+      ],
+      "character": "于小慧",
+      "character_id": "entity-4284d22f9e69e2f3b89b",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-3989a8e8f49fee33e06e",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波对于小慧的出现感到震惊",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-067107e92999b1d49cd5"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-b3728ed53346f4fcac75",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 19,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-d5dc4bf58dddd220e393",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-3f691e716510150486cf"
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-f80c355e07004218de42"
+              },
+              {
+                "claim": "于小慧与刘波之间存在能够促使其立即行动的紧急或重要联系",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-8ce0a2db1cfa04903e57"
+              },
+              {
+                "claim": "于小慧处于离别状态，主动终止在场身份",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-0a08c64bb0cff7e99daa"
+              },
+              {
+                "claim": "刘波对于小慧的出现感到震惊",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-067107e92999b1d49cd5"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "于小慧的关系从“于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系”发展为“于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权”（第28场起可见）。",
+                "development_id": "character-development-6a714b55656b5327014e",
+                "evidence_scene_orders": [
+                  23,
+                  28
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-92e5ac42b9ea282f084d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波对于小慧的出现感到震惊",
+                "evidence_scene_orders": [
+                  19
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3989a8e8f49fee33e06e",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 28,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 19
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-ae5213d9ee277c6f4c77",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-3f691e716510150486cf"
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-f80c355e07004218de42"
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5df329bea1aa041cc252"
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5e114c2a07c008bc5c22"
+              },
+              {
+                "claim": "于小慧在行动中扮演指挥者和信息提供者的角色",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-20172cd23836b7d5ce60"
+              },
+              {
+                "claim": "于小慧在于小慧与刘波的互动中处于主导说服地位",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-1d5e380bc47666f2dc02"
+              },
+              {
+                "claim": "于小慧与刘波之间存在基于信件归还请求的交换关系，暗示信任与期待",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-2cf7f920cd7cc57266cd"
+              },
+              {
+                "claim": "于小慧具有可被指派临时值守任务的工作人员身份",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-145381fbb0fc72183a0d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "于小慧的关系从“于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权”发展为“于小慧试图澄清与刘波之间的帮助关系并非基于利益交换”（第31场起可见）。",
+                "development_id": "character-development-2887add27b0ad7a848f7",
+                "evidence_scene_orders": [
+                  28,
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧的身份/状态从“于小慧在行动中扮演指挥者和信息提供者的角色”发展为“于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者”（第31场起可见）。",
+                "development_id": "character-development-d462449d62a79758cec6",
+                "evidence_scene_orders": [
+                  29,
+                  31
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-9a410c5b04f7513e8754",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "于小慧与刘波之间存在能够促使其立即行动的紧急或重要联系",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "于小慧处于离别状态，主动终止在场身份",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "刘波对于小慧的出现感到震惊",
+                "evidence_scene_orders": [
+                  19
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-d5dc4bf58dddd220e393",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 31,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 28
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-46a090488c9c717537c6",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-3f691e716510150486cf"
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-f80c355e07004218de42"
+              },
+              {
+                "claim": "于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-7d3b63249966b1591a3e"
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5df329bea1aa041cc252"
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5e114c2a07c008bc5c22"
+              },
+              {
+                "claim": "于小慧在行动中扮演指挥者和信息提供者的角色",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-20172cd23836b7d5ce60"
+              },
+              {
+                "claim": "于小慧对于小慧对刘波表现出关心其未来生活与人际关系的态度",
+                "evidence_scene_orders": [
+                  42
+                ],
+                "state_id": "character-state-2d0dc3ff04827d427d62"
+              },
+              {
+                "claim": "于小慧主动提醒并安排与刘波的会面，显示其在关系中掌握主导权",
+                "evidence_scene_orders": [
+                  42
+                ],
+                "state_id": "character-state-c20a8cded13ee21ddedd"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "于小慧的关系从“于小慧试图澄清与刘波之间的帮助关系并非基于利益交换”发展为“于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系”（第44场起可见）。",
+                "development_id": "character-development-b81dcb2d33a16e51b367",
+                "evidence_scene_orders": [
+                  31,
+                  44
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6d8bf036d1a5f51e8c8f",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧在行动中扮演指挥者和信息提供者的角色",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "于小慧在于小慧与刘波的互动中处于主导说服地位",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "于小慧与刘波之间存在基于信件归还请求的交换关系，暗示信任与期待",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧具有可被指派临时值守任务的工作人员身份",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ae5213d9ee277c6f4c77",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 44,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 31
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-904f6afc7295c53e96e0",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "于小慧主动表明自己掌握关键信息并试图从旁观者转变为抢劫计划的参与者",
+                "evidence_scene_orders": [
+                  53
+                ],
+                "state_id": "character-state-aca94d474b042b412a25"
+              },
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-3f691e716510150486cf"
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-f80c355e07004218de42"
+              },
+              {
+                "claim": "从被动沉默者转变为主动介入者",
+                "evidence_scene_orders": [
+                  51
+                ],
+                "state_id": "character-state-91b49bef9ad979924c1f"
+              },
+              {
+                "claim": "于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-7d3b63249966b1591a3e"
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5df329bea1aa041cc252"
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5e114c2a07c008bc5c22"
+              },
+              {
+                "claim": "于小慧在行动中扮演指挥者和信息提供者的角色",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-20172cd23836b7d5ce60"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "于小慧的身份/状态从“从被动沉默者转变为主动介入者”发展为“于小慧主动表明自己掌握关键信息并试图从旁观者转变为抢劫计划的参与者”（第53场起可见）。",
+                "development_id": "character-development-9b65bf532cbed8ff2fa1",
+                "evidence_scene_orders": [
+                  51,
+                  53
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-d13819612032ac335518",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧在行动中扮演指挥者和信息提供者的角色",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "于小慧对于小慧对刘波表现出关心其未来生活与人际关系的态度",
+                "evidence_scene_orders": [
+                  42
+                ]
+              },
+              {
+                "claim": "于小慧主动提醒并安排与刘波的会面，显示其在关系中掌握主导权",
+                "evidence_scene_orders": [
+                  42
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-46a090488c9c717537c6",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 53,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 44
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-d05faca435c63c1cfa99",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "于小慧主动表明自己掌握关键信息并试图从旁观者转变为抢劫计划的参与者",
+                "evidence_scene_orders": [
+                  53
+                ],
+                "state_id": "character-state-aca94d474b042b412a25"
+              },
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-3f691e716510150486cf"
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-f80c355e07004218de42"
+              },
+              {
+                "claim": "于小慧在信中明确表达对刘波的感激与爱意，并视其为心中的英雄",
+                "evidence_scene_orders": [
+                  65
+                ],
+                "state_id": "character-state-a579286b45897e0b5772"
+              },
+              {
+                "claim": "从被动沉默者转变为主动介入者",
+                "evidence_scene_orders": [
+                  51
+                ],
+                "state_id": "character-state-91b49bef9ad979924c1f"
+              },
+              {
+                "claim": "于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-7d3b63249966b1591a3e"
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5df329bea1aa041cc252"
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-5e114c2a07c008bc5c22"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "于小慧的关系从“于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系”发展为“于小慧在信中明确表达对刘波的感激与爱意，并视其为心中的英雄”（第65场起可见）。",
+                "development_id": "character-development-3138e9d70e6cbb5bb470",
+                "evidence_scene_orders": [
+                  44,
+                  65
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6a073afb020b4b958961",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "于小慧主动表明自己掌握关键信息并试图从旁观者转变为抢劫计划的参与者",
+                "evidence_scene_orders": [
+                  53
+                ]
+              },
+              {
+                "claim": "于小慧对于小慧与刘波之间的互动保持警惕，并主动掌握对话主导权",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "于小慧确认与刘波的高中同学关系，并接受其聚餐邀请，表明愿意恢复联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "从被动沉默者转变为主动介入者",
+                "evidence_scene_orders": [
+                  51
+                ]
+              },
+              {
+                "claim": "于小慧被眼镜视为自首事件中的关键隐患，暗示她与刘波之间存在可能引发牵连的关系",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "于小慧的身份从无偿帮助者转变为有明确个人诉求的请求者",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧试图澄清与刘波之间的帮助关系并非基于利益交换",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "于小慧在行动中扮演指挥者和信息提供者的角色",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-904f6afc7295c53e96e0",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 65,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 53
+          },
+          "sequence_index": 6
+        }
+      ],
+      "trajectory_id": "chc287cf500dba3fdc512a55d138da55aa1b4d72c5::entity-4284d22f9e69e2f3b89b"
+    },
+    {
+      "aliases": [
+        "刘波",
+        "孙悟空",
+        "师徒四人",
+        "戴西游记角色面具的四人团伙",
+        "测绘员"
+      ],
+      "character": "刘波",
+      "character_id": "entity-4827625fe5200840a44c",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-442072e5b18187b98df7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-7fb59ae6769908c5340d"
+              },
+              {
+                "claim": "刘波以‘孙悟空’身份出现在银行门口并执行行动",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-36785c919b003927d57b"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-8bffb4529d1f5dbb8337",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 1,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-2cbb6982903d3ffc5e99",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-6bef128b34d34e058ae8"
+              },
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-7fb59ae6769908c5340d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "刘波的身份/状态从“刘波是戴西游记角色面具的四人团伙成员之一”发展为“刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务”（第2场起可见）。",
+                "development_id": "character-development-80a62ecb341e1afc08a9",
+                "evidence_scene_orders": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-4b81a92032f2ef1bb270",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "刘波以‘孙悟空’身份出现在银行门口并执行行动",
+                "evidence_scene_orders": [
+                  1
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-442072e5b18187b98df7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 1
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-72554ac089e6b9133577",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ],
+                "state_id": "character-state-6bef128b34d34e058ae8"
+              },
+              {
+                "claim": "刘波与眼镜的关系出现破裂，刘波视其为叛徒",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-52be9c50cc52b60f6864"
+              },
+              {
+                "claim": "刘波与眼镜同为火锅店股东，存在工作联系",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-6ea1d26145b0e26e82d7"
+              },
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-7fb59ae6769908c5340d"
+              },
+              {
+                "claim": "刘波在转让费分配中被列为受益人之一",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-d8d8291d16ce70aceffd"
+              },
+              {
+                "claim": "刘波与眼镜之间出现资源控制与责任转嫁的紧张关系",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-fb02b28be984d8c1dc28"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "刘波的关系从“刘波与眼镜同为火锅店股东，存在工作联系”发展为“刘波与眼镜的关系出现破裂，刘波视其为叛徒”（第15场起可见）。",
+                "development_id": "character-development-4a406ba451b53ef41cb3",
+                "evidence_scene_orders": [
+                  9,
+                  15
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-2041bf1d6ae08d8aa7df",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-2cbb6982903d3ffc5e99",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 15,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-bf9c8d32d1da61a2e8be",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ],
+                "state_id": "character-state-6bef128b34d34e058ae8"
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-d04fb888da67a510c2cc"
+              },
+              {
+                "claim": "刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-90a3dd6d298ec024add2"
+              },
+              {
+                "claim": "刘波与眼镜的关系出现破裂，刘波视其为叛徒",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-52be9c50cc52b60f6864"
+              },
+              {
+                "claim": "刘波与眼镜同为火锅店股东，存在工作联系",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-6ea1d26145b0e26e82d7"
+              },
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-7fb59ae6769908c5340d"
+              },
+              {
+                "claim": "刘波接受眼镜通过比喻传达的作案逻辑，表明对眼镜分析能力的信任",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-51315a065e8855ceace6"
+              },
+              {
+                "claim": "刘波在转让费分配中被列为受益人之一",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-d8d8291d16ce70aceffd"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "刘波的关系从“刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应”发展为“刘波与于小慧恢复高中同学关系并建立当前联系”（第23场起可见）。",
+                "development_id": "character-development-6d0dc0be22580dc2fd97",
+                "evidence_scene_orders": [
+                  19,
+                  23
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-27489c4445e8cc1b4151",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ]
+              },
+              {
+                "claim": "刘波与眼镜的关系出现破裂，刘波视其为叛徒",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "刘波与眼镜同为火锅店股东，存在工作联系",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "刘波在转让费分配中被列为受益人之一",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "刘波与眼镜之间出现资源控制与责任转嫁的紧张关系",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-72554ac089e6b9133577",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 23,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 15
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-afee0f803928585392b7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ],
+                "state_id": "character-state-6bef128b34d34e058ae8"
+              },
+              {
+                "claim": "刘波接受于小慧的分析并信任其判断",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-4d54476b5368ecc625c8"
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-d04fb888da67a510c2cc"
+              },
+              {
+                "claim": "刘波处于孤立无援状态，求助行动失败",
+                "evidence_scene_orders": [
+                  35
+                ],
+                "state_id": "character-state-83e26a3b524309b7f6a1"
+              },
+              {
+                "claim": "刘波从伪装者转变为坦白者，承认自身处于困境",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-09dc5b27a0aa59fcaa32"
+              },
+              {
+                "claim": "刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-90a3dd6d298ec024add2"
+              },
+              {
+                "claim": "刘波与眼镜的关系出现破裂，刘波视其为叛徒",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-52be9c50cc52b60f6864"
+              },
+              {
+                "claim": "刘波与眼镜同为火锅店股东，存在工作联系",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-6ea1d26145b0e26e82d7"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "刘波的身份/状态从“刘波从伪装者转变为坦白者，承认自身处于困境”发展为“刘波处于孤立无援状态，求助行动失败”（第35场起可见）。",
+                "development_id": "character-development-6192d69174b18c22ec88",
+                "evidence_scene_orders": [
+                  24,
+                  35
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-de3229dccd5230f4293d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ]
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "刘波与眼镜的关系出现破裂，刘波视其为叛徒",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "刘波与眼镜同为火锅店股东，存在工作联系",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "刘波是戴西游记角色面具的四人团伙成员之一",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "刘波接受眼镜通过比喻传达的作案逻辑，表明对眼镜分析能力的信任",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "刘波在转让费分配中被列为受益人之一",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-bf9c8d32d1da61a2e8be",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 35,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 23
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-1a8093af55c4908b2bbc",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ],
+                "state_id": "character-state-6bef128b34d34e058ae8"
+              },
+              {
+                "claim": "刘波接受于小慧的分析并信任其判断",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-4d54476b5368ecc625c8"
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-d04fb888da67a510c2cc"
+              },
+              {
+                "claim": "刘波对眼镜表现出关心，提醒他少喝酒",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-5bf96fbf4d955697e6f7"
+              },
+              {
+                "claim": "刘波与眼镜之间存在物品借用关系，且眼镜主动归还物品并告知，显示一定信任或尊重",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-6bc91de611b67c015afc"
+              },
+              {
+                "claim": "刘波处于孤立无援状态，求助行动失败",
+                "evidence_scene_orders": [
+                  35
+                ],
+                "state_id": "character-state-83e26a3b524309b7f6a1"
+              },
+              {
+                "claim": "刘波从伪装者转变为坦白者，承认自身处于困境",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-09dc5b27a0aa59fcaa32"
+              },
+              {
+                "claim": "刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-90a3dd6d298ec024add2"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "刘波的关系从“刘波与眼镜的关系出现破裂，刘波视其为叛徒”发展为“刘波对眼镜表现出关心，提醒他少喝酒；刘波与眼镜之间存在物品借用关系，且眼镜主动归还物品并告知，显示一定信任或尊重”（第37场起可见）。",
+                "development_id": "character-development-257a644ab150660b8319",
+                "evidence_scene_orders": [
+                  15,
+                  37
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c7c10608468c85826587",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ]
+              },
+              {
+                "claim": "刘波接受于小慧的分析并信任其判断",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "刘波处于孤立无援状态，求助行动失败",
+                "evidence_scene_orders": [
+                  35
+                ]
+              },
+              {
+                "claim": "刘波从伪装者转变为坦白者，承认自身处于困境",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "刘波与眼镜的关系出现破裂，刘波视其为叛徒",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "刘波与眼镜同为火锅店股东，存在工作联系",
+                "evidence_scene_orders": [
+                  9
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-afee0f803928585392b7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 37,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 35
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-b46356e1bd17fac16669",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ],
+                "state_id": "character-state-6bef128b34d34e058ae8"
+              },
+              {
+                "claim": "刘波与眼镜之间存在救援与被救援的关系",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-7d97f0a1293996926402"
+              },
+              {
+                "claim": "刘波接受于小慧的分析并信任其判断",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-4d54476b5368ecc625c8"
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "character-state-d04fb888da67a510c2cc"
+              },
+              {
+                "claim": "刘波对眼镜表现出关心，提醒他少喝酒",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-5bf96fbf4d955697e6f7"
+              },
+              {
+                "claim": "刘波与眼镜之间存在物品借用关系，且眼镜主动归还物品并告知，显示一定信任或尊重",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-6bc91de611b67c015afc"
+              },
+              {
+                "claim": "刘波处于孤立无援状态，求助行动失败",
+                "evidence_scene_orders": [
+                  35
+                ],
+                "state_id": "character-state-83e26a3b524309b7f6a1"
+              },
+              {
+                "claim": "刘波从伪装者转变为坦白者，承认自身处于困境",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-09dc5b27a0aa59fcaa32"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "刘波的关系从“刘波与眼镜之间存在物品借用关系，且眼镜主动归还物品并告知，显示一定信任或尊重”发展为“刘波与眼镜之间存在救援与被救援的关系”（第43场起可见）。",
+                "development_id": "character-development-045cdee64d675371c76c",
+                "evidence_scene_orders": [
+                  37,
+                  43
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b55ddc80d423159fb35b",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "刘波以‘孙悟空’的身份参与劫匪行动，承担搜寻和押送任务",
+                "evidence_scene_orders": [
+                  2,
+                  6,
+                  9
+                ]
+              },
+              {
+                "claim": "刘波接受于小慧的分析并信任其判断",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "刘波与于小慧恢复高中同学关系并建立当前联系",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "刘波对眼镜表现出关心，提醒他少喝酒",
+                "evidence_scene_orders": [
+                  37
+                ]
+              },
+              {
+                "claim": "刘波与眼镜之间存在物品借用关系，且眼镜主动归还物品并告知，显示一定信任或尊重",
+                "evidence_scene_orders": [
+                  37
+                ]
+              },
+              {
+                "claim": "刘波处于孤立无援状态，求助行动失败",
+                "evidence_scene_orders": [
+                  35
+                ]
+              },
+              {
+                "claim": "刘波从伪装者转变为坦白者，承认自身处于困境",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "刘波与于小慧之间存在某种过往关系，导致其在听闻其名字时产生强烈反应",
+                "evidence_scene_orders": [
+                  19
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-1a8093af55c4908b2bbc",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 43,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 37
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "chc287cf500dba3fdc512a55d138da55aa1b4d72c5::entity-4827625fe5200840a44c"
+    },
+    {
+      "aliases": [
+        "许东"
+      ],
+      "character": "许东",
+      "character_id": "entity-4dcfc9396026ad19f2e0",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-59b1c65608be1c9b280b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-beda1e197d2b33c5ebb9"
+              },
+              {
+                "claim": "许东对刘波有指挥权或协作关系，能通过他人联系催促其到场",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-ccc6a5e05c7cb8cb3e80"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-877430c3d99b8d73f535",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 9,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-9934b5cad7a670dc5460",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5867887d979f9c2b4944"
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-beda1e197d2b33c5ebb9"
+              },
+              {
+                "claim": "许东与刘波之间因转让费差异和群众演员问题产生争执",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-28aea3c8a4733c92963c"
+              },
+              {
+                "claim": "许东对刘波的质疑不予理睬，表现出疏离或不认同",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-086f7ba01776ac6ba6be"
+              },
+              {
+                "claim": "许东在三人中主导转让费的分配决策",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-2bed189df90d37f94848"
+              },
+              {
+                "claim": "许东在争执中寻求眼镜的支持以增强自身立场",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-40e4d582aaff5b7cdaa5"
+              },
+              {
+                "claim": "许东处于被动接受责任转移的地位，未掌握店铺基础运营信息",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-8c8a3a1c7bc42835e3e9"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "许东的关系从“许东与眼镜存在合作关系，许东在正式场合介绍其为股东”发展为“许东意识到眼镜掌握店铺电力控制权并施加经济要求”（第13场起可见）。",
+                "development_id": "character-development-ef9c0238859d12947bfb",
+                "evidence_scene_orders": [
+                  9,
+                  13
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8432b7ed19126d8bc262",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东对刘波有指挥权或协作关系，能通过他人联系催促其到场",
+                "evidence_scene_orders": [
+                  9
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-59b1c65608be1c9b280b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 13,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 9
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-3328475a4fb426564fe1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-3823cfd6dff3878cba6f"
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-d62957b051d148f9ab7f"
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5867887d979f9c2b4944"
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              },
+              {
+                "claim": "许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-0afd3acd1f2cb9c06510"
+              },
+              {
+                "claim": "许东因缺乏资金而陷入绝境",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-4a4cace04a9435c462dc"
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-beda1e197d2b33c5ebb9"
+              },
+              {
+                "claim": "许东在刘波心中具有高于警方问话的优先权，显示出其在关系中的主导地位",
+                "evidence_scene_orders": [
+                  16,
+                  18
+                ],
+                "state_id": "character-state-b08e7aba2c98fb7ba04f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "许东的关系从“许东意识到眼镜掌握店铺电力控制权并施加经济要求”发展为“许东与眼镜之间存在因责任推诿而产生的紧张关系”（第24场起可见）。",
+                "development_id": "character-development-ea8aadde707ac905a6f0",
+                "evidence_scene_orders": [
+                  13,
+                  24
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e2556c00c9aa9c045b8d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东与刘波之间因转让费差异和群众演员问题产生争执",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东对刘波的质疑不予理睬，表现出疏离或不认同",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东在三人中主导转让费的分配决策",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东在争执中寻求眼镜的支持以增强自身立场",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东处于被动接受责任转移的地位，未掌握店铺基础运营信息",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-9934b5cad7a670dc5460",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 24,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 13
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-1c785ecaf499255b3a04",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-3823cfd6dff3878cba6f"
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-d62957b051d148f9ab7f"
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5867887d979f9c2b4944"
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              },
+              {
+                "claim": "许东与眼镜的关系因暴力行为恶化",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-7bc407732ad1f1b10519"
+              },
+              {
+                "claim": "许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-0afd3acd1f2cb9c06510"
+              },
+              {
+                "claim": "许东因缺乏资金而陷入绝境",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-4a4cace04a9435c462dc"
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-beda1e197d2b33c5ebb9"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "许东的关系从“许东与眼镜之间存在因责任推诿而产生的紧张关系”发展为“许东与眼镜的关系因暴力行为恶化”（第26场起可见）。",
+                "development_id": "character-development-7a795bfe8bd6541c8771",
+                "evidence_scene_orders": [
+                  24,
+                  26
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-14b7e4ec933beedb63ae",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "许东因缺乏资金而陷入绝境",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东在刘波心中具有高于警方问话的优先权，显示出其在关系中的主导地位",
+                "evidence_scene_orders": [
+                  16,
+                  18
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3328475a4fb426564fe1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 26,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 24
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-e79320cab35028305d46",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-3823cfd6dff3878cba6f"
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-d62957b051d148f9ab7f"
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5867887d979f9c2b4944"
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              },
+              {
+                "claim": "许东的行为使刘波失去对信件的控制，关系出现紧张或权力失衡",
+                "evidence_scene_orders": [
+                  32
+                ],
+                "state_id": "character-state-511ab38b06782802e92e"
+              },
+              {
+                "claim": "许东与眼镜的关系因暴力行为恶化",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-7bc407732ad1f1b10519"
+              },
+              {
+                "claim": "许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-0afd3acd1f2cb9c06510"
+              },
+              {
+                "claim": "许东因缺乏资金而陷入绝境",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-4a4cace04a9435c462dc"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "许东的关系从“许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话”发展为“许东的行为使刘波失去对信件的控制，关系出现紧张或权力失衡”（第32场起可见）。",
+                "development_id": "character-development-3c0f2d4c792f1f4c832b",
+                "evidence_scene_orders": [
+                  18,
+                  32
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8909e4996717ee5921e5",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东与眼镜的关系因暴力行为恶化",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "许东因缺乏资金而陷入绝境",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "许东在火锅店中处于主导地位，负责对外介绍和组织协调",
+                "evidence_scene_orders": [
+                  9
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-1c785ecaf499255b3a04",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 32,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 26
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-64169704d5b772748ac8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东试图以面子关系影响七哥，但未被认可",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-61b40d121982a4bcf0f9"
+              },
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-3823cfd6dff3878cba6f"
+              },
+              {
+                "claim": "许东与刘波之间存在紧张关系，许东选择物理撤离以终止互动",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-c18f46425d0ea0aac1e4"
+              },
+              {
+                "claim": "许东面临火锅店运营中的资金短缺压力，成为冲突导火索",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-fb4fe8994bfbb4787905"
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-d62957b051d148f9ab7f"
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5867887d979f9c2b4944"
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              },
+              {
+                "claim": "兄弟情谊彻底破裂，关系进入敌对状态",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-9a353058d3415780e840"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "许东的关系从“许东的行为使刘波失去对信件的控制，关系出现紧张或权力失衡”发展为“兄弟情谊彻底破裂，关系进入敌对状态；许东与刘波之间存在紧张关系，许东选择物理撤离以终止互动”（第44场起可见）。",
+                "development_id": "character-development-8369471e3dc6b7e84813",
+                "evidence_scene_orders": [
+                  32,
+                  44
+                ]
+              },
+              {
+                "claim": "许东的限制/资源从“许东因缺乏资金而陷入绝境”发展为“许东面临火锅店运营中的资金短缺压力，成为冲突导火索”（第44场起可见）。",
+                "development_id": "character-development-fd4c047757eea468b40c",
+                "evidence_scene_orders": [
+                  14,
+                  44
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b5eab93603d7e727e9a8",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "许东的行为使刘波失去对信件的控制，关系出现紧张或权力失衡",
+                "evidence_scene_orders": [
+                  32
+                ]
+              },
+              {
+                "claim": "许东与眼镜的关系因暴力行为恶化",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "许东对刘波有直接的行动影响力，能够通过简单信号中断其正在进行的问话",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "许东因缺乏资金而陷入绝境",
+                "evidence_scene_orders": [
+                  14
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-e79320cab35028305d46",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 44,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 32
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-7e1eb27cb57ae2d6c8f0",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "许东试图以面子关系影响七哥，但未被认可",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-61b40d121982a4bcf0f9"
+              },
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-3823cfd6dff3878cba6f"
+              },
+              {
+                "claim": "许东通过笑和拜天动作展现其从受制者转变为掌控局势的主导者",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-bf6179e8a558f2c79a84"
+              },
+              {
+                "claim": "许东与刘波之间存在紧张关系，许东选择物理撤离以终止互动",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-c18f46425d0ea0aac1e4"
+              },
+              {
+                "claim": "许东面临火锅店运营中的资金短缺压力，成为冲突导火索",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-fb4fe8994bfbb4787905"
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-d62957b051d148f9ab7f"
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-5867887d979f9c2b4944"
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-1360b32bbc78bcb6ce4d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "许东的身份/状态从“许东在团队中处于被动跟随的角色，未参与公开表态”发展为“许东明确宣告自己的身份为‘许东’，并强调其在地盘上的地位；许东通过笑和拜天动作展现其从受制者转变为掌控局势的主导者”（第56场起可见）。",
+                "development_id": "character-development-a2d06254cb08c1d5b29d",
+                "evidence_scene_orders": [
+                  24,
+                  56
+                ]
+              },
+              {
+                "claim": "许东的关系从“许东试图以面子关系影响七哥，但未被认可”发展为“许东在压制七哥后选择离开，显示其对七哥的对抗关系已阶段性终结”（第56场起可见）。",
+                "development_id": "character-development-d48f08fa061d1914463d",
+                "evidence_scene_orders": [
+                  43,
+                  56
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-a4d8619b299d35d68065",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "许东试图以面子关系影响七哥，但未被认可",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "许东在团队中处于被动跟随的角色，未参与公开表态",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东与刘波之间存在紧张关系，许东选择物理撤离以终止互动",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "许东面临火锅店运营中的资金短缺压力，成为冲突导火索",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "许东与眼镜之间存在因责任推诿而产生的紧张关系",
+                "evidence_scene_orders": [
+                  24
+                ]
+              },
+              {
+                "claim": "许东意识到眼镜掌握店铺电力控制权并施加经济要求",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "许东与眼镜存在合作关系，许东在正式场合介绍其为股东",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "兄弟情谊彻底破裂，关系进入敌对状态",
+                "evidence_scene_orders": [
+                  44
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-64169704d5b772748ac8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 56,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 44
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "chc287cf500dba3fdc512a55d138da55aa1b4d72c5::entity-4dcfc9396026ad19f2e0"
+    }
+  ]
+}

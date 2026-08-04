@@ -1,0 +1,2629 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 21,
+    "current_state_reference_claims": 139,
+    "development_reference_claims": 24,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "en7f8648f5449c4f9da46febfd68cdbd58",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 100,
+    "sha256": "f11eb1f785a9a488d2c2a72f6815558dc28012232dec7d99667a019f60546978"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Julie Hastings",
+        "JULIE",
+        "Miss Hastings",
+        "Julie Hasting"
+      ],
+      "character": "Julie Hastings",
+      "character_id": "entity-358ef60eeefe8a13eb7c",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-f267639d2d5f8d246697",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-73396f6e519e62e6d58b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's status identity develops into \"Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.\" (visible from scene 7; no comparable prior state is recorded).",
+                "development_id": "character-development-4d571ce0738f3e1472c0",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6b85fb694cf4286c3f0c",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 7,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-938eaa0ac82d5aa90446",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-5a56c5854d52f906b6c1"
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-c8b4a83ed51b7300c51f"
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-2ba8bc91fadf3c1394b6"
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-73396f6e519e62e6d58b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's status identity develops into \"Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.\" (visible from scene 8; no comparable prior state is recorded).",
+                "development_id": "character-development-64010b8558a56198580a",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie Hastings's status identity develops into \"Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree\" (visible from scene 8; no comparable prior state is recorded).",
+                "development_id": "character-development-4644c4cac136be72fc89",
+                "evidence_scene_orders": [
+                  8
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-fa1cfd189a9e67f9cafe",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f267639d2d5f8d246697",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 8,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 7
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-417d9a3c6e33b6ad1253",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-5a56c5854d52f906b6c1"
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-73c51dd507f934a4310d"
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-c8b4a83ed51b7300c51f"
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-2ba8bc91fadf3c1394b6"
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-73396f6e519e62e6d58b"
+              },
+              {
+                "claim": "Julie is leaving the Westlake Lab after spending the morning with Peyton.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-d39475fbc31d8c61dc36"
+              },
+              {
+                "claim": "Julie experiences a moment of personal contentment after professional tension",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-ffa6072242ad2504fabf"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's status identity develops into \"Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.\" (visible from scene 22; no comparable prior state is recorded).",
+                "development_id": "character-development-1719163e482b76e49782",
+                "evidence_scene_orders": [
+                  22
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-330dd43d4e5e0cb8a949",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-938eaa0ac82d5aa90446",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 22,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 8
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-1820123d861893a41a76",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-5a56c5854d52f906b6c1"
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-73c51dd507f934a4310d"
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-c8b4a83ed51b7300c51f"
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-060a66d3408792fb8e56"
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-2ba8bc91fadf3c1394b6"
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-73396f6e519e62e6d58b"
+              },
+              {
+                "claim": "Julie's identity shifts toward mourning, symbolized by her attire changing from a business suit to a black mourning suit.",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "character-state-294b308a8bde9449927d"
+              },
+              {
+                "claim": "Julie is leaving the Westlake Lab after spending the morning with Peyton.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-d39475fbc31d8c61dc36"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's status identity develops from \"Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.\" to \"Julie's identity shifts toward mourning, symbolized by her attire changing from a business suit to a black mourning suit.\" (visible from scene 34).",
+                "development_id": "character-development-85a887557e36f3290366",
+                "evidence_scene_orders": [
+                  8,
+                  34
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-5046499411e227c707ad",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Julie is leaving the Westlake Lab after spending the morning with Peyton.",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Julie experiences a moment of personal contentment after professional tension",
+                "evidence_scene_orders": [
+                  22
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-417d9a3c6e33b6ad1253",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 34,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 22
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-f80e07064ae699d746e5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie perceives Strack as an unexpected protector who intervenes on her behalf.",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-f4e22daae9e87388db5e"
+              },
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-5a56c5854d52f906b6c1"
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-73c51dd507f934a4310d"
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-c8b4a83ed51b7300c51f"
+              },
+              {
+                "claim": "Julie identifies as someone in a period of grief, affecting her decision-making",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-2e73beef5a9b350d95f3"
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-060a66d3408792fb8e56"
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-2ba8bc91fadf3c1394b6"
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-73396f6e519e62e6d58b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's relationship develops from \"Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.\" to \"Julie perceives Strack as an unexpected protector who intervenes on her behalf.\" (visible from scene 44).",
+                "development_id": "character-development-a82bcc9a62d850ca74b8",
+                "evidence_scene_orders": [
+                  25,
+                  44
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e8ab35cd59317be619c1",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Julie's identity shifts toward mourning, symbolized by her attire changing from a business suit to a black mourning suit.",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "Julie is leaving the Westlake Lab after spending the morning with Peyton.",
+                "evidence_scene_orders": [
+                  22
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-1820123d861893a41a76",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 44,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 34
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-cbf255e2f2c2ee534878",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie perceives Strack as an unexpected protector who intervenes on her behalf.",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-f4e22daae9e87388db5e"
+              },
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-5a56c5854d52f906b6c1"
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-73c51dd507f934a4310d"
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-c8b4a83ed51b7300c51f"
+              },
+              {
+                "claim": "Julie believes Peyton is the same person she knew before",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-762cd11c4f0753859f64"
+              },
+              {
+                "claim": "Julie identifies as someone in a period of grief, affecting her decision-making",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-2e73beef5a9b350d95f3"
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-060a66d3408792fb8e56"
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-2ba8bc91fadf3c1394b6"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's status identity develops into \"Julie affirms her continued romantic commitment to Peyton.\" (visible from scene 65; no comparable prior state is recorded).",
+                "development_id": "character-development-278005d21cb6380c7f11",
+                "evidence_scene_orders": [
+                  65
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-3e83f2ecbe475e4e4d8e",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Julie perceives Strack as an unexpected protector who intervenes on her behalf.",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie identifies as someone in a period of grief, affecting her decision-making",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie Hastings identifies herself as a legal representative from the law firm Pappas and Swain.",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f80e07064ae699d746e5",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 65,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 44
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-ab3a9472c69965e0f2e8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Julie perceives Strack as an unexpected protector who intervenes on her behalf.",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-f4e22daae9e87388db5e"
+              },
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-5a56c5854d52f906b6c1"
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-73c51dd507f934a4310d"
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-c8b4a83ed51b7300c51f"
+              },
+              {
+                "claim": "Julie does not know the truth about Peyton's transformation but senses he is hiding something",
+                "evidence_scene_orders": [
+                  79
+                ],
+                "state_id": "character-state-a790cc3f16876086eeaf"
+              },
+              {
+                "claim": "Julie believes Peyton is the same person she knew before",
+                "evidence_scene_orders": [
+                  61
+                ],
+                "state_id": "character-state-762cd11c4f0753859f64"
+              },
+              {
+                "claim": "Julie identifies as someone in a period of grief, affecting her decision-making",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-2e73beef5a9b350d95f3"
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-060a66d3408792fb8e56"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Julie Hastings's belief knowledge develops from \"Julie believes Peyton is the same person she knew before\" to \"Julie does not know the truth about Peyton's transformation but senses he is hiding something\" (visible from scene 79).",
+                "development_id": "character-development-2821c58c1ced5d8b700b",
+                "evidence_scene_orders": [
+                  61,
+                  79
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c61d96422ade691eb63d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Julie perceives Strack as an unexpected protector who intervenes on her behalf.",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "Julie positions herself as a competent and resolute negotiator despite being challenged as out of her league.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie acts in her professional role as an investigator uncovering potentially corrupt dealings.",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Julie positions herself as the authority on authenticity and decorum, using wine expertise to undermine the opposing side's credibility.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Julie believes Peyton is the same person she knew before",
+                "evidence_scene_orders": [
+                  61
+                ]
+              },
+              {
+                "claim": "Julie identifies as someone in a period of grief, affecting her decision-making",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "Julie maintains a professional but resistant stance toward Strack, rejecting his influence over her actions.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Julie acts as the controlling negotiator, overriding Strack Sr.'s impulse to agree",
+                "evidence_scene_orders": [
+                  8
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-cbf255e2f2c2ee534878",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 79,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 65
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en7f8648f5449c4f9da46febfd68cdbd58::entity-358ef60eeefe8a13eb7c"
+    },
+    {
+      "aliases": [
+        "Darkman",
+        "Pauly",
+        "Dr. Westlake",
+        "DAR MAN",
+        "DARIN",
+        "Darkaman",
+        "DARKMN",
+        "DAR MW",
+        "DART AN",
+        "DARXMAN",
+        "living Pauly/Darkman",
+        "Pauly/Darkman",
+        "PAULY/DARM",
+        "the Darkman",
+        "Rudy",
+        "DARIQRMAN",
+        "Darkman/Durant",
+        "Durant/Darkman",
+        "B426",
+        "Darkman B",
+        "DARMAN",
+        "THE DARICMAN",
+        "THE DARXMAN"
+      ],
+      "character": "Darkman",
+      "character_id": "entity-385abcf0e5ba101d05ea",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-54c90f90151b509626d9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-3acb030231f648a4f820"
+              },
+              {
+                "claim": "Darkman is subjected to verbal degradation that challenges his masculinity and authority.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c7ca3272ef0a4d2bf123"
+              },
+              {
+                "claim": "Darkman is treated as a subordinate visitor under the authority of the dock workers.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-06abc6af1098cfeee6e1"
+              },
+              {
+                "claim": "Darkman is subject to a physical search initiated by dock workers upon arrival at the wharf.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-18e9b1ca7fc3c2ec06bf"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-cff70fd58f2322799eab",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-45efcd041d60628c9520",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-752ce1cb029350aee028"
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-a13e5f99df8f35f0ea5a"
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-8d1d2bff33563d97ec2b"
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-3acb030231f648a4f820"
+              },
+              {
+                "claim": "Darkman is subjected to verbal degradation that challenges his masculinity and authority.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c7ca3272ef0a4d2bf123"
+              },
+              {
+                "claim": "Darkman is treated as a subordinate visitor under the authority of the dock workers.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-06abc6af1098cfeee6e1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Darkman's status identity develops into \"The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.\" (visible from scene 43; no comparable prior state is recorded).",
+                "development_id": "character-development-caf51bf5ba980d39a79e",
+                "evidence_scene_orders": [
+                  43
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-a586781a4e4e129d20ec",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is subjected to verbal degradation that challenges his masculinity and authority.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is treated as a subordinate visitor under the authority of the dock workers.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is subject to a physical search initiated by dock workers upon arrival at the wharf.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-54c90f90151b509626d9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 43,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-2835b00194711a749266",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-752ce1cb029350aee028"
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-a13e5f99df8f35f0ea5a"
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-8d1d2bff33563d97ec2b"
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-8c62198672bdf2170494"
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-3acb030231f648a4f820"
+              },
+              {
+                "claim": "Darkman is subjected to verbal degradation that challenges his masculinity and authority.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c7ca3272ef0a4d2bf123"
+              },
+              {
+                "claim": "Darkman is treated as a subordinate visitor under the authority of the dock workers.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-06abc6af1098cfeee6e1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Darkman's status identity develops from \"The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.\" to \"Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.\" (visible from scene 46).",
+                "development_id": "character-development-e07c89d943f997568380",
+                "evidence_scene_orders": [
+                  43,
+                  46
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c121234237978c78ee1f",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is subjected to verbal degradation that challenges his masculinity and authority.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is treated as a subordinate visitor under the authority of the dock workers.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-45efcd041d60628c9520",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 46,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 43
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-dcb3e17c69c9d973ae1c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-752ce1cb029350aee028"
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-a13e5f99df8f35f0ea5a"
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-8d1d2bff33563d97ec2b"
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-9ad317b9ede28118bcb1"
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-f601673261d7463e7e98"
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-8c62198672bdf2170494"
+              },
+              {
+                "claim": "Darkman maintains an emotional connection to Peyton, addressing her through the photograph.",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-c2b921498318cc67b5ca"
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-3acb030231f648a4f820"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Darkman's status identity develops from \"Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.\" to \"Darkman perceives himself as a shadowy, deformed figure returning to Julie\" (visible from scene 49).",
+                "development_id": "character-development-1be25d2efbff0add9463",
+                "evidence_scene_orders": [
+                  46,
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman's relationship develops from \"Darkman has an antagonistic and physically dominant relationship with Peyton\" to \"Darkman maintains an emotional connection to Peyton, addressing her through the photograph.\" (visible from scene 49).",
+                "development_id": "character-development-a95ae03ac8c3f8b8ed64",
+                "evidence_scene_orders": [
+                  30,
+                  49
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8ce897c32676f2c59eee",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is subjected to verbal degradation that challenges his masculinity and authority.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Darkman is treated as a subordinate visitor under the authority of the dock workers.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-2835b00194711a749266",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 49,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 46
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-3e0c67b15726a92be314",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-752ce1cb029350aee028"
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-a13e5f99df8f35f0ea5a"
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-8d1d2bff33563d97ec2b"
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-9ad317b9ede28118bcb1"
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-f601673261d7463e7e98"
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-8c62198672bdf2170494"
+              },
+              {
+                "claim": "Darkman maintains an emotional connection to Peyton, addressing her through the photograph.",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-c2b921498318cc67b5ca"
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-3acb030231f648a4f820"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Darkman's status identity develops into \"Darkman identifies the warehouse as his home\" (visible from scene 51; no comparable prior state is recorded).",
+                "development_id": "character-development-588c62483dd89f66db69",
+                "evidence_scene_orders": [
+                  51
+                ]
+              },
+              {
+                "claim": "Darkman's relationship develops from \"Darkman maintains an emotional connection to Peyton, addressing her through the photograph.\" to \"Darkman is emotionally invested in reconstructing Peyton's image from fragmented photos\" (visible from scene 51).",
+                "development_id": "character-development-65925ad08627a3fae9df",
+                "evidence_scene_orders": [
+                  49,
+                  51
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8cd35fab6d7437da23c4",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Darkman maintains an emotional connection to Peyton, addressing her through the photograph.",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-dcb3e17c69c9d973ae1c",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 51,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 49
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-02d9c2e6d6299a71dbcc",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-752ce1cb029350aee028"
+              },
+              {
+                "claim": "Pauly gains possession of the briefcase during the restaurant meeting.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-c6db6e835b630c13abff"
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-a13e5f99df8f35f0ea5a"
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-8d1d2bff33563d97ec2b"
+              },
+              {
+                "claim": "Darkman is actively assuming Pauly's physical identity through synthetic skin and digital modeling.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-16042358e0469225a042"
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-9ad317b9ede28118bcb1"
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-f601673261d7463e7e98"
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-8c62198672bdf2170494"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Darkman's status identity develops from \"Darkman identifies the warehouse as his home\" to \"Darkman is actively assuming Pauly's physical identity through synthetic skin and digital modeling.\" (visible from scene 52).",
+                "development_id": "character-development-c6e85cfad570e7f29c44",
+                "evidence_scene_orders": [
+                  51,
+                  52
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6782d99c7d0ac1276e03",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Darkman maintains an emotional connection to Peyton, addressing her through the photograph.",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman is disarmed as concealed weapons are confiscated during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3e0c67b15726a92be314",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 52,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 51
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-4433ac6aa519e00ffcc5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-752ce1cb029350aee028"
+              },
+              {
+                "claim": "Pauly gains possession of the briefcase during the restaurant meeting.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-c6db6e835b630c13abff"
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-a13e5f99df8f35f0ea5a"
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-8d1d2bff33563d97ec2b"
+              },
+              {
+                "claim": "Darkman is actively assuming Pauly's physical identity through synthetic skin and digital modeling.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-16042358e0469225a042"
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-9ad317b9ede28118bcb1"
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ],
+                "state_id": "character-state-f601673261d7463e7e98"
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-8c62198672bdf2170494"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Darkman's status identity develops from \"Darkman is actively assuming Pauly's physical identity through synthetic skin and digital modeling.\" to \"Darkman is assuming Pauly's identity by taking his clothes and preparing travel under that alias\" (visible from scene 53).",
+                "development_id": "character-development-d8608ead97adb74141ba",
+                "evidence_scene_orders": [
+                  52,
+                  53
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-0fa409fd068fc6d7f239",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Darkman has an antagonistic and physically dominant relationship with Peyton",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Pauly gains possession of the briefcase during the restaurant meeting.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "The identity of Darkman is born as Peyton embraces a new persona marked by cold determination and a wicked smile.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Pauly is acting as an enforcer or leader within Durant's gang during the assault on Peyton.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Darkman is actively assuming Pauly's physical identity through synthetic skin and digital modeling.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Darkman perceives himself as a shadowy, deformed figure returning to Julie",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman feels emotional dependence toward Julie",
+                "evidence_scene_orders": [
+                  49
+                ]
+              },
+              {
+                "claim": "Darkman presents himself as a menacing, fire-ravaged figure who uses terror as a tool.",
+                "evidence_scene_orders": [
+                  46
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-02d9c2e6d6299a71dbcc",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 53,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 52
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en7f8648f5449c4f9da46febfd68cdbd58::entity-385abcf0e5ba101d05ea"
+    },
+    {
+      "aliases": [
+        "Robert G. Durant",
+        "Durant",
+        "Robert Durant",
+        "Real Durant",
+        "Robert"
+      ],
+      "character": "Robert G. Durant",
+      "character_id": "entity-843d4e73d24a5c568539",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-df242365d0476bda8ce8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-bdc6e90cc6577810e914"
+              },
+              {
+                "claim": "Robert G. Durant is a well-dressed and immaculately groomed man of forty.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-a8b27189253b03ec0c24"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-976b7a6aad6bd16bdd0a",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-2a862c7e0e7696641b44",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-c891b3d6c8492bcecfc2"
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5eb45939a940eb4d0b88"
+              },
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-bdc6e90cc6577810e914"
+              },
+              {
+                "claim": "Robert G. Durant positions himself as an authority figure capable of enforcing compliance.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-a14fb7ab420626878f11"
+              },
+              {
+                "claim": "Robert G. Durant is a well-dressed and immaculately groomed man of forty.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-a8b27189253b03ec0c24"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Robert G. Durant's status identity develops from \"Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.\" to \"Durant reveals his true identity after being in disguise.\" (visible from scene 15).",
+                "development_id": "character-development-b66ac34eeb4ddfdd7b89",
+                "evidence_scene_orders": [
+                  3,
+                  15
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e87f753e192ab02c20cb",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Robert G. Durant is a well-dressed and immaculately groomed man of forty.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-df242365d0476bda8ce8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 15,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-22b9ca2b84db0cb943bb",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-c891b3d6c8492bcecfc2"
+              },
+              {
+                "claim": "Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-386d0752ca6d319af9bb"
+              },
+              {
+                "claim": "Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-d52b0a1ceb41b85e0ef2"
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5eb45939a940eb4d0b88"
+              },
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-bdc6e90cc6577810e914"
+              },
+              {
+                "claim": "Robert G. Durant positions himself as an authority figure capable of enforcing compliance.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-a14fb7ab420626878f11"
+              },
+              {
+                "claim": "Robert G. Durant is a well-dressed and immaculately groomed man of forty.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-a8b27189253b03ec0c24"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Robert G. Durant's status identity develops from \"Durant reveals his true identity after being in disguise.\" to \"Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.\" (visible from scene 25).",
+                "development_id": "character-development-4bdcc15468d2de957b0f",
+                "evidence_scene_orders": [
+                  15,
+                  25
+                ]
+              },
+              {
+                "claim": "Robert G. Durant's goal plan develops into \"Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.\" (visible from scene 25; no comparable prior state is recorded).",
+                "development_id": "character-development-b0cb5a59de0c5ad5f36c",
+                "evidence_scene_orders": [
+                  25
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-d89d9e9c1fb629486128",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Robert G. Durant positions himself as an authority figure capable of enforcing compliance.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Robert G. Durant is a well-dressed and immaculately groomed man of forty.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-2a862c7e0e7696641b44",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 25,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 15
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-4abdd42775e553865089",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-b1a690c7757bef3ef1b1"
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-c891b3d6c8492bcecfc2"
+              },
+              {
+                "claim": "Durant holds authority over Trumayne, issuing direct orders.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-cbec6da6d31a232f4dec"
+              },
+              {
+                "claim": "Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-386d0752ca6d319af9bb"
+              },
+              {
+                "claim": "Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-d52b0a1ceb41b85e0ef2"
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5eb45939a940eb4d0b88"
+              },
+              {
+                "claim": "Durant gives Trumayne his cigar trimmer and issues a command, indicating a hierarchical relationship.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-2e41299fdedd9b012f79"
+              },
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-bdc6e90cc6577810e914"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Robert G. Durant's status identity develops from \"Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.\" to \"Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.\" (visible from scene 30).",
+                "development_id": "character-development-2293782ee113177c1044",
+                "evidence_scene_orders": [
+                  25,
+                  30
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-567ebea8f633994e4403",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Robert G. Durant positions himself as an authority figure capable of enforcing compliance.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Robert G. Durant is a well-dressed and immaculately groomed man of forty.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-22b9ca2b84db0cb943bb",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 30,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 25
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-0ffb4183f745fe5a6e1d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-b1a690c7757bef3ef1b1"
+              },
+              {
+                "claim": "Peyton begins forming a plan for confrontation or retaliation against Durant upon discovering his lighter.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-39b998e2211ad743e4ca"
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-c891b3d6c8492bcecfc2"
+              },
+              {
+                "claim": "Durant holds authority over Trumayne, issuing direct orders.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-cbec6da6d31a232f4dec"
+              },
+              {
+                "claim": "Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-386d0752ca6d319af9bb"
+              },
+              {
+                "claim": "Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-d52b0a1ceb41b85e0ef2"
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "character-state-5eb45939a940eb4d0b88"
+              },
+              {
+                "claim": "Peyton's self-perception shifts from defeated and broken to one regaining agency, marked by the reawakening of rage.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-6128b0872fa308fc569f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Robert G. Durant's goal plan develops from \"Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.\" to \"Peyton begins forming a plan for confrontation or retaliation against Durant upon discovering his lighter.\" (visible from scene 43).",
+                "development_id": "character-development-919dee4ecd6e7092647e",
+                "evidence_scene_orders": [
+                  25,
+                  43
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e60fae01ea2512484515",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Durant holds authority over Trumayne, issuing direct orders.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Durant gives Trumayne his cigar trimmer and issues a command, indicating a hierarchical relationship.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Robert G. Durant's status is degraded through enforced passivity and gendered ridicule during the search.",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-4abdd42775e553865089",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 43,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 30
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-509c957c048a04b6c2b8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-b1a690c7757bef3ef1b1"
+              },
+              {
+                "claim": "Durant treats Pauly as a guilty subordinate who must be publicly condemned.",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-7413f447c0b6bab6af27"
+              },
+              {
+                "claim": "Durant positions himself as the authority figure who controls judgment and punishment.",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-aae0d1779463b6e9d69f"
+              },
+              {
+                "claim": "Durant exerts coercive control over Pauly through verbal and symbolic intimidation",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-7eac480bea841aa6eb14"
+              },
+              {
+                "claim": "Peyton begins forming a plan for confrontation or retaliation against Durant upon discovering his lighter.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-39b998e2211ad743e4ca"
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-c891b3d6c8492bcecfc2"
+              },
+              {
+                "claim": "Robert Durant is recognized by Strack as a rival, with mutual awareness established",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-1a52910b056c92787861"
+              },
+              {
+                "claim": "Durant holds authority over Trumayne, issuing direct orders.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-cbec6da6d31a232f4dec"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Robert G. Durant's relationship develops into \"Durant treats Pauly as a guilty subordinate who must be publicly condemned.; Durant exerts coercive control over Pauly through verbal and symbolic intimidation\" (visible from scene 56; no comparable prior state is recorded).",
+                "development_id": "character-development-53889d9dbd4fee996425",
+                "evidence_scene_orders": [
+                  56
+                ]
+              },
+              {
+                "claim": "Robert G. Durant's status identity develops from \"Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.\" to \"Durant positions himself as the authority figure who controls judgment and punishment.\" (visible from scene 56).",
+                "development_id": "character-development-51f1ba35ac00ff09c3c9",
+                "evidence_scene_orders": [
+                  30,
+                  56
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6bfd078f2c45ebc8435e",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Peyton begins forming a plan for confrontation or retaliation against Durant upon discovering his lighter.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Durant holds authority over Trumayne, issuing direct orders.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Robert G. Durant aims to obtain the memo through illegal methods as a competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Robert G. Durant is identified as a criminal and real estate competitor for the riverfront development.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Durant reveals his true identity after being in disguise.",
+                "evidence_scene_orders": [
+                  15
+                ]
+              },
+              {
+                "claim": "Peyton's self-perception shifts from defeated and broken to one regaining agency, marked by the reawakening of rage.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-0ffb4183f745fe5a6e1d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 56,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 43
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-0cad3eb3118e6ea7b02b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-b1a690c7757bef3ef1b1"
+              },
+              {
+                "claim": "Durant treats Pauly as a guilty subordinate who must be publicly condemned.",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-7413f447c0b6bab6af27"
+              },
+              {
+                "claim": "Durant positions himself as the authority figure who controls judgment and punishment.",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-aae0d1779463b6e9d69f"
+              },
+              {
+                "claim": "Durant identifies as a collector, symbolically threatening to add Hung Fat to his preserved collection; identifies with or cultivates an identity associated with a macabre collection of preserved fingers.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-a7db8b2905fc2f42a0ea"
+              },
+              {
+                "claim": "Durant exerts coercive control over Pauly through verbal and symbolic intimidation",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "character-state-7eac480bea841aa6eb14"
+              },
+              {
+                "claim": "Peyton begins forming a plan for confrontation or retaliation against Durant upon discovering his lighter.",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "character-state-39b998e2211ad743e4ca"
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-c891b3d6c8492bcecfc2"
+              },
+              {
+                "claim": "Robert Durant is recognized by Strack as a rival, with mutual awareness established",
+                "evidence_scene_orders": [
+                  44
+                ],
+                "state_id": "character-state-1a52910b056c92787861"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Robert G. Durant's status identity develops from \"Durant positions himself as the authority figure who controls judgment and punishment.\" to \"Durant identifies as a collector, symbolically threatening to add Hung Fat to his preserved collection; identifies with or cultivates an identity associated with a macabre collection of preserved fingers.\" (visible from scene 63).",
+                "development_id": "character-development-812b254f7ec8901171df",
+                "evidence_scene_orders": [
+                  56,
+                  63
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-77feff0cd212e1572b7c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Durant asserts leadership by giving final orders and exiting with control; is in command of his gang during the torture sequence; is leader of the gang conducting an ambush; asserts authoritative control through cold, calculated threats and execution orders; is in control of the situation and issuing commands in the lab.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Durant treats Pauly as a guilty subordinate who must be publicly condemned.",
+                "evidence_scene_orders": [
+                  56
+                ]
+              },
+              {
+                "claim": "Durant positions himself as the authority figure who controls judgment and punishment.",
+                "evidence_scene_orders": [
+                  56
+                ]
+              },
+              {
+                "claim": "Durant exerts coercive control over Pauly through verbal and symbolic intimidation",
+                "evidence_scene_orders": [
+                  56
+                ]
+              },
+              {
+                "claim": "Peyton begins forming a plan for confrontation or retaliation against Durant upon discovering his lighter.",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "Durant performs the identity of a controlled, ritualistic enforcer of authority through precise, symbolic violence.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Robert Durant is recognized by Strack as a rival, with mutual awareness established",
+                "evidence_scene_orders": [
+                  44
+                ]
+              },
+              {
+                "claim": "Durant holds authority over Trumayne, issuing direct orders.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-509c957c048a04b6c2b8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 63,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 56
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en7f8648f5449c4f9da46febfd68cdbd58::entity-843d4e73d24a5c568539"
+    }
+  ]
+}

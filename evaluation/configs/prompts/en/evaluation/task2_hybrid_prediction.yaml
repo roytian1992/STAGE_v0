@@ -1,0 +1,17 @@
+id: task2_hybrid_prediction
+category: evaluation
+name: Task 2 hybrid retrieval question answering
+description: Answer one screenplay question from frozen hybrid-retrieved passages.
+task_variables:
+  - {name: question, required: true}
+  - {name: retrieved_passages, required: true}
+static_variables: []
+template: |-
+  Answer the screenplay question using only the retrieved passages.
+  <question>{question}</question>
+  <retrieved_passages>{retrieved_passages}</retrieved_passages>
+
+  Give a direct, concise answer. Do not use outside knowledge or infer facts that the passages do not support. Cite every passage that materially supports the answer using only its exact R-label. If the passages are insufficient, state that the answer cannot be determined and return an empty citation list.
+
+  Return only JSON with exactly these fields:
+  {{"answer":"...","cited_passage_labels":["R1"]}}

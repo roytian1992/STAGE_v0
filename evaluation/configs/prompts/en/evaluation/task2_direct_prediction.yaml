@@ -1,0 +1,15 @@
+id: task2_direct_prediction
+category: evaluation
+name: Task 2 direct question answering
+description: Answer one screenplay question without screenplay, memory, retrieval, or other context.
+task_variables:
+  - {name: question, required: true}
+static_variables: []
+template: |-
+  Answer this screenplay question directly from the question alone.
+  <question>{question}</question>
+
+  No screenplay, retrieved passages, memory, scene text, reference answer, or other context is available. Give your best concise answer; do not claim to have inspected unavailable context. Do not output analysis or hidden reasoning.
+
+  Return only JSON with exactly this field:
+  {{"answer":"..."}}

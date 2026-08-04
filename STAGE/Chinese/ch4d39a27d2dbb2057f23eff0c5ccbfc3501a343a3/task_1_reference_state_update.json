@@ -1,0 +1,760 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 6,
+    "current_state_reference_claims": 35,
+    "development_reference_claims": 10,
+    "trajectories": 1
+  },
+  "language": "zh",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "ch4d39a27d2dbb2057f23eff0c5ccbfc3501a343a3",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 67,
+    "sha256": "39bbe857c06799b0be9c86399048075f4a88d0afce199df953cbe17213d2e873"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "波多野",
+        "四郎",
+        "波多野四郎",
+        "日本爵士乐演奏者"
+      ],
+      "character": "波多野",
+      "character_id": "entity-32ee1e00ab55ee002896",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-7aabef3624c9e5f0abc5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "波多野与玛多娜存在婚姻关系，且波多野在他人面前确认这一关系，玛多娜也主动维护其利益",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-cc78f07634cbd87669e8"
+              },
+              {
+                "claim": "波多野隐瞒真实意图，维持与玛多娜的虚假婚姻关系",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-374bc9eb78fa74daa52e"
+              },
+              {
+                "claim": "波多野与松本合作隐瞒婚姻真相，依赖其协助维持假象",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-97a5a10dcf6c8057a9fd"
+              },
+              {
+                "claim": "波多野向松本坦白婚姻为骗局，恢复合作演奏关系",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-bb3d649e04dd6b30453d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "波多野从对松本的怀疑转为重新建立合作信任，恢复共同音乐活动",
+                "development_id": "task1-development-b25e80cea530f03aec72",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-cbbc3a0d15aa0f0bff89",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 5,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-c21bbb672e021e7465dc",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "波多野与松本有长期友谊，彼此熟识并认同其对爵士乐的追求，共同致力于爵士乐艺术发展",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "task1-state-aa14187f06e37eef7b6c"
+              },
+              {
+                "claim": "波多野隐瞒真实意图，维持与玛多娜的虚假婚姻关系",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-374bc9eb78fa74daa52e"
+              },
+              {
+                "claim": "处于被暴力控制的状态，失去行动自由",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-3e6285f8f92722429410"
+              },
+              {
+                "claim": "作为赌将松本乐队中的黑管演奏者参与演出",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-ed12dab87593ddd9529c"
+              },
+              {
+                "claim": "在夜总会表演中处于伴奏乐手的位置，未参与舞台中心表演",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-bb7568c855802a7aa1a8"
+              },
+              {
+                "claim": "波多野被视为乐队成员及玛多娜的恋人",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "task1-state-7b9f46f32e9e460be997"
+              },
+              {
+                "claim": "波多野与玛多娜的关系出现疏离，玛多娜试图与他沟通但被忽视",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "task1-state-27cd9fa2ed100c6b3b1f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "波多野与松本的关系从乐队合作深化为基于艺术认同的长期友谊",
+                "development_id": "task1-development-5010856675615e7ae64a",
+                "evidence_scene_orders": [
+                  12,
+                  18
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-2228ab452790093aadd6",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "波多野与玛多娜存在婚姻关系，且波多野在他人面前确认这一关系，玛多娜也主动维护其利益",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "波多野隐瞒真实意图，维持与玛多娜的虚假婚姻关系",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "波多野与松本合作隐瞒婚姻真相，依赖其协助维持假象",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "波多野向松本坦白婚姻为骗局，恢复合作演奏关系",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7aabef3624c9e5f0abc5",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 18,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 5
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-ce66d8693e2e55e98a1b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "波多野表现出对玛多娜情感责任的疏离与放弃，决定离开她并托付松本照顾，认为自己阻碍了她的巴黎梦想",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-0e0e95dd1d3de6157983"
+              },
+              {
+                "claim": "波多野决定与四马路黑人乐队的苏珊一同前往新奥尔良",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-7fd90720d703b487b968"
+              },
+              {
+                "claim": "波多野视自己为可自主决定去留的独立个体，表现出任性的自我认知",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-dc70ff90f40a4df47ba1"
+              },
+              {
+                "claim": "波多野请求松本代为照顾玛多娜，转移情感与责任",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-f9118062c2e340630f03"
+              },
+              {
+                "claim": "波多野作为家庭成员回归，并表现出对家庭事务的关注",
+                "evidence_scene_orders": [
+                  42
+                ],
+                "state_id": "task1-state-e5169eebd8941cb2f179"
+              },
+              {
+                "claim": "与松本有长期友谊，彼此熟识并认同其对爵士乐的追求，共同致力于爵士乐艺术发展",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "task1-state-aa14187f06e37eef7b6c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "波多野将对玛多娜的情感责任正式转移给松本，标志其主动退出原有情感结构",
+                "development_id": "task1-development-011a339d2faafdee3b25",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野基于与苏珊的文化根源共鸣，决定与其共同前往新奥尔良，形成新的关系指向",
+                "development_id": "task1-development-4f459f9246ecd98435c3",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野从身份困惑转向自我主导的离沪决定，体现其主体性的重建",
+                "development_id": "task1-development-01f11fbee54ca2815c3d",
+                "evidence_scene_orders": [
+                  43
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-f43e69f60def74e345f3",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "波多野与松本有长期友谊，彼此熟识并认同其对爵士乐的追求，共同致力于爵士乐艺术发展",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "波多野隐瞒真实意图，维持与玛多娜的虚假婚姻关系",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "处于被暴力控制的状态，失去行动自由",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "作为赌将松本乐队中的黑管演奏者参与演出",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "在夜总会表演中处于伴奏乐手的位置，未参与舞台中心表演",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "波多野被视为乐队成员及玛多娜的恋人",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "波多野与玛多娜的关系出现疏离，玛多娜试图与他沟通但被忽视",
+                "evidence_scene_orders": [
+                  16
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-c21bbb672e021e7465dc",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 43,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 18
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-fc04dac1941304991b50",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "作为日本爵士乐演奏者，波多野在关键时刻选择站在舞者一方，背离军方意图，并以即兴演奏展现艺术自主性，其身份在演出中得到彰显和公开认可",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "task1-state-c12bcf58cc6a1f71f231"
+              },
+              {
+                "claim": "波多野与松本在音乐上形成默契配合，共同推动风格转变，并在被迫演奏中建立持久合作",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "task1-state-c0f839d16964aa6673d8"
+              },
+              {
+                "claim": "波多野视自己为可自主决定去留的独立个体，表现出任性的自我认知",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-dc70ff90f40a4df47ba1"
+              },
+              {
+                "claim": "波多野决定与四马路黑人乐队的苏珊一同前往新奥尔良",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-7fd90720d703b487b968"
+              },
+              {
+                "claim": "波多野请求松本代为照顾玛多娜，转移情感与责任",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-f9118062c2e340630f03"
+              },
+              {
+                "claim": "波多野在聚会中具有主导行动的能力，能中断当前情境并改变场景走向",
+                "evidence_scene_orders": [
+                  42
+                ],
+                "state_id": "task1-state-11244f1b0a48df4481db"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "波多野从因身份冲突而情绪受扰的状态，发展为在公开演奏中主动彰显其作为日本爵士艺术家的自主性与立场",
+                "development_id": "task1-development-754fdcf1ca4c7af04833",
+                "evidence_scene_orders": [
+                  33,
+                  50
+                ]
+              },
+              {
+                "claim": "波多野从单方面托付情感责任于松本，发展为与松本建立基于音乐默契与共同抗争的实质性合作关系",
+                "development_id": "task1-development-27970e86596b74ffb0c2",
+                "evidence_scene_orders": [
+                  43,
+                  50
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-60764baa950519d9c8f1",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "波多野表现出对玛多娜情感责任的疏离与放弃，决定离开她并托付松本照顾，认为自己阻碍了她的巴黎梦想",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野决定与四马路黑人乐队的苏珊一同前往新奥尔良",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野视自己为可自主决定去留的独立个体，表现出任性的自我认知",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野请求松本代为照顾玛多娜，转移情感与责任",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野作为家庭成员回归，并表现出对家庭事务的关注",
+                "evidence_scene_orders": [
+                  42
+                ]
+              },
+              {
+                "claim": "与松本有长期友谊，彼此熟识并认同其对爵士乐的追求，共同致力于爵士乐艺术发展",
+                "evidence_scene_orders": [
+                  18
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ce66d8693e2e55e98a1b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 50,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 43
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-ad26393177cec45db925",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "波多野感到自己作为男人和艺术家的价值与尊严正在丧失，陷入身份危机，无法适应现实环境，情绪激烈且自我否定",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "task1-state-52fdf9744c475b649f7c"
+              },
+              {
+                "claim": "波多野将自己视为与麻木者不同的、仍有情感挣扎的男人",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "task1-state-4a8c493f700057db7c19"
+              },
+              {
+                "claim": "波多野作为日本爵士乐演奏者，在关键时刻选择站在舞者一方，背离军方意图，并以即兴演奏展现艺术自主性，其身份在演出中得到彰显和公开认可",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "task1-state-c12bcf58cc6a1f71f231"
+              },
+              {
+                "claim": "波多野与松本在音乐上形成默契配合，共同推动风格转变，并在被迫演奏中建立持久合作",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "task1-state-c0f839d16964aa6673d8"
+              },
+              {
+                "claim": "波多野决定与四马路黑人乐队的苏珊一同前往新奥尔良",
+                "evidence_scene_orders": [
+                  43
+                ],
+                "state_id": "task1-state-7fd90720d703b487b968"
+              },
+              {
+                "claim": "波多野对玛多娜表现出强烈而混乱的情感依恋，包含爱意与失控的肢体冲动，情绪失控下实施强迫性接触并宣称深爱她，导致关系紧张",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "task1-state-639fdafe9ff38664cc7e"
+              },
+              {
+                "claim": "波多野作为群体成员之一参与集体行动",
+                "evidence_scene_orders": [
+                  56
+                ],
+                "state_id": "task1-state-133c5c309a322172c65e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "波多野从自视为可自主决定去留的独立个体，转变为陷入身份危机、自我否定且情绪激烈的状态",
+                "development_id": "task1-development-57516a83262b4b7c0e37",
+                "evidence_scene_orders": [
+                  43,
+                  60
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6b9c368c14bca4b36d00",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "作为日本爵士乐演奏者，波多野在关键时刻选择站在舞者一方，背离军方意图，并以即兴演奏展现艺术自主性，其身份在演出中得到彰显和公开认可",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "波多野与松本在音乐上形成默契配合，共同推动风格转变，并在被迫演奏中建立持久合作",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "波多野视自己为可自主决定去留的独立个体，表现出任性的自我认知",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野决定与四马路黑人乐队的苏珊一同前往新奥尔良",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野请求松本代为照顾玛多娜，转移情感与责任",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野在聚会中具有主导行动的能力，能中断当前情境并改变场景走向",
+                "evidence_scene_orders": [
+                  42
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-fc04dac1941304991b50",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 60,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 50
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-17a5deed1b05db9b72b3",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "波多野以爵士乐演奏者身份出现在幻象中，正在吹奏华丽的即兴曲",
+                "evidence_scene_orders": [
+                  67
+                ],
+                "state_id": "task1-state-557637d60d58d9c6606a"
+              },
+              {
+                "claim": "与玛多娜共同参与幻象中的演出，存在协同表演关系",
+                "evidence_scene_orders": [
+                  67
+                ],
+                "state_id": "task1-state-239bdf83ed06a8c81033"
+              },
+              {
+                "claim": "处于昏迷或半昏迷状态，身体极度虚弱，依赖他人照料",
+                "evidence_scene_orders": [
+                  65
+                ],
+                "state_id": "task1-state-092d473ee7f2d6a11892"
+              },
+              {
+                "claim": "波多野依赖玛多娜的照顾，称其为‘圆圆’，表达共同出行的愿望，并确认一同去巴黎，呼唤她不要外出以获得安全感",
+                "evidence_scene_orders": [
+                  65
+                ],
+                "state_id": "task1-state-765ad978e64db5ba6865"
+              },
+              {
+                "claim": "感到自己作为男人和艺术家的价值与尊严正在丧失，陷入身份危机，无法适应现实环境，情绪激烈且自我否定",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "task1-state-52fdf9744c475b649f7c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "波多野从试图逃离现实的自主决定者转变为丧失行动能力、依赖他人照护的被动存在",
+                "development_id": "task1-development-b6cd58ca8573cdf12e68",
+                "evidence_scene_orders": [
+                  65
+                ]
+              },
+              {
+                "claim": "波多野由现实中的身体崩溃进入幻象中艺术身份的再现，完成从现实失能到象征性回归的转变",
+                "development_id": "task1-development-e699e7d029eaaa5b77c0",
+                "evidence_scene_orders": [
+                  67
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-49e2294e2f1cd2d367ef",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "波多野感到自己作为男人和艺术家的价值与尊严正在丧失，陷入身份危机，无法适应现实环境，情绪激烈且自我否定",
+                "evidence_scene_orders": [
+                  60
+                ]
+              },
+              {
+                "claim": "波多野将自己视为与麻木者不同的、仍有情感挣扎的男人",
+                "evidence_scene_orders": [
+                  60
+                ]
+              },
+              {
+                "claim": "波多野作为日本爵士乐演奏者，在关键时刻选择站在舞者一方，背离军方意图，并以即兴演奏展现艺术自主性，其身份在演出中得到彰显和公开认可",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "波多野与松本在音乐上形成默契配合，共同推动风格转变，并在被迫演奏中建立持久合作",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "波多野决定与四马路黑人乐队的苏珊一同前往新奥尔良",
+                "evidence_scene_orders": [
+                  43
+                ]
+              },
+              {
+                "claim": "波多野对玛多娜表现出强烈而混乱的情感依恋，包含爱意与失控的肢体冲动，情绪失控下实施强迫性接触并宣称深爱她，导致关系紧张",
+                "evidence_scene_orders": [
+                  60
+                ]
+              },
+              {
+                "claim": "波多野作为群体成员之一参与集体行动",
+                "evidence_scene_orders": [
+                  56
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ad26393177cec45db925",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 67,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 60
+          },
+          "sequence_index": 6
+        }
+      ],
+      "trajectory_id": "ch4d39a27d2dbb2057f23eff0c5ccbfc3501a343a3::entity-32ee1e00ab55ee002896"
+    }
+  ]
+}

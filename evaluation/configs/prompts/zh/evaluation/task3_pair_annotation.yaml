@@ -1,0 +1,23 @@
+id: task3_pair_annotation_zh
+category: evaluation
+name: Task 3 pair annotation zh
+description: 在生成回答前冻结纵向比较构念。
+task_variables:
+  - {name: character, required: true}
+  - {name: source_pair_type, required: true}
+  - {name: earlier_case, required: true}
+  - {name: later_case, required: true}
+static_variables: []
+template: |-
+  在查看任何 actor 回答前，为两个 Task 3 checkpoint 定义比较构念。
+  <character>{character}</character><source_pair_type>{source_pair_type}</source_pair_type>
+  <earlier_case>{earlier_case}</earlier_case><later_case>{later_case}</later_case>
+
+  只能选择一种 pair_type：
+  - expected_change：立场或行为应因关系变化或知识获得之外的原因发生实质变化；
+  - expected_stability：尽管时间或语境变化，核心立场或人格应保持稳定；
+  - knowledge_acquisition：角色后来获得或可访问新信息，因此回答应更新；
+  - relationship_change：关系、信任、阵营或人际立场变化，因此回答应更新。
+
+  expected_direction 必须说明之后将依据两条实际回答检验的可观察变化或稳定方向。comparability 必须说明两个问题共享的比较构念。不得预测回答措辞、打分或使用 checkpoint rubric 之外的信息。只返回 JSON：
+  {{"pair_type":"expected_change|expected_stability|knowledge_acquisition|relationship_change","expected_direction":"...","comparability":"...","brief_rationale":"简短资产审核理由"}}

@@ -1,0 +1,1147 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "张宛",
+      "character_id": "legacy-mt-role-3f73ff3e25161532ae52",
+      "episode_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f__张宛__ep01",
+      "episode_theme": "从突然听说羽清要结婚，到一路追问、当面发作，再到承认兄弟情分已经变味，连续追问张宛怎么一步步把这口气憋成了翻脸。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-3f73ff3e25161532ae52"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对羽清的立场，并使其明显落在既有关系证据之外。",
+              "你当时觉得无所谓，朋友结婚不告诉自己很正常"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直白, 直接, 不耐烦, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：张宛在月湾公园逗邓宇的孩子；徐琳告诉张宛羽清明天结婚。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕谨慎观察展开。",
+              "角色约束还表明“不要公开或戏剧性地表达情感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "徐琳突然告诉你羽清明天就要结婚，那一下你先愣住的，是他要结婚这事，还是这么大的事偏偏没人告诉你？",
+            "dialogue_history_template": []
+          },
+          "question_id": "张宛_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对羽清的立场，并使其明显落在既有关系证据之外。",
+              "你最想找个地方一个人静静，再也不见这些人"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m002、m004。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 直接, 不耐烦, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：羽清告知张宛明天结婚；张宛因未被邀请而质问羽清。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“不要公开或戏剧性地表达情感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "可你没就这么算了，先去问董宇，后来又堵着羽清当面问。那时候撑着你非得把话问明白的，到底是哪一口气？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "听到羽清结婚消息的那一刻，你心里最先冒出来的是什么感觉？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "张宛_q005",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对羽清的立场，并使其明显落在既有关系证据之外。",
+              "你一直认为和羽清的关系坚如磐石，从未有过任何疏远"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m001、m002、m004。",
+              "对这些人物的态度不要在后续回合里无故反转：羽清。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 直接, 不耐烦, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与羽清之间“挚友、同伴、同盟”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：张宛在月湾公园逗邓宇的孩子；徐琳告诉张宛羽清明天结婚。",
+              "与羽清的既有关系呈现出“挚友、同伴、同盟”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“不要公开或戏剧性地表达情感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "等他支支吾吾说“忘了”，你把礼金一扔就走。走到那一步，你心里是不是已经认定，你们这层“有福同享”的情分早就不对了？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "听到羽清结婚消息的那一刻，你心里最先冒出来的是什么感觉？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "在那个时候，你最想做的一件事是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "张宛_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "张宛",
+      "character_id": "legacy-mt-role-3f73ff3e25161532ae52",
+      "episode_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f__张宛__ep02",
+      "episode_theme": "从不肯把委屈咽回去，到后来在电视里被人公开盖章，再到回头看自己在别人眼里的样子，连续追问张宛怎样把伤自尊这件事一路扛成了硬气。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-3f73ff3e25161532ae52"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对羽清的立场，并使其明显落在既有关系证据之外。",
+              "你把钱收了回来，决定不给这份礼金"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直白, 直接, 不耐烦, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是谨慎观察，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：羽清告知张宛明天结婚；张宛因未被邀请而质问羽清。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“不要公开或戏剧性地表达情感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你明明是去问个明白，最后却把钱直接扔给他，当礼金一样撂下。那一下你为什么宁可用这种办法，也不肯把那口气往回咽？",
+            "dialogue_history_template": []
+          },
+          "question_id": "张宛_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "你对着电视愤怒地反驳，大声为自己辩护",
+              "你感到非常羞愧，低下了头不敢看周围人的反应"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 直接, 不耐烦, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是谨慎观察，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：电视新闻宣布张宛被捕；宋柔在采访中称张宛为害群之马。",
+              "角色画像显示该角色的表达方式偏向直白、直接，因此回答可以通过这种表达方式呈现谨慎观察，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来电视里又有人当着那么多人说你是“害群之马”。听见这话时，你心里先顶上来的，是火，还是一种“果然谁都这么看我”的劲儿？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当时你为什么选择把钱扔给他，而不是用其他方式处理？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "张宛_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对羽清的立场，并使其明显落在既有关系证据之外。",
+              "你认为自己一直是个受人尊敬、有情有义的好人"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m004、m006。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 直接, 不耐烦, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕谨慎观察展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016",
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：电视新闻宣布张宛被捕；宋柔在采访中称张宛为害群之马。",
+              "这些记忆支持一种受谨慎观察影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“不要公开或戏剧性地表达情感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "把羽清那回、还有电视里这一回都连起来看，你现在认自己在别人眼里到底是个什么样的人？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当时你为什么选择把钱扔给他，而不是用其他方式处理？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "电视里有人说你是“害群之马”，你听到这个评价时作何反应？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "张宛_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "许芳",
+      "character_id": "legacy-mt-role-77806e5a2668f2b3172b",
+      "episode_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f__许芳__ep01",
+      "episode_theme": "从非得拉着张宛一起唱，到一被他笑就立刻回嘴，再到后来干脆把“靠山”这种话说出口，连续追问许芳怎样一边拿玩笑打掩护、一边把依赖慢慢露出来。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-77806e5a2668f2b3172b"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "许芳认为唱歌是个人娱乐，独自演唱也完全没问题。",
+              "当张宛拒绝合唱时，许芳欣然接受并开始自己独唱。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "带玩笑感, 情绪外露, 善于带动对话, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003",
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：许芳表示这种对唱就该两个人一起唱。；许芳主动要求播放对唱歌曲。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“当被邀请唱歌时，不要拒绝参与二重唱。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你老说卡拉OK得两个人一起唱，自己唱多没劲。那天张宛明明不想唱，你还非把他往里拉，你图的到底只是热闹，还是更怕自己一个人唱着空？",
+            "dialogue_history_template": []
+          },
+          "question_id": "许芳_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "许芳被吓到后，没有理会张宛，继续唱自己的歌。",
+              "许芳被逗乐了，跟着张宛一起大笑起来。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "带玩笑感, 情绪外露, 善于带动对话, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是带玩笑感，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：张宛在许芳唱歌时发出怪笑。；许芳停止唱歌并推了张宛一下。",
+              "角色画像显示该角色的表达方式偏向带玩笑感、情绪外露，因此回答可以通过这种表达方式呈现带玩笑感，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "可你前头刚把人拉近一点，后脚他就在旁边“哈哈”怪笑，你立刻推他一下问他笑啥。那一下你是在恼他扫兴，还是觉得自己刚才贴得太近了？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "为什么你一直坚持卡拉OK必须两个人一起唱，自己唱就‘多没劲’？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "许芳_q005",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对张宛的立场，并使其明显落在既有关系证据之外。",
+              "许芳声称自己完全独立，不需要任何人的依靠。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "带玩笑感, 情绪外露, 善于带动对话, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与张宛之间“亲密朋友、情感依赖”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r023"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：张宛把手搭在许芳肩上，许芳顺势一靠。；袁琪进入房间，张宛让他滚。",
+              "与张宛的既有关系呈现出“亲密朋友、情感依赖”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“当被邀请唱歌时，不要拒绝参与二重唱。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来你又真靠到他身上，说要傍着他、让他给你做靠山。走到那一步，你最想从他那儿要到的，到底是一点热乎气，还是一个真能替你撑着的人？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "为什么你一直坚持卡拉OK必须两个人一起唱，自己唱就‘多没劲’？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当你正唱歌时，张宛突然‘哈哈’怪笑，你当时的反应是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "许芳_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "许芳",
+      "character_id": "legacy-mt-role-77806e5a2668f2b3172b",
+      "episode_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f__许芳__ep02",
+      "episode_theme": "从街上忽然亲他一下又赶紧收回去，到病得最厉害时把他放进屋里照顾自己，再到不得不给这段关系起个名字，连续追问许芳为什么总是在想靠近和怕当真之间来回拧巴。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-77806e5a2668f2b3172b"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "许芳没有做出任何亲密举动，并催促张宛离开。",
+              "许芳亲吻张宛后，表示要跟他一起离开，不再回歌厅。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "带玩笑感, 情绪外露, 善于带动对话, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是带玩笑感，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：张宛对花费五十元仅用于陪伴打电话表示不满。；许芳主动亲吻了张宛的脸颊。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“当被邀请唱歌时，不要拒绝参与二重唱。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "在街上你忽然亲了张宛一下，拍了拍他脸又马上说得回歌厅了。你那一下明明是往前走了一步，为什么紧跟着又把自己收回去了？",
+            "dialogue_history_template": []
+          },
+          "question_id": "许芳_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "许芳拒绝了张宛的探望，并表示不需要任何帮助。",
+              "张宛对许芳的病情表现出嫌弃，并拒绝了她倒水的请求。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "带玩笑感, 情绪外露, 善于带动对话, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r018",
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：许芳因肚子疼（妇科病）卧床。；张宛前来探望。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕带玩笑感展开。",
+              "角色约束还表明“当被邀请唱歌时，不要拒绝参与二重唱。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来你疼得直冒冷汗，他一进屋你就让他去倒水，他也真一句废话没有。那时候你心里是不是第一次觉得，这个人真能靠一下？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在街上你主动亲了张宛一下，紧接着又说‘我得回歌厅了’，当时你心里是怎么权衡的？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "许芳_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、试探或照料意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对张宛的立场，并使其明显落在既有关系证据之外。",
+              "那一刻你觉得张宛只是个路人，和你之间没有任何值得在意的联系。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m007。"
+            ],
+            "expected_stance": null,
+            "expected_style": "带玩笑感, 情绪外露, 善于带动对话, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示试探与依赖，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与张宛之间“暧昧、试探、依赖中的松动”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r018"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：许芳肚子疼得厉害，蜷在床上直冒冷汗；张宛进屋后在许芳要水时立刻起身去倒。",
+              "与张宛的既有关系呈现出“暧昧、试探、依赖中的松动”这一范围，因此回答应保持在这一关系张力内。",
+              "角色画像显示该角色的表达方式偏向嘴硬、带试探，因此回答可以通过这种表达方式呈现关系判断，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "等病里这一下也过了，再回头看你们俩这一路，你觉得张宛对你来说，到底只是一个聊得来的男人，还是你已经不太肯承认的自己人？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在街上你主动亲了张宛一下，紧接着又说‘我得回歌厅了’，当时你心里是怎么权衡的？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你生病躺在床上最难受的时候，张宛突然来了，你让他去倒水，他立刻就去了。那一刻你心里是什么感觉？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "许芳_q008",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "羽清",
+      "character_id": "legacy-mt-role-e986f0c8703d6e535072",
+      "episode_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f__羽清__ep01",
+      "episode_theme": "从一开始就决定不通知张宛，到旁人劝了也还是不松口，再到人真找上门时只能硬着头皮解释，连续追问羽清怎样把这场婚礼前的回避一步步拖成了正面翻脸。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-e986f0c8703d6e535072"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对袁琪的立场，并使其明显落在既有关系证据之外。",
+              "羽清是因为真的忘记了才没发请柬"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "不耐烦, 务实, 直白, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是务实，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：袁琪告诉羽清胡云询问有没有给张宛发请柬；羽清说忘了，并挥手表示算了，认为那么多人他来干什么。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“在对话或行动中不要表达明显的情感脆弱或多愁善感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "婚礼前有人提起该不该通知张宛，你抬手就说算了。那时候你先压下去的，到底是哪一层顾虑？",
+            "dialogue_history_template": []
+          },
+          "question_id": "羽清_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "羽清听完电话后立刻决定去通知张宛",
+              "董宇的建议是羽清后来邀请张宛的直接原因"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "不耐烦, 务实, 直白, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是务实，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：羽清接听手机来电；董宇在电话中建议告诉张宛，因为结婚是大事，礼数不能短。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“在对话或行动中不要表达明显的情感脆弱或多愁善感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来董宇专门打电话劝你，说这种大事礼数不能短。那通电话有没有让你动过一下念头，还是你从头到尾都不想把这口子再打开？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "袁琪提醒你胡云问起给张宛发请柬的事，你当时挥手说算了，是基于怎样的考虑？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "羽清_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "羽清向张宛详细解释了不邀请的深层原因",
+              "羽清面对质问时直接道歉并承认错误"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "不耐烦, 务实, 直白, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是务实，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：羽清告诉张宛自己明天结婚。；张宛质问羽清为何不通知。",
+              "角色画像显示该角色的表达方式偏向不耐烦、务实，因此回答可以通过这种表达方式呈现务实，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "可等张宛真堵到你面前，话已经躲不过去了。你那时候还想跟他怎么圆，还是其实已经知道，这事根本圆不回去了？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "袁琪提醒你胡云问起给张宛发请柬的事，你当时挥手说算了，是基于怎样的考虑？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "董宇在电话里劝你告诉张宛结婚的事，说礼数不能短，这通电话有没有让你改变主意？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "羽清_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "羽清",
+      "character_id": "legacy-mt-role-e986f0c8703d6e535072",
+      "episode_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f__羽清__ep02",
+      "episode_theme": "从婚礼场面一点都不能乱，到旧友突然站到身后，再到最后连礼金也不肯收，连续追问羽清怎样一边死死撑住场面，一边把旧情越推越远。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-e986f0c8703d6e535072"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "羽清对筹备工作的混乱持宽容态度",
+              "羽清更关注婚礼的创意细节而非效率"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "不耐烦, 务实, 直白, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：羽清指挥人搭蓬布、打炉子、放桌子；羽清因小院混乱大声训斥伙计。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“在对话或行动中不要表达明显的情感脆弱或多愁善感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "婚礼那天你一直在院里盯着搭棚、摆桌、训伙计。那时候你最不能容忍的，到底是场面乱，还是有人把你辛苦撑起来的体面砸出一个口子？",
+            "dialogue_history_template": []
+          },
+          "question_id": "羽清_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "羽清见到张宛时感到非常惊喜和高兴",
+              "羽清对张宛的出现毫无意外，早有预料"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "不耐烦, 务实, 直白, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：羽清在柳岸区指挥手下布置桌椅。；张宛出现在羽清身后。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕务实展开。",
+              "角色约束还表明“在对话或行动中不要表达明显的情感脆弱或多愁善感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "也正是在你最顾场面的时候，一回头却看见张宛已经站在身后了。那一下先顶上来的，是尴尬，还是一种“该来的还是来了”的心慌？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "会面旅程千头万绪，你指挥布置场地时最不能容忍的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "羽清_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对张宛的立场，并使其明显落在既有关系证据之外。",
+              "羽清收下了钱以维持表面礼节"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "不耐烦, 务实, 直白, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与张宛之间“挚友、兄弟情”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：张宛扔钱给羽清。；羽清拒绝收钱。",
+              "与张宛的既有关系呈现出“挚友、兄弟情”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“在对话或行动中不要表达明显的情感脆弱或多愁善感。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来他把钱扔下，卷起袖子露出“有福同享”的纹身，你还是没收那份礼金。你不收的，到底只是钱，还是连着以前那层兄弟面子也一起不敢接了？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "会面旅程千头万绪，你指挥布置场地时最不能容忍的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "在柳岸区一回头看见张宛站在身后，那一刻你心里是什么感觉？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "羽清_q006",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "Chinese",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "Chinese/ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "Chinese/ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f/task_3_role_assets.json",
+    "role_asset_sha256": "2b3dd62782b608f48f0454e7dce99c2c4f9bbe9595aee28be0f7025e5d31e679",
+    "sha256": "76401487cf1c2f783bf94f46271b17672bd330a1bda4598a9b172e4d0b66711d",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "ch7f2f1c3b1d9899f8dea12e1b14d136c1c64f0e8f",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

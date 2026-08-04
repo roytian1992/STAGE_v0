@@ -1,0 +1,18 @@
+id: task1_development_cluster_judge_zh
+category: evaluation
+name: Task 1 development cluster judge zh
+description: 不查看 gold，对单个角色轨迹中的重复发展预测聚类。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: ordered_developments, required: true}
+  - {name: allowed_development_refs, required: true}
+static_variables: []
+template: |-
+  在不使用 gold 答案的前提下，对“{focal_character}”的有序发展预测聚类。
+  <ordered_developments>{ordered_developments}</ordered_developments>
+  <allowed_development_refs>{allowed_development_refs}</allowed_development_refs>
+
+  将每个允许引用恰好分入一个 PD1、PD2……语义簇。目标、前状态、后状态和变化方向相同的措辞变体归为一簇；目标、方向或实质变化不同则必须分开。不得分配 gold ID，也不得计算正确性。
+
+  只返回 JSON：
+  {{"development_clusters":[{{"cluster_id":"PD1","members":["instance-id|P3"],"brief_rationale":"同一预测变化"}}]}}

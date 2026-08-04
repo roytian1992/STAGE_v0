@@ -1,0 +1,20 @@
+id: evaluation_v1_task1_prediction
+category: evaluation_v1
+name: Task 1 滚动预测 v1
+description: 根据连续剧本块更新一个角色的完整滚动记忆。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_checkpoint_scene_order, required: true}
+  - {name: block_end_scene_order, required: true}
+  - {name: checkpoint_at_block_end, required: true}
+  - {name: prior_memory, required: true}
+  - {name: screenplay_block, required: true}
+static_variables: []
+template: |-
+  追踪角色“{focal_character}”（别名：{aliases}）在下一个连续剧本块中的变化。
+  上一 checkpoint 场次：{previous_checkpoint_scene_order}；本块末场次：{block_end_scene_order}；本块末是否为正式 checkpoint：{checkpoint_at_block_end}。
+  <prior_memory>{prior_memory}</prior_memory><screenplay_block>{screenplay_block}</screenplay_block>
+  仅依据 prior_memory 和 screenplay_block 完整替换滚动记忆。current_state 只写本块结束时仍成立的重要事实；developments_since_previous_checkpoint 只写自上一正式 checkpoint 后已经生效的显著变化，不得把静态事实或瞬时动作当成发展；unresolved_threads 写可能影响后续的未决事项。证据场次必须已经读到，不得预测后续剧情。无显著变化时返回空 development 列表。
+  只返回以下字段的 JSON：
+  {{"current_state":[{{"claim":"...","evidence_scene_orders":[1]}}],"developments_since_previous_checkpoint":[{{"claim":"...","evidence_scene_orders":[1]}}],"unresolved_threads":[{{"claim":"...","evidence_scene_orders":[1]}}]}}

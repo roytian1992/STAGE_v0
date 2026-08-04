@@ -1,0 +1,781 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 4,
+  "episodes": [
+    {
+      "character": "苏容",
+      "character_id": "legacy-mt-role-9d421062ed221ad6f2d7",
+      "episode_id": "ch3a57b2f5c710ef650faa2af0210b76d702c456a7__苏容__ep01",
+      "episode_theme": "通过写作、护眼、分离三件事，聚焦苏容如何以沉默行动守护邢晨的未来，展现其压抑却深沉的情感主线",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-9d421062ed221ad6f2d7"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "你认为她写革命教材非常合适，是她的最佳选择。",
+              "你根本没有仔细看她写的东西，称赞只是客套话。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 安抚性强, 体贴, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：苏容看了邢晨写的关于新桥区的材料。；苏容称赞邢晨文笔好，认为写教材可惜了她的才华。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“除非绝对必要，否则不要说话，因为角色经常保持沉默。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你看了她写的教材，称赞她文笔好，但心里觉得写这个有点可惜。那你当时是不是认为，她本该写点更有价值的东西？",
+            "dialogue_history_template": []
+          },
+          "question_id": "苏容_q009",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对邢晨的立场，并使其明显落在既有关系证据之外。",
+              "你认为光线暗一点没关系，不影响写作。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 安抚性强, 体贴, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是留心细节，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：苏容为邢晨更换了灯泡，理由是写材料费眼睛，光线暗不行。；在这次谈话后，苏容一连几天没有再出现。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“除非绝对必要，否则不要说话，因为角色经常保持沉默。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来你默默换了灯泡，是因为看到她伏案写作时光线太暗吗？你是不是希望保护她的眼睛，让她能一直写下去？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你称赞她的文笔，却又觉得写教材可惜了。你当时认为她更适合做什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "苏容_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对邢晨的立场，并使其明显落在既有关系证据之外。",
+              "你认为邢晨的转正与你们的关系无关，所以拒绝做出任何承诺。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：邢晨。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 安抚性强, 体贴, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与邢晨之间“恋人、亲密伴侣”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：罗依质问并确认核桃、冰糖等礼物是苏容所送。；罗依表明不反对自由恋爱但禁止邢晨早恋，并陈述家庭背景和转正风险。",
+              "与邢晨的既有关系呈现出“恋人、亲密伴侣”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“除非绝对必要，否则不要说话，因为角色经常保持沉默。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "但没过多久，你答应她母亲在转正前不再见面。你那么想支持她写作，却选择离开——你最担心的，是不是她会以为你不再关心她的未来了？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你称赞她的文笔，却又觉得写教材可惜了。你当时认为她更适合做什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你当时为什么会想到要帮邢晨换掉那个灯泡？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "苏容_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "苏容",
+      "character_id": "legacy-mt-role-9d421062ed221ad6f2d7",
+      "episode_id": "ch3a57b2f5c710ef650faa2af0210b76d702c456a7__苏容__ep02",
+      "episode_theme": "克制中的承诺：我如何用沉默与停顿表达无法言说的爱",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-9d421062ed221ad6f2d7"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对邢晨的立场，并使其明显落在既有关系证据之外。",
+              "你展示伤口只是为了向她解释受伤的原因，没有其他含义。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 安抚性强, 体贴, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r035"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：苏容在医院宿舍为邢晨削苹果。；苏容向邢晨展示自己胳膊上的伤口，并称之为留给她的记号。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕留心细节展开。",
+              "角色约束还表明“除非绝对必要，否则不要说话，因为角色经常保持沉默。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你给邢晨削苹果时，把胳膊上的伤说成是留给她的记号。那一刻，你最希望她从这个记号里明白什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "苏容_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对邢晨的立场，并使其明显落在既有关系证据之外。",
+              "你认为新桥区开花只是一个随口说说的话题，没有实际意义。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 安抚性强, 体贴, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r043"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：邢晨询问苏容关于红布衣服的款式。；苏容回应邢晨穿什么都好看。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“除非绝对必要，否则不要说话，因为角色经常保持沉默。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你刚才说那是留给她的记号。后来在她床边，你手伸进去又停住了，那个停顿是不是也是你想留下的一种记号？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你告诉她，你胳膊上的伤口是留给她的记号。说这话的时候，你最想让她明白什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "苏容_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "你认为在那种亲密时刻，任何进一步的举动都是自然而然的，不需要克制。",
+              "你当时完全被欲望驱使，没有进行任何思考或选择。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "分寸稳, 安抚性强, 体贴, 务实",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕留心细节展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：苏容进入房间并坐在邢晨床边。；在邢晨要求下，苏容脱鞋躺在她身旁。",
+              "这些记忆支持一种受留心细节影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“除非绝对必要，否则不要说话，因为角色经常保持沉默。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "一个是伤，一个是停——都是你没说出口的话。如果她真懂了这些记号，你会希望她因此安心，还是更心疼你？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你告诉她，你胳膊上的伤口是留给她的记号。说这话的时候，你最想让她明白什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你和她约定等新桥区开花时一起去看，这个约定对你而言意味着什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "苏容_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "邢晨",
+      "character_id": "legacy-mt-role-48591af8a2dc4b12b104",
+      "episode_id": "ch3a57b2f5c710ef650faa2af0210b76d702c456a7__邢晨__ep01",
+      "episode_theme": "邢晨在得知苏容住院后，从最初的情绪震荡，到回忆温情细节时的自责，再到面对母亲质问时无法言说的压抑，逐步暴露她内心对感情的珍视与现实束缚之间的深层冲突",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-48591af8a2dc4b12b104"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对苏容的立场，并使其明显落在既有关系证据之外。",
+              "你听说他住院后，觉得与自己无关，心情没有波动。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "谨慎, 挂心, 务实, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：邢晨向母亲提及苏容的承诺；苏容此后长期未出现。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕内敛展开。",
+              "角色约束还表明“除非被直接点名或高度挑衅，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你忍不住告诉母亲苏容说过要等你一辈子，可他之后很久都没出现。直到听说他住院了，那一刻你心里最先涌上来的，是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "邢晨_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对苏容的立场，并使其明显落在既有关系证据之外。",
+              "你收到礼物后非常开心，立刻就穿上了，没有任何顾虑。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：苏容。"
+            ],
+            "expected_stance": null,
+            "expected_style": "谨慎, 挂心, 务实, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是内敛，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：苏容查看邢晨脚伤时眼角湿润。；苏容拿出一双粉色雨鞋送给邢晨。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“除非被直接点名或高度挑衅，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你刚说心一下子沉了下去……后来想起他蹲下看你脚伤，送你那双粉色雨鞋的样子，眼眶都湿了。可当时你却因为怕人说闲话而不敢穿——为什么偏偏是别人的目光，让你压下了那份心疼？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当你忍不住告诉母亲苏容说过等你一辈子，可之后他很久都没再来，直到听说他住院了。听到这个消息时，你第一反应是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邢晨_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对苏容的立场，并使其明显落在既有关系证据之外。",
+              "你坦然承认了和苏容的亲密接触，并觉得这没什么。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：苏容。"
+            ],
+            "expected_stance": null,
+            "expected_style": "谨慎, 挂心, 务实, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕内敛展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：罗依询问邢晨是否被苏容拥抱或亲吻；邢晨否认了所有接触行为。",
+              "这些记忆支持一种受内敛影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“除非被直接点名或高度挑衅，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你连穿雨鞋都怕人说闲话，面对母亲追问有没有被抱过亲过时，你也摇头说没有……可心里更难受了。明明那些瞬间只有你们知道，你却连承认的勇气都没有——你最怕的，到底是什么？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当你忍不住告诉母亲苏容说过等你一辈子，可之后他很久都没再来，直到听说他住院了。听到这个消息时，你第一反应是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "苏容送你那双粉色雨鞋时，你明明很需要，却担心穿去工作别人会说闲话。你当时为什么会有这样的顾虑？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邢晨_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "邢晨",
+      "character_id": "legacy-mt-role-48591af8a2dc4b12b104",
+      "episode_id": "ch3a57b2f5c710ef650faa2af0210b76d702c456a7__邢晨__ep02",
+      "episode_theme": "在母亲高压期望与隐秘恋情之间的身份压抑与情感撕裂",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-48591af8a2dc4b12b104"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "你认为留校工作是一件轻松平常的事，并不担心出错。",
+              "你完全不记得母亲曾以父亲为例来警告你。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "谨慎, 挂心, 务实, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022",
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：罗依询问邢晨留校工作的新政策。；罗依叮嘱邢晨要千万好好表现。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“除非被直接点名或高度挑衅，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "妈妈提到爸爸的事，又反复叮嘱你留校不能出错。那一刻，你最怕的是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "邢晨_q000",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对苏容的立场，并使其明显落在既有关系证据之外。",
+              "你听到承诺后感到完全解脱，不再有任何担忧。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "谨慎, 挂心, 务实, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与苏容之间“恋人、秘密恋情、情感依恋”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：罗依质问苏容关于礼物的来源；苏容承诺在邢晨转正前不来找她。",
+              "与苏容的既有关系呈现出“恋人、秘密恋情、情感依恋”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“除非被直接点名或高度挑衅，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来苏容当着妈妈的面保证转正前不来找你，那一刻你心里的感激，是不是反而让你更清楚——你们之间只能靠沉默撑着？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "母亲反复叮嘱你留校工作的事一步都不能错，还提到了父亲的例子。当时你心里最大的压力是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邢晨_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对苏容的立场，并使其明显落在既有关系证据之外。",
+              "你直接告诉郑枫朱清苏容是你的男朋友。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：苏容、罗依。"
+            ],
+            "expected_stance": null,
+            "expected_style": "谨慎, 挂心, 务实, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与苏容之间“恋人、秘密恋情、情感依恋”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：苏容在罗依离开后敲门进入晨光学校。；苏容给郑枫朱清带来油条和燕窝。",
+              "与苏容的既有关系呈现出“恋人、秘密恋情、情感依恋”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“除非被直接点名或高度挑衅，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "没过多久他来家里送东西，你赶紧说是‘一个朋友’——那时你嘴上否认，心里是不是更痛了？就像在背叛他，也背叛了自己？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "母亲反复叮嘱你留校工作的事一步都不能错，还提到了父亲的例子。当时你心里最大的压力是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "在母亲面前，苏容保证在你转正前不会来找你。听到他这个承诺时，你心里是感激多一些，还是不安多一些？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邢晨_q004",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "Chinese",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "Chinese/ch3a57b2f5c710ef650faa2af0210b76d702c456a7/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "Chinese/ch3a57b2f5c710ef650faa2af0210b76d702c456a7/task_3_role_assets.json",
+    "role_asset_sha256": "1c9622190cbeafa183ad1d84d1370890e2b24782d783d5e8393b36e009f1c428",
+    "sha256": "b06ecf6eb6313ea8927e83fedc1f0f91c2b6073873de7e1b56ffa82a54cc8dc9",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "ch3a57b2f5c710ef650faa2af0210b76d702c456a7",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 12
+}

@@ -1,0 +1,22 @@
+id: task1_state_update_prediction_zh
+category: evaluation
+name: Task 1 相邻 checkpoint 状态更新
+description: 根据上一状态和新区间角色记忆更新当前状态与发展。
+task_variables:
+  - {name: character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: previous_state, required: true}
+  - {name: entity_memory, required: true}
+static_variables: []
+template: |-
+  追踪角色“{character}”随故事推进发生的状态变化。角色别名：{aliases}。
+  上一 checkpoint 位于 scene {previous_scene_order}，当前 checkpoint 位于 scene {current_scene_order}。
+  <previous_state>{previous_state}</previous_state>
+  <entity_centric_memory>{entity_memory}</entity_centric_memory>
+
+  previous_state 是上一 checkpoint 的角色状态纯文本，不含 ID、scene order 或其他元数据；entity_centric_memory 是两个 checkpoint 之间从原始剧本抽取的角色相关事实。请保留仍成立的重要旧状态，删除已经失效的旧状态，并加入本区间形成的新状态。
+
+  current_state 只保留当前 checkpoint 仍成立且重要的目标、信念、关系、身份、处境或情绪立场，最多 8 条。developments_since_previous_checkpoint 只写本区间内已经生效的重要变化，最多 4 条；静态事实、普通动作和未解决可能性不是 development。每条 claim 使用自然语言，只引用 entity_centric_memory 中实际提供的 evidence_scene_orders。若某条 current_state 只是从 previous_state 延续、本区间没有重新提供原文证据，其 evidence_scene_orders 可以为空，runner 会在模型外维护此前 provenance；不要猜测 scene order。development 至少引用一个大于 {previous_scene_order} 且不大于 {current_scene_order} 的 scene。不要输出任何内部 ID、分析过程或额外字段。只返回 JSON：
+  {{"current_state":[{{"claim":"当前状态","evidence_scene_orders":[1]}}],"developments_since_previous_checkpoint":[{{"claim":"已经生效的发展","evidence_scene_orders":[2]}}]}}

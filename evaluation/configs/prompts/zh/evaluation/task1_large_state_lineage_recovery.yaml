@@ -1,0 +1,14 @@
+id: task1_large_state_lineage_recovery_zh
+category: evaluation
+name: Task 1 large state lineage recovery zh
+description: 只识别重复状态，控制大角色 lineage 输出规模。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: reviewed_state_claims, required: true}
+static_variables: []
+template: |-
+  在查看任何模型预测前，识别“{focal_character}”跨 checkpoint 重复出现的稳定状态。
+  <reviewed_state_claims>{reviewed_state_claims}</reviewed_state_claims>
+
+  只返回包含两个或更多引用的等价组：它们必须在不同 checkpoint 描述相同状态、目标、极性和语义。反转、目标变化、仅有关联的事件或宽泛主题不能合并。每个引用最多出现一次。所有 singleton 都不要输出；程序会把未输出引用保留为独立 lineage。只返回紧凑 JSON：
+  {{"equivalent_groups":[["R1","R7"]]}}

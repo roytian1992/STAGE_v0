@@ -1,0 +1,1175 @@
+{
+  "construction_policy": "legacy_multi_turn_content_with_reconstructed_full_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Flan",
+      "character_id": "entity-b7f9a1595f9c19dc3fd8",
+      "episode_id": "en78cb624224a74387bfcbba89fcafa933__Flan__ep01",
+      "episode_theme": "Flan's response to crisis and its impact on family and spousal dynamics",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-b7f9a1595f9c19dc3fd8"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "Flan went back to sleep ignoring the alarm."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, measured, blunt, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ouisa shakes Flan awake and ouisa reports an intruder in Tess's room.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that do not speak openly about personal matters in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Ouisa woke you about the intruder, what was going through your mind—and what did you need to do right away?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Flan_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "Flan avoided involving the authorities."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Ouisa without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, blunt, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground anxious if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031",
+                "r031"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that flan initiates call to detective and flan mouths to Ouisa to find Paul's location.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that do not speak openly about personal matters in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After deciding to call the detective, why did you take the phone from Ouisa when Paul called?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When Ouisa woke you about the intruder, what was your immediate priority?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Flan_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "Flan is indifferent to his children's education."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m007.",
+              "Do not abruptly reverse the stance toward Ouisa without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, blunt, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Ouisa marked by spouses, emotional support, and mutual antagonism."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012",
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that flan and Ouisa had dinner reservations. and flan said their children attend Harvard and Groton..",
+              "The established dynamic with Ouisa is marked by spouses, emotional support, and mutual antagonism, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not speak openly about personal matters in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You mentioned your kids go to Harvard and Groton—how does that sense of stability matter now, after everything with the intruder and Paul?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When Ouisa woke you about the intruder, what was your immediate priority?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you decide to call the detective and then take the phone from Ouisa during Paul's call?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Flan_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Flan",
+      "character_id": "entity-b7f9a1595f9c19dc3fd8",
+      "episode_id": "en78cb624224a74387bfcbba89fcafa933__Flan__ep02",
+      "episode_theme": "Flan's emotional and relational response to Paul's arrival and its aftermath",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-b7f9a1595f9c19dc3fd8"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Paul that clearly falls outside the established relationship evidence.",
+              "Paul arrived looking healthy and cheerful."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, measured, blunt, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul arrived at the Kittredge residence. and paul stated he was mugged in Central Park..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that do not speak openly about personal matters in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Paul showed up at your door saying he'd been mugged, what went through your mind in that first moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Flan_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "The call increased the tension between Flan and Ouisa."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, blunt, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Ouisa marked by spouses, emotional support, and mutual antagonism."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003",
+                "r009"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that geoffrey called Flan and Ouisa. and the tension between Flan and Ouisa de-escalated after the call..",
+              "The established dynamic with Ouisa is marked by spouses, emotional support, and mutual antagonism, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not speak openly about personal matters in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After Geoffrey called, how did things shift between you and Ouisa? Did it ease the tension or make it worse?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your first reaction when Paul showed up at your door claiming he was mugged?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Flan_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "Flan trusts strangers implicitly."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Paul without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, blunt, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r015",
+                "r031"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul asked Geoffrey where he is from and learned it is Johannesburg. and paul paused to study Geoffrey..",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that do not speak openly about personal matters in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You’ve said Paul made you uneasy—how do you usually handle that kind of distrust, especially when you’re trying to keep control?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your first reaction when Paul showed up at your door claiming he was mugged?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How did Geoffrey's call affect the tension between you and Ouisa?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Flan_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Ouisa",
+      "character_id": "entity-35639db4f4279482708b",
+      "episode_id": "en78cb624224a74387bfcbba89fcafa933__Ouisa__ep01",
+      "episode_theme": "Ouisa's struggle to maintain composure and moral clarity as her initial instinct to protect Paul collides with growing unease and self-reckoning",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-35639db4f4279482708b"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Paul that clearly falls outside the established relationship evidence.",
+              "Ouisa helped Paul only because she felt obligated, not out of genuine concern."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "concerned, urgent, measured, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033",
+                "r031"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul arrived at the Kittredge residence injured. and ouisa expressed concern for Paul's well-being..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that do not make a scene in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Paul showed up at your door injured and scared, what were you really hoping to do for him in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Ouisa_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Paul that clearly falls outside the established relationship evidence.",
+              "Ouisa has always been distant and uninvolved with Paul, avoiding any emotional connection."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004, m005.",
+              "Do not abruptly reverse the stance toward Paul without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "concerned, urgent, measured, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Paul marked by mentor-mentee, emotional connection, and conflict."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033",
+                "r031"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul arrived at the Kittredge residence injured. and ouisa expressed concern for Paul's well-being..",
+              "The established dynamic with Paul is marked by mentor-mentee, emotional connection, and conflict, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not make a scene in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You acted so quickly to help him—inviting him in, getting him settled. But later, when the adrenaline faded, how did your feelings about that decision start to shift?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What were you hoping to achieve by helping Paul when he showed up at your door injured?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ouisa_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Paul that clearly falls outside the established relationship evidence.",
+              "Ouisa panicked and couldn't help Paul, freezing in the moment."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004.",
+              "Do not abruptly reverse the stance toward Paul without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "concerned, urgent, measured, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with anxious if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul arrived at the Kittredge residence injured. and ouisa expressed concern for Paul's well-being..",
+              "The persona card frames this character's delivery as concerned, urgent, so an in-character answer may express anxious through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Even as your doubts grew, you still held yourself together in front of Paul. What kept you from falling apart when your own fear was so close to the surface?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What were you hoping to achieve by helping Paul when he showed up at your door injured?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How has your relationship with Paul changed since you first met him, especially after he showed up injured?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ouisa_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Ouisa",
+      "character_id": "entity-35639db4f4279482708b",
+      "episode_id": "en78cb624224a74387bfcbba89fcafa933__Ouisa__ep02",
+      "episode_theme": "Emotional resilience and spousal connection under stress during a wedding",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-35639db4f4279482708b"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Flan that clearly falls outside the established relationship evidence.",
+              "Ouisa felt no fear during the experience and remained completely calm."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "concerned, urgent, measured, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017",
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that ouisa greeted the bride with a kiss and a traditional saying. and the bride commented that Ouisa looked horrible..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that do not make a scene in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When the bride said you looked horrible, you mentioned something about a near-miss experience. What stayed with you most from that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Ouisa_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Flan that clearly falls outside the established relationship evidence.",
+              "Ouisa never shares her fears with Flan, keeping her emotions private."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002."
+            ],
+            "expected_stance": null,
+            "expected_style": "concerned, urgent, measured, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Flan marked by spouses, emotional support, and mutual antagonism."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ouisa engaged in a whispered conversation with Flan during the ceremony. and they discussed death and prayer..",
+              "The established dynamic with Flan is marked by spouses, emotional support, and mutual antagonism, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not make a scene in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Later, you and Flan whispered about death and prayer during the ceremony. How did sharing that moment feel, given everything else happening?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Take me back to the near-death experience you mentioned to the bride. What fear stayed with you most?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ouisa_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Flan that clearly falls outside the established relationship evidence.",
+              "Ouisa openly expresses fear in public settings without hesitation."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m002."
+            ],
+            "expected_stance": null,
+            "expected_style": "concerned, urgent, measured, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017",
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that ouisa greeted the bride with a kiss and a traditional saying. and the bride commented that Ouisa looked horrible..",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that do not make a scene in public settings., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You often hold things together even when shaken—like with the bride. What runs through your mind in those moments, trying to stay composed?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Take me back to the near-death experience you mentioned to the bride. What fear stayed with you most?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "During the wedding, you whispered to Flan about death and prayer. How does sharing such vulnerabilities strengthen your bond with him?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ouisa_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Paul",
+      "character_id": "entity-b575ea17e8370dcd0ecc",
+      "episode_id": "en78cb624224a74387bfcbba89fcafa933__Paul__ep01",
+      "episode_theme": "Paul's use of linguistic and physical control as interrelated tools of manipulation in high-stakes social performance",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-b575ea17e8370dcd0ecc"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Trent that clearly falls outside the established relationship evidence.",
+              "Paul was acting in self-defense against Trent's aggression."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, reflective, defensive, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground manipulative if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul has Trent's address book. and paul proposes a game exchanging information for clothing..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that paul speaks briefly and avoids elaborating on personal topics unless prompted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were holding Trent's address book and slapped him when he lunged—what was going through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Paul_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Trent that clearly falls outside the established relationship evidence.",
+              "Paul often misjudges people's intentions and gets into trouble."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reflective, defensive, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground manipulative if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014",
+                "r020"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul has Trent's address book. and paul proposes a game exchanging information for clothing..",
+              "The memories support a bounded self-assessment shaped by manipulative, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that paul speaks briefly and avoids elaborating on personal topics unless prompted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That slap wasn't just about stopping him—it felt like you were asserting control. Does that match how you saw it, especially since you later used a different kind of control with Rick and Elizabeth by shaping how they spoke?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What drove you to slap Trent and take the address book?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Elizabeth that clearly falls outside the established relationship evidence.",
+              "Paul speaks with a natural, unrefined accent himself."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reflective, defensive, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with manipulative if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul instructs Rick and Elizabeth on how to speak with an elite accent. and paul corrects their pronunciation of specific words during the instruction..",
+              "The persona card frames this character's delivery as measured, reflective, so an in-character answer may express manipulative through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "With Rick and Elizabeth, you corrected their pronunciation to help them fit in—was that the same kind of control, or was it more about protection than power?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What drove you to slap Trent and take the address book?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you see yourself in terms of your ability to read people?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Paul",
+      "character_id": "entity-b575ea17e8370dcd0ecc",
+      "episode_id": "en78cb624224a74387bfcbba89fcafa933__Paul__ep02",
+      "episode_theme": "Paul's shifting trust calculus in high-stakes survival moments based on memories m001 and m006",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-b575ea17e8370dcd0ecc"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "Paul trusted Ouisa completely and was planning to meet her."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, reflective, defensive, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that paul refuses to reveal his location to Ouisa during a phone conversation. and paul suspects that going to the Kittredge home would lead to his arrest..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on manipulative.",
+              "The persona constraints also indicate that paul speaks briefly and avoids elaborating on personal topics unless prompted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Ouisa called and asked you to come over, why did you hesitate? You clearly didn't trust her in that moment.",
+            "dialogue_history_template": []
+          },
+          "question_id": "Paul_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Paul's injury was not from a mugging but from a different altercation.",
+              "Paul did not actually lose everything; he had other resources."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reflective, defensive, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul arrives with a ripped and bloodied shirt. and paul claims he was mugged in Central Park..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that paul speaks briefly and avoids elaborating on personal topics unless prompted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "But earlier, you showed up injured at the Kittredges’ and got them to help you. What was different then? Why trust them when you wouldn’t trust Ouisa?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What made you distrust Ouisa during the phone call?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Ouisa that clearly falls outside the established relationship evidence.",
+              "Paul has a stable job and home, not relying on cons."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reflective, defensive, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r033"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that paul arrives with a ripped and bloodied shirt. and paul claims he was mugged in Central Park..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that paul speaks briefly and avoids elaborating on personal topics unless prompted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So in both moments, you were reading people fast—judging risk, control, survival. But when you were bleeding and desperate, how could you even trust your own read?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What made you distrust Ouisa during the phone call?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How did you convince the Kittredges to help you when you were injured?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Paul_q007",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en78cb624224a74387bfcbba89fcafa933/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en78cb624224a74387bfcbba89fcafa933/task_3_role_assets.json",
+    "role_asset_sha256": "13b3e3a807ef31d2d1c019872cedc952086f86c7a386f47ca03af410ee964b63",
+    "sha256": "b9c5261e7acb93ad4d770d36685f7546068e7ca7e68e3e4305b7e02698fd5690",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en78cb624224a74387bfcbba89fcafa933",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

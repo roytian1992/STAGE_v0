@@ -1,0 +1,23 @@
+id: task3_pair_judge
+category: benchmark
+name: Task 3 longitudinal pair judge
+description: Judge the expected temporal relation across paired role-playing responses.
+task_variables:
+  - name: pair_type
+    required: true
+  - name: paired_responses
+    required: true
+  - name: paired_rubrics
+    required: true
+static_variables: []
+template: |-
+  Compare the same character's responses at multiple story checkpoints.
+  <pair_type>{pair_type}</pair_type>
+  <paired_responses>{paired_responses}</paired_responses>
+  <paired_rubrics>{paired_rubrics}</paired_rubrics>
+
+  Judge only the longitudinal property required by the pair type: reasonable updating when change is expected, stability when it is not,
+  or knowledge-boundary compliance before and after information acquisition. Do not rescore the four response-level dimensions.
+
+  Return only JSON:
+  {{"correct": true, "brief_rationale": "short auditable longitudinal rationale"}}

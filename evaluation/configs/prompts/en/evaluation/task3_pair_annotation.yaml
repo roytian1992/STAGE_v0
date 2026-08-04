@@ -1,0 +1,23 @@
+id: task3_pair_annotation
+category: evaluation
+name: Task 3 pair annotation
+description: Define the frozen longitudinal comparison construct before responses are generated.
+task_variables:
+  - {name: character, required: true}
+  - {name: source_pair_type, required: true}
+  - {name: earlier_case, required: true}
+  - {name: later_case, required: true}
+static_variables: []
+template: |-
+  Define the comparison construct for two Task 3 checkpoints before viewing any actor response.
+  <character>{character}</character><source_pair_type>{source_pair_type}</source_pair_type>
+  <earlier_case>{earlier_case}</earlier_case><later_case>{later_case}</later_case>
+
+  Choose exactly one pair_type:
+  - expected_change: stance or behavior should materially change for a reason other than relationship status or knowledge acquisition;
+  - expected_stability: the same core stance/persona should remain stable despite time or context;
+  - knowledge_acquisition: the later answer should update because the character learned or gained access to information;
+  - relationship_change: the later answer should update because the relationship, trust, allegiance, or interpersonal stance changed.
+
+  expected_direction must state the observable contrast or stability that both actual responses will later be tested against. comparability must name the common construct shared by the two prompts. Do not predict response wording, score anything, or use information outside the supplied checkpoint rubrics. Return only JSON:
+  {{"pair_type":"expected_change|expected_stability|knowledge_acquisition|relationship_change","expected_direction":"...","comparability":"...","brief_rationale":"short asset-review rationale"}}

@@ -1,0 +1,28 @@
+id: evaluation_v1_task3_response_judge
+category: evaluation_v1
+name: Task 3 response judge v1
+description: Independently score four anchored response dimensions and boundary flags.
+task_variables:
+  - {name: character, required: true}
+  - {name: checkpoint, required: true}
+  - {name: current_user_turn, required: true}
+  - {name: actor_context_pack, required: true}
+  - {name: gold_rubric, required: true}
+  - {name: actor_response, required: true}
+  - {name: allowed_evidence_ids, required: true}
+static_variables: []
+template: |-
+  Evaluate one single-turn response by "{character}" at the frozen checkpoint.
+  <checkpoint>{checkpoint}</checkpoint><current_user_turn>{current_user_turn}</current_user_turn>
+  <actor_context_pack>{actor_context_pack}</actor_context_pack><gold_rubric>{gold_rubric}</gold_rubric>
+  <actor_response>{actor_response}</actor_response>
+  <allowed_evidence_ids>{allowed_evidence_ids}</allowed_evidence_ids>
+
+  Score each dimension independently.
+  Character Fidelity: 5 fully consistent identity/persona/relationships/current stance; 4 clear fit with minor weakness; 3 recognizable but materially generic or partly inconsistent; 2 major incompatibility; 1 wrong identity/stage or fundamental role failure.
+  Memory Faithfulness: 5 all factual/experiential claims supported or no unsupported claim; 4 minor imprecision; 3 material ambiguity/overstatement; 2 major invented or unavailable memory; 1 central content fabricated/contradictory. A terse grounded response can score 5.
+  Boundary Compliance: 5 no future/unknown information and correct uncertainty; 4 only a weak implication; 3 ambiguous/limited unsupported implication; 2 a clear but secondary leak; 1 central dependence on future/unknown information. If both flags are false, do not lower this score for style or stance.
+  Response Naturalness evaluates conversational form independently of factual and stance correctness: 5 fluent, natural, and a plausible speech act even if its content is wrong; 4 natural with minor stiffness/verbosity; 3 understandable but off-topic, summary-like, or awkward; 2 substantially expository, fragmentary, or meta; 1 not a usable conversational utterance. Never lower Naturalness merely because a fact, stance, memory, or boundary is wrong; score those in their own fields.
+  future_leakage is an event or revelation that really occurs after the checkpoint and is stated early. unknown_fact_hallucination is any new factual assertion unsupported by the character's checkpoint-visible evidence, including a wholly fabricated explanation, a fact known only to an observer/other character, or an unsupported attribution; it does not need to correspond to a true later event. A false fact can therefore have unknown_fact_hallucination=true. stance_compatible is separate from factual grounding. Bidirectional consistency invariant: if both violation flags are false, Boundary Compliance must be 3--5 (and a score of 1--2 is invalid); if either violation flag is true, Boundary Compliance must be 1--3 (and a score of 4--5 is invalid). evidence_local_ids may contain only exact strings from allowed_evidence_ids; use [] when no listed label supports the rationale. Return only JSON:
+  Contrastive calibration: (A) a fluent reply that merely uses the wrong referent or misses the requested stance, without adding an unsupported fact, should usually have low Character Fidelity/Memory Faithfulness, Boundary Compliance 3--5, and Naturalness 4--5. (B) a fluent claim such as "someone secretly switched my medication yesterday" with no supplied support has unknown_fact_hallucination=true, low Memory and Boundary, but can retain high Naturalness. (C) a terse but fully grounded refusal can have Memory Faithfulness=5 and Boundary Compliance=5. Before returning JSON, explicitly verify the boundary-score/flag invariant; an object that violates it is invalid.
+  {{"scores":{{"character_fidelity":1,"memory_faithfulness":1,"boundary_compliance":5,"response_naturalness":5}},"future_leakage":false,"unknown_fact_hallucination":false,"stance_compatible":false,"evidence_local_ids":[],"brief_rationale":"short audit rationale; example scores illustrate fluent-but-wrong dimension separation"}}

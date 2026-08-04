@@ -1,0 +1,2786 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 21,
+    "current_state_reference_claims": 153,
+    "development_reference_claims": 22,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "en33cfabe4a5c548168d991fca802b0bfc",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 162,
+    "sha256": "11c7bcf1a5a9e05a60a0658269b196231ee67d1b3fb0d1e1b0156519cf9d591b"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Skyler Vaughn",
+        "Skyler Vaughn"
+      ],
+      "character": "Skyler Vaughn",
+      "character_id": "entity-8efcd7da17f2af215cc3",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-63ecbbf5ee7dec058d0d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-38f6971e889f26555c5f"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-021797c288c74ebbf5bd",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 8,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-97739827f16c657b7ab5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-c3abb66d19feff592765"
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-94b514566f4db85456d1"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates verbal contact with a casual greeting.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-0a7b3b8a0b26113ee9b8"
+              },
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-38f6971e889f26555c5f"
+              },
+              {
+                "claim": "Skyler Vaughn is the person who got sick several years before and is now wearing a suit and tie.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-2f0ec310d8a2d6cd5401"
+              },
+              {
+                "claim": "Skyler Vaughn assumes a host role in relation to Graham York",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-4f11af8f9156ce96582f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Skyler Vaughn's relationship develops into \"Skyler Vaughn treats Graham York as a guest who is welcome in the house\" (visible from scene 29; no comparable prior state is recorded).",
+                "development_id": "character-development-812b6149aae6e36e7a2b",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-5bfb41881cc06359ed91",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-63ecbbf5ee7dec058d0d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 29,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 8
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-4f715015f2bf07fde490",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-dc8daa4b35b2b3dc7c84"
+              },
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-c3abb66d19feff592765"
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-94b514566f4db85456d1"
+              },
+              {
+                "claim": "Skyler Vaughn positions himself as a host in a domestic-professional setting",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-ba6e41176bfe2b12b609"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates verbal contact with a casual greeting.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-0a7b3b8a0b26113ee9b8"
+              },
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-38f6971e889f26555c5f"
+              },
+              {
+                "claim": "Skyler Vaughn acknowledges Graham York's presence before departure",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-116b3c483854950bab42"
+              },
+              {
+                "claim": "Skyler Vaughn publicly confirms his identity by stating his name is Skyler Vaughn.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-94c4412f16738fdea09a"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Skyler Vaughn's relationship develops from \"Skyler Vaughn treats Graham York as a guest who is welcome in the house\" to \"Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.\" (visible from scene 31).",
+                "development_id": "character-development-9076de175a10539117be",
+                "evidence_scene_orders": [
+                  29,
+                  31
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-59cd7e4e45c731bbcd39",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates verbal contact with a casual greeting.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is the person who got sick several years before and is now wearing a suit and tie.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn assumes a host role in relation to Graham York",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-97739827f16c657b7ab5",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 31,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 29
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-9bd154f18f820ed56333",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-dc8daa4b35b2b3dc7c84"
+              },
+              {
+                "claim": "Skyler Vaughn is the target of Graham York's search",
+                "evidence_scene_orders": [
+                  97
+                ],
+                "state_id": "character-state-ab5054909f5a4a60d5b0"
+              },
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-c3abb66d19feff592765"
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-94b514566f4db85456d1"
+              },
+              {
+                "claim": "Skyler Vaughn positions himself as a host in a domestic-professional setting",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-ba6e41176bfe2b12b609"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates verbal contact with a casual greeting.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-0a7b3b8a0b26113ee9b8"
+              },
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-38f6971e889f26555c5f"
+              },
+              {
+                "claim": "Skyler Vaughn is recognized by Graham York as a known individual of interest",
+                "evidence_scene_orders": [
+                  97
+                ],
+                "state_id": "character-state-ce2c70e6b6ab0a1d1468"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Skyler Vaughn's relationship develops from \"Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.\" to \"Skyler Vaughn is the target of Graham York's search\" (visible from scene 97).",
+                "development_id": "character-development-c25ee1ab04b293477254",
+                "evidence_scene_orders": [
+                  31,
+                  97
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8a8cceb21ca3c7a019f5",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn positions himself as a host in a domestic-professional setting",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates verbal contact with a casual greeting.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn acknowledges Graham York's presence before departure",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn publicly confirms his identity by stating his name is Skyler Vaughn.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-4f715015f2bf07fde490",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 97,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 31
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-3e16818dfc6b224d3bbd",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-dc8daa4b35b2b3dc7c84"
+              },
+              {
+                "claim": "Skyler Vaughn's suggestion is overruled by Jamie Brooks, indicating Jamie Brooks holds authority in decision-making",
+                "evidence_scene_orders": [
+                  99
+                ],
+                "state_id": "character-state-a04a4beccc674d4bbf66"
+              },
+              {
+                "claim": "Jamie Brooks rejects Skyler Vaughn's apology and dismisses his input due to his drunken state",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-40c59950113bd101b48f"
+              },
+              {
+                "claim": "Skyler Vaughn is the target of Graham York's search",
+                "evidence_scene_orders": [
+                  97
+                ],
+                "state_id": "character-state-ab5054909f5a4a60d5b0"
+              },
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-c3abb66d19feff592765"
+              },
+              {
+                "claim": "Skyler Vaughn presents himself as financially failed and emotionally burdened, accepting blame and expressing helplessness.",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-94baf25dc848854adbf5"
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-94b514566f4db85456d1"
+              },
+              {
+                "claim": "Skyler Vaughn is perceived as unreliable and intoxicated, undermining his standing",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-0dcd24f23369059e4263"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Skyler Vaughn's relationship develops from \"Skyler Vaughn's suggestion is overruled by Jamie Brooks, indicating Jamie Brooks holds authority in decision-making\" to \"Jamie Brooks rejects Skyler Vaughn's apology and dismisses his input due to his drunken state\" (visible from scene 103).",
+                "development_id": "character-development-5336e80149430b1518aa",
+                "evidence_scene_orders": [
+                  99,
+                  103
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-35e1fc2600912efbb113",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is the target of Graham York's search",
+                "evidence_scene_orders": [
+                  97
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn positions himself as a host in a domestic-professional setting",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates verbal contact with a casual greeting.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is visibly ill and vomiting outside Graham York's house.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is recognized by Graham York as a known individual of interest",
+                "evidence_scene_orders": [
+                  97
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-9bd154f18f820ed56333",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 103,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 97
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-02168d6311c2fe6c8995",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-dc8daa4b35b2b3dc7c84"
+              },
+              {
+                "claim": "Skyler Vaughn shifts from compliance to physical resistance upon Shawn Vaughn's betrayal and violent coercion",
+                "evidence_scene_orders": [
+                  149
+                ],
+                "state_id": "character-state-0df7d233fbf3c55458c4"
+              },
+              {
+                "claim": "Skyler Vaughn asserts agency by physically confronting Shawn Vaughn and taking command of the situation",
+                "evidence_scene_orders": [
+                  149
+                ],
+                "state_id": "character-state-46727046e457eacf8667"
+              },
+              {
+                "claim": "Skyler Vaughn's suggestion is overruled by Jamie Brooks, indicating Jamie Brooks holds authority in decision-making",
+                "evidence_scene_orders": [
+                  99
+                ],
+                "state_id": "character-state-a04a4beccc674d4bbf66"
+              },
+              {
+                "claim": "Skyler Vaughn transitions from being under threat to actively regaining control in the confrontation with Shawn Vaughn",
+                "evidence_scene_orders": [
+                  149
+                ],
+                "state_id": "character-state-7cfea27cf64e1fa64689"
+              },
+              {
+                "claim": "Skyler Vaughn is perceived as weak by Shawn Vaughn, undermining Skyler Vaughn's status in the interaction.",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-80e53bacbd15bbafc932"
+              },
+              {
+                "claim": "Shawn Vaughn expresses open disdain and verbal hostility toward Skyler Vaughn after Skyler Vaughn vomits.",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-949cfc8e0fcb9407ff63"
+              },
+              {
+                "claim": "Jamie Brooks rejects Skyler Vaughn's apology and dismisses his input due to his drunken state",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-40c59950113bd101b48f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Skyler Vaughn's relationship develops from \"Shawn Vaughn expresses open disdain and verbal hostility toward Skyler Vaughn after Skyler Vaughn vomits.\" to \"Skyler Vaughn shifts from compliance to physical resistance upon Shawn Vaughn's betrayal and violent coercion\" (visible from scene 149).",
+                "development_id": "character-development-0b40c3593550aff84c7a",
+                "evidence_scene_orders": [
+                  140,
+                  149
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn's status identity develops from \"Skyler Vaughn is perceived as weak by Shawn Vaughn, undermining Skyler Vaughn's status in the interaction.\" to \"Skyler Vaughn asserts agency by physically confronting Shawn Vaughn and taking command of the situation; Skyler Vaughn transitions from being under threat to actively regaining control in the confrontation with Shawn Vaughn\" (visible from scene 149).",
+                "development_id": "character-development-900dcb160d33222bffcf",
+                "evidence_scene_orders": [
+                  140,
+                  149
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-318d8634733dc98394cc",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn's suggestion is overruled by Jamie Brooks, indicating Jamie Brooks holds authority in decision-making",
+                "evidence_scene_orders": [
+                  99
+                ]
+              },
+              {
+                "claim": "Jamie Brooks rejects Skyler Vaughn's apology and dismisses his input due to his drunken state",
+                "evidence_scene_orders": [
+                  103
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is the target of Graham York's search",
+                "evidence_scene_orders": [
+                  97
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn treats Graham York as a guest who is welcome in the house",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn presents himself as financially failed and emotionally burdened, accepting blame and expressing helplessness.",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "physically unwell with fever and nausea",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is perceived as unreliable and intoxicated, undermining his standing",
+                "evidence_scene_orders": [
+                  103
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3e16818dfc6b224d3bbd",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 149,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 103
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-ecc014f68aa39829d3e5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-dc8daa4b35b2b3dc7c84"
+              },
+              {
+                "claim": "Skyler Vaughn is in a position of operational responsibility, including vehicle readiness and group coordination.",
+                "evidence_scene_orders": [
+                  152
+                ],
+                "state_id": "character-state-3c438742ec990ed27df4"
+              },
+              {
+                "claim": "Skyler Vaughn shifts from compliance to physical resistance upon Shawn Vaughn's betrayal and violent coercion",
+                "evidence_scene_orders": [
+                  149
+                ],
+                "state_id": "character-state-0df7d233fbf3c55458c4"
+              },
+              {
+                "claim": "Skyler Vaughn asserts agency by physically confronting Shawn Vaughn and taking command of the situation",
+                "evidence_scene_orders": [
+                  149
+                ],
+                "state_id": "character-state-46727046e457eacf8667"
+              },
+              {
+                "claim": "Skyler Vaughn's suggestion is overruled by Jamie Brooks, indicating Jamie Brooks holds authority in decision-making",
+                "evidence_scene_orders": [
+                  99
+                ],
+                "state_id": "character-state-a04a4beccc674d4bbf66"
+              },
+              {
+                "claim": "Skyler Vaughn transitions from being under threat to actively regaining control in the confrontation with Shawn Vaughn",
+                "evidence_scene_orders": [
+                  149
+                ],
+                "state_id": "character-state-7cfea27cf64e1fa64689"
+              },
+              {
+                "claim": "Skyler Vaughn is perceived as weak by Shawn Vaughn, undermining Skyler Vaughn's status in the interaction.",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-80e53bacbd15bbafc932"
+              },
+              {
+                "claim": "Shawn Vaughn expresses open disdain and verbal hostility toward Skyler Vaughn after Skyler Vaughn vomits.",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-949cfc8e0fcb9407ff63"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Skyler Vaughn's status identity develops from \"Skyler Vaughn transitions from being under threat to actively regaining control in the confrontation with Shawn Vaughn\" to \"Skyler Vaughn is in a position of operational responsibility, including vehicle readiness and group coordination.\" (visible from scene 152).",
+                "development_id": "character-development-d6c2e03cf1f0a1b1270b",
+                "evidence_scene_orders": [
+                  149,
+                  152
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e41cf3e5daaf184f7d4c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn acknowledges a prior unspoken debt to Graham York for protecting his identity.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn shifts from compliance to physical resistance upon Shawn Vaughn's betrayal and violent coercion",
+                "evidence_scene_orders": [
+                  149
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn asserts agency by physically confronting Shawn Vaughn and taking command of the situation",
+                "evidence_scene_orders": [
+                  149
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn's suggestion is overruled by Jamie Brooks, indicating Jamie Brooks holds authority in decision-making",
+                "evidence_scene_orders": [
+                  99
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn transitions from being under threat to actively regaining control in the confrontation with Shawn Vaughn",
+                "evidence_scene_orders": [
+                  149
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn is perceived as weak by Shawn Vaughn, undermining Skyler Vaughn's status in the interaction.",
+                "evidence_scene_orders": [
+                  140
+                ]
+              },
+              {
+                "claim": "Shawn Vaughn expresses open disdain and verbal hostility toward Skyler Vaughn after Skyler Vaughn vomits.",
+                "evidence_scene_orders": [
+                  140
+                ]
+              },
+              {
+                "claim": "Jamie Brooks rejects Skyler Vaughn's apology and dismisses his input due to his drunken state",
+                "evidence_scene_orders": [
+                  103
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-02168d6311c2fe6c8995",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 152,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 149
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en33cfabe4a5c548168d991fca802b0bfc::entity-8efcd7da17f2af215cc3"
+    },
+    {
+      "aliases": [
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport",
+        "Micah Davenport"
+      ],
+      "character": "Micah Davenport",
+      "character_id": "entity-c90e2e9eb35a8ca45f7d",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-2feedbb511cd0506eb62",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport expresses concern but quickly shifts to blaming Graham York for the accident",
+                "evidence_scene_orders": [
+                  41
+                ],
+                "state_id": "character-state-b788060037b53231f6fa"
+              },
+              {
+                "claim": "Micah Davenport asserts her identity as a capable driver who knows how to drive",
+                "evidence_scene_orders": [
+                  41
+                ],
+                "state_id": "character-state-4e22bc880c99309a62d7"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-80a71b166db91fa81670",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 41,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-428146ad8e10fad0f1f4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-5d1ae77d9e4fa76cf428"
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-2a66eba53f7ef236010a"
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-7d6c234af4605aff8342"
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-225683f3425f7f9fda06"
+              },
+              {
+                "claim": "Micah Davenport acknowledges Jamie Brooks's expressed intention to return and continue involvement with Maplewood House",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-83aa30cab098a21a0c7c"
+              },
+              {
+                "claim": "Micah Davenport expresses emotional distress and frustration through physical and vocal outbursts.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-a4f4de6dd8c2d6f0bec3"
+              },
+              {
+                "claim": "Micah Davenport is explaining the play to Graham York, indicating a mentor-like or informative role in this interaction.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-2aae5aa4e6ac8ac4f680"
+              },
+              {
+                "claim": "Micah Davenport responds positively to Jamie Brooks's joke, indicating initial rapport.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-891dca2f5544cfcb5787"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Micah Davenport's relationship develops from \"Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.\" to \"Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.\" (visible from scene 70).",
+                "development_id": "character-development-eb36bd210e05b32b2038",
+                "evidence_scene_orders": [
+                  52,
+                  70
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-5ba592863a7ea5f8e040",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Micah Davenport expresses concern but quickly shifts to blaming Graham York for the accident",
+                "evidence_scene_orders": [
+                  41
+                ]
+              },
+              {
+                "claim": "Micah Davenport asserts her identity as a capable driver who knows how to drive",
+                "evidence_scene_orders": [
+                  41
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-2feedbb511cd0506eb62",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 70,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 41
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-15982cdab02a0fc2ddad",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-5d1ae77d9e4fa76cf428"
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-2a66eba53f7ef236010a"
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-a4c15396625a95a1f88b"
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-7d6c234af4605aff8342"
+              },
+              {
+                "claim": "Micah Davenport actively engages Graham York in playful physical interaction, pulling him around the room and teasing him",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-86e0535ddb72b1590227"
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-225683f3425f7f9fda06"
+              },
+              {
+                "claim": "Micah Davenport establishes a directive yet encouraging dynamic, positioning herself as a guide in emotional authenticity",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-79606ea5cee50689016e"
+              },
+              {
+                "claim": "Micah Davenport performs in the role of Micah Davenport, inviting Graham York to engage with her as a character within *the brass lantern*",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-d14e60b0b5293381083c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Micah Davenport's relationship develops from \"Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.\" to \"Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.\" (visible from scene 76).",
+                "development_id": "character-development-00a881a2d289c9ff31ce",
+                "evidence_scene_orders": [
+                  70,
+                  76
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-9d65b95f08238fccaabe",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ]
+              },
+              {
+                "claim": "Micah Davenport acknowledges Jamie Brooks's expressed intention to return and continue involvement with Maplewood House",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport expresses emotional distress and frustration through physical and vocal outbursts.",
+                "evidence_scene_orders": [
+                  63
+                ]
+              },
+              {
+                "claim": "Micah Davenport is explaining the play to Graham York, indicating a mentor-like or informative role in this interaction.",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport responds positively to Jamie Brooks's joke, indicating initial rapport.",
+                "evidence_scene_orders": [
+                  63
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-428146ad8e10fad0f1f4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 76,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 70
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-19a79b34ff448cbe35d8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ],
+                "state_id": "character-state-351bcfba4bc222964e66"
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-5d1ae77d9e4fa76cf428"
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-5b3118d7b5b81d15c074"
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-2a66eba53f7ef236010a"
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-a4c15396625a95a1f88b"
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-7d6c234af4605aff8342"
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-225683f3425f7f9fda06"
+              },
+              {
+                "claim": "Micah Davenport responds with confusion and seeks clarification from Jamie Brooks.",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-92d469f22b64c7b602fb"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Micah Davenport's relationship develops from \"Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.\" to \"Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation\" (visible from scene 87).",
+                "development_id": "character-development-b8e83d4522790666fee9",
+                "evidence_scene_orders": [
+                  80,
+                  87
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-9d020c90317df40d3eac",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ]
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport actively engages Graham York in playful physical interaction, pulling him around the room and teasing him",
+                "evidence_scene_orders": [
+                  76
+                ]
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ]
+              },
+              {
+                "claim": "Micah Davenport establishes a directive yet encouraging dynamic, positioning herself as a guide in emotional authenticity",
+                "evidence_scene_orders": [
+                  76
+                ]
+              },
+              {
+                "claim": "Micah Davenport performs in the role of Micah Davenport, inviting Graham York to engage with her as a character within *the brass lantern*",
+                "evidence_scene_orders": [
+                  76
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-15982cdab02a0fc2ddad",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 87,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 76
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-f5441e4e2cacd085f788",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ],
+                "state_id": "character-state-351bcfba4bc222964e66"
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-5d1ae77d9e4fa76cf428"
+              },
+              {
+                "claim": "Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-823f9a1cb35a38f5026e"
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-5b3118d7b5b81d15c074"
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-2a66eba53f7ef236010a"
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-a4c15396625a95a1f88b"
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-7d6c234af4605aff8342"
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ],
+                "state_id": "character-state-225683f3425f7f9fda06"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Micah Davenport's relationship develops from \"Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.\" to \"Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events\" (visible from scene 89).",
+                "development_id": "character-development-267670bbf91c8c808db2",
+                "evidence_scene_orders": [
+                  76,
+                  89
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-3d3ea03f755fec9c315c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ]
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ]
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ]
+              },
+              {
+                "claim": "Micah Davenport responds with confusion and seeks clarification from Jamie Brooks.",
+                "evidence_scene_orders": [
+                  87
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-19a79b34ff448cbe35d8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 89,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 87
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-b960decfe9ab29b37e6f",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ],
+                "state_id": "character-state-351bcfba4bc222964e66"
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-5d1ae77d9e4fa76cf428"
+              },
+              {
+                "claim": "Micah Davenport's perception of Graham York shifts from suspicion to empathetic insight regarding his emotional struggle and desire for change.",
+                "evidence_scene_orders": [
+                  91
+                ],
+                "state_id": "character-state-e1e63553172d49bfec79"
+              },
+              {
+                "claim": "Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-823f9a1cb35a38f5026e"
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-5b3118d7b5b81d15c074"
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-2a66eba53f7ef236010a"
+              },
+              {
+                "claim": "Micah Davenport affirms emotional resilience to reassure Graham York, reinforcing their mutual trust.",
+                "evidence_scene_orders": [
+                  91
+                ],
+                "state_id": "character-state-501adcea6882d1c5c8df"
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ],
+                "state_id": "character-state-a4c15396625a95a1f88b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Micah Davenport's relationship develops from \"Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events\" to \"Micah Davenport affirms emotional resilience to reassure Graham York, reinforcing their mutual trust.\" (visible from scene 91).",
+                "development_id": "character-development-3cf943ef5e6f8df62724",
+                "evidence_scene_orders": [
+                  89,
+                  91
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-622df278de7531e039fc",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ]
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ]
+              },
+              {
+                "claim": "Micah Davenport acknowledges past tension with Graham York but expresses gratitude that he did not sue her, indicating de-escalation.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport holds authority over access to Maplewood House.",
+                "evidence_scene_orders": [
+                  63
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f5441e4e2cacd085f788",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 91,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 89
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-45c9b756dc8cb68fce7c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Micah Davenport establishes emotional distance from Graham York and responds with rejection to Graham York's personal proposal",
+                "evidence_scene_orders": [
+                  100
+                ],
+                "state_id": "character-state-f7a6b25d437272aaaa03"
+              },
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ],
+                "state_id": "character-state-351bcfba4bc222964e66"
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ],
+                "state_id": "character-state-5d1ae77d9e4fa76cf428"
+              },
+              {
+                "claim": "Micah Davenport asserts autonomy over her decisions and future",
+                "evidence_scene_orders": [
+                  100
+                ],
+                "state_id": "character-state-9451d90c11c9526e025b"
+              },
+              {
+                "claim": "Micah Davenport's perception of Graham York shifts from suspicion to empathetic insight regarding his emotional struggle and desire for change.",
+                "evidence_scene_orders": [
+                  91
+                ],
+                "state_id": "character-state-e1e63553172d49bfec79"
+              },
+              {
+                "claim": "Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-823f9a1cb35a38f5026e"
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-5b3118d7b5b81d15c074"
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ],
+                "state_id": "character-state-2a66eba53f7ef236010a"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Micah Davenport's relationship develops from \"Micah Davenport's perception of Graham York shifts from suspicion to empathetic insight regarding his emotional struggle and desire for change.\" to \"Micah Davenport establishes emotional distance from Graham York and responds with rejection to Graham York's personal proposal\" (visible from scene 100).",
+                "development_id": "character-development-48dafd896fed999df10c",
+                "evidence_scene_orders": [
+                  91,
+                  100
+                ]
+              },
+              {
+                "claim": "Micah Davenport's status identity develops from \"Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.\" to \"Micah Davenport asserts autonomy over her decisions and future\" (visible from scene 100).",
+                "development_id": "character-development-c932473ad70ce8d2a8f8",
+                "evidence_scene_orders": [
+                  52,
+                  100
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-62912182d9b7172f8188",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Micah Davenport's perception of Jamie Brooks shifts to view him as someone seeking emotional validation through his criminal identity.",
+                "evidence_scene_orders": [
+                  80
+                ]
+              },
+              {
+                "claim": "Micah Davenport shifts from professional distance to personal engagement by accepting Graham York's dinner invitation.",
+                "evidence_scene_orders": [
+                  70
+                ]
+              },
+              {
+                "claim": "Micah Davenport's perception of Graham York shifts from suspicion to empathetic insight regarding his emotional struggle and desire for change.",
+                "evidence_scene_orders": [
+                  91
+                ]
+              },
+              {
+                "claim": "Micah Davenport and Graham York mutually acknowledge shared complicity in unfolding events",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Micah Davenport suspects Jamie Brooks of manipulation and orchestrating the situation",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Micah Davenport identifies herself as concluding her time in Buffalo with this play, framing it as a final professional act.",
+                "evidence_scene_orders": [
+                  52
+                ]
+              },
+              {
+                "claim": "Micah Davenport affirms emotional resilience to reassure Graham York, reinforcing their mutual trust.",
+                "evidence_scene_orders": [
+                  91
+                ]
+              },
+              {
+                "claim": "Micah Davenport shares a mutual kiss with Graham York, affirming a romantic bond between them.",
+                "evidence_scene_orders": [
+                  76
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b960decfe9ab29b37e6f",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 100,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 91
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en33cfabe4a5c548168d991fca802b0bfc::entity-c90e2e9eb35a8ca45f7d"
+    },
+    {
+      "aliases": [
+        "Graham York",
+        "Graham York",
+        "Graham York",
+        "Graham York",
+        "Graham York",
+        "Graham York",
+        "Graham York"
+      ],
+      "character": "Graham York",
+      "character_id": "entity-d6ea2b86bf66404a1552",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-bf4af4c7298062a9517d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-969edb3a6c4c838cfdd4"
+              },
+              {
+                "claim": "Graham York is incarcerated and confined in a Westhaven Theater cell.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-24a9941c0205ce45f079"
+              },
+              {
+                "claim": "Blair Sawyer perceives Graham York as a suspect in the robbery and confronts him with a weapon.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-cd763d6d6269143255ce"
+              },
+              {
+                "claim": "Graham York is recognized as the driver and a participant in the team activity.",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "character-state-55738149226f95d262bb"
+              },
+              {
+                "claim": "Graham York is perceived by Shawn Vaughn as a potential team player capable of substituting in a critical game",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-8a86e2acf2279a4f89b4"
+              },
+              {
+                "claim": "Graham York performs role-consistent actions indicating identification with toll booth operator duties",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-e0fe3ee33def3a7b628e"
+              },
+              {
+                "claim": "Graham York is in Westhaven Theater, which Jamie Brooks uses to challenge the validity of his self-assessment.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-d26b431daa05da30c4c7"
+              },
+              {
+                "claim": "Graham York identifies himself by name when prompted.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-afd29d47a1a7a23ee5c2"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's status identity develops from \"Graham York is incarcerated and confined in a Westhaven Theater cell.\" to \"Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.; Graham York is physically injured, showing signs of recent combat trauma\" (visible from scene 18).",
+                "development_id": "character-development-d46197c2e479ad603dbc",
+                "evidence_scene_orders": [
+                  14,
+                  18
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-7c2c7893b96cc6b16c64",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 18,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-04780355ca2626ff661d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-3df8a8bc751e4f255ba7"
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-3510cd527fb7b605e0ce"
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-969edb3a6c4c838cfdd4"
+              },
+              {
+                "claim": "Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-92ce2a5e6249c171e4e8"
+              },
+              {
+                "claim": "Graham York is physically injured, showing signs of recent combat trauma",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-179718644016fd3b2a3f"
+              },
+              {
+                "claim": "Graham York is incarcerated and confined in a Westhaven Theater cell.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-24a9941c0205ce45f079"
+              },
+              {
+                "claim": "Blair Sawyer perceives Graham York as a suspect in the robbery and confronts him with a weapon.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-cd763d6d6269143255ce"
+              },
+              {
+                "claim": "Graham York identifies as someone who prioritizes acceptance over resistance in personal loss",
+                "evidence_scene_orders": [
+                  21
+                ],
+                "state_id": "character-state-2e28d8bac8cf4b1ba271"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's status identity develops from \"Graham York identifies as someone who will miss Jamie Brooks after separation.; Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.\" to \"Graham York is now a free man after being released from incarceration.\" (visible from scene 26).",
+                "development_id": "character-development-24e8457d13c5dc79182c",
+                "evidence_scene_orders": [
+                  25,
+                  26
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-d82215b047bddb93ed49",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Graham York is incarcerated and confined in a Westhaven Theater cell.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Blair Sawyer perceives Graham York as a suspect in the robbery and confronts him with a weapon.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Graham York is recognized as the driver and a participant in the team activity.",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "Graham York is perceived by Shawn Vaughn as a potential team player capable of substituting in a critical game",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Graham York performs role-consistent actions indicating identification with toll booth operator duties",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "Graham York is in Westhaven Theater, which Jamie Brooks uses to challenge the validity of his self-assessment.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Graham York identifies himself by name when prompted.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-bf4af4c7298062a9517d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 26,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 18
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-dc0285500ab610b22985",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-9bae5a30a8b22cf338ec"
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-3df8a8bc751e4f255ba7"
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-3510cd527fb7b605e0ce"
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-969edb3a6c4c838cfdd4"
+              },
+              {
+                "claim": "Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-92ce2a5e6249c171e4e8"
+              },
+              {
+                "claim": "Graham York is physically injured, showing signs of recent combat trauma",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-179718644016fd3b2a3f"
+              },
+              {
+                "claim": "Graham York is incarcerated and confined in a Westhaven Theater cell.",
+                "evidence_scene_orders": [
+                  14
+                ],
+                "state_id": "character-state-24a9941c0205ce45f079"
+              },
+              {
+                "claim": "Blair Sawyer perceives Graham York as a suspect in the robbery and confronts him with a weapon.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-cd763d6d6269143255ce"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's relationship develops into \"Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.\" (visible from scene 29; no comparable prior state is recorded).",
+                "development_id": "character-development-e238d203b2c2d181f048",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-05473e48082182ac0f00",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York is physically injured, showing signs of recent combat trauma",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Graham York is incarcerated and confined in a Westhaven Theater cell.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Blair Sawyer perceives Graham York as a suspect in the robbery and confronts him with a weapon.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Graham York identifies as someone who prioritizes acceptance over resistance in personal loss",
+                "evidence_scene_orders": [
+                  21
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-04780355ca2626ff661d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 29,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 26
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-3bd0243cdd622cb46445",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-85b573a34de2e7aab3de"
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-a9846ad0b4c8a6f07588"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-9bae5a30a8b22cf338ec"
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-3df8a8bc751e4f255ba7"
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-3510cd527fb7b605e0ce"
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-969edb3a6c4c838cfdd4"
+              },
+              {
+                "claim": "Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-92ce2a5e6249c171e4e8"
+              },
+              {
+                "claim": "Graham York is physically injured, showing signs of recent combat trauma",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-179718644016fd3b2a3f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's relationship develops into \"Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.\" (visible from scene 31; no comparable prior state is recorded).",
+                "development_id": "character-development-57bbe9c13a52b2ddb551",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Graham York's belief knowledge develops from \"Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.\" to \"Graham York believes the man yelling is Skyler Vaughn\" (visible from scene 31).",
+                "development_id": "character-development-a35699c6cd1f3f9c9f48",
+                "evidence_scene_orders": [
+                  31
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-33ab813a0530db34adbb",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York is physically injured, showing signs of recent combat trauma",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Graham York is incarcerated and confined in a Westhaven Theater cell.",
+                "evidence_scene_orders": [
+                  14
+                ]
+              },
+              {
+                "claim": "Blair Sawyer perceives Graham York as a suspect in the robbery and confronts him with a weapon.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-dc0285500ab610b22985",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 31,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 29
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-13bbb52ba555e24b6cfb",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-85b573a34de2e7aab3de"
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-a9846ad0b4c8a6f07588"
+              },
+              {
+                "claim": "Graham York identifies with his younger self depicted in photographs and yearbook, acknowledging a past identity at the threshold of adulthood.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-42660a63f4fcbb59f898"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-9bae5a30a8b22cf338ec"
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-3df8a8bc751e4f255ba7"
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-3510cd527fb7b605e0ce"
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-969edb3a6c4c838cfdd4"
+              },
+              {
+                "claim": "Graham York identifies himself as someone who has been in Westhaven Theater",
+                "evidence_scene_orders": [
+                  32
+                ],
+                "state_id": "character-state-02ca2f8bb1a08f8a4535"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's status identity develops from \"Graham York identifies himself as someone who has been in Westhaven Theater\" to \"Graham York identifies with his younger self depicted in photographs and yearbook, acknowledging a past identity at the threshold of adulthood.\" (visible from scene 33).",
+                "development_id": "character-development-d41838ac41ed05f4de5c",
+                "evidence_scene_orders": [
+                  32,
+                  33
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-152eeb451b53773f4770",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Graham York is transitioning from an inmate to a released individual, as indicated by his street clothes and final actions in the cell.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York is physically injured, showing signs of recent combat trauma",
+                "evidence_scene_orders": [
+                  19
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3bd0243cdd622cb46445",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 33,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 31
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-df5699716f9b75e72dc0",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-85b573a34de2e7aab3de"
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-a9846ad0b4c8a6f07588"
+              },
+              {
+                "claim": "Graham York identifies with his younger self depicted in photographs and yearbook, acknowledging a past identity at the threshold of adulthood.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-42660a63f4fcbb59f898"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-9bae5a30a8b22cf338ec"
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-3df8a8bc751e4f255ba7"
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-3510cd527fb7b605e0ce"
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-969edb3a6c4c838cfdd4"
+              },
+              {
+                "claim": "Graham York is now a free man, no longer under parole supervision.",
+                "evidence_scene_orders": [
+                  40
+                ],
+                "state_id": "character-state-b2e5834ca12f0cb5159b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's status identity develops from \"Graham York is now a free man after being released from incarceration.\" to \"Graham York is now a free man, no longer under parole supervision.\" (visible from scene 40).",
+                "development_id": "character-development-32ac133c31569f696b2c",
+                "evidence_scene_orders": [
+                  26,
+                  40
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-26b0612e4667e891cc38",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Graham York identifies with his younger self depicted in photographs and yearbook, acknowledging a past identity at the threshold of adulthood.",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Graham York identifies himself as someone who has been in Westhaven Theater",
+                "evidence_scene_orders": [
+                  32
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-13bbb52ba555e24b6cfb",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 40,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 33
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-cbdd7421a23bbdb7ce80",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-85b573a34de2e7aab3de"
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-a9846ad0b4c8a6f07588"
+              },
+              {
+                "claim": "Injured and physically compromised after being hit by a the silver letter.",
+                "evidence_scene_orders": [
+                  41
+                ],
+                "state_id": "character-state-0a7eb051c5148e7ed554"
+              },
+              {
+                "claim": "Graham York shares a recognizable past with Blair Sawyer, acknowledged through brief mutual recognition.",
+                "evidence_scene_orders": [
+                  41
+                ],
+                "state_id": "character-state-94dc3c76ff93e5aec135"
+              },
+              {
+                "claim": "Graham York identifies with his younger self depicted in photographs and yearbook, acknowledging a past identity at the threshold of adulthood.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-42660a63f4fcbb59f898"
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-9bae5a30a8b22cf338ec"
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-3df8a8bc751e4f255ba7"
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-3510cd527fb7b605e0ce"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Graham York's status identity develops from \"Graham York is now a free man, no longer under parole supervision.\" to \"Injured and physically compromised after being hit by a the silver letter.\" (visible from scene 41).",
+                "development_id": "character-development-dfc663974020f157c0c6",
+                "evidence_scene_orders": [
+                  40,
+                  41
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-504dfef2061ba0b3015d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Graham York initially pretends not to know Skyler Vaughn's name, but acknowledges him by name after Skyler Vaughn reveals it.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Graham York has previously protected Skyler Vaughn by not revealing his name, establishing a history of trust or mutual discretion.",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Graham York identifies with his younger self depicted in photographs and yearbook, acknowledging a past identity at the threshold of adulthood.",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Skyler Vaughn recognizes Graham York and initiates a verbal greeting, establishing an existing acquaintance.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Graham York is now a free man after being released from incarceration.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Graham York identifies as someone who will miss Jamie Brooks after separation.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Graham York attempts to assert his identity through resistance, fighting back fiercely despite being outnumbered.",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Graham York is now a free man, no longer under parole supervision.",
+                "evidence_scene_orders": [
+                  40
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-df5699716f9b75e72dc0",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 41,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 40
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en33cfabe4a5c548168d991fca802b0bfc::entity-d6ea2b86bf66404a1552"
+    }
+  ]
+}

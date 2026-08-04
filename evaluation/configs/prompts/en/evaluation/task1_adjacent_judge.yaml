@@ -1,0 +1,20 @@
+id: task1_adjacent_judge
+category: evaluation
+name: Task 1 adjacent prediction judge
+description: Audit one adjacent checkpoint pair for prediction-only consistency.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: earlier_prediction, required: true}
+  - {name: later_prediction, required: true}
+  - {name: interval_evidence, required: true}
+static_variables: []
+template: |-
+  Audit one adjacent prediction pair for "{focal_character}" without using gold answers.
+  <earlier_prediction>{earlier_prediction}</earlier_prediction>
+  <later_prediction>{later_prediction}</later_prediction>
+  <interval_evidence>{interval_evidence}</interval_evidence>
+
+  state_carry_forward is true when important earlier predicted states persist or are explicitly superseded. development_to_state_coherent is true when later predicted developments have a compatible direction and consequence. contradiction_present covers unexplained incompatible predictions. premature_or_future_information covers information unavailable by the relevant checkpoint according to interval evidence.
+
+  Copy the two supplied instance IDs exactly and return only JSON:
+  {{"earlier_instance_id":"...","later_instance_id":"...","state_carry_forward":true,"development_to_state_coherent":true,"contradiction_present":false,"premature_or_future_information":false,"brief_rationale":"short audit"}}

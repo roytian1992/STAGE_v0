@@ -1,0 +1,37 @@
+{
+  "schema_version": "stage_task2_direct_runtime_config",
+  "track_id": "stage-complete-151-task2-direct",
+  "prediction_llm": {
+    "model": "PREDICTION_MODEL",
+    "base_url": "http://127.0.0.1:8001/v1",
+    "endpoint_pool": [
+      {"base_url": "http://127.0.0.1:8001/v1", "max_concurrency": 32},
+      {"base_url": "http://127.0.0.1:8002/v1", "max_concurrency": 32}
+    ],
+    "api_key": "REPLACE_ME",
+    "temperature": 0,
+    "timeout_seconds": 600,
+    "max_tokens": 1024,
+    "max_attempts": 3,
+    "json_response_format": true,
+    "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}
+  },
+  "evaluation_llm": {
+    "model": "INDEPENDENT_JUDGE_MODEL",
+    "base_url": "http://127.0.0.1:9001/v1",
+    "api_key": "REPLACE_ME",
+    "temperature": 0,
+    "timeout_seconds": 600,
+    "max_tokens": 768,
+    "max_attempts": 3,
+    "json_response_format": true,
+    "extra_body": {"thinking": {"type": "disabled"}}
+  },
+  "task2": {
+    "prediction_semantic_attempts": 2,
+    "judge_semantic_attempts": 4,
+    "direct_prediction_prompt_paths": {"en": "en/evaluation/task2_direct_prediction", "zh": "zh/evaluation/task2_direct_prediction"},
+    "direct_judge_prompt_paths": {"en": "en/evaluation/task2_direct_answer_judge", "zh": "zh/evaluation/task2_direct_answer_judge"},
+    "answer_only_judge_prompt_paths": {"en": "en/evaluation/task2_answer_only_judge", "zh": "zh/evaluation/task2_answer_only_judge"}
+  }
+}

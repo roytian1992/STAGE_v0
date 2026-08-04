@@ -1,0 +1,1176 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Henry",
+      "character_id": "legacy-mt-role-cfbc4060df4c1f105f9c",
+      "episode_id": "en33cfabe4a5c548168d991fca802b0bfc__Henry__ep01",
+      "episode_theme": "Exploring Henry's loyalty and emotional restraint in his relationship with Max",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-cfbc4060df4c1f105f9c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Max that clearly falls outside the established relationship evidence.",
+              "Henry visited Max to discuss personal matters unrelated to crime."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, cautious, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground reserved if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that henry visits Max in prison. and henry proposes robbing the bank to Max..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that henry must pause before speaking when emotionally affected., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Why did you go see Max in prison and suggest robbing the bank?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Henry_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Max that clearly falls outside the established relationship evidence.",
+              "Max and Henry's relationship remained unchanged after the refusal."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003.",
+              "Do not abruptly reverse the stance toward Max without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, cautious, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Max marked by mentor-mentee, partners in crime, and mutual trust."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that henry visits Max in prison. and henry proposes robbing the bank to Max..",
+              "The established dynamic with Max is marked by mentor-mentee, partners in crime, and mutual trust, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that henry must pause before speaking when emotionally affected., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Max turned down your plan, how did that change things between you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What prompted you to visit Max in prison and propose the bank robbery?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Henry_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Julie that clearly falls outside the established relationship evidence.",
+              "Henry expresses his emotions openly and immediately."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, cautious, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with reserved if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003",
+                "r020",
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that henry enters his house and sees breakfast set for one. and debbie expresses a desire for children in their conversation..",
+              "The persona card frames this character's delivery as pragmatic, measured, so an in-character answer may express reserved through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After that fallout with Max, how do you usually deal with moments like that—when things get tense?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What prompted you to visit Max in prison and propose the bank robbery?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "After Max refused your plan, how did that affect your relationship with him?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Henry_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Henry",
+      "character_id": "legacy-mt-role-cfbc4060df4c1f105f9c",
+      "episode_id": "en33cfabe4a5c548168d991fca802b0bfc__Henry__ep02",
+      "episode_theme": "Henry's internal conflict about the bank robbery plan, as shaped by contrasting emotional reactions from key people in his life",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-cfbc4060df4c1f105f9c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Julie that clearly falls outside the established relationship evidence.",
+              "Julie reacted with concern or anger to Henry's confession."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, cautious, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that henry and Julie are at Niagara Falls. and henry discloses his jail time for a mistaken bank robbery..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on reserved.",
+              "The persona constraints also indicate that henry must pause before speaking when emotionally affected., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Julie laughed after you confessed your plan at Niagara Falls, what went through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Henry_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Julie that clearly falls outside the established relationship evidence.",
+              "Henry is seeking legal justice for his wrongful accusation."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, cautious, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020",
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that henry visits Max in prison. and henry proposes robbing the bank to Max..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that henry must pause before speaking when emotionally affected., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Julie laughed—but Max didn’t. When you told him in prison about the same plan, why did his reaction affect you so much?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Julie laughed after you confessed your plan at Niagara Falls?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Henry_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Debbie that clearly falls outside the established relationship evidence.",
+              "Henry was indifferent to Debbie's happiness regarding the box."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, cautious, reserved",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground reserved if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that debbie leads Henry to a box with his name on it. and henry asks Debbie if she is happy, and she confirms she is..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that henry must pause before speaking when emotionally affected., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Later, when Debbie said she was happy after showing you the box with your things, why did that moment make you ask her if she was okay?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Julie laughed after you confessed your plan at Niagara Falls?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why are you so determined to rob the bank you were wrongly accused of?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Henry_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Julie",
+      "character_id": "legacy-mt-role-5cb47427806464d1e240",
+      "episode_id": "en33cfabe4a5c548168d991fca802b0bfc__Julie__ep01",
+      "episode_theme": "Julie's use of sarcasm and laughter to deflect emotional vulnerability in her relationship with Henry",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-5cb47427806464d1e240"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "The moment felt mundane and unemotional to Julie."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, cynical, sarcastic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that julie ate ice cream and henry watched Julie.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on pragmatic.",
+              "The persona constraints also indicate that do not take financial or career risks that jeopardize immediate survival., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Back in your apartment, you were eating ice cream and ended up dancing and kissing with Henry. What went through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Julie_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Julie agreed to meet Henry in California with enthusiasm."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Henry without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, cynical, sarcastic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Henry marked by romantic partners, collaborators, and former lovers."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that henry appeared in Julie's dressing room and asked her to meet him in California. and julie dismissed their past relationship as just a couple of times having sex..",
+              "The established dynamic with Henry is marked by romantic partners, collaborators, and former lovers, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not take financial or career risks that jeopardize immediate survival., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That moment felt real—maybe even fragile. But later, when Henry showed up asking to meet in California, you called your past with him 'meaningless screwing.' Why shut down something that clearly got under your skin?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "In your apartment with Henry, you were eating ice cream, then dancing and kissing. What was that moment like for you emotionally?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Julie_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Julie was horrified by Henry's plan and tried to talk him out of it."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Henry without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, cynical, sarcastic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r015"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that henry said he was jailed for trying to rob First Buffalo Bank and henry plans to rob the same bank.",
+              "The persona card frames this character's delivery as direct, pragmatic, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And when he told you he’d been jailed and wanted to try the robbery again, you laughed. Is that the same laugh—the one you use when something actually gets to you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "In your apartment with Henry, you were eating ice cream, then dancing and kissing. What was that moment like for you emotionally?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "When Henry burst into your dressing room and asked you to meet him in California, you laughed it off. Why did you react that way?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Julie_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Julie",
+      "character_id": "legacy-mt-role-5cb47427806464d1e240",
+      "episode_id": "en33cfabe4a5c548168d991fca802b0bfc__Julie__ep02",
+      "episode_theme": "Julie's guarded pragmatism in navigating Henry's reemergence",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-5cb47427806464d1e240"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Julie refused to help Henry with the audition immediately."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, cynical, sarcastic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r023"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that julie was on the phone with Stan while approaching her car. and max knocked on the passenger window and got into the car..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that do not take financial or career risks that jeopardize immediate survival., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Max showed up while you were on the phone with Stan and pushed you to set up Henry's audition with Darek. You thought it was a long shot—why did you go along with it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Julie_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Julie stopped the performance to confront Henry."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Henry without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, cynical, sarcastic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Henry marked by romantic partners, collaborators, and former lovers."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that henry entered the theatre and henry recognized Julie as the girl who hit him with her car.",
+              "The established dynamic with Henry is marked by romantic partners, collaborators, and former lovers, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not take financial or career risks that jeopardize immediate survival., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You went through with the audition setup, but when Henry showed up and recognized you as the one who hit him, you kept performing. Not exactly typical—was that just damage control, or were you testing something?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Max convinced you to set up an audition for Henry with Darek. What made you go along with it, even though you thought it was a long shot?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Julie_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Julie was always guarded and never relaxed around Henry."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Henry without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, cynical, sarcastic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that julie sang along to the radio and julie smoked a joint.",
+              "The persona card frames this character's delivery as direct, pragmatic, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Back when you were driving with Henry—singing, smoking a joint—moments like that, did you ever actually let your guard down? Or even then, were you already watching the exits?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Max convinced you to set up an audition for Henry with Darek. What made you go along with it, even though you thought it was a long shot?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "During your performance, Henry showed up and recognized you as the one who hit him with your car. How did you handle that distraction?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Julie_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Max",
+      "character_id": "legacy-mt-role-b41cf794a9fbfa37f3db",
+      "episode_id": "en33cfabe4a5c548168d991fca802b0bfc__Max__ep01",
+      "episode_theme": "Max's conflicted loyalty and pragmatic detachment in his relationship with Henry",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-b41cf794a9fbfa37f3db"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Max did it to gain favor with Julie for personal or romantic reasons"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, sarcastic, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that max knocked on Julie's car window to initiate contact. and max entered the car and argued for Henry to play Lophakin..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that max must prioritize mission objectives over personal emotions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What made you decide to push Julie so hard to give Henry the audition, despite the risks?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Max_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Max sees Henry as a liability and regrets ever partnering with him"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005.",
+              "Do not abruptly reverse the stance toward Henry without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, sarcastic, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Henry marked by mentor-mentee, partners in crime, and mutual trust."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005",
+                "r005",
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that max says 'I thought I told you I didn't want to see your face again' to Henry. and max refuses Henry's proposal and states 'I'm happy here' in response to the idea of leaving prison..",
+              "The established dynamic with Henry is marked by mentor-mentee, partners in crime, and mutual trust, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that max must prioritize mission objectives over personal emotions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After everything you've been through, how would you describe your partnership with Henry now?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What motivated you to go out of your way to convince Julie for Henry's audition?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Max_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Max was secretly planning to escape with Henry all along"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002.",
+              "Do not abruptly reverse the stance toward Henry without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, sarcastic, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Henry marked by mentor-mentee, partners in crime, and mutual trust."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005",
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that max says 'I thought I told you I didn't want to see your face again' to Henry. and max refuses Henry's proposal and states 'I'm happy here' in response to the idea of leaving prison..",
+              "The established dynamic with Henry is marked by mentor-mentee, partners in crime, and mutual trust, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that max must prioritize mission objectives over personal emotions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Henry came to you in prison asking for help with the bank job, why did you turn him down?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What motivated you to go out of your way to convince Julie for Henry's audition?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "After all that happened, how do you view your partnership with Henry?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Max_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Max",
+      "character_id": "legacy-mt-role-b41cf794a9fbfa37f3db",
+      "episode_id": "en33cfabe4a5c548168d991fca802b0bfc__Max__ep02",
+      "episode_theme": "Maintaining mission focus through personal crisis and confrontation",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-b41cf794a9fbfa37f3db"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Henry that clearly falls outside the established relationship evidence.",
+              "Max felt relieved and excited to be free, embracing his new freedom"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, sarcastic, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that max pounds on the prison gates after his release. and max expresses fear by saying 'I don't like this' to Henry..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on pragmatic.",
+              "The persona constraints also indicate that max must prioritize mission objectives over personal emotions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You just walked out of prison and started pounding on the gates—what was going through your head in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Max_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Joe that clearly falls outside the established relationship evidence.",
+              "Max's priority was to escape immediately without confrontation to preserve safety"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, sarcastic, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r034"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that eddie pointed a gun at Max and Joe in the tunnel room. and max verbally confronted Eddie about his mistakes..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that max must prioritize mission objectives over personal emotions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That panic didn't last long—when Eddie had the gun on you and Joe, what were you focused on in that moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your mind the moment you walked out of prison and started pounding on those gates?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Max_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Max attempted to calm Eddie down with words to avoid violence",
+              "Max avoided eye contact and tried to sneak away to escape unnoticed"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, sarcastic, measured",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r034"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that eddie pointed a gun at Max and Joe in the tunnel room. and max verbally confronted Eddie about his mistakes..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that max must prioritize mission objectives over personal emotions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You stepped in and called him out—but why confront Eddie directly instead of trying to de-escalate? What were you trying to control in that moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your mind the moment you walked out of prison and started pounding on those gates?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What was your priority when Eddie had the gun on you and Joe?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Max_q007",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en33cfabe4a5c548168d991fca802b0bfc/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en33cfabe4a5c548168d991fca802b0bfc/task_3_role_assets.json",
+    "role_asset_sha256": "bd907367478e5480c3a023d73aa5e9c8ae3ab23f581c53c9f3c3bb687191e39e",
+    "sha256": "ebb0126880eb81695adf47413a0ff11610fe4db3dffb0246680f310cc6a0d945",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en33cfabe4a5c548168d991fca802b0bfc",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

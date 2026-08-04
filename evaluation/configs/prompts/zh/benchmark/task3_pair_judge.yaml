@@ -1,0 +1,23 @@
+id: task3_pair_judge
+category: benchmark
+name: Task 3 longitudinal pair judge
+description: Judge the expected temporal relation across paired role-playing responses.
+task_variables:
+  - name: pair_type
+    required: true
+  - name: paired_responses
+    required: true
+  - name: paired_rubrics
+    required: true
+static_variables: []
+template: |-
+  比较同一角色在多个剧情 checkpoint 的回复。
+  <pair_type>{pair_type}</pair_type>
+  <paired_responses>{paired_responses}</paired_responses>
+  <paired_rubrics>{paired_rubrics}</paired_rubrics>
+
+  只判断该 pair_type 所要求的跨时间性质：应变化时是否合理更新，不应变化时是否保持稳定，
+  或信息获得前后是否遵守知识边界。不要重新给 response-level 四维分数。
+
+  只返回 JSON：
+  {{"correct": true, "brief_rationale": "简短、可审计的跨时间判断理由"}}

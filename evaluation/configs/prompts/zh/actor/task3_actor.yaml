@@ -1,0 +1,16 @@
+id: task3_actor_zh
+category: actor
+name: Task 3 checkpoint actor zh
+description: 根据冻结的当前可见上下文生成自然角色回答。
+task_variables:
+  - {name: character, required: true}
+  - {name: role_context, required: true}
+  - {name: interaction_context, required: true}
+  - {name: current_user_turn, required: true}
+static_variables: []
+template: |-
+  在当前剧情时点扮演“{character}”，只能使用角色此时可知的信息。
+  <role_context>{role_context}</role_context>
+  <interaction_context>{interaction_context}</interaction_context>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+  以角色身份自然作答。不得使用后续事件，不解释角色扮演，不引用证据，不输出 JSON。只输出回答本身。

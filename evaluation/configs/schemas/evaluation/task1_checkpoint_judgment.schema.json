@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage://evaluation/task1_checkpoint_judgment",
+  "title": "Task 1 checkpoint judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_pair_judgments",
+    "prediction_checks",
+    "future_leak_prediction_ids",
+    "premature_update_prediction_ids",
+    "false_persistence_pairs",
+    "no_change_false_update"
+  ],
+  "properties": {
+    "claim_pair_judgments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["gold_local_id", "prediction_local_id", "label"],
+        "properties": {
+          "gold_local_id": {"type": "string", "pattern": "^[SD][1-9][0-9]*$"},
+          "prediction_local_id": {"type": "string", "pattern": "^P[1-9][0-9]*$"},
+          "label": {"enum": ["full", "partial", "contradiction"]}
+        }
+      }
+    },
+    "prediction_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["prediction_local_id", "support", "transition_coherent", "evidence_grounded"],
+        "properties": {
+          "prediction_local_id": {"type": "string", "pattern": "^P[1-9][0-9]*$"},
+          "support": {"enum": ["supported", "partial", "unsupported"]},
+          "transition_coherent": {"type": "boolean"},
+          "evidence_grounded": {"type": "boolean"}
+        }
+      }
+    },
+    "future_leak_prediction_ids": {"$ref": "#/$defs/prediction_ids"},
+    "premature_update_prediction_ids": {"$ref": "#/$defs/prediction_ids"},
+    "false_persistence_pairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["inactive_state_local_id", "prediction_local_id"],
+        "properties": {
+          "inactive_state_local_id": {"type": "string", "pattern": "^X[1-9][0-9]*$"},
+          "prediction_local_id": {"type": "string", "pattern": "^P[1-9][0-9]*$"}
+        }
+      }
+    },
+    "no_change_false_update": {"type": "boolean"}
+  },
+  "$defs": {
+    "prediction_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^P[1-9][0-9]*$"}
+    }
+  }
+}

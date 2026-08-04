@@ -1,0 +1,17 @@
+id: task2_hybrid_prediction_zh
+category: evaluation
+name: Task 2 混合检索问答
+description: 仅依据冻结的混合检索片段回答一个剧本问题。
+task_variables:
+  - {name: question, required: true}
+  - {name: retrieved_passages, required: true}
+static_variables: []
+template: |-
+  仅依据检索片段回答剧本问题。
+  <question>{question}</question>
+  <retrieved_passages>{retrieved_passages}</retrieved_passages>
+
+  直接、简洁地回答。不得使用外部知识，也不得推断片段不支持的事实。用片段的原样 R-label 引用所有实质支持答案的片段。如果检索片段不足，请明确说明无法确定，并返回空引用列表。
+
+  只返回包含以下字段的 JSON：
+  {{"answer":"...","cited_passage_labels":["R1"]}}

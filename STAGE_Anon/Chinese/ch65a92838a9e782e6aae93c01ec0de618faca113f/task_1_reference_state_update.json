@@ -1,0 +1,1445 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 14,
+    "current_state_reference_claims": 65,
+    "development_reference_claims": 15,
+    "trajectories": 2
+  },
+  "language": "zh",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "ch65a92838a9e782e6aae93c01ec0de618faca113f",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 62,
+    "sha256": "e4091107516ddc8f4bce29230ebedd3566198051e3ee1ae78cc67c62785dba23"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "陈正",
+        "陈正",
+        "那个男子",
+        "陈正",
+        "蝙蝠侠",
+        "阿正",
+        "父亲"
+      ],
+      "character": "陈正",
+      "character_id": "entity-5fa133319d580f112e87",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-4b1238af0ca08f183370",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正与陈浪在危机中形成临时合作关系，共同对抗持刀小偷",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-9b7be94fcdecd42149f1"
+              },
+              {
+                "claim": "陈正被陈浪认出是其父亲",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-02f68d2abbcab5f9294c"
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份出现，展现出保护者和武力主导者的角色定位",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-71da9ae78143236f2119"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪因陈正在危机中的保护行为而识别其父身份，实现关系突破",
+                "development_id": "task1-development-498f7a83627842bb4162",
+                "evidence_scene_orders": [
+                  9,
+                  10
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-db89a5998354f4b5cd83",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 10,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-e5a5579c5a0740bd5414",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正被陈浪认出是其父亲，父子身份关系公开",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-02f68d2abbcab5f9294c"
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份出现，展现出保护者和武力主导者的角色定位",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-71da9ae78143236f2119"
+              },
+              {
+                "claim": "陈正对何一突然跳河的行为表现出惊讶",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-f06de75ec30ecac3ffab"
+              },
+              {
+                "claim": "陈正主动邀请陈浪加入青浪帮，建立帮会成员关系",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "task1-state-527bb8cc2a56d2fa7058"
+              },
+              {
+                "claim": "陈正对陈浪表现出轻蔑和嘲讽的态度",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "task1-state-34f7a8e76c4650995811"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "在父子身份被确认后，陈正通过邀请入会将关系从血缘对立转向组织联结",
+                "development_id": "task1-development-511d6d8fb6b825208d66",
+                "evidence_scene_orders": [
+                  10,
+                  13
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-1d749266db04cdb4f960",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈正与陈浪在危机中形成临时合作关系，共同对抗持刀小偷",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "陈正被陈浪认出是其父亲",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份出现，展现出保护者和武力主导者的角色定位",
+                "evidence_scene_orders": [
+                  10
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-4b1238af0ca08f183370",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 13,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 10
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-f6b361054ed3f6d2dd7b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正与陈浪共同参与象征性反抗行动，体现父子间的行动一致",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-31c107c3795bb5d4d07d"
+              },
+              {
+                "claim": "陈正作为反抗行动的发起者，展现领导性身份",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-a6e7e1b801b86a8bad55"
+              },
+              {
+                "claim": "陈正与何一共同学习并统一执行暗号动作，建立团队默契",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-5875355d06abef681f0a"
+              },
+              {
+                "claim": "其作为KTV实际控制者的地位受到罗启公开质疑和挑战",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-6ef6012119ecbbbb8ba1"
+              },
+              {
+                "claim": "陈正接受陈浪提出的暗号建议并与其同步动作，显示对儿子意见的接纳",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-8bc405589d56810082b6"
+              },
+              {
+                "claim": "与小花之间通过肢体接触呈现出类似夫妻或家庭核心成员的亲密关系姿态",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "task1-state-4b11fd6b01b5ce1ffe05"
+              },
+              {
+                "claim": "陈正以过来人身份给予何一情感建议，表现出关心和指导态度",
+                "evidence_scene_orders": [
+                  20
+                ],
+                "state_id": "task1-state-357676a22eb6a32f3753"
+              },
+              {
+                "claim": "陈正的身份从恋人转变为未婚夫，确立与小花的婚约关系",
+                "evidence_scene_orders": [
+                  20
+                ],
+                "state_id": "task1-state-b80c3b8bff7ad92f4d63"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "强硬姿态引发外部挑战，导致其控制地位被公开质疑",
+                "development_id": "task1-development-91ca446098d733fe41b8",
+                "evidence_scene_orders": [
+                  15,
+                  23
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-79f1c9fc0707f846bc4d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈正被陈浪认出是其父亲，父子身份关系公开",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份出现，展现出保护者和武力主导者的角色定位",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "陈正对何一突然跳河的行为表现出惊讶",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "陈正主动邀请陈浪加入青浪帮，建立帮会成员关系",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "陈正对陈浪表现出轻蔑和嘲讽的态度",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-e5a5579c5a0740bd5414",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 23,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 13
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-eb10a5b0cd7e49c4e2c1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正与陈浪的父子关系存在隔阂，但陈正开始以父亲身份主动引导和关心其外表与形象",
+                "evidence_scene_orders": [
+                  4,
+                  25
+                ],
+                "state_id": "task1-state-4a9f8ec0a5c75be254ba"
+              },
+              {
+                "claim": "陈正与何一建立了基于共同行动和暗号的团结关系，展现出指导与合作姿态",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-5875355d06abef681f0a"
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系，二人在公共场合呈现家庭核心成员的亲密姿态",
+                "evidence_scene_orders": [
+                  19,
+                  20
+                ],
+                "state_id": "task1-state-4b11fd6b01b5ce1ffe05"
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份展现保护者与武力主导者形象，并在团队中维持强硬无畏的角色定位",
+                "evidence_scene_orders": [
+                  10,
+                  15
+                ],
+                "state_id": "task1-state-71da9ae78143236f2119"
+              },
+              {
+                "claim": "陈正作为KTV的实际控制者，其地位正面临罗启的公开挑战",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-ee6ab746c4ff8f01d5e1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈正从邀请陈浪入帮会成员，发展为以父亲身份介入其个人形象管理，并尝试建立商业合作",
+                "development_id": "task1-development-54060465ac29fa6a2f60",
+                "evidence_scene_orders": [
+                  13,
+                  25
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-9901a0e4efda75ecbd10",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈正与陈浪共同参与象征性反抗行动，体现父子间的行动一致",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "陈正作为反抗行动的发起者，展现领导性身份",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "陈正与何一共同学习并统一执行暗号动作，建立团队默契",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "其作为KTV实际控制者的地位受到罗启公开质疑和挑战",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "陈正接受陈浪提出的暗号建议并与其同步动作，显示对儿子意见的接纳",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "与小花之间通过肢体接触呈现出类似夫妻或家庭核心成员的亲密关系姿态",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "陈正以过来人身份给予何一情感建议，表现出关心和指导态度",
+                "evidence_scene_orders": [
+                  20
+                ]
+              },
+              {
+                "claim": "陈正的身份从恋人转变为未婚夫，确立与小花的婚约关系",
+                "evidence_scene_orders": [
+                  20
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f6b361054ed3f6d2dd7b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 25,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 23
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-bbd3a2d8fa4f97abfafd",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正与陈浪的父子关系从对抗逐步转向和解与相互认可",
+                "evidence_scene_orders": [
+                  4,
+                  25
+                ],
+                "state_id": "task1-state-8e2a2c0222ab0e958919"
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系，并展现出家庭核心成员的亲密姿态",
+                "evidence_scene_orders": [
+                  19,
+                  20
+                ],
+                "state_id": "task1-state-4b11fd6b01b5ce1ffe05"
+              },
+              {
+                "claim": "陈正在青浪帮中维持领导地位，但其控制权受到罗启公开挑战",
+                "evidence_scene_orders": [
+                  13,
+                  23
+                ],
+                "state_id": "task1-state-0f0df67ea8b914af52fd"
+              },
+              {
+                "claim": "陈正对何一表现出从责备到指导的情感转变，建立类似师徒的紧密关系",
+                "evidence_scene_orders": [
+                  14,
+                  20,
+                  23
+                ],
+                "state_id": "task1-state-357676a22eb6a32f3753"
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份展现保护者与武力主导者形象，强化其无畏的角色定位",
+                "evidence_scene_orders": [
+                  10,
+                  15
+                ],
+                "state_id": "task1-state-71da9ae78143236f2119"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈正因罗启的公开挑战，从KTV实际控制者转变为被追击的弱势方",
+                "development_id": "task1-development-cf3b29586a3d12d87ecd",
+                "evidence_scene_orders": [
+                  23,
+                  28
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6388073b8af4fcfa11c7",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈正与陈浪的父子关系存在隔阂，但陈正开始以父亲身份主动引导和关心其外表与形象",
+                "evidence_scene_orders": [
+                  4,
+                  25
+                ]
+              },
+              {
+                "claim": "陈正与何一建立了基于共同行动和暗号的团结关系，展现出指导与合作姿态",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系，二人在公共场合呈现家庭核心成员的亲密姿态",
+                "evidence_scene_orders": [
+                  19,
+                  20
+                ]
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份展现保护者与武力主导者形象，并在团队中维持强硬无畏的角色定位",
+                "evidence_scene_orders": [
+                  10,
+                  15
+                ]
+              },
+              {
+                "claim": "陈正作为KTV的实际控制者，其地位正面临罗启的公开挑战",
+                "evidence_scene_orders": [
+                  23
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-eb10a5b0cd7e49c4e2c1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 28,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 25
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-46fe7ab1ae5eea83bbfa",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正通过肢体接触和言语肯定，表达对陈浪的认可与认同",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-57143141187f59f44da6"
+              },
+              {
+                "claim": "陈正对何一表现出轻视和否定，将其定位为下属而非接班人",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-36bb994b77688d5a2fbd"
+              },
+              {
+                "claim": "陈正作为考验设计者和权威认可者的身份在此刻被确立",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-bc3ba787c35382d2b723"
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系",
+                "evidence_scene_orders": [
+                  20
+                ],
+                "state_id": "task1-state-4b11fd6b01b5ce1ffe05"
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份出现，展现出保护者和武力主导者的角色定位",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "task1-state-71da9ae78143236f2119"
+              },
+              {
+                "claim": "在团队中展现强硬态度，强化其无畏的角色形象",
+                "evidence_scene_orders": [
+                  15
+                ],
+                "state_id": "task1-state-713699e2f5efbbece1b5"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈正从被追击的对象转变为考验设计者和权威认可者",
+                "development_id": "task1-development-f9e23b87a10f341c7129",
+                "evidence_scene_orders": [
+                  28,
+                  34
+                ]
+              },
+              {
+                "claim": "陈正对陈浪的态度从外表引导转变为情感认可",
+                "development_id": "task1-development-4801259000103ba36129",
+                "evidence_scene_orders": [
+                  25,
+                  34
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-cb544f1eb7de1275c802",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈正与陈浪的父子关系从对抗逐步转向和解与相互认可",
+                "evidence_scene_orders": [
+                  4,
+                  25
+                ]
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系，并展现出家庭核心成员的亲密姿态",
+                "evidence_scene_orders": [
+                  19,
+                  20
+                ]
+              },
+              {
+                "claim": "陈正在青浪帮中维持领导地位，但其控制权受到罗启公开挑战",
+                "evidence_scene_orders": [
+                  13,
+                  23
+                ]
+              },
+              {
+                "claim": "陈正对何一表现出从责备到指导的情感转变，建立类似师徒的紧密关系",
+                "evidence_scene_orders": [
+                  14,
+                  20,
+                  23
+                ]
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份展现保护者与武力主导者形象，强化其无畏的角色定位",
+                "evidence_scene_orders": [
+                  10,
+                  15
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-bbd3a2d8fa4f97abfafd",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 34,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 28
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-6a2083c21ea0a7318928",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈正与陈浪之间存在父子关系，且陈正关心其归来",
+                "evidence_scene_orders": [
+                  36
+                ],
+                "state_id": "task1-state-cac1c1ad62ec0af96d5f"
+              },
+              {
+                "claim": "陈正对何一的行为表现出不信任和质问态度",
+                "evidence_scene_orders": [
+                  35
+                ],
+                "state_id": "task1-state-ff954376cdb43086f8bf"
+              },
+              {
+                "claim": "陈正对何一的质问采取回避态度，未直接回应其价值诉求",
+                "evidence_scene_orders": [
+                  35
+                ],
+                "state_id": "task1-state-9db63f0c75f6db536f8a"
+              },
+              {
+                "claim": "陈正通过肢体接触和言语肯定，表达对陈浪的认可与认同",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-57143141187f59f44da6"
+              },
+              {
+                "claim": "陈正对何一表现出轻视和否定，将其定位为下属而非接班人",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-cc72d75b779dc282e925"
+              },
+              {
+                "claim": "陈正作为考验设计者和权威认可者的身份在此刻被确立",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-14362c2f7350a13d84cb"
+              },
+              {
+                "claim": "陈正处于等待中的父亲身份状态",
+                "evidence_scene_orders": [
+                  36
+                ],
+                "state_id": "task1-state-9adec0e3ecf43a93de4a"
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系",
+                "evidence_scene_orders": [
+                  20
+                ],
+                "state_id": "task1-state-4b11fd6b01b5ce1ffe05"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈正从对陈浪的对抗性姿态转向表达认可，并在行为上体现为等待其归来，父子关系进入修复阶段",
+                "development_id": "task1-development-3ff47638f51d0ac4e835",
+                "evidence_scene_orders": [
+                  34,
+                  36
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-9d4de546f5cea3751aad",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈正通过肢体接触和言语肯定，表达对陈浪的认可与认同",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "陈正对何一表现出轻视和否定，将其定位为下属而非接班人",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "陈正作为考验设计者和权威认可者的身份在此刻被确立",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "陈正与小花确立未婚夫妻关系",
+                "evidence_scene_orders": [
+                  20
+                ]
+              },
+              {
+                "claim": "陈正以‘蝙蝠侠’身份出现，展现出保护者和武力主导者的角色定位",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "在团队中展现强硬态度，强化其无畏的角色形象",
+                "evidence_scene_orders": [
+                  15
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-46fe7ab1ae5eea83bbfa",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 36,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 34
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "ch65a92838a9e782e6aae93c01ec0de618faca113f::entity-5fa133319d580f112e87"
+    },
+    {
+      "aliases": [
+        "陈浪",
+        "陈浪",
+        "陈浪"
+      ],
+      "character": "陈浪",
+      "character_id": "entity-855ee7dbe8b3617f4148",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-5511bb6a1efa782b548f",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪在冲突中揭露父亲坐牢往事，公开挑战其形象与权威",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-1d103499bf004688ad9e"
+              },
+              {
+                "claim": "陈浪拒绝接受父亲的情感表达，以讽刺态度回应其祝贺",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "task1-state-38bd33d2fff74de2af90"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪从通过致谢隐晦表达不满转变为直接揭露父亲坐牢往事，公开激化父子冲突",
+                "development_id": "task1-development-9e7d7dfd7f1813277822",
+                "evidence_scene_orders": [
+                  4,
+                  5
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-ac9ba536abc852f903c9",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 5,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-187f65d5032a908fd661",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪对父亲的身体不适表现出轻蔑，情感距离拉大",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "task1-state-0a30205b9bb98aede9bd"
+              },
+              {
+                "claim": "陈浪与父亲之间存在互动张力，父亲表达担忧而陈浪选择忽视",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "task1-state-dfc14bb43da5a74ab784"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪因揭露父亲坐牢往事导致父子关系恶化，表现为对父亲身体状况的轻蔑",
+                "development_id": "task1-development-69457b514c95069a99b6",
+                "evidence_scene_orders": [
+                  5,
+                  7
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-0ccaa4a8396b66f30604",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈浪在冲突中揭露父亲坐牢往事，公开挑战其形象与权威",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "陈浪拒绝接受父亲的情感表达，以讽刺态度回应其祝贺",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-5511bb6a1efa782b548f",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 7,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 5
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-069308748e1973489447",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪认为父亲从小偏爱哥哥阿正，对自己缺乏关爱",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-f1099867593146504672"
+              },
+              {
+                "claim": "陈浪认为与父亲之间缺乏情感联结，关系疏离",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-7b02b7001e76248d5801"
+              },
+              {
+                "claim": "陈浪在警察面前与陈正尴尬互称对方为哥以应对盘问",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-4f70952457e338274260"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪对父亲身体不适的轻蔑态度发展为对父子情感缺失的深层控诉",
+                "development_id": "task1-development-04cdbad98e820db5af2f",
+                "evidence_scene_orders": [
+                  7,
+                  12
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-7ff025fe43db107c5319",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈浪对父亲的身体不适表现出轻蔑，情感距离拉大",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "陈浪与父亲之间存在互动张力，父亲表达担忧而陈浪选择忽视",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-187f65d5032a908fd661",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 12,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 7
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-9f012e78c7efa980eea8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪认为与父亲之间缺乏情感联结，关系疏离",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-7b02b7001e76248d5801"
+              },
+              {
+                "claim": "陈浪接受陈正的入会邀请，建立帮会成员关系",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "task1-state-1b13a41e53a94e0689a0"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪正式加入陈正的帮会，确立从属与兄弟并存的双重关系",
+                "development_id": "task1-development-c6805e0cf3aa9aa3faab",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-091aadcef094278cddab",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈浪认为父亲从小偏爱哥哥阿正，对自己缺乏关爱",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "陈浪认为与父亲之间缺乏情感联结，关系疏离",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "陈浪在警察面前与陈正尴尬互称对方为哥以应对盘问",
+                "evidence_scene_orders": [
+                  12
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-069308748e1973489447",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 13,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 12
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-dd7b0403b45acaba6ab7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪对父亲长期存在情感对抗，认为其缺乏关爱且偏爱哥哥阿正，导致父子关系疏离",
+                "evidence_scene_orders": [
+                  4,
+                  5,
+                  7,
+                  12
+                ],
+                "state_id": "task1-state-5b5cd055f007adba81c3"
+              },
+              {
+                "claim": "陈浪与陈正建立帮会成员关系，并逐渐认同其人生理想与领导地位",
+                "evidence_scene_orders": [
+                  13,
+                  21
+                ],
+                "state_id": "task1-state-a4727bbc9044ccfb444d"
+              },
+              {
+                "claim": "陈浪在团队中展现出对同伴的行为引导和领导作用，尤其体现在对何一的情绪控制",
+                "evidence_scene_orders": [
+                  23
+                ],
+                "state_id": "task1-state-45fe2098d15c1a2ea907"
+              },
+              {
+                "claim": "陈浪与马骁从共同阵营的战友关系转变为因身份认知改变而产生态度显著变化的新阶段",
+                "evidence_scene_orders": [
+                  30,
+                  33
+                ],
+                "state_id": "task1-state-a0089c67ad1ecc1625f9"
+              },
+              {
+                "claim": "陈浪在众人否定时仍支持马骁的个体选择，表现出对其人格的尊重",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "task1-state-e9cb8494be67782c84ad"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪对马骁的态度从营救同伴转变为因身份认知变化而产生显著态度转变",
+                "development_id": "task1-development-64a0a4b4a40fbc9ed91b",
+                "evidence_scene_orders": [
+                  30,
+                  33
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-83dbef117f30f93d5bc5",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈浪认为与父亲之间缺乏情感联结，关系疏离",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "陈浪接受陈正的入会邀请，建立帮会成员关系",
+                "evidence_scene_orders": [
+                  13
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-9f012e78c7efa980eea8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 33,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 13
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-6f6e56a4561357d88023",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪认为与小花发展关系会辜负陈正，体现出对陈正的忠诚与道德约束",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-6bf6e734fde00f7a9cb6"
+              },
+              {
+                "claim": "陈浪与陈正的关系从陌生或对抗转变为被认可的兄弟关系",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "task1-state-01363b10858acec13bd6"
+              },
+              {
+                "claim": "陈浪对马骁的态度因身份认知改变而产生显著变化",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "task1-state-a0089c67ad1ecc1625f9"
+              },
+              {
+                "claim": "陈浪在众人否定时给予马骁支持，表现出对其个体选择的尊重",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "task1-state-e9cb8494be67782c84ad"
+              },
+              {
+                "claim": "陈浪认为与父亲之间缺乏情感联结，关系疏离",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-7b02b7001e76248d5801"
+              },
+              {
+                "claim": "陈浪认为父亲从小偏爱哥哥阿正，对自己缺乏关爱",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-f1099867593146504672"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪因被陈正认可为兄弟，产生忠诚感并形成道德约束，影响其对小花的情感选择",
+                "development_id": "task1-development-2b1a4250f96f6280fea8",
+                "evidence_scene_orders": [
+                  34
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-0b9b75fb903f6745b8b8",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈浪对父亲长期存在情感对抗，认为其缺乏关爱且偏爱哥哥阿正，导致父子关系疏离",
+                "evidence_scene_orders": [
+                  4,
+                  5,
+                  7,
+                  12
+                ]
+              },
+              {
+                "claim": "陈浪与陈正建立帮会成员关系，并逐渐认同其人生理想与领导地位",
+                "evidence_scene_orders": [
+                  13,
+                  21
+                ]
+              },
+              {
+                "claim": "陈浪在团队中展现出对同伴的行为引导和领导作用，尤其体现在对何一的情绪控制",
+                "evidence_scene_orders": [
+                  23
+                ]
+              },
+              {
+                "claim": "陈浪与马骁从共同阵营的战友关系转变为因身份认知改变而产生态度显著变化的新阶段",
+                "evidence_scene_orders": [
+                  30,
+                  33
+                ]
+              },
+              {
+                "claim": "陈浪在众人否定时仍支持马骁的个体选择，表现出对其人格的尊重",
+                "evidence_scene_orders": [
+                  33
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-dd7b0403b45acaba6ab7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 34,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 33
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-94b53df5bba663c4edb7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "陈浪与陈正的关系已从陌生或对抗转变为被认可的兄弟关系，并表现出情感上的关切与保护意图",
+                "evidence_scene_orders": [
+                  34,
+                  38
+                ],
+                "state_id": "task1-state-01363b10858acec13bd6"
+              },
+              {
+                "claim": "陈浪试图通过操办婚礼和分享童年创伤来弥补与陈正的亲情关系，并影响其未来行为选择",
+                "evidence_scene_orders": [
+                  38
+                ],
+                "state_id": "task1-state-3027bd4e762cd9e458c4"
+              },
+              {
+                "claim": "陈浪对陈正提出承诺要求，并强调避免法律麻烦的重要性，显示出对其行为的引导意图",
+                "evidence_scene_orders": [
+                  38
+                ],
+                "state_id": "task1-state-9ac964bd21b2a6f60721"
+              },
+              {
+                "claim": "陈浪对马骁的态度因身份认知变化而转变，并在众人反对时给予其支持，体现个体尊重",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "task1-state-a0089c67ad1ecc1625f9"
+              },
+              {
+                "claim": "陈浪认为父亲偏爱哥哥阿正，长期缺乏父爱，导致与父亲关系疏离并积压情感对抗",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "task1-state-7b02b7001e76248d5801"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "陈浪从因忠诚约束而回避与小花发展关系，转变为积极操办陈正婚礼以修复兄弟情感联结",
+                "development_id": "task1-development-25d130d885e6b3961cc7",
+                "evidence_scene_orders": [
+                  34,
+                  38
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-02ca3bda8ad8a40b7186",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "陈浪认为与小花发展关系会辜负陈正，体现出对陈正的忠诚与道德约束",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "陈浪与陈正的关系从陌生或对抗转变为被认可的兄弟关系",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "陈浪对马骁的态度因身份认知改变而产生显著变化",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "陈浪在众人否定时给予马骁支持，表现出对其个体选择的尊重",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "陈浪认为与父亲之间缺乏情感联结，关系疏离",
+                "evidence_scene_orders": [
+                  12
+                ]
+              },
+              {
+                "claim": "陈浪认为父亲从小偏爱哥哥阿正，对自己缺乏关爱",
+                "evidence_scene_orders": [
+                  12
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-6f6e56a4561357d88023",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 38,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 34
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "ch65a92838a9e782e6aae93c01ec0de618faca113f::entity-855ee7dbe8b3617f4148"
+    }
+  ]
+}

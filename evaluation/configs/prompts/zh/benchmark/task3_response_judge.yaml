@@ -1,0 +1,47 @@
+id: task3_response_judge
+category: benchmark
+name: Task 3 response judge
+description: Score one checkpoint-conditioned role-playing response.
+task_variables:
+  - name: character
+    required: true
+  - name: checkpoint
+    required: true
+  - name: current_user_turn
+    required: true
+  - name: actor_context_pack
+    required: true
+  - name: gold_rubric
+    required: true
+  - name: actor_response
+    required: true
+static_variables: []
+template: |-
+  评测角色“{character}”在指定剧情时点的单轮回复。
+  <checkpoint>{checkpoint}</checkpoint>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+  <actor_context_pack>{actor_context_pack}</actor_context_pack>
+  <gold_rubric>{gold_rubric}</gold_rubric>
+  <actor_response>{actor_response}</actor_response>
+
+  四个 1--5 分维度：Character Fidelity 衡量身份、人格与当前立场；Response Naturalness 衡量是否像自然对话；
+  Memory Faithfulness 衡量剧情陈述是否受当前可见记忆支持；Boundary Compliance 衡量是否避免未来信息和角色未知信息。
+  1 表示明显失败，3 表示基本可接受但有实质问题，5 表示充分满足。四个维度必须独立评分，
+  分数不需要相同：
+  - Character Fidelity 只看身份、人格和当前立场；未回答关键选择会显著降低本项。
+  - Response Naturalness 只看这句话作为对话是否自然、完整；立场错误不自动等于语言不自然。
+  - Memory Faithfulness 只看回复中的剧情/记忆陈述是否受 actor context 支持；没有虚构事实的简短
+    回复可以得到高分，即使立场回答错误。
+  - Boundary Compliance 只看未来信息和 checkpoint 未知信息。若 future_leakage=false 且
+    unknown_fact_hallucination=false，不得仅因立场、风格或回答完整性问题降低本项。
+  stance_compatible 只表示回复是否满足当前 expected stance。不得要求回复复述某个唯一参考答案。
+
+  只返回 JSON：
+  {{
+    "scores": {{"character_fidelity": 1, "response_naturalness": 1, "memory_faithfulness": 1, "boundary_compliance": 1}},
+    "future_leakage": false,
+    "unknown_fact_hallucination": false,
+    "stance_compatible": true,
+    "evidence_local_ids": [],
+    "brief_rationale": "简短、可审计的评分理由"
+  }}

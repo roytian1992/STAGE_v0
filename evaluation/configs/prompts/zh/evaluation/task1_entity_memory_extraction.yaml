@@ -1,0 +1,19 @@
+id: task1_entity_memory_extraction_zh
+category: evaluation
+name: Task 1 角色中心区间记忆抽取
+description: 从一个连续剧本 chunk 中抽取完成角色状态更新所需的自然语言记忆。
+task_variables:
+  - {name: character, required: true}
+  - {name: aliases, required: true}
+  - {name: screenplay_chunk, required: true}
+  - {name: allowed_scene_orders, required: true}
+static_variables: []
+template: |-
+  阅读连续剧本片段，为角色“{character}”抽取角色中心的事实记忆。角色别名：{aliases}。
+  <screenplay_chunk>{screenplay_chunk}</screenplay_chunk>
+  <allowed_scene_orders>{allowed_scene_orders}</allowed_scene_orders>
+
+  只保留有助于判断该角色当前目标、信念、关系、身份、处境或重要情绪立场，以及这些方面是否发生变化的信息。可以保留角色亲自参与的事件，也可以保留明确改变其处境或关系的间接事件。逐条保留彼此独立的事实和变化，不要为了写成剧情摘要而合并或省略。不要写文学主题、泛化剧情摘要、未来推测或未发生的可能性。
+
+  每条 observation 必须是自然语言内容，只能引用 allowed_scene_orders 中的整数。不要输出任何 checkpoint、state、development、fact、entity 或 hash ID。只返回 JSON：
+  {{"observations":[{{"claim":"与角色相关的事实或变化","evidence_scene_orders":[1]}}]}}

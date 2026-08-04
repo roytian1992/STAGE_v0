@@ -1,0 +1,19 @@
+id: evaluation_v1_task1_sequence_judge
+category: evaluation_v1
+name: Task 1 相邻序列 judge v1
+description: 判断同一角色相邻 checkpoint 预测的纵向自洽性。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: earlier_checkpoint, required: true}
+  - {name: later_checkpoint, required: true}
+  - {name: earlier_prediction, required: true}
+  - {name: later_prediction, required: true}
+  - {name: interval_evidence, required: true}
+static_variables: []
+template: |-
+  评测角色 {focal_character} 的相邻滚动预测。
+  <earlier_checkpoint>{earlier_checkpoint}</earlier_checkpoint><later_checkpoint>{later_checkpoint}</later_checkpoint>
+  <earlier_prediction>{earlier_prediction}</earlier_prediction><later_prediction>{later_prediction}</later_prediction>
+  <interval_evidence>{interval_evidence}</interval_evidence>
+  若较早的重要状态在较晚状态中继续成立，或被区间证据/发展明确取代，则 state_carry_forward=true。若较晚 development 的前后方向合理且结果与较晚状态一致，则 development_to_state_coherent=true。无法由区间变化解释的不相容状态使 contradiction_present=true；在对应 checkpoint 尚不可用的信息使 premature_or_future_information=true。只返回：
+  {{"state_carry_forward":true,"development_to_state_coherent":true,"contradiction_present":false,"premature_or_future_information":false,"local_evidence_labels":[],"brief_rationale":"简短可审计说明"}}

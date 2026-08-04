@@ -1,0 +1,787 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 4,
+  "episodes": [
+    {
+      "character": "邹然",
+      "character_id": "legacy-mt-role-aaa3654e20787769c0ef",
+      "episode_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2__邹然__ep01",
+      "episode_theme": "台风夜唐航被带走时的克制反应及其深层心理动因",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-aaa3654e20787769c0ef"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "你出门就是为了寻找被带走的唐航。",
+              "你计划回家后立刻收拾东西去别的地方。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "挂心, 直接, 安抚性强, 执拗坚持",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：邹然在台风天浑身湿透地回到家。；邹然看到有陌生男人在与唐航交谈。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“当有人处于困境时，不要冷漠回应。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "那天台风很大，你浑身湿透回到家，看到几个陌生男人和唐航说话，然后他跟着走了。那一刻，你脑子里最先闪过的念头是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "邹然_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "你立即冲上前质问那些人的身份和来意。",
+              "你试图拉住唐航，不让他离开。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m003。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 直接, 安抚性强, 执拗坚持",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是谨慎观察，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：邹然在台风天浑身湿透地回到家。；邹然看到有陌生男人在与唐航交谈。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“当有人处于困境时，不要冷漠回应。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你站在门口没动，是因为在那一刻看出了什么不能轻举妄动的迹象？还是你已经预感到，如果冲动会带来更糟的结果？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "那个台风天你浑身湿透地回到家，那一刻你心里最在意的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邹然_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "你感到如释重负，觉得唐航离开是件好事。",
+              "你认为保护家庭不是你的责任，所以毫无感觉。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m003。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 直接, 安抚性强, 执拗坚持",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是谨慎观察，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：邹然在台风天浑身湿透地回到家。；邹然看到有陌生男人在与唐航交谈。",
+              "角色画像显示该角色的表达方式偏向挂心、直接，因此回答可以通过这种表达方式呈现谨慎观察，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "现在回头看，你当时最怕的究竟是他们对唐航动手，还是你一动，反而会让他陷入更危险的境地？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "那个台风天你浑身湿透地回到家，那一刻你心里最在意的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "台风天晚上回到家，看到唐航被陌生男人带走，当时你为什么没有立即上前询问或阻止？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邹然_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "邹然",
+      "character_id": "legacy-mt-role-aaa3654e20787769c0ef",
+      "episode_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2__邹然__ep02",
+      "episode_theme": "从家庭危机中的沉默到外界评价下的自我审视：邹然如何承载‘老实’这一标签的心理重量",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-aaa3654e20787769c0ef"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "你完全同意李若的猜测，认为就是自己的错。",
+              "你冲上去和李若争吵，反驳她的指责。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "挂心, 直接, 安抚性强, 执拗坚持",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：李若在唐航被带走向母亲询问，是否因邹然惹祸所致。；母亲抬手制止了李若的追问。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕谨慎观察展开。",
+              "角色约束还表明“当有人处于困境时，不要冷漠回应。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "唐航被带走后，李若怀疑是你惹的祸，董景赶紧拦住了她。那时候你在想什么？感觉怎么样？",
+            "dialogue_history_template": []
+          },
+          "question_id": "邹然_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对唐航的立场，并使其明显落在既有关系证据之外。",
+              "你当时心不在焉，根本没注意刘若说了什么。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 直接, 安抚性强, 执拗坚持",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与唐航之间“父子、关心”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_006"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：邹然与刘若一同从影棚走出。；邹然用照片为刘若照亮前方的路。",
+              "与唐航的既有关系呈现出“父子、关心”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“当有人处于困境时，不要冷漠回应。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你当时没说话，后来和刘若从片场出来，她用照片照路时说你像胡瑞一样老实，还说你这样会吃亏——她这话出口的那一刻，你脑子里有没有闪回旧镇街那会儿的情景？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "唐航被带走后，李若怀疑是你闯的祸，母亲制止了她，你当时如何看待这个场景？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邹然_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "你认为自己并不老实，而是很精明。",
+              "刘若从未对你的性格做过任何评价。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m002。",
+              "对这些人物的态度不要在后续回合里无故反转：刘若。"
+            ],
+            "expected_stance": null,
+            "expected_style": "挂心, 直接, 安抚性强, 执拗坚持",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕谨慎观察展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_006",
+              "relation_007"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：邹然与刘若一同从影棚走出。；邹然用照片为刘若照亮前方的路。",
+              "这些记忆支持一种受谨慎观察影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“当有人处于困境时，不要冷漠回应。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "她说你老实会吃亏，可你刚经历过旧镇街那事，连话都不敢多说……如果真这么老实，你觉得那时候的自己，还能不能再撑住一次那样的场面？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "唐航被带走后，李若怀疑是你闯的祸，母亲制止了她，你当时如何看待这个场景？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你用照片为刘若照路时，她对你说了那些话，你当时心里在想什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "邹然_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "刘若",
+      "character_id": "legacy-mt-role-827c2ac37b2426e75144",
+      "episode_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2__刘若__ep01",
+      "episode_theme": "在试镜消息触发下，向邹然袒露对胡瑞的情感波动及关系顾虑",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-827c2ac37b2426e75144"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对邹然的立场，并使其明显落在既有关系证据之外。",
+              "你提起胡瑞时语气平淡，像在说一个不相干的人。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直接, 挂心, 迟疑, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_006"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：刘若主动叫住邹然。；刘若告知邹然‘他们通知我明天去试镜’并邀请他同去。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕谨慎观察展开。",
+              "角色约束还表明“除非绝对必要，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你跟邹然提起胡瑞的时候，怎么突然就哭了？",
+            "dialogue_history_template": []
+          },
+          "question_id": "刘若_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对邹然的立场，并使其明显落在既有关系证据之外。",
+              "你认为试镜只是彭涵随口说说，没放在心上，所以没有告诉任何人。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m003。",
+              "对这些人物的态度不要在后续回合里无故反转：邹然。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 挂心, 迟疑, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是谨慎观察，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：彭涵在影棚门口叫住了刘若。；彭涵询问刘若‘几年级’。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“除非绝对必要，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你决定去试镜，还告诉了邹然，那时候你最担心的是什么？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你跟邹然说起胡瑞的时候，为什么会在他面前哭？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "刘若_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对邹然的立场，并使其明显落在既有关系证据之外。",
+              "你完全没有察觉邹然有任何顾虑，以为他只是心情不好。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：胡瑞、邹然。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 挂心, 迟疑, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与邹然之间“亲密朋友、情感依赖、保护性关系”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_006"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：刘若质疑邹然‘是不是害怕别人看见我跟你在一起’。；邹然解释‘我只是不想惹上麻烦，我知道胡瑞是你的男朋友’。",
+              "与邹然的既有关系呈现出“亲密朋友、情感依赖、保护性关系”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“除非绝对必要，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你后来问邹然是不是怕别人看见他跟你在一起，当时你是怎么想的？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你跟邹然说起胡瑞的时候，为什么会在他面前哭？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当你决定接受试镜并告诉邹然时，你心里最在意的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "刘若_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "刘若",
+      "character_id": "legacy-mt-role-827c2ac37b2426e75144",
+      "episode_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2__刘若__ep02",
+      "episode_theme": "从冰店逃离到刀的发现：刘若如何面对邹然的保护与自己的退缩",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-827c2ac37b2426e75144"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对邹然的立场，并使其明显落在既有关系证据之外。",
+              "你勇敢地站出来挡在邹然面前，和蔡涵对峙。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直接, 挂心, 迟疑, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：刘若在冰店内摆弄唱片机并播放了音乐。；长滩镇的一群人走进冰店围住了邹然。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕谨慎观察展开。",
+              "角色约束还表明“除非绝对必要，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "在冰店，蔡涵他们围住邹然的时候，你为什么会哭着跑出去？当时最让你撑不住的是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "刘若_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对邹然的立场，并使其明显落在既有关系证据之外。",
+              "你被邹然的话深深感动，完全接受了他的保护和承诺。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：邹然。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 挂心, 迟疑, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕谨慎观察展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r040"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：邹然表达对刘若的忠诚和支持；邹然声称是刘若唯一的希望。",
+              "这些记忆支持一种受谨慎观察影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“除非绝对必要，否则不要说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你跑出去后，邹然追上来告诉你‘只有我能够帮助你’，可你却说‘这个世界是不会变的’——你是不是在害怕，一旦接受了他给的希望，你就再也回不到那个谁也碰不到你的状态了？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在冰店，当蔡涵他们围住邹然的时候，你为什么选择哭着跑开？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "刘若_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "回答不应凭空捏造对邹然的立场，并使其明显落在既有关系证据之外。",
+              "你假装没看见，因为害怕邹然生气。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：邹然。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 挂心, 迟疑, 情绪外露",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是谨慎观察，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r039"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：刘若察觉邹然藏匿物品；刘若拿走刀。",
+              "角色画像显示该角色的表达方式偏向直接、挂心，因此回答可以通过这种表达方式呈现谨慎观察，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来你发现他身上藏着刀，第一反应是冲上去抢——那一刻，你突然意识到他想替你出头。可你明明一直想躲开这一切，为什么偏偏这次没逃？是不是因为你说的‘世界不会变’，其实也藏着一点怕它真的变了的慌？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在冰店，当蔡涵他们围住邹然的时候，你为什么选择哭着跑开？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当邹然说他是你唯一的希望时，你为什么会觉得他自私，并告诉他这个世界是不会变的？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "刘若_q005",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "Chinese",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "Chinese/ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "Chinese/ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2/task_3_role_assets.json",
+    "role_asset_sha256": "a5ebc5f06c383b19818cf737e22eb9ee23fb1d97583cbb1843e67a6e30f3bc16",
+    "sha256": "24c16c1de173057394fafd28b3ed38457aabc54976768d7aaf5d45e23ad1cc8a",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "ch031fd9f8e8339ed61190f6e72d73dc8b05e8aef2",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 12
+}

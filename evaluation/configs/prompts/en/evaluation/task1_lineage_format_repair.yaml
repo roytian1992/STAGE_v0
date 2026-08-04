@@ -1,0 +1,23 @@
+id: task1_lineage_format_repair
+category: evaluation
+name: Task 1 lineage format repair
+description: Repair coverage or schema defects without resampling the semantic review.
+task_variables:
+  - {name: output_field, required: true}
+  - {name: validation_error, required: true}
+  - {name: allowed_member_refs, required: true}
+  - {name: allowed_checkpoint_ids, required: true}
+  - {name: allowed_state_keys, required: true}
+  - {name: member_ref_rows, required: true}
+  - {name: previous_response, required: true}
+static_variables: []
+template: |-
+  Repair only the JSON format, reference coverage, or allowlist defect in a completed lineage review. This is not a new semantic review.
+  <output_field>{output_field}</output_field><validation_error>{validation_error}</validation_error>
+  <allowed_member_refs>{allowed_member_refs}</allowed_member_refs>
+  <allowed_checkpoint_ids>{allowed_checkpoint_ids}</allowed_checkpoint_ids>
+  <allowed_state_keys>{allowed_state_keys}</allowed_state_keys>
+  <member_ref_rows>{member_ref_rows}</member_ref_rows>
+  <previous_response>{previous_response}</previous_response>
+
+  Preserve every valid semantic grouping and interval from the previous response. Make the union of member_refs exactly equal allowed_member_refs with no duplicate or unknown ref. member_ref_rows gives the checkpoint and reviewed claim for each ref. Add omitted refs to the semantically appropriate existing lineage, or create a conservative singleton lineage only when no existing lineage fits. Remove unsupported top-level fields. Checkpoint fields may use only allowed_checkpoint_ids; state-link fields may use only allowed_state_keys; source ID arrays must be []. Return only one JSON object containing exactly the requested output_field.

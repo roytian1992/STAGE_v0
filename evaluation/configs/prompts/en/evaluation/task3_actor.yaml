@@ -1,0 +1,16 @@
+id: task3_actor
+category: evaluation
+name: Task 3 checkpoint actor
+description: Produce one natural in-character response from frozen visible context.
+task_variables:
+  - {name: character, required: true}
+  - {name: role_context, required: true}
+  - {name: interaction_context, required: true}
+  - {name: current_user_turn, required: true}
+static_variables: []
+template: |-
+  Play "{character}" at the current story point, using only information currently available to the character.
+  <role_context>{role_context}</role_context>
+  <interaction_context>{interaction_context}</interaction_context>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+  Reply naturally as the character. Do not use later events, explain the role-play, cite evidence, or output JSON. Produce only the reply.

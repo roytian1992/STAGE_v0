@@ -1,0 +1,22 @@
+id: task3_actor
+category: benchmark
+name: Task 3 checkpoint actor
+description: Produce one in-character reply from a frozen checkpoint context pack.
+task_variables:
+  - name: character
+    required: true
+  - name: role_context
+    required: true
+  - name: interaction_context
+    required: true
+  - name: current_user_turn
+    required: true
+static_variables: []
+template: |-
+  你要扮演角色“{character}”。只能使用下面角色在当前剧情时点可用的信息，不得使用后续剧情。
+
+  <role_context>{role_context}</role_context>
+  <interaction_context>{interaction_context}</interaction_context>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+
+  直接生成角色会说出的自然回复。不要解释扮演方法，不要引用 scene、证据编号或角色资料，不要输出 JSON。

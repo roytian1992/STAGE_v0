@@ -1,0 +1,1147 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "潘然",
+      "character_id": "legacy-mt-role-8cafc2729c955a418973",
+      "episode_id": "chd402648d2a03c186ae42765c5c33fee162b110b5__潘然__ep01",
+      "episode_theme": "从宿安旧案被重新提起，到细节上起疑，再到天桥上的正面摊牌，连续追问潘然如何一步步确认并面对吴语的问题。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-8cafc2729c955a418973"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对林然的立场，并使其明显落在既有关系证据之外。",
+              "潘然回忆绿笋宴时心情愉悦，完全未联想到任何案件。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直接, 务实, 分寸稳, 挂心",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：潘然在车上向吴语回忆起在林然家吃绿笋宴的经历。；潘然紧接着提及绿笋宴次日发生的宿安水库强奸杀人案。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕谨慎观察展开。",
+              "角色约束还表明“观察他人时，不要不必要地说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "车上聊到绿笋，你顺口提起宿安水库那桩案子时，脑子里先翻上来的，是现场哪一幕？",
+            "dialogue_history_template": []
+          },
+          "question_id": "潘然_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "潘然认为捻灭烟只是个人习惯，未多加留意。",
+              "潘然当时专注于驾驶，没有注意到吴语的具体动作。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 务实, 分寸稳, 挂心",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是谨慎观察，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：吴语因躲避动物急刹车后，用右手捻灭了烟头。；潘然观察到了吴语捻灭烟的动作。",
+              "角色画像显示该角色的表达方式偏向直接、务实，因此回答可以通过这种表达方式呈现谨慎观察，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "紧接着你看见吴语用右手捻灭烟头，这个动作为什么会让你一下子警觉起来？你当时最先想到的是什么？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在车上跟吴语聊起绿笋，然后立刻提到宿安水库的案子，那一刻你脑海中浮现的最深刻画面是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "潘然_q005",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对吴语的立场，并使其明显落在既有关系证据之外。",
+              "潘然在天桥上只是吴语放手，并未提及自首或进行指控。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 务实, 分寸稳, 挂心",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与吴语之间“父子、搭档、冲突”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：潘然在天桥上滑倒，悬在半空，被吴语拉住。；劫匪试图踩着吴语通过天桥。",
+              "与吴语的既有关系呈现出“父子、搭档、冲突”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“观察他人时，不要不必要地说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来在天桥上，他死死拉着你不放时，你还是对他说了“你们三个去自首吧”。那句话里，你最想让他听明白的到底是什么？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在车上跟吴语聊起绿笋，然后立刻提到宿安水库的案子，那一刻你脑海中浮现的最深刻画面是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当你看到吴语用右手捻灭烟头时，你当时的内心活动是怎样的？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "潘然_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "潘然",
+      "character_id": "legacy-mt-role-8cafc2729c955a418973",
+      "episode_id": "chd402648d2a03c186ae42765c5c33fee162b110b5__潘然__ep02",
+      "episode_theme": "从布控时的判断，到天台上的递话试探，再到抓捕后的处置，连续追问潘然怎样在职责、试探和旧情之间拿捏分寸。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-8cafc2729c955a418973"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "潘然认为嫌疑人已逃离，决定带队撤离现场。",
+              "潘然没有注意到屋内行李，仅凭直觉决定留下部分人员。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直接, 务实, 分寸稳, 挂心",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是谨慎观察，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：潘然带队搜查房间未发现目标。；潘然观察到屋内留有行李。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“观察他人时，不要不必要地说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "搜查房间扑空后，你一看行李还在，就判断人一定会回来，还把罗瑞和吴语留下来一起盯守。你当时凭的到底是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "潘然_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对吴语的立场，并使其明显落在既有关系证据之外。",
+              "潘然在天台只是与吴语沉默抽烟，未进行任何交谈。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 务实, 分寸稳, 挂心",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与吴语之间“父子、搭档、冲突”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：潘然点燃一根烟递给吴语，自己也点燃一根。；潘然告诉吴语田阳安装了窃听设备并记录了他们的对话。",
+              "与吴语的既有关系呈现出“父子、搭档、冲突”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“观察他人时，不要不必要地说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来到了天台上，你一边给吴语点烟，一边把田阳窃听的事告诉他。既然你已经起疑了，为什么还要把这件事明着递给他？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在搜查房间未发现目标后，你依据什么判断嫌疑人一定会回来，并决定留下罗瑞和吴语？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "潘然_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对林然的立场，并使其明显落在既有关系证据之外。",
+              "潘然认为抓捕吴语后任务已完成，立即将其带离现场。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直接, 务实, 分寸稳, 挂心",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：林然带领便衣警察到达天台并逮捕了吴语。；潘然在逮捕过程中要求暂停，并吴语给其同伙打电话。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“观察他人时，不要不必要地说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "再往后，真抓住吴语了，你还是让他给同伙打电话。那一步，是想逼他表态，还是想给他最后一次自己开口的机会？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "在搜查房间未发现目标后，你依据什么判断嫌疑人一定会回来，并决定留下罗瑞和吴语？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "在天台给吴语点烟时，你告诉他田阳窃听的事，是出于什么考虑？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "潘然_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "林霞",
+      "character_id": "legacy-mt-role-07803adccc012e07500f",
+      "episode_id": "chd402648d2a03c186ae42765c5c33fee162b110b5__林霞__ep01",
+      "episode_theme": "从逼吴语把吴意送走，到回头审视两人的关系，再到与潘然当面装陌生，连续追问林霞在危险里怎样把最亲近的人也推到距离之外。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-07803adccc012e07500f"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对吴语的立场，并使其明显落在既有关系证据之外。",
+              "你尊重了吴语的意愿，取消了送走吴意的计划。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "务实, 直接, 分寸稳, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：吴语多次表达迟疑，试图取消送走吴意的计划。；林霞强行从吴语手中接过吴意并将其放入北城桥。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“即使在压力下，也不要公开表达恐惧或恐慌。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "吴语抱着吴意死活不肯放手时，你为什么还是非得把她送走？那一刻你最认死的到底是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "林霞_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对吴语的立场，并使其明显落在既有关系证据之外。",
+              "你们在这件事上始终意见一致，配合默契，没有任何争执。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m004。",
+              "对这些人物的态度不要在后续回合里无故反转：吴语。"
+            ],
+            "expected_stance": null,
+            "expected_style": "务实, 直接, 分寸稳, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与吴语之间“同盟、冲突”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031",
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：吴语多次表达迟疑，试图取消送走吴意的计划。；林霞强行从吴语手中接过吴意并将其放入北城桥。",
+              "与吴语的既有关系呈现出“同盟、冲突”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“即使在压力下，也不要公开表达恐惧或恐慌。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你那时候一边骂吴语，一边又知道很多事终究还得靠他扛。送吴意这件事上，你跟他到底算并肩，还是早就带着拧巴和火气？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "吴语一直犹豫，你为什么还是坚持要把吴意送走？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "林霞_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对潘然的立场，并使其明显落在既有关系证据之外。",
+              "你主动上前相认，并感谢他那晚的‘帮助’。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "务实, 直接, 分寸稳, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与潘然之间“兄弟、同盟”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：林霞与潘然在医院相遇时瞬间认出了彼此。；双方选择假装不认识，以陌生人身份握手问好。",
+              "与潘然的既有关系呈现出“兄弟、同盟”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“即使在压力下，也不要公开表达恐惧或恐慌。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来在医院里，你一眼认出潘然就是那晚盘查你的警察，却还是装作不认识。那不是单纯防备吧，你当时最怕哪一步先被说破？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "吴语一直犹豫，你为什么还是坚持要把吴意送走？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你和吴语在送走吴意这件事上，关系到底是怎样的？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "林霞_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "林霞",
+      "character_id": "legacy-mt-role-07803adccc012e07500f",
+      "episode_id": "chd402648d2a03c186ae42765c5c33fee162b110b5__林霞__ep02",
+      "episode_theme": "从桥上的那一下心慌，到下意识把话岔开，再到事后回看这段关系，连续追问林霞面对唐安时为何总在靠近和躲开之间打转。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-07803adccc012e07500f"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "你当时内心平静，甚至觉得这个吻理所当然。",
+              "你主动回应了她的亲吻，并表达了同样的情感。"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "务实, 直接, 分寸稳, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕务实展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：在车辆行驶于桥上时，唐安亲吻了林霞。；车辆刹停后，唐安注视着林霞。",
+              "这些记忆支持一种受务实影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“即使在压力下，也不要公开表达恐惧或恐慌。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "夏夏在桥上忽然亲你那一下，你为什么会慌？你慌的，是她太近，还是自己根本没想好该怎么接？",
+            "dialogue_history_template": []
+          },
+          "question_id": "林霞_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "你坦然接受了她的表白，并开始规划你们的未来。",
+              "你被她的话感动，当场表达了对她同样的喜欢。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "务实, 直接, 分寸稳, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是务实，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r034"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：唐安抓住林霞的手并表达喜爱。；林霞表现出发懵和自嘲的反应。",
+              "角色画像显示该角色的表达方式偏向务实、直接，因此回答可以通过这种表达方式呈现务实，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "她把喜欢说得那么直接，你却立刻想笑着把话岔过去。你当时是在躲她，还是在替自己挡一下？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当夏夏在桥上亲你的时候，你心里为什么会慌？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "林霞_q005",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "你认为你们只是普通朋友，没有任何特殊情感。",
+              "你已经决定和她划清界限，不再来往。"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些记忆片段的回忆要与前文保持一致：m008、m009。"
+            ],
+            "expected_stance": null,
+            "expected_style": "务实, 直接, 分寸稳, 坚持不让",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕务实展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016",
+                "r033",
+                "r034"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：林霞为唐安开启车辆后门。；唐安进入车内后，对林霞拉活的行为表示关切并数落他。",
+              "这些记忆支持一种受务实影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“即使在压力下，也不要公开表达恐惧或恐慌。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来把这些事都串起来再看，你现在怎么认这段关系？是真想靠近她，只是一直不敢，还是从一开始就没打算把她拉进你的麻烦里？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当夏夏在桥上亲你的时候，你心里为什么会慌？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "面对夏夏直接的情感表白，你当时为什么想赶紧把话题带过去？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "林霞_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "吴语",
+      "character_id": "legacy-mt-role-a0a4fcdecb6181aff6c2",
+      "episode_id": "chd402648d2a03c186ae42765c5c33fee162b110b5__吴语__ep01",
+      "episode_theme": "从一句寻常追问，到宿安旧案被挑开，再到秘密彻底见光，连续追问吴语在潘然面前如何一步步从躲闪走到无处可躲。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-a0a4fcdecb6181aff6c2"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "吴语毫不犹豫地给出了清晰的职业规划理由",
+              "吴语表现出对现状的满足和对未来的积极期待"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "迟疑, 戒备, 情绪外露, 疲惫",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕忠诚感展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：潘然询问吴语为何未考公务员及协警年限；吴语回答‘快六年了吧’。",
+              "这些记忆支持一种受忠诚感影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“说话时不要自信或果断而不带犹豫。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "潘然在车上问你为什么一直没考公务员时，你停了那几秒，到底是在躲什么，还是在怕什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "吴语_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "吴语对案件名称毫无反应，平静地继续话题",
+              "吴语主动接过话茬，详细讨论案件细节"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "迟疑, 戒备, 情绪外露, 疲惫",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：潘然提及宿安水库强奸杀人案；吴语听到后表情僵住。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕忠诚感展开。",
+              "角色约束还表明“说话时不要自信或果断而不带犹豫。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "紧接着他又提到宿安水库的案子，那一下子顶上来的，首先是什么感觉？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "潘然问你为什么没考公务员时，你犹豫的那几秒里，心里到底在想什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "吴语_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对潘然的立场，并使其明显落在既有关系证据之外。",
+              "吴语立刻否认或找借口解释"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "迟疑, 戒备, 情绪外露, 疲惫",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与潘然之间“同伴、上下级、父子”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r035"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：潘然给吴语点烟并递烟。；潘然说田阳在楼下安了窃听，将他们说的话记录在本子上。",
+              "与潘然的既有关系呈现出“同伴、上下级、父子”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“说话时不要自信或果断而不带犹豫。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "到了天台，他给你点烟，又把田阳窃听的事挑明。你抬头看他的那一眼，最想确认的，到底是他知道了多少，还是他会不会放你一马？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "潘然问你为什么没考公务员时，你犹豫的那几秒里，心里到底在想什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当潘然突然提起宿安水库的案子时，你心里最先闪过的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "吴语_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "吴语",
+      "character_id": "legacy-mt-role-a0a4fcdecb6181aff6c2",
+      "episode_id": "chd402648d2a03c186ae42765c5c33fee162b110b5__吴语__ep02",
+      "episode_theme": "从不肯放手，到亲手放手，再到彻底面对后果，连续追问吴语在吴意、同伴和结局之间怎样一步步被逼到认命。",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-a0a4fcdecb6181aff6c2"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对吴意的立场，并使其明显落在既有关系证据之外。",
+              "吴语认为送走吴意是唯一正确的选择，内心只有坚定"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "迟疑, 戒备, 情绪外露, 疲惫",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：吴语抱着熟睡的吴意；吴语询问林霞新家庭是否会善待和舍得为吴意花钱。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕忠诚感展开。",
+              "角色约束还表明“说话时不要自信或果断而不带犹豫。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "抱着睡着的吴意说“不想送她走”时，你心里最过不去的，到底是舍不得她，还是怕她一离开，你就再也护不住她了？",
+            "dialogue_history_template": []
+          },
+          "question_id": "吴语_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对吴意的立场，并使其明显落在既有关系证据之外。",
+              "吴语认为隐瞒没有意义，冷静地做出了理性选择"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "迟疑, 戒备, 情绪外露, 疲惫",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是忠诚感，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：吴意在北城桥哭泣并呼唤吴语；吴语追赶并拦下北城桥。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“说话时不要自信或果断而不带犹豫。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "可真追上车，把体检报告交到林霞手里时，你还是松了手。那一刻压过舍不得的，究竟是什么？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "抱着睡着的吴意说‘不想送她走’时，你心里最大的恐惧是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "吴语_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "吴语激烈反抗或试图逃跑",
+              "吴语对潘然表现出愤怒和指责"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "迟疑, 戒备, 情绪外露, 疲惫",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是忠诚感，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r037"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：林然带领便衣警察赶到天台逮捕吴语。；潘然吴语给其同伙打电话。",
+              "角色画像显示该角色的表达方式偏向迟疑、戒备，因此回答可以通过这种表达方式呈现忠诚感，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "再后来林然带人来抓你，潘然让你给同伙打电话。走到这一步时，你心里更重的，是认命，还是还想把最后一点事替吴意挡住？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "抱着睡着的吴意说‘不想送她走’时，你心里最大的恐惧是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "你追上车把真实体检报告交给林霞的那一刻，心里最强烈的念头是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "吴语_q005",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "Chinese",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "Chinese/chd402648d2a03c186ae42765c5c33fee162b110b5/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "Chinese/chd402648d2a03c186ae42765c5c33fee162b110b5/task_3_role_assets.json",
+    "role_asset_sha256": "9e1613b67069115543880a755da13125d42e4b3fb6e1970ad558ff8b52271f42",
+    "sha256": "47f88a14b2172bf36b0dec25a2b34b744f3b16298e56b7fae658c82806b6a674",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "chd402648d2a03c186ae42765c5c33fee162b110b5",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

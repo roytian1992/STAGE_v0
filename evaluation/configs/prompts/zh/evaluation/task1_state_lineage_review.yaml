@@ -1,0 +1,22 @@
+id: task1_state_lineage_review_zh
+category: evaluation
+name: Task 1 state lineage review zh
+description: 将已审 checkpoint 状态 claim 归并为 evaluator-only 稳定 lineage。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: ordered_checkpoints, required: true}
+  - {name: reviewed_state_claims, required: true}
+  - {name: allowed_member_refs, required: true}
+  - {name: expected_member_count, required: true}
+static_variables: []
+template: |-
+  在查看任何模型预测前，为“{focal_character}”审核稳定状态 lineage。
+  <ordered_checkpoints>{ordered_checkpoints}</ordered_checkpoints>
+  <reviewed_state_claims>{reviewed_state_claims}</reviewed_state_claims>
+  <allowed_member_refs>{allowed_member_refs}</allowed_member_refs>
+  <expected_member_count>{expected_member_count}</expected_member_count>
+
+  只有状态、目标、极性和有效区间相同的 claim 才能归入同一 GS lineage。所有 member_refs 合计必须恰好包含 expected_member_count 个引用，且集合必须与 allowed_member_refs 完全相等：不能只输出示例，不能遗漏、重复或增加引用。valid_from_checkpoint_id 和 valid_to_checkpoint_id 只能使用给定 checkpoint ID。只有叙事证据支持持续时，状态才能跨未重述的 checkpoint 保持有效。superseded_by_lineage_key 只能引用本输出中的其他 GS key。不得根据模型预测推断。
+
+  由于本调用没有暴露 source-state ID 白名单，source_state_ids 必须为 []。只返回 JSON：
+  {{"states":[{{"lineage_key":"GS1","canonical_claim":"...","member_refs":["R1"],"source_state_ids":[],"valid_from_checkpoint_id":"...","valid_to_checkpoint_id":null,"superseded_by_lineage_key":null}}]}}

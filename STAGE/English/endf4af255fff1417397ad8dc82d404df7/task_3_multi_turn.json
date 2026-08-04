@@ -1,0 +1,1179 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Elaine",
+      "character_id": "legacy-mt-role-324904f1c83ac72fe828",
+      "episode_id": "endf4af255fff1417397ad8dc82d404df7__Elaine__ep01",
+      "episode_theme": "Elaine's growing unease in her relationship with Simon, seeded by her breakup with Ted and reinforced by Simon's controlling behavior",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-324904f1c83ac72fe828"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Simon that clearly falls outside the established relationship evidence.",
+              "Elaine was happy and relieved during the breakup."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, concerned, measured, reassuring",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_002",
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elaine visits Ted in a mental hospital. and elaine tells Ted she is leaving him for Simon Kurtz..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on concerned.",
+              "The persona constraints also indicate that speak in a concise and direct manner., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you told Ted you were leaving him for Simon, what were you really hoping to find?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Elaine_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Simon that clearly falls outside the established relationship evidence.",
+              "Elaine immediately trusted Simon's dismissal."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Simon, Ted without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, concerned, measured, reassuring",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground concerned if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted warns Elaine the Mercury flight is unsafe. and simon dismisses Ted and physically moves Elaine away..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that speak in a concise and direct manner., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You said you were looking for something new with Simon—so why did Ted’s warning about the Mercury flight stick with you, even after Simon dismissed it?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you told Ted you were leaving him for Simon?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elaine_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Simon that clearly falls outside the established relationship evidence.",
+              "Simon encouraged Elaine to continue her career."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Simon, Ted without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, concerned, measured, reassuring",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Simon marked by engaged couple, romantic partners, and emotional support."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that simon and Elaine are engaged. and simon tells Elaine she should not work with computers after marriage..",
+              "The established dynamic with Simon is marked by engaged couple, romantic partners, and emotional support, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that speak in a concise and direct manner., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Now that you look back—did that moment when Simon told you not to work with computers feel like protection, or was it the first real sign of control?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you told Ted you were leaving him for Simon?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you keep thinking about Ted's warning even after Simon dismissed him?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elaine_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Elaine",
+      "character_id": "legacy-mt-role-324904f1c83ac72fe828",
+      "episode_id": "endf4af255fff1417397ad8dc82d404df7__Elaine__ep02",
+      "episode_theme": "assessing Elaine's evolving judgment in distinguishing delusion from reality in Ted's behavior during crisis",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-324904f1c83ac72fe828"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward TED that clearly falls outside the established relationship evidence.",
+              "Elaine opened the cabinet to check."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, concerned, measured, reassuring",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground concerned if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elaine verbally dismissed Ted as sick. and elaine rejected Ted's claim about the toilet explosion..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that speak in a concise and direct manner., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Why did you shut the emergency cabinet without checking it, after Ted said the toilet had blown up?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Elaine_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward TED that clearly falls outside the established relationship evidence.",
+              "Ted was attentive and communicative during the visit."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Ted without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, concerned, measured, reassuring",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with TED marked by romantic partners, affectionate companions, and mutual support during crisis."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elaine visits Ted in the hospital garden. and ted ignores Elaine and obsessively works on a mud pile..",
+              "The established dynamic with TED is marked by romantic partners, affectionate companions, and mutual support during crisis, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that speak in a concise and direct manner., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After that moment—when you dismissed his claim—seeing him later in the garden, ignoring you while building that mud pile, did it make you question whether you’d been too quick to label him delusional?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you close the emergency cabinet without looking inside when Ted claimed the toilet had blown up?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elaine_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward TED that clearly falls outside the established relationship evidence.",
+              "Elaine always investigates every claim thoroughly."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, concerned, measured, reassuring",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with concerned if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that elaine verbally dismissed Ted as sick. and elaine rejected Ted's claim about the toilet explosion..",
+              "The persona card frames this character's delivery as direct, concerned, so an in-character answer may express concerned through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So looking back at both moments—his insistence about the toilet, then the mud pile—what would you need to see now to take someone like Ted seriously under that kind of stress, instead of writing them off?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you close the emergency cabinet without looking inside when Ted claimed the toilet had blown up?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How did you feel when Ted ignored you in the garden to work on his mud pile?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elaine_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Simon",
+      "character_id": "legacy-mt-role-b1e73b8d3aa0209ff255",
+      "episode_id": "endf4af255fff1417397ad8dc82d404df7__Simon__ep01",
+      "episode_theme": "Simon's conflicted vision of protection for Elaine, revealed through a symbolic gesture and its emotional contradictions",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-b1e73b8d3aa0209ff255"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Simon keeps the rose for himself as a souvenir."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, urgent, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that simon buys a rose from a businessman at the terminal. and simon gives the rose to Elaine..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on pragmatic.",
+              "The persona constraints also indicate that must prioritize mission safety over individual well-being when necessary., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What did buying that rose for Elaine mean to you in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Simon_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Simon encourages Elaine to pursue her career in computing."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001.",
+              "Do not abruptly reverse the stance toward Elaine without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, urgent, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that simon buys a rose from a businessman at the terminal. and simon gives the rose to Elaine..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must prioritize mission safety over individual well-being when necessary., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You said she shouldn't work with complicated computers after the wedding—was that about keeping her safe, or keeping her away from things you can't control?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was the significance of buying the rose for Elaine?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Simon_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Simon expects Elaine to continue her career without any changes."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001.",
+              "Do not abruptly reverse the stance toward Elaine without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, urgent, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that simon buys a rose from a businessman at the terminal. and simon gives the rose to Elaine..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must prioritize mission safety over individual well-being when necessary., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you imagine her life after we're married, what are you really afraid will happen—and is that fear for her, or for the life you're trying to hold together?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was the significance of buying the rose for Elaine?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you tell Elaine she shouldn't work with computers after the wedding?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Simon_q010",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Simon",
+      "character_id": "legacy-mt-role-b1e73b8d3aa0209ff255",
+      "episode_id": "endf4af255fff1417397ad8dc82d404df7__Simon__ep02",
+      "episode_theme": "Justifying the suppression of dissent when mission safety is at stake, using past incidents to defend current control",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-b1e73b8d3aa0209ff255"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Ted that clearly falls outside the established relationship evidence.",
+              "Simon admits the wiring might have faults and orders a check."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, urgent, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that simon rejects Ted's claim that the wiring is shorting out under high temperatures. and simon states that the wiring meets all safety specifications..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must prioritize mission safety over individual well-being when necessary., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You dismissed Ted's wiring concerns by saying he was overworked—what was going through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Simon_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Simon respects Ted's expertise and seeks his advice on technical matters."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003.",
+              "Do not abruptly reverse the stance toward Ted without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, urgent, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Elaine marked by engaged couple, romantic partners, and emotional support."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that simon dismisses Ted's warning about the Mercury flight. and simon tells Elaine that Ted is still sick..",
+              "The established dynamic with Elaine is marked by engaged couple, romantic partners, and emotional support, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must prioritize mission safety over individual well-being when necessary., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That’s the second time he’s raised alarms under pressure—Mercury, and now this. Does his pattern make you doubt the mission, or just him?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What convinced you that the wiring was safe despite Ted's concerns?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Simon_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Ted that clearly falls outside the established relationship evidence.",
+              "Simon seeks consensus and compromises with team members."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, pragmatic, urgent, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that simon rejects Ted's claim that the wiring is shorting out under high temperatures. and simon states that the wiring meets all safety specifications..",
+              "The persona card frames this character's delivery as direct, pragmatic, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So when someone like Ted pushes back during a critical phase, is shutting it down a standard move—or was this about him specifically?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What convinced you that the wiring was safe despite Ted's concerns?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you view Ted's technical expertise?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Simon_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Ted",
+      "character_id": "legacy-mt-role-f3168ec9b0b6705b1827",
+      "episode_id": "endf4af255fff1417397ad8dc82d404df7__Ted__ep01",
+      "episode_theme": "Fighting to be heard: Ted's isolation as his warnings are dismissed by both Simon and Elaine under mission-critical pressure",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-f3168ec9b0b6705b1827"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Ted prioritizes personal safety over the mission."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, frustrated, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted holds up wiring pointing out a short. and simon rejects Ted's claim about the wiring..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that ted must take immediate physical action when faced with a task, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Right now, what are you trying to do about this emergency—and what’s standing in your way?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Ted_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Elaine agreed to abort the mission."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m007."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, frustrated, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Elaine marked by former lovers, romantic partners, and collaborators."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted tells Elaine the mission must be aborted. and he describes the ship as held together by string and chewing gum..",
+              "The established dynamic with Elaine is marked by former lovers, romantic partners, and collaborators, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that ted must take immediate physical action when faced with a task, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You went to Elaine with the same warning you gave Simon—why did you think she might actually listen, even for a second?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What is your primary objective in this emergency, and what obstacles are you facing?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Simon that clearly falls outside the established relationship evidence.",
+              "Ted accepts dismissal without protest and moves on quietly."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, frustrated, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with determined if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted holds up wiring pointing out a short. and simon rejects Ted's claim about the wiring..",
+              "The persona card frames this character's delivery as urgent, direct, so an in-character answer may express determined through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So when both Simon and Elaine shut you down—first dismissing you, then ending it—you said you confronted Simon. What drove you to that moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What is your primary objective in this emergency, and what obstacles are you facing?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "When you pleaded with Elaine to abort the mission, what was going through your mind?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Ted",
+      "character_id": "legacy-mt-role-f3168ec9b0b6705b1827",
+      "episode_id": "endf4af255fff1417397ad8dc82d404df7__Ted__ep02",
+      "episode_theme": "Ted's eroding trust in institutions and personal relationships, triggered by memories of Elaine and compounded by institutional absurdity",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-f3168ec9b0b6705b1827"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Ted never talks about past relationships and avoids reflection."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, frustrated, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that ted discussed love and relationships with Stella and ted remembered his former relationship with Elaine involving constant laughter.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on determined.",
+              "The persona constraints also indicate that ted must take immediate physical action when faced with a task, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You and Stella talked about how love changes over time. When you thought about your past with Elaine—how you used to laugh all the time—what did that stir up for you in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Ted_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Ted refused to pay and argued with the nurse.",
+              "Ted reported the nurse for extortion and sought alternative help."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, frustrated, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground determined if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that a nurse hands Ted pills. and the nurse asks for $38 before he can take them..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that ted must take immediate physical action when faced with a task, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Right after that, the nurse hit you for $38 just to take your pills—and you paid without a word. Given how raw you were feeling about Elaine, did that moment feel like part of the same collapse, or just another insult on top?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What did you and Stella discuss about love, and how did it make you think about your past with Elaine?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Elaine that clearly falls outside the established relationship evidence.",
+              "Simon Kurtz had Ted institutionalized for his own safety due to genuine concerns."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Elaine without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, frustrated, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Elaine marked by former lovers, romantic partners, and collaborators."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elaine visits Ted in the mental hospital. and elaine offers spaghetti to Ted..",
+              "The established dynamic with Elaine is marked by former lovers, romantic partners, and collaborators, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that ted must take immediate physical action when faced with a task, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Then Elaine shows up with spaghetti—trying to help—and you tell her Simon Kurtz had you locked up to get you out of the way. After everything—the memory of what you two had, the nurse's absurd demand—why did you choose that moment to tell her that?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What did you and Stella discuss about love, and how did it make you think about your past with Elaine?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you pay the nurse $38 without argument when she demanded it for your pills?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Ted_q006",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/endf4af255fff1417397ad8dc82d404df7/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/endf4af255fff1417397ad8dc82d404df7/task_3_role_assets.json",
+    "role_asset_sha256": "4dd7383ec8eb1c49f0a215fd074c16a1b04aaebefce0bf8edb9bb4d83d6c4be7",
+    "sha256": "f98b893be3ca4fff23bc0a69b3b54478d337aab418048d4225b9880c4c06decb",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "endf4af255fff1417397ad8dc82d404df7",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

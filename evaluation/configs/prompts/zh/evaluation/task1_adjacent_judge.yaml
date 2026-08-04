@@ -1,0 +1,20 @@
+id: task1_adjacent_judge_zh
+category: evaluation
+name: Task 1 adjacent prediction judge zh
+description: 审核一对相邻 checkpoint 预测的自洽性。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: earlier_prediction, required: true}
+  - {name: later_prediction, required: true}
+  - {name: interval_evidence, required: true}
+static_variables: []
+template: |-
+  在不使用 gold 答案的前提下，审核“{focal_character}”的一对相邻预测。
+  <earlier_prediction>{earlier_prediction}</earlier_prediction>
+  <later_prediction>{later_prediction}</later_prediction>
+  <interval_evidence>{interval_evidence}</interval_evidence>
+
+  state_carry_forward 表示早期重要预测状态在后期仍保留或被明确替代；development_to_state_coherent 表示后期预测的发展方向与后果自洽；contradiction_present 表示无法解释的预测冲突；premature_or_future_information 表示根据区间证据使用了当时不可得的信息。
+
+  精确复制给定的两个 instance ID，只返回 JSON：
+  {{"earlier_instance_id":"...","later_instance_id":"...","state_carry_forward":true,"development_to_state_coherent":true,"contradiction_present":false,"premature_or_future_information":false,"brief_rationale":"简短审核"}}

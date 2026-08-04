@@ -1,0 +1,1152 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Charlene",
+      "character_id": "legacy-mt-role-5b15998363bf25dba545",
+      "episode_id": "en6277019821914a26ba881ef5d254969f__Charlene__ep01",
+      "episode_theme": "Exploring Charlene's protective nature through her relationships with Alice and Micky",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-5b15998363bf25dba545"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Alice that clearly falls outside the established relationship evidence.",
+              "You have a friendly and supportive relationship with Alice."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "emotional, blunt, aggressive, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Alice marked by hostility, distrust, and confrontation."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007",
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that charlene discloses her plan to quit her job for teacher certification. and alice makes a teasing comment about Charlene living off Micky..",
+              "The established dynamic with Alice is marked by hostility, distrust, and confrontation, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must physically intervene when someone she cares about is in danger., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How do you really feel about Alice, after everything that's gone down?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Charlene_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Mickey O'Keefe that clearly falls outside the established relationship evidence.",
+              "You see yourself as a passive and uninvolved partner."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, blunt, aggressive, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground protective if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r004",
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that charlene goes to Micky's apartment. and charlene knocks on the door and confronts Micky for not calling her..",
+              "The memories support a bounded self-assessment shaped by protective, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that she must physically intervene when someone she cares about is in danger., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Looking back at how you showed up for Micky—knocking on his door, calling him out—how would you describe yourself as his partner?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you really feel about Alice?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Charlene_q005",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Alice that clearly falls outside the established relationship evidence.",
+              "You would step back and let Micky handle his family."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005, m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, blunt, aggressive, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with protective if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010",
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that charlene is present at the gym during Micky's training session. and micky kisses Charlene hello after exercising..",
+              "The persona card frames this character's delivery as emotional, blunt, so an in-character answer may express protective through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "If Micky's family tries to interfere again, like they did before, what’s your move?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you really feel about Alice?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How would you describe yourself as a partner to Micky?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Charlene_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Charlene",
+      "character_id": "legacy-mt-role-5b15998363bf25dba545",
+      "episode_id": "en6277019821914a26ba881ef5d254969f__Charlene__ep02",
+      "episode_theme": "The emotional escalation and personal stakes in Charlene's confrontation with Dicky",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-5b15998363bf25dba545"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Dicky that clearly falls outside the established relationship evidence.",
+              "You calmly asked Dicky to leave and he complied."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "emotional, blunt, aggressive, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that dicky persistently presses the buzzer at Charlene's apartment. and charlene verbally rejects Dicky and they engage in a heated argument..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on protective.",
+              "The persona constraints also indicate that she must physically intervene when someone she cares about is in danger., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What was going through your head when Dicky kept pounding on your intercom and wouldn’t leave your porch?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Charlene_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Alice that clearly falls outside the established relationship evidence.",
+              "You decided to stay at the bar job indefinitely."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, blunt, aggressive, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that charlene discloses her plan to quit her job for teacher certification. and alice makes a teasing comment about Charlene living off Micky..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that she must physically intervene when someone she cares about is in danger., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You didn’t just walk away—you screamed back. What were you protecting in that moment? Not just your space—what did it feel like was at stake?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your head when Dicky wouldn't leave your porch?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Charlene_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Dicky that clearly falls outside the established relationship evidence.",
+              "You have a respectful and cordial relationship with Dicky."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m007.",
+              "Do not abruptly reverse the stance toward Dicky without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, blunt, aggressive, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Dicky marked by hostility, verbal confrontation, and mutual disdain."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that dicky persistently presses the buzzer at Charlene's apartment. and charlene verbally rejects Dicky and they engage in a heated argument..",
+              "The established dynamic with Dicky is marked by hostility, verbal confrontation, and mutual disdain, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must physically intervene when someone she cares about is in danger., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "It’s not the first time you’ve exploded at him—what is it about Dicky, specifically, that makes walking away feel like surrender?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your head when Dicky wouldn't leave your porch?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What are your plans now that you're leaving the bar job?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Charlene_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Dicky",
+      "character_id": "legacy-mt-role-f2c221925bb8b4ab328e",
+      "episode_id": "en6277019821914a26ba881ef5d254969f__Dicky__ep01",
+      "episode_theme": "Dicky's emotional return to training with Micky: loyalty, impulse, and public validation",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-f2c221925bb8b4ab328e"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Dicky has no intention of continuing to train with Micky and focuses only on personal issues",
+              "He is solely preoccupied with his addiction and avoids any involvement in boxing"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "emotional, passionate, urgent, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019",
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that micky publicly acknowledges Dicky's essential contribution to his victory over Sanchez. and dicky begins preparing to train by putting on boxing gear..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that dicky acts quickly without considering consequences, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Now that you're back training with Micky, what's driving you most right now?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Dicky_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Dicky refused to discuss his drug use with Charlene during the argument",
+              "He prioritized his addiction over helping Micky and showed no intention of quitting"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m009."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, passionate, urgent, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground impulsive if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_007"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that dicky arrives at Charlene's apartment and presses the intercom buzzer persistently. and dicky engages in a heated verbal exchange with Charlene about Micky..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that dicky acts quickly without considering consequences, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You told Charlene you'd quit drugs for Micky—what pushed you to say that in the moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What's your main goal now that you're back training with Micky?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Dicky_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Micky Ward that clearly falls outside the established relationship evidence.",
+              "Micky dismissed Dicky's help in front of the team"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m007."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, passionate, urgent, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Micky Ward marked by brothers, conflict, and estrangement."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that micky publicly acknowledges Dicky's essential contribution to his victory over Sanchez. and dicky begins preparing to train by putting on boxing gear..",
+              "The established dynamic with Micky Ward is marked by brothers, conflict, and estrangement, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that dicky acts quickly without considering consequences, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Micky called you out as the reason he beat Sanchez—how did that hit you, after everything?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What's your main goal now that you're back training with Micky?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What made you tell Charlene you'd quit drugs right now for Micky's sake?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Dicky_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Dicky",
+      "character_id": "legacy-mt-role-f2c221925bb8b4ab328e",
+      "episode_id": "en6277019821914a26ba881ef5d254969f__Dicky__ep02",
+      "episode_theme": "Dicky's loyalty and defensiveness as expressions of love—tested by Charlene, triggered by insults, and redirected toward his son",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-f2c221925bb8b4ab328e"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Micky Ward that clearly falls outside the established relationship evidence.",
+              "Charlene welcomed Dicky warmly and trusted him completely with Micky's training"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "emotional, passionate, urgent, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Micky Ward marked by brothers, conflict, and estrangement."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r018"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_007"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that dicky reenters the gym during Micky's training session. and charlene verbally challenges Dicky about his sobriety and role in Micky's team..",
+              "The established dynamic with Micky Ward is marked by brothers, conflict, and estrangement, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that dicky acts quickly without considering consequences, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you walked back into the gym and Charlene questioned your sobriety, why do you think she didn't trust you with Micky's training?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Dicky_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Dicky remained calm and walked away when insulted by the bouncer",
+              "He avoided physical confrontation in such situations and responded verbally instead"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, passionate, urgent, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground impulsive if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that dicky approached the Cosmopolitan Cafe. and the bouncer mocked Dicky's appearance..",
+              "The memories support a bounded self-assessment shaped by impulsive, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that dicky acts quickly without considering consequences, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You got violent fast when the bouncer mocked your teeth—same kind of intensity Charlene saw in the gym. Is that how you always react when someone disrespects you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why do you think Charlene is so suspicious of you when you come back to the gym?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Dicky_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Little Dicky that clearly falls outside the established relationship evidence.",
+              "Dicky ignored his son during visits and maintained a严肃, distant demeanor"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, passionate, urgent, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with impulsive if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that dicky played with his son Little Dicky in prison. and little Dicky hit Dicky in the mouth during play..",
+              "The persona card frames this character's delivery as emotional, passionate, so an in-character answer may express impulsive through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "But with Little Dicky, when he hit your mouth and you popped out your fake teeth to make him laugh—you didn't get mad at all. So how do you decide who gets the anger and who gets the laugh?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why do you think Charlene is so suspicious of you when you come back to the gym?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why do you think you lose control so easily when someone insults you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Dicky_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Micky Ward",
+      "character_id": "legacy-mt-role-cb45b344b8f81bff2c3d",
+      "episode_id": "en6277019821914a26ba881ef5d254969f__Micky Ward__ep01",
+      "episode_theme": "emotional restraint and loyalty under personal pressure",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-cb45b344b8f81bff2c3d"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Charlene that clearly falls outside the established relationship evidence.",
+              "Micky always remains composed in public situations"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, defensive",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that micky cannot find his car keys after the movie and charlene informs Micky the keys are in his hand.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on resilient.",
+              "The persona constraints also indicate that must avoid showing facial expressions openly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After the movie, when you couldn't find your keys and Charlene had to point out they were in your hand—what was going through you in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Micky Ward_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Micky is always self-assured and confident before fights",
+              "He pays no attention to his appearance or readiness"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, defensive",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground resilient if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that micky fixes his appearance in the mirror and micky wears an ill-fitting sports coat.",
+              "The memories support a bounded self-assessment shaped by resilient, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must avoid showing facial expressions openly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That same tightness—you had it again the night before the fight, fiddling with your coat in the mirror. Is that kind of tension something you recognize in yourself when things start closing in?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What happened when you couldn't find your keys after the movie?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Micky Ward_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Charlene that clearly falls outside the established relationship evidence.",
+              "Micky agrees with criticisms about his family"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, defensive",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with resilient if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that charlene questions whether Micky's family has his best interests and micky responds by defending his family.",
+              "The persona card frames this character's delivery as direct, blunt, so an in-character answer may express resilient through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And when Charlene questioned your family, you shut her down fast. Was that loyalty—or was it more about keeping yourself from coming apart?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What happened when you couldn't find your keys after the movie?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you see yourself when preparing for a big fight?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Micky Ward_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Micky Ward",
+      "character_id": "legacy-mt-role-cb45b344b8f81bff2c3d",
+      "episode_id": "en6277019821914a26ba881ef5d254969f__Micky Ward__ep02",
+      "episode_theme": "emotional resilience and family influence in pivotal career moments",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-cb45b344b8f81bff2c3d"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Charlene that clearly falls outside the established relationship evidence.",
+              "Micky was uninterested or dismissive of the fight promotion"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, defensive",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that micky enters the Olympia Restaurant with Charlene and micky kisses Alice hello.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on resilient.",
+              "The persona constraints also indicate that must avoid showing facial expressions openly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What went through your head when your mom showed you that fight poster at the restaurant?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Micky Ward_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Micky trains half-heartedly without clear motivation",
+              "He avoids the gym and skips training sessions"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, defensive",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that micky performs jump rope exercise at Ramalho's West End Gym and micky hits the speed bag during training.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must avoid showing facial expressions openly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That moment with your mom clearly weighed on you—so what kept you coming back to the gym after that, even when everything felt stacked against you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when your mom showed you the fight poster?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Micky Ward_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Dicky that clearly falls outside the established relationship evidence.",
+              "Micky was determined to continue fighting despite the setback"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, defensive",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground resilient if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that micky expresses to Alice and Dicky that he no longer wants to fight and dicky reassures Micky they will get another fight.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must avoid showing facial expressions openly, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "But then, after all that work, you took another beating—so what finally made you tell your mom and Dicky you were done?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when your mom showed you the fight poster?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What drives you to keep training despite the challenges?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Micky Ward_q001",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en6277019821914a26ba881ef5d254969f/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en6277019821914a26ba881ef5d254969f/task_3_role_assets.json",
+    "role_asset_sha256": "132b06371ee08a2f47ae779c937b013927333d4b5edb6c1a2ae1cfa95e42c05e",
+    "sha256": "2628dffeb12192e76e4cab727fea080b59a6fe6e696edf18ec3801ca4beee649",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en6277019821914a26ba881ef5d254969f",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

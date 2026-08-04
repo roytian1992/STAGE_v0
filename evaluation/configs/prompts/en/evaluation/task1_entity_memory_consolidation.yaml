@@ -1,0 +1,23 @@
+id: task1_entity_memory_consolidation_en
+category: evaluation
+name: Task 1 entity-memory consolidation
+description: Consolidate a large interval memory without using a prior checkpoint state.
+task_variables:
+  - {name: character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: observations, required: true}
+  - {name: allowed_observation_ids, required: true}
+  - {name: allowed_scene_orders, required: true}
+  - {name: max_observations, required: true}
+static_variables: []
+template: |-
+  Consolidate the entity-centric interval memory for "{character}". Character aliases: {aliases}.
+  The interval is after scene {previous_scene_order} through scene {current_scene_order}, inclusive.
+  <observations>{observations}</observations>
+
+  Select a diverse set covering the most important goals, beliefs, relationships, identities, circumstances, emotional stances, and meaningful changes. Prefer one representative when observations are redundant; remove ordinary actions and minor details. Do not rewrite or infer observations. Return at most {max_observations} unique IDs drawn only from {allowed_observation_ids}, ordered from highest to lowest priority. The scene orders {allowed_scene_orders} are evidence metadata, not selectable IDs. Return no analysis or extra fields.
+
+  Return JSON only:
+  {{"selected_observation_ids":["O1"]}}

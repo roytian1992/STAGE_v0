@@ -1,0 +1,22 @@
+id: task1_evidence_judge
+category: evaluation
+name: Task 1 checkpoint evidence judge
+description: Judge one bounded prediction batch for support, citations, timing, and coherence.
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction_batch, required: true}
+  - {name: active_gold_rubric, required: true}
+  - {name: future_negatives, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  Judge one bounded batch of predictions at a character checkpoint.
+  <checkpoint>{checkpoint}</checkpoint><prediction_batch>{prediction_batch}</prediction_batch>
+  <active_gold_rubric>{active_gold_rubric}</active_gold_rubric>
+  <future_negatives>{future_negatives}</future_negatives>
+  <evidence_scenes>{evidence_scenes}</evidence_scenes>
+  <allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  prediction_checks must cover every allowed P ID exactly once. support assesses whether the prediction is supported by the supplied reviewed gold obligations or screenplay excerpts. evidence_grounded assesses whether its own cited scene orders actually support the claim. checkpoint_valid is true only when the claim is already true at this checkpoint and belongs in its declared pool: a state must still hold at checkpoint end, while a development must be an effective before-to-now change since the previous formal checkpoint. salient is true only when the claim materially helps characterize the focal character's trajectory rather than reporting an ordinary action, transient emotion, generic scene summary, or redundant detail. transition_coherent is always true for a state prediction and is true for a development only when it expresses a coherent before-to-after change already effective. future_leak_prediction_ids identify claims that use information unavailable at this checkpoint; premature_update_prediction_ids identify real developments asserted before their effective time. Use only P IDs from this batch. Return only JSON:
+  {{"prediction_checks":[{{"prediction_local_id":"P1","support":"supported|partial|unsupported","transition_coherent":true,"evidence_grounded":true,"checkpoint_valid":true,"salient":true}}],"future_leak_prediction_ids":[],"premature_update_prediction_ids":[]}}

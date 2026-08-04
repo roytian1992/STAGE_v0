@@ -1,0 +1,23 @@
+id: task1_lineage_format_repair_zh
+category: evaluation
+name: Task 1 lineage format repair zh
+description: 在不重新进行语义审核的前提下修复覆盖或 schema 缺陷。
+task_variables:
+  - {name: output_field, required: true}
+  - {name: validation_error, required: true}
+  - {name: allowed_member_refs, required: true}
+  - {name: allowed_checkpoint_ids, required: true}
+  - {name: allowed_state_keys, required: true}
+  - {name: member_ref_rows, required: true}
+  - {name: previous_response, required: true}
+static_variables: []
+template: |-
+  只修复已完成 lineage 审核的 JSON 格式、引用覆盖或白名单错误，不重新进行语义审核。
+  <output_field>{output_field}</output_field><validation_error>{validation_error}</validation_error>
+  <allowed_member_refs>{allowed_member_refs}</allowed_member_refs>
+  <allowed_checkpoint_ids>{allowed_checkpoint_ids}</allowed_checkpoint_ids>
+  <allowed_state_keys>{allowed_state_keys}</allowed_state_keys>
+  <member_ref_rows>{member_ref_rows}</member_ref_rows>
+  <previous_response>{previous_response}</previous_response>
+
+  保留上一响应中所有有效的语义分组和区间。member_refs 的并集必须与 allowed_member_refs 完全相等，不得重复或出现未知引用。member_ref_rows 给出每个 ref 的 checkpoint 和已审核 claim。把遗漏引用加入语义合适的已有 lineage；只有确实不适合任何已有 lineage 时才新建保守的 singleton lineage。删除不支持的顶层字段。checkpoint 字段只能使用 allowed_checkpoint_ids，state link 只能使用 allowed_state_keys，source ID 数组必须为 []。只返回且恰好返回一个包含所请求 output_field 的 JSON 对象。

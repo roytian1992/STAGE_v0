@@ -1,0 +1,57 @@
+{
+  "schema_version": "stage_benchmark_runtime_config_v1",
+  "track_id": "stage-complete-151-standard-24k",
+  "prediction_llm": {
+    "model": "PREDICTION_MODEL",
+    "base_url": "http://127.0.0.1:8001/v1",
+    "endpoint_pool": [
+      {"base_url": "http://127.0.0.1:8001/v1", "max_concurrency": 32},
+      {"base_url": "http://127.0.0.1:8002/v1", "max_concurrency": 32}
+    ],
+    "api_key": "REPLACE_ME",
+    "temperature": 0,
+    "max_attempts": 3,
+    "semantic_attempts": 1,
+    "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}
+  },
+  "evaluation_llm": {
+    "model": "INDEPENDENT_JUDGE_MODEL",
+    "base_url": "http://127.0.0.1:9001/v1",
+    "api_key": "REPLACE_ME",
+    "temperature": 0,
+    "max_attempts": 3,
+    "semantic_attempts": 1,
+    "json_response_format": true,
+    "extra_body": {"thinking": {"type": "disabled"}}
+  },
+  "tokenizer": {
+    "backend": "tokenizer_json",
+    "path": "/absolute/path/to/tokenizer.json"
+  },
+  "call_budgets": {
+    "task1_prediction": {"context_window": 24000, "max_output_tokens": 3072, "safety_margin_tokens": 1024},
+    "task1_judge": {"context_window": 24000, "max_output_tokens": 3072, "safety_margin_tokens": 1024},
+    "task3_actor": {"context_window": 24000, "max_output_tokens": 2048, "safety_margin_tokens": 1024},
+    "task3_response_judge": {"context_window": 24000, "max_output_tokens": 768, "safety_margin_tokens": 256},
+    "task3_pair_judge": {"context_window": 24000, "max_output_tokens": 2048, "safety_margin_tokens": 1024}
+  },
+  "token_accounting": {
+    "method": "raw_system_plus_user_plus_reserved_chat_overhead",
+    "reserved_chat_template_tokens": 256
+  },
+  "task1": {
+    "max_scene_part_content_tokens": 12000,
+    "reserved_prior_memory_tokens": 3072,
+    "max_evidence_batch_input_tokens": 8000,
+    "prompt_paths": {"zh": "zh/evaluation/task1_prediction", "en": "en/evaluation/task1_prediction"},
+    "judge_prompt_paths": {"zh": "zh/evaluation/task1_checkpoint_judge", "en": "en/evaluation/task1_checkpoint_judge"},
+    "rubric_construction_prompt_paths": {"zh": "zh/benchmark/task1_rubric_construction", "en": "en/benchmark/task1_rubric_construction"}
+  },
+  "task3": {
+    "context_policy": "full_visible_memory_if_fits_else_requires_frozen_retrieval",
+    "actor_prompt_paths": {"zh": "zh/actor/task3_actor", "en": "en/actor/task3_actor"},
+    "judge_prompt_paths": {"zh": "zh/evaluation/task3_response_judge", "en": "en/evaluation/task3_response_judge"},
+    "pair_judge_prompt_paths": {"zh": "zh/evaluation/task3_pair_judge", "en": "en/evaluation/task3_pair_judge"},
+    "rubric_construction_prompt_paths": {"zh": "zh/benchmark/task3_rubric_construction", "en": "en/benchmark/task3_rubric_construction"}
+  }
+}

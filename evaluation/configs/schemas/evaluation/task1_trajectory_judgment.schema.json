@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage://evaluation/task1_trajectory_judgment",
+  "title": "Task 1 trajectory judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["development_clusters", "adjacent_checks"],
+  "properties": {
+    "development_clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cluster_id", "members", "brief_rationale"],
+        "properties": {
+          "cluster_id": {"type": "string", "pattern": "^PD[1-9][0-9]*$"},
+          "members": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^.+\\|P[1-9][0-9]*$"}
+          },
+          "brief_rationale": {"type": "string"}
+        }
+      }
+    },
+    "adjacent_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "earlier_instance_id",
+          "later_instance_id",
+          "state_carry_forward",
+          "development_to_state_coherent",
+          "contradiction_present",
+          "premature_or_future_information",
+          "brief_rationale"
+        ],
+        "properties": {
+          "earlier_instance_id": {"type": "string", "minLength": 1},
+          "later_instance_id": {"type": "string", "minLength": 1},
+          "state_carry_forward": {"type": "boolean"},
+          "development_to_state_coherent": {"type": "boolean"},
+          "contradiction_present": {"type": "boolean"},
+          "premature_or_future_information": {"type": "boolean"},
+          "brief_rationale": {"type": "string"}
+        }
+      }
+    }
+  }
+}

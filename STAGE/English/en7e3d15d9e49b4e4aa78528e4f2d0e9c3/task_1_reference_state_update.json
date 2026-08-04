@@ -1,0 +1,2871 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 21,
+    "current_state_reference_claims": 151,
+    "development_reference_claims": 26,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "en7e3d15d9e49b4e4aa78528e4f2d0e9c3",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 158,
+    "sha256": "cdefd86158053b061e2ef0aa5d0fa5cae787f4d08f8fdd40829751f64d5a2050"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "The Professor",
+        "Professor"
+      ],
+      "character": "The Professor",
+      "character_id": "entity-9179ae6d8abc0da04917",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-4357228f91a59d8bc442",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ],
+                "state_id": "character-state-d1817aca8776eb98d4b6"
+              },
+              {
+                "claim": "The Professor is in an activated operational state",
+                "evidence_scene_orders": [
+                  122
+                ],
+                "state_id": "character-state-6aef9312b8db3e9e542c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's status identity develops from \"The Professor is in an activated operational state\" to \"The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.\" (visible from scene 123).",
+                "development_id": "character-development-6ed95e8121dd38324f99",
+                "evidence_scene_orders": [
+                  122,
+                  123
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8f480693ba622ef1ab75",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 123,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-f75d40a3d382590895a4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133
+                ],
+                "state_id": "character-state-35b6f2fc55e3d26eb45a"
+              },
+              {
+                "claim": "The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.",
+                "evidence_scene_orders": [
+                  133
+                ],
+                "state_id": "character-state-a7ebddbb51aa882fca57"
+              },
+              {
+                "claim": "The Professor continues pursuit despite being wounded.",
+                "evidence_scene_orders": [
+                  129
+                ],
+                "state_id": "character-state-9f3a1279419105d712f5"
+              },
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ],
+                "state_id": "character-state-d1817aca8776eb98d4b6"
+              },
+              {
+                "claim": "The Professor is acting as an active combatant in a firefight.",
+                "evidence_scene_orders": [
+                  133
+                ],
+                "state_id": "character-state-8dca828431bd7730ecc0"
+              },
+              {
+                "claim": "The Professor acts as an armed aggressor, taking immediate offensive action upon visual contact.",
+                "evidence_scene_orders": [
+                  133
+                ],
+                "state_id": "character-state-ed014c7b5e6e43d210db"
+              },
+              {
+                "claim": "The Professor is physically wounded but functional.",
+                "evidence_scene_orders": [
+                  129
+                ],
+                "state_id": "character-state-1caccfda4e7436df8174"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's status identity develops from \"isolated and off-grid\" to \"The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.\" (visible from scene 133).",
+                "development_id": "character-development-2ae0ca49ee44328c4fa4",
+                "evidence_scene_orders": [
+                  126,
+                  133
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-0b99c527093fed935eed",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ]
+              },
+              {
+                "claim": "The Professor is in an activated operational state",
+                "evidence_scene_orders": [
+                  122
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-4357228f91a59d8bc442",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 133,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 123
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-f0611e3b2d812ead2a26",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137
+                ],
+                "state_id": "character-state-35b6f2fc55e3d26eb45a"
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-7b3be74228d381d14675"
+              },
+              {
+                "claim": "The Professor acts as an armed enforcer with authority to use lethal force",
+                "evidence_scene_orders": [
+                  137
+                ],
+                "state_id": "character-state-552c4d715ae53febccb9"
+              },
+              {
+                "claim": "The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.",
+                "evidence_scene_orders": [
+                  133
+                ],
+                "state_id": "character-state-a7ebddbb51aa882fca57"
+              },
+              {
+                "claim": "The Professor continues pursuit despite being wounded.",
+                "evidence_scene_orders": [
+                  129
+                ],
+                "state_id": "character-state-9f3a1279419105d712f5"
+              },
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ],
+                "state_id": "character-state-d1817aca8776eb98d4b6"
+              },
+              {
+                "claim": "The Professor is acting as a combat-effective and decisive operator under pressure.",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-d0c4bc293cc2af8af2c3"
+              },
+              {
+                "claim": "The Professor acts as an armed aggressor, taking immediate offensive action upon visual contact.",
+                "evidence_scene_orders": [
+                  133
+                ],
+                "state_id": "character-state-ed014c7b5e6e43d210db"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's status identity develops from \"The Professor acts as an armed enforcer with authority to use lethal force\" to \"The Professor is an active aggressor and fugitive evading law enforcement\" (visible from scene 140).",
+                "development_id": "character-development-4b6764dbabb20f7d51af",
+                "evidence_scene_orders": [
+                  137,
+                  140
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-38cdc3d61f25f4e289b4",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133
+                ]
+              },
+              {
+                "claim": "The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.",
+                "evidence_scene_orders": [
+                  133
+                ]
+              },
+              {
+                "claim": "The Professor continues pursuit despite being wounded.",
+                "evidence_scene_orders": [
+                  129
+                ]
+              },
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ]
+              },
+              {
+                "claim": "The Professor is acting as an active combatant in a firefight.",
+                "evidence_scene_orders": [
+                  133
+                ]
+              },
+              {
+                "claim": "The Professor acts as an armed aggressor, taking immediate offensive action upon visual contact.",
+                "evidence_scene_orders": [
+                  133
+                ]
+              },
+              {
+                "claim": "The Professor is physically wounded but functional.",
+                "evidence_scene_orders": [
+                  129
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f75d40a3d382590895a4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 140,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 133
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-bcc157786352c1ff22dd",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142
+                ],
+                "state_id": "character-state-35b6f2fc55e3d26eb45a"
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ],
+                "state_id": "character-state-c257f21047989e4c6d8b"
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-7b3be74228d381d14675"
+              },
+              {
+                "claim": "The Professor acts as an armed enforcer with authority to use lethal force",
+                "evidence_scene_orders": [
+                  137
+                ],
+                "state_id": "character-state-552c4d715ae53febccb9"
+              },
+              {
+                "claim": "The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.",
+                "evidence_scene_orders": [
+                  133
+                ],
+                "state_id": "character-state-a7ebddbb51aa882fca57"
+              },
+              {
+                "claim": "The Professor has a faster and better-armed vehicle than Bourne.",
+                "evidence_scene_orders": [
+                  141
+                ],
+                "state_id": "character-state-6a8949e4aed0f1045055"
+              },
+              {
+                "claim": "The Professor continues pursuit despite being wounded.",
+                "evidence_scene_orders": [
+                  129
+                ],
+                "state_id": "character-state-9f3a1279419105d712f5"
+              },
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ],
+                "state_id": "character-state-d1817aca8776eb98d4b6"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's constraint resource develops from \"The Professor has a faster and better-armed vehicle than Bourne.\" to \"The Professor's motorcycle is damaged and separated from him after a collision.\" (visible from scene 142).",
+                "development_id": "character-development-1ce38ae27db62e5c787e",
+                "evidence_scene_orders": [
+                  141,
+                  142
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6e85a2bd07bb8381e02c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137
+                ]
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ]
+              },
+              {
+                "claim": "The Professor acts as an armed enforcer with authority to use lethal force",
+                "evidence_scene_orders": [
+                  137
+                ]
+              },
+              {
+                "claim": "The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.",
+                "evidence_scene_orders": [
+                  133
+                ]
+              },
+              {
+                "claim": "The Professor continues pursuit despite being wounded.",
+                "evidence_scene_orders": [
+                  129
+                ]
+              },
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ]
+              },
+              {
+                "claim": "The Professor is acting as a combat-effective and decisive operator under pressure.",
+                "evidence_scene_orders": [
+                  140
+                ]
+              },
+              {
+                "claim": "The Professor acts as an armed aggressor, taking immediate offensive action upon visual contact.",
+                "evidence_scene_orders": [
+                  133
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-f0611e3b2d812ead2a26",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 142,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 140
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-fe277588c566f60cacbb",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142,
+                  143
+                ],
+                "state_id": "character-state-35b6f2fc55e3d26eb45a"
+              },
+              {
+                "claim": "The Professor remains actively engaged in the chase, demonstrating persistence and mechanical improvisation under pressure.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-3d661384640e50426043"
+              },
+              {
+                "claim": "The Professor is a determined and capable pursuer operating independently but in convergence with law enforcement.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-d7a55d41987d550b3b21"
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ],
+                "state_id": "character-state-c257f21047989e4c6d8b"
+              },
+              {
+                "claim": "The Professor continues the pursuit despite crashing and mechanical damage.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-6e19571f7a9dcf739e9e"
+              },
+              {
+                "claim": "The Professor is a persistent and capable pursuer who remains a threat even after police are evaded.",
+                "evidence_scene_orders": [
+                  143
+                ],
+                "state_id": "character-state-13ae9be3b2f70a1d273f"
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-7b3be74228d381d14675"
+              },
+              {
+                "claim": "The Professor acts as an armed enforcer with authority to use lethal force",
+                "evidence_scene_orders": [
+                  137
+                ],
+                "state_id": "character-state-552c4d715ae53febccb9"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's status identity develops from \"The Professor is a persistent and capable pursuer who remains a threat even after police are evaded.\" to \"The Professor remains actively engaged in the chase, demonstrating persistence and mechanical improvisation under pressure.\" (visible from scene 144).",
+                "development_id": "character-development-3a360a372f64e1fb6e61",
+                "evidence_scene_orders": [
+                  143,
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor's goal plan develops from \"The Professor continues pursuit despite being wounded.\" to \"The Professor continues the pursuit despite crashing and mechanical damage.\" (visible from scene 144).",
+                "development_id": "character-development-7221e18a9f2ad0e3a6c0",
+                "evidence_scene_orders": [
+                  129,
+                  144
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-217813459c1d2f5c3052",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142
+                ]
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ]
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ]
+              },
+              {
+                "claim": "The Professor acts as an armed enforcer with authority to use lethal force",
+                "evidence_scene_orders": [
+                  137
+                ]
+              },
+              {
+                "claim": "The Professor acts as an aggressor in a three-way conflict, asserting a combatant role.",
+                "evidence_scene_orders": [
+                  133
+                ]
+              },
+              {
+                "claim": "The Professor has a faster and better-armed vehicle than Bourne.",
+                "evidence_scene_orders": [
+                  141
+                ]
+              },
+              {
+                "claim": "The Professor continues pursuit despite being wounded.",
+                "evidence_scene_orders": [
+                  129
+                ]
+              },
+              {
+                "claim": "The Professor demonstrates superior combat skill compared to Wombosi's bodyguards.",
+                "evidence_scene_orders": [
+                  123
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-bcc157786352c1ff22dd",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 144,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 142
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-a2275bf601e35c30522e",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142,
+                  143,
+                  145
+                ],
+                "state_id": "character-state-35b6f2fc55e3d26eb45a"
+              },
+              {
+                "claim": "The Professor identifies as a ruthless operative capable of violent, high-risk assault.",
+                "evidence_scene_orders": [
+                  145
+                ],
+                "state_id": "character-state-38f377c0b88c0acfe6c6"
+              },
+              {
+                "claim": "The Professor remains actively engaged in the chase, demonstrating persistence and mechanical improvisation under pressure.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-3d661384640e50426043"
+              },
+              {
+                "claim": "The Professor is a determined and capable pursuer operating independently but in convergence with law enforcement.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-d7a55d41987d550b3b21"
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ],
+                "state_id": "character-state-c257f21047989e4c6d8b"
+              },
+              {
+                "claim": "The Professor continues the pursuit despite crashing and mechanical damage.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-6e19571f7a9dcf739e9e"
+              },
+              {
+                "claim": "The Professor is a persistent and capable pursuer who remains a threat even after police are evaded.",
+                "evidence_scene_orders": [
+                  143
+                ],
+                "state_id": "character-state-13ae9be3b2f70a1d273f"
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ],
+                "state_id": "character-state-7b3be74228d381d14675"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's status identity develops from \"The Professor is a determined and capable pursuer operating independently but in convergence with law enforcement.\" to \"The Professor identifies as a ruthless operative capable of violent, high-risk assault.\" (visible from scene 145).",
+                "development_id": "character-development-519b486b071442e11722",
+                "evidence_scene_orders": [
+                  144,
+                  145
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c6a7f6212b291a42387b",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142,
+                  143
+                ]
+              },
+              {
+                "claim": "The Professor remains actively engaged in the chase, demonstrating persistence and mechanical improvisation under pressure.",
+                "evidence_scene_orders": [
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor is a determined and capable pursuer operating independently but in convergence with law enforcement.",
+                "evidence_scene_orders": [
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ]
+              },
+              {
+                "claim": "The Professor continues the pursuit despite crashing and mechanical damage.",
+                "evidence_scene_orders": [
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor is a persistent and capable pursuer who remains a threat even after police are evaded.",
+                "evidence_scene_orders": [
+                  143
+                ]
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ]
+              },
+              {
+                "claim": "The Professor acts as an armed enforcer with authority to use lethal force",
+                "evidence_scene_orders": [
+                  137
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-fe277588c566f60cacbb",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 145,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 144
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-89b9133c1293d81fb56c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "The Professor identifies himself as a Treadstone operative who is bound by the program and unable to escape its consequences.",
+                "evidence_scene_orders": [
+                  146
+                ],
+                "state_id": "character-state-00a7ea8dd0ab322ebbe8"
+              },
+              {
+                "claim": "The Professor recognizes Bourne as a fellow Treadstone operative based on shared symptoms and experiences.",
+                "evidence_scene_orders": [
+                  146
+                ],
+                "state_id": "character-state-ef592602203edbc33dd0"
+              },
+              {
+                "claim": "The Professor identifies as a ruthless operative capable of violent, high-risk assault.",
+                "evidence_scene_orders": [
+                  145
+                ],
+                "state_id": "character-state-38f377c0b88c0acfe6c6"
+              },
+              {
+                "claim": "The Professor remains actively engaged in the chase, demonstrating persistence and mechanical improvisation under pressure.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-3d661384640e50426043"
+              },
+              {
+                "claim": "The Professor is a determined and capable pursuer operating independently but in convergence with law enforcement.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-d7a55d41987d550b3b21"
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ],
+                "state_id": "character-state-c257f21047989e4c6d8b"
+              },
+              {
+                "claim": "The Professor continues the pursuit despite crashing and mechanical damage.",
+                "evidence_scene_orders": [
+                  144
+                ],
+                "state_id": "character-state-6e19571f7a9dcf739e9e"
+              },
+              {
+                "claim": "The Professor is a persistent and capable pursuer who remains a threat even after police are evaded.",
+                "evidence_scene_orders": [
+                  143
+                ],
+                "state_id": "character-state-13ae9be3b2f70a1d273f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "The Professor's relationship develops from \"The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.\" to \"The Professor recognizes Bourne as a fellow Treadstone operative based on shared symptoms and experiences.\" (visible from scene 146).",
+                "development_id": "character-development-3e1df1e5bdf71e80889b",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142,
+                  143,
+                  145,
+                  146
+                ]
+              },
+              {
+                "claim": "The Professor's status identity develops from \"The Professor identifies as a ruthless operative capable of violent, high-risk assault.\" to \"The Professor identifies himself as a Treadstone operative who is bound by the program and unable to escape its consequences.\" (visible from scene 146).",
+                "development_id": "character-development-e92db16084a7bf0e6f62",
+                "evidence_scene_orders": [
+                  145,
+                  146
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-bdc8f3c389a96fa62596",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "The Professor remains actively adversarial toward Bourne and is engaged in direct hostile opposition, including mutual gunfire and active pursuit.",
+                "evidence_scene_orders": [
+                  129,
+                  133,
+                  137,
+                  142,
+                  143,
+                  145
+                ]
+              },
+              {
+                "claim": "The Professor identifies as a ruthless operative capable of violent, high-risk assault.",
+                "evidence_scene_orders": [
+                  145
+                ]
+              },
+              {
+                "claim": "The Professor remains actively engaged in the chase, demonstrating persistence and mechanical improvisation under pressure.",
+                "evidence_scene_orders": [
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor is a determined and capable pursuer operating independently but in convergence with law enforcement.",
+                "evidence_scene_orders": [
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor's motorcycle is damaged and separated from him after a collision.",
+                "evidence_scene_orders": [
+                  142
+                ]
+              },
+              {
+                "claim": "The Professor continues the pursuit despite crashing and mechanical damage.",
+                "evidence_scene_orders": [
+                  144
+                ]
+              },
+              {
+                "claim": "The Professor is a persistent and capable pursuer who remains a threat even after police are evaded.",
+                "evidence_scene_orders": [
+                  143
+                ]
+              },
+              {
+                "claim": "The Professor is an active aggressor and fugitive evading law enforcement",
+                "evidence_scene_orders": [
+                  140
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-a2275bf601e35c30522e",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 146,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 145
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en7e3d15d9e49b4e4aa78528e4f2d0e9c3::entity-9179ae6d8abc0da04917"
+    },
+    {
+      "aliases": [
+        "Jason Bourne",
+        "he",
+        "the man",
+        "John Michael Kane",
+        "Bourne",
+        "the guy yelling",
+        "J. Bourne",
+        "Monsieur Bourne",
+        "Jason",
+        "Mr. Kane"
+      ],
+      "character": "Jason Bourne",
+      "character_id": "entity-bcb936dd8b19a072161a",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-682b2b7482a49517e9e7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "is reviving and regaining vital signs",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-7dd009fa0225459e4ebe"
+              },
+              {
+                "claim": "is believed to be dead at the start of the scene",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-2c53fefc4194304f7210"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-048290d7c8f2dc3a7157",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-50a9452063faddcd81ed",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-48014b0bc91233e577e3"
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-530582dd2edbd6e4c6f6"
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-6bfee9ae4484f0ddb3e5"
+              },
+              {
+                "claim": "experiences a moment of self-recognition through weapon handling",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-9c129805ecebe1b7b57e"
+              },
+              {
+                "claim": "The character's identity is unknown to himself and others.",
+                "evidence_scene_orders": [
+                  4
+                ],
+                "state_id": "character-state-becaeef4f55fc02e23e4"
+              },
+              {
+                "claim": "unidentified individual in violation of park rules",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-5d7063b14eb77a14d79e"
+              },
+              {
+                "claim": "Bourne is in a state of physical recovery with visible wounds requiring bandages.",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-11e6cd018db6f437069a"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Jason Bourne's status identity develops from \"The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.\" to \"behaves with precision and lethality consistent with trained operative; experiences a moment of self-recognition through weapon handling\" (visible from scene 22).",
+                "development_id": "character-development-13fac89e90791aef90a4",
+                "evidence_scene_orders": [
+                  11,
+                  22
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b3f296fbff8e22fa0829",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "is reviving and regaining vital signs",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "is believed to be dead at the start of the scene",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-682b2b7482a49517e9e7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 22,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-08d0957006acf10d298f",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-48014b0bc91233e577e3"
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-506257db7165a48025ea"
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-530582dd2edbd6e4c6f6"
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-5bcbb4cdbb12fab7bc5a"
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-6bfee9ae4484f0ddb3e5"
+              },
+              {
+                "claim": "experiences a moment of self-recognition through weapon handling",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-9c129805ecebe1b7b57e"
+              },
+              {
+                "claim": "The character's identity is unknown to himself and others.",
+                "evidence_scene_orders": [
+                  4
+                ],
+                "state_id": "character-state-becaeef4f55fc02e23e4"
+              },
+              {
+                "claim": "The Man is recognized as a bank client with authorized access to a safety deposit box.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-3d119d40f39113184636"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Jason Bourne's status identity develops from \"behaves with precision and lethality consistent with trained operative; experiences a moment of self-recognition through weapon handling\" to \"experiences identity crisis triggered by evidence of multiple fabricated identities\" (visible from scene 30).",
+                "development_id": "character-development-54fb3e2f1d4f9d37432e",
+                "evidence_scene_orders": [
+                  22,
+                  30
+                ]
+              },
+              {
+                "claim": "Jason Bourne's status identity develops into \"Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.\" (visible from scene 30; no comparable prior state is recorded).",
+                "development_id": "character-development-c76f8f65c72a7d02c3cf",
+                "evidence_scene_orders": [
+                  30
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-2cda792b5def2b19415f",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "experiences a moment of self-recognition through weapon handling",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "The character's identity is unknown to himself and others.",
+                "evidence_scene_orders": [
+                  4
+                ]
+              },
+              {
+                "claim": "unidentified individual in violation of park rules",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Bourne is in a state of physical recovery with visible wounds requiring bandages.",
+                "evidence_scene_orders": [
+                  9
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-50a9452063faddcd81ed",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 30,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 22
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-ab21c3ea268601ea240e",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-48014b0bc91233e577e3"
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-74f39153fa84f6261691"
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-506257db7165a48025ea"
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-530582dd2edbd6e4c6f6"
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-5bcbb4cdbb12fab7bc5a"
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-6bfee9ae4484f0ddb3e5"
+              },
+              {
+                "claim": "experiences a moment of self-recognition through weapon handling",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-9c129805ecebe1b7b57e"
+              },
+              {
+                "claim": "The character's identity is unknown to himself and others.",
+                "evidence_scene_orders": [
+                  4
+                ],
+                "state_id": "character-state-becaeef4f55fc02e23e4"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Jason Bourne's status identity develops from \"experiences identity crisis triggered by evidence of multiple fabricated identities\" to \"Bourne transitions from a compliant individual to an active threat under fire\" (visible from scene 37).",
+                "development_id": "character-development-3496f3f88139d7511217",
+                "evidence_scene_orders": [
+                  30,
+                  37
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-617154c55e39d952cf22",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "experiences a moment of self-recognition through weapon handling",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "The character's identity is unknown to himself and others.",
+                "evidence_scene_orders": [
+                  4
+                ]
+              },
+              {
+                "claim": "The Man is recognized as a bank client with authorized access to a safety deposit box.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-08d0957006acf10d298f",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 37,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 30
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-df31a8d4890d9850db88",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-48014b0bc91233e577e3"
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-74f39153fa84f6261691"
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-506257db7165a48025ea"
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-530582dd2edbd6e4c6f6"
+              },
+              {
+                "claim": "Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-5354e7c5c8116382cc3e"
+              },
+              {
+                "claim": "Bourne is recognized as the person shouting the warning",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-682ad766b6c6caea157f"
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-5bcbb4cdbb12fab7bc5a"
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-6bfee9ae4484f0ddb3e5"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Jason Bourne's status identity develops from \"Bourne transitions from a compliant individual to an active threat under fire\" to \"Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.; Bourne is recognized as the person shouting the warning\" (visible from scene 47).",
+                "development_id": "character-development-9f0605dd668af0c3d12c",
+                "evidence_scene_orders": [
+                  37,
+                  47
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-36ab222926cead80a0cd",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ]
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "experiences a moment of self-recognition through weapon handling",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "The character's identity is unknown to himself and others.",
+                "evidence_scene_orders": [
+                  4
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ab21c3ea268601ea240e",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 47,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 37
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-ac638c1cec6918d8b8d6",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-48014b0bc91233e577e3"
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-74f39153fa84f6261691"
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-506257db7165a48025ea"
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-530582dd2edbd6e4c6f6"
+              },
+              {
+                "claim": "Bourne is visually confirmed as present at the Zurich bank through surveillance footage.",
+                "evidence_scene_orders": [
+                  59
+                ],
+                "state_id": "character-state-ddcbf97799149759aa54"
+              },
+              {
+                "claim": "Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-5354e7c5c8116382cc3e"
+              },
+              {
+                "claim": "Bourne is recognized as the person shouting the warning",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-682ad766b6c6caea157f"
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-5bcbb4cdbb12fab7bc5a"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Jason Bourne's status identity develops from \"Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.; Bourne is recognized as the person shouting the warning\" to \"Bourne is visually confirmed as present at the Zurich bank through surveillance footage.\" (visible from scene 59).",
+                "development_id": "character-development-33ada76626c46a46e573",
+                "evidence_scene_orders": [
+                  47,
+                  59
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-6f3b51609795435cd5df",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ]
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Bourne is recognized as the person shouting the warning",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "experiences confusion about his capabilities and identity after the attack",
+                "evidence_scene_orders": [
+                  22
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-df31a8d4890d9850db88",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 59,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 47
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-f8bf8784c26704caa6b1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ],
+                "state_id": "character-state-48014b0bc91233e577e3"
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-74f39153fa84f6261691"
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ],
+                "state_id": "character-state-506257db7165a48025ea"
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-530582dd2edbd6e4c6f6"
+              },
+              {
+                "claim": "Bourne believes he has amnesia and cannot remember anything before two weeks ago.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-7a5431609f019c98a72e"
+              },
+              {
+                "claim": "Bourne's sense of self is unstable due to his inability to recall his past identity.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-bc2adc0077fbcf528f5e"
+              },
+              {
+                "claim": "Bourne is visually confirmed as present at the Zurich bank through surveillance footage.",
+                "evidence_scene_orders": [
+                  59
+                ],
+                "state_id": "character-state-ddcbf97799149759aa54"
+              },
+              {
+                "claim": "Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-5354e7c5c8116382cc3e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Jason Bourne's status identity develops from \"Bourne is visually confirmed as present at the Zurich bank through surveillance footage.\" to \"Bourne's sense of self is unstable due to his inability to recall his past identity.\" (visible from scene 69).",
+                "development_id": "character-development-0ae78b200529b8e9e1df",
+                "evidence_scene_orders": [
+                  59,
+                  69
+                ]
+              },
+              {
+                "claim": "Jason Bourne's belief knowledge develops from \"experiences confusion about his capabilities and identity after the attack\" to \"Bourne believes he has amnesia and cannot remember anything before two weeks ago.\" (visible from scene 69).",
+                "development_id": "character-development-cf70f7b8c0c0b68e6f80",
+                "evidence_scene_orders": [
+                  22,
+                  69
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-4f75c4bb24c37460960e",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "behaves with precision and lethality consistent with trained operative",
+                "evidence_scene_orders": [
+                  22
+                ]
+              },
+              {
+                "claim": "Bourne transitions from a compliant individual to an active threat under fire",
+                "evidence_scene_orders": [
+                  37
+                ]
+              },
+              {
+                "claim": "experiences identity crisis triggered by evidence of multiple fabricated identities",
+                "evidence_scene_orders": [
+                  30
+                ]
+              },
+              {
+                "claim": "The character experiences a crisis of personal identity, marked by explicit self-doubt and existential questioning.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Bourne is visually confirmed as present at the Zurich bank through surveillance footage.",
+                "evidence_scene_orders": [
+                  59
+                ]
+              },
+              {
+                "claim": "Bourne is recognized as the source of the warning, shifting from an unidentified figure to an active agent in the evacuation.",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Bourne is recognized as the person shouting the warning",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Bourne asserts agency over his identity by making a deliberate choice about which assets to retain.",
+                "evidence_scene_orders": [
+                  30
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ac638c1cec6918d8b8d6",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 69,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 59
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en7e3d15d9e49b4e4aa78528e4f2d0e9c3::entity-bcb936dd8b19a072161a"
+    },
+    {
+      "aliases": [
+        "MARIE",
+        "Miss Kreutz",
+        "Marie Kreutz",
+        "Marie Helene Kreutz"
+      ],
+      "character": "MARIE",
+      "character_id": "entity-d82690622d2d48bbbd4c",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-8a53f683f206ffb8fdb4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.",
+                "evidence_scene_orders": [
+                  74
+                ],
+                "state_id": "character-state-f1d10536780fb6049158"
+              },
+              {
+                "claim": "Marie expresses deep distrust and emotional distance in her relationship with Bourne, reacting to his emotional detachment.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-17e2c67b6b93e3cf440c"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "feels vulnerable to coercion due to hidden past",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-3ffa70139e75331a4d71"
+              },
+              {
+                "claim": "Marie asserts control by setting conditions for cooperation, emphasizing her safety and financial gain.",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-5d752b904d11000a0779"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's relationship develops from \"Marie expresses deep distrust and emotional distance in her relationship with Bourne, reacting to his emotional detachment.\" to \"Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.\" (visible from scene 74).",
+                "development_id": "character-development-9ae34883c5685abf09f8",
+                "evidence_scene_orders": [
+                  69,
+                  74
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-05d608fb1d1b3034cb41",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 74,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-33882d2a94fe4269249b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.",
+                "evidence_scene_orders": [
+                  74,
+                  79,
+                  82,
+                  83,
+                  85
+                ],
+                "state_id": "character-state-f1d10536780fb6049158"
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ],
+                "state_id": "character-state-77aaf5fa3e7a6331bc31"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "MARIE is present as an outsider attempting to gain access to a restricted residential building",
+                "evidence_scene_orders": [
+                  83
+                ],
+                "state_id": "character-state-7b17371bf36479c169fe"
+              },
+              {
+                "claim": "feels vulnerable to coercion due to hidden past",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-3ffa70139e75331a4d71"
+              },
+              {
+                "claim": "acts as a driver under Bourne's direction during approach to target location",
+                "evidence_scene_orders": [
+                  82
+                ],
+                "state_id": "character-state-4ae50fc6f7fb8df7f9de"
+              },
+              {
+                "claim": "Marie recognizes her role as a paid helper rather than a personal ally.",
+                "evidence_scene_orders": [
+                  82
+                ],
+                "state_id": "character-state-7613c63abefeba72f1e6"
+              },
+              {
+                "claim": "Marie asserts control by setting conditions for cooperation, emphasizing her safety and financial gain.",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-5d752b904d11000a0779"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's status identity develops from \"Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.\" to \"Marie's identity shifts from bystander to active target in the attack.\" (visible from scene 85).",
+                "development_id": "character-development-939cb6f75e33f5bf037c",
+                "evidence_scene_orders": [
+                  58,
+                  85
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-89803aebc8060e51e307",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.",
+                "evidence_scene_orders": [
+                  74
+                ]
+              },
+              {
+                "claim": "Marie expresses deep distrust and emotional distance in her relationship with Bourne, reacting to his emotional detachment.",
+                "evidence_scene_orders": [
+                  69
+                ]
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "feels vulnerable to coercion due to hidden past",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "Marie asserts control by setting conditions for cooperation, emphasizing her safety and financial gain.",
+                "evidence_scene_orders": [
+                  64
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-8a53f683f206ffb8fdb4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 85,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 74
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-5c94b11bfa6c82b892b1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.",
+                "evidence_scene_orders": [
+                  74,
+                  79,
+                  82,
+                  83,
+                  85,
+                  87
+                ],
+                "state_id": "character-state-f1d10536780fb6049158"
+              },
+              {
+                "claim": "Marie feels her trust in Bourne has been completely betrayed",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-c44f26dd697173cacd3f"
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ],
+                "state_id": "character-state-77aaf5fa3e7a6331bc31"
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-a4df766f8c9e72764612"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "Marie is in a state of paralysis or shock, unable to take action despite external pressure.",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-eb63369f71f5a379e548"
+              },
+              {
+                "claim": "MARIE is present as an outsider attempting to gain access to a restricted residential building",
+                "evidence_scene_orders": [
+                  83
+                ],
+                "state_id": "character-state-7b17371bf36479c169fe"
+              },
+              {
+                "claim": "feels vulnerable to coercion due to hidden past",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-3ffa70139e75331a4d71"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's relationship develops from \"Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.\" to \"Marie feels her trust in Bourne has been completely betrayed\" (visible from scene 87).",
+                "development_id": "character-development-b89be6b0a35db709a702",
+                "evidence_scene_orders": [
+                  79,
+                  82,
+                  83,
+                  87
+                ]
+              },
+              {
+                "claim": "MARIE's status identity develops from \"Marie's identity shifts from bystander to active target in the attack.\" to \"Marie identifies herself as someone who does not trust others but made an exception for Bourne\" (visible from scene 87).",
+                "development_id": "character-development-ca8d6ef6465b2197ef17",
+                "evidence_scene_orders": [
+                  85,
+                  87
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-578fbd8bb30c4e3a1e8a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.",
+                "evidence_scene_orders": [
+                  74,
+                  79,
+                  82,
+                  83,
+                  85
+                ]
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ]
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "MARIE is present as an outsider attempting to gain access to a restricted residential building",
+                "evidence_scene_orders": [
+                  83
+                ]
+              },
+              {
+                "claim": "feels vulnerable to coercion due to hidden past",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "acts as a driver under Bourne's direction during approach to target location",
+                "evidence_scene_orders": [
+                  82
+                ]
+              },
+              {
+                "claim": "Marie recognizes her role as a paid helper rather than a personal ally.",
+                "evidence_scene_orders": [
+                  82
+                ]
+              },
+              {
+                "claim": "Marie asserts control by setting conditions for cooperation, emphasizing her safety and financial gain.",
+                "evidence_scene_orders": [
+                  64
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-33882d2a94fe4269249b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 87,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 85
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-85da12788f5051714798",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.",
+                "evidence_scene_orders": [
+                  92,
+                  96
+                ],
+                "state_id": "character-state-d5c8f728f75b76c2fae7"
+              },
+              {
+                "claim": "Marie feels her trust in Bourne has been completely betrayed",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-c44f26dd697173cacd3f"
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ],
+                "state_id": "character-state-77aaf5fa3e7a6331bc31"
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-a4df766f8c9e72764612"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "Marie's sense of identity is offered as expendable in service of Bourne's emotional state.",
+                "evidence_scene_orders": [
+                  96
+                ],
+                "state_id": "character-state-ccedaebb28935081d7d6"
+              },
+              {
+                "claim": "Marie is in a state of paralysis or shock, unable to take action despite external pressure.",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-eb63369f71f5a379e548"
+              },
+              {
+                "claim": "MARIE is present as an outsider attempting to gain access to a restricted residential building",
+                "evidence_scene_orders": [
+                  83
+                ],
+                "state_id": "character-state-7b17371bf36479c169fe"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's relationship develops from \"Marie feels her trust in Bourne has been completely betrayed\" to \"Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.\" (visible from scene 96).",
+                "development_id": "character-development-5848802fe3103d269e15",
+                "evidence_scene_orders": [
+                  87,
+                  92,
+                  96
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-30100931adba593120da",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marie shifts from skeptical detachment to acknowledging Bourne's credibility and the seriousness of his situation.",
+                "evidence_scene_orders": [
+                  74,
+                  79,
+                  82,
+                  83,
+                  85,
+                  87
+                ]
+              },
+              {
+                "claim": "Marie feels her trust in Bourne has been completely betrayed",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ]
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "Marie is in a state of paralysis or shock, unable to take action despite external pressure.",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "MARIE is present as an outsider attempting to gain access to a restricted residential building",
+                "evidence_scene_orders": [
+                  83
+                ]
+              },
+              {
+                "claim": "feels vulnerable to coercion due to hidden past",
+                "evidence_scene_orders": [
+                  58
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-5c94b11bfa6c82b892b1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 96,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 87
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-20d1c366e257961afad8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.",
+                "evidence_scene_orders": [
+                  92,
+                  96
+                ],
+                "state_id": "character-state-d5c8f728f75b76c2fae7"
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ],
+                "state_id": "character-state-77aaf5fa3e7a6331bc31"
+              },
+              {
+                "claim": "Marie identifies herself as an effective investigator who can obtain critical information under pressure.",
+                "evidence_scene_orders": [
+                  107
+                ],
+                "state_id": "character-state-9f64ae4b2af1cf8d034c"
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-a4df766f8c9e72764612"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "Marie is collaborating with Bourne in a coordinated operation where he creates a distraction and she infiltrates the office",
+                "evidence_scene_orders": [
+                  97,
+                  98,
+                  99,
+                  107
+                ],
+                "state_id": "character-state-f4094ddd660815901777"
+              },
+              {
+                "claim": "Marie's sense of identity is offered as expendable in service of Bourne's emotional state.",
+                "evidence_scene_orders": [
+                  96
+                ],
+                "state_id": "character-state-ccedaebb28935081d7d6"
+              },
+              {
+                "claim": "Marie is in a state of paralysis or shock, unable to take action despite external pressure.",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-eb63369f71f5a379e548"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's status identity develops from \"Marie identifies herself as someone who does not trust others but made an exception for Bourne\" to \"Marie identifies herself as an effective investigator who can obtain critical information under pressure.\" (visible from scene 107).",
+                "development_id": "character-development-2507d390043072a40d6d",
+                "evidence_scene_orders": [
+                  87,
+                  107
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-f352a25a120663a0789a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.",
+                "evidence_scene_orders": [
+                  92,
+                  96
+                ]
+              },
+              {
+                "claim": "Marie feels her trust in Bourne has been completely betrayed",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ]
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "Marie's sense of identity is offered as expendable in service of Bourne's emotional state.",
+                "evidence_scene_orders": [
+                  96
+                ]
+              },
+              {
+                "claim": "Marie is in a state of paralysis or shock, unable to take action despite external pressure.",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "MARIE is present as an outsider attempting to gain access to a restricted residential building",
+                "evidence_scene_orders": [
+                  83
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-85da12788f5051714798",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 107,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 96
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-93864538ee6e10855cd3",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.",
+                "evidence_scene_orders": [
+                  92,
+                  96
+                ],
+                "state_id": "character-state-d5c8f728f75b76c2fae7"
+              },
+              {
+                "claim": "Marie experiences emotional disconnection as Bourne abruptly withdraws and stops responding to her",
+                "evidence_scene_orders": [
+                  109
+                ],
+                "state_id": "character-state-2336ea43a30c9d5b0f6b"
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ],
+                "state_id": "character-state-77aaf5fa3e7a6331bc31"
+              },
+              {
+                "claim": "Marie identifies herself as an effective investigator who can obtain critical information under pressure.",
+                "evidence_scene_orders": [
+                  107
+                ],
+                "state_id": "character-state-9f64ae4b2af1cf8d034c"
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-a4df766f8c9e72764612"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "Marie is collaborating with Bourne in a coordinated operation where he creates a distraction and she infiltrates the office",
+                "evidence_scene_orders": [
+                  97,
+                  98,
+                  99,
+                  107,
+                  108
+                ],
+                "state_id": "character-state-f4094ddd660815901777"
+              },
+              {
+                "claim": "Marie experiences fear and emotional distress due to Bourne's abrupt behavioral shift",
+                "evidence_scene_orders": [
+                  109
+                ],
+                "state_id": "character-state-3c18d7b3cc5cd4de16cd"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's relationship develops from \"Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.\" to \"Marie experiences emotional disconnection as Bourne abruptly withdraws and stops responding to her\" (visible from scene 109).",
+                "development_id": "character-development-748a496d9b879c0c169e",
+                "evidence_scene_orders": [
+                  92,
+                  96,
+                  109
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b3a4c251cae4d3552161",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.",
+                "evidence_scene_orders": [
+                  92,
+                  96
+                ]
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ]
+              },
+              {
+                "claim": "Marie identifies herself as an effective investigator who can obtain critical information under pressure.",
+                "evidence_scene_orders": [
+                  107
+                ]
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "Marie is collaborating with Bourne in a coordinated operation where he creates a distraction and she infiltrates the office",
+                "evidence_scene_orders": [
+                  97,
+                  98,
+                  99,
+                  107
+                ]
+              },
+              {
+                "claim": "Marie's sense of identity is offered as expendable in service of Bourne's emotional state.",
+                "evidence_scene_orders": [
+                  96
+                ]
+              },
+              {
+                "claim": "Marie is in a state of paralysis or shock, unable to take action despite external pressure.",
+                "evidence_scene_orders": [
+                  87
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-20d1c366e257961afad8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 109,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 107
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-cb4b60d924ce73eb5ded",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marie seeks emotional alignment and shared purpose with Bourne in starting a new life",
+                "evidence_scene_orders": [
+                  125
+                ],
+                "state_id": "character-state-6341d2637da9344471ce"
+              },
+              {
+                "claim": "Marie experiences emotional disconnection as Bourne abruptly withdraws and stops responding to her",
+                "evidence_scene_orders": [
+                  109
+                ],
+                "state_id": "character-state-2336ea43a30c9d5b0f6b"
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ],
+                "state_id": "character-state-77aaf5fa3e7a6331bc31"
+              },
+              {
+                "claim": "Marie identifies herself as an effective investigator who can obtain critical information under pressure.",
+                "evidence_scene_orders": [
+                  107
+                ],
+                "state_id": "character-state-9f64ae4b2af1cf8d034c"
+              },
+              {
+                "claim": "Marie affirms her desired identity as someone who chooses who she wants to be",
+                "evidence_scene_orders": [
+                  125
+                ],
+                "state_id": "character-state-b835697698c4debc3745"
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ],
+                "state_id": "character-state-a4df766f8c9e72764612"
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ],
+                "state_id": "character-state-4246375c7bb56e19b231"
+              },
+              {
+                "claim": "Marie experiences fear and emotional distress due to Bourne's abrupt behavioral shift",
+                "evidence_scene_orders": [
+                  109
+                ],
+                "state_id": "character-state-3c18d7b3cc5cd4de16cd"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "MARIE's relationship develops from \"Marie experiences emotional disconnection as Bourne abruptly withdraws and stops responding to her\" to \"Marie seeks emotional alignment and shared purpose with Bourne in starting a new life\" (visible from scene 125).",
+                "development_id": "character-development-00ca33b3dffb3f4aea33",
+                "evidence_scene_orders": [
+                  109,
+                  125
+                ]
+              },
+              {
+                "claim": "MARIE's status identity develops from \"Marie identifies herself as an effective investigator who can obtain critical information under pressure.\" to \"Marie affirms her desired identity as someone who chooses who she wants to be\" (visible from scene 125).",
+                "development_id": "character-development-b956d013223d3e9bd69d",
+                "evidence_scene_orders": [
+                  107,
+                  125
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-79412130d7de8eb55f33",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marie establishes a shift from emotional distance to physical closeness with Bourne through intentional touch and sustained eye contact.",
+                "evidence_scene_orders": [
+                  92,
+                  96
+                ]
+              },
+              {
+                "claim": "Marie experiences emotional disconnection as Bourne abruptly withdraws and stops responding to her",
+                "evidence_scene_orders": [
+                  109
+                ]
+              },
+              {
+                "claim": "Marie's identity shifts from bystander to active target in the attack.",
+                "evidence_scene_orders": [
+                  85
+                ]
+              },
+              {
+                "claim": "Marie identifies herself as an effective investigator who can obtain critical information under pressure.",
+                "evidence_scene_orders": [
+                  107
+                ]
+              },
+              {
+                "claim": "Marie identifies herself as someone who does not trust others but made an exception for Bourne",
+                "evidence_scene_orders": [
+                  87
+                ]
+              },
+              {
+                "claim": "Marie experiences herself as powerless and overwhelmed, reacting with rage to minor setbacks.",
+                "evidence_scene_orders": [
+                  58
+                ]
+              },
+              {
+                "claim": "Marie is collaborating with Bourne in a coordinated operation where he creates a distraction and she infiltrates the office",
+                "evidence_scene_orders": [
+                  97,
+                  98,
+                  99,
+                  107,
+                  108
+                ]
+              },
+              {
+                "claim": "Marie experiences fear and emotional distress due to Bourne's abrupt behavioral shift",
+                "evidence_scene_orders": [
+                  109
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-93864538ee6e10855cd3",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 125,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 109
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en7e3d15d9e49b4e4aa78528e4f2d0e9c3::entity-d82690622d2d48bbbd4c"
+    }
+  ]
+}

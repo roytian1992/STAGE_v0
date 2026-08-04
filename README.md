@@ -1,32 +1,57 @@
-# STAGE v0
+# STAGE: Evolving Stories
 
-This repository stores the released STAGE data assets together with a lightweight Task 1 rebuild and evaluation pipeline.
+STAGE is a bilingual benchmark for evaluating how language models understand
+narrative change across scenes and act consistently with an evolving story.
+This release contains task assets for 151 movies in paired ordinary (`STAGE`)
+and identity-anonymized (`STAGE_Anon`) conditions: 42 Chinese and 109 English.
 
-Current release format:
+## Screenplay policy
 
-- `English/<movie_id>/`
-- `Chinese/<movie_id>/`
+Full screenplay text is not distributed in this repository. No `script.json`
+file is included. The two movie-info CSV files record screenplay source URLs
+where available. Users are responsible for obtaining source text under the
+applicable provider terms and preparing the local `script.json` required by
+screenplay-dependent evaluation runners.
 
-Each movie directory contains:
+`convert_movie_csv_to_json.py` converts the movie-info CSV files into JSON
+metadata arrays. It does not download or distribute screenplay text.
 
-- `script.json`
-- `task_1_character_timelines.json`
-- `task_1_cross_scene_arcs.json`
-- `task_2_question_answering.csv`
-- `task_3_in_script_character_role_play_single_turn.json`
-- `task_3_in_script_character_role_play_multi_turn.json`
+## Layout
 
-Task 3 is packaged at the movie level and aggregates all selected focal roles for that screenplay.
+```text
+STAGE_v0/
+  STAGE/                  ordinary task assets for 151 movies
+  STAGE_Anon/             paired identity-anonymized task assets
+  chinese_movie_info.csv  metadata for 42 Chinese movies
+  english_movie_info.csv  metadata for 109 English movies
+  convert_movie_csv_to_json.py
+  evaluation/             prediction and evaluation code
+  EVALUATION.md
+  manifest.json
+```
 
-Included code:
+Each movie directory contains `info.json`, two Task I files, one Task II file,
+and three Task III files. The public package includes no private identity
+mapping.
 
-- `tools/task1/pipeline.py`
-  One entry point for Task 1 single-movie rebuild, single-movie evaluation, and batch experiments.
+## Counts
 
-Internal support modules for Task 1 are kept under `tools/task1/` as local implementation details.
+| Asset | Count |
+|---|---:|
+| Movies | 151 |
+| Task I focal trajectories | 434 |
+| Task I checkpoints | 2,925 |
+| Task II questions | 5,010 |
+| Task III role assets | 727 |
+| Task III single-turn instances | 5,425 |
+| Task III multi-turn episodes | 866 |
+| Task III multi-turn turns | 2,598 |
 
-Additional notes:
+Counts and SHA-256 checksums are recorded in `manifest.json`. Prediction and
+evaluation entry points, bilingual prompts, schemas, example configs, and the
+reference environment are provided under `evaluation/`; see `EVALUATION.md`.
 
-- Task 3 single-turn and multi-turn formats are documented in `docs/task_3_in_script_character_role_play.md`.
-- A packaging summary for Task 3 is stored in `task_3_release_summary.json`.
-- Task 1 rebuild and evaluation usage is documented in `docs/task_1_rebuild_and_eval.md`.
+## Rights
+
+Screenplay rights remain with their respective holders. This repository does
+not include full screenplay text.

@@ -1,0 +1,39 @@
+id: task1_judge
+category: benchmark
+name: Task 1 semantic judge
+description: Judge one Task 1 checkpoint prediction against a natural-language rubric.
+task_variables:
+  - name: checkpoint
+    required: true
+  - name: prediction
+    required: true
+  - name: gold_rubric
+    required: true
+  - name: evidence_scenes
+    required: true
+static_variables: []
+template: |-
+  Evaluate one character-development tracking answer. Complex internal IDs have been replaced with call-local labels.
+  Prediction and rubric rows use [local_id,type_code,scene_orders_or_source_ids,claim], where type codes are
+  s=current state, d=development, u=unresolved thread, i=invariant, and f=future negative. Evidence rows use
+  [scene_order,excerpts], with null excerpts when no evidence unit survived the declared relevance policy.
+  <checkpoint>{checkpoint}</checkpoint>
+  <prediction>{prediction}</prediction>
+  <gold_rubric>{gold_rubric}</gold_rubric>
+  <evidence_scenes>{evidence_scenes}</evidence_scenes>
+
+  Semantically equivalent wording counts as coverage. Overly broad claims, partially expressed changes, or claims mixed with incorrect
+  content are partial. Judge gold coverage, prediction support, change direction, cited evidence, and temporal boundaries separately.
+
+  gold_matches must contain exactly one row for every S/D/I local_id in gold_rubric, including an explicit label=none row when it is
+  not covered. prediction_checks must contain exactly one row for every P local_id in prediction. Never omit unmatched rows, merge
+  rows, or invent local IDs.
+
+  Return only JSON:
+  {{
+    "gold_matches": [{{"gold_local_id": "D1", "prediction_local_ids": ["P1"], "label": "full|partial|none|contradiction"}}],
+    "prediction_checks": [{{"prediction_local_id": "P1", "support": "supported|partial|unsupported", "transition_coherent": true, "evidence_grounded": true}}],
+    "future_leak_prediction_ids": [],
+    "premature_update_prediction_ids": [],
+    "no_change_false_update": false
+  }}

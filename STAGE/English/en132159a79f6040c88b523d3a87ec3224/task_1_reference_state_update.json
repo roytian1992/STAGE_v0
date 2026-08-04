@@ -1,0 +1,940 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 7,
+    "current_state_reference_claims": 50,
+    "development_reference_claims": 6,
+    "trajectories": 1
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "en132159a79f6040c88b523d3a87ec3224",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 84,
+    "sha256": "3723742f10536c7c37e3a2a2942e84d85022d3de8f6ec674fee1737c049977d0"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Barry Egan",
+        "BARRY"
+      ],
+      "character": "Barry Egan",
+      "character_id": "entity-e2004f3a0f724095e849",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-b497f3990314bdf3b9ca",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry is alert and reactive to external disturbances, showing cautious curiosity",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-440639d87ae1172b5a4f"
+              },
+              {
+                "claim": "Barry reasserts his position within the warehouse, disengaging from external ambiguity",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-28de2f0411f2578a0387"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-13e90cae6af12271179e",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 1,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-c3b735cb98e1ccd6b4d9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4ae83568d441096dbbf9"
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ],
+                "state_id": "character-state-1aa81d33e6f7cb73e5e7"
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-d9e6b2371543eebd1a4a"
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-1cdf9fec29714785b198"
+              },
+              {
+                "claim": "Barry has taken possession of a discarded harmonium and brought it into his workspace.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-96674999d3b7a4820dec"
+              },
+              {
+                "claim": "Barry uses music as a means of emotional expression or regulation.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "character-state-c82145901963d7daf883"
+              },
+              {
+                "claim": "Barry has seven sisters.",
+                "evidence_scene_orders": [
+                  4
+                ],
+                "state_id": "character-state-6ba65a15feb5d2ec9f1a"
+              },
+              {
+                "claim": "Barry is identified as having a sister hosting a party",
+                "evidence_scene_orders": [
+                  4
+                ],
+                "state_id": "character-state-81bb9ee6490318585dca"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barry Egan's status identity develops from \"Barry suppresses emotional expression as a self-regulation strategy.\" to \"Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.; Barry experiences emotional vulnerability, including crying episodes without clear cause.\" (visible from scene 11).",
+                "development_id": "character-development-c674019f4387041dba62",
+                "evidence_scene_orders": [
+                  8,
+                  11
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8462f08f6565099ec100",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barry is alert and reactive to external disturbances, showing cautious curiosity",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Barry reasserts his position within the warehouse, disengaging from external ambiguity",
+                "evidence_scene_orders": [
+                  1
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b497f3990314bdf3b9ca",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 11,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 1
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-29a2e1c31f45208d8dfb",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-bdabfbbf0125711b75c1"
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4ae83568d441096dbbf9"
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ],
+                "state_id": "character-state-1aa81d33e6f7cb73e5e7"
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-d9e6b2371543eebd1a4a"
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-1cdf9fec29714785b198"
+              },
+              {
+                "claim": "Barry has taken possession of a discarded harmonium and brought it into his workspace.",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-96674999d3b7a4820dec"
+              },
+              {
+                "claim": "Barry is perceived as having initiated a conflict he cannot manage, according to the caller",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-8ec438292d5e5094f607"
+              },
+              {
+                "claim": "Barry uses music as a means of emotional expression or regulation.",
+                "evidence_scene_orders": [
+                  5
+                ],
+                "state_id": "character-state-c82145901963d7daf883"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barry Egan's relationship develops from \"Barry demonstrates concern for Lena through inquiry about her car\" to \"Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.\" (visible from scene 19).",
+                "development_id": "character-development-b11bcfeaf360e372b133",
+                "evidence_scene_orders": [
+                  6,
+                  19
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c6b060f1dff866cceb39",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ]
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Barry has taken possession of a discarded harmonium and brought it into his workspace.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Barry uses music as a means of emotional expression or regulation.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              },
+              {
+                "claim": "Barry has seven sisters.",
+                "evidence_scene_orders": [
+                  4
+                ]
+              },
+              {
+                "claim": "Barry is identified as having a sister hosting a party",
+                "evidence_scene_orders": [
+                  4
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-c3b735cb98e1ccd6b4d9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 19,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 11
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-40d0e731020f5b350866",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-bdabfbbf0125711b75c1"
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-dfbcc7618ee232eb6500"
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4ae83568d441096dbbf9"
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ],
+                "state_id": "character-state-1aa81d33e6f7cb73e5e7"
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-2b2c4f03f77b0bea30d9"
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-d9e6b2371543eebd1a4a"
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-1cdf9fec29714785b198"
+              },
+              {
+                "claim": "Barry maintains emotional distance despite Lena's concern",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-7f97c7602ccc289a386d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barry Egan's status identity develops from \"Barry perceives himself as someone who must guard against deception in personal connections\" to \"Barry is treated as a suspect and ejected from the restaurant\" (visible from scene 29).",
+                "development_id": "character-development-d079c1cbf257fe9daf7d",
+                "evidence_scene_orders": [
+                  27,
+                  29
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-32811607dcac789ce35d",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ]
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Barry has taken possession of a discarded harmonium and brought it into his workspace.",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Barry is perceived as having initiated a conflict he cannot manage, according to the caller",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barry uses music as a means of emotional expression or regulation.",
+                "evidence_scene_orders": [
+                  5
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-29a2e1c31f45208d8dfb",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 29,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 19
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-82c2985a9973814d8a5d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-bdabfbbf0125711b75c1"
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-dfbcc7618ee232eb6500"
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4ae83568d441096dbbf9"
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ],
+                "state_id": "character-state-1aa81d33e6f7cb73e5e7"
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-2b2c4f03f77b0bea30d9"
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-d9e6b2371543eebd1a4a"
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-1cdf9fec29714785b198"
+              },
+              {
+                "claim": "Barry becomes aware that Lena has romantic feelings for him",
+                "evidence_scene_orders": [
+                  32
+                ],
+                "state_id": "character-state-573166fa434714f5f18a"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barry Egan's relationship develops from \"Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.\" to \"Barry becomes aware that Lena has romantic feelings for him\" (visible from scene 32).",
+                "development_id": "character-development-7f08d4658abacabae630",
+                "evidence_scene_orders": [
+                  19,
+                  32
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-3cc4e42051b631e91646",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ]
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Barry maintains emotional distance despite Lena's concern",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-40d0e731020f5b350866",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 32,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 29
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-2859085f601255bc8938",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-bdabfbbf0125711b75c1"
+              },
+              {
+                "claim": "Barry asserts a self-identity of emotional composure.",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "character-state-1b0421eb0405420d4302"
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-dfbcc7618ee232eb6500"
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4ae83568d441096dbbf9"
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ],
+                "state_id": "character-state-1aa81d33e6f7cb73e5e7"
+              },
+              {
+                "claim": "Barry is perceived as someone who broke a financial promise and must pay",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-8725506865e9af55cbcd"
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-2b2c4f03f77b0bea30d9"
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-d9e6b2371543eebd1a4a"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barry Egan's status identity develops from \"Barry asserts a self-identity of emotional composure.\" to \"Barry is perceived as someone who broke a financial promise and must pay\" (visible from scene 37).",
+                "development_id": "character-development-8136b51738b1f72e736a",
+                "evidence_scene_orders": [
+                  34,
+                  37
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-3f8f6a1885cc5cfd93c1",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ]
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry suppresses emotional expression as a self-regulation strategy.",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "Barry becomes aware that Lena has romantic feelings for him",
+                "evidence_scene_orders": [
+                  32
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-82c2985a9973814d8a5d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 37,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 32
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-5705325b7145dacfaad0",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-bdabfbbf0125711b75c1"
+              },
+              {
+                "claim": "Barry asserts a self-identity of emotional composure.",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "character-state-1b0421eb0405420d4302"
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-dfbcc7618ee232eb6500"
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4ae83568d441096dbbf9"
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ],
+                "state_id": "character-state-1aa81d33e6f7cb73e5e7"
+              },
+              {
+                "claim": "Barry is emotionally expressive in response to innocence or vulnerability",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-747f2d53264eda845713"
+              },
+              {
+                "claim": "Barry is perceived as someone who broke a financial promise and must pay",
+                "evidence_scene_orders": [
+                  37
+                ],
+                "state_id": "character-state-8725506865e9af55cbcd"
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-2b2c4f03f77b0bea30d9"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Barry Egan's status identity develops from \"Barry is perceived as someone who broke a financial promise and must pay\" to \"Barry is emotionally expressive in response to innocence or vulnerability\" (visible from scene 47).",
+                "development_id": "character-development-1930a1a385b801009baf",
+                "evidence_scene_orders": [
+                  37,
+                  47
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-64d7d8b324e729a27ab3",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Barry has accepted a personal invitation from Lena, indicating willingness to deepen their connection.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Barry asserts a self-identity of emotional composure.",
+                "evidence_scene_orders": [
+                  34
+                ]
+              },
+              {
+                "claim": "Barry is treated as a suspect and ejected from the restaurant",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Barry feels embarrassed about his emotional vulnerability and perceives himself as different or flawed.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Barry demonstrates concern for Lena through inquiry about her car",
+                "evidence_scene_orders": [
+                  6
+                ]
+              },
+              {
+                "claim": "Barry is perceived as someone who broke a financial promise and must pay",
+                "evidence_scene_orders": [
+                  37
+                ]
+              },
+              {
+                "claim": "Barry perceives himself as someone who must guard against deception in personal connections",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Barry experiences emotional vulnerability, including crying episodes without clear cause.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-2859085f601255bc8938",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 47,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 37
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en132159a79f6040c88b523d3a87ec3224::entity-e2004f3a0f724095e849"
+    }
+  ]
+}

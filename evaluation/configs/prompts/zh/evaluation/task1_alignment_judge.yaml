@@ -1,0 +1,28 @@
+id: task1_alignment_judge_zh
+category: evaluation
+name: Task 1 checkpoint alignment judge zh
+description: 不展开剧本证据，对 checkpoint 全部 claim 做全局对齐。
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction, required: true}
+  - {name: active_gold_rubric, required: true}
+  - {name: inactive_state_rubric, required: true}
+  - {name: future_negatives, required: true}
+  - {name: allowed_gold_pair_ids, required: true}
+  - {name: allowed_inactive_state_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  对一个角色 checkpoint 的全部 claim 做对齐。预测和有效 gold 中 s=当前状态、d=发展；x 是已在本 checkpoint 前结束有效期的审核状态；f 是当前尚不可用的信息。
+  <checkpoint>{checkpoint}</checkpoint><prediction>{prediction}</prediction>
+  <active_gold_rubric>{active_gold_rubric}</active_gold_rubric>
+  <inactive_state_rubric>{inactive_state_rubric}</inactive_state_rubric>
+  <future_negatives>{future_negatives}</future_negatives>
+  <allowed_gold_pair_ids>{allowed_gold_pair_ids}</allowed_gold_pair_ids>
+  <allowed_inactive_state_ids>{allowed_inactive_state_ids}</allowed_inactive_state_ids>
+  <allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  输出所有语义相关且同池的有效配对：s 对 s，d 对 d。full 要求主体、时间、范围和方向完整正确；partial 表示有意义但不完整或过宽；contradiction 表示冲突或方向相反。无关配对省略。确定性 scorer 会在本调用后执行全局最大权重一对一匹配。
+
+  只有当前状态预测在有效期结束后继续声称同一个 x 状态时才输出 false_persistence_pairs。仅当有效 development gold 为空且预测虚构实质发展时，no_change_false_update 才为 true。本阶段不判断剧本 grounding。只返回 JSON：
+  {{"claim_pair_judgments":[{{"gold_local_id":"D1","prediction_local_id":"P1","label":"full|partial|contradiction"}}],"false_persistence_pairs":[{{"inactive_state_local_id":"X1","prediction_local_id":"P2"}}],"no_change_false_update":false}}

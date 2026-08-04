@@ -1,0 +1,44 @@
+id: task3_response_judge
+category: benchmark
+name: Task 3 response judge
+description: Score one checkpoint-conditioned role-playing response.
+task_variables:
+  - name: character
+    required: true
+  - name: checkpoint
+    required: true
+  - name: current_user_turn
+    required: true
+  - name: actor_context_pack
+    required: true
+  - name: gold_rubric
+    required: true
+  - name: actor_response
+    required: true
+static_variables: []
+template: |-
+  Evaluate the single-turn response for "{character}" at the specified story point.
+  <checkpoint>{checkpoint}</checkpoint>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+  <actor_context_pack>{actor_context_pack}</actor_context_pack>
+  <gold_rubric>{gold_rubric}</gold_rubric>
+  <actor_response>{actor_response}</actor_response>
+
+  Score 1--5: Character Fidelity covers identity, persona, and current stance; Response Naturalness covers conversational quality;
+  Memory Faithfulness covers support from currently visible memories; Boundary Compliance covers future and character-unknown information.
+  A 1 is a clear failure, 3 is acceptable with material issues, and 5 fully satisfies the dimension. Score the dimensions independently;
+  they need not be equal. Character Fidelity covers identity, persona, and current stance. Response Naturalness covers whether the
+  utterance is natural and complete. Memory Faithfulness covers only whether factual or memory claims are supported; a terse response
+  without invented facts can score highly even when its stance is wrong. Boundary Compliance covers only future or checkpoint-unknown
+  information. If both leakage flags are false, do not lower Boundary Compliance merely for a stance, style, or completeness failure.
+  stance_compatible only reports whether the expected current stance is met. Do not require one reference wording.
+
+  Return only JSON:
+  {{
+    "scores": {{"character_fidelity": 1, "response_naturalness": 1, "memory_faithfulness": 1, "boundary_compliance": 1}},
+    "future_leakage": false,
+    "unknown_fact_hallucination": false,
+    "stance_compatible": true,
+    "evidence_local_ids": [],
+    "brief_rationale": "short auditable rationale"
+  }}

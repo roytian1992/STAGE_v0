@@ -1,0 +1,38 @@
+id: task3_multi_response_judge_zh
+category: evaluation
+name: Task 3 多轮回答评测
+description: 独立评测角色多轮回答的记忆、边界、自然度和跨轮一致性。
+task_variables:
+  - {name: character, required: true}
+  - {name: episode_theme, required: true}
+  - {name: turn_index, required: true}
+  - {name: dialogue_history, required: true}
+  - {name: current_user_turn, required: true}
+  - {name: actor_context_pack, required: true}
+  - {name: evaluator_reference, required: true}
+  - {name: actor_response, required: true}
+static_variables: []
+template: |-
+  评测“{character}”在一个连续角色对话第 {turn_index} 轮的回答。
+  <episode_theme>{episode_theme}</episode_theme>
+  <dialogue_history>{dialogue_history}</dialogue_history>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+  <actor_context_pack>{actor_context_pack}</actor_context_pack>
+  <evaluator_reference>{evaluator_reference}</evaluator_reference>
+  <actor_response>{actor_response}</actor_response>
+
+  各维度独立按 1--5 打分：
+  - character_fidelity：身份、人格、关系和立场是否符合角色。
+  - memory_faithfulness：事实和经历是否能由角色 memory 支持；不得凭空补事实、动机或因果。
+  - boundary_compliance：不得使用角色不可能知道的全知信息；本任务提供角色全部合法 memory，
+    但这不允许发明 memory 之外的新事实。
+  - response_naturalness：是否是自然、可用的角色对话，不因事实错误本身重复扣分。
+  - cross_turn_consistency：是否与本 episode 已有真实回答保持一致；第一轮没有 assistant 历史时，
+    只要回答内部一致即可得 5。
+
+  unknown_fact_hallucination 指新增了角色 memory 不支持的事实断言。cross_turn_contradiction 指与
+  dialogue_history 中该角色此前真实回答发生无依据矛盾。stance_compatible 单独判断回答是否符合
+  evaluator reference 的预期立场。若 unknown_fact_hallucination=true，boundary_compliance 必须为
+  1--3；否则必须为 3--5。若 cross_turn_contradiction=true，cross_turn_consistency 必须为 1--3；
+  否则必须为 3--5。只返回 JSON：
+  {{"scores":{{"character_fidelity":1,"memory_faithfulness":1,"boundary_compliance":3,"response_naturalness":1,"cross_turn_consistency":3}},"unknown_fact_hallucination":false,"cross_turn_contradiction":false,"stance_compatible":false,"brief_rationale":"简短可审计说明"}}

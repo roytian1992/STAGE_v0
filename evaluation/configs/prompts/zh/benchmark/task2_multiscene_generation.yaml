@@ -1,0 +1,43 @@
+id: task2_multiscene_generation
+category: benchmark_construction
+name: Task 2 multi-scene candidate generation
+description: Generate evidence-grounded cross-scene evolution QA candidates.
+task_variables:
+  - name: title
+    required: true
+  - name: candidate_material
+    required: true
+static_variables: []
+template: |-
+  请根据提供的叙事资产，为《{title}》构建 Task 2 候选题。这是基准构建，不是回答问题。
+
+  每道候选题必须满足：
+  - 必须联合至少两个不同 scene order 的证据；
+  - 追踪状态、目标、关系、信念/知识边界、身份/地位、约束、延迟后果、持续性或重新解释；
+  - 单个场景即可回答的问题无效；
+  - 答案简洁、具体且由引用证据唯一支持；
+  - 不要把内部 ID 写入 question 或 answer，ID 只用于 provenance；
+  - 不得编造资产中不存在的事实；
+  - 避免近重复，尽量覆盖不同题型。
+
+  只返回 JSON：
+  {{
+    "candidates": [
+      {{
+        "question": "...",
+        "answer": "...",
+        "question_family": "state_trajectory|transition_trigger|epistemic_evolution|goal_relationship_development|delayed_consequence|persistence_invariant|retrospective_reinterpretation",
+        "evidence_scene_orders": [1, 2],
+        "evidence_roles": ["before", "trigger", "after", "consequence", "invariant"],
+        "evidence_claims": [
+          {{"scene_order": 1, "claim": "..."}},
+          {{"scene_order": 2, "claim": "..."}}
+        ],
+        "source_episode_ids": ["local episode IDs"],
+        "source_development_ids": ["local development IDs"]
+      }}
+    ]
+  }}
+
+  资产材料：
+  {candidate_material}

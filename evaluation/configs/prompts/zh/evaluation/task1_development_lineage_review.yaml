@@ -1,0 +1,26 @@
+id: task1_development_lineage_review_zh
+category: evaluation
+name: Task 1 development lineage review zh
+description: 归并已审发展并连接到已审稳定状态 lineage。
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: ordered_checkpoints, required: true}
+  - {name: reviewed_development_claims, required: true}
+  - {name: reviewed_state_lineages, required: true}
+  - {name: source_developments, required: true}
+  - {name: allowed_member_refs, required: true}
+  - {name: expected_member_count, required: true}
+static_variables: []
+template: |-
+  在查看任何模型预测前，为“{focal_character}”审核发展 lineage。
+  <ordered_checkpoints>{ordered_checkpoints}</ordered_checkpoints>
+  <reviewed_development_claims>{reviewed_development_claims}</reviewed_development_claims>
+  <reviewed_state_lineages>{reviewed_state_lineages}</reviewed_state_lineages>
+  <source_developments>{source_developments}</source_developments>
+  <allowed_member_refs>{allowed_member_refs}</allowed_member_refs>
+  <expected_member_count>{expected_member_count}</expected_member_count>
+
+  只有触发、方向和结果相同的发展 claim 才能归入同一 GD lineage。所有 member_refs 合计必须恰好包含 expected_member_count 个引用，且集合必须与 allowed_member_refs 完全相等：不能只输出示例，不能遗漏、重复或增加引用。trigger_checkpoint_id 和 effective_checkpoint_id 只能使用给定 checkpoint ID，且 trigger 不得晚于 effective。affected_state_keys、resulting_state_keys、superseded_state_keys 只能引用已输出 GS key；证据不足时使用 []。source ID 只作 provenance 候选，不能作为合并不同发展的理由。不得根据模型预测推断。
+
+  source_developments 故意为空，因为 source ID 仅是 provenance，不是评分证据；因此 source_development_ids 必须为 []。只返回 JSON：
+  {{"developments":[{{"lineage_key":"GD1","canonical_claim":"...","member_refs":["Q1"],"source_development_ids":[],"trigger_checkpoint_id":"...","effective_checkpoint_id":"...","affected_state_keys":[],"resulting_state_keys":[],"superseded_state_keys":[]}}]}}

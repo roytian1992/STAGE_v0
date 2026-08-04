@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage://evaluation_v1/task1_claim_judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_pair_judgments", "prediction_checks", "future_leak_prediction_ids", "premature_update_prediction_ids", "no_change_false_update"],
+  "properties": {
+    "claim_pair_judgments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["gold_local_id", "prediction_local_id", "label"],
+        "properties": {
+          "gold_local_id": {"type": "string", "pattern": "^[SDI][0-9]+$"},
+          "prediction_local_id": {"type": "string", "pattern": "^P[0-9]+$"},
+          "label": {"enum": ["full", "partial", "contradiction"]}
+        }
+      }
+    },
+    "prediction_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["prediction_local_id", "support", "transition_coherent", "evidence_grounded"],
+        "properties": {
+          "prediction_local_id": {"type": "string", "pattern": "^P[0-9]+$"},
+          "support": {"enum": ["supported", "partial", "unsupported"]},
+          "transition_coherent": {"type": "boolean"},
+          "evidence_grounded": {"type": "boolean"}
+        }
+      }
+    },
+    "future_leak_prediction_ids": {"type": "array", "items": {"type": "string", "pattern": "^P[0-9]+$"}, "uniqueItems": true},
+    "premature_update_prediction_ids": {"type": "array", "items": {"type": "string", "pattern": "^P[0-9]+$"}, "uniqueItems": true},
+    "no_change_false_update": {"type": "boolean"}
+  }
+}

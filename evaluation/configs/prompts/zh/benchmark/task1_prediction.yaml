@@ -1,0 +1,53 @@
+id: task1_prediction
+category: benchmark
+name: Task 1 rolling character tracking
+description: Update one focal character's rolling memory from the next screenplay block.
+task_variables:
+  - name: focal_character
+    required: true
+  - name: aliases
+    required: true
+  - name: previous_checkpoint_scene_order
+    required: true
+  - name: block_end_scene_order
+    required: true
+  - name: checkpoint_at_block_end
+    required: true
+  - name: prior_memory
+    required: true
+  - name: screenplay_block
+    required: true
+static_variables: []
+template: |-
+  你正在按剧本顺序追踪角色“{focal_character}”。别名：{aliases}
+
+  上一个正式 checkpoint 的 scene order：{previous_checkpoint_scene_order}
+  本段结束的 scene order：{block_end_scene_order}
+  本段末尾是否为正式 checkpoint：{checkpoint_at_block_end}
+
+  之前由你自己维护的角色记忆：
+  <prior_memory>
+  {prior_memory}
+  </prior_memory>
+
+  本次新增且按时间连续的剧本原文：
+  <screenplay_block>
+  {screenplay_block}
+  </screenplay_block>
+
+  只依据之前的角色记忆和本次新增原文，完整更新角色记忆。显著发展必须已经在当前剧情中生效；
+  短暂动作不自动等于角色发展。若自上一 checkpoint 以来没有显著发展，返回空列表。所有证据
+  scene order 必须来自已经读过的剧本。不要预测后续剧情。
+
+  只返回以下 JSON 对象，不得增加字段：
+  {{
+    "current_state": [
+      {{"claim": "自然语言状态陈述", "evidence_scene_orders": [1]}}
+    ],
+    "developments_since_previous_checkpoint": [
+      {{"claim": "自然语言发展或转变陈述", "evidence_scene_orders": [1]}}
+    ],
+    "unresolved_threads": [
+      {{"claim": "仍会影响角色后续发展的未解决事项", "evidence_scene_orders": [1]}}
+    ]
+  }}

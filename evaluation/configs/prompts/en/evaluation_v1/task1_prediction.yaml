@@ -1,0 +1,23 @@
+id: evaluation_v1_task1_prediction
+category: evaluation_v1
+name: Task 1 rolling prediction v1
+description: Update one character's complete rolling memory from a continuous screenplay block.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_checkpoint_scene_order, required: true}
+  - {name: block_end_scene_order, required: true}
+  - {name: checkpoint_at_block_end, required: true}
+  - {name: prior_memory, required: true}
+  - {name: screenplay_block, required: true}
+static_variables: []
+template: |-
+  Track "{focal_character}" (aliases: {aliases}) through the next chronological screenplay block.
+  Previous checkpoint scene: {previous_checkpoint_scene_order}; block end scene: {block_end_scene_order}; formal checkpoint at block end: {checkpoint_at_block_end}.
+  <prior_memory>{prior_memory}</prior_memory>
+  <screenplay_block>{screenplay_block}</screenplay_block>
+
+  Replace the complete rolling memory using only prior_memory and screenplay_block. current_state contains important facts true at block end. developments_since_previous_checkpoint contains only salient changes that have already taken effect since the previous formal checkpoint; do not put static facts or momentary actions there. unresolved_threads contains open matters likely to affect later development. Use only scene orders already read and never predict later events. Return an empty development list when no salient change occurred.
+
+  Return only JSON with exactly these fields:
+  {{"current_state":[{{"claim":"...","evidence_scene_orders":[1]}}],"developments_since_previous_checkpoint":[{{"claim":"...","evidence_scene_orders":[1]}}],"unresolved_threads":[{{"claim":"...","evidence_scene_orders":[1]}}]}}

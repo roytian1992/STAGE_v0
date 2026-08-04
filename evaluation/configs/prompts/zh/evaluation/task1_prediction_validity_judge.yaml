@@ -1,0 +1,20 @@
+id: task1_prediction_validity_judge_zh
+category: evaluation
+name: Task 1 state-update 原文证据检查
+description: 用预测引用的原始 scenes 检查 claim 的支持性和时间有效性。
+task_variables:
+  - {name: character, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: predicted_claim, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: prediction_id, required: true}
+static_variables: []
+template: |-
+  检查角色“{character}”的一条 Task 1 预测。上一 checkpoint 是 scene {previous_scene_order}，当前 checkpoint 是 scene {current_scene_order}。
+  <predicted_claim>{predicted_claim}</predicted_claim><evidence_scenes>{evidence_scenes}</evidence_scenes>
+
+  evidence_scenes 是预测为该 claim 引用的原始剧本 scenes；当延续的 current state 没有新 citation 时，runner 改用模型不可见的上一状态 provenance。supported：候选原始 scenes 是否支持 claim；evidence_grounded：是否能在候选原始 scenes 中找到直接或可靠的间接支持；currently_valid：若类型是 s，该状态在当前 checkpoint 是否仍成立；若类型是 d，该变化是否在本区间内已经生效；salient：是否属于值得追踪的目标、信念、关系、身份、处境或重要情绪立场，而非普通动作或琐碎细节。development_coherent 对 s 固定为 true；对 d 只有明确表达有意义的前后变化时为 true。contradiction 表示 claim 是否与候选原文或当前时间状态明确冲突。reference 未列出该内容本身不构成 contradiction。
+
+  只返回 JSON：
+  {{"prediction_id":"{prediction_id}","supported":true,"evidence_grounded":true,"currently_valid":true,"salient":true,"development_coherent":true,"contradiction":false}}

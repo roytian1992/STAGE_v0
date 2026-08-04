@@ -1,0 +1,1160 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Candy",
+      "character_id": "legacy-mt-role-2cda16ef3d50c7a054ee",
+      "episode_id": "en6301ea1cf28f477a974e7cb126420d26__Candy__ep01",
+      "episode_theme": "Candy's emotional conflict between Wally and Homer, and how it strains her relationship with her father Ray",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-2cda16ef3d50c7a054ee"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Candy welcomed Homer's kiss as a comfort and didn't pull away",
+              "Candy remained composed and didn't show vulnerability in that moment"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "emotional, direct, urgent, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that candy sobs in Homer's chest. and homer attempts to kiss Candy but she resists..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on emotional.",
+              "The persona constraints also indicate that candy must express her emotions openly, especially sadness or affection., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you broke down in Homer's arms and pulled away from his kiss, what were you feeling about Wally in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Candy_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Candy waited for Homer to make the first move to avoid responsibility",
+              "Candy avoided physical intimacy with Homer due to her loyalty to Wally"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, direct, urgent, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground emotional if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that candy scatters colored glass on the beach and candy explains that the ocean smooths the glass.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that candy must express her emotions openly, especially sadness or affection., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You kissed Homer first on the beach—before all this pain. Now that you're torn about Wally, do you see that moment more as a real connection with Homer, or as something you were using to escape what you lost with Wally?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you sobbed on Homer's chest and pulled away from his kiss?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Candy_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Wally Worthington that clearly falls outside the established relationship evidence.",
+              "Candy welcomed Ray's company during her grief"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, direct, urgent, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Wally Worthington marked by romantic partners, emotional dependence, and former lovers?."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that candy sits slumped on Homer's shoulder on the dock. and ray makes a comment about Wally not needing a compass..",
+              "The established dynamic with Wally Worthington is marked by romantic partners, emotional dependence, and former lovers?, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that candy must express her emotions openly, especially sadness or affection., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you asked your father Ray to leave while you were on the dock with Homer, was it because being around him—around anyone who knew you with Wally—just made the guilt and confusion worse?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you sobbed on Homer's chest and pulled away from his kiss?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What made you decide to kiss Homer first on the beach?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Candy_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Candy",
+      "character_id": "legacy-mt-role-2cda16ef3d50c7a054ee",
+      "episode_id": "en6301ea1cf28f477a974e7cb126420d26__Candy__ep02",
+      "episode_theme": "emotional vulnerability and relational tension in moments of confrontation and confession",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-2cda16ef3d50c7a054ee"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Candy felt welcomed and included by the men at the mart",
+              "Candy immediately spoke to Homer upon arrival, showing confidence and ease"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "emotional, direct, urgent, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r035"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that candy drives up to the apple mart. and the men avoid Candy by moving to work across the mart..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on emotional.",
+              "The persona constraints also indicate that candy must express her emotions openly, especially sadness or affection., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you pulled up to the apple mart and saw the men move away from you, what were you feeling in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Candy_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Mr. Rose that clearly falls outside the established relationship evidence.",
+              "Candy feels empowered by the knowledge and plans to confront Mr. Rose immediately"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, direct, urgent, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that candy discloses her past pregnancy to Rose and rose indicates that Mr. Rose is the father of her baby.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that candy must express her emotions openly, especially sadness or affection., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You stood there silent—was part of you afraid that if you spoke, the truth about Mr. Rose would come out and everything would fall apart?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your head when you drove up to the apple mart and the men avoided you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Candy_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "Candy avoided discussing feelings and kept the conversation superficial",
+              "Candy expected Homer to be angry or dismissive towards her apology"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "emotional, direct, urgent, concerned",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with emotional if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r035"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that candy gives Homer a letter from St. Cloud's. and candy and Homer exchange apologies..",
+              "The persona card frames this character's delivery as emotional, direct, so an in-character answer may express emotional through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And when you finally gave Homer the letter and apologized—after holding all that in—what did you need from him in that moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your head when you drove up to the apple mart and the men avoided you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "After learning about Mr. Rose and Rose's baby, what do you feel is your biggest constraint right now?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Candy_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Homer Wells",
+      "character_id": "legacy-mt-role-e15b412e8bd49fa93568",
+      "episode_id": "en6301ea1cf28f477a974e7cb126420d26__Homer Wells__ep01",
+      "episode_theme": "Homer's restrained emotional awareness in key moments with Candy",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-e15b412e8bd49fa93568"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Candy that clearly falls outside the established relationship evidence.",
+              "Homer never experiences moments of connection with others"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, cautious, reserved, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r025"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that candy asks Homer if he's bored. and candy says she's not good at being alone..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on observant.",
+              "The persona constraints also indicate that homer does not initiate conversations., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "There was a moment when Candy asked if you were bored, and said she wasn’t good at being alone—what stayed with you from that exchange?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Homer Wells_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Candy that clearly falls outside the established relationship evidence.",
+              "Homer responded with pure empathy and no sarcasm"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Candy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, cautious, reserved, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground observant if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that homer was on the dock with Candy. and candy was sobbing and leaning on Homer's shoulder..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that homer does not initiate conversations., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Later, on the dock, Candy was sobbing and leaning on your shoulder—yet something in your response came across as distant, maybe even sharp. What was going through you in that moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What moment with Candy stands out as a turning point in how you felt about her?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Homer Wells_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Candy that clearly falls outside the established relationship evidence.",
+              "Homer views Candy only as a friend of Wally, with no romantic involvement"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002, m003, m004.",
+              "Do not abruptly reverse the stance toward Candy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, cautious, reserved, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Candy marked by romantic partners, lovers, and confidants."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r025",
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that candy asks Homer if he's bored. and candy says she's not good at being alone..",
+              "The established dynamic with Candy is marked by romantic partners, lovers, and confidants, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that homer does not initiate conversations., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Looking back on those moments—her asking if you were bored, then breaking down on the dock—how would you describe what ties you to her, even if it’s hard to name?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What moment with Candy stands out as a turning point in how you felt about her?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you react with sarcasm when Candy was distressed on the dock?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Homer Wells_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Homer Wells",
+      "character_id": "legacy-mt-role-e15b412e8bd49fa93568",
+      "episode_id": "en6301ea1cf28f477a974e7cb126420d26__Homer Wells__ep02",
+      "episode_theme": "Navigating duty, identity, and health after returning to the orchard, as revealed through unpacking and sharing his heart X-ray",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-e15b412e8bd49fa93568"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Homer feels no relief, only disappointment at missing the war",
+              "He has no internal conflict about his situation"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, cautious, reserved, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that homer unpacks his suitcase. and homer shows an X-ray of his heart to Rose Rose..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on observant.",
+              "The persona constraints also indicate that homer does not initiate conversations., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You're back at the orchard and unpacking your suitcase—what goes through your mind about not going to war?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Homer Wells_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Larch that clearly falls outside the established relationship evidence.",
+              "Homer has no specific duties and is at the orchard for personal enjoyment"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, cautious, reserved, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014",
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that homer unpacks his suitcase. and homer shows an X-ray of his heart to Rose Rose..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that homer does not initiate conversations., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Now that you're here, what do you feel you need to do—or not do—while at the orchard?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you reconcile your relief at avoiding the war with your sense of duty?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Homer Wells_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Larch that clearly falls outside the established relationship evidence.",
+              "Homer's heart condition never affected his decisions or whereabouts"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, cautious, reserved, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground observant if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r014",
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that homer unpacks his suitcase. and homer shows an X-ray of his heart to Rose Rose..",
+              "The memories support a bounded self-assessment shaped by observant, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that homer does not initiate conversations., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you show Rose Rose the X-ray of your heart, what does it say—quietly, to yourself—about the path you've taken?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you reconcile your relief at avoiding the war with your sense of duty?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What duties or obligations do you feel bound by at the orchard?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Homer Wells_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Larch",
+      "character_id": "legacy-mt-role-a0dd693db7ed85098f7d",
+      "episode_id": "en6301ea1cf28f477a974e7cb126420d26__Larch__ep01",
+      "episode_theme": "Confronting professional obsolescence and personal endurance at St. Cloud's",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-a0dd693db7ed85098f7d"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Angela that clearly falls outside the established relationship evidence.",
+              "Larch resigned immediately upon learning of the Board's decision"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, blunt, wry",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that larch read a letter from the Board of Trustees. and the Board intended to replace Larch..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that larch must maintain a professional demeanor even when emotionally overwhelmed., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "The Board wants to replace you. What do you intend to do about it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Larch_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Angela that clearly falls outside the established relationship evidence.",
+              "Larch believed his successor would continue his work faithfully"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, blunt, wry",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground pragmatic if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002",
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that larch dismisses legal concerns from Angela and Edna. and he states the board will replace him with someone opposed to abortions..",
+              "The memories support a bounded self-assessment shaped by pragmatic, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that larch must maintain a professional demeanor even when emotionally overwhelmed., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Given that the Board plans to install someone who opposes abortions, what do you believe will happen at St. Cloud's if they succeed?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "The Board wants to replace you. What do you intend to do about it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Larch_q008",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Angela that clearly falls outside the established relationship evidence.",
+              "Larch admitted he was ready to retire and let someone else handle it"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, blunt, wry",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027",
+                "r018",
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that larch read a letter from the Board of Trustees. and the Board intended to replace Larch..",
+              "The persona card frames this character's delivery as pragmatic, measured, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You've been at St. Cloud's a long time, Doctor. With the Board moving against you and Homer uncertain, what keeps you holding on—really?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "The Board wants to replace you. What do you intend to do about it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What do you believe will happen at St. Cloud's if someone else takes your place?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Larch_q011",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Larch",
+      "character_id": "legacy-mt-role-a0dd693db7ed85098f7d",
+      "episode_id": "en6301ea1cf28f477a974e7cb126420d26__Larch__ep02",
+      "episode_theme": "Emotional burden and paternal concern: Larch reflects on Homer's choices and his own role as mentor",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-a0dd693db7ed85098f7d"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Angela that clearly falls outside the established relationship evidence.",
+              "Larch was in good spirits and laughed off the mistake easily"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, blunt, wry",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007",
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that larch bites and spits out a pie apple. and angela takes the apple from him and gives him another..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on pragmatic.",
+              "The persona constraints also indicate that larch must maintain a professional demeanor even when emotionally overwhelmed., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Angela saw you struggle with that apple. How are you really holding up?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Larch_q009",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Larch wanted Homer to enjoy farm life without pressure",
+              "Larch had given up on Homer returning to medicine"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m008."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, blunt, wry",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007",
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that larch criticizes Homer for picking apples. and he decides to send a useful gift to Homer..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that larch must maintain a professional demeanor even when emotionally overwhelmed., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You said you’d send Homer a medical textbook—was that really about medicine, or was it your way of reaching out after seeing him pick apples instead of writing?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Angela noticed you struggling with that apple. How are you holding up, really?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Larch_q010",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Homer Wells that clearly falls outside the established relationship evidence.",
+              "Larch praised Homer for choosing honest farm labor"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m008."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, measured, blunt, wry",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Homer Wells marked by mentor-apprentice, father-son, and protection."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that larch criticizes Homer for picking apples. and he decides to send a useful gift to Homer..",
+              "The established dynamic with Homer Wells is marked by mentor-apprentice, father-son, and protection, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that larch must maintain a professional demeanor even when emotionally overwhelmed., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "He’s out picking apples instead of writing—does that feel like a failure to you, not just as his mentor, but as someone who’s tried to shape his future?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Angela noticed you struggling with that apple. How are you holding up, really?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What is it you're actually trying to accomplish by sending Homer a medical textbook?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Larch_q001",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en6301ea1cf28f477a974e7cb126420d26/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en6301ea1cf28f477a974e7cb126420d26/task_3_role_assets.json",
+    "role_asset_sha256": "a9a0a87a4c6a1ae84f82bf5daf60e52a0d2745df7fd6d2f162cd579d9720b25f",
+    "sha256": "2996e09e57b2aa56ac1a34320270219d8bd81dd77f8a12c97e60175e29c05f01",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en6301ea1cf28f477a974e7cb126420d26",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

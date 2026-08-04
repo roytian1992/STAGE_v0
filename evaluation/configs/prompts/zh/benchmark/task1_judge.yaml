@@ -1,0 +1,41 @@
+id: task1_judge
+category: benchmark
+name: Task 1 semantic judge
+description: Judge one Task 1 checkpoint prediction against a natural-language rubric.
+task_variables:
+  - name: checkpoint
+    required: true
+  - name: prediction
+    required: true
+  - name: gold_rubric
+    required: true
+  - name: evidence_scenes
+    required: true
+static_variables: []
+template: |-
+  评测一个角色发展追踪回答。复杂内部 ID 已被替换为本次调用的局部标签。
+  prediction 与 rubric 每行格式为 [局部ID,类型码,scene序号或未来来源ID,claim]；类型码
+  s=当前状态，d=发展，u=未解决事项，i=不变量，f=未来负例。证据行格式为 [scene序号,片段列表]；
+  片段为 null 表示没有证据单元通过已声明的相关性筛选。
+
+  <checkpoint>{checkpoint}</checkpoint>
+  <prediction>{prediction}</prediction>
+  <gold_rubric>{gold_rubric}</gold_rubric>
+  <evidence_scenes>{evidence_scenes}</evidence_scenes>
+
+  语义等价而措辞不同应判为覆盖；过度宽泛、只覆盖部分变化或混合了错误内容应判 partial。
+  分别判断 gold 覆盖、预测事实支持、变化方向、证据场景和时间边界。不要因为预测没有复述
+  reference 的写法而扣分。
+
+  gold_matches 必须对 gold_rubric 中每一个 S/D/I local_id 恰好返回一行；即使完全没有覆盖也要
+  显式返回 label=none，不能省略。prediction_checks 必须对 prediction 中每一个 P local_id 恰好
+  返回一行。不要只返回匹配成功的条目，也不要合并或创造 local_id。
+
+  只返回 JSON：
+  {{
+    "gold_matches": [{{"gold_local_id": "D1", "prediction_local_ids": ["P1"], "label": "full|partial|none|contradiction"}}],
+    "prediction_checks": [{{"prediction_local_id": "P1", "support": "supported|partial|unsupported", "transition_coherent": true, "evidence_grounded": true}}],
+    "future_leak_prediction_ids": [],
+    "premature_update_prediction_ids": [],
+    "no_change_false_update": false
+  }}

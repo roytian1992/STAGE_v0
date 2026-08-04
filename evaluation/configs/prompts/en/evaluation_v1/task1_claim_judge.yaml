@@ -1,0 +1,27 @@
+id: evaluation_v1_task1_claim_judge
+category: evaluation_v1
+name: Task 1 local claim judge v1
+description: Label local claim pairs and prediction diagnostics without computing metrics.
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction, required: true}
+  - {name: gold_rubric, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: allowed_gold_pair_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  Judge one checkpoint. Rows are [local_id,type_code,scene_orders,claim], where s=current state, d=development, u=unresolved, i=invariant, and f=future negative.
+  <checkpoint>{checkpoint}</checkpoint>
+  <prediction>{prediction}</prediction>
+  <gold_rubric>{gold_rubric}</gold_rubric>
+  <evidence_scenes>{evidence_scenes}</evidence_scenes>
+  <allowed_gold_pair_ids>{allowed_gold_pair_ids}</allowed_gold_pair_ids>
+  <allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  For every semantically related same-pool pair (s prediction against s/i gold; d against d), output one pair row. Every gold_local_id must be copied exactly from allowed_gold_pair_ids and every prediction_local_id from allowed_prediction_ids. Future-negative F IDs and unresolved-thread U content can never appear in claim_pair_judgments. Omitted pairs are treated as none: never emit a row labeled none. Label full only when subject, time, scope, and change direction are materially complete and correct. Label partial for meaningful but incomplete overlap or an overbroad/mixed claim. Label contradiction for incompatible facts or reversed change direction. Do not let one broad prediction stand in for several gold claims; the scorer performs one-to-one matching.
+
+  prediction_checks must contain exactly one row for every P local ID, including unresolved threads. support assesses original screenplay support; evidence_grounded assesses the cited scene orders. transition_coherent is true for non-development predictions and, for development, only when it expresses a salient before-to-after change already in effect. Flag future and premature claims by P ID. no_change_false_update is true only when the gold development pool is empty and the prediction invents a substantive change.
+
+  Return only JSON with exactly these fields:
+  {{"claim_pair_judgments":[{{"gold_local_id":"D1","prediction_local_id":"P1","label":"full|partial|contradiction"}}],"prediction_checks":[{{"prediction_local_id":"P1","support":"supported|partial|unsupported","transition_coherent":true,"evidence_grounded":true}}],"future_leak_prediction_ids":[],"premature_update_prediction_ids":[],"no_change_false_update":false}}

@@ -1,0 +1,532 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 5,
+    "current_state_reference_claims": 24,
+    "development_reference_claims": 5,
+    "trajectories": 1
+  },
+  "language": "Chinese",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 12,
+    "sha256": "2baa5702a5e4009813dd186c456dd1e3789e83d65b36ef584e9a8d72e9684c4d"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "何云青",
+        "何公子",
+        "云青兄",
+        "公子"
+      ],
+      "character": "何云青",
+      "character_id": "entity-64d8e871254ff642ff2e",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-2473b9a3a26e840a242f",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c1e22019d5d88784a882"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "何云青在身份/状态维度形成“何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者”（第2场起可见；源记录未提供可比的前一状态）。",
+                "development_id": "character-development-4c5abeaab6680ec85c9e",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-1aa102e8728fda4dee10",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 2,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-36d69214f2329fb40c7c",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-70e6be58af10a608b6fd"
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c1e22019d5d88784a882"
+              },
+              {
+                "claim": "何云青作为外来询问者，身份为对当地战况不知情的访客",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-7a6331ccf70ce88d622b"
+              },
+              {
+                "claim": "何云青在遭遇袭击时处于被动和弱势地位",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-82ffd21b5acfb1eb9cd0"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "何云青的身份/状态从“何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者”发展为“何云青处于行旅者与修行者的身份状态”（第3场起可见）。",
+                "development_id": "character-development-1ad8b9b43852f2189e35",
+                "evidence_scene_orders": [
+                  2,
+                  3
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-07f7c3d0d20d3e9962df",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-2473b9a3a26e840a242f",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 3,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 2
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-c609684e65f7f14936f1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "何云青从犹豫不决转变为做出决定并采取行动",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-8b72376e11fe482e8ff6"
+              },
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-70e6be58af10a608b6fd"
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c1e22019d5d88784a882"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "何云青的身份/状态从“何云青处于行旅者与修行者的身份状态”发展为“何云青从犹豫不决转变为做出决定并采取行动”（第8场起可见）。",
+                "development_id": "character-development-80ab657202eae5bf8b34",
+                "evidence_scene_orders": [
+                  3,
+                  8
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-27809a6ed6a9d7f8d3f0",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "何云青作为外来询问者，身份为对当地战况不知情的访客",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "何云青在遭遇袭击时处于被动和弱势地位",
+                "evidence_scene_orders": [
+                  3
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-36d69214f2329fb40c7c",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 8,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 3
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-b18b7542cf90c990e6e4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "何云青与依云的关系从陌生转为信任，接受其救援与指引",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "character-state-e9702b539cb0144c10a9"
+              },
+              {
+                "claim": "何云青对依云有深厚情感，依云离去时他不断呼唤其名字",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-3ca00e3bed3924346617"
+              },
+              {
+                "claim": "何云青从犹豫不决转变为做出决定并采取行动",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-8b72376e11fe482e8ff6"
+              },
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-70e6be58af10a608b6fd"
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c1e22019d5d88784a882"
+              },
+              {
+                "claim": "何云青与依云通过身体接触和相拥建立实质性亲密关系",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-f6c9e830a82f56cbcdb1"
+              },
+              {
+                "claim": "何云青对依云存在某种情感关联，其形象和箫声能触发记忆与情感波动",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-d80d49f9357553b0d94b"
+              },
+              {
+                "claim": "何云青因警觉而主动中断与依云的身体接触",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-e0743bc384845594a8bf"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "何云青的关系从“何云青与依云的关系从陌生转为信任，接受其救援与指引”发展为“何云青对依云有深厚情感，依云离去时他不断呼唤其名字”（第11场起可见）。",
+                "development_id": "character-development-41de49b8a8b32083c851",
+                "evidence_scene_orders": [
+                  10,
+                  11
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-386e94b707016286af5c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "何云青从犹豫不决转变为做出决定并采取行动",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-c609684e65f7f14936f1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 11,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 8
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-28d38ac583fbf54fb59d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "何云青与依云的关系从陌生转为信任，接受其救援与指引",
+                "evidence_scene_orders": [
+                  10
+                ],
+                "state_id": "character-state-e9702b539cb0144c10a9"
+              },
+              {
+                "claim": "何云青恢复了抄经者的身份认同",
+                "evidence_scene_orders": [
+                  12
+                ],
+                "state_id": "character-state-81a5ba36a07330dc940a"
+              },
+              {
+                "claim": "何云青对依云有深厚情感，依云离去时他不断呼唤其名字",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-3ca00e3bed3924346617"
+              },
+              {
+                "claim": "何云青从犹豫不决转变为做出决定并采取行动",
+                "evidence_scene_orders": [
+                  8
+                ],
+                "state_id": "character-state-8b72376e11fe482e8ff6"
+              },
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-70e6be58af10a608b6fd"
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ],
+                "state_id": "character-state-c1e22019d5d88784a882"
+              },
+              {
+                "claim": "何云青与依云通过身体接触和相拥建立实质性亲密关系",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-f6c9e830a82f56cbcdb1"
+              },
+              {
+                "claim": "何云青对依云存在某种情感关联，其形象和箫声能触发记忆与情感波动",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-d80d49f9357553b0d94b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "何云青的身份/状态从“何云青从犹豫不决转变为做出决定并采取行动”发展为“何云青恢复了抄经者的身份认同”（第12场起可见）。",
+                "development_id": "character-development-8b3f71c1a2d0af43195e",
+                "evidence_scene_orders": [
+                  8,
+                  12
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-d2836621f21f1b773f7c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "何云青与依云的关系从陌生转为信任，接受其救援与指引",
+                "evidence_scene_orders": [
+                  10
+                ]
+              },
+              {
+                "claim": "何云青对依云有深厚情感，依云离去时他不断呼唤其名字",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "何云青从犹豫不决转变为做出决定并采取行动",
+                "evidence_scene_orders": [
+                  8
+                ]
+              },
+              {
+                "claim": "何云青处于行旅者与修行者的身份状态",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "何云青被正式委任承担抄经任务，身份从普通访客转为承担宗教使命的执行者",
+                "evidence_scene_orders": [
+                  2
+                ]
+              },
+              {
+                "claim": "何云青与依云通过身体接触和相拥建立实质性亲密关系",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "何云青对依云存在某种情感关联，其形象和箫声能触发记忆与情感波动",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "何云青因警觉而主动中断与依云的身体接触",
+                "evidence_scene_orders": [
+                  11
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b18b7542cf90c990e6e4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 12,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 11
+          },
+          "sequence_index": 5
+        }
+      ],
+      "trajectory_id": "ch3e4c8f9bd713a665352a147555ff68bf302935cf::entity-64d8e871254ff642ff2e"
+    }
+  ]
+}

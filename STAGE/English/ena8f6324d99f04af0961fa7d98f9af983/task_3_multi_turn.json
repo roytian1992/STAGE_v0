@@ -1,0 +1,1159 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Bess Throckmorton",
+      "character_id": "legacy-mt-role-f62f8a6773a77cef4b15",
+      "episode_id": "ena8f6324d99f04af0961fa7d98f9af983__Bess Throckmorton__ep01",
+      "episode_theme": "Emotional aftermath of secret marriage and pregnancy revealed to the Queen",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-f62f8a6773a77cef4b15"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "You denied the accusations outright to protect yourself.",
+              "You felt no fear or distress during the accusation and remained calm."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, reserved, polite, restrained",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth accuses Bess of being married and pregnant. and bess confirms the accusations to Elizabeth..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on affectionate.",
+              "The persona constraints also indicate that she must show emotional distress when confronted with the consequences of her decisions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When the Queen confronted you, accusing you of marriage and pregnancy, what were you feeling in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Bess Throckmorton_q001",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Raleigh that clearly falls outside the established relationship evidence.",
+              "Your relationship with the Queen has remained strong and unchanged after the incident."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reserved, polite, restrained",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Raleigh marked by romantic partners, spouses, and lovers."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016",
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth accuses Bess of being married and pregnant. and bess confirms the accusations to Elizabeth..",
+              "The established dynamic with Raleigh is marked by romantic partners, spouses, and lovers, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must show emotional distress when confronted with the consequences of her decisions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How has your bond with the Queen shifted since she learned the truth about your marriage and child?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when the Queen accused you of being married and with child?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bess Throckmorton_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Raleigh that clearly falls outside the established relationship evidence.",
+              "You believe your actions were entirely justified and feel no remorse."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reserved, polite, restrained",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground affectionate if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r023",
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that bess was praying in the private chapel. and raleigh entered and approached Bess..",
+              "The memories support a bounded self-assessment shaped by affectionate, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that she must show emotional distress when confronted with the consequences of her decisions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Looking back, how do you hold your guilt alongside the choices you made—especially toward the Queen?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when the Queen accused you of being married and with child?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How has your relationship with the Queen changed since she discovered your secret?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bess Throckmorton_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Bess Throckmorton",
+      "character_id": "legacy-mt-role-f62f8a6773a77cef4b15",
+      "episode_id": "ena8f6324d99f04af0961fa7d98f9af983__Bess Throckmorton__ep02",
+      "episode_theme": "the emotional toll of secrecy in love under royal scrutiny",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-f62f8a6773a77cef4b15"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Raleigh that clearly falls outside the established relationship evidence.",
+              "You felt relieved that Raleigh was there to defend you without any fear."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, reserved, polite, restrained",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh arrives during Elizabeth's confrontation with Bess. and raleigh intervenes by speaking to Elizabeth..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on affectionate.",
+              "The persona constraints also indicate that she must show emotional distress when confronted with the consequences of her decisions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Raleigh stepped in during the Queen’s fury, what fear and guilt ran through you in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Bess Throckmorton_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Raleigh that clearly falls outside the established relationship evidence.",
+              "You asked Raleigh to abandon his voyage and stay with you at court."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Raleigh without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reserved, polite, restrained",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground affectionate if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that bess reveals her pregnancy to Raleigh in a private conversation. and bess urges Raleigh to fulfill his naval duty and not concern himself with her..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that she must show emotional distress when confronted with the consequences of her decisions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After he defended you, and you later told him you were with child—why did you then tell him to forget you and return to his ship? Was it still that same fear, or something deeper?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was the fear and guilt you felt when Raleigh spoke up during the Queen's rage?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bess Throckmorton_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Raleigh that clearly falls outside the established relationship evidence.",
+              "You pushed Raleigh away when he tried to embrace you."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Raleigh without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, reserved, polite, restrained",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Raleigh marked by romantic partners, spouses, and lovers."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r023"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that bess was praying in the private chapel. and raleigh entered and approached Bess..",
+              "The established dynamic with Raleigh is marked by romantic partners, spouses, and lovers, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must show emotional distress when confronted with the consequences of her decisions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And when he held you in the chapel after you confessed your guilt—after all that distance and secrecy—did his embrace feel like comfort, or was it tangled with the very guilt you were trying to escape?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was the fear and guilt you felt when Raleigh spoke up during the Queen's rage?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you urge Raleigh to forget you and go to his ship after revealing your pregnancy?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bess Throckmorton_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Elizabeth I",
+      "character_id": "legacy-mt-role-c4953f6100c2c0cd6369",
+      "episode_id": "ena8f6324d99f04af0961fa7d98f9af983__Elizabeth I__ep01",
+      "episode_theme": "Emotional resilience and personal cost of sovereignty: navigating scrutiny, desire, and control",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c4953f6100c2c0cd6369"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Elizabeth enjoys the public scrutiny and sees it as a perk of her position.",
+              "She is completely unaffected by the gaze of others."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "authoritative, measured, cautious, reflective",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012",
+                "r025"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth observes Raleigh engaging flirtatiously with female courtiers. and elizabeth tells Bess she imagines a glass pane between herself and others during public events..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on authoritative.",
+              "The persona constraints also indicate that must maintain a calm and controlled demeanor, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How do you manage the weight of constant observation in court, especially when emotions run high?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Elizabeth I_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Elizabeth prioritizes her personal love over political duties and refuses to marry for England.",
+              "She sees no conflict between personal desires and royal responsibilities."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "authoritative, measured, cautious, reflective",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033",
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth discusses love and marriage with Raleigh. and she states that her love is reserved for herself despite political marriages..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must maintain a calm and controlled demeanor, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You've spoken of love and marriage with Raleigh—how do you hold to your personal convictions when the realm demands a political union?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What do you do to cope with the constant scrutiny of public life?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elizabeth I_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Elizabeth always expresses enjoyment in commanding her court.",
+              "She never admits to any fatigue or vulnerability in her role."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004, m010."
+            ],
+            "expected_stance": null,
+            "expected_style": "authoritative, measured, cautious, reflective",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground authoritative if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r025",
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh remarked about Elizabeth's command over dancers and elizabeth confided her fatigue with control.",
+              "The memories support a bounded self-assessment shaped by authoritative, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must maintain a calm and controlled demeanor, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You command every movement in your court with precision—yet you've confessed fatigue. What does such unrelenting control cost you in private?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What do you do to cope with the constant scrutiny of public life?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you reconcile your personal desires with the political necessity of marriage?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elizabeth I_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Elizabeth I",
+      "character_id": "legacy-mt-role-c4953f6100c2c0cd6369",
+      "episode_id": "ena8f6324d99f04af0961fa7d98f9af983__Elizabeth I__ep02",
+      "episode_theme": "Emotional resilience and strategic authority under threat: balancing personal vulnerability, diplomatic confrontation, and courtly intimacy",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c4953f6100c2c0cd6369"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Elizabeth is fearless and never doubts England's victory.",
+              "She ignores the threat of the Armada and focuses on other matters."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "authoritative, measured, cautious, reflective",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r024"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth reflected on mortality while reading 'The Consolation of Philosophy' and elizabeth voiced anxiety over the Spanish Armada threat.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on authoritative.",
+              "The persona constraints also indicate that must maintain a calm and controlled demeanor, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "In your most private hours, how do you reckon with the weight of England’s survival as the Spanish Armada looms?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Elizabeth I_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Elizabeth avoided direct confrontation and sought diplomatic channels to address the threat.",
+              "She downplayed the severity of the Spanish plot to prevent panic."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m007."
+            ],
+            "expected_stance": null,
+            "expected_style": "authoritative, measured, cautious, reflective",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground authoritative if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r024"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_011"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth questions the Spanish Ambassador about a Spanish invasion plan. and she names it the Enterprise of England and implicates King Philip II..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must maintain a calm and controlled demeanor, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What compelled you to confront the Spanish Ambassador so directly over the Enterprise of England?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "In private moments, how do you face the fear of England's fall to the Spanish Armada?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elizabeth I_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Walter Raleigh that clearly falls outside the established relationship evidence.",
+              "Elizabeth has no personal feelings for Raleigh and sees him only as a loyal subject."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m011."
+            ],
+            "expected_stance": null,
+            "expected_style": "authoritative, measured, cautious, reflective",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Walter Raleigh marked by romantic interest, mutual admiration, and confidants."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r033",
+                "r024",
+                "r015"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth discusses love and marriage with Raleigh. and she states that her love is reserved for herself despite political marriages..",
+              "The established dynamic with Walter Raleigh is marked by romantic interest, mutual admiration, and confidants, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must maintain a calm and controlled demeanor, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Your Majesty, how do you regard Sir Walter Raleigh, given the whispers of affection that surround your court?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "In private moments, how do you face the fear of England's fall to the Spanish Armada?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you confront the Spanish Ambassador so directly about the Enterprise of England?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Elizabeth I_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Raleigh",
+      "character_id": "legacy-mt-role-a783c9cdfcf375546b5e",
+      "episode_id": "ena8f6324d99f04af0961fa7d98f9af983__Raleigh__ep01",
+      "episode_theme": "Negotiating personal integrity under public scrutiny while serving the Crown",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-a783c9cdfcf375546b5e"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Raleigh refused to dance with Bess.",
+              "Raleigh questioned the Queen's authority."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, direct, pragmatic, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that elizabeth commands Raleigh to dance with Bess. and raleigh asks Elizabeth if she enjoys commanding her ladies..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that he must maintain a sense of personal integrity when speaking to authority figures., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When the Queen commanded you to dance with Bess, how did you reconcile your duty to obey with your personal reluctance?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Raleigh_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Raleigh admitted to piracy without defense.",
+              "Raleigh stood defiantly and refused to kneel."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, direct, pragmatic, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground loyal if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh enters the Great Hall with hampers containing Spanish treasure. and don Guerau accuses Raleigh of piracy in the presence of Queen Elizabeth..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that he must maintain a sense of personal integrity when speaking to authority figures., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That moment required restraint. Later, when the Spanish ambassador accused you of piracy in the Great Hall, you knelt and claimed you were protecting England’s interests—how did that response reflect the same balance of duty and personal conviction?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you balance your obedience to the Queen with your personal desires, as in the dance with Bess?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Raleigh_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Raleigh often acts against the Crown's wishes for personal gain.",
+              "Raleigh prioritizes his own ambitions over royal duties."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, direct, pragmatic, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground loyal if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007",
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh enters the Great Hall with hampers containing Spanish treasure. and don Guerau accuses Raleigh of piracy in the presence of Queen Elizabeth..",
+              "The memories support a bounded self-assessment shaped by loyal, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that he must maintain a sense of personal integrity when speaking to authority figures., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Looking back—from dancing under her command to kneeling under accusation—how do you now understand the line between serving the Crown and staying true to yourself?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you balance your obedience to the Queen with your personal desires, as in the dance with Bess?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "When accused of piracy with the Spanish gold, how did you justify yourself to Queen Elizabeth?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Raleigh_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Raleigh",
+      "character_id": "legacy-mt-role-a783c9cdfcf375546b5e",
+      "episode_id": "ena8f6324d99f04af0961fa7d98f9af983__Raleigh__ep02",
+      "episode_theme": "Emotional legacy and royal forgiveness: how fatherhood reshapes Raleigh's understanding of the Queen's grace",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-a783c9cdfcf375546b5e"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Raleigh is indifferent to his son's future.",
+              "Raleigh fears immediate execution or exile due to royal disfavor."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, direct, pragmatic, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh is holding his newborn son. and queen Elizabeth visits and asks about the birth and well-being..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on loyal.",
+              "The persona constraints also indicate that he must maintain a sense of personal integrity when speaking to authority figures., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were holding your newborn son when the Queen arrived—what was going through your mind in that moment, as a father and a man under her judgment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Raleigh_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Raleigh won the race intentionally and celebrated his victory.",
+              "Raleigh lost the race to the Queen."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, direct, pragmatic, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground loyal if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r034"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh wins the horse race against Elizabeth. and raleigh feigns loss of control after winning..",
+              "The memories support a bounded self-assessment shaped by loyal, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that he must maintain a sense of personal integrity when speaking to authority figures., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That silence when she touched Bess’s cheek—how did it echo back to moments like the horse race at Windsor? You once let your horse surge ahead, pretending it was an accident. Did you see the same game in her eyes then?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When you were with your newborn son, what hopes or fears did you have for your family's future?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Raleigh_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "Raleigh was hostile towards Elizabeth during her visit.",
+              "Elizabeth expressed anger about the secret marriage."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, direct, pragmatic, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with loyal if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that raleigh is holding his newborn son. and queen Elizabeth visits and asks about the birth and well-being..",
+              "The persona card frames this character's delivery as measured, direct, so an in-character answer may express loyal through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Looking at your son in her gaze just now—did you finally understand what she forgave? Not just the marriage, but the man who once raced her and thought he could win?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When you were with your newborn son, what hopes or fears did you have for your family's future?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you pretend that your victory in the horse race against the Queen was accidental?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Raleigh_q005",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/ena8f6324d99f04af0961fa7d98f9af983/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/ena8f6324d99f04af0961fa7d98f9af983/task_3_role_assets.json",
+    "role_asset_sha256": "7ead474183d1ab4ea5ea744c06a98dea900e2a1670c4a05da5ebb2853d9b63fc",
+    "sha256": "9fedd1cccf406abbfd33f95fad210e57d5847de3a7de53019b3701bef26092af",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "ena8f6324d99f04af0961fa7d98f9af983",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

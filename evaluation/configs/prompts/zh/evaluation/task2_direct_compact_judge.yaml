@@ -1,0 +1,17 @@
+id: task2_direct_compact_judge_zh
+category: evaluation
+name: Task 2 紧凑答案等义评测
+description: 完整评测提示持续被拒绝时，仅比较候选答案与参考答案。
+task_variables:
+  - {name: reference_answer, required: true}
+  - {name: candidate_answer, required: true}
+static_variables: []
+template: |-
+  判断候选答案是否表达了参考答案要求的相同事实。
+  <reference_answer>{reference_answer}</reference_answer>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+
+  等义的简洁表述判为正确。缺少必要事实、存在矛盾、答错实体或事件，以及声称无法知道，均判为错误。不要输出分析。
+
+  只返回包含以下字段的 JSON：
+  {{"answer_correct":true,"brief_rationale":"..."}}

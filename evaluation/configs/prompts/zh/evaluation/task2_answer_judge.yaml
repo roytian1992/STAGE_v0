@@ -1,0 +1,27 @@
+id: task2_answer_judge_zh
+category: evaluation
+name: Task 2 答案评测
+description: 独立判断答案正确性与引用支持程度。
+task_variables:
+  - {name: question, required: true}
+  - {name: reference_answer, required: true}
+  - {name: reference_evidence_or_reason, required: true}
+  - {name: candidate_answer, required: true}
+  - {name: cited_passage_labels, required: true}
+  - {name: retrieved_passages, required: true}
+static_variables: []
+template: |-
+  独立评测一个剧本问答答案。候选答案的模型和数据条件被有意隐藏。
+  <question>{question}</question>
+  <reference_answer>{reference_answer}</reference_answer>
+  <reference_evidence_or_reason>{reference_evidence_or_reason}</reference_evidence_or_reason>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+  <cited_passage_labels>{cited_passage_labels}</cited_passage_labels>
+  <retrieved_passages>{retrieved_passages}</retrieved_passages>
+
+  仅当候选答案表达了参考答案要求的事实且没有实质冲突时，设置 answer_correct=true。接受等义表述和简洁答案；缺少必要事实、答错实体/事件/关系、无依据猜测，或在参考资料已确定答案时声称资料不足，均判错。
+
+  引用质量单独判断，并且只查看 cited_passage_labels 指定的片段：fully_supported 表示引用支持候选答案的全部实质事实；partially_supported 表示只支持部分；unsupported 表示不支持实质答案；no_citation 表示引用列表为空。正确性以参考答案为准，不得把检索失败混入正确性判定。给出简短可审计说明，不输出隐藏推理。
+
+  只返回包含以下字段的 JSON：
+  {{"answer_correct":true,"citation_quality":"fully_supported","brief_rationale":"..."}}

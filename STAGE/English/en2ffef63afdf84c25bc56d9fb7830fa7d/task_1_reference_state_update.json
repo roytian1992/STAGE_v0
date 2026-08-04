@@ -1,0 +1,2585 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 20,
+    "current_state_reference_claims": 142,
+    "development_reference_claims": 20,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "en2ffef63afdf84c25bc56d9fb7830fa7d",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 150,
+    "sha256": "2fdf1ced399c3dff468cfaf77b57ee6e3a02c09b270d94fdafb4217e33a2f31b"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Kara"
+      ],
+      "character": "Kara",
+      "character_id": "entity-c18e2cd3967643b95bb7",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-1cc6b1d75f4e161c50b8",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "character-state-e6ab9584461f8bca106f"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-993dcba49a2be7a9388a",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 16,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-7d2be6fe62c99173ba74",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-ac121f701d7b9455e8e4"
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-1232c3d4286337732f4f"
+              },
+              {
+                "claim": "Kara is perceived as the stabilizing force or 'glue' in the family.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-5dd4e3ae35cb4d91d21f"
+              },
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "character-state-e6ab9584461f8bca106f"
+              },
+              {
+                "claim": "Kara has a sibling relationship with Ryan and feels comfortable disclosing personal news to him",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-d014bdfc63403cd9f0a5"
+              },
+              {
+                "claim": "Kara perceives emotional distance in her relationship with Ryan and feels compelled to confront him about his isolation.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-eab3f5beaf19327da8a2"
+              },
+              {
+                "claim": "Kara is making a personal request of Ryan and becomes frustrated when he resists.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-77e562ebf4dc72e5d310"
+              },
+              {
+                "claim": "Kara is insistent and frustrated with Ryan's reluctance to help",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-538875f451e99d04d662"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Kara's relationship develops from \"Kara is attempting urgent communication with her brother Ryan about family matters\" to \"Kara shares a familial bond with Ryan, evidenced by their reunion and history.\" (visible from scene 108).",
+                "development_id": "character-development-9ef108f952573cf2469d",
+                "evidence_scene_orders": [
+                  16,
+                  108
+                ]
+              },
+              {
+                "claim": "Kara's status identity develops from \"Kara is perceived as the stabilizing force or 'glue' in the family.\" to \"Kara identifies herself as a divorcee.\" (visible from scene 108).",
+                "development_id": "character-development-3c48ae088636ef255e9b",
+                "evidence_scene_orders": [
+                  26,
+                  108
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c3b4e22ceecaed651b3f",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-1cc6b1d75f4e161c50b8",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 108,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 16
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-94c34ffb1f820b53cf47",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-ac121f701d7b9455e8e4"
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ],
+                "state_id": "character-state-4c4a349fde4a4a972965"
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-06698ec9153bdbc5ecdf"
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-1232c3d4286337732f4f"
+              },
+              {
+                "claim": "Kara is perceived as the stabilizing force or 'glue' in the family.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-5dd4e3ae35cb4d91d21f"
+              },
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "character-state-e6ab9584461f8bca106f"
+              },
+              {
+                "claim": "Kara has a sibling relationship with Ryan and feels comfortable disclosing personal news to him",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-d014bdfc63403cd9f0a5"
+              },
+              {
+                "claim": "Kara is emotionally distressed, as indicated by crying during the phone call.",
+                "evidence_scene_orders": [
+                  118
+                ],
+                "state_id": "character-state-1dc139c7a3c967cc5c88"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Kara's relationship develops from \"Kara shares a familial bond with Ryan, evidenced by their reunion and history.\" to \"Kara is in a relationship with Ryan where she reaches out to him during emotional distress.\" (visible from scene 118).",
+                "development_id": "character-development-7a5844addcfa280151c7",
+                "evidence_scene_orders": [
+                  108,
+                  118
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-d9b5f8b612355d651e56",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is perceived as the stabilizing force or 'glue' in the family.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ]
+              },
+              {
+                "claim": "Kara has a sibling relationship with Ryan and feels comfortable disclosing personal news to him",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara perceives emotional distance in her relationship with Ryan and feels compelled to confront him about his isolation.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Kara is making a personal request of Ryan and becomes frustrated when he resists.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Kara is insistent and frustrated with Ryan's reluctance to help",
+                "evidence_scene_orders": [
+                  27
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7d2be6fe62c99173ba74",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 118,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 108
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-55699d11d492449d4b73",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-ac121f701d7b9455e8e4"
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ],
+                "state_id": "character-state-4c4a349fde4a4a972965"
+              },
+              {
+                "claim": "Kara is in a position of managing wedding preparations and responding to emergent disruptions.",
+                "evidence_scene_orders": [
+                  119
+                ],
+                "state_id": "character-state-91b004cabc5af6af02ac"
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-06698ec9153bdbc5ecdf"
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-1232c3d4286337732f4f"
+              },
+              {
+                "claim": "Kara is perceived as the stabilizing force or 'glue' in the family.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-5dd4e3ae35cb4d91d21f"
+              },
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ],
+                "state_id": "character-state-e6ab9584461f8bca106f"
+              },
+              {
+                "claim": "Kara has a sibling relationship with Ryan and feels comfortable disclosing personal news to him",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-d014bdfc63403cd9f0a5"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Kara's status identity develops from \"Kara is a member of the group arriving at the chalet suites.\" to \"Kara is in a position of managing wedding preparations and responding to emergent disruptions.\" (visible from scene 119).",
+                "development_id": "character-development-5590501632272fb94706",
+                "evidence_scene_orders": [
+                  112,
+                  119
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b8e3966430f79c1412ab",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ]
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is perceived as the stabilizing force or 'glue' in the family.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ]
+              },
+              {
+                "claim": "Kara has a sibling relationship with Ryan and feels comfortable disclosing personal news to him",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is emotionally distressed, as indicated by crying during the phone call.",
+                "evidence_scene_orders": [
+                  118
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-94c34ffb1f820b53cf47",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 119,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 118
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-e102f7b0b3851ee0702b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-ac121f701d7b9455e8e4"
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ],
+                "state_id": "character-state-4c4a349fde4a4a972965"
+              },
+              {
+                "claim": "Kara is in a position of managing wedding preparations and responding to emergent disruptions.",
+                "evidence_scene_orders": [
+                  119
+                ],
+                "state_id": "character-state-91b004cabc5af6af02ac"
+              },
+              {
+                "claim": "Kara sees herself as someone who must take initiative to resolve the crisis by enlisting others.",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-834b90422264d5dd1847"
+              },
+              {
+                "claim": "Kara views Ryan as someone who needs to prove his loyalty to Julie.",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-a303a67e2b7c1e58bbf4"
+              },
+              {
+                "claim": "Kara views Ryan as someone who has been largely absent but capable of contributing in a critical moment.",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-d314361b87959630a542"
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-06698ec9153bdbc5ecdf"
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-1232c3d4286337732f4f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Kara's status identity develops from \"Kara is in a position of managing wedding preparations and responding to emergent disruptions.\" to \"Kara sees herself as someone who must take initiative to resolve the crisis by enlisting others.\" (visible from scene 121).",
+                "development_id": "character-development-335b14da47c7d96078a4",
+                "evidence_scene_orders": [
+                  119,
+                  121
+                ]
+              },
+              {
+                "claim": "Kara's relationship develops from \"Kara is in a relationship with Ryan where she reaches out to him during emotional distress.\" to \"Kara views Ryan as someone who needs to prove his loyalty to Julie.; Kara views Ryan as someone who has been largely absent but capable of contributing in a critical moment.\" (visible from scene 121).",
+                "development_id": "character-development-f5487e09edca58780c1f",
+                "evidence_scene_orders": [
+                  119,
+                  121
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-efbcd03ec1585e453fbb",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ]
+              },
+              {
+                "claim": "Kara is in a position of managing wedding preparations and responding to emergent disruptions.",
+                "evidence_scene_orders": [
+                  119
+                ]
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is perceived as the stabilizing force or 'glue' in the family.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Kara is attempting urgent communication with her brother Ryan about family matters",
+                "evidence_scene_orders": [
+                  16
+                ]
+              },
+              {
+                "claim": "Kara has a sibling relationship with Ryan and feels comfortable disclosing personal news to him",
+                "evidence_scene_orders": [
+                  108
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-55699d11d492449d4b73",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 121,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 119
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-aab7c6554d0d12587239",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-ac121f701d7b9455e8e4"
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ],
+                "state_id": "character-state-4c4a349fde4a4a972965"
+              },
+              {
+                "claim": "Kara is in a position of managing wedding preparations and responding to emergent disruptions.",
+                "evidence_scene_orders": [
+                  119
+                ],
+                "state_id": "character-state-91b004cabc5af6af02ac"
+              },
+              {
+                "claim": "Kara sees herself as someone who must take initiative to resolve the crisis by enlisting others.",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-834b90422264d5dd1847"
+              },
+              {
+                "claim": "Kara views Ryan as someone who needs to prove his loyalty to Julie.",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-a303a67e2b7c1e58bbf4"
+              },
+              {
+                "claim": "Kara views Ryan as someone who has been largely absent but capable of contributing in a critical moment.",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-d314361b87959630a542"
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-06698ec9153bdbc5ecdf"
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-1232c3d4286337732f4f"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-14186c97b233aaa9964c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Kara shares a familial bond with Ryan, evidenced by their reunion and history.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Kara is in a relationship with Ryan where she reaches out to him during emotional distress.",
+                "evidence_scene_orders": [
+                  118
+                ]
+              },
+              {
+                "claim": "Kara is in a position of managing wedding preparations and responding to emergent disruptions.",
+                "evidence_scene_orders": [
+                  119
+                ]
+              },
+              {
+                "claim": "Kara sees herself as someone who must take initiative to resolve the crisis by enlisting others.",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Kara views Ryan as someone who needs to prove his loyalty to Julie.",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Kara views Ryan as someone who has been largely absent but capable of contributing in a critical moment.",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Kara is a member of the group arriving at the chalet suites.",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Kara identifies herself as a divorcee.",
+                "evidence_scene_orders": [
+                  108
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-e102f7b0b3851ee0702b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 123,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 121
+          },
+          "sequence_index": 6
+        }
+      ],
+      "trajectory_id": "en2ffef63afdf84c25bc56d9fb7830fa7d::entity-c18e2cd3967643b95bb7"
+    },
+    {
+      "aliases": [
+        "Ryan Bingham",
+        "Ryan",
+        "RYAN (V.O.)",
+        "Mr. Bingham"
+      ],
+      "character": "Ryan Bingham",
+      "character_id": "entity-f2f39a3b3b2b5cb0e046",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-346a4b03cb3592df4479",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-33803de1c1236252bc71",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 1,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-ff59445c9fc7186f66e9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-42b53e28c9663afe35d1"
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-4353855be0ce494db393"
+              },
+              {
+                "claim": "Ryan begins establishing rapport with Alex through shared professional traveler knowledge and shifts interaction from impersonal to personal by introducing himself",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-cf7994112e00b542c2c4"
+              },
+              {
+                "claim": "Ryan possesses elite status in the Hilton Honors loyalty program, as evidenced by his extensive stay history.",
+                "evidence_scene_orders": [
+                  11
+                ],
+                "state_id": "character-state-4021dfd9f170bdafe175"
+              },
+              {
+                "claim": "Tension emerges in Ryan's relationship with Kara due to his resistance to a personal favor.",
+                "evidence_scene_orders": [
+                  27
+                ],
+                "state_id": "character-state-e4475e27d0e5c22da84b"
+              },
+              {
+                "claim": "Ryan experiences discomfort or dismay upon recognizing Kara's voice during the phone call.",
+                "evidence_scene_orders": [
+                  25
+                ],
+                "state_id": "character-state-979e762cc06e7398490d"
+              },
+              {
+                "claim": "Ryan is physically separating from the Businessman at an airport junction, moving toward different destinations.",
+                "evidence_scene_orders": [
+                  24
+                ],
+                "state_id": "character-state-502319fcd7a1f5e34dbb"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Ryan Bingham's status identity develops from \"Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.\" to \"Ryan reveals his identity, signaling willingness to be known personally\" (visible from scene 28).",
+                "development_id": "character-development-d17e2606f5f66d8c09e3",
+                "evidence_scene_orders": [
+                  1,
+                  28
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8826d976339f2d765eaf",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-346a4b03cb3592df4479",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 28,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 1
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-7203bfdaf4874b33cae1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              },
+              {
+                "claim": "Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-482d251f6edcfa7bf85f"
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-42b53e28c9663afe35d1"
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-4353855be0ce494db393"
+              },
+              {
+                "claim": "Ryan establishes a mutual plan for future contact with Alex, indicating a developing personal connection",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-fe2212db871a2e3498e2"
+              },
+              {
+                "claim": "Ryan begins establishing rapport with Alex through shared professional traveler knowledge and shifts interaction from impersonal to personal by introducing himself",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-cf7994112e00b542c2c4"
+              },
+              {
+                "claim": "Ryan asserts authority over Natalie in the context of layoff procedures and adopts a condescending and authoritative stance toward her, positioning himself as the evaluator of her skills.",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-0af44d730739c9bdc05d"
+              },
+              {
+                "claim": "Ryan is perceived as possessing elite status through his possession of the Concierge Key and holds elite status as indicated by the Concierge Key card.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-7d02a87a2bc7139ac4eb"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Ryan Bingham's relationship develops from \"Ryan's hesitation suggests a strained or tense relationship with Craig Gregory\" to \"Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security\" (visible from scene 46).",
+                "development_id": "character-development-0cc4523f4e1f2d976df4",
+                "evidence_scene_orders": [
+                  19,
+                  46
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-0f647e75edcae2dc099e",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Ryan begins establishing rapport with Alex through shared professional traveler knowledge and shifts interaction from impersonal to personal by introducing himself",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan possesses elite status in the Hilton Honors loyalty program, as evidenced by his extensive stay history.",
+                "evidence_scene_orders": [
+                  11
+                ]
+              },
+              {
+                "claim": "Tension emerges in Ryan's relationship with Kara due to his resistance to a personal favor.",
+                "evidence_scene_orders": [
+                  27
+                ]
+              },
+              {
+                "claim": "Ryan experiences discomfort or dismay upon recognizing Kara's voice during the phone call.",
+                "evidence_scene_orders": [
+                  25
+                ]
+              },
+              {
+                "claim": "Ryan is physically separating from the Businessman at an airport junction, moving toward different destinations.",
+                "evidence_scene_orders": [
+                  24
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ff59445c9fc7186f66e9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 46,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 28
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-48888d255c9694bd298b",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-f48c28b5e8bf7f565627"
+              },
+              {
+                "claim": "Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-482d251f6edcfa7bf85f"
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-42b53e28c9663afe35d1"
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-4353855be0ce494db393"
+              },
+              {
+                "claim": "Ryan establishes a mutual plan for future contact with Alex, indicating a developing personal connection",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-fe2212db871a2e3498e2"
+              },
+              {
+                "claim": "Ryan begins establishing rapport with Alex through shared professional traveler knowledge and shifts interaction from impersonal to personal by introducing himself",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-cf7994112e00b542c2c4"
+              },
+              {
+                "claim": "Ryan is perceived as possessing elite status through his possession of the Concierge Key and holds elite status as indicated by the Concierge Key card.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-7d02a87a2bc7139ac4eb"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Ryan Bingham's relationship develops from \"Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security\" to \"Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.\" (visible from scene 47).",
+                "development_id": "character-development-af28a4a329d47a8ff80a",
+                "evidence_scene_orders": [
+                  46,
+                  47
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-a6c6ba9d6d2fbc5f878a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Ryan establishes a mutual plan for future contact with Alex, indicating a developing personal connection",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Ryan begins establishing rapport with Alex through shared professional traveler knowledge and shifts interaction from impersonal to personal by introducing himself",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan asserts authority over Natalie in the context of layoff procedures and adopts a condescending and authoritative stance toward her, positioning himself as the evaluator of her skills.",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Ryan is perceived as possessing elite status through his possession of the Concierge Key and holds elite status as indicated by the Concierge Key card.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7203bfdaf4874b33cae1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 47,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 46
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-5f005e34d6e14c49f9fd",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan maintains authoritative direction over Natalie, using nonverbal cues to coordinate procedural actions.",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "character-state-f1b6d7990dea032b2d9d"
+              },
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              },
+              {
+                "claim": "Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him",
+                "evidence_scene_orders": [
+                  71
+                ],
+                "state_id": "character-state-0634bad7a1005d4f8b42"
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-f48c28b5e8bf7f565627"
+              },
+              {
+                "claim": "Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-482d251f6edcfa7bf85f"
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ],
+                "state_id": "character-state-42b53e28c9663afe35d1"
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-4353855be0ce494db393"
+              },
+              {
+                "claim": "Ryan establishes a mutual plan for future contact with Alex, indicating a developing personal connection",
+                "evidence_scene_orders": [
+                  31
+                ],
+                "state_id": "character-state-fe2212db871a2e3498e2"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Ryan Bingham's relationship develops from \"Ryan maintains authoritative direction over Natalie, using nonverbal cues to coordinate procedural actions.\" to \"Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him\" (visible from scene 71).",
+                "development_id": "character-development-4ceed48850217ef00e87",
+                "evidence_scene_orders": [
+                  60,
+                  71
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-76b897e963e967cf5bf0",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Ryan establishes a mutual plan for future contact with Alex, indicating a developing personal connection",
+                "evidence_scene_orders": [
+                  31
+                ]
+              },
+              {
+                "claim": "Ryan begins establishing rapport with Alex through shared professional traveler knowledge and shifts interaction from impersonal to personal by introducing himself",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan is perceived as possessing elite status through his possession of the Concierge Key and holds elite status as indicated by the Concierge Key card.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-48888d255c9694bd298b",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 71,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 47
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-a7e43f7b9dbfa3cf5ace",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan's rapport with Natalie deteriorates into conflict due to her frustration with his emotional avoidance.",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-b5837ae92831e7e0c317"
+              },
+              {
+                "claim": "Ryan maintains authoritative direction over Natalie, using nonverbal cues to coordinate procedural actions.",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "character-state-f1b6d7990dea032b2d9d"
+              },
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              },
+              {
+                "claim": "Ryan identifies his lifestyle of isolation and travel as a rational life choice, not emotional avoidance.",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-18b4a1ffc97ccf1c8268"
+              },
+              {
+                "claim": "Ryan identifies as someone who advocates for emotional detachment from heavy relational obligations",
+                "evidence_scene_orders": [
+                  73
+                ],
+                "state_id": "character-state-c6f4662872aac41a16e0"
+              },
+              {
+                "claim": "Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him",
+                "evidence_scene_orders": [
+                  71
+                ],
+                "state_id": "character-state-0634bad7a1005d4f8b42"
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-f48c28b5e8bf7f565627"
+              },
+              {
+                "claim": "Ryan identifies himself and humans as 'sharks'—meant to move fast and live independently",
+                "evidence_scene_orders": [
+                  73
+                ],
+                "state_id": "character-state-e8823f4c5e2ee85973c4"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Ryan Bingham's relationship develops from \"Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him\" to \"Ryan's rapport with Natalie deteriorates into conflict due to her frustration with his emotional avoidance.\" (visible from scene 89).",
+                "development_id": "character-development-bc13f1f0fbebb1a38f78",
+                "evidence_scene_orders": [
+                  71,
+                  89
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-58e9f6aa023d9ecb4aa2",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Ryan maintains authoritative direction over Natalie, using nonverbal cues to coordinate procedural actions.",
+                "evidence_scene_orders": [
+                  60
+                ]
+              },
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him",
+                "evidence_scene_orders": [
+                  71
+                ]
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Ryan asserts a direct and conditional professional relationship with Craig, viewing him as the sole authority over his job security",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Ryan reveals his identity, signaling willingness to be known personally",
+                "evidence_scene_orders": [
+                  28
+                ]
+              },
+              {
+                "claim": "Ryan's hesitation suggests a strained or tense relationship with Craig Gregory",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Ryan establishes a mutual plan for future contact with Alex, indicating a developing personal connection",
+                "evidence_scene_orders": [
+                  31
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-5f005e34d6e14c49f9fd",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 89,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 71
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-3064a6695287a507c095",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Ryan's rapport with Natalie deteriorates into conflict due to her frustration with his emotional avoidance.",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-b5837ae92831e7e0c317"
+              },
+              {
+                "claim": "Ryan maintains authoritative direction over Natalie, using nonverbal cues to coordinate procedural actions.",
+                "evidence_scene_orders": [
+                  60
+                ],
+                "state_id": "character-state-f1b6d7990dea032b2d9d"
+              },
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ],
+                "state_id": "character-state-58bf0e7609f271323880"
+              },
+              {
+                "claim": "Ryan identifies his lifestyle of isolation and travel as a rational life choice, not emotional avoidance.",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-18b4a1ffc97ccf1c8268"
+              },
+              {
+                "claim": "Ryan identifies as someone who advocates for emotional detachment from heavy relational obligations",
+                "evidence_scene_orders": [
+                  73
+                ],
+                "state_id": "character-state-c6f4662872aac41a16e0"
+              },
+              {
+                "claim": "Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him",
+                "evidence_scene_orders": [
+                  71
+                ],
+                "state_id": "character-state-0634bad7a1005d4f8b42"
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ],
+                "state_id": "character-state-f48c28b5e8bf7f565627"
+              },
+              {
+                "claim": "Ryan expresses pride in Natalie's work, indicating a supportive mentor relationship",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-a49dce9a4f19e8399156"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Ryan Bingham's relationship develops from \"Ryan's rapport with Natalie deteriorates into conflict due to her frustration with his emotional avoidance.\" to \"Ryan expresses pride in Natalie's work, indicating a supportive mentor relationship\" (visible from scene 101).",
+                "development_id": "character-development-3e4ae081773a92ce0920",
+                "evidence_scene_orders": [
+                  89,
+                  101
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-ddd457f7f7b7ae09eb69",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Ryan's rapport with Natalie deteriorates into conflict due to her frustration with his emotional avoidance.",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Ryan maintains authoritative direction over Natalie, using nonverbal cues to coordinate procedural actions.",
+                "evidence_scene_orders": [
+                  60
+                ]
+              },
+              {
+                "claim": "Ryan positions himself as someone who embraces detachment and minimalism and identifies with a philosophy of daily renewal through emptiness and detachment.",
+                "evidence_scene_orders": [
+                  1
+                ]
+              },
+              {
+                "claim": "Ryan identifies his lifestyle of isolation and travel as a rational life choice, not emotional avoidance.",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Ryan identifies as someone who advocates for emotional detachment from heavy relational obligations",
+                "evidence_scene_orders": [
+                  73
+                ]
+              },
+              {
+                "claim": "Ryan perceives a shift in his relationship with Natalie, recognizing her dismissive attitude toward him",
+                "evidence_scene_orders": [
+                  71
+                ]
+              },
+              {
+                "claim": "Craig undermines Ryan's professional standing, creating a power imbalance in their relationship.",
+                "evidence_scene_orders": [
+                  47
+                ]
+              },
+              {
+                "claim": "Ryan identifies himself and humans as 'sharks'—meant to move fast and live independently",
+                "evidence_scene_orders": [
+                  73
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-a7e43f7b9dbfa3cf5ace",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 101,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 89
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en2ffef63afdf84c25bc56d9fb7830fa7d::entity-f2f39a3b3b2b5cb0e046"
+    },
+    {
+      "aliases": [
+        "Natalie Keener",
+        "Miss Keener",
+        "Natalie"
+      ],
+      "character": "Natalie Keener",
+      "character_id": "entity-fb8d4a11cb2f177dcba9",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-62139ecb27776a8611ca",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie positions herself as an innovator and strategic thinker within the organization.",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-6dcacda6e5159d2c62cb"
+              },
+              {
+                "claim": "Natalie positions herself as an implementer of corporate efficiency and process innovation",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-f31567bac577b6056176"
+              },
+              {
+                "claim": "Natalie uses Ryan's personal line without attribution, creating tension",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-d4b914d3a8039586e30c"
+              },
+              {
+                "claim": "Natalie positions herself as a competent professional by adopting established methods, including Ryan's line",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-fcf08bda4a60a5934c41"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-9edbbfda77dfbb445288",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 45,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-25bb5cba511ba75ff404",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-0fd7018e5886f2a34098"
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ],
+                "state_id": "character-state-50be51aa3ebe6a068f35"
+              },
+              {
+                "claim": "Natalie exhibits disinterest and dismissiveness toward Ryan's attempt to share information",
+                "evidence_scene_orders": [
+                  66
+                ],
+                "state_id": "character-state-52714d534e273dbbbf05"
+              },
+              {
+                "claim": "Natalie transitions from perceived inexperience to demonstrated procedural competence in termination delivery",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-15ba0c38ed152cea9b20"
+              },
+              {
+                "claim": "Natalie positions herself as an innovator and strategic thinker within the organization.",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-6dcacda6e5159d2c62cb"
+              },
+              {
+                "claim": "Natalie positions herself as an implementer of corporate efficiency and process innovation",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-f31567bac577b6056176"
+              },
+              {
+                "claim": "Natalie transitions from emotional distress to active group participant",
+                "evidence_scene_orders": [
+                  78
+                ],
+                "state_id": "character-state-6d69b9a4f16fc7a56a68"
+              },
+              {
+                "claim": "Natalie positions herself as unimpressed and disengaged during Ryan's explanation",
+                "evidence_scene_orders": [
+                  66
+                ],
+                "state_id": "character-state-012691e5f98bee0a471d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Natalie Keener's constraint resource develops from \"Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation\" to \"Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.\" (visible from scene 79).",
+                "development_id": "character-development-e4b8d260ba33f57d31c6",
+                "evidence_scene_orders": [
+                  50,
+                  79
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e775fe627728f2bd15ff",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Natalie positions herself as an innovator and strategic thinker within the organization.",
+                "evidence_scene_orders": [
+                  45
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as an implementer of corporate efficiency and process innovation",
+                "evidence_scene_orders": [
+                  45
+                ]
+              },
+              {
+                "claim": "Natalie uses Ryan's personal line without attribution, creating tension",
+                "evidence_scene_orders": [
+                  45
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as a competent professional by adopting established methods, including Ryan's line",
+                "evidence_scene_orders": [
+                  45
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-62139ecb27776a8611ca",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 79,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 45
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-72532ab6dc605be9dd6d",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-98a37577244baf725d1e"
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-4749b2338e8b9ca7fcc5"
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-0fd7018e5886f2a34098"
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ],
+                "state_id": "character-state-50be51aa3ebe6a068f35"
+              },
+              {
+                "claim": "Natalie exhibits disinterest and dismissiveness toward Ryan's attempt to share information",
+                "evidence_scene_orders": [
+                  66
+                ],
+                "state_id": "character-state-52714d534e273dbbbf05"
+              },
+              {
+                "claim": "Natalie transitions from perceived inexperience to demonstrated procedural competence in termination delivery",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-15ba0c38ed152cea9b20"
+              },
+              {
+                "claim": "Natalie positions herself as an innovator and strategic thinker within the organization.",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-6dcacda6e5159d2c62cb"
+              },
+              {
+                "claim": "Natalie positions herself as an implementer of corporate efficiency and process innovation",
+                "evidence_scene_orders": [
+                  45
+                ],
+                "state_id": "character-state-f31567bac577b6056176"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Natalie Keener's relationship develops from \"Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion\" to \"Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic\" (visible from scene 98).",
+                "development_id": "character-development-0c684efe88f7cd0a993a",
+                "evidence_scene_orders": [
+                  89,
+                  98
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-a4ef3f89053004afe4b8",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ]
+              },
+              {
+                "claim": "Natalie exhibits disinterest and dismissiveness toward Ryan's attempt to share information",
+                "evidence_scene_orders": [
+                  66
+                ]
+              },
+              {
+                "claim": "Natalie transitions from perceived inexperience to demonstrated procedural competence in termination delivery",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as an innovator and strategic thinker within the organization.",
+                "evidence_scene_orders": [
+                  45
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as an implementer of corporate efficiency and process innovation",
+                "evidence_scene_orders": [
+                  45
+                ]
+              },
+              {
+                "claim": "Natalie transitions from emotional distress to active group participant",
+                "evidence_scene_orders": [
+                  78
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as unimpressed and disengaged during Ryan's explanation",
+                "evidence_scene_orders": [
+                  66
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-25bb5cba511ba75ff404",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 98,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 79
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-df682ad43f2e0db13ac3",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-98a37577244baf725d1e"
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-888fd7d3dece95ba480c"
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-4749b2338e8b9ca7fcc5"
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-0fd7018e5886f2a34098"
+              },
+              {
+                "claim": "Natalie is reevaluating her personal goals following a moment of introspection.",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-0fa88085f260390b7215"
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ],
+                "state_id": "character-state-50be51aa3ebe6a068f35"
+              },
+              {
+                "claim": "Natalie exhibits disinterest and dismissiveness toward Ryan's attempt to share information",
+                "evidence_scene_orders": [
+                  66
+                ],
+                "state_id": "character-state-52714d534e273dbbbf05"
+              },
+              {
+                "claim": "Natalie transitions from perceived inexperience to demonstrated procedural competence in termination delivery",
+                "evidence_scene_orders": [
+                  46
+                ],
+                "state_id": "character-state-15ba0c38ed152cea9b20"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Natalie Keener's relationship develops from \"Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic\" to \"Natalie perceives Ryan as a source of professional feedback and authority\" (visible from scene 101).",
+                "development_id": "character-development-a8f3fe185e4fd1302f6a",
+                "evidence_scene_orders": [
+                  98,
+                  101
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c41d57569f0b9aa0b282",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ]
+              },
+              {
+                "claim": "Natalie exhibits disinterest and dismissiveness toward Ryan's attempt to share information",
+                "evidence_scene_orders": [
+                  66
+                ]
+              },
+              {
+                "claim": "Natalie transitions from perceived inexperience to demonstrated procedural competence in termination delivery",
+                "evidence_scene_orders": [
+                  46
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as an innovator and strategic thinker within the organization.",
+                "evidence_scene_orders": [
+                  45
+                ]
+              },
+              {
+                "claim": "Natalie positions herself as an implementer of corporate efficiency and process innovation",
+                "evidence_scene_orders": [
+                  45
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-72532ab6dc605be9dd6d",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 101,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 98
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-e0fbe4846d29665f37c3",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-98a37577244baf725d1e"
+              },
+              {
+                "claim": "Natalie expresses emotional concern for Ryan's well-being regarding Omaha, signaling increased emotional investment.",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-533e35daf008eea861de"
+              },
+              {
+                "claim": "Natalie acknowledges overstepping in commenting on Alex, indicating awareness of relational boundaries.",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-bb6879a4fd7e0340105e"
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-888fd7d3dece95ba480c"
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-4749b2338e8b9ca7fcc5"
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-0fd7018e5886f2a34098"
+              },
+              {
+                "claim": "Natalie is reevaluating her personal goals following a moment of introspection.",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-0fa88085f260390b7215"
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ],
+                "state_id": "character-state-50be51aa3ebe6a068f35"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Natalie Keener's relationship develops from \"Natalie perceives Ryan as a source of professional feedback and authority\" to \"Natalie expresses emotional concern for Ryan's well-being regarding Omaha, signaling increased emotional investment.; Natalie acknowledges overstepping in commenting on Alex, indicating awareness of relational boundaries.\" (visible from scene 103).",
+                "development_id": "character-development-2d01ca9ab6420e4a3633",
+                "evidence_scene_orders": [
+                  101,
+                  103
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-a4fe7214710cc7a31dca",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ]
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "Natalie is reevaluating her personal goals following a moment of introspection.",
+                "evidence_scene_orders": [
+                  101
+                ]
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ]
+              },
+              {
+                "claim": "Natalie exhibits disinterest and dismissiveness toward Ryan's attempt to share information",
+                "evidence_scene_orders": [
+                  66
+                ]
+              },
+              {
+                "claim": "Natalie transitions from perceived inexperience to demonstrated procedural competence in termination delivery",
+                "evidence_scene_orders": [
+                  46
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-df682ad43f2e0db13ac3",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 103,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 101
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-3709e51bb9bd5b643fdf",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-98a37577244baf725d1e"
+              },
+              {
+                "claim": "Natalie has abandoned her role in CTC's video conferencing initiative and resigned from the company.",
+                "evidence_scene_orders": [
+                  145
+                ],
+                "state_id": "character-state-7ac1a3c6fee31182e549"
+              },
+              {
+                "claim": "Natalie is no longer an employee of CTC as of her resignation via text message.",
+                "evidence_scene_orders": [
+                  145
+                ],
+                "state_id": "character-state-9e6a8b50096e4906065b"
+              },
+              {
+                "claim": "Natalie expresses emotional concern for Ryan's well-being regarding Omaha, signaling increased emotional investment.",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-533e35daf008eea861de"
+              },
+              {
+                "claim": "Natalie acknowledges overstepping in commenting on Alex, indicating awareness of relational boundaries.",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-bb6879a4fd7e0340105e"
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-888fd7d3dece95ba480c"
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-4749b2338e8b9ca7fcc5"
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-0fd7018e5886f2a34098"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Natalie Keener's goal plan develops from \"Natalie is reevaluating her personal goals following a moment of introspection.\" to \"Natalie has abandoned her role in CTC's video conferencing initiative and resigned from the company.\" (visible from scene 145).",
+                "development_id": "character-development-0cd807ed3bb791118601",
+                "evidence_scene_orders": [
+                  101,
+                  145
+                ]
+              },
+              {
+                "claim": "Natalie Keener's status identity develops from \"Natalie is in her element and takes pride in her work on the online firing system, indicating a sense of professional ownership and confidence.\" to \"Natalie is no longer an employee of CTC as of her resignation via text message.\" (visible from scene 145).",
+                "development_id": "character-development-2a48b9730bb314275532",
+                "evidence_scene_orders": [
+                  126,
+                  145
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-34b9ad19be919df8426c",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Natalie expresses emotional concern for Ryan's well-being regarding Omaha, signaling increased emotional investment.",
+                "evidence_scene_orders": [
+                  103
+                ]
+              },
+              {
+                "claim": "Natalie acknowledges overstepping in commenting on Alex, indicating awareness of relational boundaries.",
+                "evidence_scene_orders": [
+                  103
+                ]
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ]
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ]
+              },
+              {
+                "claim": "Natalie is reevaluating her personal goals following a moment of introspection.",
+                "evidence_scene_orders": [
+                  101
+                ]
+              },
+              {
+                "claim": "Natalie perceives time as a pressing constraint, extending her life goals to twenty-nine to delay the emotional impact of turning thirty.",
+                "evidence_scene_orders": [
+                  79
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-e0fbe4846d29665f37c3",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 145,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 103
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-6ad4b7f111c53495bba2",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-98a37577244baf725d1e"
+              },
+              {
+                "claim": "Natalie has abandoned her role in CTC's video conferencing initiative and resigned from the company.",
+                "evidence_scene_orders": [
+                  145
+                ],
+                "state_id": "character-state-7ac1a3c6fee31182e549"
+              },
+              {
+                "claim": "Natalie is no longer an employee of CTC as of her resignation via text message.",
+                "evidence_scene_orders": [
+                  145
+                ],
+                "state_id": "character-state-9e6a8b50096e4906065b"
+              },
+              {
+                "claim": "Natalie expresses emotional concern for Ryan's well-being regarding Omaha, signaling increased emotional investment.",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-533e35daf008eea861de"
+              },
+              {
+                "claim": "Natalie acknowledges overstepping in commenting on Alex, indicating awareness of relational boundaries.",
+                "evidence_scene_orders": [
+                  103
+                ],
+                "state_id": "character-state-bb6879a4fd7e0340105e"
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ],
+                "state_id": "character-state-888fd7d3dece95ba480c"
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ],
+                "state_id": "character-state-4749b2338e8b9ca7fcc5"
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-0fd7018e5886f2a34098"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Natalie Keener's goal plan develops into \"Ryan plans to formally recommend Natalie for a new position through a written letter\" (visible from scene 147; no comparable prior state is recorded).",
+                "development_id": "character-development-0e117b58f538b3126aed",
+                "evidence_scene_orders": [
+                  147
+                ]
+              },
+              {
+                "claim": "Natalie Keener's relationship develops into \"Natalie is the subject of Ryan's unsolicited but strong professional endorsement\" (visible from scene 147; no comparable prior state is recorded).",
+                "development_id": "character-development-be962223b741eb0f06b5",
+                "evidence_scene_orders": [
+                  147
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-be3f48b25839de1b73da",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Natalie accepts guidance from Ryan, indicating a mentor-mentee dynamic",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Natalie has abandoned her role in CTC's video conferencing initiative and resigned from the company.",
+                "evidence_scene_orders": [
+                  145
+                ]
+              },
+              {
+                "claim": "Natalie is no longer an employee of CTC as of her resignation via text message.",
+                "evidence_scene_orders": [
+                  145
+                ]
+              },
+              {
+                "claim": "Natalie expresses emotional concern for Ryan's well-being regarding Omaha, signaling increased emotional investment.",
+                "evidence_scene_orders": [
+                  103
+                ]
+              },
+              {
+                "claim": "Natalie acknowledges overstepping in commenting on Alex, indicating awareness of relational boundaries.",
+                "evidence_scene_orders": [
+                  103
+                ]
+              },
+              {
+                "claim": "Natalie perceives Ryan as a source of professional feedback and authority",
+                "evidence_scene_orders": [
+                  101
+                ]
+              },
+              {
+                "claim": "Natalie feels frustrated and disrespected by Ryan's condescending tone and emotional evasion",
+                "evidence_scene_orders": [
+                  89
+                ]
+              },
+              {
+                "claim": "Natalie's travel habits consume a significant amount of time unnecessarily, as framed by Ryan's calculation",
+                "evidence_scene_orders": [
+                  50
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3709e51bb9bd5b643fdf",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 147,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 145
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "en2ffef63afdf84c25bc56d9fb7830fa7d::entity-fb8d4a11cb2f177dcba9"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+id: evaluation_v1_task1_claim_judge
+category: evaluation_v1
+name: Task 1 局部 claim judge v1
+description: 标注局部 claim pair 与预测诊断，不计算指标。
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction, required: true}
+  - {name: gold_rubric, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: allowed_gold_pair_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  评测一个 checkpoint。行格式为 [local_id,type_code,scene_orders,claim]，s=当前状态，d=发展，u=未决事项，i=不变量，f=未来负例。
+  <checkpoint>{checkpoint}</checkpoint><prediction>{prediction}</prediction>
+  <gold_rubric>{gold_rubric}</gold_rubric><evidence_scenes>{evidence_scenes}</evidence_scenes>
+  <allowed_gold_pair_ids>{allowed_gold_pair_ids}</allowed_gold_pair_ids><allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+  对每个语义相关且同池的 pair 输出一行：预测 s 只能对 gold s/i，预测 d 只能对 gold d。gold_local_id 必须逐字复制 allowed_gold_pair_ids，prediction_local_id 必须逐字复制 allowed_prediction_ids。未来负例 F ID 与 unresolved 内容绝不能出现在 claim_pair_judgments。省略的 pair 按 none 处理，绝不能输出 label=none 的行。只有主体、时间、范围和变化方向均实质完整正确才标 full；有意义但不完整、过宽或混有错误内容时标 partial；事实冲突或变化方向颠倒时标 contradiction。不得让一条宽泛预测代替多个 gold；确定性 scorer 会执行一对一匹配。
+  prediction_checks 必须逐一覆盖所有 P local ID，包括 unresolved。support 判断原剧本是否支持，evidence_grounded 判断引用场次是否支持。非 development 的 transition_coherent 固定为 true；development 只有表达已经生效的显著前后变化才为 true。future 和 premature 只返回 P ID。仅当 gold development 为空且预测虚构实质变化时 no_change_false_update=true。
+  只返回：
+  {{"claim_pair_judgments":[{{"gold_local_id":"D1","prediction_local_id":"P1","label":"full|partial|contradiction"}}],"prediction_checks":[{{"prediction_local_id":"P1","support":"supported|partial|unsupported","transition_coherent":true,"evidence_grounded":true}}],"future_leak_prediction_ids":[],"premature_update_prediction_ids":[],"no_change_false_update":false}}

@@ -1,0 +1,1159 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Jesse Mercer",
+      "character_id": "legacy-mt-role-c3e0269f5aa531675ce5",
+      "episode_id": "ene7ea5a09bac248ef93cb96fea57e1d53__Jesse Mercer__ep01",
+      "episode_theme": "Balancing survival needs with loyalty to Sidney Thorne during his illness",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c3e0269f5aa531675ce5"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Jesse Mercer ignored Sidney Thorne's health completely in relentless pursuit of money.",
+              "Jesse Mercer sacrificed all income opportunities to care for Sidney Thorne full-time, neglecting survival needs."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, sarcastic, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029",
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer observed Sidney Thorne shivering and sweating in a chair. and Jesse Mercer provided soup and supplies to Sidney Thorne..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that Jesse Mercer must act on sudden impulses without considering consequences., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You're desperate for money, but Sidney Thorne's getting sicker—how do you keep both your survival and his health in play?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Jesse Mercer_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Jesse Mercer forced Sidney Thorne to see a doctor against his will, overriding his refusal.",
+              "Jesse Mercer abandoned Sidney Thorne when he refused treatment, giving up on helping him."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, sarcastic, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer urged Sidney Thorne to see a doctor. and Sidney Thorne refused medical help and wanted to go to Harborview Station..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that Jesse Mercer must act on sudden impulses without considering consequences., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You pushed for a doctor, but he refused—so why drop your hustle and chase this Harborview Station dream instead?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you balance your need for money with your concern for Sidney Thorne's health?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jesse Mercer_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Spencer Davenport that clearly falls outside the established relationship evidence.",
+              "Jesse Mercer sees Sidney Thorne only as a tool for making money, with no genuine emotional attachment."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003, m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, sarcastic, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Spencer Davenport marked by romantic partners, emotional dependency, and accusation of rape."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029",
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer observed Sidney Thorne shivering and sweating in a chair. and Jesse Mercer provided soup and supplies to Sidney Thorne..",
+              "The established dynamic with Spencer Davenport is marked by romantic partners, emotional dependency, and accusation of rape, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that Jesse Mercer must act on sudden impulses without considering consequences., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You risked your last dollars on soup and that Fairview Plaza ticket—what’s really keeping you tied to Sidney Thorne? Because it’s more than just a partner in crime.",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you balance your need for money with your concern for Sidney Thorne's health?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you agree to help Sidney Thorne get to Harborview Station instead of insisting he see a doctor?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jesse Mercer_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Jesse Mercer",
+      "character_id": "legacy-mt-role-c3e0269f5aa531675ce5",
+      "episode_id": "ene7ea5a09bac248ef93cb96fea57e1d53__Jesse Mercer__ep02",
+      "episode_theme": "Jesse Mercer's emotional detachment as a survival mechanism in intimate relationships",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c3e0269f5aa531675ce5"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Spencer Davenport that clearly falls outside the established relationship evidence.",
+              "Jesse Mercer refused to say 'I love you' to Spencer Davenport, dismissing her request."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, sarcastic, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Spencer Davenport marked by romantic partners, emotional dependency, and accusation of rape."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r026",
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer was in a car with Spencer Davenport, both nearly naked. and Spencer Davenport kissed Jesse Mercer's chest and asked him to say he loves her..",
+              "The established dynamic with Spencer Davenport is marked by romantic partners, emotional dependency, and accusation of rape, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that Jesse Mercer must act on sudden impulses without considering consequences., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Back in the car with Spencer Davenport, when she kissed your chest and begged you to say you loved her—did you mean it, or was it just something to say in the moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Jesse Mercer_q000",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Kendall Bennett that clearly falls outside the established relationship evidence.",
+              "Jesse Mercer sees hustling as a temporary phase he's ashamed of and hides from others."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, sarcastic, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground pragmatic if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer zipped Kendall Bennett's dress. and Jesse Mercer revealed to Kendall Bennett that he is a hustler..",
+              "The memories support a bounded self-assessment shaped by pragmatic, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that Jesse Mercer must act on sudden impulses without considering consequences., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You said 'I love you' to Spencer Davenport in the car—then later told Kendall Bennett you were just a hustler. Is that how you keep things simple: saying what people want to hear, then walking away clean?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You were with Spencer Davenport in the car when she asked you to say you loved her—did you mean it when you said it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jesse Mercer_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Kendall Bennett that clearly falls outside the established relationship evidence.",
+              "Jesse Mercer became aggressive and demanded payment, escalating the confrontation."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005.",
+              "Do not abruptly reverse the stance toward Kendall Bennett without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, sarcastic, frustrated",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer zipped Kendall Bennett's dress. and Jesse Mercer revealed to Kendall Bennett that he is a hustler..",
+              "The persona card frames this character's delivery as blunt, direct, so an in-character answer may express pragmatic through that manner rather than through Stonebridge House exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Kendall Bennett checked her purse and came up empty—no money, no number—did that moment make you feel like the whole game was falling apart, or just another reason to stay numb?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You were with Spencer Davenport in the car when she asked you to say you loved her—did you mean it when you said it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "You told Kendall Bennett you were a hustler—how do you define that role in your life?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jesse Mercer_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Sidney Thorne",
+      "character_id": "legacy-mt-role-ef4ae9290809937cfb61",
+      "episode_id": "ene7ea5a09bac248ef93cb96fea57e1d53__Sidney Thorne__ep01",
+      "episode_theme": "Uncovering Sidney Thorne's guarded loyalty to Jesse Mercer through the cot and name-sharing moment",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-ef4ae9290809937cfb61"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Sidney Thorne ignores Jesse Mercer's comfort",
+              "Sidney Thorne prioritizes his own needs over Jesse Mercer's"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, cynical, sarcastic, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground resourceful if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Thorne removes Jesse Mercer's boots. and Sidney Thorne brings in a cot for Jesse Mercer..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must rely on others for mobility when severely ill or exhausted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You dragged in a cot for Jesse Mercer and took off his boots while he slept. For someone who keeps their guard up, that's not nothing. Why'd you do it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Sidney Thorne_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Jesse Mercer that clearly falls outside the established relationship evidence.",
+              "Sidney Thorne avoided interaction with Jesse Mercer"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, cynical, sarcastic, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Jesse Mercer marked by business partners, mutual dependency, and playful antagonism."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Thorne compliments Jesse Mercer's shirt. and Jesse Mercer offers to buy drinks for Sidney Thorne..",
+              "The established dynamic with Jesse Mercer is marked by business partners, mutual dependency, and playful antagonism, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must rely on others for mobility when severely ill or exhausted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And right after that, when he woke up, you told him your real name—Enrico. That’s not something you just hand out. What about that moment made you say it?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why'd you go out of your way to bring in a cot for Jesse Mercer?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Thorne_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Sidney Thorne keeps his identity secret from everyone",
+              "Sidney Thorne does not perform acts of care for Jesse Mercer"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, cynical, sarcastic, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground resourceful if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Thorne removes Jesse Mercer's boots. and Sidney Thorne brings in a cot for Jesse Mercer..",
+              "The memories support a bounded self-assessment shaped by resourceful, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must rely on others for mobility when severely ill or exhausted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So you bring him in, fix his cot, take off his boots, then hand him your real name—acts of care from someone who says trust gets you killed. How do you square that?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why'd you go out of your way to bring in a cot for Jesse Mercer?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How'd you end up partnering with Jesse Mercer in the first place?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Thorne_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Sidney Thorne",
+      "character_id": "legacy-mt-role-ef4ae9290809937cfb61",
+      "episode_id": "ene7ea5a09bac248ef93cb96fea57e1d53__Sidney Thorne__ep02",
+      "episode_theme": "survival drive rooted in medical distrust, with m004 as the dominant thread and m002 as emotional foundation",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-ef4ae9290809937cfb61"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Sidney Thorne remained calm and unfazed",
+              "Jesse Mercer's threats were in jest and not serious"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, cynical, sarcastic, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Jesse Mercer verbally threatens to strangle Sidney Thorne. and the cigarette burns Sidney Thorne's lip..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on resourceful.",
+              "The persona constraints also indicate that must rely on others for mobility when severely ill or exhausted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Remember when Jesse Mercer got up in your face, threatening to choke you? How'd you really feel when that cigarette burned your lip?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Sidney Thorne_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Sidney Thorne is content to stay in New York",
+              "Sidney Thorne has no specific destination in mind"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, cynical, sarcastic, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Thorne refuses to see a doctor. and Sidney Thorne admits he is too weak to walk..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must rely on others for mobility when severely ill or exhausted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You acted tough with Jesse Mercer, but you were scared—now you're even weaker, shaking and refusing help. What's pushing you to keep crawling toward Harborview Station when you can barely move?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was it like when Jesse Mercer got in your face and threatened you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Thorne_q005",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Sidney Thorne is open to medical treatment",
+              "Sidney Thorne prioritizes immediate comfort over long-term survival"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, cynical, sarcastic, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground resourceful if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Thorne refuses to see a doctor. and Sidney Thorne admits he is too weak to walk..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must rely on others for mobility when severely ill or exhausted, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You'd rather crawl to Harborview Station than see a doctor—you called them butchers. After everything, why is a hospital scarier than dying on the road?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was it like when Jesse Mercer got in your face and threatened you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What's driving you to get to Harborview Station no matter what?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Thorne_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Robin Foster",
+      "character_id": "legacy-mt-role-54fb1348147f2fcaefdb",
+      "episode_id": "ene7ea5a09bac248ef93cb96fea57e1d53__Robin Foster__ep01",
+      "episode_theme": "Exploring Robin Foster's use of humor and control in intimate moments with Jesse Mercer, grounded in memories m002 and m006",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-54fb1348147f2fcaefdb"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "You felt deep sorrow and had no impulse to laugh",
+              "You openly laughed at Jesse Mercer without any restraint"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "flirtatious, teasing, sarcastic, witty",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Robin Foster suppresses laughter while comforting Jesse Mercer and Robin Foster uses metaphorical humor to describe Jesse Mercer's situation.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on playful.",
+              "The persona constraints also indicate that she must use humor or wordplay to deflect or navigate intimacy., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What went through your mind when you had to stifle laughter after Jesse Mercer couldn't perform—was it nerves, power, or just the absurdity of it all?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Robin Foster_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "You approach intimacy with direct emotional honesty and avoid humor",
+              "You let Jesse Mercer take the lead in intimate situations without asserting control"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002, m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "flirtatious, teasing, sarcastic, witty",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground playful if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Robin Foster suppresses laughter while comforting Jesse Mercer and Robin Foster uses metaphorical humor to describe Jesse Mercer's situation.",
+              "The memories support a bounded self-assessment shaped by playful, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that she must use humor or wordplay to deflect or navigate intimacy., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Robin Foster, how do you see your role in steering intimacy with Jesse Mercer—do you guide it, guard it, or just play with it?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you had to fight back laughter after Jesse Mercer couldn't perform?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Robin Foster_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "You respond with serious empathy and avoid making light of the situation",
+              "You withdraw and give Jesse Mercer space when he's vulnerable"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002, m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "flirtatious, teasing, sarcastic, witty",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with playful if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Robin Foster suppresses laughter while comforting Jesse Mercer and Robin Foster uses metaphorical humor to describe Jesse Mercer's situation.",
+              "The persona card frames this character's delivery as flirtatious, teasing, so an in-character answer may express playful through that manner rather than through Stonebridge House exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Jesse Mercer shows his vulnerable side, what’s your instinct—comfort, tease, or take control?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you had to fight back laughter after Jesse Mercer couldn't perform?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Robin Foster, how do you see your role when it comes to intimacy and control with Jesse Mercer?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Robin Foster_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Robin Foster",
+      "character_id": "legacy-mt-role-54fb1348147f2fcaefdb",
+      "episode_id": "ene7ea5a09bac248ef93cb96fea57e1d53__Robin Foster__ep02",
+      "episode_theme": "Robin Foster uses flirtation, humor, and physicality to assert control over Jesse Mercer, masking desire with performance and maintaining dominance through transactional intimacy",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-54fb1348147f2fcaefdb"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "You take physical intimacy very seriously and avoid playful banter",
+              "Your attraction to Jesse Mercer makes you emotionally vulnerable and less controlled"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "flirtatious, teasing, sarcastic, witty",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011",
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Robin Foster inspects Jesse Mercer's body with arousal and Robin Foster brings Jesse Mercer a sandwich.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that she must use humor or wordplay to deflect or navigate intimacy., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You clearly enjoy flirting with Jesse Mercer—but how do you keep that spark playful while still staying in control, especially when you're so visibly drawn to him?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Robin Foster_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "You have no interest in photography and never mentioned taking pictures",
+              "Your interest in Jesse Mercer is purely emotional and not physical or controlling"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "flirtatious, teasing, sarcastic, witty",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002",
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Robin Foster questions Jesse Mercer and Sidney Thorne's relationship and Robin Foster expresses desire to take naked pictures of Jesse Mercer.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that she must use humor or wordplay to deflect or navigate intimacy., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you teased him about taking naked pictures—first at the party, then again with the sandwich—was that just flirtation, or a way to keep him off balance and remind him who’s in charge?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you manage to keep things flirtatious and controlled while being so attracted to Jesse Mercer?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Robin Foster_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Jesse Mercer that clearly falls outside the established relationship evidence.",
+              "Your relationship with Jesse Mercer is purely romantic and devoid of power struggles"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "flirtatious, teasing, sarcastic, witty",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Jesse Mercer marked by romantic partners, power struggle, and mutual transactional arrangement."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002",
+                "r009",
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Robin Foster questions Jesse Mercer and Sidney Thorne's relationship and Robin Foster expresses desire to take naked pictures of Jesse Mercer.",
+              "The established dynamic with Jesse Mercer is marked by romantic partners, power struggle, and mutual transactional arrangement, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must use humor or wordplay to deflect or navigate intimacy., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You gave him money, a place to stay, and those teasing offers—but always on your terms. So is your power over Jesse Mercer something you perform, or something you truly hold?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How do you manage to keep things flirtatious and controlled while being so attracted to Jesse Mercer?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What are you really after with Jesse Mercer, especially when you talk about taking his picture?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Robin Foster_q001",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/ene7ea5a09bac248ef93cb96fea57e1d53/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/ene7ea5a09bac248ef93cb96fea57e1d53/task_3_role_assets.json",
+    "role_asset_sha256": "4890fb045156bec9eb25526b0e47d122fe1708854e094cd11ba3545275f44dfc",
+    "sha256": "b8d6cd915f83242fb6a59b518893a3a37deaf2c642847bfca3875badfbe9d20d",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "ene7ea5a09bac248ef93cb96fea57e1d53",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

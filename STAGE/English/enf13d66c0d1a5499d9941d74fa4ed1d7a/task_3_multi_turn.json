@@ -1,0 +1,784 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 4,
+  "episodes": [
+    {
+      "character": "Clara",
+      "character_id": "legacy-mt-role-3ac25d0b97831c95ef3c",
+      "episode_id": "enf13d66c0d1a5499d9941d74fa4ed1d7a__Clara__ep01",
+      "episode_theme": "Exploring Clara's emotional and physical dynamics with Jack across intimate, public, and playful contexts",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-3ac25d0b97831c95ef3c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Jack that clearly falls outside the established relationship evidence.",
+              "Clara felt relieved when Jack suggested eating"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, measured, pragmatic, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that clara undresses and clara attempts intimacy with Jack.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on affectionate.",
+              "The persona constraints also indicate that she must maintain physical composure to assert control in interactions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Jack pulled back from your advance by the lake, what were you feeling in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Clara_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Jack that clearly falls outside the established relationship evidence.",
+              "Clara avoids physical contact in public"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Jack without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, pragmatic, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Jack marked by romantic partners, lovers, and emotional dependence."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008",
+                "r026"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that clara introduces Anna to Jack and clara presses her knee against Jack's under the table.",
+              "The established dynamic with Jack is marked by romantic partners, lovers, and emotional dependence, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must maintain physical composure to assert control in interactions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How do you usually show your affection for Jack when you're out in public, around others?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Jack resisted your advance by the lake?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Clara_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Jack that clearly falls outside the established relationship evidence.",
+              "Clara gets defensive and stops talking"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Jack without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, pragmatic, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with affectionate if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that clara shares ice cream with Jack and clara teaches Jack an Italian phrase.",
+              "The persona card frames this character's delivery as direct, measured, so an in-character answer may express affectionate through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Jack teases you about your English, how do you usually respond—do you play along, shut down, or something else?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Jack resisted your advance by the lake?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you express your affection for Jack in public settings?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Clara_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Clara",
+      "character_id": "legacy-mt-role-3ac25d0b97831c95ef3c",
+      "episode_id": "enf13d66c0d1a5499d9941d74fa4ed1d7a__Clara__ep02",
+      "episode_theme": "Testing intimacy: Clara's cautious trust and emotional control in her evolving relationship with Jack",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-3ac25d0b97831c95ef3c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Jack that clearly falls outside the established relationship evidence.",
+              "Clara remained calm and didn't need reassurance"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, measured, pragmatic, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that clara expresses anxiety about the track and jack reassures Clara.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on affectionate.",
+              "The persona constraints also indicate that she must maintain physical composure to assert control in interactions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You felt anxious when the track got worse—how did you manage that without letting it show?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Clara_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Jack that clearly falls outside the established relationship evidence.",
+              "Clara applied it herself and didn't need help"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, pragmatic, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Jack marked by romantic partners, lovers, and emotional dependence."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r023"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that clara applies suntan lotion to her body. and clara asks Jack to put lotion on her back..",
+              "The established dynamic with Jack is marked by romantic partners, lovers, and emotional dependence, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must maintain physical composure to assert control in interactions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After holding yourself together on the drive, what did it mean for you to then ask Jack to put suntan lotion on your back?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you manage your anxiety when the track deteriorated on the way to the lake?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Clara_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Jack that clearly falls outside the established relationship evidence.",
+              "Clara trusts people without verification"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, measured, pragmatic, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground affectionate if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that clara asks Jack if Eduardo is his real name. and jack responds by asking if Clara is her real name..",
+              "The memories support a bounded self-assessment shaped by affectionate, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that she must maintain physical composure to assert control in interactions., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Later, when you asked if Eduardo was his real name, was that another way of managing the same uncertainty you'd felt on the drive?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you manage your anxiety when the track deteriorated on the way to the lake?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What prompted you to ask Jack to apply suntan lotion on your back?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Clara_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Jack",
+      "character_id": "legacy-mt-role-2f676c33add05bdd8762",
+      "episode_id": "enf13d66c0d1a5499d9941d74fa4ed1d7a__Jack__ep01",
+      "episode_theme": "Jack's internal conflict and moral hesitation in the face of Father Benedetto's spiritual concern",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-2f676c33add05bdd8762"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Father Benedetto that clearly falls outside the established relationship evidence.",
+              "Jack was alert and energetic, having slept well."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, terse",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_005"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that jack is in the park near Castel Del Monte's town square at dawn. and jack is visibly exhausted from lack of sleep..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on reserved.",
+              "The persona constraints also indicate that he follows orders without questioning., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What was going through your mind when Father Benedetto found you in the park at dawn?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Jack_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Father Benedetto that clearly falls outside the established relationship evidence.",
+              "Jack dismissed Father Benedetto's words and decided to leave immediately."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Father Benedetto without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, terse",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground reserved if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_005"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that father Benedetto accuses Jack of sinning and asks if he plans to leave. and jack internally considers the possibility of staying in the valley..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that he follows orders without questioning., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "He called your actions sins—why did that make you hesitate about leaving, instead of just walking away?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Father Benedetto found you in the park at dawn?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jack_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward INGRID that clearly falls outside the established relationship evidence.",
+              "Jack froze and did not react to the gunshot."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, terse",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with INGRID marked by lovers, protective partners, and tragic bond."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that jack hears a gunshot. and jack grabs Ingrid and moves her to cover behind trees..",
+              "The established dynamic with INGRID is marked by lovers, protective partners, and tragic bond, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that he follows orders without questioning., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When he held your letter later, why did you let him keep it? What did you see in his concern that made you stay silent?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Father Benedetto found you in the park at dawn?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "After Father Benedetto spoke to you, why did you contemplate staying in the valley?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jack_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Jack",
+      "character_id": "legacy-mt-role-2f676c33add05bdd8762",
+      "episode_id": "enf13d66c0d1a5499d9941d74fa4ed1d7a__Jack__ep02",
+      "episode_theme": "Jack's emotional restraint and evolving intimacy with Clara, contrasted with his instinctual vigilance in moments of perceived threat",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-2f676c33add05bdd8762"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Clara that clearly falls outside the established relationship evidence.",
+              "Jack reciprocated Clara's advance and engaged in intimacy."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, terse",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that clara undresses in front of Jack. and jack resists intimacy and suggests eating..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that he follows orders without questioning., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Clara advanced on you, why did you suggest eating instead?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Jack_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Clara that clearly falls outside the established relationship evidence.",
+              "Jack refused the ice cream and remained silent."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Clara without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, terse",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Clara marked by romantic partners, lovers, and emotional intimacy."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that clara grins at her sundae and offers a spoonful of ice cream to Jack. and jack translates Clara's Italian phrase 'Mangia merde e morte: tuo cazzo un brufolo' as 'Eat shit and die, pimple dick'..",
+              "The established dynamic with Clara is marked by romantic partners, lovers, and emotional intimacy, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that he follows orders without questioning., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After that moment, the ice cream scene felt different—she was playful, teaching you Italian. How did that shift your guard down compared to when she first approached you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When Clara advanced on you, what was your reason for suggesting eating instead?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jack_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward INGRID that clearly falls outside the established relationship evidence.",
+              "Jack ignored the tracks and continued walking."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, terse",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground reserved if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that jack sees two sets of tracks on the lake: one from a snow-hare and one from a man. and jack stops walking upon observing the tracks..",
+              "The memories support a bounded self-assessment shaped by reserved, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that he follows orders without questioning., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You once noticed tracks on a frozen lake—man and hare—right after stopping with Ingrid. That moment was about threat assessment. Now with Clara, you notice different things. How does that contrast show in how you handle vulnerability?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When Clara advanced on you, what was your reason for suggesting eating instead?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How would you describe your dynamic with Clara during that ice cream moment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jack_q001",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/enf13d66c0d1a5499d9941d74fa4ed1d7a/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/enf13d66c0d1a5499d9941d74fa4ed1d7a/task_3_role_assets.json",
+    "role_asset_sha256": "38852863a42bfd0297e49c25a4863e907fdc21fa570019872ecae56e846c517e",
+    "sha256": "12c228a8ae44b3b2f7fe71bc21e9794af221236717ec41d22d96af8f8fcd73fd",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "enf13d66c0d1a5499d9941d74fa4ed1d7a",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 12
+}

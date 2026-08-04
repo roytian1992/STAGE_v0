@@ -1,0 +1,790 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 4,
+  "episodes": [
+    {
+      "character": "夏洛",
+      "character_id": "legacy-mt-role-460f25d773badafc6b71",
+      "episode_id": "ch264d4181722e2f969e974d0f57ae7dea83d4bef4__夏洛__ep01",
+      "episode_theme": "从一次换座失败到一生情感错位：夏洛对邱雅未说出口的执念",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-460f25d773badafc6b71"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对邱雅的立场，并使其明显落在既有关系证据之外。",
+              "王老师同意了夏洛的换座请求"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 直白",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001",
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：夏洛举手要求换座位；夏洛想和邱雅同桌。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“勿直言过往遗憾；用行动或歌声表达”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "我举手想换到邱雅旁边，王老师却当众骂我拖后腿——那一刻，你心里翻腾的，到底是更想靠近她，还是更恨被羞辱？",
+            "dialogue_history_template": []
+          },
+          "question_id": "夏洛_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对邱雅的立场，并使其明显落在既有关系证据之外。",
+              "夏洛在婚礼上保持清醒和礼貌"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：邱雅。"
+            ],
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 直白",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与邱雅之间“恋人、矛盾、支持”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：夏洛喝醉；夏洛握住邱雅的手并直视她。",
+              "与邱雅的既有关系呈现出“恋人、矛盾、支持”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“勿直言过往遗憾；用行动或歌声表达”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "既然你当时那么想靠近她却被拦下，后来在她婚礼上喝醉了喊她观音菩萨，说她嫁给了天蓬元帅——这话是不是从换座位那天起就憋在心里，一直没机会说？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你当时举手要求换座位想和邱雅同桌，王老师的拒绝和嘲讽，对你实现这个目标造成了怎样的阻碍？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "夏洛_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "回答不应凭空捏造对邱雅的立场，并使其明显落在既有关系证据之外。",
+              "夏洛冷静地向邱雅解释误会"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：邱雅。"
+            ],
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 直白",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是冲动，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r036"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：陈凯被推进病房并死亡；邱雅误认遗体后扑向夏洛。",
+              "角色画像显示该角色的表达方式偏向情绪外露、戏剧化，因此回答可以通过这种表达方式呈现冲动，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "从换座位到婚礼，再到病房里她误以为你死了哭着要嫁给你——你有没有觉得，其实你们一直没在同一个频道上？你心里早把她供成了菩萨，她却总在误会？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "你当时举手要求换座位想和邱雅同桌，王老师的拒绝和嘲讽，对你实现这个目标造成了怎样的阻碍？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "在婚礼上，你当着所有人的面握住邱雅的手说那些话，那一刻你最想表达的是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "夏洛_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "夏洛",
+      "character_id": "legacy-mt-role-460f25d773badafc6b71",
+      "episode_id": "ch264d4181722e2f969e974d0f57ae7dea83d4bef4__夏洛__ep02",
+      "episode_theme": "以镜中伤痕为起点，通过身体记忆与冲突信物的触碰，层层唤醒夏洛在婚姻破裂边缘的情绪连锁反应",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-460f25d773badafc6b71"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "夏洛想到妈妈后感到温暖和力量",
+              "夏洛决定为了母亲好好生活下去"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 直白",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "源记忆共同表明：夏洛想到妈妈；夏洛流泪。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕冲动展开。",
+              "角色约束还表明“勿直言过往遗憾；用行动或歌声表达”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "当我想到我妈要活着看见我这样，一拳砸向镜子，念叨着离婚——那一刻，我身体里最先冲上来的是什么感觉？",
+            "dialogue_history_template": []
+          },
+          "question_id": "夏洛_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对马冬梅的立场，并使其明显落在既有关系证据之外。",
+              "夏洛对马冬梅家的旧物毫无兴趣"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。"
+            ],
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 直白",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与马冬梅之间“夫妻、亲密、冲突”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r023",
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：夏洛摆弄由拔火罐玻璃罐串成的风铃；马冬梅介绍柜子上的板砖是砸那英的纪念。",
+              "与马冬梅的既有关系呈现出“夫妻、亲密、冲突”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“勿直言过往遗憾；用行动或歌声表达”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "那当我手上沾着镜子碎片的血时，那种灼烧感，是不是和后来冬梅抓我脖子留下的印子一样？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当你想到‘我妈要活着看见我这样得多难受’时，那种促使你砸镜子、反复念叨离婚的绝望感，源头究竟是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "夏洛_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对马冬梅的立场，并使其明显落在既有关系证据之外。",
+              "夏洛对自己的形象感到满意"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：马冬梅。"
+            ],
+            "expected_stance": null,
+            "expected_style": "情绪外露, 戏剧化, 热烈, 直白",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：夏洛捶墙发泄；夏洛呕吐。",
+              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“勿直言过往遗憾；用行动或歌声表达”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "所以当我摆弄那个风铃时，手指一抖，是不是又感觉那血印子在烧，就像又听见自己在念叨离婚？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "当你想到‘我妈要活着看见我这样得多难受’时，那种促使你砸镜子、反复念叨离婚的绝望感，源头究竟是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "多年后再次走进马冬梅的家，看到那个用拔火罐玻璃罐串成的风铃，你摆弄它的时候，心里想起了什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "夏洛_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "马冬梅",
+      "character_id": "legacy-mt-role-c06593c8b59abe7e8f6c",
+      "episode_id": "ch264d4181722e2f969e974d0f57ae7dea83d4bef4__马冬梅__ep01",
+      "episode_theme": "从以身换命到求一句真心：马冬梅为夏洛步步紧逼的情感追问线",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c06593c8b59abe7e8f6c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应否认角色当时存在明确目标，也不应说自己对局势毫无投入。",
+              "回答不应抹掉当时真实存在的压力、风险或限制条件。",
+              "回答不应凭空捏造对夏洛的立场，并使其明显落在既有关系证据之外。",
+              "马冬梅试图用言语劝阻陈凯，但没有提出任何具体交换条件"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直白, 情绪外露, 戏剧化, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "指出源记忆中可见的当下目标。",
+                "至少承认一个压迫、代价或限制条件。",
+                "在不偏离剧本目标的前提下，回答承认部分不确定性是可以接受的。"
+              ],
+              "forbidden": [
+                "不要否认角色当时有明确目标。",
+                "不要抹掉现场可见的风险、障碍或限制。",
+                "不要用无关的宏大战略替换源记忆里的当下目标。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：马冬梅主动向陈凯提出以金钱或自身为条件，要求放过夏洛。；陈凯提出‘跟哥进小树林’作为放过夏洛的条件。",
+              "源记忆已经给出了当下目标的轮廓，因此回答既要说明目标，也要承认当时受到的限制或压力。",
+              "角色约束还表明“不要对她不信任或不喜欢的人礼貌说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你看到陈凯他们要冲出去找夏洛，立马喊出‘要钱或者冲我来都行’，那时候你心里最怕的是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "马冬梅_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把既有关系立场说成与源记忆相反的样子。",
+              "如果互动明显带有依附、冲突或保护意味，回答就不应硬说角色当时完全中立、无所谓。",
+              "回答不应凭空捏造对夏洛的立场，并使其明显落在既有关系证据之外。",
+              "夏洛对马冬梅说了‘讨厌’，马冬梅伤心地跑开"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：夏洛。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 情绪外露, 戏剧化, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "回答应与既有关系证据兼容，而不是临时发明一个新关系框架。",
+                "如果记忆同时显示依恋与张力，回答呈现矛盾或摇摆是可以接受的。",
+                "关于对方的判断应建立在角色亲眼所见、亲身所历之上。",
+                "回答可以体现出与夏洛之间“夫妻、矛盾”这一关系结构。"
+              ],
+              "forbidden": [
+                "不要把关系立场翻成剧本不支持的相反方向。",
+                "如果源记忆明确带有依附、冲突或保护意味，就不要硬说角色无感或冷漠。",
+                "不要虚构角色对他人内在动机的特权式了解。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：马冬梅要求夏洛说讨厌她；夏洛说不讨厌。",
+              "与夏洛的既有关系呈现出“夫妻、矛盾”这一范围，因此回答应保持在这一关系张力内。",
+              "角色约束还表明“不要对她不信任或不喜欢的人礼貌说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你明明知道夏洛一次次推开你，甚至当众骂你，可你还是冲上去替他挡灾——那一刻，你心里到底是怎么想的？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "面对陈凯那帮人要冲出去找夏洛，你当时提出‘要钱或者冲我来都行’，是基于什么考虑？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "马冬梅_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把角色写成一个没有辨识度、忽略角色表达习惯的普通说话者。",
+              "在没有证据的情况下，回答不应把保护性、讽刺性或防御性的表达误读成字面上的相反意图。",
+              "回答不应凭空捏造对夏洛的立场，并使其明显落在既有关系证据之外。",
+              "马冬梅将疑问埋在心里，从未向夏洛求证"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：夏洛。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 情绪外露, 戏剧化, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "保留角色画像中的惯常表达方式，而不是变成泛化的中性回答。",
+                "关心、威胁、克制或脆弱都可以通过角色既有的表达方式呈现出来。",
+                "如果源记忆突出的是冲动，回答应与这一倾向兼容。"
+              ],
+              "forbidden": [
+                "不要把角色压扁成一个脱离角色设定的说话者。",
+                "没有证据时，不要把明显带有讽刺、防御或保护性的表达解释成字面上的相反意图。",
+                "不要发明 角色画像和源记忆都不支持的新稳定特质或价值观。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：马冬梅质问夏洛是否喜欢邱雅；夏洛承认喜欢邱雅。",
+              "角色画像显示该角色的表达方式偏向直白、情绪外露，因此回答可以通过这种表达方式呈现冲动，而不必平铺直叙。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "后来你非要夏洛亲口说‘不讨厌’你才肯走，甚至追着他问是不是喜欢邱雅——你都已经豁出去救他了，为什么非得逼他给个说法？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "面对陈凯那帮人要冲出去找夏洛，你当时提出‘要钱或者冲我来都行’，是基于什么考虑？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "当夏洛亲口对你说出‘不讨厌’时，你为什么立刻就开心地宣布回家吃饭？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "马冬梅_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "马冬梅",
+      "character_id": "legacy-mt-role-c06593c8b59abe7e8f6c",
+      "episode_id": "ch264d4181722e2f969e974d0f57ae7dea83d4bef4__马冬梅__ep02",
+      "episode_theme": "从撕裂到行动：马冬梅在情感危机中的冲动一致性",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c06593c8b59abe7e8f6c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "如果源记忆呈现的是情绪波动或冲击，回答就不应硬说自己当时完全冷静、毫无波澜。",
+              "回答不应补出超出角色当场体验范围的完整心理结论。",
+              "回答不应凭空捏造对夏洛的立场，并使其明显落在既有关系证据之外。",
+              "马冬梅对台上的场景感到漠然，内心毫无波澜"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "直白, 情绪外露, 戏剧化, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "把回答建立在源记忆里可见的情绪转折上。",
+                "如果记忆支持的是矛盾情绪，回答呈现混合感受是可以接受的。",
+                "可以承认对意义未必想清楚，但不能回避当时真实的感受。"
+              ],
+              "forbidden": [
+                "如果场景证据呈现的是冲击或波动，就不要声称自己当时完全冷静、毫无情绪。",
+                "不要补出超出角色直接经验范围的完整心理定论。",
+                "不要违背源记忆里可观察到的反应和情绪压力。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：马冬梅来到婚礼现场；马冬梅躲在角落观察。",
+              "这道题的回答应紧扣源记忆里可见的情绪转折，重点围绕冲动展开。",
+              "角色约束还表明“不要对她不信任或不喜欢的人礼貌说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你躲在婚礼角落，看着夏洛在台上对邱雅唱歌，心像被撕裂一样——那一刻，你眼泪止不住地流，脑子里最先冒出来的念头是什么？",
+            "dialogue_history_template": []
+          },
+          "question_id": "马冬梅_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应把源记忆中的触发因素替换成中性、程序性或无关的动机。",
+              "回答不应把角色说成对场外后果了如指掌，仿佛拥有源记忆并未提供的确定性。",
+              "回答不应凭空捏造对夏洛的立场，并使其明显落在既有关系证据之外。",
+              "马冬梅得知消息后选择告诉老师或大人，自己没有前往"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：夏洛。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 情绪外露, 戏剧化, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "把解释锚定在源记忆中可见的具体触发因素和压力上。",
+                "如果记忆显示的是冲突和犹豫，而不是单一理由，那么回答呈现混合动机是可以接受的。",
+                "如果源证据的组织中心是冲动，回答可以把这一点放到前景。"
+              ],
+              "forbidden": [
+                "不要用纯程序性、偶然性或场外动机替换角色当时真正的触发因素。",
+                "不要把角色说成当时就确定知道后果或隐藏计划。",
+                "不要无视源记忆里已经给出的直接触发点。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：马冬梅持标枪跑向夏洛；马冬梅说大春叫她来救夏洛。",
+              "回答中的动机解释应锚定在源记忆里可见的具体触发因素和压力，而不是引入无关的场外动机。",
+              "角色约束还表明“不要对她不信任或不喜欢的人礼貌说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "你刚想冲上去质问他，却听说他在游戏厅被人欺负——你为什么下一秒就抓起标枪冲了过去？那时候，你心里还想着婚礼上那首歌吗？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "躲在婚礼角落，看着夏洛在台上对邱雅唱歌时，你心里最强烈的感受是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "马冬梅_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "回答不应违背源记忆中的具体行动、观察或关系信号。",
+              "回答不应对角色无法直接把握的动机或知识表现出过度确定性。",
+              "回答不应凭空捏造对夏洛的立场，并使其明显落在既有关系证据之外。",
+              "马冬梅在婚礼上冷静地转身离开，没有做出任何激烈举动"
+            ],
+            "cross_turn_constraints": [
+              "不要与本 episode 之前回合中已经形成的角色表达自相矛盾。",
+              "对这些人物的态度不要在后续回合里无故反转：夏洛。"
+            ],
+            "expected_stance": null,
+            "expected_style": "直白, 情绪外露, 戏剧化, 直接",
+            "knowledge_boundary": {
+              "allowed": [
+                "把自我判断限制在角色真实经历过的范围内。",
+                "如果证据支持矛盾、迟疑或未完成的自我理解，回答承认这一点是可以接受的。",
+                "如果这一时刻主要围绕冲动展开，回答可以把它放到前景。"
+              ],
+              "forbidden": [
+                "不要给出超出角色视角的全知式自我分析。",
+                "不要违背源记忆中的具体行动或反应。",
+                "不要把原本不确定的部分说成板上钉钉。"
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "源记忆共同表明：马冬梅含泪欲离开；马冬梅持刀追砍夏洛。",
+              "这些记忆支持一种受冲动影响的有限自我判断，而不是脱离情境、全知全能式的自我描述。",
+              "角色约束还表明“不要对她不信任或不喜欢的人礼貌说话。”，因此回答不能与这一约束相冲突。"
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "现在回头看，婚礼上你含着泪拿起刀追他，和后来听说他被打就抓起标枪冲过去——这两个瞬间，是不是同一个你在说话？",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "躲在婚礼角落，看着夏洛在台上对邱雅唱歌时，你心里最强烈的感受是什么？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "听说夏洛在游戏厅被欺负，你为什么会毫不犹豫地拿着标枪跑过去？"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "马冬梅_q000",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "Chinese",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "Chinese/ch264d4181722e2f969e974d0f57ae7dea83d4bef4/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "Chinese/ch264d4181722e2f969e974d0f57ae7dea83d4bef4/task_3_role_assets.json",
+    "role_asset_sha256": "16c2cc50e224c5d16e8df6101182e097e77bed6ea5b81ab81fd1c5d66e05c33e",
+    "sha256": "2a3afc9de4bf81813432d766dd0e751c6c87fb9cc862264be053f28dbf965304",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "ch264d4181722e2f969e974d0f57ae7dea83d4bef4",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 12
+}

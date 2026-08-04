@@ -1,0 +1,17 @@
+id: task2_direct_compact_judge
+category: evaluation
+name: Task 2 compact answer-equivalence judge
+description: Compare a candidate with a reference when the full judge prompt is repeatedly refused.
+task_variables:
+  - {name: reference_answer, required: true}
+  - {name: candidate_answer, required: true}
+static_variables: []
+template: |-
+  Decide whether the candidate conveys the same required facts as the reference answer.
+  <reference_answer>{reference_answer}</reference_answer>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+
+  Equivalent concise wording is correct. Missing facts, contradictions, wrong entities or events, and claims that the answer cannot be known are incorrect. Return no analysis.
+
+  Return only JSON with exactly these fields:
+  {{"answer_correct":true,"brief_rationale":"..."}}

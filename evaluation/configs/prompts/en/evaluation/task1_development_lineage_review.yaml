@@ -1,0 +1,26 @@
+id: task1_development_lineage_review
+category: evaluation
+name: Task 1 development lineage review
+description: Group reviewed developments and link them to reviewed stable state lineages.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: ordered_checkpoints, required: true}
+  - {name: reviewed_development_claims, required: true}
+  - {name: reviewed_state_lineages, required: true}
+  - {name: source_developments, required: true}
+  - {name: allowed_member_refs, required: true}
+  - {name: expected_member_count, required: true}
+static_variables: []
+template: |-
+  Review development lineage for "{focal_character}" before any model prediction is viewed.
+  <ordered_checkpoints>{ordered_checkpoints}</ordered_checkpoints>
+  <reviewed_development_claims>{reviewed_development_claims}</reviewed_development_claims>
+  <reviewed_state_lineages>{reviewed_state_lineages}</reviewed_state_lineages>
+  <source_developments>{source_developments}</source_developments>
+  <allowed_member_refs>{allowed_member_refs}</allowed_member_refs>
+  <expected_member_count>{expected_member_count}</expected_member_count>
+
+  Group claims only when they describe the same trigger, direction, and resulting change. Across all member_refs, emit exactly expected_member_count references and make their set exactly equal allowed_member_refs: no example-only output, omission, duplication, or extra reference. trigger_checkpoint_id and effective_checkpoint_id must use ordered checkpoint IDs and the trigger cannot follow the effective checkpoint. affected_state_keys, resulting_state_keys, and superseded_state_keys may reference only emitted GS keys. Use [] when the reviewed evidence does not establish a relation. Source IDs are provenance candidates, not permission to merge different developments. Do not infer from model predictions.
+
+  The source_developments list is intentionally empty because source IDs are provenance, not scoring evidence; source_development_ids must therefore be []. Return only JSON:
+  {{"developments":[{{"lineage_key":"GD1","canonical_claim":"...","member_refs":["Q1"],"source_development_ids":[],"trigger_checkpoint_id":"...","effective_checkpoint_id":"...","affected_state_keys":[],"resulting_state_keys":[],"superseded_state_keys":[]}}]}}

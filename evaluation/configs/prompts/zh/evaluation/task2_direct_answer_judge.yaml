@@ -1,0 +1,21 @@
+id: task2_direct_answer_judge_zh
+category: evaluation
+name: Task 2 直接回答评测
+description: 不使用检索片段，判断 closed-book 直接回答是否正确。
+task_variables:
+  - {name: question, required: true}
+  - {name: reference_answer, required: true}
+  - {name: reference_evidence_or_reason, required: true}
+  - {name: candidate_answer, required: true}
+static_variables: []
+template: |-
+  评测一个已写成的虚构剧本问题的 closed-book 直接回答是否正确。
+  <question>{question}</question>
+  <reference_answer>{reference_answer}</reference_answer>
+  <reference_evidence_or_reason>{reference_evidence_or_reason}</reference_evidence_or_reason>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+
+  仅当候选答案表达了参考答案要求的事实且没有实质冲突时，设置 answer_correct=true。接受等义表述和简洁答案；缺少必要事实、答错实体、事件或关系、无依据猜测，或声称无法知道，均判错。给出简短可审计说明，不输出隐藏推理。
+
+  只返回包含以下字段的 JSON：
+  {{"answer_correct":true,"brief_rationale":"..."}}

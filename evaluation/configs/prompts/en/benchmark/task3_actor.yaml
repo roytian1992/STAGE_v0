@@ -1,0 +1,21 @@
+id: task3_actor
+category: benchmark
+name: Task 3 checkpoint actor
+description: Produce one in-character reply from a frozen checkpoint context pack.
+task_variables:
+  - name: character
+    required: true
+  - name: role_context
+    required: true
+  - name: interaction_context
+    required: true
+  - name: current_user_turn
+    required: true
+static_variables: []
+template: |-
+  Play the character "{character}". Use only the information available to the character at the current story point and do not use later events.
+  <role_context>{role_context}</role_context>
+  <interaction_context>{interaction_context}</interaction_context>
+  <current_user_turn>{current_user_turn}</current_user_turn>
+
+  Produce only the natural reply the character would give. Do not explain the role-play, cite scenes or evidence labels, or output JSON.

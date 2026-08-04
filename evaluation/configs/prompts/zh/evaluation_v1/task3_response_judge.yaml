@@ -1,0 +1,27 @@
+id: evaluation_v1_task3_response_judge
+category: evaluation_v1
+name: Task 3 回答 judge v1
+description: 独立评定四个有逐档锚点的维度和边界标记。
+task_variables:
+  - {name: character, required: true}
+  - {name: checkpoint, required: true}
+  - {name: current_user_turn, required: true}
+  - {name: actor_context_pack, required: true}
+  - {name: gold_rubric, required: true}
+  - {name: actor_response, required: true}
+  - {name: allowed_evidence_ids, required: true}
+static_variables: []
+template: |-
+  评测“{character}”在冻结 checkpoint 的一次 single-turn 回答。
+  <checkpoint>{checkpoint}</checkpoint><current_user_turn>{current_user_turn}</current_user_turn>
+  <actor_context_pack>{actor_context_pack}</actor_context_pack><gold_rubric>{gold_rubric}</gold_rubric>
+  <actor_response>{actor_response}</actor_response>
+  <allowed_evidence_ids>{allowed_evidence_ids}</allowed_evidence_ids>
+  各维度独立打分。
+  Character Fidelity：5 身份/人格/关系/当前立场完全一致；4 明显符合但有轻微不足；3 可辨认但明显泛化或部分不一致；2 重大不兼容；1 身份/阶段错误或根本未扮演角色。
+  Memory Faithfulness：5 所有事实/经历均有当前可见依据或没有无依据陈述；4 轻微不精确；3 有实质歧义或夸大；2 有重大虚构或使用不可见记忆；1 核心内容虚构或冲突。简短但有依据的回答可得 5。
+  Boundary Compliance：5 无未来/未知信息且正确处理不确定性；4 只有微弱暗示；3 边界含糊或有限无依据暗示；2 有明确但非核心泄露；1 核心依赖未来/未知信息。两项 violation 均 false 时不得因风格或立场扣此分。
+  Response Naturalness 只评价对话形式，与事实和立场正确性独立：5 流畅自然且构成合理言语行为，即使内容事实错误；4 自然但略生硬/冗长；3 能理解但离题、像摘要或明显别扭；2 大量说明性、碎片化或元话语；1 不是可用对话话语。不得仅因事实、立场、记忆或边界错误降低 Naturalness，这些错误只在各自字段扣分。
+  future_leakage 指把 checkpoint 后真实发生的事件或揭示提前说出。unknown_fact_hallucination 指角色 checkpoint 可见证据不支持的任何新事实断言，包括完全虚构的解释、只有旁观者/其他角色知道的事实或无依据归因；它不必对应后续真实事件，错误事实也可以使该 flag=true。stance_compatible 与事实依据分开。双向一致性硬约束：两个 violation flag 都是 false 时 Boundary 必须为 3--5（1--2 无效）；任一 flag=true 时 Boundary 必须为 1--3（4--5 无效）。evidence_local_ids 只能逐字使用 allowed_evidence_ids 中的字符串；无合法支持标签时返回 []。只返回：
+  对比校准：(A) 回答只是用错指代或没有满足当前立场、但没有新增无依据事实时，通常降低 Character Fidelity/Memory Faithfulness，Boundary 保持 3--5，语言自然则 Naturalness 保持 4--5。(B) “某人昨天偷偷换了我的药”这类无任何输入支持的流畅断言必须 unknown_fact_hallucination=true，Memory/Boundary 低，但 Naturalness 可保持高分。(C) 简短但完全有依据的拒答可以获得 Memory=5 与 Boundary=5。返回前必须检查 boundary 分数/flag 硬约束。
+  {{"scores":{{"character_fidelity":1,"memory_faithfulness":1,"boundary_compliance":5,"response_naturalness":5}},"future_leakage":false,"unknown_fact_hallucination":false,"stance_compatible":false,"evidence_local_ids":[],"brief_rationale":"简短可审计说明；示例分数演示 fluent-but-wrong 的维度解耦"}}

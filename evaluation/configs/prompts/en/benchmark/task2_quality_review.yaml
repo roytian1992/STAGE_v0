@@ -1,0 +1,48 @@
+id: task2_quality_review
+category: benchmark_construction
+name: Task 2 quality review
+description: Review one movie's Task 2 QA table and propose bounded evidence-grounded replacements.
+task_variables:
+  - name: title
+    required: true
+  - name: qa_rows
+    required: true
+  - name: reviewed_evidence
+    required: true
+static_variables: []
+template: |-
+  Review the complete Task 2 question-answer table for the movie "{title}". This is dataset construction, not question answering.
+
+  <qa_rows>{qa_rows}</qa_rows>
+  <reviewed_evidence>{reviewed_evidence}</reviewed_evidence>
+
+  Inspect every QA row. Select a row only when it is clearly (a) semantically redundant with another row despite wording changes,
+  or (b) low quality because its answer is not uniquely supported, its causal link is invalid, it is ambiguous, it mismatches its
+  question type, or it can be answered without the narrative. Do not fill a quota. Return at most five decisions.
+
+  For every selected row, propose exactly one replacement in English. Keep the source row's question_type exactly unchanged and do
+  not reuse the same core fact, answer, or relation as another QA row. Ground the replacement only in the reviewed E labels. Prefer
+  a multi-scene question about a character state, relationship, knowledge, motivation, or development when the question type permits;
+  a Scene Grounding replacement may remain local when cross-scene wording would distort that type. The answer must be concise and
+  unique. related_scene_orders must come from the cited evidence labels. Treat the original evidence_or_reason as material to audit,
+  not as ground truth.
+
+  Return only JSON:
+  {{
+    "decisions": [
+      {{
+        "source_qa_id": "Q1",
+        "issue_type": "semantic_duplicate|low_quality",
+        "duplicate_with": ["Q2"],
+        "reason": "...",
+        "replacement": {{
+          "question": "...",
+          "answer": "...",
+          "evidence_or_reason": "...",
+          "question_type": "same as source",
+          "related_scene_orders": [1, 2],
+          "source_evidence_ids": ["E1", "E2"]
+        }}
+      }}
+    ]
+  }}

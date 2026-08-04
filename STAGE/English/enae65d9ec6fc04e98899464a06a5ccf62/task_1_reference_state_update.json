@@ -1,0 +1,2391 @@
+{
+  "context_protocol": {
+    "full_screenplay_prefix_used": false,
+    "memory_extractor_inputs": [
+      "character",
+      "aliases",
+      "screenplay_interval"
+    ],
+    "memory_method": "runtime_entity_centric_chunk_extraction",
+    "memory_shared_between_settings": true,
+    "previous_state_model_projection": "claim_text_only",
+    "previous_state_visible_to_memory_extractor": false,
+    "screenplay_scope": "previous_checkpoint_exclusive_to_current_checkpoint_inclusive"
+  },
+  "counts": {
+    "checkpoints": 18,
+    "current_state_reference_claims": 129,
+    "development_reference_claims": 24,
+    "trajectories": 3
+  },
+  "language": "English",
+  "metrics": [
+    "current_state_reference_coverage",
+    "development_reference_coverage",
+    "current_state_unsupported_rate",
+    "development_unsupported_rate",
+    "current_state_contradiction_rate",
+    "development_contradiction_rate"
+  ],
+  "movie_id": "enae65d9ec6fc04e98899464a06a5ccf62",
+  "output_schema": {
+    "current_state": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    },
+    "developments_since_previous_checkpoint": {
+      "item_fields": [
+        "claim",
+        "evidence_scene_orders"
+      ],
+      "type": "array"
+    }
+  },
+  "schema": "stage_task1_reference_state_update",
+  "script": {
+    "file": "script.json",
+    "scene_count": 189,
+    "sha256": "d8e4491570a3b64a2deefe3c71586d85e2882c58e1c07c67a906e72dcb3c660d"
+  },
+  "setting": "reference_state_update",
+  "task": "Track how a focal character's state changes as the story evolves between consecutive checkpoints.",
+  "trajectories": [
+    {
+      "aliases": [
+        "Elinor Dashwood",
+        "Mrs Dashwood",
+        "Mr Dashwood",
+        "Elinor",
+        "young woman",
+        "Miss Dashwood",
+        "Mrs. Dashwood",
+        "The Dashwoods",
+        "Dashwoods",
+        "mother"
+      ],
+      "character": "Elinor Dashwood",
+      "character_id": "entity-4d527a706d5714c24de1",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-755169ebdd9b81a4b539",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-6eeecc3565bfb9868199"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's status identity develops into \"Mr Dashwood is alive at the beginning of the scene but dies by the end\" (visible from scene 3; no comparable prior state is recorded).",
+                "development_id": "character-development-4452668b382173e290d3",
+                "evidence_scene_orders": [
+                  3
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-60df22aeee916992e77b",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 3,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-330bad4b50e808e5dbfd",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-31d07620435d985646a2"
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-6eeecc3565bfb9868199"
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-e79575d30db4d937abd1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's status identity develops into \"Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park\" (visible from scene 7; no comparable prior state is recorded).",
+                "development_id": "character-development-f71c6e46d6c4dce3d3f1",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c7376bce0936802a6839",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-755169ebdd9b81a4b539",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 7,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 3
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-22e39be8b0940fcc7ea4",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-2034fad6ac2b3d94891f"
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-31d07620435d985646a2"
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-6eeecc3565bfb9868199"
+              },
+              {
+                "claim": "Elinor is attentive to and protective of her mother's emotional well-being",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-e3ebde74e5fbc0942166"
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-e79575d30db4d937abd1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's status identity develops from \"Elinor assumes the role of the stabilizing and practical leader within the family\" to \"Elinor assumes authority in managing the household transition and communicating staffing decisions\" (visible from scene 13).",
+                "development_id": "character-development-c8db39a2257a6f01641e",
+                "evidence_scene_orders": [
+                  7,
+                  13
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-4d719f7d622fea6d0ce4",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-330bad4b50e808e5dbfd",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 13,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 7
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-a6ec96424766b97824c9",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-c549b3afc34269e0910f"
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-2034fad6ac2b3d94891f"
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-31d07620435d985646a2"
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-6eeecc3565bfb9868199"
+              },
+              {
+                "claim": "Elinor believes that if Edward resembles Fanny, leaving Norland Park would be a relief.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-436f0cc4b7e6b60a94de"
+              },
+              {
+                "claim": "Elinor is attentive to and protective of her mother's emotional well-being",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-e3ebde74e5fbc0942166"
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-e79575d30db4d937abd1"
+              },
+              {
+                "claim": "Elinor shares a moment of humor and rapport with Edward",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-4605a2ad15b6851bfb24"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's status identity develops into \"Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.\" (visible from scene 26; no comparable prior state is recorded).",
+                "development_id": "character-development-07e8e9ebb358de5cb295",
+                "evidence_scene_orders": [
+                  26
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-28ad83d7ed2e204d2d01",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Elinor is attentive to and protective of her mother's emotional well-being",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-22e39be8b0940fcc7ea4",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 26,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 13
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-7404d078f4d3a8698543",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Edward expresses a desire for a quiet private life in the countryside.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-2b7581f7763cc53f7404"
+              },
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-c549b3afc34269e0910f"
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-2034fad6ac2b3d94891f"
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-31d07620435d985646a2"
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ],
+                "state_id": "character-state-6eeecc3565bfb9868199"
+              },
+              {
+                "claim": "Elinor believes that if Edward resembles Fanny, leaving Norland Park would be a relief.",
+                "evidence_scene_orders": [
+                  19
+                ],
+                "state_id": "character-state-436f0cc4b7e6b60a94de"
+              },
+              {
+                "claim": "Elinor is attentive to and protective of her mother's emotional well-being",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-e3ebde74e5fbc0942166"
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-e79575d30db4d937abd1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's goal plan develops into \"Edward expresses a desire for a quiet private life in the countryside.\" (visible from scene 29; no comparable prior state is recorded).",
+                "development_id": "character-development-ed4a3eb6be0edc96c96f",
+                "evidence_scene_orders": [
+                  29
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-19d262508b7b9df6f622",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Elinor believes that if Edward resembles Fanny, leaving Norland Park would be a relief.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Elinor is attentive to and protective of her mother's emotional well-being",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Elinor shares a moment of humor and rapport with Edward",
+                "evidence_scene_orders": [
+                  26
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-a6ec96424766b97824c9",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 29,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 26
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-b77d0e174d1abba69cf1",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Elinor identifies herself as someone who values emotional restraint and measured expression.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-75ca6ecce00af85f09fc"
+              },
+              {
+                "claim": "Elinor's ability to express her feelings is constrained by her own standards of propriety and composure.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-7cc292ff3fe7535b1b81"
+              },
+              {
+                "claim": "Elinor maintains a cautious and restrained expression of regard for Edward.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-5de03dc9dd56854b629e"
+              },
+              {
+                "claim": "Elinor's ability to openly express affection is constrained by her sense of propriety and desire for privacy.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-698003905e1a90e049ff"
+              },
+              {
+                "claim": "Edward expresses a desire for a quiet private life in the countryside.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-2b7581f7763cc53f7404"
+              },
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-c549b3afc34269e0910f"
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-2034fad6ac2b3d94891f"
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ],
+                "state_id": "character-state-31d07620435d985646a2"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's status identity develops into \"Elinor identifies herself as someone who values emotional restraint and measured expression.\" (visible from scene 33; no comparable prior state is recorded).",
+                "development_id": "character-development-cd30e93f2867e868d253",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Elinor Dashwood's goal plan develops into \"Elinor maintains a cautious and restrained expression of regard for Edward.\" (visible from scene 33; no comparable prior state is recorded).",
+                "development_id": "character-development-1b54c9ad845c637145c3",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Elinor Dashwood's belief knowledge develops from \"Elinor believes that if Edward resembles Fanny, leaving Norland Park would be a relief.\" to \"Elinor believes Edward is amiable and worthy, even if not passionate about reading.\" (visible from scene 33).",
+                "development_id": "character-development-51fcd9d977e9b7e3a1ea",
+                "evidence_scene_orders": [
+                  19,
+                  33
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-e6c0588f98603178b79a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Edward expresses a desire for a quiet private life in the countryside.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ]
+              },
+              {
+                "claim": "Mr Dashwood is alive at the beginning of the scene but dies by the end",
+                "evidence_scene_orders": [
+                  3
+                ]
+              },
+              {
+                "claim": "Elinor believes that if Edward resembles Fanny, leaving Norland Park would be a relief.",
+                "evidence_scene_orders": [
+                  19
+                ]
+              },
+              {
+                "claim": "Elinor is attentive to and protective of her mother's emotional well-being",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Elinor assumes the role of the stabilizing and practical leader within the family",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7404d078f4d3a8698543",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 33,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 29
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-84063391dec93a1414ca",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Elinor identifies herself as someone who values emotional restraint and measured expression.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-75ca6ecce00af85f09fc"
+              },
+              {
+                "claim": "Elinor's ability to express her feelings is constrained by her own standards of propriety and composure.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-7cc292ff3fe7535b1b81"
+              },
+              {
+                "claim": "Elinor Dashwood is implicitly recognized as a 'penniless woman' vulnerable to accusations of social opportunism in marriage.",
+                "evidence_scene_orders": [
+                  34
+                ],
+                "state_id": "character-state-17e8df69476e24f0596d"
+              },
+              {
+                "claim": "Elinor maintains a cautious and restrained expression of regard for Edward.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-5de03dc9dd56854b629e"
+              },
+              {
+                "claim": "Elinor's ability to openly express affection is constrained by her sense of propriety and desire for privacy.",
+                "evidence_scene_orders": [
+                  33
+                ],
+                "state_id": "character-state-698003905e1a90e049ff"
+              },
+              {
+                "claim": "Edward expresses a desire for a quiet private life in the countryside.",
+                "evidence_scene_orders": [
+                  29
+                ],
+                "state_id": "character-state-2b7581f7763cc53f7404"
+              },
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ],
+                "state_id": "character-state-c549b3afc34269e0910f"
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ],
+                "state_id": "character-state-2034fad6ac2b3d94891f"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Elinor Dashwood's status identity develops into \"Elinor Dashwood is implicitly recognized as a 'penniless woman' vulnerable to accusations of social opportunism in marriage.\" (visible from scene 34; no comparable prior state is recorded).",
+                "development_id": "character-development-920967598f4236574abb",
+                "evidence_scene_orders": [
+                  34
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-264d61744a5fbabdfe65",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Elinor identifies herself as someone who values emotional restraint and measured expression.",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Elinor's ability to express her feelings is constrained by her own standards of propriety and composure.",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Elinor maintains a cautious and restrained expression of regard for Edward.",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Elinor's ability to openly express affection is constrained by her sense of propriety and desire for privacy.",
+                "evidence_scene_orders": [
+                  33
+                ]
+              },
+              {
+                "claim": "Edward expresses a desire for a quiet private life in the countryside.",
+                "evidence_scene_orders": [
+                  29
+                ]
+              },
+              {
+                "claim": "Elinor is recognized as part of the Dashwood family during Edward's introduction to Margaret.",
+                "evidence_scene_orders": [
+                  26
+                ]
+              },
+              {
+                "claim": "Elinor assumes authority in managing the household transition and communicating staffing decisions",
+                "evidence_scene_orders": [
+                  13
+                ]
+              },
+              {
+                "claim": "Mrs Dashwood experiences a loss of status and identity tied to her home at Norland Park",
+                "evidence_scene_orders": [
+                  7
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b77d0e174d1abba69cf1",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 34,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 33
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "enae65d9ec6fc04e98899464a06a5ccf62::entity-4d527a706d5714c24de1"
+    },
+    {
+      "aliases": [
+        "Colonel Brandon",
+        "Brandon",
+        "Horseman",
+        "Colonel",
+        "Christopher Brandon"
+      ],
+      "character": "Colonel Brandon",
+      "character_id": "entity-4db657fabb594d557258",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-492c69b81782f0f83f54",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-afdaec5a4d157803d3e3"
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-5a5e10f83333383f5650"
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-19756cef5b280a9a2fe5"
+              },
+              {
+                "claim": "Colonel Brandon intends to personally ensure the safe travel of Elinor and Marianne to Barton",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-c2b48b38cf64b813ca0e"
+              },
+              {
+                "claim": "Colonel Brandon seeks definitive confirmation about the end of Marianne's relationship with Willoughby",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-b216eaf994e559da5186"
+              },
+              {
+                "claim": "Colonel Brandon is the recipient of Marianne's mistaken affection and subsequent embarrassment",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-77dd65f198cec307b4ce"
+              },
+              {
+                "claim": "Colonel Brandon shifts from formal reserve to emotionally revealing a personal trauma to caution her.",
+                "evidence_scene_orders": [
+                  74
+                ],
+                "state_id": "character-state-2c8337812b2d68e4f335"
+              },
+              {
+                "claim": "experiences an emotional reaction upon hearing her sing, suggesting a prior or imagined connection",
+                "evidence_scene_orders": [
+                  50
+                ],
+                "state_id": "character-state-007bbec1b2c295469e4b"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Colonel Brandon's goal plan develops from \"Colonel Brandon seeks definitive confirmation about the end of Marianne's relationship with Willoughby\" to \"Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character\" (visible from scene 112).",
+                "development_id": "character-development-a78d534618c857eee4be",
+                "evidence_scene_orders": [
+                  98,
+                  112
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-b0d2a6ce2aa9f1d69d92",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 112,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-fb8ec5b849478aee40a5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-afdaec5a4d157803d3e3"
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-5a5e10f83333383f5650"
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-19756cef5b280a9a2fe5"
+              },
+              {
+                "claim": "Colonel Brandon views Elinor as a trusted联络 point for communicating with Edward Ferrars",
+                "evidence_scene_orders": [
+                  123
+                ],
+                "state_id": "character-state-01b6062fc5d6f74e9d6e"
+              },
+              {
+                "claim": "Colonel Brandon intends to personally ensure the safe travel of Elinor and Marianne to Barton",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-c2b48b38cf64b813ca0e"
+              },
+              {
+                "claim": "Colonel Brandon seeks definitive confirmation about the end of Marianne's relationship with Willoughby",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-b216eaf994e559da5186"
+              },
+              {
+                "claim": "Colonel Brandon is the recipient of Marianne's mistaken affection and subsequent embarrassment",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-77dd65f198cec307b4ce"
+              },
+              {
+                "claim": "Colonel Brandon shifts from formal reserve to emotionally revealing a personal trauma to caution her.",
+                "evidence_scene_orders": [
+                  74
+                ],
+                "state_id": "character-state-2c8337812b2d68e4f335"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Colonel Brandon's relationship develops from \"Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal\" to \"Colonel Brandon views Elinor as a trusted联络 point for communicating with Edward Ferrars\" (visible from scene 123).",
+                "development_id": "character-development-1f2fb725e41aa941e4ed",
+                "evidence_scene_orders": [
+                  112,
+                  123
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-730740935e8834e6d06f",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Colonel Brandon intends to personally ensure the safe travel of Elinor and Marianne to Barton",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon seeks definitive confirmation about the end of Marianne's relationship with Willoughby",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Colonel Brandon is the recipient of Marianne's mistaken affection and subsequent embarrassment",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Colonel Brandon shifts from formal reserve to emotionally revealing a personal trauma to caution her.",
+                "evidence_scene_orders": [
+                  74
+                ]
+              },
+              {
+                "claim": "experiences an emotional reaction upon hearing her sing, suggesting a prior or imagined connection",
+                "evidence_scene_orders": [
+                  50
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-492c69b81782f0f83f54",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 123,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 112
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-3eba8e94402c076ff675",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-afdaec5a4d157803d3e3"
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-5a5e10f83333383f5650"
+              },
+              {
+                "claim": "Brandon expresses deep emotional trust and respect toward Elinor through a restrained physical gesture.",
+                "evidence_scene_orders": [
+                  154
+                ],
+                "state_id": "character-state-13664e2dfdf01a000c3e"
+              },
+              {
+                "claim": "Brandon is concerned for Marianne's well-being and acts to improve it",
+                "evidence_scene_orders": [
+                  154
+                ],
+                "state_id": "character-state-268a9725cc41dc352319"
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-19756cef5b280a9a2fe5"
+              },
+              {
+                "claim": "Brandon formulates and commits to a plan to bring Mrs. Dashwood from Barton",
+                "evidence_scene_orders": [
+                  154
+                ],
+                "state_id": "character-state-ea5bad4cb082f451c082"
+              },
+              {
+                "claim": "Brandon perceives his past traumas or memories as actively haunting him.",
+                "evidence_scene_orders": [
+                  152
+                ],
+                "state_id": "character-state-ef049eb668297b042986"
+              },
+              {
+                "claim": "Colonel Brandon views Elinor as a trusted联络 point for communicating with Edward Ferrars",
+                "evidence_scene_orders": [
+                  123
+                ],
+                "state_id": "character-state-01b6062fc5d6f74e9d6e"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Colonel Brandon's relationship develops from \"Colonel Brandon views Elinor as a trusted联络 point for communicating with Edward Ferrars\" to \"Brandon expresses deep emotional trust and respect toward Elinor through a restrained physical gesture.\" (visible from scene 154).",
+                "development_id": "character-development-7e03b8b7be6a88c23818",
+                "evidence_scene_orders": [
+                  123,
+                  154
+                ]
+              },
+              {
+                "claim": "Colonel Brandon's relationship develops from \"Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.\" to \"Brandon is concerned for Marianne's well-being and acts to improve it\" (visible from scene 154).",
+                "development_id": "character-development-901d56fb121c70c189e0",
+                "evidence_scene_orders": [
+                  98,
+                  154
+                ]
+              },
+              {
+                "claim": "Colonel Brandon's belief knowledge develops from \"Brandon perceives his past traumas or memories as actively haunting him.\" to \"Colonel Brandon knows he will visit the Dashwoods in a day or two.\" (visible from scene 154).",
+                "development_id": "character-development-24a70ec34fb3f22db1d6",
+                "evidence_scene_orders": [
+                  152
+                ]
+              },
+              {
+                "claim": "Colonel Brandon's goal plan develops from \"Colonel Brandon intends to personally ensure the safe travel of Elinor and Marianne to Barton\" to \"Brandon formulates and commits to a plan to bring Mrs. Dashwood from Barton\" (visible from scene 154).",
+                "development_id": "character-development-70314606117f963909c4",
+                "evidence_scene_orders": [
+                  112,
+                  154
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-ac1ca669c4788df3f97b",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Colonel Brandon views Elinor as a trusted联络 point for communicating with Edward Ferrars",
+                "evidence_scene_orders": [
+                  123
+                ]
+              },
+              {
+                "claim": "Colonel Brandon intends to personally ensure the safe travel of Elinor and Marianne to Barton",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon seeks definitive confirmation about the end of Marianne's relationship with Willoughby",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Colonel Brandon is the recipient of Marianne's mistaken affection and subsequent embarrassment",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Colonel Brandon shifts from formal reserve to emotionally revealing a personal trauma to caution her.",
+                "evidence_scene_orders": [
+                  74
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-fb8ec5b849478aee40a5",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 154,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 123
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-0c5b1ad54d49b3fd380a",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-afdaec5a4d157803d3e3"
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ],
+                "state_id": "character-state-5a5e10f83333383f5650"
+              },
+              {
+                "claim": "Colonel Brandon is now formally united with Marianne in marriage.",
+                "evidence_scene_orders": [
+                  189
+                ],
+                "state_id": "character-state-2b1457e6ca1c24227734"
+              },
+              {
+                "claim": "Colonel Brandon's arrival is significant enough that Marianne is directly called to attend",
+                "evidence_scene_orders": [
+                  179
+                ],
+                "state_id": "character-state-cc84791b33cfdcf98b9d"
+              },
+              {
+                "claim": "Brandon expresses deep emotional trust and respect toward Elinor through a restrained physical gesture.",
+                "evidence_scene_orders": [
+                  154
+                ],
+                "state_id": "character-state-13664e2dfdf01a000c3e"
+              },
+              {
+                "claim": "Brandon is concerned for Marianne's well-being and acts to improve it",
+                "evidence_scene_orders": [
+                  154
+                ],
+                "state_id": "character-state-268a9725cc41dc352319"
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ],
+                "state_id": "character-state-19756cef5b280a9a2fe5"
+              },
+              {
+                "claim": "Colonel Brandon knows he will visit the Dashwoods in a day or two.",
+                "evidence_scene_orders": [
+                  178
+                ],
+                "state_id": "character-state-dc06d30eb9bbec43b419"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Colonel Brandon's relationship develops from \"Colonel Brandon's arrival is significant enough that Marianne is directly called to attend\" to \"Colonel Brandon is now formally united with Marianne in marriage.\" (visible from scene 189).",
+                "development_id": "character-development-1c449a583a27670213a4",
+                "evidence_scene_orders": [
+                  179,
+                  189
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-291482bb0f8cdc48a354",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Colonel Brandon shares sensitive personal information with Elinor to help her understand Willoughby's betrayal",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Colonel Brandon intends to alleviate Marianne's suffering by revealing Willoughby's true character",
+                "evidence_scene_orders": [
+                  112
+                ]
+              },
+              {
+                "claim": "Brandon expresses deep emotional trust and respect toward Elinor through a restrained physical gesture.",
+                "evidence_scene_orders": [
+                  154
+                ]
+              },
+              {
+                "claim": "Brandon is concerned for Marianne's well-being and acts to improve it",
+                "evidence_scene_orders": [
+                  154
+                ]
+              },
+              {
+                "claim": "Colonel Brandon holds deep emotional concern for Marianne's well-being and romantic fate.",
+                "evidence_scene_orders": [
+                  98
+                ]
+              },
+              {
+                "claim": "Brandon formulates and commits to a plan to bring Mrs. Dashwood from Barton",
+                "evidence_scene_orders": [
+                  154
+                ]
+              },
+              {
+                "claim": "Brandon perceives his past traumas or memories as actively haunting him.",
+                "evidence_scene_orders": [
+                  152
+                ]
+              },
+              {
+                "claim": "Colonel Brandon views Elinor as a trusted联络 point for communicating with Edward Ferrars",
+                "evidence_scene_orders": [
+                  123
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-3eba8e94402c076ff675",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 189,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 154
+          },
+          "sequence_index": 4
+        }
+      ],
+      "trajectory_id": "enae65d9ec6fc04e98899464a06a5ccf62::entity-4db657fabb594d557258"
+    },
+    {
+      "aliases": [
+        "Marianne Dashwood",
+        "Marianne",
+        "Miss Marianne"
+      ],
+      "character": "Marianne Dashwood",
+      "character_id": "entity-a9820a21a52ce63a7bf4",
+      "checkpoints": [
+        {
+          "checkpoint_id": "checkpoint-a07ba435142d69f69ee7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M1",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              },
+              {
+                "claim": "Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-9dc54f41650fed7cea0a"
+              },
+              {
+                "claim": "Marianne blames Elinor for not resisting Fanny's request",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-93f0ab1d333486030ff2"
+              },
+              {
+                "claim": "Marianne expresses indignation as a member of the Dashwood family",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-9e3c15d691a24d11adbc"
+              },
+              {
+                "claim": "Marianne registers Elinor's nonverbal warning but responds with visible irritation",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-bb20d8d40842e740b8b7"
+              },
+              {
+                "claim": "Marianne performs social politeness while deliberately undermining Fanny, asserting moral superiority",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-f82b16eb06344b2abcdb"
+              },
+              {
+                "claim": "Marianne resists Elinor's request for emotional restraint.",
+                "evidence_scene_orders": [
+                  9
+                ],
+                "state_id": "character-state-438583260e1c3610cbbe"
+              },
+              {
+                "claim": "Marianne acts as an intermediary for Fanny's request, indicating a functional but not personal connection",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-62b60d8bad7d75175f1d"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Marianne Dashwood's relationship develops from \"Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.\" to \"Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness\" (visible from scene 18).",
+                "development_id": "character-development-afc6c4ba33bbc2a5f643",
+                "evidence_scene_orders": [
+                  17,
+                  18
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-c51a0cf8e3c94b5bf330",
+          "model_input": {
+            "previous_state": [],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": null,
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 18,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 0
+          },
+          "sequence_index": 1
+        },
+        {
+          "checkpoint_id": "checkpoint-b4fa9c97854525a86221",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M2",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-8dab0ca5f65744ffd926"
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-979573bbdd43677c4e30"
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-18504a3d265b5d60c561"
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              },
+              {
+                "claim": "Marianne believes Willoughby is not unworthy as others suggest",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-6c8badddc67b56ae1bd0"
+              },
+              {
+                "claim": "Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-9dc54f41650fed7cea0a"
+              },
+              {
+                "claim": "Marianne rejects her mother's physical and emotional comfort",
+                "evidence_scene_orders": [
+                  86
+                ],
+                "state_id": "character-state-93f240c2363a149e44e1"
+              },
+              {
+                "claim": "Marianne Dashwood experiences disrupted interaction with Colonel Brandon due to his abrupt exit",
+                "evidence_scene_orders": [
+                  75
+                ],
+                "state_id": "character-state-b2cca9f8c257a5de7ed9"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Marianne Dashwood's status identity develops from \"Marianne identifies herself as a grieving lover, defined by her emotional suffering in Willoughby's absence.\" to \"Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby\" (visible from scene 108).",
+                "development_id": "character-development-b2e1d4aa7fd42993fae9",
+                "evidence_scene_orders": [
+                  89,
+                  108
+                ]
+              },
+              {
+                "claim": "Marianne Dashwood's belief knowledge develops from \"Marianne believes Willoughby is an impressive and admirable gentleman\" to \"Marianne believes Willoughby is not unworthy as others suggest\" (visible from scene 108).",
+                "development_id": "character-development-26bd596da23056c8ce1b",
+                "evidence_scene_orders": [
+                  64,
+                  108
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-5dd7d50e3370609f4d7a",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Marianne blames Elinor for not resisting Fanny's request",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne expresses indignation as a member of the Dashwood family",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne registers Elinor's nonverbal warning but responds with visible irritation",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne performs social politeness while deliberately undermining Fanny, asserting moral superiority",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne resists Elinor's request for emotional restraint.",
+                "evidence_scene_orders": [
+                  9
+                ]
+              },
+              {
+                "claim": "Marianne acts as an intermediary for Fanny's request, indicating a functional but not personal connection",
+                "evidence_scene_orders": [
+                  17
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-a07ba435142d69f69ee7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 108,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 18
+          },
+          "sequence_index": 2
+        },
+        {
+          "checkpoint_id": "checkpoint-7bec51dfc43b1962d875",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M3",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-8dab0ca5f65744ffd926"
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-979573bbdd43677c4e30"
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-18504a3d265b5d60c561"
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              },
+              {
+                "claim": "Marianne believes Willoughby is not unworthy as others suggest",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-6c8badddc67b56ae1bd0"
+              },
+              {
+                "claim": "Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.",
+                "evidence_scene_orders": [
+                  17
+                ],
+                "state_id": "character-state-9dc54f41650fed7cea0a"
+              },
+              {
+                "claim": "Marianne rejects her mother's physical and emotional comfort",
+                "evidence_scene_orders": [
+                  86
+                ],
+                "state_id": "character-state-93f240c2363a149e44e1"
+              },
+              {
+                "claim": "Marianne Dashwood experiences disrupted interaction with Colonel Brandon due to his abrupt exit",
+                "evidence_scene_orders": [
+                  75
+                ],
+                "state_id": "character-state-b2cca9f8c257a5de7ed9"
+              }
+            ],
+            "developments_since_previous_checkpoint": []
+          },
+          "instance_id": "task1-instance-6d267919a60228c5c970",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is not unworthy as others suggest",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Marianne rejects her mother's physical and emotional comfort",
+                "evidence_scene_orders": [
+                  86
+                ]
+              },
+              {
+                "claim": "Marianne Dashwood experiences disrupted interaction with Colonel Brandon due to his abrupt exit",
+                "evidence_scene_orders": [
+                  75
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b4fa9c97854525a86221",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 113,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 108
+          },
+          "sequence_index": 3
+        },
+        {
+          "checkpoint_id": "checkpoint-7697f23a1fddfa601a78",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M4",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby",
+                "evidence_scene_orders": [
+                  108
+                ],
+                "state_id": "character-state-8dab0ca5f65744ffd926"
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-d3c5419347770e047248"
+              },
+              {
+                "claim": "Marianne sees herself as an emotional advocate for her sister and Edward's relationship, taking initiative to facilitate their interaction.",
+                "evidence_scene_orders": [
+                  114
+                ],
+                "state_id": "character-state-2688ccfd6975406a8b9f"
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-979573bbdd43677c4e30"
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-18504a3d265b5d60c561"
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              },
+              {
+                "claim": "Marianne's perception of Elinor shifts from emotional detachment to deep empathy upon learning of her sacrifice",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-a9e98191ffced11b658c"
+              },
+              {
+                "claim": "Marianne recognizes Elinor's prior knowledge of the engagement and her emotional burden",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-aebb8bd0fd7f269e4e91"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Marianne Dashwood's relationship develops from \"Marianne regrets having insulted Elinor and apologizes.\" to \"Marianne's perception of Elinor shifts from emotional detachment to deep empathy upon learning of her sacrifice; Marianne recognizes Elinor's prior knowledge of the engagement and her emotional burden; recognizes Elinor's emotional pain and responds with remorse\" (visible from scene 121).",
+                "development_id": "character-development-dadddbc2142e05a55755",
+                "evidence_scene_orders": [
+                  69,
+                  121
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-4e4b2888b0ea7d1de94b",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is not unworthy as others suggest",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "Marianne resents Fanny's oppressive presence and feels trapped by her authority or influence.",
+                "evidence_scene_orders": [
+                  17
+                ]
+              },
+              {
+                "claim": "Marianne rejects her mother's physical and emotional comfort",
+                "evidence_scene_orders": [
+                  86
+                ]
+              },
+              {
+                "claim": "Marianne Dashwood experiences disrupted interaction with Colonel Brandon due to his abrupt exit",
+                "evidence_scene_orders": [
+                  75
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7bec51dfc43b1962d875",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 121,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 113
+          },
+          "sequence_index": 4
+        },
+        {
+          "checkpoint_id": "checkpoint-ea311538390e76bc2ab7",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M5",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Colonel Brandon has rescued Marianne and is concerned for her immediate well-being.",
+                "evidence_scene_orders": [
+                  147
+                ],
+                "state_id": "character-state-7b407294f307089a27cf"
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-d3c5419347770e047248"
+              },
+              {
+                "claim": "Marianne recognizes she wronged Elinor the most by lacking compassion despite knowing Elinor's sorrows and acknowledges she was unjust and uncompassionate toward Elinor, expressing remorse for causing her pain",
+                "evidence_scene_orders": [
+                  171
+                ],
+                "state_id": "character-state-4424d7840e984ba0892c"
+              },
+              {
+                "claim": "Marianne views her past behavior as imprudent, insolent, and unjust, particularly in how it affected others",
+                "evidence_scene_orders": [
+                  171
+                ],
+                "state_id": "character-state-a799f1301ef55637d6c0"
+              },
+              {
+                "claim": "Marianne sees herself as someone who has caused worry to others and needs to change.",
+                "evidence_scene_orders": [
+                  171
+                ],
+                "state_id": "character-state-b3f44183fe3b9760608f"
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-979573bbdd43677c4e30"
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-18504a3d265b5d60c561"
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Marianne Dashwood's status identity develops from \"Marianne transitions from unconscious patient to conscious and responsive individual\" to \"Marianne views her past behavior as imprudent, insolent, and unjust, particularly in how it affected others; Marianne sees herself as someone who has caused worry to others and needs to change.\" (visible from scene 171).",
+                "development_id": "character-development-544787fb158383312387",
+                "evidence_scene_orders": [
+                  164,
+                  171
+                ]
+              },
+              {
+                "claim": "Marianne Dashwood's relationship develops from \"recognizes Elinor's emotional pain and responds with remorse\" to \"Marianne recognizes she wronged Elinor the most by lacking compassion despite knowing Elinor's sorrows and acknowledges she was unjust and uncompassionate toward Elinor, expressing remorse for causing her pain\" (visible from scene 171).",
+                "development_id": "character-development-bfaa5f45dec6a8426aa9",
+                "evidence_scene_orders": [
+                  121,
+                  171
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-2b266c95ce1ab86bc1fa",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Marianne experiences profound emotional devastation, deep grief, and intense emotional distress and shame upon rejection by Willoughby",
+                "evidence_scene_orders": [
+                  108
+                ]
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Marianne sees herself as an emotional advocate for her sister and Edward's relationship, taking initiative to facilitate their interaction.",
+                "evidence_scene_orders": [
+                  114
+                ]
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne's perception of Elinor shifts from emotional detachment to deep empathy upon learning of her sacrifice",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Marianne recognizes Elinor's prior knowledge of the engagement and her emotional burden",
+                "evidence_scene_orders": [
+                  121
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-7697f23a1fddfa601a78",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 171,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 121
+          },
+          "sequence_index": 5
+        },
+        {
+          "checkpoint_id": "checkpoint-b577d41febb211efa145",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M6",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Colonel Brandon has rescued Marianne and is concerned for her immediate well-being.",
+                "evidence_scene_orders": [
+                  147
+                ],
+                "state_id": "character-state-7b407294f307089a27cf"
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-d3c5419347770e047248"
+              },
+              {
+                "claim": "Marianne Dashwood receives a personal musical gift and task from Christopher Brandon, indicating a gesture of affection or attention.",
+                "evidence_scene_orders": [
+                  178
+                ],
+                "state_id": "character-state-4594c0143a639abe1dc5"
+              },
+              {
+                "claim": "Marianne recognizes she wronged Elinor the most by lacking compassion despite knowing Elinor's sorrows and acknowledges she was unjust and uncompassionate toward Elinor, expressing remorse for causing her pain",
+                "evidence_scene_orders": [
+                  171
+                ],
+                "state_id": "character-state-4424d7840e984ba0892c"
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-979573bbdd43677c4e30"
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-18504a3d265b5d60c561"
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              },
+              {
+                "claim": "Marianne's perception of Elinor shifts from emotional detachment to deep empathy upon learning of her sacrifice",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-a9e98191ffced11b658c"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Marianne Dashwood's relationship develops from \"Colonel Brandon has rescued Marianne and is concerned for her immediate well-being.\" to \"Marianne Dashwood receives a personal musical gift and task from Christopher Brandon, indicating a gesture of affection or attention.\" (visible from scene 178).",
+                "development_id": "character-development-d7d3cadfd0515b014671",
+                "evidence_scene_orders": [
+                  147,
+                  178
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-fd8b96fbb438c536d4b4",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Colonel Brandon has rescued Marianne and is concerned for her immediate well-being.",
+                "evidence_scene_orders": [
+                  147
+                ]
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Marianne recognizes she wronged Elinor the most by lacking compassion despite knowing Elinor's sorrows and acknowledges she was unjust and uncompassionate toward Elinor, expressing remorse for causing her pain",
+                "evidence_scene_orders": [
+                  171
+                ]
+              },
+              {
+                "claim": "Marianne views her past behavior as imprudent, insolent, and unjust, particularly in how it affected others",
+                "evidence_scene_orders": [
+                  171
+                ]
+              },
+              {
+                "claim": "Marianne sees herself as someone who has caused worry to others and needs to change.",
+                "evidence_scene_orders": [
+                  171
+                ]
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-ea311538390e76bc2ab7",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 178,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 171
+          },
+          "sequence_index": 6
+        },
+        {
+          "checkpoint_id": "checkpoint-3cd10df6a18c99553fd5",
+          "entity_memory": {
+            "extractor_inputs": [
+              "character",
+              "aliases",
+              "screenplay_interval"
+            ],
+            "memory_slot": "M7",
+            "previous_state_visible_to_extractor": false,
+            "source": "shared_runtime_interval_extraction"
+          },
+          "evaluation_target": {
+            "current_state": [
+              {
+                "claim": "Marianne is now in a legally and socially recognized marital relationship with Colonel Brandon.",
+                "evidence_scene_orders": [
+                  189
+                ],
+                "state_id": "character-state-5cc4732fb45f87c8c01f"
+              },
+              {
+                "claim": "Colonel Brandon has rescued Marianne and is concerned for her immediate well-being.",
+                "evidence_scene_orders": [
+                  147
+                ],
+                "state_id": "character-state-7b407294f307089a27cf"
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ],
+                "state_id": "character-state-d3c5419347770e047248"
+              },
+              {
+                "claim": "Marianne Dashwood receives a personal musical gift and task from Christopher Brandon, indicating a gesture of affection or attention.",
+                "evidence_scene_orders": [
+                  178
+                ],
+                "state_id": "character-state-4594c0143a639abe1dc5"
+              },
+              {
+                "claim": "Marianne recognizes she wronged Elinor the most by lacking compassion despite knowing Elinor's sorrows and acknowledges she was unjust and uncompassionate toward Elinor, expressing remorse for causing her pain",
+                "evidence_scene_orders": [
+                  171
+                ],
+                "state_id": "character-state-4424d7840e984ba0892c"
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ],
+                "state_id": "character-state-979573bbdd43677c4e30"
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ],
+                "state_id": "character-state-18504a3d265b5d60c561"
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ],
+                "state_id": "character-state-1e337eb60b8846adf9c1"
+              }
+            ],
+            "developments_since_previous_checkpoint": [
+              {
+                "claim": "Marianne Dashwood's relationship develops from \"Marianne Dashwood receives a personal musical gift and task from Christopher Brandon, indicating a gesture of affection or attention.\" to \"Marianne is now in a legally and socially recognized marital relationship with Colonel Brandon.\" (visible from scene 189).",
+                "development_id": "character-development-43365d9f94cc3a1a18e1",
+                "evidence_scene_orders": [
+                  178,
+                  189
+                ]
+              }
+            ]
+          },
+          "instance_id": "task1-instance-8f3e9992649875d683b3",
+          "model_input": {
+            "previous_state": [
+              {
+                "claim": "Colonel Brandon has rescued Marianne and is concerned for her immediate well-being.",
+                "evidence_scene_orders": [
+                  147
+                ]
+              },
+              {
+                "claim": "recognizes Elinor's emotional pain and responds with remorse",
+                "evidence_scene_orders": [
+                  121
+                ]
+              },
+              {
+                "claim": "Marianne Dashwood receives a personal musical gift and task from Christopher Brandon, indicating a gesture of affection or attention.",
+                "evidence_scene_orders": [
+                  178
+                ]
+              },
+              {
+                "claim": "Marianne recognizes she wronged Elinor the most by lacking compassion despite knowing Elinor's sorrows and acknowledges she was unjust and uncompassionate toward Elinor, expressing remorse for causing her pain",
+                "evidence_scene_orders": [
+                  171
+                ]
+              },
+              {
+                "claim": "Marianne regrets having insulted Elinor and apologizes.",
+                "evidence_scene_orders": [
+                  69
+                ]
+              },
+              {
+                "claim": "Marianne believes Willoughby is an impressive and admirable gentleman",
+                "evidence_scene_orders": [
+                  64
+                ]
+              },
+              {
+                "claim": "Marianne holds distrust and disapproval toward Fanny, expressed through sarcasm masked as politeness",
+                "evidence_scene_orders": [
+                  18
+                ]
+              },
+              {
+                "claim": "Marianne's perception of Elinor shifts from emotional detachment to deep empathy upon learning of her sacrifice",
+                "evidence_scene_orders": [
+                  121
+                ]
+              }
+            ],
+            "previous_state_source": "reference_state"
+          },
+          "previous_checkpoint_id": "checkpoint-b577d41febb211efa145",
+          "screenplay_interval": {
+            "end_scene_order_inclusive": 189,
+            "script_file": "script.json",
+            "start_scene_order_exclusive": 178
+          },
+          "sequence_index": 7
+        }
+      ],
+      "trajectory_id": "enae65d9ec6fc04e98899464a06a5ccf62::entity-a9820a21a52ce63a7bf4"
+    }
+  ]
+}

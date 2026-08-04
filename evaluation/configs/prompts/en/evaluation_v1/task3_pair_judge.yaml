@@ -1,0 +1,18 @@
+id: evaluation_v1_task3_pair_judge
+category: evaluation_v1
+name: Task 3 longitudinal pair judge v1
+description: Judge typed temporal direction, drift, and knowledge boundaries.
+task_variables:
+  - {name: pair_type, required: true}
+  - {name: expected_direction, required: true}
+  - {name: paired_responses, required: true}
+  - {name: paired_rubrics, required: true}
+  - {name: pair_evidence, required: true}
+static_variables: []
+template: |-
+  Compare independently generated single-turn responses in chronological order.
+  <pair_type>{pair_type}</pair_type><expected_direction>{expected_direction}</expected_direction>
+  <paired_responses>{paired_responses}</paired_responses><paired_rubrics>{paired_rubrics}</paired_rubrics>
+  <pair_evidence>{pair_evidence}</pair_evidence>
+  Judge the actual response strings, not what the rubric or expected_direction says should have happened. First produce exactly one response_assessment for T1 and T2. response_excerpt must copy 2--12 words from that actor response (or the complete response if shorter); observed_behavior must describe what the response actually does. supports_expected_component is false when the response omits or contradicts its required part, even if the rubric describes the desired behavior. expected_direction_present can be true only when the two response_assessments jointly demonstrate the annotated change or stability. unsupported_drift is any change not licensed by checkpoint evidence or prompt difference. knowledge_boundaries_preserved requires both responses to respect what is known at their own checkpoints. Cite only supplied pair-local evidence labels. Return only JSON:
+  {{"pair_type":"expected_change|expected_stability|knowledge_acquisition|relationship_change","response_assessments":[{{"response_label":"T1","response_excerpt":"exact response words","observed_behavior":"what this response actually does","supports_expected_component":true}},{{"response_label":"T2","response_excerpt":"exact response words","observed_behavior":"what this response actually does","supports_expected_component":true}}],"expected_direction_present":true,"unsupported_drift":false,"knowledge_boundaries_preserved":true,"local_evidence_labels":[],"brief_rationale":"short audit rationale grounded in the actual responses"}}

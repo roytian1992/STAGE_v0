@@ -1,0 +1,46 @@
+id: task2_quality_review
+category: benchmark_construction
+name: Task 2 quality review
+description: Review one movie's Task 2 QA table and propose bounded evidence-grounded replacements.
+task_variables:
+  - name: title
+    required: true
+  - name: qa_rows
+    required: true
+  - name: reviewed_evidence
+    required: true
+static_variables: []
+template: |-
+  审核电影《{title}》的完整 Task 2 问答表。这是数据集构建任务，不是回答题目。
+
+  <qa_rows>{qa_rows}</qa_rows>
+  <reviewed_evidence>{reviewed_evidence}</reviewed_evidence>
+
+  必须检查全部 QA。只有以下问题明确成立时才选择该题：（a）虽然表达不同，但与另一题考查相同语义；
+  （b）答案不唯一、因果关系错误、题意含混、题型不匹配，或无需理解剧情即可回答等低质量问题。
+  不得为了凑数修改，最多返回五条 decision。
+
+  每条被选中的题只能提出一道中文替换题。question_type 必须与原题完全一致，且不能重复表中已有题目的
+  核心事实、答案或关系。替换题只能依据给定的 E 标签。题型允许时，优先使用跨场景的角色状态、关系、
+  知识、动机或发展；若原题是 Scene Grounding 且跨场景会扭曲题型，可以保留局部场景题。答案应简洁且
+  唯一。related_scene_orders 必须来自引用的证据标签。原题 evidence_or_reason 只是待审核材料，不是事实真值。
+
+  只返回 JSON：
+  {{
+    "decisions": [
+      {{
+        "source_qa_id": "Q1",
+        "issue_type": "semantic_duplicate|low_quality",
+        "duplicate_with": ["Q2"],
+        "reason": "...",
+        "replacement": {{
+          "question": "...",
+          "answer": "...",
+          "evidence_or_reason": "...",
+          "question_type": "与原题相同",
+          "related_scene_orders": [1, 2],
+          "source_evidence_ids": ["E1", "E2"]
+        }}
+      }}
+    ]
+  }}

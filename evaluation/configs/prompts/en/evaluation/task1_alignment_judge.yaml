@@ -1,0 +1,28 @@
+id: task1_alignment_judge
+category: evaluation
+name: Task 1 checkpoint alignment judge
+description: Align all checkpoint claims globally without expanding screenplay evidence.
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction, required: true}
+  - {name: active_gold_rubric, required: true}
+  - {name: inactive_state_rubric, required: true}
+  - {name: future_negatives, required: true}
+  - {name: allowed_gold_pair_ids, required: true}
+  - {name: allowed_inactive_state_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  Align all claims for one character checkpoint. Prediction rows use s=current state and d=development. Active gold rows use the same codes; inactive x rows are reviewed states whose validity ended before this checkpoint; future f rows are not yet available.
+  <checkpoint>{checkpoint}</checkpoint><prediction>{prediction}</prediction>
+  <active_gold_rubric>{active_gold_rubric}</active_gold_rubric>
+  <inactive_state_rubric>{inactive_state_rubric}</inactive_state_rubric>
+  <future_negatives>{future_negatives}</future_negatives>
+  <allowed_gold_pair_ids>{allowed_gold_pair_ids}</allowed_gold_pair_ids>
+  <allowed_inactive_state_ids>{allowed_inactive_state_ids}</allowed_inactive_state_ids>
+  <allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  Emit every semantically related same-pool active pair: s against s and d against d. full requires correct subject, time, scope, and direction; partial is meaningful but incomplete or overbroad; contradiction is incompatible content or reversed direction. Omit unrelated pairs. The deterministic scorer performs global maximum-weight one-to-one matching after this call.
+
+  false_persistence_pairs link an x state to a current-state prediction only when the prediction continues that same expired state. no_change_false_update is true only when active development gold is empty and the prediction invents a substantive development. Do not judge screenplay grounding in this stage. Return only JSON:
+  {{"claim_pair_judgments":[{{"gold_local_id":"D1","prediction_local_id":"P1","label":"full|partial|contradiction"}}],"false_persistence_pairs":[{{"inactive_state_local_id":"X1","prediction_local_id":"P2"}}],"no_change_false_update":false}}

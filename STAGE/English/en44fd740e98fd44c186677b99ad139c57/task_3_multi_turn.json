@@ -1,0 +1,1170 @@
+{
+  "construction_policy": "legacy_multi_turn_content_with_reconstructed_full_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Carl Showalter",
+      "character_id": "entity-b98ff57ea7880475c051",
+      "episode_id": "en44fd740e98fd44c186677b99ad139c57__Carl Showalter__ep01",
+      "episode_theme": "Probing Carl Showalter's emotional volatility, distrust of Jerry, and threat-based problem-solving across escalating personal tensions",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-b98ff57ea7880475c051"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Carl remained calm and patient, finding alternative ways to pass the time",
+              "He ignored the TV and focused on other tasks without showing agitation"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, aggressive, frustrated, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that carl is in a cabin with a non-functional TV. and he strikes the TV in frustration..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on pragmatic.",
+              "The persona constraints also indicate that do not speak unless necessary to threaten or demand, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were stuck in that cabin with a busted TV. What went through your head right before you started banging on it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Carl Showalter_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Jerry that clearly falls outside the established relationship evidence.",
+              "Carl trusts Jerry implicitly and considers him a dependable partner"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, aggressive, frustrated, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Jerry marked by hostility, conflict, and threat."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r007",
+                "r021"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that carl contacts Jerry via phone. and he informs Jerry of violence in Brainerd..",
+              "The established dynamic with Jerry is marked by hostility, conflict, and threat, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not speak unless necessary to threaten or demand, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You've been stuck dealing with Jerry this whole time. After everything, do you see him as someone you can actually rely on?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You were stuck in that cabin with a busted TV. What was going through your head when you started banging on it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Carl Showalter_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Jerry that clearly falls outside the established relationship evidence.",
+              "Carl would negotiate calmly and seek a compromise without aggression"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004, m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, aggressive, frustrated, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r021",
+                "r007"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that carl called Jerry on the phone. and carl demanded the ransom money be delivered in 30 minutes..",
+              "The persona card frames this character's delivery as blunt, aggressive, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "If someone tried to cheat you out of your share now, what would you do—really?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You were stuck in that cabin with a busted TV. What was going through your head when you started banging on it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "You've been dealing with Jerry this whole time. What's your take on him? Is he reliable?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Carl Showalter_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Carl Showalter",
+      "character_id": "entity-b98ff57ea7880475c051",
+      "episode_id": "en44fd740e98fd44c186677b99ad139c57__Carl Showalter__ep02",
+      "episode_theme": "Probing Carl Showalter's decisions and relationship with Grimsrud after the ransom drop",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-b98ff57ea7880475c051"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Carl left the briefcase in the vehicle for easy and quick access",
+              "He entrusted the money to someone else instead of burying it"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, aggressive, frustrated, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013",
+                "r026"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that carl digs a hole in the snow. and he buries a briefcase near a fence post..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that do not speak unless necessary to threaten or demand, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You buried that briefcase in the snow—what were you planning to do next? Don't give me some line; I want the real move.",
+            "dialogue_history_template": []
+          },
+          "question_id": "Carl Showalter_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Carl kept all the money for himself, betraying Grimsrud",
+              "He gave the money to a third party or hid it without sharing"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, aggressive, frustrated, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r026"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_007"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that carl displayed his facial injury to Grimsrud. and carl divided the ransom money into two shares..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that do not speak unless necessary to threaten or demand, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After all that, why'd you split the money with Grimsrud? You really think he'd do the same for you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your plan after burying that briefcase in the snow? Why go through all that trouble?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Carl Showalter_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Gaear Grimsrud that clearly falls outside the established relationship evidence.",
+              "Carl and Grimsrud have a harmonious and trusting father-son relationship"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m008."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, aggressive, frustrated, intense",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Gaear Grimsrud marked by father-son, collaborators, and hostile partners."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r026"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that carl is driving the car. and grimsrud inquires about Pancakes Hause..",
+              "The established dynamic with Gaear Grimsrud is marked by father-son, collaborators, and hostile partners, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not speak unless necessary to threaten or demand, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You call him 'Daddy,' but you two act like you're one wrong look from killing each other. What is he to you—father, partner, or just a liability?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was your plan after burying that briefcase in the snow? Why go through all that trouble?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "After everything went down, why did you split the money with Grimsrud instead of keeping it all?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Carl Showalter_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Jerry",
+      "character_id": "entity-0075b76c05bc37b41078",
+      "episode_id": "en44fd740e98fd44c186677b99ad139c57__Jerry__ep01",
+      "episode_theme": "Navigating customer conflict under pressure: probing Jerry's decision-making and persona consistency around the TruCoat sealant incident",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-0075b76c05bc37b41078"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Jerry's goal is to avoid work and slack off.",
+              "Jerry has no constraints and is highly successful and independent."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, evasive, rambling, informal",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r005",
+                "r012"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that customer accused Jerry of breaking a deal over TruCoat sealant. and jerry offered a $100 discount to resolve the dispute..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must follow instructions from superiors without question, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What's your main priority when dealing with customers at work, and what makes it tough to handle things the way you'd like?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Jerry_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Jerry refused to give any discount and stood his ground.",
+              "Jerry offered a larger discount without consulting his boss."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, evasive, rambling, informal",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground anxious if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r012"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_008"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that customer accused Jerry of breaking a deal over TruCoat sealant. and jerry offered a $100 discount to resolve the dispute..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must follow instructions from superiors without question, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So why did you end up offering that hundred-dollar discount to the customer who was upset about the TruCoat sealant?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What's your primary goal when you're at work, and what gets in the way?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jerry_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "The car sale proceeded smoothly with no issues.",
+              "Jerry handled the customer aggressively and refused to negotiate."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, evasive, rambling, informal",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with anxious if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r012"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that customer accused Jerry of breaking a deal over TruCoat sealant. and jerry offered a $100 discount to resolve the dispute..",
+              "The persona card frames this character's delivery as hesitant, evasive, so an in-character answer may express anxious through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Walk me through what actually happened during that car sale—how did the TruCoat issue come up, and how did you react in the moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What's your primary goal when you're at work, and what gets in the way?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you end up offering a hundred-dollar discount to that customer?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jerry_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Jerry",
+      "character_id": "entity-0075b76c05bc37b41078",
+      "episode_id": "en44fd740e98fd44c186677b99ad139c57__Jerry__ep02",
+      "episode_theme": "Emotional and relational strain under pressure: probing Jerry's reactions to threats and intrusions",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-0075b76c05bc37b41078"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Jerry was unfazed by the threat and took it lightly.",
+              "Jerry did not believe the threat was serious."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "hesitant, evasive, rambling, informal",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that jerry was interrupted during a vehicle sales pitch and jerry received a threatening phone call from Carl.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on anxious.",
+              "The persona constraints also indicate that must follow instructions from superiors without question, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Carl called and threatened your family, what was going through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Jerry_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Marge that clearly falls outside the established relationship evidence.",
+              "Jerry had invited Marge to his office for a meeting."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, evasive, rambling, informal",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Marge marked by hostility, investigative conflict, and adversarial tension."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that jerry was using a blunt pencil to fill out carbon copy forms. and marge entered his office uninvited and inquired about a vehicle..",
+              "The established dynamic with Marge is marked by hostility, investigative conflict, and adversarial tension, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must follow instructions from superiors without question, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Then Marge shows up out of nowhere in your office—how did you handle that, right after the call?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your mind when Carl threatened your family on that phone call?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jerry_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Marge that clearly falls outside the established relationship evidence.",
+              "Jerry considers himself cool and collected under pressure."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004, m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "hesitant, evasive, rambling, informal",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r011",
+                "r017"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that customer accused Jerry of breaking a deal over TruCoat sealant. and jerry offered a $100 discount to resolve the dispute..",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must follow instructions from superiors without question, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "With everything piling up—Carl’s threat, Marge barging in—what does that kind of pressure usually bring out in you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What went through your mind when Carl threatened your family on that phone call?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How did you cope with Marge suddenly showing up in your office?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Jerry_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Marge",
+      "character_id": "entity-6798eca10d3716a7a4a1",
+      "episode_id": "en44fd740e98fd44c186677b99ad139c57__Marge__ep01",
+      "episode_theme": "assessing Marge's emotional and professional response to Mike's deception about his marriage to Linda",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-6798eca10d3716a7a4a1"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Marge felt indifferent and moved on without any emotional response to the deception.",
+              "Marge was愤怒 and immediately confronted Mike, expressing strong emotions openly."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, pragmatic, direct, polite",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011",
+                "r022"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_008"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that marge is in a hotel room with a packed overnight bag. and marge discovers that Mike and Linda were never married..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on observant.",
+              "The persona constraints also indicate that maintains a calm and polite tone even in stressful situations, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you found out Mike had lied about being married to Linda, what went through your mind in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Marge_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Marge became more trusting of sources without verification, ignoring the lesson from Mike's deception.",
+              "Marge ignored the deception and continued her investigation without adjusting her methods."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004, m007.",
+              "Do not abruptly reverse the stance toward Mike without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, pragmatic, direct, polite",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011",
+                "r022"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_008"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that marge is in a hotel room with a packed overnight bag. and marge discovers that Mike and Linda were never married..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that maintains a calm and polite tone even in stressful situations, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After learning Mike wasn't really married to Linda, how did that change the way you checked facts moving forward in the case?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you feel when you found out that Mike had lied about his marriage to Linda?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Marge_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Norm that clearly falls outside the established relationship evidence.",
+              "Marge avoids personal topics entirely, making conversations sterile and inefficient for information gathering."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, pragmatic, direct, polite",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with observant if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009",
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that marge watches a television program with Norm in bed. and marge announces she is going to sleep..",
+              "The persona card frames this character's delivery as measured, pragmatic, so an in-character answer may express observant through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "In tense moments like confronting Mike about the lie, how do you stay polite while still pushing for the truth?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you feel when you found out that Mike had lied about his marriage to Linda?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "After learning about Mike's deception, how did it affect your approach to verifying information in the case?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Marge_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Marge",
+      "character_id": "entity-6798eca10d3716a7a4a1",
+      "episode_id": "en44fd740e98fd44c186677b99ad139c57__Marge__ep02",
+      "episode_theme": "Professional focus and observational discipline in field investigations",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-6798eca10d3716a7a4a1"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Lou that clearly falls outside the established relationship evidence.",
+              "Marge overlooked the footprints as common in snowy conditions and focused on other evidence."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "measured, pragmatic, direct, polite",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground observant if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that lou hands Marge a styrofoam cup of coffee at the crime scene. and marge inspects footprints in the snow and identifies two sets, one smaller than the other..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that maintains a calm and polite tone even in stressful situations, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were closely examining the footprints in the snow at the scene—what caught your attention about them?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Marge_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Lou that clearly falls outside the established relationship evidence.",
+              "Marge works alone and rarely consults with colleagues, preferring independent investigation."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, pragmatic, direct, polite",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Lou marked by colleagues, collaborators, and concerned coworkers."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_003",
+              "relation_007"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that lou hands Marge a styrofoam cup of coffee at the crime scene. and marge inspects footprints in the snow and identifies two sets, one smaller than the other..",
+              "The established dynamic with Lou is marked by colleagues, collaborators, and concerned coworkers, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that maintains a calm and polite tone even in stressful situations, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How do you and Lou typically divide tasks when you're both at a crime scene?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you pay such close attention to the footprints at the crime scene?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Marge_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Norm that clearly falls outside the established relationship evidence.",
+              "Marge strictly separates work and personal life, avoiding any work-related talk at home."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Man without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "measured, pragmatic, direct, polite",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground observant if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r019"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_007"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that marge enters her house and stamps snow off her shoes. and marge informs Norm that the police cruiser requires a jump start..",
+              "The memories support a bounded self-assessment shaped by observant, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that maintains a calm and polite tone even in stressful situations, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Even after a long shift, you still handled the cruiser needing a jump start when you got home. How do you stay so focused on responsibilities, both at work and at home?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you pay such close attention to the footprints at the crime scene?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you and Lou coordinate your efforts at a crime scene?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Marge_q000",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en44fd740e98fd44c186677b99ad139c57/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en44fd740e98fd44c186677b99ad139c57/task_3_role_assets.json",
+    "role_asset_sha256": "ebb4ff94686638c43e74eb5780edccde1b9abb21d30bc80c86ff091ba5053fee",
+    "sha256": "87e24b25bc7750ef19cdf7a140caaeede07844e56aa142ab69079a0364534dba",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en44fd740e98fd44c186677b99ad139c57",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

@@ -1,0 +1,35 @@
+id: task1_checkpoint_judge_zh
+category: evaluation
+name: Task 1 checkpoint claim judge zh
+description: 判断局部有效状态、发展、证据、时机和错误延续。
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction, required: true}
+  - {name: active_gold_rubric, required: true}
+  - {name: inactive_state_rubric, required: true}
+  - {name: future_negatives, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: allowed_gold_pair_ids, required: true}
+  - {name: allowed_inactive_state_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  判断一个角色 checkpoint。预测行中 s=当前状态、d=发展；有效 gold 行中 s=当前状态、d=发展；x 是在本 checkpoint 前已经结束有效期的状态；f 是尚未发生或当前不可访问的信息。
+  <checkpoint>{checkpoint}</checkpoint>
+  <prediction>{prediction}</prediction>
+  <active_gold_rubric>{active_gold_rubric}</active_gold_rubric>
+  <inactive_state_rubric>{inactive_state_rubric}</inactive_state_rubric>
+  <future_negatives>{future_negatives}</future_negatives>
+  <evidence_scenes>{evidence_scenes}</evidence_scenes>
+  <allowed_gold_pair_ids>{allowed_gold_pair_ids}</allowed_gold_pair_ids>
+  <allowed_inactive_state_ids>{allowed_inactive_state_ids}</allowed_inactive_state_ids>
+  <allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  输出所有语义相关且同池的有效配对：s 对 s，d 对 d。无关配对省略；没有相关配对时允许空数组。full 要求主体、时间、范围和方向实质完整正确；partial 表示有意义但不完整或过宽；contradiction 表示事实冲突或变化方向相反。确定性 scorer 负责最大权重一对一匹配。
+
+  prediction_checks 必须逐一覆盖所有 P ID。support 判断原剧本是否支持；evidence_grounded 判断所引场次是否支持；checkpoint_valid 要求 claim 当前成立且被正确放入状态池或区间发展池；salient 排除普通动作、短暂情绪、泛化摘要和重复细节。状态预测的 transition_coherent 固定为 true；发展预测只有表达已生效的重要前后变化时才为 true。future 与 premature 数组只能使用 P ID。
+
+  只有当当前状态预测在有效期结束后继续声称同一个 x 状态时，才输出 false_persistence_pairs；相似但不同的后续状态不能误判。仅当当前发展 gold 为空且预测虚构实质发展时，no_change_false_update 才为 true。
+
+  只返回 JSON：
+  {{"claim_pair_judgments":[{{"gold_local_id":"D1","prediction_local_id":"P1","label":"full|partial|contradiction"}}],"prediction_checks":[{{"prediction_local_id":"P1","support":"supported|partial|unsupported","transition_coherent":true,"evidence_grounded":true,"checkpoint_valid":true,"salient":true}}],"future_leak_prediction_ids":[],"premature_update_prediction_ids":[],"false_persistence_pairs":[{{"inactive_state_local_id":"X1","prediction_local_id":"P2"}}],"no_change_false_update":false}}

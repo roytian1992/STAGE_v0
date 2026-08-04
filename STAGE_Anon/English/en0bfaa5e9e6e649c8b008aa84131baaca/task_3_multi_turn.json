@@ -1,0 +1,1162 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Owen Quincy",
+      "character_id": "legacy-mt-role-c4761223426eebbf24f2",
+      "episode_id": "en0bfaa5e9e6e649c8b008aa84131baaca__Owen Quincy__ep01",
+      "episode_theme": "Responding to immediate threats under pressure and maintaining resolve in fear",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c4761223426eebbf24f2"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "Owen Quincy allows noise to continue without intervention.",
+              "Owen Quincy prioritizes helping over silencing."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "urgent, anxious, frustrated, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy discovers Riley Foster trapped in a wire snare. and Owen Quincy punches Riley Foster in the gut to silence his screams..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must react immediately to threats with physical or verbal urgency., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you heard Riley Foster screaming and knew it could bring danger, what were you focused on doing?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Owen Quincy_q013",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Owen Quincy tried to calm Riley Foster verbally.",
+              "Owen Quincy left Riley Foster to scream and attract attention."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m005."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, anxious, frustrated, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground determined if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_017"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy discovers Riley Foster trapped in a wire snare. and Owen Quincy punches Riley Foster in the gut to silence his screams..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must react immediately to threats with physical or verbal urgency., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You punched Riley Foster to shut him up—why that instead of trying to calm him down?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What's your priority when someone's noise could attract danger?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Owen Quincy_q004",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Owen Quincy's fear prevents him from taking action.",
+              "He relies on others to handle terrifying situations."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, anxious, frustrated, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground determined if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r035",
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy is pulled upward by a cable with great force. and Owen Quincy hits the ceiling and swings toward an open shaft..",
+              "The memories support a bounded self-assessment shaped by determined, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must react immediately to threats with physical or verbal urgency., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You keep moving even when you're scared—what pushes you forward when everything in you wants to freeze?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What's your priority when someone's noise could attract danger?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you punch Riley Foster when he was screaming?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Owen Quincy_q012",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Owen Quincy",
+      "character_id": "legacy-mt-role-c4761223426eebbf24f2",
+      "episode_id": "en0bfaa5e9e6e649c8b008aa84131baaca__Owen Quincy__ep02",
+      "episode_theme": "escalating threat perception and adaptive survival behavior under physical constraint and environmental danger",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-c4761223426eebbf24f2"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Owen Quincy tried to reach the flashlight despite the risk.",
+              "Owen Quincy left the flashlight where it was."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "urgent, anxious, frustrated, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground determined if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy is entangled in wire and struggles to free himself. and Owen Quincy pushes his flashlight down a shaft to prevent Elliot Everett from seeing it..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must react immediately to threats with physical or verbal urgency., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Why'd you shove the flashlight down the shaft instead of grabbing it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Owen Quincy_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Elliot Everett that clearly falls outside the established relationship evidence.",
+              "Owen Quincy approached the figure to confront it."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, anxious, frustrated, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Elliot Everett marked by enemies, pursuer-pursued, and violent confrontation."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r025"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_015"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy sees a scavenging figure in the galley. and Owen Quincy ducks to avoid being seen by the figure..",
+              "The established dynamic with Elliot Everett is marked by enemies, pursuer-pursued, and violent confrontation, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must react immediately to threats with physical or verbal urgency., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Right after hiding the light, you saw a figure moving in the galley—what went through your head when it turned toward you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What made you hide the flashlight instead of trying to retrieve it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Owen Quincy_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "Owen Quincy rushed through the mess hall without caution.",
+              "Owen Quincy didn't notice the disarray and walked normally."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, anxious, frustrated, emotional",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with determined if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy enters the mess hall through a hatch door. and Owen Quincy notices signs of disarray like overturned chairs and garbage, and moves cautiously..",
+              "The persona card frames this character's delivery as urgent, anxious, so an in-character answer may express determined through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You kept low crawling through the mess hall—was that because of the figure you saw, or something else spooking you?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What made you hide the flashlight instead of trying to retrieve it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What was your first instinct when you saw that figure in the galley?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Owen Quincy_q003",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Riley Arden",
+      "character_id": "legacy-mt-role-bde7eccf823bcebdda17",
+      "episode_id": "en0bfaa5e9e6e649c8b008aa84131baaca__Riley Arden__ep01",
+      "episode_theme": "Riley Arden's survival-driven distrust of Owen Quincy and its reluctant evolution under shared threat",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-bde7eccf823bcebdda17"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Riley Arden agreed with Owen Quincy and decided to stop."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, tense, fragmented, anxious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r017"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy expressed despair about their situation. and Riley Arden argued that they were meant to go on, not go back..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that she must remain cautious and assess threats before acting., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Owen Quincy wanted to give up, why did you push to keep going?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Riley Arden_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Riley Arden encouraged Owen Quincy to go to the Pinecrest Warehouse for resources."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Owen Quincy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, tense, fragmented, anxious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Riley Arden warns Owen Quincy that going to the Pinecrest Warehouse is dangerous and no one comes back. and Riley Arden resists physical contact when Owen Quincy grabs her arm..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that she must remain cautious and assess threats before acting., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You insisted he keep moving—so why warn him about the Pinecrest Warehouse like it was a death sentence? If it’s that dangerous, why not let him go in and end it?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What drove you to insist on continuing when Owen Quincy wanted to give up?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Riley Arden_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Riley Arden trusted Owen Quincy immediately and did not search him."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Owen Quincy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, tense, fragmented, anxious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Owen Quincy marked by allies, mutual support, and conflict."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Riley Arden strikes Owen Quincy in the face and causes him to fall. and Riley Arden presses a blade to Owen Quincy's neck and threatens him..",
+              "The established dynamic with Owen Quincy is marked by allies, mutual support, and conflict, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she must remain cautious and assess threats before acting., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You disarmed him the first time you met—pinned him, took his tools. But now you’re trying to keep him alive. What changed? Or are you still waiting to decide if he’s a threat?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What drove you to insist on continuing when Owen Quincy wanted to give up?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What was your reason for warning Owen Quincy about the Pinecrest Warehouse?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Riley Arden_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Riley Arden",
+      "character_id": "legacy-mt-role-bde7eccf823bcebdda17",
+      "episode_id": "en0bfaa5e9e6e649c8b008aa84131baaca__Riley Arden__ep02",
+      "episode_theme": "assessing threat response and decision-making under pressure",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-bde7eccf823bcebdda17"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Riley Arden waited for all team members before proceeding."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, tense, fragmented, anxious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Riley Arden scans the corridors ahead to choose a path. and Riley Arden declares she will not wait for the missing team member..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that she must remain cautious and assess threats before acting., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You moved ahead without waiting for the others. What did you see in the Fairview Motel that made you go?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Riley Arden_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Riley Arden ignored the view outside and did not try to see better.",
+              "Riley Arden was not curious about their location or situation."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, tense, fragmented, anxious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground pragmatic if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Riley Arden spoke in awe and confusion about their situation. and Riley Arden questioned what had happened to them and their location..",
+              "The memories support a bounded self-assessment shaped by pragmatic, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that she must remain cautious and assess threats before acting., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you wiped the grime off the glass, was that part of scanning for more threats—or were you trying to make sense of what already happened?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you choose to move ahead without waiting for the others?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Riley Arden_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Riley Arden remained calm and approached the figure without caution."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, tense, fragmented, anxious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Riley Arden noticed a motionless figure in a flight control chair. and Riley Arden jumped back in fright..",
+              "The persona card frames this character's delivery as blunt, tense, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Then when you saw the figure in the chair and jumped back—why react like that instead of freezing or staying quiet?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you choose to move ahead without waiting for the others?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What were you hoping to see when you tried to clean the glass?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Riley Arden_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Parker York",
+      "character_id": "legacy-mt-role-84e7000f894d273187f6",
+      "episode_id": "en0bfaa5e9e6e649c8b008aa84131baaca__Parker York__ep01",
+      "episode_theme": "assessing Spencer Huxley's threat level through shifting behavioral cues under survival pressure",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-84e7000f894d273187f6"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Spencer Huxley that clearly falls outside the established relationship evidence.",
+              "Parker York raises his voice and demands answers forcefully"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, cautious, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground determined if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Parker York checks Spencer Huxley's pulse and Parker York notices dried blood on Spencer Huxley.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that always check surroundings before taking action, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Spencer Huxley woke up suspicious and started getting agitated, you kept your voice low—why de-escalate instead of asserting control in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Parker York_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Spencer Huxley that clearly falls outside the established relationship evidence.",
+              "Parker York has complete trust in Spencer Huxley and accepts his explanations without question"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m009.",
+              "Do not abruptly reverse the stance toward Spencer Huxley without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, cautious, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Spencer Huxley marked by hostility, antagonism, and conflict."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003",
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Parker York lowers the glass notebook upon seeing Spencer Huxley and Parker York extracts Spencer Huxley from shaft.",
+              "The established dynamic with Spencer Huxley is marked by hostility, antagonism, and conflict, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that always check surroundings before taking action, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You helped him out of the vent just minutes before—he was covered in blood and seizing—so why shift so fast from helping him to questioning him like a suspect? What changed in how you saw him?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When Spencer Huxley woke up suspicious and started getting agitated, you kept your voice low—why take that approach instead of asserting authority?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Parker York_q012",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Spencer Huxley that clearly falls outside the established relationship evidence.",
+              "Parker York ignores Spencer Huxley's physical condition entirely"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m009.",
+              "Do not abruptly reverse the stance toward Spencer Huxley without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, cautious, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with determined if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Parker York checks Spencer Huxley's pulse and Parker York notices dried blood on Spencer Huxley.",
+              "The persona card frames this character's delivery as urgent, direct, so an in-character answer may express determined through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you checked his pulse and saw the dried blood under his nose—what were you ruling out medically, and what did it make you suspect about how he got it, given everything you know about him?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "When Spencer Huxley woke up suspicious and started getting agitated, you kept your voice low—why take that approach instead of asserting authority?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "You helped Spencer Huxley when he came out of that vent, but now he's acting suspicious and you're questioning him about the blood—what's your read on him? Is he a threat or a casualty?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Parker York_q010",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Parker York",
+      "character_id": "legacy-mt-role-84e7000f894d273187f6",
+      "episode_id": "en0bfaa5e9e6e649c8b008aa84131baaca__Parker York__ep02",
+      "episode_theme": "Navigating identity and trust amid memory loss, with focus on Parker York's evolving self-perception and reliance on Owen Quincy",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-84e7000f894d273187f6"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Parker York shows no concern about his memory loss"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, cautious, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031",
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy explains temporary memory loss from hyper-sleep and Parker York expresses confusion about the mission.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on determined.",
+              "The persona constraints also indicate that always check surroundings before taking action, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you told Owen Quincy you couldn't remember the mission or why you signed on, you seemed tense—was that fear about your missing memories, or are you forcing yourself to focus only on what's right in front of you?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Parker York_q011",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Parker York refuses Owen Quincy's assistance and operates entirely alone"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004.",
+              "Do not abruptly reverse the stance toward Owen Quincy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, cautious, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Owen Quincy marked by supportive companions, conflicted collaborators, and emotional reliance."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001",
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Owen Quincy assists Parker York to his feet and Parker York reacts sharply to the pen-lamp light.",
+              "The established dynamic with Owen Quincy is marked by supportive companions, conflicted collaborators, and emotional reliance, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that always check surroundings before taking action, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Owen Quincy helped you up when you collapsed, explained the memory loss, and you've been moving through the red key together since—how do you see him now? Partner, liability, or something in between?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You told Owen Quincy you couldn't remember the mission or why you agreed to this—does that scare you, or have you pushed it aside to focus on what's in front of you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Parker York_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Owen Quincy that clearly falls outside the established relationship evidence.",
+              "Parker York has full recall of his identity and mission objectives"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004."
+            ],
+            "expected_stance": null,
+            "expected_style": "urgent, direct, cautious, pragmatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground determined if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016",
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Parker York opens locker labeled 'Parker York' and Parker York observes photo of Jesse Nolan.",
+              "The memories support a bounded self-assessment shaped by determined, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that always check surroundings before taking action, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You found that photo in your locker—Jesse Nolan, your Jesse Nolan—but your memory's still foggy. So who do you feel like right now? Just a name on a locker, or something more solid?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You told Owen Quincy you couldn't remember the mission or why you agreed to this—does that scare you, or have you pushed it aside to focus on what's in front of you?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Owen Quincy helped you up when you collapsed, explained the memory loss, and you've been working together since—how do you see your relationship with him right now?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Parker York_q000",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/en0bfaa5e9e6e649c8b008aa84131baaca/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/en0bfaa5e9e6e649c8b008aa84131baaca/task_3_role_assets.json",
+    "role_asset_sha256": "edf0c167f99298b64dc355f039673206d5a9d1bf05fbed9deb25d501fb2241ef",
+    "sha256": "ca71c6659ad0338470309a65724cd6298731d4b57fd0983a75148a9c60169c86",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "en0bfaa5e9e6e649c8b008aa84131baaca",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

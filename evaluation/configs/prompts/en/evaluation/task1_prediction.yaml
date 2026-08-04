@@ -1,0 +1,30 @@
+id: task1_prediction
+category: evaluation
+name: Task 1 rolling prediction
+description: Update compact character-state, interval-development, and unresolved-thread memory.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_checkpoint_scene_order, required: true}
+  - {name: block_end_scene_order, required: true}
+  - {name: checkpoint_at_block_end, required: true}
+  - {name: prior_scored_memory, required: true}
+  - {name: private_unscored_memory, required: true}
+  - {name: screenplay_block, required: true}
+static_variables: []
+template: |-
+  Track "{focal_character}" (aliases: {aliases}) through the next chronological screenplay block.
+  Previous formal checkpoint scene: {previous_checkpoint_scene_order}; block end scene: {block_end_scene_order}; formal checkpoint at block end: {checkpoint_at_block_end}.
+  <prior_scored_memory>{prior_scored_memory}</prior_scored_memory>
+  <private_unscored_memory>{private_unscored_memory}</private_unscored_memory>
+  <screenplay_block>{screenplay_block}</screenplay_block>
+
+  Replace the complete memory using only the prior model memory and screenplay block. The three pools must be mutually exclusive, and each claim must express one independently judgeable fact:
+  - current_state: at most 8 important states still true at block end. Preserve prior wording when a state remains true; remove resolved, superseded, momentary-action, and transient-emotion items.
+  - developments_since_previous_checkpoint: at most 4 salient before-to-now changes already effective since the previous formal checkpoint. Exclude static facts, ordinary actions, possible futures, and open questions.
+  - unresolved_threads: at most 6 evidence-backed open threads that may later change the character state. This is private carryover memory and is not scored at checkpoints; remove or promote a thread when it is resolved.
+
+  Prefer a small set of salient, nonredundant, directly supported claims. Do not inventory plot actions, restate synonymous relationships, or fill a quota. Cite only scene orders already read. Return the complete three-pool memory at non-checkpoint calls as well.
+
+  Return only JSON with exactly these fields:
+  {{"current_state":[{{"claim":"...","evidence_scene_orders":[1]}}],"developments_since_previous_checkpoint":[{{"claim":"...","evidence_scene_orders":[1]}}],"unresolved_threads":[{{"claim":"...","evidence_scene_orders":[1]}}]}}

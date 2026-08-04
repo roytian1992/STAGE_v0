@@ -1,0 +1,44 @@
+id: task1_rubric_construction
+category: benchmark_construction
+name: Task 1 rubric construction
+description: Consolidate internal temporal candidates into a compact natural-language evaluator rubric.
+task_variables:
+  - name: focal_character
+    required: true
+  - name: checkpoint
+    required: true
+  - name: state_candidates
+    required: true
+  - name: development_candidates
+    required: true
+  - name: evidence
+    required: true
+  - name: future_candidates
+    required: true
+static_variables: []
+template: |-
+  Build a checkpoint evaluation rubric for "{focal_character}". This is benchmark construction, not prediction.
+  <checkpoint>{checkpoint}</checkpoint>
+  <state_candidates>{state_candidates}</state_candidates>
+  <development_candidates>{development_candidates}</development_candidates>
+  <evidence>{evidence}</evidence>
+  <future_candidates>{future_candidates}</future_candidates>
+
+  Merge duplicate, synonymous, or overly granular states. Retain only evidence-supported claims that matter to the focal character's
+  development. A state from an earlier scene is not a current state merely because the candidate has no explicit end scene: omit
+  transient conditions that later evidence has superseded or resolved. A development must describe a change that has taken effect;
+  do not turn one action into a durable change. Return no development when none is salient. Select only character-relevant future
+  negatives from the supplied F labels and do not invent new ones.
+
+  The rubric must be compact enough to function as evaluation criteria, not an inventory of candidates. Return at most 8 distinct
+  current states, 4 developments, 4 invariants, and 4 future negatives; use fewer whenever the evidence supports fewer. Prioritize
+  claims that distinguish a substantively correct character trajectory from a generic or scene-summary answer. Do not copy a long
+  sequence of past actions, temporary emotions, or near-duplicate relationship descriptions.
+
+  Return only JSON:
+  {{
+    "current_state_claims": [{{"claim": "...", "supporting_scene_orders": [1]}}],
+    "development_claims": [{{"claim": "...", "supporting_scene_orders": [1]}}],
+    "invariant_claims": [{{"claim": "...", "supporting_scene_orders": [1]}}],
+    "salient_future_negatives": [{{"claim": "...", "source_future_local_ids": ["F1"]}}]
+  }}

@@ -1,0 +1,21 @@
+id: task2_direct_answer_judge
+category: evaluation
+name: Task 2 direct-answer judge
+description: Judge closed-book direct-answer correctness without retrieved passages.
+task_variables:
+  - {name: question, required: true}
+  - {name: reference_answer, required: true}
+  - {name: reference_evidence_or_reason, required: true}
+  - {name: candidate_answer, required: true}
+static_variables: []
+template: |-
+  Evaluate the correctness of one closed-book answer to an already-written fictional screenplay question.
+  <question>{question}</question>
+  <reference_answer>{reference_answer}</reference_answer>
+  <reference_evidence_or_reason>{reference_evidence_or_reason}</reference_evidence_or_reason>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+
+  Set answer_correct=true only when the candidate conveys the reference answer's required facts without a material contradiction. Accept equivalent wording and concise answers. Reject missing required facts, wrong entities, events, or relations, unsupported guesses, and statements that the answer cannot be known. Return a short auditable rationale without hidden reasoning.
+
+  Return only JSON with exactly these fields:
+  {{"answer_correct":true,"brief_rationale":"..."}}

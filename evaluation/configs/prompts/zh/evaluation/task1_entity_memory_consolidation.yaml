@@ -1,0 +1,23 @@
+id: task1_entity_memory_consolidation_zh
+category: evaluation
+name: Task 1 角色区间记忆整合
+description: 在不读取上一 checkpoint state 的前提下整合过大的区间记忆。
+task_variables:
+  - {name: character, required: true}
+  - {name: aliases, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: observations, required: true}
+  - {name: allowed_observation_ids, required: true}
+  - {name: allowed_scene_orders, required: true}
+  - {name: max_observations, required: true}
+static_variables: []
+template: |-
+  整合角色“{character}”的区间 entity-centric memory。角色别名：{aliases}。
+  区间为 scene {previous_scene_order} 之后至 scene {current_scene_order}（含）。
+  <observations>{observations}</observations>
+
+  选择一个多样且能覆盖最重要目标、信念、关系、身份、处境、情绪立场和有意义变化的集合。观察语义重复时优先保留一条代表，删除普通动作和琐碎细节；不得改写或推断 observations。最多返回 {max_observations} 个互不重复的 ID，且只能来自 {allowed_observation_ids}，并按重要性从高到低排序。{allowed_scene_orders} 是证据元数据，不是可选 ID。不得返回分析或额外字段。
+
+  只返回 JSON：
+  {{"selected_observation_ids":["O1"]}}

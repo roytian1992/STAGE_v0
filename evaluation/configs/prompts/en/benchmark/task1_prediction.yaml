@@ -1,0 +1,47 @@
+id: task1_prediction
+category: benchmark
+name: Task 1 rolling character tracking
+description: Update one focal character's rolling memory from the next screenplay block.
+task_variables:
+  - name: focal_character
+    required: true
+  - name: aliases
+    required: true
+  - name: previous_checkpoint_scene_order
+    required: true
+  - name: block_end_scene_order
+    required: true
+  - name: checkpoint_at_block_end
+    required: true
+  - name: prior_memory
+    required: true
+  - name: screenplay_block
+    required: true
+static_variables: []
+template: |-
+  Track the character "{focal_character}" as the screenplay unfolds. Aliases: {aliases}
+
+  Previous formal checkpoint scene order: {previous_checkpoint_scene_order}
+  End scene order of this block: {block_end_scene_order}
+  Does this block end at a formal checkpoint: {checkpoint_at_block_end}
+
+  Character memory previously maintained by you:
+  <prior_memory>
+  {prior_memory}
+  </prior_memory>
+
+  New chronologically continuous screenplay text:
+  <screenplay_block>
+  {screenplay_block}
+  </screenplay_block>
+
+  Fully update the character memory using only the prior memory and new text. A major development must already have taken effect;
+  a transient action is not automatically character development. Return an empty development list when no salient development has
+  occurred since the previous checkpoint. Every evidence scene order must have been read. Do not predict later events.
+
+  Return only this JSON object and no additional fields:
+  {{
+    "current_state": [{{"claim": "natural-language state claim", "evidence_scene_orders": [1]}}],
+    "developments_since_previous_checkpoint": [{{"claim": "natural-language development or change claim", "evidence_scene_orders": [1]}}],
+    "unresolved_threads": [{{"claim": "unresolved matter that can affect later development", "evidence_scene_orders": [1]}}]
+  }}

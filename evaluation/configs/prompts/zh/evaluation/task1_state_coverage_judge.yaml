@@ -1,0 +1,22 @@
+id: task1_state_coverage_judge_zh
+category: evaluation
+name: Task 1 state-update reference coverage
+description: 对每条 reference 判断整组预测的覆盖程度。
+task_variables:
+  - {name: character, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: reference_claims, required: true}
+  - {name: predicted_claims, required: true}
+  - {name: allowed_reference_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  对角色“{character}”在 scene {previous_scene_order} 到 scene {current_scene_order} 的 Task 1 输出做 reference coverage 判断。
+  <reference_claims>{reference_claims}</reference_claims><predicted_claims>{predicted_claims}</predicted_claims>
+  <allowed_reference_ids>{allowed_reference_ids}</allowed_reference_ids><allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  s reference 只能由 s 当前状态覆盖，d reference 只能由 d 区间发展覆盖。逐条判断每个 reference 是否被同类型的整组预测覆盖；同一条预测可以覆盖多个彼此兼容的 reference，多条预测也可以共同覆盖一条 reference，不要强制一对一。
+
+  full 表示一条或多条预测合起来完整表达 reference 的主体、时间、范围、状态或变化方向；partial 表示核心相关但仍有实质遗漏、过宽或只覆盖一部分；contradiction 表示相关预测表达了相反或不兼容的状态/变化且没有得到正确覆盖；missing 表示没有相关预测。每条 reference 必须且只能输出一次。prediction_ids 列出形成该结论的全部本地 P 标签；missing 时必须为空数组。只使用给定的本地 R/P 标签，不计算指标。只返回 JSON：
+  {{"reference_results":[{{"reference_id":"R1","status":"full|partial|missing|contradiction","prediction_ids":["P1"]}}]}}

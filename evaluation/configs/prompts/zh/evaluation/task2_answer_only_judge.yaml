@@ -1,0 +1,21 @@
+id: task2_answer_only_judge_zh
+category: evaluation
+name: Task 2 仅答案过滤回退评测
+description: 当服务商拒绝剧本证据文本时，仅判断答案正确性。
+task_variables:
+  - {name: question, required: true}
+  - {name: reference_answer, required: true}
+  - {name: reference_evidence_or_reason, required: true}
+  - {name: candidate_answer, required: true}
+static_variables: []
+template: |-
+  仅评测一个已写成的虚构剧本问题答案是否正确。服务商拒绝了检索到的剧本文本，因此本次明确不评测引用质量。
+  <question>{question}</question>
+  <reference_answer>{reference_answer}</reference_answer>
+  <reference_evidence_or_reason>{reference_evidence_or_reason}</reference_evidence_or_reason>
+  <candidate_answer>{candidate_answer}</candidate_answer>
+
+  仅当候选答案表达了参考答案要求的事实且没有实质冲突时，设置 answer_correct=true。接受等义表述和简洁答案；缺少必要事实、答错实体/事件/关系、无依据猜测，或在参考资料已确定答案时声称资料不足，均判错。给出简短可审计说明，不输出隐藏推理。
+
+  只返回包含以下字段的 JSON，citation_quality 必须使用给定固定值：
+  {{"answer_correct":true,"citation_quality":"not_evaluated_provider_filter","brief_rationale":"..."}}

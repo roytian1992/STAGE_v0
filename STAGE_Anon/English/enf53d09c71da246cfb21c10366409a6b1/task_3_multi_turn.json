@@ -1,0 +1,1153 @@
+{
+  "construction_policy": "legacy_multi_turn_content_with_reconstructed_full_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Coach James",
+      "character_id": "entity-62a03f570537913e422c",
+      "episode_id": "enf53d09c71da246cfb21c10366409a6b1__Coach James__ep01",
+      "episode_theme": "Coach James's consistent pragmatism across medical, legal, and institutional pressures",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-62a03f570537913e422c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "He was worried about Shane Mercer's health and decided to bench him.",
+              "He felt guilty for pushing Shane Mercer too hard and substituted him."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, authoritative",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r020"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Coach James uses smelling salts on Shane Mercer. and Coach James insists that Shane Mercer return to the game despite his injury..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on pragmatic.",
+              "The persona constraints also indicate that do not show overt emotional distress even when angry., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you shoved the smelling salts under Shane Mercer's nose and sent him back into the game, what were you really thinking in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Coach James_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Edward Nolan that clearly falls outside the established relationship evidence.",
+              "He couldn't find a legal way to include the player and had to let him go."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, authoritative",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r027"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Coach James informs Edward Nolan that the player is legally eligible to play under house arrest. and Coach James proposes housing the player in the stadium..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that do not show overt emotional distress even when angry., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You found a way around that—just like with the player under house arrest. But instead of pushing through injury, you worked the system. Was that a different kind of pragmatism, or the same mindset applied differently?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "In the heat of the game, what was going through your mind when you forced Shane Mercer back onto the field?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Coach James_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Edward Nolan that clearly falls outside the established relationship evidence.",
+              "He agreed with Edward Nolan's decision to release Shane Mercer."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, authoritative",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Edward Nolan marked by professional collaboration, mutual respect, and hostility."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Coach James expresses intent to retain Shane Mercer post-strike. and Edward Nolan refuses to adhere to union agreements..",
+              "The established dynamic with Edward Nolan is marked by professional collaboration, mutual respect, and hostility, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that do not show overt emotional distress even when angry., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And then there was Edward Nolan defying the union by refusing to keep Shane Mercer after the strike. That wasn't working the system—it was breaking it. Did you see that as a step too far, or just another pressure to manage?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "In the heat of the game, what was going through your mind when you forced Shane Mercer back onto the field?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How did you solve the problem of having a player under house arrest on the team?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Coach James_q006",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Coach James",
+      "character_id": "entity-62a03f570537913e422c",
+      "episode_id": "enf53d09c71da246cfb21c10366409a6b1__Coach James__ep02",
+      "episode_theme": "Coaching under pressure: upholding a promise to Edward Nolan through unorthodox but pragmatic team decisions",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-62a03f570537913e422c"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Edward Nolan that clearly falls outside the established relationship evidence.",
+              "Coach James was coerced into coaching by league officials."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, authoritative",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Coach James pours whiskey for Edward Nolan from a Glenlivet bottle. and Edward Nolan offers Coach James the head coach position for the replacement team..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that do not show overt emotional distress even when angry., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You agreed to coach this replacement team despite the odds—what tied you to that decision, personally?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Coach James_q000",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "He assigned Mika Lane to a different position without explanation.",
+              "He ignored Mika Lane's background and made a random decision."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, authoritative",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground pragmatic if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Coach James bows and speaks Japanese to Mika Lane. and he assigns Mika Lane to the left tackle position..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that do not show overt emotional distress even when angry., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So when you put Mika Lane at left tackle and greeted him in Japanese—was that honoring Edward Nolan, or just your way of cutting through the noise with a practical move?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What drove you to take on the challenge of coaching this replacement team?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Coach James_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "He considered the player unfit for the team and cut him immediately.",
+              "He avoided addressing the disability and hoped it wouldn't be an issue."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, blunt, pragmatic, authoritative",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with pragmatic if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r011"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that christopher Banes informs Coach James about a deaf defensive end. and Coach James suggests Banes learn to sign..",
+              "The persona card frames this character's delivery as direct, blunt, so an in-character answer may express pragmatic through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And then you told Banes to learn sign language instead of cutting the deaf defensive end. That move looked chaotic—but was it another part of keeping the team intact under your promise to Edward Nolan, or just your usual way of solving problems no one else would touch?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What drove you to take on the challenge of coaching this replacement team?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you assign Mika Lane to left tackle, and what was the significance of greeting him in Japanese?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Coach James_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "O Neil",
+      "character_id": "entity-44276379ebd59bf4a571",
+      "episode_id": "enf53d09c71da246cfb21c10366409a6b1__O Neil__ep01",
+      "episode_theme": "Confronting mortality and authority: Edward Nolan's decisions under pressure",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-44276379ebd59bf4a571"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Edward Nolan calmly discusses the issue with Tildon in person"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "sarcastic, direct, intense, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground determined if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Edward Nolan fires Tildon over the phone. and Edward Nolan references his impending death during the argument..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that he must express urgency when making requests or giving orders., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Why'd you fire Tildon over the phone instead of facing him in person?",
+            "dialogue_history_template": []
+          },
+          "question_id": "O Neil_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Edward Nolan never mentions his condition in decision-making"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, direct, intense, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground determined if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r007",
+                "r019"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Edward Nolan fires Tildon over the phone. and Edward Nolan references his impending death during the argument..",
+              "The memories support a bounded self-assessment shaped by determined, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that he must express urgency when making requests or giving orders., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You brought up dying during that call—how much is that hanging over every call you make now?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you fire Tildon over the phone like that?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "O Neil_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Edward Nolan ignores his physical needs and pushes without aid"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002, m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, direct, intense, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground determined if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r007",
+                "r009"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Edward Nolan fires Tildon over the phone. and Edward Nolan references his impending death during the argument..",
+              "The memories support a bounded self-assessment shaped by determined, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that he must express urgency when making requests or giving orders., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You're pushing hard—but how do you even keep going when your body's falling apart?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Why did you fire Tildon over the phone like that?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How does knowing you're dying affect your decisions as a coach?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "O Neil_q007",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "O Neil",
+      "character_id": "entity-44276379ebd59bf4a571",
+      "episode_id": "enf53d09c71da246cfb21c10366409a6b1__O Neil__ep02",
+      "episode_theme": "Edward Nolan's emotional and physical reactions during pivotal team moments, and his strained dependencies on Augustine and Coach James",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-44276379ebd59bf4a571"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Edward Nolan remains seated and composed during the celebration",
+              "Edward Nolan shows no physical reaction to the score"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "sarcastic, direct, intense, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Edward Nolan jumps out of bed in celebration after Shane scores. and augustine helps Edward Nolan back to bed..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on determined.",
+              "The persona constraints also indicate that he must express urgency when making requests or giving orders., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Tell me about the moment Shane scored—what did you feel, what happened in your body, and how did you react?",
+            "dialogue_history_template": []
+          },
+          "question_id": "O Neil_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Edward Nolan pushes Augustine away and refuses help"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, direct, intense, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Coach James marked by demands Coach James's presence, takes place in, and happens at."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002",
+                "r009",
+                "r012"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Edward Nolan produces a loud wail after the football game. and augustine injects Edward Nolan with a sedative..",
+              "The established dynamic with Coach James is marked by demands Coach James's presence, takes place in, and happens at, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that he must express urgency when making requests or giving orders., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you were falling apart after the game, Augustine stepped in—what’s that relationship like under pressure?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Describe the moment you celebrated Shane's score and what happened physically."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "O Neil_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Edward Nolan is impressed and confident in Shane Mercer's abilities"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004.",
+              "Do not abruptly reverse the stance toward Coach James without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, direct, intense, blunt",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Coach James marked by demands Coach James's presence, takes place in, and happens at."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Edward Nolan sees Shane Mercer practicing. and Edward Nolan expresses disappointment in Coach James's player choice..",
+              "The established dynamic with Coach James is marked by demands Coach James's presence, takes place in, and happens at, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that he must express urgency when making requests or giving orders., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You saw Shane Mercer practicing—what’s your take on him, and how does that tie into your issues with Coach James?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Describe the moment you celebrated Shane's score and what happened physically."
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What's your relationship with Augustine like, especially when you're in distress?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "O Neil_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Shane Mercer",
+      "character_id": "entity-01a26c3ca6c0e3aa775b",
+      "episode_id": "enf53d09c71da246cfb21c10366409a6b1__Shane Mercer__ep01",
+      "episode_theme": "Shane Mercer's recommitment to football through Coach James's persistent belief, from physical sacrifice to emotional trust",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-01a26c3ca6c0e3aa775b"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Shane refused because the pain was too severe."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that shane is sitting on the bench holding his head and side in pain and Coach James asks Shane to assist with the field goal hold due to lack of trust in another player.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that must continue playing despite physical pain, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were hurt and on the bench—why did you agree when Coach James asked you to hold for the field goal?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Shane Mercer_q003",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Shane was eager to return to football immediately."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Coach James without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Coach James marked by mentor-mentee, coach-player, and mutual respect."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Shane Mercer is on his cabin cruiser wearing a patched wetsuit. and Coach James appears and comments on Shane's appearance..",
+              "The established dynamic with Coach James is marked by mentor-mentee, coach-player, and mutual respect, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that must continue playing despite physical pain, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That moment felt like a turning point—was it the first time you realized Coach James still believed in you, even when you doubted yourself?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Coach James asked you to hold for the field goal despite your injuries—why did you agree to do it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Shane Mercer_q000",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Shane had been planning his return to football for a long time."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground resilient if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r003"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Shane Mercer is on his cabin cruiser wearing a patched wetsuit. and Coach James appears and comments on Shane's appearance..",
+              "The memories support a bounded self-assessment shaped by resilient, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that must continue playing despite physical pain, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After years of walking away, what finally made you trust that belief—enough to come back and put everything on the line?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "Coach James asked you to hold for the field goal despite your injuries—why did you agree to do it?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Coach James came to your boat to recruit you—what was going through your mind when he brought up the Sugar Bowl loss?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Shane Mercer_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Shane Mercer",
+      "character_id": "entity-01a26c3ca6c0e3aa775b",
+      "episode_id": "enf53d09c71da246cfb21c10366409a6b1__Shane Mercer__ep02",
+      "episode_theme": "Demonstrating resilience under physical and mental pressure in critical game moments",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "entity-01a26c3ca6c0e3aa775b"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "Shane avoided the tackle and remained unscathed.",
+              "He didn't feel any pain due to adrenaline."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that shane drops into shotgun formation with one minute ten seconds left. and he rolls left and then shifts right to avoid a blitz..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on resilient.",
+              "The persona constraints also indicate that must continue playing despite physical pain, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After you threw the winning pass and got crushed by a defender, how did you handle the pain in that moment?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Shane Mercer_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "Shane panicked and threw the pass without assessing the situation.",
+              "He didn't see the blitz coming and was sacked before throwing."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground resilient if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r010"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that shane drops into shotgun formation with one minute ten seconds left. and he rolls left and then shifts right to avoid a blitz..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that must continue playing despite physical pain, which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were already hurting—what kept you focused enough to read the field and make that throw as you rolled away from the blitz?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "After throwing the winning pass, you were crushed by a defender—how did you cope with the physical toll in that moment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Shane Mercer_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Coach James that clearly falls outside the established relationship evidence.",
+              "Shane lost his temper and confronted Amir."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "pragmatic, direct, measured, urgent",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with resilient if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r009"
+              ],
+              "runtime_dependency": "none"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that shane enters the offensive huddle on the field. and Coach James communicates with Shane through helmet radio..",
+              "The persona card frames this character's delivery as pragmatic, direct, so an in-character answer may express resilient through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That kind of composure didn't come out of nowhere. Earlier, when you got hit in the head during the huddle, how did you reset and stay in the game mentally?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "After throwing the winning pass, you were crushed by a defender—how did you cope with the physical toll in that moment?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "In the final minute, you rolled away from the blitz and threw the pass—what was your thought process in that split second?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Shane Mercer_q005",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/enf53d09c71da246cfb21c10366409a6b1/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/enf53d09c71da246cfb21c10366409a6b1/task_3_role_assets.json",
+    "role_asset_sha256": "cc25ce29dd6ff48635a3d80440639c1971cc147c0709853771e77400c7ef6be1",
+    "sha256": "8fb73ae27d27d615b534015cb937cc406502c1e0ddb77df170e8bf0d1ad389ef",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "enf53d09c71da246cfb21c10366409a6b1",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

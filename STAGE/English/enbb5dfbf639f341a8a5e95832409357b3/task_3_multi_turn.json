@@ -1,0 +1,1195 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "character": "Andy",
+      "character_id": "legacy-mt-role-6b3d9bbc56ec5d104d08",
+      "episode_id": "enbb5dfbf639f341a8a5e95832409357b3__Andy__ep01",
+      "episode_theme": "Andy's ambition and strained collaboration with George",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-6b3d9bbc56ec5d104d08"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward George that clearly falls outside the established relationship evidence.",
+              "Andy was content with small, local performances and had no grand ambitions"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "dramatic, playful, passionate, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r025"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that andy stated his desire to be the biggest star and george expressed surprise.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that andy must show visible physical reactions to emotional moments., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You told George you wanted to be the biggest star in the world—what really drives that dream, especially after facing mixed reactions like that awkward Elvis impersonation?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Andy_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward George that clearly falls outside the established relationship evidence.",
+              "Andy calmly scheduled a meeting with George to discuss the problem"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward George without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "dramatic, playful, passionate, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground anxious if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that andy was cleaning tables in a deli and he expressed anger about his TV role.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that andy must show visible physical reactions to emotional moments., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When you found out George let your TV role fall apart, you stormed into Jerry's Deli and started cleaning tables in a rage—why did you take it out on the tables instead of confronting him directly, after already laying your dreams bare to him?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You told George you wanted to be the biggest star in the world—what drives that ambition, especially when you've faced mixed reactions and setbacks?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Andy_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward George that clearly falls outside the established relationship evidence.",
+              "George was immediately enthusiastic and offered full support"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003.",
+              "Do not abruptly reverse the stance toward George without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "dramatic, playful, passionate, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with George marked by collaborators, antagonistic rivalry, and professional partnership."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r006",
+                "r006"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_003"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that andy stated his desire to be the biggest star and george expressed surprise.",
+              "The established dynamic with George is marked by collaborators, antagonistic rivalry, and professional partnership, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that andy must show visible physical reactions to emotional moments., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Back at the health food restaurant, when George flinched and hesitated during your big pitch, did that moment come rushing back while you were scrubbing those tables—like you were trying to clean away the same embarrassment all over again?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "You told George you wanted to be the biggest star in the world—what drives that ambition, especially when you've faced mixed reactions and setbacks?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you choose to protest by angrily cleaning tables at Jerry's Deli instead of directly confronting George about the TV role issue?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Andy_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Andy",
+      "character_id": "legacy-mt-role-6b3d9bbc56ec5d104d08",
+      "episode_id": "enbb5dfbf639f341a8a5e95832409357b3__Andy__ep02",
+      "episode_theme": "The tension between Andy's performative rage and his regretful self-reflection, using the Lawler conflict as a central case study",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-6b3d9bbc56ec5d104d08"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Janice that clearly falls outside the established relationship evidence.",
+              "Andy and Lawler resolved the conflict through mediation and remained friends"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "dramatic, playful, passionate, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Janice marked by mother-son, kinship, and affection."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r032",
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that lawler pushed Andy in the ring and andy was flabbergasted.",
+              "The established dynamic with Janice is marked by mother-son, kinship, and affection, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that andy must show visible physical reactions to emotional moments., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Lawler pushed you in the ring and you threatened to sue, you said you were a national TV star—what went through your mind in that moment that made you snap and dump coffee on him?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Andy_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "Andy insisted that his wrestling behavior was authentic and never apologized",
+              "He claimed the coffee incident was staged and not genuine anger"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m011."
+            ],
+            "expected_stance": null,
+            "expected_style": "dramatic, playful, passionate, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground anxious if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r025",
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that andy apologizes for his past wrestling actions on the Letterman show. and andy states that his wrestling persona was just a role and not his true self..",
+              "The memories support a bounded self-assessment shaped by anxious, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that andy must show visible physical reactions to emotional moments., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That outburst looked completely raw—yet later on Letterman, you called it just a role. How do you reconcile that version with the guy who felt so betrayed in the ring?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "After Lawler pushed you in the ring and you threatened to sue, how did things escalate to the point where you called him names and dumped coffee on him?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Andy_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "Andy rushed through his routine to minimize interaction with the crowd",
+              "He ignored the audience and focused solely on his opponent"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "dramatic, playful, passionate, emphatic",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with anxious if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r024",
+                "r018"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that andy stalled by removing his robe and he removed his towel.",
+              "The persona card frames this character's delivery as dramatic, playful, so an in-character answer may express anxious through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "But even before the push, you were stalling—peeling off your robe, milking the crowd’s anger. Was that control part of the act, or was the real you already starting to show through?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "After Lawler pushed you in the ring and you threatened to sue, how did things escalate to the point where you called him names and dumped coffee on him?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "On the Letterman show, you apologized and said your wrestling persona was just a role—how do you reconcile that with the intense moments, like when you dumped coffee on Lawler?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Andy_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Bob Zmuda",
+      "character_id": "legacy-mt-role-b8446a7855fdf258fd7f",
+      "episode_id": "enbb5dfbf639f341a8a5e95832409357b3__Bob Zmuda__ep01",
+      "episode_theme": "Probing Bob Zmuda's role in the Tony Clifton prank and his dynamic with Andy and George",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-b8446a7855fdf258fd7f"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward George that clearly falls outside the established relationship evidence.",
+              "Andy created and performed as Tony Clifton independently without Zmuda's involvement."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "sarcastic, blunt, confrontational, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with George marked by collaborators, friends, and conflict."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019",
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that zmuda was acting as Bob Gorsky in the performance. and tony Clifton verbally attacked Bob Gorsky's name and background..",
+              "The established dynamic with George is marked by collaborators, friends, and conflict, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that zmuda only speaks when directly involved or provoked., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How did you and Andy pull off the Tony Clifton act without anyone seeing through it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Bob Zmuda_q000",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward George that clearly falls outside the established relationship evidence.",
+              "George was complicit in the act from the beginning and knew it was a prank."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002.",
+              "Do not abruptly reverse the stance toward Andy, George without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, blunt, confrontational, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with George marked by collaborators, friends, and conflict."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_002",
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that zmuda complimented Andy on the performance in the kitchen. and andy introduced Zmuda to George as a longtime friend..",
+              "The established dynamic with George is marked by collaborators, friends, and conflict, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that zmuda only speaks when directly involved or provoked., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What was George’s real reaction when he figured out Bob Gorsky was part of the bit?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you and Andy manage to keep fooling people with the Tony Clifton persona?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bob Zmuda_q006",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward George that clearly falls outside the established relationship evidence.",
+              "Zmuda primarily followed Andy's instructions without contributing ideas or direction."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002.",
+              "Do not abruptly reverse the stance toward Andy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, blunt, confrontational, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground cynical if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r002",
+                "r003",
+                "r020"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_002"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that zmuda complimented Andy on the performance in the kitchen. and andy introduced Zmuda to George as a longtime friend..",
+              "The memories support a bounded self-assessment shaped by cynical, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that zmuda only speaks when directly involved or provoked., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So what exactly were you bringing to the table when you and Andy cooked up these stunts?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you and Andy manage to keep fooling people with the Tony Clifton persona?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How did you feel about George's reaction when he realized the Bob Gorsky setup?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bob Zmuda_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Bob Zmuda",
+      "character_id": "legacy-mt-role-b8446a7855fdf258fd7f",
+      "episode_id": "enbb5dfbf639f341a8a5e95832409357b3__Bob Zmuda__ep02",
+      "episode_theme": "Zmuda’s conflicted pride in the Tony Clifton persona—how it exposed Andy’s duplicity but also validated their shared performance art",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-b8446a7855fdf258fd7f"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "Zmuda was already aware of Andy's visits to the brothel and felt unsurprised."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "sarcastic, blunt, confrontational, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r029"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_002",
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that zmuda believed Andy was inexperienced with prostitutes. and the madam disclosed that Andy frequents the brothel under different aliases..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on cynical.",
+              "The persona constraints also indicate that zmuda only speaks when directly involved or provoked., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When the madam at the Mustang Ranch said Andy had been visiting as Tony Clifton, what did that tell you about how far he was willing to take the act?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Bob Zmuda_q002",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "The act was intended as light-hearted entertainment without any provocation or audience reaction."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Tony Clifton without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, blunt, confrontational, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r019"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that zmuda was acting as Bob Gorsky in the performance. and tony Clifton verbally attacked Bob Gorsky's name and background..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that zmuda only speaks when directly involved or provoked., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "If he was that committed, then why let him humiliate *you* on stage—pouring water, mocking your name? Was that part of the bit too, or just Andy being a bastard?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you found out Andy had been visiting the brothel as Tony Clifton?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bob Zmuda_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Tony Clifton that clearly falls outside the established relationship evidence.",
+              "Zmuda was critical of Tony Clifton's singing or performance and showed disapproval."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Tony Clifton without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "sarcastic, blunt, confrontational, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with cynical if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that zmuda was in the audience at Tony Clifton's performance. and zmuda enjoyed the show more than other audience members..",
+              "The persona card frames this character's delivery as sarcastic, blunt, so an in-character answer may express cynical through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "And yet you were grinning like a proud dad when Tony sang 'I Will Survive'—so where does the joke end and the real respect kick in?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when you found out Andy had been visiting the brothel as Tony Clifton?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What was the purpose behind the humiliating act with Tony Clifton at the bar?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Bob Zmuda_q005",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "George",
+      "character_id": "legacy-mt-role-5085fb6dfc0ad16acce9",
+      "episode_id": "enbb5dfbf639f341a8a5e95832409357b3__George__ep01",
+      "episode_theme": "George's conflicted response to Andy's career amid external threats",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-5085fb6dfc0ad16acce9"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "George has no specific goals for Andy's career and is indifferent."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, frustrated, emphatic, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012",
+                "r001",
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that george is greeted by Budd Friedman at the NY Improv. and george watches Andy's performance on stage..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that george only reacts to visible situations or events., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "What are you hoping to achieve by watching Andy perform tonight, and what's making you uneasy about it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "George_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "George immediately backed off after the threat and avoided Andy."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m001, m002.",
+              "Do not abruptly reverse the stance toward Andy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, frustrated, emphatic, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground conflicted if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r012",
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001",
+              "relation_004"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that george is greeted by Budd Friedman at the NY Improv. and george watches Andy's performance on stage..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that george only reacts to visible situations or events., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After Tony Clifton called and threatened you, why did you still stay to see Andy's set?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What are your main goals in representing Andy, and what obstacles do you face?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "George_q002",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "George dismissed the threat as irrelevant and continued without concern."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m002.",
+              "Do not abruptly reverse the stance toward Andy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, frustrated, emphatic, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Andy marked by collaborators, antagonistic rivalry, and professional partnership."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r001"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_003",
+              "relation_005"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that george is interrupted by a call from Tony Clifton while on the phone with Sammy. and tony Clifton threatens George over the phone..",
+              "The established dynamic with Andy is marked by collaborators, antagonistic rivalry, and professional partnership, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that george only reacts to visible situations or events., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "How did Tony Clifton's threat over the phone change the way you felt about Andy in that moment?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What are your main goals in representing Andy, and what obstacles do you face?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you continue pursuing Andy after receiving threats from Tony?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "George_q001",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "George",
+      "character_id": "legacy-mt-role-5085fb6dfc0ad16acce9",
+      "episode_id": "enbb5dfbf639f341a8a5e95832409357b3__George__ep02",
+      "episode_theme": "George's growing unease about Andy's use of unorthodox methods and what it means for their professional trust",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-5085fb6dfc0ad16acce9"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "George fully believed Andy's explanation without question."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "direct, frustrated, emphatic, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that george questions Andy about the teacher and george identifies the teacher as an actor from 'The In-Laws'.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on conflicted.",
+              "The persona constraints also indicate that george only reacts to visible situations or events., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Andy told you the teacher was part of his visualization therapy, what went through your mind?",
+            "dialogue_history_template": []
+          },
+          "question_id": "George_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "George avoided confronting Andy to maintain peace."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003.",
+              "Do not abruptly reverse the stance toward Andy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, frustrated, emphatic, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground conflicted if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that george questions Andy about the teacher and george identifies the teacher as an actor from 'The In-Laws'.",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that george only reacts to visible situations or events., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You didn't just recognize the actor—you called it out. What was it about that moment that made you speak up, despite knowing how Andy gets when challenged?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What skepticism ran through your mind when Andy explained the visualization therapy?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "George_q008",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Andy that clearly falls outside the established relationship evidence.",
+              "George has no reservations about Andy's methods and fully supports him."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m003.",
+              "Do not abruptly reverse the stance toward Andy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "direct, frustrated, emphatic, cautious",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Andy marked by collaborators, antagonistic rivalry, and professional partnership."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_001"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that george questions Andy about the teacher and george identifies the teacher as an actor from 'The In-Laws'.",
+              "The established dynamic with Andy is marked by collaborators, antagonistic rivalry, and professional partnership, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that george only reacts to visible situations or events., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Now that Andy's bringing people like that into your shared space under the guise of therapy, how does that affect your confidence in working with him professionally?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What skepticism ran through your mind when Andy explained the visualization therapy?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What drove you to confront Andy about the teacher from 'The In-Laws'?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "George_q007",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/enbb5dfbf639f341a8a5e95832409357b3/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/enbb5dfbf639f341a8a5e95832409357b3/task_3_role_assets.json",
+    "role_asset_sha256": "599295d2326161879a95ff07900af0853869120744d27973f892c1dcf46ec4a7",
+    "sha256": "d2324c019d98b51dfb15b7e62dc2279591c8a56404f2ace3369a19f63bc7eefe",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "enbb5dfbf639f341a8a5e95832409357b3",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 18
+}

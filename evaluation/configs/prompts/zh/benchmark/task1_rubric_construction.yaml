@@ -1,0 +1,42 @@
+id: task1_rubric_construction
+category: benchmark_construction
+name: Task 1 rubric construction
+description: Consolidate internal temporal candidates into a compact natural-language evaluator rubric.
+task_variables:
+  - name: focal_character
+    required: true
+  - name: checkpoint
+    required: true
+  - name: state_candidates
+    required: true
+  - name: development_candidates
+    required: true
+  - name: evidence
+    required: true
+  - name: future_candidates
+    required: true
+static_variables: []
+template: |-
+  为角色“{focal_character}”构建一个 checkpoint 评测 rubric。这是 benchmark 构建，不是预测任务。
+  <checkpoint>{checkpoint}</checkpoint>
+  <state_candidates>{state_candidates}</state_candidates>
+  <development_candidates>{development_candidates}</development_candidates>
+  <evidence>{evidence}</evidence>
+  <future_candidates>{future_candidates}</future_candidates>
+
+  合并重复、近义或粒度过细的状态，只保留对主要角色发展有意义且有证据的陈述。某个较早场景的候选没有显式
+  结束场景，并不代表它仍是当前状态；已经被后续证据取代或解除的瞬时状态必须删除。development 必须描述
+  已生效的变化，不要把一次动作改写成持久变化。没有显著变化时返回空 development。future negative 只能从
+  给定 F 标签中选择与该角色发展最相关的关键未来变化，不得自行补充。
+
+  rubric 必须是可用于评测的紧凑标准，而不是候选清单：current state 最多 8 条，development 最多 4 条，
+  invariant 最多 4 条，future negative 最多 4 条；证据不足时必须更少。优先保留能区分“正确刻画角色轨迹”
+  与“泛泛概括场景”的标准，不要复制大段历史动作、短暂情绪或近义的关系描述。
+
+  只返回 JSON：
+  {{
+    "current_state_claims": [{{"claim": "...", "supporting_scene_orders": [1]}}],
+    "development_claims": [{{"claim": "...", "supporting_scene_orders": [1]}}],
+    "invariant_claims": [{{"claim": "...", "supporting_scene_orders": [1]}}],
+    "salient_future_negatives": [{{"claim": "...", "source_future_local_ids": ["F1"]}}]
+  }}

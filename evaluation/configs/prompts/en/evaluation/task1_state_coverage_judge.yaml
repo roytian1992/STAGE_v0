@@ -1,0 +1,22 @@
+id: task1_state_coverage_judge_en
+category: evaluation
+name: Task 1 state-update reference coverage
+description: Judge how the complete prediction set covers every reference claim.
+task_variables:
+  - {name: character, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: reference_claims, required: true}
+  - {name: predicted_claims, required: true}
+  - {name: allowed_reference_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  Judge reference coverage for "{character}" between scene {previous_scene_order} and scene {current_scene_order}.
+  <reference_claims>{reference_claims}</reference_claims><predicted_claims>{predicted_claims}</predicted_claims>
+  <allowed_reference_ids>{allowed_reference_ids}</allowed_reference_ids><allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  An s reference may be covered only by s current-state predictions, and a d reference only by d interval-development predictions. Judge each reference against the complete same-pool prediction set. One prediction may cover several compatible references, and several predictions may jointly cover one reference; do not force one-to-one matching.
+
+  full means one or more predictions jointly express the reference's subject, time, scope, state, or change direction completely. partial means the core is related but a material component is missing, overbroad, or only partly expressed. contradiction means related predictions express an opposite or incompatible state or change without also covering it correctly. missing means no relevant prediction. Output every reference exactly once. prediction_ids must list all local P labels supporting the judgment and must be empty for missing. Use only the provided local R/P labels and do not compute metrics. Return JSON only:
+  {{"reference_results":[{{"reference_id":"R1","status":"full|partial|missing|contradiction","prediction_ids":["P1"]}}]}}

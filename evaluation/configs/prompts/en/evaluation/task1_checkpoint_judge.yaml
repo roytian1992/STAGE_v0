@@ -1,0 +1,35 @@
+id: task1_checkpoint_judge
+category: evaluation
+name: Task 1 checkpoint claim judge
+description: Judge local active claims, developments, grounding, timing, and false persistence.
+task_variables:
+  - {name: checkpoint, required: true}
+  - {name: prediction, required: true}
+  - {name: active_gold_rubric, required: true}
+  - {name: inactive_state_rubric, required: true}
+  - {name: future_negatives, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: allowed_gold_pair_ids, required: true}
+  - {name: allowed_inactive_state_ids, required: true}
+  - {name: allowed_prediction_ids, required: true}
+static_variables: []
+template: |-
+  Judge one character checkpoint. Prediction rows use s=current state and d=development. Active gold rows use s=current state and d=development. Inactive x rows are states whose reviewed validity ended before this checkpoint; future f rows have not happened or are inaccessible.
+  <checkpoint>{checkpoint}</checkpoint>
+  <prediction>{prediction}</prediction>
+  <active_gold_rubric>{active_gold_rubric}</active_gold_rubric>
+  <inactive_state_rubric>{inactive_state_rubric}</inactive_state_rubric>
+  <future_negatives>{future_negatives}</future_negatives>
+  <evidence_scenes>{evidence_scenes}</evidence_scenes>
+  <allowed_gold_pair_ids>{allowed_gold_pair_ids}</allowed_gold_pair_ids>
+  <allowed_inactive_state_ids>{allowed_inactive_state_ids}</allowed_inactive_state_ids>
+  <allowed_prediction_ids>{allowed_prediction_ids}</allowed_prediction_ids>
+
+  Emit every semantically related same-pool active pair: s against s and d against d. Omit unrelated pairs; an empty array is valid when no pair is related. full requires materially correct subject, time, scope, and direction. partial is meaningful but incomplete or overbroad overlap. contradiction is incompatible content or reversed direction. The scorer performs maximum-weight one-to-one matching.
+
+  prediction_checks must cover every P ID exactly once. support assesses screenplay support; evidence_grounded assesses the cited scenes; checkpoint_valid requires the claim to be true now and correctly assigned to current state or interval development; salient excludes ordinary actions, transient emotions, generic summaries, and redundant detail. transition_coherent is always true for a state prediction and is true for a development only when it states a salient before-to-after change already effective. future_leak_prediction_ids and premature_update_prediction_ids use only P IDs.
+
+  false_persistence_pairs link an x state to a current-state prediction only when the prediction continues that same expired state after its reviewed interval. Similar but distinct later states are not false persistence. no_change_false_update is true only when active development gold is empty and the prediction invents a substantive development.
+
+  Return only JSON:
+  {{"claim_pair_judgments":[{{"gold_local_id":"D1","prediction_local_id":"P1","label":"full|partial|contradiction"}}],"prediction_checks":[{{"prediction_local_id":"P1","support":"supported|partial|unsupported","transition_coherent":true,"evidence_grounded":true,"checkpoint_valid":true,"salient":true}}],"future_leak_prediction_ids":[],"premature_update_prediction_ids":[],"false_persistence_pairs":[{{"inactive_state_local_id":"X1","prediction_local_id":"P2"}}],"no_change_false_update":false}}

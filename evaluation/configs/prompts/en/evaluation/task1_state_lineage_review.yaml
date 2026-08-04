@@ -1,0 +1,22 @@
+id: task1_state_lineage_review
+category: evaluation
+name: Task 1 state lineage review
+description: Group reviewed checkpoint state claims into stable evaluator-only lineages.
+task_variables:
+  - {name: focal_character, required: true}
+  - {name: ordered_checkpoints, required: true}
+  - {name: reviewed_state_claims, required: true}
+  - {name: allowed_member_refs, required: true}
+  - {name: expected_member_count, required: true}
+static_variables: []
+template: |-
+  Review stable state lineage for "{focal_character}" before any model prediction is viewed.
+  <ordered_checkpoints>{ordered_checkpoints}</ordered_checkpoints>
+  <reviewed_state_claims>{reviewed_state_claims}</reviewed_state_claims>
+  <allowed_member_refs>{allowed_member_refs}</allowed_member_refs>
+  <expected_member_count>{expected_member_count}</expected_member_count>
+
+  Group claims only when they describe the same state, target, polarity, and validity interval. A later reversal, changed target, or materially changed stance requires a new GS lineage. Across all member_refs, emit exactly expected_member_count references and make their set exactly equal allowed_member_refs: no example-only output, omission, duplication, or extra reference. valid_from_checkpoint_id and valid_to_checkpoint_id must use ordered checkpoint IDs. A state remains active across omitted restatements only when the reviewed narrative supports persistence. superseded_by_lineage_key may reference only another emitted GS key. Do not infer from model predictions.
+
+  source_state_ids must be [] because no source-state ID allowlist is exposed in this call. Return only JSON:
+  {{"states":[{{"lineage_key":"GS1","canonical_claim":"...","member_refs":["R1"],"source_state_ids":[],"valid_from_checkpoint_id":"...","valid_to_checkpoint_id":null,"superseded_by_lineage_key":null}}]}}

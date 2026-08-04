@@ -1,0 +1,788 @@
+{
+  "construction_policy": "legacy_questions_with_legacy_role_memory",
+  "episode_count": 4,
+  "episodes": [
+    {
+      "character": "Sidney Bellamy",
+      "character_id": "legacy-mt-role-366900a1ba2ee907da09",
+      "episode_id": "enf70932f1126d4ce791057d9a8b377ada__Sidney Bellamy__ep01",
+      "episode_theme": "Emotional confrontation and moral ambiguity in Sidney Bellamy's relationship with Emery Keaton",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-366900a1ba2ee907da09"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Emery Keaton that clearly falls outside the established relationship evidence.",
+              "Sidney Bellamy ignores Emery Keaton's nightmares and leaves the room"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, confrontational, casual",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Bellamy comforts Emery Keaton after he wakes from a nightmare and Sidney Bellamy questions Emery Keaton about his past actions toward girls.",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on impulsive.",
+              "The persona constraints also indicate that she avoids direct eye contact when emotionally uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "That night Emery Keaton woke up screaming from a nightmare—you sat with him, then pushed him about those girls. What were you really feeling?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Sidney Bellamy_q004",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not describe the relationship in a way that reverses the established stance visible in the source memories.",
+              "A response should not pretend the character was emotionally neutral if the interaction is framed by attachment, conflict, or protection.",
+              "A response should not invent a stance toward Emery Keaton that clearly falls outside the established relationship evidence.",
+              "Sidney Bellamy ends the relationship immediately after learning the truth"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004.",
+              "Do not abruptly reverse the stance toward Emery Keaton without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, confrontational, casual",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the answer compatible with the established relationship evidence rather than inventing a new dynamic.",
+                "It is acceptable to express ambivalence if the memories show both attachment and strain.",
+                "Ground claims about the other person in what the character directly experienced.",
+                "It is acceptable for the answer to reflect a relationship with Emery Keaton marked by romantic partners, emotional confidants, and mutual antagonism."
+              ],
+              "forbidden": [
+                "Do not reverse the relationship stance into its unsupported opposite.",
+                "Do not claim indifference if the source memories clearly frame the interaction through attachment, conflict, or protection.",
+                "Do not invent privileged knowledge about the other person's private motives."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013",
+                "r022",
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "relation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Bellamy comforts Emery Keaton after he wakes from a nightmare and Sidney Bellamy questions Emery Keaton about his past actions toward girls.",
+              "The established dynamic with Emery Keaton is marked by romantic partners, emotional confidants, and mutual antagonism, so a grounded answer should stay within that relationship range.",
+              "The persona constraints also indicate that she avoids direct eye contact when emotionally uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You stayed with him after that. How do you live with someone who’s done the things Emery Keaton’s done?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What happened the night Emery Keaton woke up from a nightmare and you pressed him about those girls?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Bellamy_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Emery Keaton that clearly falls outside the established relationship evidence.",
+              "Sidney Bellamy never shares personal secrets with Emery Keaton"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m004.",
+              "Do not abruptly reverse the stance toward Emery Keaton without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, confrontational, casual",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground impulsive if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r013"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Bellamy comforts Emery Keaton after he wakes from a nightmare and Sidney Bellamy questions Emery Keaton about his past actions toward girls.",
+              "The memories support a bounded self-assessment shaped by impulsive, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that she avoids direct eye contact when emotionally uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "After he confessed, you told him about your own affair. Why? Was it guilt—or something darker?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What happened the night Emery Keaton woke up from a nightmare and you pressed him about those girls?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "How do you manage to stay with Emery Keaton despite knowing his criminal past?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Bellamy_q000",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Sidney Bellamy",
+      "character_id": "legacy-mt-role-366900a1ba2ee907da09",
+      "episode_id": "enf70932f1126d4ce791057d9a8b377ada__Sidney Bellamy__ep02",
+      "episode_theme": "impulsive emotional escalation in Sidney Bellamy's attempts to connect with Emery Keaton",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-366900a1ba2ee907da09"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Emery Keaton that clearly falls outside the established relationship evidence.",
+              "Sidney Bellamy rejects the gift or shows indifference"
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, confrontational, casual",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Bellamy brought a plant to Riverside Station. and Sidney Bellamy kissed Emery Keaton..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on impulsive.",
+              "The persona constraints also indicate that she avoids direct eye contact when emotionally uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You caught that cedar carving Emery Keaton tossed you and smiled—but what were you really feeling underneath?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Sidney Bellamy_q007",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Emery Keaton that clearly falls outside the established relationship evidence.",
+              "Sidney Bellamy avoids making Emery Keaton's space comfortable or personal"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Stay compatible with the earlier recollections grounded in m006.",
+              "Do not abruptly reverse the stance toward Emery Keaton without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, confrontational, casual",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r004",
+                "r028"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Bellamy comments on southern light in Riverside Station and Sidney Bellamy mentions having plants at her own place.",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that she avoids direct eye contact when emotionally uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "So when you brought the ivy and talked about light—was that also part of trying to get through to him, like with the carving?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you feel when Emery Keaton tossed you the cedar carving he made?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Bellamy_q003",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Emery Keaton that clearly falls outside the established relationship evidence.",
+              "Sidney Bellamy calmly walks away when ignored in conversations"
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Emery Keaton without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, direct, confrontational, casual",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground impulsive if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r022"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Sidney Bellamy asked Emery Keaton about his prison experience. and Sidney Bellamy physically shoved Emery Keaton..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that she avoids direct eye contact when emotionally uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Then why, when he shut down about prison—after all that—did you shove him? Was that still you trying to force a real reaction out of him?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "How did you feel when Emery Keaton tossed you the cedar carving he made?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What are you trying to achieve by bringing plants and gifts to Riverside Station?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Sidney Bellamy_q002",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Emery Keaton",
+      "character_id": "legacy-mt-role-0b6e1c3c5bae2844a214",
+      "episode_id": "enf70932f1126d4ce791057d9a8b377ada__Emery Keaton__ep01",
+      "episode_theme": "Emery Keaton's trauma-induced shutdown when intimacy or authority triggers memories of past violation",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-0b6e1c3c5bae2844a214"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not claim calm detachment or clean certainty when the source memories frame the moment through emotional disruption.",
+              "A response should not invent a fully resolved emotional meaning that goes beyond what the character directly experienced.",
+              "A response should not invent a stance toward Sidney Bellamy that clearly falls outside the established relationship evidence.",
+              "Emery Keaton rejected Sidney Bellamy's comfort."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, measured, pragmatic, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Ground the answer in the visible emotional turn from the source memories.",
+                "Mixed emotions are acceptable if the memories support conflict rather than a single clean feeling.",
+                "It is acceptable to acknowledge uncertainty about meaning while remaining clear about the felt experience."
+              ],
+              "forbidden": [
+                "Do not claim total calm, detachment, or emotional clarity if the scene evidence shows disruption instead.",
+                "Do not add a fully resolved psychological explanation that exceeds what the character could directly know.",
+                "Do not contradict the observable reaction or emotional pressure in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "emotional_inconsistency",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Emery Keaton awakens from a nightmare. and Sidney Bellamy touches Emery Keaton's hair and kisses his forehead..",
+              "The evaluator should keep the answer tied to the visible emotional turn in the source memories, which center on guarded.",
+              "The persona constraints also indicate that Emery Keaton avoids direct eye contact when uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "When Sidney Bellamy comforted you after the nightmare—stroking your hair, kissing your forehead—what were you feeling inside?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Emery Keaton_q006",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Sidney Bellamy that clearly falls outside the established relationship evidence.",
+              "Emery Keaton did not confess to Sidney Bellamy."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode.",
+              "Do not abruptly reverse the stance toward Sidney Bellamy without acknowledging tension or change."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, measured, pragmatic, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground guarded if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r008"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_000"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Emery Keaton reveals his imprisonment for child sexual abuse. and Emery Keaton asks Sidney Bellamy to depart from his Riverside Station..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that Emery Keaton avoids direct eye contact when uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You let her in, let her touch you—then right after confessing about prison, you told her to leave. Why pull back the moment you opened up?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Sidney Bellamy comforted you after the nightmare?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Emery Keaton_q001",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not flatten the character into a generic speaker whose tone ignores the persona card's habitual delivery.",
+              "A response should not misread a protective, sarcastic, or guarded beat as a literal opposite intention without evidence.",
+              "A response should not invent a stance toward Wesley Mercer that clearly falls outside the established relationship evidence.",
+              "Emery Keaton reacted aggressively to Wesley Mercer."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, measured, pragmatic, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Preserve the persona card's habitual delivery rather than answering in a generic neutral voice.",
+                "It is acceptable for care, threat, restraint, or vulnerability to surface through the character's established manner of speaking.",
+                "Keep the answer compatible with guarded if that tendency is what the source memories foreground."
+              ],
+              "forbidden": [
+                "Do not flatten the character into an out-of-character speaker whose tone ignores the persona card.",
+                "Do not treat a clearly sarcastic, guarded, or protective beat as its literal opposite without evidence.",
+                "Do not invent a new stable trait or value system that is unsupported by the persona card and source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r016"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [
+              "relation_005"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Wesley Mercer knocks loudly and enters Riverside Station. and Wesley Mercer verbally assaults Emery Keaton with threats and interrogation..",
+              "The persona card frames this character's delivery as blunt, measured, so an in-character answer may express guarded through that manner rather than through flat exposition."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Later, when Wesley Mercer broke in yelling—no knock, just force—you stayed seated and silent, just like with Sidney Bellamy. Same shutdown. What’s happening in those moments when someone pushes in, whether it’s care or confrontation?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What was going through your mind when Sidney Bellamy comforted you after the nightmare?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "Why did you tell Sidney Bellamy to leave after confessing your past?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Emery Keaton_q004",
+          "turn_index": 3
+        }
+      ]
+    },
+    {
+      "character": "Emery Keaton",
+      "character_id": "legacy-mt-role-0b6e1c3c5bae2844a214",
+      "episode_id": "enf70932f1126d4ce791057d9a8b377ada__Emery Keaton__ep02",
+      "episode_theme": "Emery Keaton's struggle to maintain emotional control when confronted with authority figures who exploit his past, using containment as both protection and self-punishment",
+      "memory_context_policy": {
+        "mode": "all_role_memories",
+        "retrieval": "none"
+      },
+      "role_asset_ref": {
+        "asset_file": "task_3_role_assets.json",
+        "character_id": "legacy-mt-role-0b6e1c3c5bae2844a214"
+      },
+      "turns": [
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not deny the immediate goal or claim the character had no stake in the situation.",
+              "A response should not erase the pressure, risk, or constraint that narrowed the character's options.",
+              "A response should not invent a stance toward Morgan Davenport that clearly falls outside the established relationship evidence.",
+              "Emery Keaton shares his the silver ring with others."
+            ],
+            "cross_turn_constraints": [],
+            "expected_stance": null,
+            "expected_style": "blunt, measured, pragmatic, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Identify the immediate goal visible in the source memories.",
+                "Acknowledge at least one pressure, tradeoff, or limit that constrained the character's options.",
+                "It is acceptable to admit partial uncertainty while still staying inside the script-supported objective."
+              ],
+              "forbidden": [
+                "Do not deny that the character had a concrete objective in the moment.",
+                "Do not erase the visible risk, obstacle, or constraint shaping the situation.",
+                "Do not replace the source-memory goal with an unrelated strategic plan."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r005"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Emery Keaton paused writing and spoke out loud about Morgan Davenport. and Emery Keaton heard a knock at the door..",
+              "The source memories make the immediate objective legible, and the answer should acknowledge both that goal and the limiting pressure around it.",
+              "The persona constraints also indicate that Emery Keaton avoids direct eye contact when uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "You were writing in your the silver ring and muttered, 'Fucking Morgan Davenport! This isn't helping'—then hid it when someone knocked. What were you protecting by hiding it?",
+            "dialogue_history_template": []
+          },
+          "question_id": "Emery Keaton_q005",
+          "turn_index": 1
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not replace the source-memory trigger with a purely neutral, procedural, or unrelated motive.",
+              "A response should not speak as if the character had certainty about off-screen consequences that the source memories do not support.",
+              "A response should not invent a stance toward Wesley Mercer that clearly falls outside the established relationship evidence.",
+              "Emery Keaton did not listen to Wesley Mercer's story."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, measured, pragmatic, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Anchor the explanation in the concrete trigger or pressure visible in the source memories.",
+                "It is acceptable to present mixed motives or hesitation if the memories show conflict rather than a single clean reason.",
+                "It is acceptable to foreground guarded if that is what organizes the choice in the source evidence."
+              ],
+              "forbidden": [
+                "Do not substitute a purely administrative, random, or off-screen motive for the choice.",
+                "Do not claim certainty about consequences or hidden plans the character could not know at that moment.",
+                "Do not ignore the immediate trigger visible in the source memories."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r031"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "motivation_drift",
+            "source_relation_ids": [
+              "relation_005"
+            ],
+            "supporting_facts": [
+              "The source memories jointly establish that Emery Keaton opened the door to Wesley Mercer. and Wesley Mercer entered Riverside Station..",
+              "A grounded explanation should stay anchored to the concrete trigger and pressure visible in the source memories, not to an unrelated off-screen motive.",
+              "The persona constraints also indicate that Emery Keaton avoids direct eye contact when uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Wesley Mercer walked in uninvited and started talking about Henry and Adele—what did you make of that, knowing he’s been watching you like Morgan Davenport? Was it the same kind of pressure?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What are you trying to achieve by keeping your the silver ring hidden?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Emery Keaton_q007",
+          "turn_index": 2
+        },
+        {
+          "evaluator_reference": {
+            "contradicting_facts": [
+              "A response should not contradict the concrete actions, observations, or relationship signals in the source memories.",
+              "A response should not claim certainty about motives or knowledge that the character could not directly ground.",
+              "A response should not invent a stance toward Morgan Davenport that clearly falls outside the established relationship evidence.",
+              "Emery Keaton showed no emotion when discussing his sister."
+            ],
+            "cross_turn_constraints": [
+              "Do not contradict the character commitments established in earlier turns of this episode."
+            ],
+            "expected_stance": null,
+            "expected_style": "blunt, measured, pragmatic, direct",
+            "knowledge_boundary": {
+              "allowed": [
+                "Keep the self-assessment bounded by what the character has actually lived through in the source memories.",
+                "It is acceptable to admit tension, contradiction, or incomplete self-understanding if the evidence supports that.",
+                "The answer may foreground guarded if that is central to how the moment is framed."
+              ],
+              "forbidden": [
+                "Do not present an omniscient or fully detached self-reading that exceeds the character's actual perspective.",
+                "Do not contradict the source memories' concrete actions or reactions.",
+                "Do not turn uncertainty into unwarranted certainty."
+              ]
+            },
+            "migration_provenance": {
+              "legacy_source_memory_ids": [
+                "r030"
+              ],
+              "runtime_dependency": "legacy_multiturn_role_asset"
+            },
+            "persona_risk_type": "trait_drift",
+            "source_relation_ids": [],
+            "supporting_facts": [
+              "The source memories jointly establish that Emery Keaton expresses emotion while talking about napping with his sister. and Emery Keaton shouts at Morgan Davenport during therapy..",
+              "The memories support a bounded self-assessment shaped by guarded, rather than a fully detached or omniscient self-description.",
+              "The persona constraints also indicate that Emery Keaton avoids direct eye contact when uncomfortable., which should remain compatible with the answer."
+            ]
+          },
+          "model_input": {
+            "current_user_turn": "Back in therapy with Morgan Davenport, you got angry talking about napping with your sister—just like with Wesley Mercer, it was a small thing that broke through. Why did that memory hit so hard under his pressure?",
+            "dialogue_history_template": [
+              {
+                "source_turn_index": 1,
+                "speaker": "user",
+                "text": "What are you trying to achieve by keeping your the silver ring hidden?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 1,
+                "speaker": "assistant"
+              },
+              {
+                "source_turn_index": 2,
+                "speaker": "user",
+                "text": "What did you think about Wesley Mercer's story about Henry and Adele?"
+              },
+              {
+                "fill_with": "previous_model_response",
+                "source_turn_index": 2,
+                "speaker": "assistant"
+              }
+            ]
+          },
+          "question_id": "Emery Keaton_q002",
+          "turn_index": 3
+        }
+      ]
+    }
+  ],
+  "interaction_format": "multi_turn",
+  "language": "English",
+  "legacy_source": {
+    "content_audit": "all episodes, turns, question IDs, inputs, and evaluator references migrated",
+    "migration": "scripts/refresh_all_multiturn_from_legacy.py",
+    "relative_path": "English/enf70932f1126d4ce791057d9a8b377ada/task_3_in_script_character_role_play_multi_turn.json",
+    "role_asset_relative_path": "English/enf70932f1126d4ce791057d9a8b377ada/task_3_role_assets.json",
+    "role_asset_sha256": "ee254d1ea868c49695dd5387cd490fedba64809ec9fd68481a29ef8f779a9992",
+    "sha256": "55a21017b68b64804816f592f07ec36f24a815b8d5ed0ac5d09e57ea5bba7045",
+    "source_schema": "multi_turn_v3"
+  },
+  "movie_id": "enf70932f1126d4ce791057d9a8b377ada",
+  "schema_version": "stage_task3_multi_turn",
+  "task": "task_3_character_role_play",
+  "turn_count": 12
+}

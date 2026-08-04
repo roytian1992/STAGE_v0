@@ -1,0 +1,20 @@
+id: task1_prediction_validity_judge_en
+category: evaluation
+name: Task 1 prediction validity against screenplay evidence
+description: Check support, grounding, temporal validity, salience, coherence, and contradiction for one predicted claim.
+task_variables:
+  - {name: character, required: true}
+  - {name: previous_scene_order, required: true}
+  - {name: current_scene_order, required: true}
+  - {name: predicted_claim, required: true}
+  - {name: evidence_scenes, required: true}
+  - {name: prediction_id, required: true}
+static_variables: []
+template: |-
+  Check one Task 1 prediction for "{character}". The preceding checkpoint is scene {previous_scene_order}; the current checkpoint is scene {current_scene_order}.
+  <predicted_claim>{predicted_claim}</predicted_claim><evidence_scenes>{evidence_scenes}</evidence_scenes>
+
+  evidence_scenes are original screenplay scenes cited for this claim. When a carried current state has no new citation, the runner supplies provenance from the preceding state that was hidden from the prediction model. supported asks whether the candidate scenes support the claim. evidence_grounded asks whether direct or reliable indirect evidence exists in those scenes. currently_valid asks whether an s claim is still true at the current checkpoint or a d change became effective inside the interval. salient asks whether the claim is worth tracking as a goal, belief, relationship, identity, circumstance, or important emotional stance rather than an ordinary action or minor detail. development_coherent is always true for s and true for d only when a meaningful before-to-after change is expressed. contradiction asks whether the claim clearly conflicts with the candidate screenplay evidence or checkpoint-valid state. Absence from the compact reference is not itself a contradiction.
+
+  Return JSON only:
+  {{"prediction_id":"{prediction_id}","supported":true,"evidence_grounded":true,"currently_valid":true,"salient":true,"development_coherent":true,"contradiction":false}}

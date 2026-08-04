@@ -1,0 +1,19 @@
+id: task1_entity_memory_extraction_en
+category: evaluation
+name: Task 1 entity-centric interval memory extraction
+description: Extract natural-language memory needed to update one character state from a continuous screenplay chunk.
+task_variables:
+  - {name: character, required: true}
+  - {name: aliases, required: true}
+  - {name: screenplay_chunk, required: true}
+  - {name: allowed_scene_orders, required: true}
+static_variables: []
+template: |-
+  Read the continuous screenplay excerpt and extract entity-centric factual memory for "{character}". Character aliases: {aliases}.
+  <screenplay_chunk>{screenplay_chunk}</screenplay_chunk>
+  <allowed_scene_orders>{allowed_scene_orders}</allowed_scene_orders>
+
+  Retain only information useful for determining the character's current goals, beliefs, relationships, identity, circumstances, important emotional stance, or changes to those dimensions. Include events the character directly participates in and indirect events that clearly alter the character's circumstances or relationships. Keep independently judgeable facts separate rather than compressing them into a plot summary. Exclude literary themes, generic summaries, future speculation, and unrealized possibilities.
+
+  Every observation must be natural-language content and may cite only integers from allowed_scene_orders. Do not output checkpoint, state, development, fact, entity, or hash IDs. Return JSON only:
+  {{"observations":[{{"claim":"character-relevant fact or change","evidence_scene_orders":[1]}}]}}
